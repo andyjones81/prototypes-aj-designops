@@ -524,6 +524,7 @@ function workRow(w, href, sel) {
 }
 
 function vWork() {
+  if (qs().get('sel')) { location.replace('#/work/' + qs().get('sel')); return ''; }
   const p = qs(), q = (p.get('q') || '').trim().toLowerCase(), st = p.get('stage') || '', pr = p.get('priority') || '', tab = p.get('tab') || 'all';
   const base = S.works.filter((w) => (!q || [w.id, w.title, w.description].join(' ').toLowerCase().includes(q)) && (!st || w.stage === st) && (!pr || w.priority === pr));
   const blocked = (w) => S.actions.some((a) => a.workId === w.id && (a.status === 'Exception' || (isOpen(a) && actLegal(a))));
@@ -532,10 +533,7 @@ function vWork() {
     { name: 'stage', label: 'Stage', opts: [['', 'All stages']].concat(OPT.stage.map((o) => [o, o])) }, { name: 'priority', label: 'Priority', opts: [['', 'Any priority']].concat(OPT.level.map((o) => [o, o])) }], ['tab']);
   return banner() + pageHead('Work', 'Everything in flight. Change a work item\'s categories and the rules engine updates what applies.', btn('#/work/new', 'Add work')) +
     tabsNav('work', p, 'tab', [['all', 'All work', base.length], ['attention', 'Needs attention', base.filter(blocked).length], ['active', 'In progress', base.filter((w) => workPct(w.id) < 100).length]], 'all', 'Work filter') + fb +
-    (() => {
-      const selW = list.find((w) => w.id === p.get('sel')) || list[0];
-      return list.length ? '<div class="split"><div class="split-list"><ul class="wlist">' + list.map((w) => workRow(w, qhref('work', p, { sel: w.id }), selW && w.id === selW.id)).join('') + '</ul></div>' + workPane(selW) + '</div>' : '<div class="panel"><p class="govuk-body">No work matches these filters.</p></div>';
-    })();
+    (list.length ? '<ul class="wlist">' + list.map((w) => workRow(w)).join('') + '</ul>' : '<div class="panel"><p class="govuk-body">No work matches these filters.</p></div>');
 }
 
 const ACT_TABS = [['open', 'Open'], ['Not started', 'To do'], ['In progress', 'In progress'], ['Exception', 'Exception'], ['Complete', 'Done'], ['all', 'All']];
