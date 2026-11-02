@@ -431,3 +431,26 @@ html, html.govuk-template, .govuk-template__body, .app-body, .govuk-main-wrapper
 .govuk-table__row:hover .govuk-table__cell { background: #f1f6fb; }
 @media (max-width: 1200px) { .split { grid-template-columns: 1fr; } .pane { position: static; max-height: none; } }
 @media (max-width: 800px) { .app-search { margin: 0; max-width: none; } }
+
+/* Padded surfaces: the page is a white sheet; every panel inside it has its own background and padding */
+.app-body { padding: 24px 32px 32px; }
+.app-top { margin: -24px -32px 24px; }
+.app-body > main.govuk-main-wrapper { background: #fff !important; border: 1px solid #e1e4e8; padding: 28px 32px 32px; box-shadow: 0 1px 0 rgba(11,12,12,.06); }
+.app-body .panel { background: #f8f8f8; border: 1px solid #e1e4e8; border-top: 1px solid #e1e4e8; box-shadow: none; padding: 20px 22px; margin-bottom: 20px; }
+.app-body .stat { background: #f8f8f8; border: 1px solid #e1e4e8; border-top: 3px solid #1d70b8; padding: 14px 16px; }
+.app-body .panel .qlist, .app-body .panel .wlist, .app-body .panel .govuk-table { background: #fff; }
+.app-body .tgroup-head { padding: 0 0 12px; margin-bottom: 0; }
+.app-body .filter-bar, .app-body .filter-bar.compact { background: #f8f8f8; border: 1px solid #e1e4e8; padding: 14px 16px; margin: 0 0 18px; }
+.app-body .filter-bar .govuk-form-group { margin-bottom: 0; }
+.app-body .kpi { padding: 18px 20px; }
+.app-body .rail-card, .app-body .pane, .app-body .nextup { padding: 20px 22px; }
+.app-body .case-head { padding: 22px 24px; }
+.app-body .govuk-inset-text { background: #f8f8f8; border-left-width: 5px; padding: 16px 20px; margin: 20px 0; }
+.app-body .callout { background: #f8f8f8; padding: 16px 20px; }
+.app-body .catcell, .app-body .qlist, .app-body .wlist { border: 1px solid #e1e4e8; }
+.app-body .catcell { background: #f8f8f8; padding: 14px 16px; }
+.app-body .qlist, .app-body .wlist { background: #fff; }
+.app-body .seg.tabs { background: #f3f2f1; padding: 5px; }
+.app-body .sbar { margin-top: 4px; }
+.app-body .two-col aside .panel { padding: 18px 20px; }
+@media (max-width: 800px) { .app-body { padding: 16px 12px 24px; } .app-top { margin: -16px -12px 16px; } .app-body > main.govuk-main-wrapper { padding: 18px 16px 24px; } }
