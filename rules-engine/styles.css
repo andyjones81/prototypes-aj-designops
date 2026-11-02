@@ -522,3 +522,4 @@ html, html.govuk-template, .govuk-template__body, .app-body, .govuk-main-wrapper
 .flow-h{font-size:1.25rem;margin:28px 0 12px;padding-top:16px;border-top:1px solid #b1b4b6}
 .flow-group{background:#fff;padding:16px 20px;margin-bottom:16px;border:1px solid #e1e4e8}.flow-gt{margin:0 0 8px;font-size:1.05rem}
 .flow .fx{margin-top:10px;padding-left:14px;border-left:4px solid #b1b4b6}
+.prefill{display:inline-block;background:#d2e2f1;color:#003078;font-size:.75rem;font-weight:700;padding:1px 6px;margin-left:6px}

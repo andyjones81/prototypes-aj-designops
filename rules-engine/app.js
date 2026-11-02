@@ -291,7 +291,7 @@ const actionCard = (a) => '<article class="kcard" draggable="true" data-id="' + 
   '<div class="kcard-top">' + (a.ruleId ? ruleChip(a.ruleId) : '<span></span>') + '<span class="kcard-id">' + a.id + '</span></div>' +
   '<h3 class="kcard-title"><a class="govuk-link govuk-link--no-visited-state" href="#/actions/' + a.id + '">' + esc(a.title) + '</a></h3>' +
   '<p class="kcard-work">' + esc(reqTitle(a)) + '<br><a class="govuk-link govuk-link--no-visited-state" href="#/work/' + a.workId + '">' + esc(workName(a.workId)) + '</a></p>' +
-  '<div class="kcard-foot">' + evBadge(a) + (actLegal(a) ? tag('Legal', 'govuk-tag--red') : '') + '<button type="button" class="link-btn" data-act="activity-open" data-id="' + a.id + '" data-type="evidence">Record activity<span class="govuk-visually-hidden"> for ' + esc(a.title) + '</span></button></div></article>';
+  '<div class="kcard-foot">' + evBadge(a) + (actLegal(a) ? tag('Legal', 'govuk-tag--red') : '') + '<a class="link-btn" href="#/actions/' + a.id + '">Record activity<span class="govuk-visually-hidden"> for ' + esc(a.title) + '</span></a></div></article>';
 function banner() {
   if (!flash) return '';
   const html = '<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" data-module="govuk-notification-banner"><div class="govuk-notification-banner__header"><h2 class="govuk-notification-banner__title">' + esc(flash.title) + '</h2></div><div class="govuk-notification-banner__content">' + flash.html + '</div></div>';
@@ -544,7 +544,7 @@ function filterForm(base, p, controls, keep) {
 const actLegal = (a) => !!actDef(a).legal;
 const actPrio = (a) => (a.status === 'Exception' ? 0 : actLegal(a) && isOpen(a) ? 1 : a.status === 'In progress' ? 2 : a.status === 'Not started' ? 3 : 4);
 const byPrio = (a, b) => actPrio(a) - actPrio(b) || a.id.localeCompare(b.id);
-const recordBtn = (a, label) => '<button type="button" class="govuk-button govuk-button--secondary btn-sm" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="evidence">' + (label || 'Record activity') + '<span class="govuk-visually-hidden"> for ' + esc(a.title) + '</span></button>';
+const recordBtn = (a, label) => '<a class="govuk-button govuk-button--secondary btn-sm" role="button" draggable="false" data-module="govuk-button" href="#/actions/' + a.id + '">' + (label || 'Record activity') + '<span class="govuk-visually-hidden"> for ' + esc(a.title) + '</span></a>';
 const workLink = (id) => '<a class="govuk-link govuk-link--no-visited-state" href="#/work/' + id + '">' + esc(workName(id)) + '</a>';
 const nextAction = (w) => S.actions.filter((a) => a.workId === w.id && isOpen(a)).sort(byPrio)[0];
 
@@ -1221,7 +1221,7 @@ function vWorkDetail(id) {
   if (tab === 'todo') {
     const list = open.slice().sort(byPrio), nx = list[0];
     body = (nx ? '<section class="nextup"><div><p class="nextup-k">Next up</p><h2 class="nextup-t"><a class="govuk-link govuk-link--no-visited-state" href="#/actions/' + nx.id + '">' + esc(nx.title) + '</a></h2><p class="nextup-s">' + esc(reqTitle(nx)) + (actLegal(nx) ? ' · <strong class="red">Legal requirement</strong>' : '') + '</p></div>' +
-      '<div class="nextup-b"><button type="button" class="govuk-button" data-module="govuk-button" data-act="activity-open" data-id="' + nx.id + '" data-type="evidence">Record activity</button></div></section>' : '<div class="panel"><p class="govuk-body">Nothing left to do. Every action is complete.</p></div>') +
+      '<div class="nextup-b"><a class="govuk-button" role="button" draggable="false" data-module="govuk-button" href="#/actions/' + nx.id + '">Record activity</a></div></section>' : '<div class="panel"><p class="govuk-body">Nothing left to do. Every action is complete.</p></div>') +
       (list.length > 1 ? '<ul class="qlist">' + list.slice(1).map((a) => qrow(a, false)).join('') + '</ul>' : '');
   } else if (tab === 'done') {
     body = doneL.length ? '<ul class="qlist">' + doneL.map((a) => qrow(a, false)).join('') + '</ul>' : '<div class="panel"><p class="govuk-body">Nothing is done yet.</p></div>';
@@ -1272,7 +1272,7 @@ function vActionDetail(id) {
   return banner() + '<a href="#/work/' + a.workId + '" class="govuk-back-link">Back to ' + esc(workName(a.workId)) + '</a>' +
     '<span class="govuk-caption-m">' + a.id + ' · <a class="govuk-link" href="#/work/' + a.workId + '">' + esc(workName(a.workId)) + '</a>' + (w ? ' · ' + esc(w.stage) : '') + '</span>' +
     pageHead(esc(a.title), statusTag(a.status) + ' ' + legalTag(d) + (a.ruleVersion ? ' <span class="muted">Rule ' + esc(a.ruleId) + ' v' + a.ruleVersion + '</span>' : ''),
-      act ? '<button type="button" class="govuk-button" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="evidence">Add evidence</button><button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="note">Add note or update status</button>' : '') +
+      act ? (flowKind(a) ? '' : '<button type="button" class="govuk-button" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="evidence">Add evidence</button>') + '<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="note">Add note or update status</button>' : '') +
     '<div class="two-col"><section>' + flowPanel(a) +
     '<h2 class="govuk-heading-m">About this action</h2><dl class="govuk-summary-list"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">What this involves</dt><dd class="govuk-summary-list__value">' + stepList(d.description) + '</dd></div>' +
     '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Expected evidence</dt><dd class="govuk-summary-list__value">' + (d.evidence ? esc(d.evidence) : '<span class="muted">Not yet defined.</span>') + '</dd></div>' +
@@ -1309,6 +1309,13 @@ const SCR_GROUPS = [
     ['rights', 'Prevent people from exercising a right or using a service or a contract.', 'Who, why and what is prevented?'],
     ['admLegal', 'Use automated decision-making with a legal or similar significant effect.', 'What decisions, who is affected and why?']] }
 ];
+const CURRENT_USER = { name: 'Andy Jones', email: 'andy.jones@education.gov.uk' };
+function screenerPrefill(w) {
+  const v = { name: w.title || '', uname: CURRENT_USER.name, uemail: CURRENT_USER.email, what: w.description || '', wider: 'Yes', x_wider: (w.title || '') + ' (' + (w.type || 'work') + ', ' + (w.stage || '') + ')', ai: 'No', pre: ['name', 'uname', 'uemail', 'what'] };
+  const n = parseInt(String(w.estTransactions || '').replace(/\D/g, ''), 10) || 0;
+  if (w.personalData === 'Yes' && n >= 10000) { v.f_large = 'Yes'; v.x_f_large = 'About ' + n.toLocaleString('en-GB') + ' transactions a year. Users: ' + ((w.users || []).join(', ') || 'not set') + '. Channels: ' + ((w.channel || []).join(', ') || 'not set') + '.'; }
+  return v;
+}
 const SCR_FACTORS = SCR_GROUPS.reduce((l, g) => l.concat(g.f.map((x) => ({ key: x[0], text: x[1], prompt: x[2], g: g.id }))), []);
 const REVIEW_MS = 10000, ENROL_STEPS = ['Checking the service details', 'Sending the enrolment request to AISS', 'Creating the service record', 'Setting up the accessibility statement', 'Confirming enrolment'], ENROL_STEP_MS = 2000;
 let flowTimer = null;
@@ -1348,25 +1355,29 @@ function flowPanel(a) {
   const again = '<p class="flow-p"><button type="button" class="link-btn" data-act="flow-reset" data-id="' + a.id + '">Start again</button></p>';
   if (k === 'screener') {
     const names = ['Complete the form', 'Submitted', 'Data protection review', 'Outcome'];
+    const draft = !f || f.stage === 'draft', v = draft ? (f ? f.answers : screenerPrefill(w)) : {};
     const yn = (name, label, extra) => '<div class="govuk-form-group" id="fq-' + name + '"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend">' + label + '</legend><div class="fq-err"></div><div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">' +
-      ['Yes', 'No'].map((v) => '<div class="govuk-radios__item"><input class="govuk-radios__input" id="fq-' + name + '-' + v + '" name="' + name + '" type="radio" value="' + v + '" data-act="flow-yn"><label class="govuk-label govuk-radios__label" for="fq-' + name + '-' + v + '">' + v + '</label></div>').join('') + '</div></fieldset>' +
-      (extra ? '<div class="fx" hidden><label class="govuk-label" for="fx-' + name + '">' + esc(extra) + '</label><textarea class="govuk-textarea" id="fx-' + name + '" name="x_' + name + '" rows="3"></textarea></div>' : '') + '</div>';
-    const txt = (name, label, hint, rows) => '<div class="govuk-form-group" id="fq-' + name + '"><label class="govuk-label govuk-label--s" for="fq-' + name + '-t">' + label + '</label>' + (hint ? '<div class="govuk-hint">' + hint + '</div>' : '') + '<div class="fq-err"></div>' + (rows ? '<textarea class="govuk-textarea" id="fq-' + name + '-t" name="' + name + '" rows="' + rows + '"></textarea>' : '<input class="govuk-input" id="fq-' + name + '-t" name="' + name + '" type="text">') + '</div>';
-    if (!f) {
-      return head('High risk screening document', 'Answer these questions about the processing activity. The Office of the Data Protection Officer will review them and say whether a DPIA is needed.') + flowTracker(names, 0) +
+      ['Yes', 'No'].map((o) => '<div class="govuk-radios__item"><input class="govuk-radios__input" id="fq-' + name + '-' + o + '" name="' + name + '" type="radio" value="' + o + '"' + (v[name] === o ? ' checked' : '') + ' data-act="flow-yn"><label class="govuk-label govuk-radios__label" for="fq-' + name + '-' + o + '">' + o + '</label></div>').join('') + '</div></fieldset>' +
+      (extra ? '<div class="fx"' + (v[name] === 'Yes' ? '' : ' hidden') + '><label class="govuk-label" for="fx-' + name + '">' + esc(extra) + '</label><textarea class="govuk-textarea" id="fx-' + name + '" name="x_' + name + '" rows="3">' + esc(v['x_' + name] || '') + '</textarea></div>' : '') + '</div>';
+    const txt = (name, label, hint, rows, type) => '<div class="govuk-form-group" id="fq-' + name + '"><label class="govuk-label govuk-label--s" for="fq-' + name + '-t">' + label + (v.pre && v.pre.indexOf(name) >= 0 ? ' <span class="prefill">Pre-filled</span>' : '') + '</label>' + (hint ? '<div class="govuk-hint">' + hint + '</div>' : '') + '<div class="fq-err"></div>' +
+      (rows ? '<textarea class="govuk-textarea" id="fq-' + name + '-t" name="' + name + '" rows="' + rows + '">' + esc(v[name] || '') + '</textarea>' : '<input class="govuk-input' + (type === 'email' ? '' : ' govuk-!-width-two-thirds') + '" id="fq-' + name + '-t" name="' + name + '" type="' + (type || 'text') + '" value="' + esc(v[name] || '') + '"' + (type === 'email' ? ' spellcheck="false"' : '') + '>') + '</div>';
+    if (draft) {
+      return head('High risk screening document', 'Completing this form is the evidence for this action. Save a draft at any time and come back to finish it. When you send it, the Office of the Data Protection Officer reviews it.') + flowTracker(names, 0) +
+        (f ? '<div class="govuk-inset-text">Draft saved ' + fmt(f.savedAt) + '. Nothing has been sent yet.</div>' : '') +
+        '<div class="govuk-inset-text">We have filled in what we know from <strong>' + esc(w.title || 'the work item') + '</strong> and your account. Check every answer.</div>' +
         '<form id="flow-screener" data-id="' + a.id + '" novalidate><h3 class="flow-h">1. About your processing activity</h3>' +
-        txt('name', 'Name of the processing activity', '', 0).replace('name="name" type="text"', 'name="name" type="text" value="' + esc(w.title || '') + '"') + txt('owner', 'Your name and email', '', 0) + txt('team', 'Group, directorate or team responsible', '', 0) + txt('sro', 'Senior Responsible Officer (SRO) for this activity', '', 0) +
+        txt('name', 'Name of the processing activity') + txt('uname', 'Your name') + txt('uemail', 'Your email address', '', 0, 'email') + txt('team', 'Group, directorate or team responsible') + txt('sro', 'Senior Responsible Officer (SRO) for this activity') +
         yn('wider', 'Does this form part of a wider service, contract or activity?', 'Name of the service and how this activity fits into it') + txt('dpias', 'Linked DPIAs (optional)', 'Have you considered updating an existing DPIA instead? Does this replace one?', 2) +
         '<h3 class="flow-h">2. Describe the processing</h3>' + txt('what', 'What are you doing?', 'Do not use acronyms or terms only your work area will understand.', 3) + txt('why', 'Why are you doing it?', '', 3) +
         yn('legislation', 'Does it involve or require new legislation?', 'Give details') + yn('ai', 'Are you intending to use AI, such as machine learning or large language models?', 'Give details') +
         '<h3 class="flow-h">3. Risk factors</h3><p class="govuk-body">Read the definitions and guidance before you answer. For every Yes, explain why, with evidence that you meet the criteria.</p>' +
-        SCR_GROUPS.map((g, gi) => '<div class="flow-group"><h4 class="flow-gt">' + 'Set ' + (gi + 1) + ' of ' + SCR_GROUPS.length + ': ' + esc(g.t) + '</h4>' + (g.hint ? '<p class="govuk-hint">' + esc(g.hint) + '</p>' : '') + g.f.map((x) => yn('f_' + x[0], esc(x[1]), x[2])).join('') + '</div>').join('') +
+        SCR_GROUPS.map((g, gi) => '<div class="flow-group"><h4 class="flow-gt">Set ' + (gi + 1) + ' of ' + SCR_GROUPS.length + ': ' + esc(g.t) + '</h4>' + (g.hint ? '<p class="govuk-hint">' + esc(g.hint) + '</p>' : '') + g.f.map((x) => yn('f_' + x[0], esc(x[1]), x[2])).join('') + '</div>').join('') +
         '<h3 class="flow-h">4. Good practice</h3>' + yn('major', 'Is this a major project involving personal data, such as a high-profile new national programme?', 'Explain, with any relevant press coverage or historical background') +
-        '<button class="govuk-button" type="submit" data-module="govuk-button">Send to the data protection team</button></form></section>';
+        '<div class="govuk-button-group"><button class="govuk-button" type="submit" data-module="govuk-button">Send to the data protection team</button><button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="flow-draft" data-id="' + a.id + '">Save draft</button></div></form></section>';
     }
     const ys = SCR_FACTORS.filter((x) => f.answers['f_' + x.key] === 'Yes');
     const row = (k, v) => '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">' + k + '</dt><dd class="govuk-summary-list__value">' + v + '</dd></div>';
-    const ans = '<dl class="govuk-summary-list govuk-summary-list--no-border">' + row('Activity', esc(f.answers.name)) + row('Team', esc(f.answers.team)) + row('SRO', esc(f.answers.sro)) + row('What and why', esc(f.answers.what) + '<br>' + esc(f.answers.why)) +
+    const ans = '<dl class="govuk-summary-list govuk-summary-list--no-border">' + row('Activity', esc(f.answers.name)) + row('Completed by', esc(f.answers.uname) + ', ' + esc(f.answers.uemail)) + row('Team', esc(f.answers.team)) + row('SRO', esc(f.answers.sro)) + row('What and why', esc(f.answers.what) + '<br>' + esc(f.answers.why)) +
       row('AI', esc(f.answers.ai || 'No') + (f.answers.x_ai ? ': ' + esc(f.answers.x_ai) : '')) + row('Major project', esc(f.answers.major || 'No')) +
       row('Risk factors', ys.length ? '<ul class="govuk-list govuk-list--bullet">' + ys.map((x) => '<li>' + esc(x.text) + (f.answers['x_f_' + x.key] ? '<br><span class="muted">' + esc(f.answers['x_f_' + x.key]) + '</span>' : '') + '</li>').join('') + '</ul>' : 'None') + '</dl>';
     if (f.stage === 'review') {
@@ -1393,6 +1404,15 @@ function flowPanel(a) {
   }
   return head('Enrolment complete') + flowTracker(names, 3) + '<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"><div class="govuk-notification-banner__header"><h2 class="govuk-notification-banner__title">Success</h2></div><div class="govuk-notification-banner__content"><p class="govuk-notification-banner__heading">' + esc(w.title || 'The service') + ' is enrolled in AISS</p><p class="govuk-body">Reference <strong>' + esc(f.ref) + '</strong>. AISS will email ' + esc(f.email) + ' when accessibility checks are due. Next, publish your accessibility statement.</p></div></div>' + again + '</section>';
 }
+function saveDraft(form) {
+  const a = S.actions.find((x) => x.id === form.dataset.id); if (!a) return;
+  const d = formData(form), answers = {}; Object.keys(d).forEach((k) => { answers[k] = typeof d[k] === 'string' ? d[k].trim() : d[k]; });
+  const first = !a.flow;
+  a.flow = { stage: 'draft', answers, savedAt: now() };
+  if (first) a.updates.push({ at: now(), type: 'system', text: 'Started the High Risk Screening Document (draft saved).' });
+  if (a.status === 'Not started') { a.updates.push({ at: now(), type: 'system', text: 'Status changed from Not started to In progress.' }); a.status = 'In progress'; }
+  save(); flash = { title: 'Success', html: '<p class="govuk-notification-banner__heading">Draft saved. You can finish it later.</p>' }; rerender();
+}
 function flowErr(form, key, msg) {
   const g = form.querySelector('#' + key); if (!g) return;
   g.classList.add('govuk-form-group--error'); const e = g.querySelector('.fq-err'); e.innerHTML = '<p class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> ' + esc(msg) + '</p>';
@@ -1403,14 +1423,14 @@ function submitFlow(form) {
   form.querySelectorAll('.govuk-form-group--error').forEach((g) => { g.classList.remove('govuk-form-group--error'); g.querySelector('.fq-err').innerHTML = ''; });
   if (form.id === 'flow-screener') {
     const req = (k, m) => { if (!(d[k] || '').trim()) { flowErr(form, 'fq-' + k, m); bad++; } };
-    ['name:Enter the name of the processing activity', 'owner:Enter your name and email', 'team:Enter the team responsible', 'sro:Enter the Senior Responsible Officer', 'what:Enter what you are doing', 'why:Enter why you are doing it'].forEach((x) => req(x.split(':')[0], x.split(':')[1]));
+    ['name:Enter the name of the processing activity', 'uname:Enter your name', 'uemail:Enter your email address',  'team:Enter the team responsible', 'sro:Enter the Senior Responsible Officer', 'what:Enter what you are doing', 'why:Enter why you are doing it'].forEach((x) => req(x.split(':')[0], x.split(':')[1]));
     ['wider', 'legislation', 'ai', 'major'].concat(SCR_FACTORS.map((x) => 'f_' + x.key)).forEach((k) => {
       if (!d[k]) { flowErr(form, 'fq-' + k, 'Select yes or no'); bad++; }
       else if (d[k] === 'Yes' && /^(f_|major$)/.test(k) && !(d['x_' + k] || '').trim()) { flowErr(form, 'fq-' + k, 'Explain why you answered yes'); bad++; }
     });
     if (bad) { const g = form.querySelector('.govuk-form-group--error'); if (g) g.scrollIntoView({ block: 'center' }); return; }
     const answers = {}; Object.keys(d).forEach((k) => { answers[k] = typeof d[k] === 'string' ? d[k].trim() : d[k]; });
-    a.flow = { stage: 'review', answers, start: Date.now(), submittedAt: now() };
+    a.flow = { stage: 'review', answers, start: Date.now(), submittedAt: now(), savedAt: a.flow && a.flow.savedAt };
     const n = SCR_FACTORS.filter((x) => answers['f_' + x.key] === 'Yes').length;
     a.updates.push({ at: now(), type: 'evidence', text: 'High risk screening document submitted for review (' + n + ' risk factor' + (n === 1 ? '' : 's') + ' identified).' });
     a.updates.push({ at: now(), type: 'system', text: 'Sent to the Office of the Data Protection Officer for review.' });
@@ -1480,6 +1500,7 @@ document.addEventListener('click', (e) => {
   const t = e.target.closest('[data-act]'); if (!t) return;
   if (t.dataset.act === 'cats-open') openCats(t.dataset.id, t.dataset.field || '');
   else if (t.dataset.act === 'activity-open') openActivity(t.dataset.id, t.dataset.type);
+  else if (t.dataset.act === 'flow-draft') saveDraft(t.closest('form'));
   else if (t.dataset.act === 'flow-reset') { const a = S.actions.find((x) => x.id === t.dataset.id); if (a) { delete a.flow; a.updates.push({ at: now(), type: 'system', text: 'Workflow restarted.' }); save(); rerender(); } }
   else if (t.dataset.act === 'add-action-open') openAddAction(t.dataset.id);
 });
