@@ -1319,6 +1319,8 @@ function screenerPrefill(w) {
 const SCR_FACTORS = SCR_GROUPS.reduce((l, g) => l.concat(g.f.map((x) => ({ key: x[0], text: x[1], prompt: x[2], g: g.id }))), []);
 const REVIEW_MS = 10000, ENROL_STEPS = [['Check the service details', 'Validating the service URL and contact email'], ['Send the enrolment request', 'POST /v1/services to the AISS API'], ['Create the service record', 'AISS registers the service and issues a reference'], ['Set up the accessibility statement', 'Creating the statement template for the service'], ['Confirm enrolment', 'Receiving the confirmation from AISS']], ENROL_STEP_MS = 2000;
 let flowTimer = null;
+const STMT_CHECKS = [['Reaching the statement', 'Fetching the statement page'], ['Matching it to your service', 'Checking it is published against your service'], ['Checking the AISS record', 'Confirming AISS holds the same statement']];
+const aissUrl = (f) => 'https://accessibility-statements.education.gov.uk/services/' + encodeURIComponent(f.ref || '');
 const flowKind = (a) => (a.title === 'Complete screener' ? 'screener' : a.title === 'Enrol service' ? 'enrol' : null);
 function screenerOutcome(ans) {
   const yes = SCR_FACTORS.filter((f) => ans['f_' + f.key] === 'Yes'), ico = yes.filter((f) => f.g === 'g1'), other = yes.filter((f) => f.g !== 'g1');
@@ -1340,6 +1342,10 @@ function flowTick(a) {
   } else if (f.stage === 'enrolling' && Date.now() - f.start >= ENROL_STEPS.length * ENROL_STEP_MS) {
     f.stage = 'enrolled'; f.ref = 'AISS-' + (10000 + Math.floor(Math.random() * 89999)); f.doneAt = now();
     a.updates.push({ at: now(), type: 'evidence', text: 'Enrolment confirmed by AISS. Reference ' + f.ref + '.' });
+    a.updates.push({ at: now(), type: 'system', text: 'Next: get the accessibility statement link from AISS and add it to the service.' }); save();
+  } else if (f.stage === 'checking' && Date.now() - f.checkStart >= STMT_CHECKS.length * ENROL_STEP_MS) {
+    f.stage = 'complete'; f.completeAt = now();
+    a.updates.push({ at: now(), type: 'evidence', text: 'Accessibility statement linked from the service and verified.', link: f.stmt });
     a.updates.push({ at: now(), type: 'system', text: 'Status changed from ' + a.status + ' to Complete.' }); a.status = 'Complete'; save();
   }
 }
@@ -1350,7 +1356,7 @@ function flowPanel(a) {
   const k = flowKind(a); if (!k) return '';
   const w = S.works.find((x) => x.id === a.workId) || {}, f = a.flow;
   clearTimeout(flowTimer);
-  if (f && (f.stage === 'review' || f.stage === 'enrolling')) flowTimer = setTimeout(() => { if (location.hash.indexOf('#/actions/' + a.id) === 0) rerender(); }, 1000);
+  if (f && (f.stage === 'review' || f.stage === 'enrolling' || f.stage === 'checking')) flowTimer = setTimeout(() => { if (location.hash.indexOf('#/actions/' + a.id) === 0) rerender(); }, 1000);
   const head = (t, p) => '<section class="flow"><h2 class="flow-t">' + t + '</h2>' + (p ? '<p class="flow-p">' + p + '</p>' : '');
   const again = '<p class="flow-p"><button type="button" class="link-btn" data-act="flow-reset" data-id="' + a.id + '">Start again</button></p>';
   if (k === 'screener') {
@@ -1389,15 +1395,15 @@ function flowPanel(a) {
       '<h3 class="flow-h">Data protection team review</h3><dl class="govuk-summary-list">' + row('Is a DPIA required by UK GDPR or the ICO?', o.dpia) + row('Should the SRO consider a DPIA regardless?', o.advise) + row('Rationale', esc(o.rationale)) + row('Reviewed by', 'Office of the Data Protection Officer, ' + fmt(f.doneAt)) + '</dl>' +
       '<details class="govuk-details"><summary class="govuk-details__summary"><span class="govuk-details__summary-text">Your answers</span></summary><div class="govuk-details__text">' + ans + '</div></details>' + again + '</section>';
   }
-  const names = ['Confirm details', 'Enrolling with AISS', 'Enrolled'];
+  const names = ['Confirm details', 'Enrolling with AISS', 'Get statement link', 'Complete'];
   if (!f) {
     return head('Enrol in the Accessibility Issues and Statement Service (AISS)', 'Enrolment is sent to AISS for you. Check the details, then start.') + flowTracker(names, 0) +
       '<form id="flow-enrol" data-id="' + a.id + '" novalidate><dl class="govuk-summary-list"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Service</dt><dd class="govuk-summary-list__value">' + esc(w.title || '') + '</dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Stage</dt><dd class="govuk-summary-list__value">' + esc(w.stage || '') + '</dd></div></dl>' +
       '<div class="govuk-form-group" id="fe-url"><label class="govuk-label govuk-label--s" for="fe-url-t">Service URL</label><div class="fq-err"></div><input class="govuk-input" id="fe-url-t" name="url" type="url" value="https://' + esc((w.title || 'service').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')) + '.service.gov.uk"></div>' +
-      '<div class="govuk-form-group" id="fe-email"><label class="govuk-label govuk-label--s" for="fe-email-t">Contact email for accessibility issues</label><div class="fq-err"></div><input class="govuk-input" id="fe-email-t" name="email" type="email" spellcheck="false"></div>' +
+      '<div class="govuk-form-group" id="fe-email"><label class="govuk-label govuk-label--s" for="fe-email-t">Contact email for accessibility issues</label><div class="fq-err"></div><input class="govuk-input" id="fe-email-t" name="email" type="email" spellcheck="false" value="' + esc(CURRENT_USER.email) + '"></div>' +
       '<button class="govuk-button" type="submit" data-module="govuk-button">Enrol service</button></form></section>';
   }
-  const stepsHtml = (idx, f2) => '<ol class="enrol-steps">' + ENROL_STEPS.map((t, i) => {
+  const stepsHtml = (idx, list) => '<ol class="enrol-steps">' + (list || ENROL_STEPS).map((t, i) => {
     const st = i < idx ? 'done' : i === idx ? 'on' : '';
     return '<li class="' + st + '"><span class="enrol-ic">' + (i < idx ? '✓' : i === idx ? '<span class="spin"></span>' : i + 1) + '</span><div class="enrol-tx"><strong>' + esc(t[0]) + '</strong><span>' + esc(t[1]) + '</span></div><span class="enrol-st">' + (i < idx ? 'Done' : i === idx ? 'In progress' : 'Waiting') + '</span></li>';
   }).join('') + '</ol>';
@@ -1406,9 +1412,21 @@ function flowPanel(a) {
     return head('Enrolling with AISS', 'We are sending your service to the Accessibility Issues and Statement Service. You do not need to do anything.') + flowTracker(names, 1) +
       '<div class="enrol-card"><div class="enrol-top"><div><strong>' + esc(w.title || 'Service') + '</strong><br><span class="muted">' + esc(f.url) + '</span></div><div class="enrol-pct"><b>' + pct + '%</b><span class="muted">Step ' + Math.min(idx + 1, ENROL_STEPS.length) + ' of ' + ENROL_STEPS.length + '</span></div></div>' + bar(pct, 'Enrolment ' + pct + '% complete') + stepsHtml(idx) + '</div></section>';
   }
+  const done = f.stage === 'complete', bannerLink = aissUrl(f);
   const receipt = JSON.stringify({ status: 'enrolled', reference: f.ref, service: w.title, url: f.url, contact: f.email, enrolledAt: f.doneAt }, null, 2);
-  return head('Enrolment complete') + flowTracker(names, 3) + '<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"><div class="govuk-notification-banner__header"><h2 class="govuk-notification-banner__title">Success</h2></div><div class="govuk-notification-banner__content"><p class="govuk-notification-banner__heading">' + esc(w.title || 'The service') + ' is enrolled in AISS</p><p class="govuk-body">Reference <strong>' + esc(f.ref) + '</strong>. AISS will email ' + esc(f.email) + ' when accessibility checks are due. Next, publish your accessibility statement.</p></div></div>' +
-    '<div class="enrol-card">' + stepsHtml(ENROL_STEPS.length) + '</div><details class="govuk-details"><summary class="govuk-details__summary"><span class="govuk-details__summary-text">Response from AISS</span></summary><div class="govuk-details__text"><pre class="api-out">' + esc(receipt) + '</pre></div></details>' + again + '</section>';
+  const banner = '<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"><div class="govuk-notification-banner__header"><h2 class="govuk-notification-banner__title">Success</h2></div><div class="govuk-notification-banner__content"><p class="govuk-notification-banner__heading">' + esc(w.title || 'The service') + ' is enrolled in AISS</p><p class="govuk-body">Reference <strong>' + esc(f.ref) + '</strong>. AISS will email ' + esc(f.email) + ' when accessibility checks are due.</p></div></div>';
+  const receiptHtml = '<details class="govuk-details"><summary class="govuk-details__summary"><span class="govuk-details__summary-text">Response from AISS</span></summary><div class="govuk-details__text"><pre class="api-out">' + esc(receipt) + '</pre></div></details>';
+  if (f.stage === 'enrolled') {
+    return head('Add your accessibility statement') + flowTracker(names, 2) + banner +
+      '<div class="enrol-card"><h3 class="flow-h">Get your statement link from AISS</h3><p class="govuk-body">AISS has created an accessibility statement for ' + esc(w.title || 'your service') + '. Open it, complete any missing sections, then copy the public link and add it to your service footer.</p><p><a class="govuk-button govuk-button--secondary" data-module="govuk-button" href="' + esc(bannerLink) + '" target="_blank" rel="noopener noreferrer">Open your statement in AISS (opens in new tab)</a></p>' +
+      '<form id="flow-stmt" data-id="' + a.id + '" novalidate><div class="govuk-form-group" id="fs-url"><label class="govuk-label govuk-label--s" for="fs-url-t">Link to your accessibility statement</label><div class="govuk-hint">The link you have added to your service, for example ' + esc(f.url) + '/accessibility</div><div class="fq-err"></div><input class="govuk-input" id="fs-url-t" name="stmt" type="url" spellcheck="false" value="' + esc((f.stmtDraft || '')) + '"></div><button class="govuk-button" type="submit" data-module="govuk-button">Check and complete</button></form></div>' + receiptHtml + again + '</section>';
+  }
+  if (f.stage === 'checking') {
+    const el = Date.now() - f.checkStart, idx = Math.min(STMT_CHECKS.length, Math.floor(el / ENROL_STEP_MS)), pct = Math.min(99, Math.round(el / (STMT_CHECKS.length * ENROL_STEP_MS) * 100));
+    return head('Checking your statement') + flowTracker(names, 2) + '<div class="enrol-card"><div class="enrol-top"><div><strong>Verifying your accessibility statement</strong><br><span class="muted">' + esc(f.stmt) + '</span></div><div class="enrol-pct"><b>' + pct + '%</b></div></div>' + bar(pct, 'Checks ' + pct + '% complete') + stepsHtml(idx, STMT_CHECKS) + '</div></section>';
+  }
+  return head('Enrolment complete') + flowTracker(names, 4) + banner +
+    '<div class="enrol-card"><h3 class="flow-h">Accessibility statement</h3><dl class="govuk-summary-list"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Statement link</dt><dd class="govuk-summary-list__value"><a class="govuk-link" href="' + esc(f.stmt) + '" target="_blank" rel="noopener noreferrer">' + esc(f.stmt) + '</a></dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Managed in AISS</dt><dd class="govuk-summary-list__value"><a class="govuk-link" href="' + esc(bannerLink) + '" target="_blank" rel="noopener noreferrer">Edit statement in AISS</a></dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Verified</dt><dd class="govuk-summary-list__value">' + fmt(f.completeAt) + '</dd></div></dl>' + stepsHtml(STMT_CHECKS.length, STMT_CHECKS) + '</div>' + receiptHtml + again + '</section>';
 }
 function saveDraft(form) {
   const a = S.actions.find((x) => x.id === form.dataset.id); if (!a) return;
@@ -1440,6 +1458,14 @@ function submitFlow(form) {
     const n = SCR_FACTORS.filter((x) => answers['f_' + x.key] === 'Yes').length;
     a.updates.push({ at: now(), type: 'evidence', text: 'High risk screening document submitted for review (' + n + ' risk factor' + (n === 1 ? '' : 's') + ' identified).' });
     a.updates.push({ at: now(), type: 'system', text: 'Sent to the Office of the Data Protection Officer for review.' });
+  } else if (form.id === 'flow-stmt') {
+    const f = a.flow, u = (d.stmt || '').trim(); f.stmtDraft = u; let host = '', svc = '';
+    try { host = new URL(u).hostname; svc = new URL(f.url).hostname; } catch (e) { host = ''; }
+    if (!host || !/^https:/i.test(u)) flowErr(form, 'fs-url', 'Enter the full link, starting with https://');
+    else if (!/accessib/i.test(u)) flowErr(form, 'fs-url', 'The link should go to your accessibility statement, for example ' + f.url + '/accessibility');
+    else if (host !== svc && !/\.gov\.uk$/.test(host)) flowErr(form, 'fs-url', 'The statement must be on your service (' + svc + ') or a gov.uk domain');
+    else { f.stmt = u; f.stage = 'checking'; f.checkStart = Date.now(); a.updates.push({ at: now(), type: 'system', text: 'Statement link submitted for verification: ' + u }); save(); rerender(); return; }
+    save(); return;
   } else {
     if (!/^https?:\/\/\S+\.\S+/i.test((d.url || '').trim())) { flowErr(form, 'fe-url', 'Enter a service URL that starts with https://'); bad++; }
     if (!/^\S+@\S+\.\S+$/.test((d.email || '').trim())) { flowErr(form, 'fe-email', 'Enter an email address, like name@example.gov.uk'); bad++; }
@@ -1499,7 +1525,7 @@ document.addEventListener('submit', (e) => {
   const f = e.target;
   if (f.id === 'cats-form') { e.preventDefault(); e.stopImmediatePropagation(); applyCats(f); }
   else if (f.id === 'activity-form') { e.preventDefault(); e.stopImmediatePropagation(); saveActivity(f); }
-  else if (f.id === 'flow-screener' || f.id === 'flow-enrol') { e.preventDefault(); e.stopImmediatePropagation(); submitFlow(f); }
+  else if (f.id === 'flow-screener' || f.id === 'flow-enrol' || f.id === 'flow-stmt') { e.preventDefault(); e.stopImmediatePropagation(); submitFlow(f); }
   else if (f.id === 'addaction-form') { e.preventDefault(); e.stopImmediatePropagation(); saveAddAction(f); }
 }, true);
 document.addEventListener('click', (e) => {
