@@ -648,6 +648,11 @@ function render(keep) {
     li.classList.toggle('on', on);
     if (on) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
   });
+  const cr = document.getElementById('crumbs');
+  if (cr) {
+    const sec = { dashboard: 'Dashboard', work: 'Work', actions: 'Actions', tasks: 'Tasks', triggers: 'Triggers', rules: 'Rules', api: 'API' }, parts = location.hash.replace(/^#\//, '').split('?')[0].split('/').filter(Boolean), li = (t, h) => '<li class="govuk-breadcrumbs__list-item">' + (h ? '<a class="govuk-breadcrumbs__link" href="' + h + '">' + t + '</a>' : t) + '</li>';
+    cr.innerHTML = '<ol class="govuk-breadcrumbs__list">' + li('Rules engine', '#/dashboard') + (parts[0] && sec[parts[0]] ? li(sec[parts[0]], parts[1] ? '#/' + parts[0] : '') : '') + (parts[1] ? li(esc(parts[1])) : '') + '</ol>';
+  }
   const h1 = main.querySelector('h1');
   document.title = (hasErr() ? 'Error: ' : '') + (h1 ? h1.textContent : 'Rules engine') + ' - Rules engine';
   if (!keep) window.scrollTo(0, 0);
@@ -1129,7 +1134,15 @@ function vWorkDetail(id) {
     '<div class="case-head"><div class="ring ring--sm" style="--p:' + pc + '"><span>' + pc + '%</span></div><div class="case-title"><p class="case-sub">' + w.id + ' · ' + esc(w.type) + ' · ' + esc(w.stage) + '</p><h1 class="govuk-heading-l">' + esc(w.title) + '</h1>' +
     '<p class="case-sub">' + esc(w.description) + '</p><p class="case-flags">' + prioTag(w.priority) + (legalOpen ? '<span class="flag flag--red">' + legalOpen + ' legal open</span>' : '') + (exc ? '<span class="flag flag--orange">' + exc + ' exception' + (exc === 1 ? '' : 's') + '</span>' : '') + '</p></div>' +
     '<div class="page-actions"><button type="button" class="govuk-button" data-module="govuk-button" data-act="cats-open" data-id="' + w.id + '">Change categories</button>' + btn('#/work/' + w.id + '/edit', 'Edit details', true) + '</div></div>' +
-    tabs + body;
+    tabs + '<div class="with-rail"><div class="rail-main">' + body + '</div>' + workRail(w, all, active, open, doneL) + '</div>';
+}
+function workRail(w, all, active, open, doneL) {
+  const noEv = doneL.filter((a) => !evCount(a)).length, legal = open.filter(actLegal).length, groups = reqGroups(w.id).slice(0, 5);
+  return '<aside class="rail" aria-label="About this work">' +
+    '<section class="rail-card"><h2 class="rail-h">Progress</h2><p class="rail-p">' + doneL.length + ' of ' + active.length + ' actions done</p>' + bar(workPct(w.id), workPct(w.id) + '% complete') +
+    '<ul class="rail-list"><li>' + legal + ' legal requirement' + (legal === 1 ? '' : 's') + ' still open</li><li>' + noEv + ' done without evidence</li></ul></section>' +
+    '<section class="rail-card"><h2 class="rail-h">How this works</h2><p class="rail-p">Rules look at this work\'s categories. When one changes, the rules engine runs and adds, keeps or withdraws actions.</p><button type="button" class="link-btn" data-act="cats-open" data-id="' + w.id + '">Change a category</button></section>' +
+    '<section class="rail-card"><h2 class="rail-h">Rules applied</h2>' + (groups.length ? '<ul class="rail-list">' + groups.map((g) => '<li>' + (g.ruleId ? ruleChip(g.ruleId) + ' ' : '') + esc(g.title) + '</li>').join('') + '</ul>' : '<p class="rail-p">No rules apply yet.</p>') + '</section></aside>';
 }
 
 /* ---------- Action detail: evidence and activity ---------- */
