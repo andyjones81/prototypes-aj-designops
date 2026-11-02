@@ -1037,43 +1037,60 @@ function apiStatusLine(method, path, res, chars) {
   const matched = res.body && Array.isArray(res.body.matched) ? ' · ' + res.body.matched.length + ' rules apply · ' + (res.body.actionCount || 0) + ' actions' : '';
   return method + ' ' + path + ' → ' + res.status + matched + ' · ' + chars.toLocaleString('en-GB') + ' characters';
 }
+const API_DOCS = [
+  { tag: 'Evaluate', m: 'POST', p: '/evaluate', sum: 'Evaluate a work object', desc: 'Send a work object. The rules engine checks every published rule against it and returns the rules that apply, the requirements they raise and the actions for each.', params: [['body', 'JSON', 'Work object: stage, type, demand, characteristics, channel, users, transactional, estTransactions, personalData, priority, risk']], body: JSON.stringify(EVALUATE_EXAMPLE, null, 2) },
+  { tag: 'Evaluate', m: 'POST', p: '/evaluate', sum: 'Example: a live service handling personal data', desc: 'Change the stage to see different rules apply.', params: [['body', 'JSON', 'Work object']], body: JSON.stringify(Object.assign({}, EVALUATE_EXAMPLE, { title: 'Benefits checker', stage: 'Run / Serve', personalData: 'Yes' }), null, 2) },
+  { tag: 'Rules', m: 'GET', p: '/rules?status=Published&stage=Build', sum: 'List rules', desc: 'Returns rules from the admin store.', params: [['status', 'query', 'Published, Draft or Retired'], ['stage', 'query', 'Only rules that apply at this stage'], ['q', 'query', 'Search name, source or owner']] },
+  { tag: 'Rules', m: 'GET', p: '/rules/RUL-101', sum: 'Get a rule', desc: 'One rule with its requirement, rationale, standards and guidance.', params: [['id', 'path', 'Rule ID, for example RUL-101']] },
+  { tag: 'Rules', m: 'GET', p: '/rules/RUL-101/versions', sum: 'Rule version history', desc: 'Every saved version with who changed it and why.', params: [['id', 'path', 'Rule ID']] },
+  { tag: 'Triggers', m: 'GET', p: '/triggers', sum: 'List trigger definitions', desc: 'The events that cause rules to be re-run against work.', params: [] },
+  { tag: 'Work', m: 'GET', p: '/work/WRK-001/requirements', sum: 'Requirements raised for a work item', desc: 'The requirements and actions already raised, with status and the rule version that raised them.', params: [['id', 'path', 'Work ID, for example WRK-001']] },
+  { tag: 'Static files', m: 'GET', p: 'api/rules.json', sum: 'All rules (static file)', desc: 'Every rule built from the CSV logs, published as a file for GitHub Pages.', params: [], stat: true },
+  { tag: 'Static files', m: 'GET', p: 'api/rules/RUL-101.json', sum: 'One rule (static file)', desc: 'A single rule as a static file.', params: [], stat: true }
+];
+function apiCurl(e, path, body) {
+  const base = location.origin + location.pathname.replace(/[^/]*$/, '');
+  if (e.stat) return 'curl ' + base + path;
+  return e.m === 'POST' ? 'RulesAPI.request("POST", "' + path + '", ' + JSON.stringify(body || '') + ')' : 'RulesAPI.request("GET", "' + path + '")';
+}
 function vApi() {
   const pub = S.rules.filter((r) => r.status === 'Published').length;
-  const example = JSON.stringify(EVALUATE_EXAMPLE, null, 2);
-  const first = apiRequest('POST', '/evaluate', example);
-  const json = JSON.stringify(first.body, null, 2);
-  const shown = json.length > 20000 ? json.slice(0, 20000) + '\n… truncated for display (' + json.length.toLocaleString('en-GB') + ' characters)' : json;
-  return pageHead('Rules API', 'Send a work object and get back the published rules that apply.', '<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="api-download">Download live rules.json</button>') +
-    '<p class="govuk-body">' + S.rules.length + ' rules in the library, ' + pub + ' published. <code>POST /evaluate</code> checks them against the JSON you send. The same call is available in the console as <code>RulesAPI.request("POST", "/evaluate", body)</code>.</p>' +
-    '<div class="api-explorer">' +
-    '<section><h2 class="govuk-heading-m">Request</h2>' +
-    '<form id="api-form" data-form="api" novalidate><div class="api-line"><div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="api-method">Method</label><select class="govuk-select" id="api-method" name="method"><option>GET</option><option selected>POST</option></select></div>' +
-    '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="api-path">Path</label><input class="govuk-input" id="api-path" name="path" value="/evaluate"></div></div>' +
-    '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="api-body">Example JSON</label><div class="govuk-hint" id="api-body-hint">Describe the work. Use stage, type, demand, characteristics, channel, users, transactional, estTransactions, personalData, priority and risk.</div>' +
-    '<textarea class="govuk-textarea api-code" id="api-body" name="body" rows="18" spellcheck="false" aria-describedby="api-body-hint">' + esc(example) + '</textarea></div>' +
-    '<button class="govuk-button" type="submit" data-module="govuk-button">Send request</button></form></section>' +
-    '<section><h2 class="govuk-heading-m">Applicable rules</h2><p class="govuk-body-s" id="api-status">' + esc(apiStatusLine('POST', '/evaluate', first, json.length)) + '</p><pre class="api-out" id="api-out" tabindex="0">' + esc(shown) + '</pre></section></div>' +
-    '<h2 class="govuk-heading-m">Other endpoints</h2>' + table(['Method', 'Path', 'Type', 'Returns', ''], API_EXAMPLES.map((e) => ['<strong class="govuk-tag ' + (e[0] === 'GET' ? 'govuk-tag--blue' : 'govuk-tag--green') + '">' + e[0] + '</strong>', '<code>' + esc(e[1].split('\n')[0]) + '</code>', e[3] === 'Static' ? tag('Static file', 'govuk-tag--grey') : tag('Live', 'govuk-tag--turquoise'), esc(e[4]),
-      '<button type="button" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" data-module="govuk-button" data-act="api-try" data-method="' + e[0] + '" data-path="' + esc(e[1]) + '" data-body="' + esc(e[2]) + '">Try</button>']));
+  const tags = Array.from(new Set(API_DOCS.map((e) => e.tag)));
+  return banner() + pageHead('Rules API', 'Explore and test the rules engine API. Open an endpoint, edit the request and press Execute.', '<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="api-download">Download live rules.json</button>') +
+    '<div class="api-meta"><span><b>' + S.rules.length + '</b> rules</span><span><b>' + pub + '</b> published</span><span><b>' + S.triggerDefs.length + '</b> triggers</span><span>Version <b>1.0</b></span><span>Console: <code>RulesAPI.request(method, path, body)</code></span></div>' +
+    tags.map((t) => '<section class="api-group"><h2 class="api-gh">' + esc(t) + '</h2>' + API_DOCS.map((e, i) => e.tag === t ? apiOp(e, i) : '').join('') + '</section>').join('');
 }
-async function sendApi(form) {
-  const d = formData(form), out = document.getElementById('api-out'), st = document.getElementById('api-status');
+function apiOp(e, i) {
+  const m = e.m.toLowerCase();
+  return '<details class="api-op api-op--' + m + '" data-i="' + i + '"><summary><span class="api-m">' + e.m + '</span><code class="api-p">' + esc(e.p) + '</code><span class="api-s">' + esc(e.sum) + '</span></summary><div class="api-body">' +
+    '<p class="govuk-body">' + esc(e.desc) + '</p>' +
+    (e.params.length ? '<h3 class="api-h">Parameters</h3><table class="api-params"><tbody>' + e.params.map((p) => '<tr><th scope="row"><code>' + esc(p[0]) + '</code></th><td>' + esc(p[1]) + '</td><td>' + esc(p[2]) + '</td></tr>').join('') + '</tbody></table>' : '') +
+    '<h3 class="api-h">Request</h3><div class="govuk-form-group"><label class="govuk-label" for="ap-' + i + '">Path</label><input class="govuk-input" id="ap-' + i + '" data-role="path" value="' + esc(e.p) + '"></div>' +
+    (e.m === 'POST' ? '<div class="govuk-form-group"><label class="govuk-label" for="ab-' + i + '">Body (JSON)</label><textarea class="govuk-textarea api-code" id="ab-' + i + '" data-role="body" rows="12" spellcheck="false">' + esc(e.body || '') + '</textarea></div>' : '') +
+    '<div class="govuk-button-group"><button type="button" class="govuk-button" data-module="govuk-button" data-act="api-exec" data-i="' + i + '">Execute</button><button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="api-reset" data-i="' + i + '">Reset</button></div>' +
+    '<div class="api-res" hidden><h3 class="api-h">Response <span class="api-code-tag" data-role="status"></span></h3><p class="govuk-body-s" data-role="line"></p><pre class="api-out" data-role="out" tabindex="0"></pre><h3 class="api-h">Call</h3><pre class="api-out api-out--s" data-role="curl"></pre></div>' +
+    '</div></details>';
+}
+async function execApi(i) {
+  const e = API_DOCS[i], box = document.querySelector('.api-op[data-i="' + i + '"]'), g = (r) => box.querySelector('[data-role=' + r + ']');
+  const path = g('path').value.trim(), body = g('body') ? g('body').value : '';
   let res;
-  const path = (d.path || '').trim();
-  if (/^api\//.test(path) || /^https?:/.test(path)) {
-    try { const r = await fetch(path); const text = await r.text(); let b = text; try { b = JSON.parse(text); } catch (e) { /* leave as text */ } res = { status: r.status, body: b, bytes: text.length }; }
-    catch (e) { res = { status: 0, body: { error: 'Could not fetch the file. Static files need the site served over http(s), not opened from disk.' } }; }
-  } else res = apiRequest(d.method, path, d.body);
+  if (e.stat || /^https?:/.test(path)) {
+    try { const r = await fetch(path); const text = await r.text(); let b = text; try { b = JSON.parse(text); } catch (x) { /* text */ } res = { status: r.status, body: b, bytes: text.length }; }
+    catch (x) { res = { status: 0, body: { error: 'Could not fetch the file. Static files need the site served over http(s).' } }; }
+  } else res = apiRequest(e.m, path, body);
   const json = typeof res.body === 'string' ? res.body : JSON.stringify(res.body, null, 2);
-  st.textContent = apiStatusLine(d.method, path, res, res.bytes || json.length);
-  out.textContent = json.length > 20000 ? json.slice(0, 20000) + '\n… truncated for display (' + json.length.toLocaleString('en-GB') + ' characters)' : json;
+  box.querySelector('.api-res').hidden = false;
+  g('status').textContent = res.status; g('status').className = 'api-code-tag ' + (res.status >= 200 && res.status < 300 ? 'ok' : 'bad');
+  g('line').textContent = apiStatusLine(e.m, path, res, res.bytes || json.length);
+  g('out').textContent = json.length > 20000 ? json.slice(0, 20000) + '\n… truncated for display (' + json.length.toLocaleString('en-GB') + ' characters)' : json;
+  g('curl').textContent = apiCurl(e, path, body);
 }
 
 /* ---------- Extra events ---------- */
 document.addEventListener('submit', (e) => {
   const f = e.target;
-  if (f.dataset.form === 'api') { e.preventDefault(); sendApi(f); }
-  else if (f.dataset.form === 'raise') {
+  if (f.dataset.form === 'raise') {
     e.preventDefault();
     const w = S.works.find((x) => x.id === formData(f).work); if (!w) return;
     const res = runEngine(w, 'Triggered manually.'); recordTrigger(w, 'Raised manually', [], res, { id: '', name: 'Manual' }); save();
@@ -1095,7 +1112,9 @@ document.addEventListener('submit', (e) => {
 document.addEventListener('click', (e) => {
   const t = e.target.closest('[data-act]'); if (!t) return;
   const act = t.dataset.act;
-  if (act === 'api-try') { document.getElementById('api-method').value = t.dataset.method; document.getElementById('api-path').value = t.dataset.path; document.getElementById('api-body').value = t.dataset.body; sendApi(document.getElementById('api-form')); document.getElementById('api-form').scrollIntoView({ block: 'start' }); }
+  if (act === 'api-exec') execApi(+t.dataset.i);
+  else if (act === 'api-reset') { const e = API_DOCS[+t.dataset.i], box = t.closest('.api-op'); box.querySelector('[data-role=path]').value = e.p; const b = box.querySelector('[data-role=body]'); if (b) b.value = e.body || ''; box.querySelector('.api-res').hidden = true; }
+
   else if (act === 'api-download') {
     const blob = new Blob([JSON.stringify({ meta: { generated: now(), count: S.rules.length }, rules: S.rules.map((r) => Object.assign(slim(r), { requirementDescription: r.requirementDescription })) }, null, 1)], { type: 'application/json' });
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'rules.json'; document.body.appendChild(a); a.click(); a.remove();

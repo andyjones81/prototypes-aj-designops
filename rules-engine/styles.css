@@ -483,3 +483,20 @@ html, html.govuk-template, .govuk-template__body, .app-body, .govuk-main-wrapper
 .rrow-side{display:flex;flex-direction:column;gap:6px;font-size:.95rem}.rrow-o{color:#505a5f;font-size:.85rem}
 .rrow-st{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
 @media(max-width:900px){.rrow{grid-template-columns:1fr}}
+
+/* API explorer */
+.api-meta{display:flex;flex-wrap:wrap;gap:8px 24px;background:#f8f8f8;padding:14px 20px;margin-bottom:24px;font-size:.95rem}
+.api-gh{font-size:1.3rem;margin:24px 0 10px;padding-bottom:6px;border-bottom:2px solid #0b0c0c}
+.api-op{border:1px solid #b1b4b6;margin-bottom:10px;background:#fff;border-left-width:6px}
+.api-op--get{border-left-color:#1d70b8;background:#f4f8fc}.api-op--post{border-left-color:#00703c;background:#f3f9f5}
+.api-op>summary{display:flex;align-items:center;gap:14px;padding:10px 14px;cursor:pointer;list-style:none}
+.api-op>summary::-webkit-details-marker{display:none}
+.api-m{display:inline-block;min-width:64px;text-align:center;font-weight:700;color:#fff;padding:4px 8px;font-size:.85rem}
+.api-op--get .api-m{background:#1d70b8}.api-op--post .api-m{background:#00703c}
+.api-p{font-weight:700;font-size:1rem}.api-s{color:#505a5f;margin-left:auto;text-align:right}
+.api-body{background:#fff;padding:16px 20px;border-top:1px solid #b1b4b6}
+.api-h{font-size:1rem;margin:16px 0 8px}
+.api-params{border-collapse:collapse;width:100%;margin-bottom:8px}.api-params th,.api-params td{text-align:left;padding:6px 10px;border-bottom:1px solid #e1e4e8;font-weight:400;vertical-align:top}
+.api-code{font-family:monospace;font-size:.9rem}
+.api-out{background:#0b0c0c;color:#e8f1f8;padding:14px;overflow:auto;max-height:460px;font-size:.85rem;margin:0}.api-out--s{max-height:none;white-space:pre-wrap}
+.api-code-tag{display:inline-block;padding:1px 8px;color:#fff;background:#505a5f;font-size:.85rem}.api-code-tag.ok{background:#00703c}.api-code-tag.bad{background:#d4351c}
