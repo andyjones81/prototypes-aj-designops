@@ -1,0 +1,36 @@
+{
+ "id": "RUL-192",
+ "name": "All stateful data MUST be backed up to a separate region/location (Immutable backups preferred) to ensure all systems and data can be recovered after a major attack or disaster.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "Definitely services that use cloud storage, I am not sure if we have any on-prem legacy services and what the rules would be for that",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "All stateful data MUST be backed up to a separate region/location (Immutable backups preferred) to ensure all systems and data can be recovered after a major attack or disaster.",
+ "requirementDescription": "Any data that changes and needs to be retained must be backed up, and those backups must be stored somewhere separate from the primary system. Ideally, the backups should be immutable (cannot be changed or deleted) so they can still be recovered after a ransomware attack or major outage.",
+ "why": "The goal is to ensure the service can recover from ransomware, accidental deletion, corruption, or a major disaster.",
+ "tasks": [
+  "All stateful data MUST be backed up to a separate region/location (Immutable backups preferred) to ensure all systems and data can be recove"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://educationgovuk.sharepoint.com/sites/lvewp00047/SitePages/Disaster-Recovery.aspx",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

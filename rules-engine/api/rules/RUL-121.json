@@ -1,0 +1,46 @@
+{
+ "id": "RUL-121",
+ "name": "Document a Business Continuity Plan (ORR 15)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "Document a Business Continuity Plan (ORR 15)",
+ "requirementDescription": "To stop exposing your service to risk if taken down, you won't be able to recover",
+ "why": "To stop exposing your service to risk if taken down, you won't be able to recover",
+ "tasks": [
+  "Document a Business Continuity Plan (ORR 15)"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

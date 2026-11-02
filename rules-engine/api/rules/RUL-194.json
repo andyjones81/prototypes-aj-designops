@@ -1,0 +1,36 @@
+{
+ "id": "RUL-194",
+ "name": "Restoration capability MUST be tested/proved annually (Drills) because a backup that is never tested is not a backup.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "Any service that backs up their data",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Restoration capability MUST be tested/proved annually (Drills) because a backup that is never tested is not a backup.",
+ "requirementDescription": "It's not enough to create backups. The organisation must regularly prove that those backups can actually be restored successfully.",
+ "why": "Because many organisations discover problems only when they need the backup.",
+ "tasks": [
+  "Restoration capability MUST be tested/proved annually (Drills) because a backup that is never tested is not a backup."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

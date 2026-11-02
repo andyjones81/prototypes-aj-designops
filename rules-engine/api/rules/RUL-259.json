@@ -1,0 +1,48 @@
+{
+ "id": "RUL-259",
+ "name": "Do you have a documented process for identifying and responding to new vulnerabilities in your code, systems or supply chain?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "The process should cover vulnerabilities discovered through sources such as:\n- vulnerability scanning\n- security testing\n- automated dependency tools\n- supplier/vendor notifications\n- vulnerability or threat alerts\n- penetration tests\n- internal reporting\n- external vulnerability reports.",
+ "phases": [
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Do you have a documented process for identifying and responding to new vulnerabilities in your code, systems or supply chain?",
+ "requirementDescription": "Do you have an ongoing way of finding out when new security weaknesses affect your service and a clear process for deciding what to do when one is discovered?",
+ "why": "A service may be secure today but become vulnerable tomorrow because a new weakness is discovered in software or a dependency it uses.",
+ "tasks": [
+  "Do you have a documented process for identifying and responding to new vulnerabilities in your code, systems or supply chain?"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/implementing-a-vulnerability-management-process/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-vulnerability-management.docx?d=w6fef653e7774430a85e62302f2e28132&csf=1&web=1&e=kAWAnp",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

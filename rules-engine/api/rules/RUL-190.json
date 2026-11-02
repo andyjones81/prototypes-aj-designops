@@ -1,0 +1,36 @@
+{
+ "id": "RUL-190",
+ "name": "All staff MUST complete Security Awareness training annually because staff are the best defence against human error.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "All staff are required to complete the training",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "All staff MUST complete Security Awareness training annually because staff are the best defence against human error.",
+ "requirementDescription": "Every employee must complete security awareness training at least once a year so they understand common cyber risks and know how to avoid causing or contributing to security incidents.",
+ "why": "Many security incidents involve human actions rather than technical failures.",
+ "tasks": [
+  "All staff MUST complete Security Awareness training annually because staff are the best defence against human error."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

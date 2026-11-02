@@ -1,0 +1,48 @@
+{
+ "id": "RUL-237",
+ "name": "Does your threat assessment include the motives, intent and capability of the threat actors relevant to your service?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test"
+   ]
+  }
+ ],
+ "conditionsText": "Applies when:\n- Threat assessments are being performed.\n- Threat modelling is underway.\n- Security controls are being selected.",
+ "phases": [
+  "Discovery",
+  "Alpha"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Does your threat assessment include the motives, intent and capability of the threat actors relevant to your service?",
+ "requirementDescription": "Does your assessment explain:\n- Who might attack the service?\n- Why they would attack it?\n- What they are trying to achieve?\n- Whether they have the ability to succeed?",
+ "why": "Understanding attackers helps teams design proportionate security controls.\nSecure by Design states that threat assessments should capture threat actor:\n- Motivation\n- Intent\n- Capability\n- Type of threat actor",
+ "tasks": [
+  "Does your threat assessment include the motives, intent and capability of the threat actors relevant to your service?"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/sourcing-a-threat-assessment/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "id": "RUL-146",
+ "name": "Delivery board",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Should have",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Build",
+  "Alpha",
+  "Private beta",
+  "Public beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Delivery board",
+ "requirementDescription": "To check how a service is being run. To evaluate risk.",
+ "why": "",
+ "tasks": [
+  "G6s/G7s with oversight of an area attend the board meeting."
+ ],
+ "standards": [],
+ "systems": "- Teams meeting",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

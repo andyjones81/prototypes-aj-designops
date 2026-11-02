@@ -1,0 +1,54 @@
+{
+ "id": "RUL-252",
+ "name": "Have you treated the risks that have a rating above the project's risk appetite?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build",
+    "Run / Serve"
+   ]
+  }
+ ],
+ "conditionsText": "Applies when:\n- A security risk assessment has been completed.\n- Risks have been scored.\n- Some risks exceed agreed thresholds.",
+ "phases": [
+  "Alpha",
+  "Private beta",
+  "Public beta",
+  "Live"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you treated the risks that have a rating above the project's risk appetite?",
+ "requirementDescription": "If any risks are larger than the level of risk the organisation is willing to accept, have you done something about them?",
+ "why": "Risk appetite defines how much security risk an organisation is prepared to tolerate. Risks that exceed this threshold cannot simply be ignored. Secure by Design states that risks should be reduced to an acceptable level through appropriate mitigations or approved acceptance decisions",
+ "tasks": [
+  "Reduce the risk through controls.",
+  "Transfer the risk.",
+  "Avoid the risk by changing the design.",
+  "Escalate and formally accept the risk."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/responding-to-and-mitigating-security-risks/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

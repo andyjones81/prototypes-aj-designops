@@ -1,0 +1,54 @@
+{
+ "id": "RUL-255",
+ "name": "Have you documented the selected controls?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build",
+    "Run / Serve"
+   ]
+  }
+ ],
+ "conditionsText": "Applies when:\n- Security controls have been identified.\n- Solution design is underway.\n- Assurance activities need traceability.",
+ "phases": [
+  "Alpha",
+  "Private beta",
+  "Public beta",
+  "Live"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you documented the selected controls?",
+ "requirementDescription": "Have you recorded which security controls will be implemented and why?",
+ "why": "Without documentation there is no reliable evidence of what protections are expected, what has been implemented, or what auditors and assurance teams should verify. Secure by Design encourages use of security control frameworks and taxonomies to record selected controls",
+ "tasks": [
+  "Control name.",
+  "Purpose.",
+  "Associated risk.",
+  "Owner."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

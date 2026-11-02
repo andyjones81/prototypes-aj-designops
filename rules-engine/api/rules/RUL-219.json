@@ -1,0 +1,53 @@
+{
+ "id": "RUL-219",
+ "name": "Have you created a report that highlights any security risks associated with using third-party products, including recommendations on how to manage those risks?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "Applies whenever:\n- Third-party products are used.\n- Security risks are identified.\n- Procurement decisions are being made.",
+ "phases": [
+  "Discovery",
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you created a report that highlights any security risks associated with using third-party products, including recommendations on how to manage those risks?",
+ "requirementDescription": "Have you formally documented the risks introduced by third-party products and explained how those risks will be managed?",
+ "why": "Decision makers need visibility of supplier risks before approving technology choices.\nThe report provides evidence that due diligence has been completed and allows risk owners to make informed decisions",
+ "tasks": [
+  "Product description",
+  "Identified risks",
+  "Impact assessment",
+  "Risk ratings"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-third-party-product-security-risks/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

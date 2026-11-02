@@ -1,0 +1,48 @@
+{
+ "id": "RUL-119",
+ "name": "Book a live service assessment (ORR 14)",
+ "source": "Service Standard",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Run / Serve"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Live"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Book a live service assessment (ORR 14)",
+ "requirementDescription": "To check services are meeting the Service Standard.",
+ "why": "To check services are meeting the Service Standard.",
+ "tasks": [
+  "Book a live service assessment (ORR 14)"
+ ],
+ "standards": [
+  "Service Standard"
+ ],
+ "systems": "",
+ "guidance": "- Service assessment guidance\n\n- Book a service assessment\n- Service Standard\n- Apply the Service Standard in DfE",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "id": "RUL-243",
+ "name": "Have you conducted a security design review against good practice principles and patterns?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "The security design review should reflect the nature and risk of the service and consider relevant good-practice principles, including:\n- least privilege and separation of duties\n- defence in depth and secure-by-default design\n- minimising the attack surface\n- strong authentication and access controls\n- appropriate encryption and secure credential management\n- logging, monitoring and auditing\n- resilience, secure failure and appropriate security boundaries",
+ "phases": [
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you conducted a security design review against good practice principles and patterns?",
+ "requirementDescription": "Has someone suitably knowledgeable stepped back and checked that the proposed security design is sensible, follows recognised good practice, and doesn't contain obvious architectural security weaknesses? This is slightly different from threat modelling.\nThreat modelling asks how could this particular system be attacked or misused?”\nA security design review asks, is the way we've designed the system fundamentally secure and consistent with accepted security principles?”",
+ "why": "A team can identify individual threats and still end up with a poor overall security design.\nFor example, controls may exist but:\n- be implemented in the wrong place\n- rely too heavily on one component\n- give users excessive privileges\n- trust systems unnecessarily\n- fail securely only in some circumstances\n- produce inadequate security logs\n- create unnecessarily complex security arrangements.\nA design review provides another perspective on the overall security architecture.",
+ "tasks": [
+  "assess the design against recognised security principles and patterns",
+  "identify any weaknesses, gaps or recommendations",
+  "record actions and assign owners",
+  "track significant issues through to resolution or formal risk acceptance"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-threat-modelling/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

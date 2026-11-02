@@ -1,0 +1,36 @@
+{
+ "id": "RUL-188",
+ "name": "Administrative work is ONLY permitted on Managed, Encrypted, EDR-protected devices to ensure the highest level of security for high-privilege operations.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "Any activity performed using a privileged account",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Administrative work is ONLY permitted on Managed, Encrypted, EDR-protected devices to ensure the highest level of security for high-privilege operations.",
+ "requirementDescription": "If you're performing administrative tasks, you must do so from a company-approved device that is managed, encrypted, and actively monitored by security tooling. You must not administer systems from personal, unmanaged, or insecure devices.",
+ "why": "We do not want high-privilege accounts being used from personal or unmanaged devices because compromising the device could lead directly to a major security breach.",
+ "tasks": [
+  "Administrative work is ONLY permitted on Managed, Encrypted, EDR-protected devices to ensure the highest level of security for high-privileg"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

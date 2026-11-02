@@ -1,0 +1,36 @@
+{
+ "id": "RUL-157",
+ "name": "All new services MUST comply with the 10 principles of Secure by Design to ensure security is built-in from the outset.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "When building services and making major changes",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "All new services MUST comply with the 10 principles of Secure by Design to ensure security is built-in from the outset.",
+ "requirementDescription": "When creating a new service, security must be considered from the beginning of the design process, rather than being added later as an afterthought.",
+ "why": "Don't build a service first and worry about security later. Design and build security into the service from day one, following the Secure by Design principles.",
+ "tasks": [
+  "All new services MUST comply with the 10 principles of Secure by Design to ensure security is built-in from the outset."
+ ],
+ "standards": [],
+ "systems": "All products and services built in house",
+ "guidance": "https://technical-guidance.education.gov.uk/principles/secure-by-design-principles/\n\nSecure by Design - UK Government Security - Beta\n\nSecure by Design Principles - UK Government Security - Beta",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

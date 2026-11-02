@@ -1,0 +1,51 @@
+{
+ "id": "RUL-245",
+ "name": "Have you documented the risk assessment method used to perform a risk assessment?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "The documented method should cover the scope and approach to the assessment, including how threats, vulnerabilities, business impacts, likelihood and risk severity are identified and evaluated.\nIt should also define important terminology, assumptions and constraints. The guidance recommends documenting the assessment boundary and identifying what is in and out of scope.",
+ "phases": [
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you documented the risk assessment method used to perform a risk assessment?",
+ "requirementDescription": "Have you written down how you assess security risks so that someone can understand the process you followed and repeat it?",
+ "why": "Risk assessments involve judgement. Without a defined method, two people could assess exactly the same risk and reach very different conclusions.\nDocumenting the method makes the assessment:\n- consistent\n- repeatable\n- understandable\n- auditable\n- easier to review and update.",
+ "tasks": [
+  "scope and boundaries",
+  "terminology and definitions",
+  "assumptions and constraints",
+  "information/sources used"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "id": "RUL-210",
+ "name": "Have you included continuous assurance processes in the service's project delivery workflow?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test",
+    "Build",
+    "Run / Serve"
+   ]
+  }
+ ],
+ "conditionsText": "This applies whenever:\n- A service is being designed, built or maintained.\n- Agile delivery methods are used.\n- Technology or business requirements are changing.\n- Security controls need ongoing validation.",
+ "phases": [
+  "Discovery",
+  "Alpha",
+  "Private beta",
+  "Public beta",
+  "Live"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you included continuous assurance processes in the service's project delivery workflow?",
+ "requirementDescription": "Have you built regular security checks and reviews into the way the project is delivered, rather than only checking security at the end?",
+ "why": "Traditional projects often perform a single security review shortly before go-live. Secure by Design requires security to be continually assessed throughout the service lifecycle because threats, risks and designs change over time. Continuous assurance helps identify issues early and provides confidence that security remains effective.",
+ "tasks": [
+  "Security reviews built into sprint cycles.",
+  "Security checkpoints within delivery governance.",
+  "Threat assessments being regularly reviewed.",
+  "Security testing occurring throughout development."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/tracking-secure-by-design-progress/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "id": "RUL-106",
+ "name": "Agree commercial and contractual agreements. For example, Statements of Work",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - legal",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "Steve Goff",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "Agree commercial and contractual agreements. For example, Statements of Work",
+ "requirementDescription": "Ensure suppliers understand their roles and responsibilities, and being able to hold them to account",
+ "why": "Ensure suppliers understand their roles and responsibilities, and being able to hold them to account",
+ "tasks": [
+  "document expectations of supplier",
+  "create a Statement of Work"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

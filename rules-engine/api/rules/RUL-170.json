@@ -1,0 +1,36 @@
+{
+ "id": "RUL-170",
+ "name": "All data repositories (S3, Blob, SQL, SharePoint) MUST be classified to ensure effective data defence.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "Every database, storage account, SharePoint site, or data store",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "All data repositories (S3, Blob, SQL, SharePoint) MUST be classified to ensure effective data defence.",
+ "requirementDescription": "Every place where data is stored must have its data classified (labelled according to its sensitivity and importance) so that the correct security controls can be applied.",
+ "why": "Because you can't apply the right security controls if you don't know what data you're protecting.",
+ "tasks": [
+  "All data repositories (S3, Blob, SQL, SharePoint) MUST be classified to ensure effective data defence."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

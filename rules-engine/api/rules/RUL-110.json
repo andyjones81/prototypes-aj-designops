@@ -1,0 +1,46 @@
+{
+ "id": "RUL-110",
+ "name": "Conduct testing and action any changes needed on the user journey (ORR 9)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Not stated",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "Steve Goff",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "Depends on the nature of what you are building",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "Conduct testing and action any changes needed on the user journey (ORR 9)",
+ "requirementDescription": "Good practice",
+ "why": "Good practice",
+ "tasks": [
+  "Conduct testing and action any changes needed on the user journey (ORR 9)"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

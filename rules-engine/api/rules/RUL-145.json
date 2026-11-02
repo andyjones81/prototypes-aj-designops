@@ -1,0 +1,36 @@
+{
+ "id": "RUL-145",
+ "name": "Design and run board",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Should have",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Design and run board",
+ "requirementDescription": "To check how a service is being designed and run. This helps track whether DfE services are being designed correctly.",
+ "why": "",
+ "tasks": [
+  "Design and run board"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

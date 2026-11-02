@@ -1,0 +1,51 @@
+{
+ "id": "RUL-265",
+ "name": "Have you determined the tools required to log and analyse the event logs and trigger alerts?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "The tools should reflect:\n- the type and volume of information produced\n- identified security threats\n- service architecture\n- monitoring requirements\n- organisational security capabilities\n- incident-response arrangements\n- third-party services.\nWhere third-party suppliers provide service components, their monitoring, logging and alerting capabilities should also be considered.",
+ "phases": [
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you determined the tools required to log and analyse the event logs and trigger alerts?",
+ "requirementDescription": "Have you worked out what technology is needed to collect security information, analyse it and notify the right people when something suspicious happens?",
+ "why": "A service could generate millions of log entries. It may be unrealistic for people to manually read those records looking for suspicious activity.\nAppropriate tools help teams:\n- bring relevant security information together\n- search and analyse events\n- identify patterns or anomalies\n- generate alerts when defined conditions occur\n- provide information to security or incident-response teams.\nThe guidance recommends investigating whether appropriate capabilities exist to collect and monitor observables and identifying additional capabilities needed to provide sufficient visibility.",
+ "tasks": [
+  "Identify what logs and security information need collecting.",
+  "Determine which existing organisational tools can be used.",
+  "Identify any additional monitoring capability required.",
+  "Configure tools to collect and securely store the required information."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-observability/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-audit-log-management.docx?d=wf21b346e355840cfbbb61487fb8f39de&csf=1&web=1&e=ekpmJ4",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

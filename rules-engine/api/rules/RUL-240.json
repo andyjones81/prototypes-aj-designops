@@ -1,0 +1,51 @@
+{
+ "id": "RUL-240",
+ "name": "Have you identified and documented the possible attack paths or threat events that could be used to exploit vulnerabilities in the service?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "Threat modelling should consider, where applicable:\n- external attackers\n- compromised user accounts\n- malicious or accidental insider activity\n- unauthorised access\n- privilege escalation\n- vulnerable integrations\n- exposed interfaces\n- manipulation of information\n- disclosure of sensitive information\n- service disruption\n- compromised dependencies\n- misuse of legitimate functionality.\nNot every imaginable threat needs to be treated equally. The important point is identifying credible threats relevant to the service and its architecture.",
+ "phases": [
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you identified and documented the possible attack paths or threat events that could be used to exploit vulnerabilities in the service?",
+ "requirementDescription": "Have you worked out the realistic ways somebody could attack or misuse the service and written them down?",
+ "why": "Simply identifying technical components is not enough. The team needs to think about, given our architecture what could actually go wrong from a security perspective?\nDoing this systematically helps find security weaknesses before they become incidents.\nIt also helps teams prioritise security investment according to realistic threats rather than simply implementing generic security features.",
+ "tasks": [
+  "systems",
+  "sensitive information",
+  "user accounts",
+  "privileged functions"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-threat-modelling/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "id": "RUL-137",
+ "name": "Agree an Early Life Support (ELS) plan (ORR 33)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Not stated",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build",
+    "Run / Serve"
+   ]
+  }
+ ],
+ "conditionsText": "So that things like staffing can be in place for the early weeks of the service being run, if this is different to longer-term running plans",
+ "phases": [
+  "Public beta",
+  "Live"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Agree an Early Life Support (ELS) plan (ORR 33)",
+ "requirementDescription": "",
+ "why": "",
+ "tasks": [
+  "Agree an Early Life Support (ELS) plan (ORR 33)"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

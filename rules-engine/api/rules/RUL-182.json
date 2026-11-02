@@ -1,0 +1,36 @@
+{
+ "id": "RUL-182",
+ "name": "Shared Accounts MUST NOT be used; every action MUST be traceable to a specific named user or Service Principal to ensure accountability for all system changes.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "Wherever authentication exists",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Shared Accounts MUST NOT be used; every action MUST be traceable to a specific named user or Service Principal to ensure accountability for all system changes.",
+ "requirementDescription": "Every user, administrator, application, or automated process must have its own identity. You should never use generic shared accounts because it must always be possible to identify who performed an action.",
+ "why": "For accountability and security investigations. With individual accounts the audit trail is clear and seeing when, who and where people make changes supports security investigations",
+ "tasks": [
+  "Shared Accounts MUST NOT be used; every action MUST be traceable to a specific named user or Service Principal to ensure accountability for "
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/standards-account-and-credential-management.docx?d=wadf8d20c50e247d0a9a72109fd4cbfaf&csf=1&web=1&e=QczeUw",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

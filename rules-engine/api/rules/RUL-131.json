@@ -1,0 +1,46 @@
+{
+ "id": "RUL-131",
+ "name": "ReceIve security assurance and address risks (that are above DfE's risk appetite) (ORR 23) (Links to ORR21)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "Steve Goff",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "- no conditions\n- having an IT health check could be pre-req for it",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "ReceIve security assurance and address risks (that are above DfE's risk appetite) (ORR 23) (Links to ORR21)",
+ "requirementDescription": "Keep systems safe and secure",
+ "why": "Keep systems safe and secure",
+ "tasks": [
+  "output of registering security"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

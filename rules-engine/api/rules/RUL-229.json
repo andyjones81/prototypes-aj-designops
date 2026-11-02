@@ -1,0 +1,54 @@
+{
+ "id": "RUL-229",
+ "name": "Have you completed a Data Protection and Impact Assessment (DPIA)?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding"
+   ]
+  },
+  {
+   "field": "personalData",
+   "op": "is",
+   "value": "Yes"
+  }
+ ],
+ "conditionsText": "Usually required when:\n- Processing personal data\n- Introducing new technology\n- Conducting large-scale processing\n- Monitoring individuals",
+ "phases": [
+  "Discovery"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you completed a Data Protection and Impact Assessment (DPIA)?",
+ "requirementDescription": "Have you formally assessed how the service affects people's privacy and identified actions needed to protect personal data?",
+ "why": "A DPIA helps identify privacy risks before a service is implemented and ensures appropriate safeguards are designed into the service from the outset.",
+ "tasks": [
+  "Describe the processing",
+  "Identify privacy risks",
+  "Assess impacts on individuals",
+  "Define mitigations"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/\n\nhttps://educationgovuk.sharepoint.com/sites/lvewp00158/SitePages/DPIA.aspx",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

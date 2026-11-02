@@ -1,0 +1,51 @@
+{
+ "id": "RUL-258",
+ "name": "Do you have a documented approach on how to classify, prioritise and redress vulnerabilities?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "Different vulnerabilities may require different responses. The guidance gives examples including patches or updates, compensating controls, code fixes and workarounds, with more serious issues potentially requiring senior-management escalation",
+ "phases": [
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Do you have a documented approach on how to classify, prioritise and redress vulnerabilities?",
+ "requirementDescription": "Have you agreed and written down how you will judge how serious a vulnerability is, decide which ones need fixing first, and determine how and when they will be fixed?",
+ "why": "Not every vulnerability presents the same level of risk. A minor weakness in a low-risk component should not necessarily receive the same priority as a critical vulnerability affecting an important internet-facing system.\nHaving an agreed process ensures vulnerabilities are handled consistently and that teams focus first on weaknesses presenting the greatest risk.",
+ "tasks": [
+  "how vulnerabilities are classified and scored",
+  "how priority is determined",
+  "expected remediation timescales",
+  "available remediation approaches"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/implementing-a-vulnerability-management-process/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-vulnerability-management.docx?d=w6fef653e7774430a85e62302f2e28132&csf=1&web=1&e=kAWAnp",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

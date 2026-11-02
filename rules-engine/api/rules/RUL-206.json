@@ -1,0 +1,53 @@
+{
+ "id": "RUL-206",
+ "name": "Have you identified and captured the required technology resources such as software development environments, tools and security capabilities that will be required for the project?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "Applies when:\n- Planning delivery.\n- Designing technical solutions.\n- Estimating project costs.\n- Operating live services.",
+ "phases": [
+  "Discovery",
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you identified and captured the required technology resources such as software development environments, tools and security capabilities that will be required for the project?",
+ "requirementDescription": "Have you worked out what security tools, platforms and technical capabilities will be needed to build and operate the service securely?",
+ "why": "Security depends on more than people. Projects often require specialist tools and infrastructure to support secure development, testing, monitoring and operations. The guidance requires teams to assess and document the technology resources needed.",
+ "tasks": [
+  "Existing organisational security capabilities.",
+  "Additional tools required.",
+  "Development and testing environments.",
+  "Monitoring and detection capabilities."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/identifying-security-resources/\n\nhttps://educationgovuk.sharepoint.com/sites/security/SitePages/it-health-check-services.aspx",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

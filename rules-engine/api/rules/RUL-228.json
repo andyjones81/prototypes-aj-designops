@@ -1,0 +1,49 @@
+{
+ "id": "RUL-228",
+ "name": "If data will be processed, stored or transmitted outside the UK or the European Economic Area (EEA), have you considered the relevant security obligations?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Discovery"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "If data will be processed, stored or transmitted outside the UK or the European Economic Area (EEA), have you considered the relevant security obligations?",
+ "requirementDescription": "If information leaves the UK or EEA, have you checked what legal and security requirements apply?",
+ "why": "Cross-border data movement may create additional legal and privacy obligations.\nSecure by Design requires teams to understand applicable obligations based on the nature of the service and its data.",
+ "tasks": [
+  "Where data is stored",
+  "International transfer mechanisms",
+  "Legal restrictions",
+  "Supplier arrangements"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

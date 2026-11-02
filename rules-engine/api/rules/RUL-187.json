@@ -1,0 +1,36 @@
+{
+ "id": "RUL-187",
+ "name": "Physical or logical separation of admin privileges is REQUIRED to prevent a simple phishing email from compromising everything.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "Any service that has privileged admin access, or elevated permissions\n- Azure Administrators\n- Entra ID Administrators\n- Microsoft 365 Administrators\n- Database Administrators\n- GitHub Administrators\n- Azure DevOps Administrators\n- Server Administrators\n- Security Tool Administrators",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Physical or logical separation of admin privileges is REQUIRED to prevent a simple phishing email from compromising everything.",
+ "requirementDescription": "The account you use for everyday activities (email, Teams, web browsing) should be separate from the account you use to administer systems.",
+ "why": "Most major incidents start with a compromised user account, separating the privileged admin account means the breach is contain and isnt service wide",
+ "tasks": [
+  "Physical or logical separation of admin privileges is REQUIRED to prevent a simple phishing email from compromising everything."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "standards-account-and-credential-management.docx",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

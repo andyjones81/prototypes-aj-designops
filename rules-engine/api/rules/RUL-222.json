@@ -1,0 +1,49 @@
+{
+ "id": "RUL-222",
+ "name": "Have you met obligations in relation to personally identifiable information (PII) being processed, stored or transmitted by the service?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding"
+   ]
+  }
+ ],
+ "conditionsText": "Any services that use PII: Examples:\n- Names\n- Addresses\n- National Insurance numbers\n- Contact details\n- Employee records",
+ "phases": [
+  "Discovery"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you met obligations in relation to personally identifiable information (PII) being processed, stored or transmitted by the service?",
+ "requirementDescription": "If the system uses personal information, have you met all legal and security requirements for protecting it?",
+ "why": "Personal information requires special protection under privacy and data protection laws",
+ "tasks": [
+  "Data minimisation applied",
+  "Appropriate security controls implemented",
+  "Retention arrangements defined",
+  "DPIA completed where required"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/\n\nData Protection Impact Assessment (DPIA) Portal",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

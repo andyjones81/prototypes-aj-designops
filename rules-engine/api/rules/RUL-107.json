@@ -1,0 +1,48 @@
+{
+ "id": "RUL-107",
+ "name": "Document High Level Design (HLD) and Low Level Design (LLD). Factor DfE standards into technical design (ORR 5 and ORR 6)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Not stated",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "Steve Goff",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "If it is something completely third-party hosted because they can't follow technical standards. Still would expect them to meet legal standards.",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "Document High Level Design (HLD) and Low Level Design (LLD). Factor DfE standards into technical design (ORR 5 and ORR 6)",
+ "requirementDescription": "- operational\n- security\n- good practice\n- people need to understand how the thing is built - to support it and build it",
+ "why": "- operational\n- security\n- good practice\n- people need to understand how the thing is built - to support it and build it",
+ "tasks": [
+  "managed supplier - tend to give HLD",
+  "build in DfE - expect more LLD",
+  "follow the technical DfE standards"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

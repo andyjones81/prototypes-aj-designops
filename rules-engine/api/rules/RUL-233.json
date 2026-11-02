@@ -1,0 +1,53 @@
+{
+ "id": "RUL-233",
+ "name": "Have you identified and documented a service owner or information asset owner for each asset?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "Applies to all assets identified within the service, including:\n- Data assets\n- Applications\n- Infrastructure\n- Platforms\n- Shared services",
+ "phases": [
+  "Discovery",
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you identified and documented a service owner or information asset owner for each asset?",
+ "requirementDescription": "Does every important asset have a named person responsible for it?",
+ "why": "If nobody owns an asset:\n- Security issues may not be addressed.\n- Risks may not be reviewed.\n- Decisions may be delayed.\n- Vulnerabilities may remain unmanaged.\nThe guidance specifically highlights the need to understand who is responsible for each asset so that accountability for protection is clear.",
+ "tasks": [
+  "A named owner.",
+  "A defined role.",
+  "Accountability for security decisions.",
+  "Responsibility for managing risks relating to the asset."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/documenting-service-assets/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

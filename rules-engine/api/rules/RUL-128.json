@@ -1,0 +1,46 @@
+{
+ "id": "RUL-128",
+ "name": "Complete an IT health check (ORR 21)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "Steve Goff",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "If your service or product is publically accessible or internally accessible but is medium or above security classification",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "Complete an IT health check (ORR 21)",
+ "requirementDescription": "To ensure that their systems are safe and security",
+ "why": "To ensure that their systems are safe and security",
+ "tasks": [
+  "Complete an IT health check (ORR 21)"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

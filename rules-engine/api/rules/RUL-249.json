@@ -1,0 +1,51 @@
+{
+ "id": "RUL-249",
+ "name": "Have you agreed the security control frameworks you intend to use with your organisation’s security function?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "The selected frameworks should be appropriate to the assets, architecture, risks and technology of the service, while also meeting organisational security requirements.\nThe guidance says this activity should be led by technical and security architects in collaboration with security teams that understand security frameworks and how to interpret them",
+ "phases": [
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you agreed the security control frameworks you intend to use with your organisation’s security function?",
+ "requirementDescription": "Has your organisation's security team been involved in deciding and agreeing which security frameworks the service will use?",
+ "why": "Your organisation may already have:\n- required security frameworks\n- standard security controls\n- an organisational security controls taxonomy\n- approved security patterns\n- established security policies\n- regulatory or compliance requirements.\nEngaging the security function avoids individual services adopting inconsistent or unsuitable approaches and gives the project access to people who understand how the frameworks should be applied.",
+ "tasks": [
+  "Engage the organisation's security function.",
+  "Identify any existing organisational security framework or controls taxonomy.",
+  "Discuss which additional frameworks are relevant to the service.",
+  "Agree which frameworks will provide the basis for the service's controls."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-a-security-controls-set-for-your-service/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "id": "RUL-130",
+ "name": "Start DSAM process (not ORR but added as result of ORR 22)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "Steve Goff",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Discovery"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Start DSAM process (not ORR but added as result of ORR 22)",
+ "requirementDescription": "To ensure that their systems are safe and security",
+ "why": "To ensure that their systems are safe and security",
+ "tasks": [
+  "start a Departmental Security Assurance model process"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://educationgovuk.sharepoint.com/sites/security/SitePages/assurance.aspx#departmental-security-assurance-model-%28dsam%29-process",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

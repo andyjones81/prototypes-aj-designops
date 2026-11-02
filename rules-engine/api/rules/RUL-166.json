@@ -1,0 +1,36 @@
+{
+ "id": "RUL-166",
+ "name": "Management interfaces (RDP, SSH, SMB, SQL) MUST NOT be exposed directly to the public internet because this is the fastest way to suffer a critical ransomware event.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "Services that utilise RDP, SSH, SMB or SQL and similar",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Management interfaces (RDP, SSH, SMB, SQL) MUST NOT be exposed directly to the public internet because this is the fastest way to suffer a critical ransomware event.",
+ "requirementDescription": "Do not allow administrative access to systems directly from the internet. Management services such as RDP, SSH, SMB, and SQL should only be accessible through secure, controlled routes",
+ "why": "Attackers constantly scan the internet looking for exposed management services. Administrative services should never be directly reachable from the internet. They must be protected behind secure access mechanisms",
+ "tasks": [
+  "Management interfaces (RDP, SSH, SMB, SQL) MUST NOT be exposed directly to the public internet because this is the fastest way to suffer a c"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

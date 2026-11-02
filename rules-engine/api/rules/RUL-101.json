@@ -1,0 +1,51 @@
+{
+ "id": "RUL-101",
+ "name": "Understand the impact on the existing landscape (ORR item 1)",
+ "source": "Service standard - 2",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - legal",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "Steve Goff",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "Understand the impact on the existing landscape (ORR item 1)",
+ "requirementDescription": "- good practice\n- helps people understand impact what they are doing is having on another people\n- understand dependencies",
+ "why": "- good practice\n- helps people understand impact what they are doing is having on another people\n- understand dependencies",
+ "tasks": [
+  "impact assessment",
+  "understand technical and business process dependency",
+  "a conversation with Steve?",
+  "mapping things out"
+ ],
+ "standards": [
+  "Service standard - 2"
+ ],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "id": "RUL-161",
+ "name": "GovAssure is mandatory if identified as in-scope to ensure compliance with a statutory obligation.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "GovAssure is mandatory if identified as in-scope to ensure compliance with a statutory obligation.",
+ "requirementDescription": "If your system or service has been identified as being within the scope of GovAssure, then participating in the GovAssure process is not optional. It is a mandatory requirement because it supports a legal or government policy obligation.",
+ "why": "GovAssure is the UK Government's cyber security assurance scheme. It assesses critical government systems against the NCSC Cyber Assessment Framework (CAF) to measure cyber security and resilience.",
+ "tasks": [
+  "GovAssure is mandatory if identified as in-scope to ensure compliance with a statutory obligation."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "None found",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

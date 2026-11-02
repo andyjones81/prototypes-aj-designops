@@ -1,0 +1,49 @@
+{
+ "id": "RUL-224",
+ "name": "Have you met obligations in relation to intellectual property (IP) data being processed, stored or transmitted by the service?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Discovery"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you met obligations in relation to intellectual property (IP) data being processed, stored or transmitted by the service?",
+ "requirementDescription": "If the system handles intellectual property, have you implemented the protections required to safeguard it?",
+ "why": "Loss of intellectual property can:\n- Harm the organisation\n- Create legal liabilities\n- Damage commercial value",
+ "tasks": [
+  "Ownership arrangements",
+  "Licensing restrictions",
+  "Contractual obligations",
+  "Security classification requirements"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

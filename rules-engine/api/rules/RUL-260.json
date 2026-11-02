@@ -1,0 +1,54 @@
+{
+ "id": "RUL-260",
+ "name": "Are you following a secure systems software development life cycle policy or process?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build",
+    "Run / Serve"
+   ]
+  }
+ ],
+ "conditionsText": "The appropriate process will depend on the service, but should incorporate relevant security activities throughout development, such as:\n- threat modelling\n- secure design\n- code review\n- automated security testing\n- dependency checking\n- vulnerability scanning\n- remediation\n- appropriate security testing before deployment.",
+ "phases": [
+  "Alpha",
+  "Private beta",
+  "Public beta",
+  "Live"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Are you following a secure systems software development life cycle policy or process?",
+ "requirementDescription": "Is security built into the way the service is designed, developed, tested, deployed and maintained, rather than being checked only at the end?",
+ "why": "Security problems are generally easier to address when they are identified as part of normal development rather than after the service is complete or live.\nA secure development lifecycle encourages teams to consider security while, Designing \nBuilding\nReviewing\nTesting \nDeploying \nOperating\nrather than relying solely on a final security assessment.",
+ "tasks": [
+  "Have an agreed secure development lifecycle or development process.",
+  "Define the security activities required at appropriate development stages.",
+  "Build appropriate security checks into development and deployment workflows.",
+  "Define who is responsible for completing those checks."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

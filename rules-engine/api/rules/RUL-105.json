@@ -1,0 +1,46 @@
+{
+ "id": "RUL-105",
+ "name": "Check and document if you need additional software licenses or SSL certificates (ORR 3)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Not stated",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "Steve Goff",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "If not using any additional software licence and SSL certificates",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "Check and document if you need additional software licenses or SSL certificates (ORR 3)",
+ "requirementDescription": "- operational\n- if you are procuring something for the service to run, you need to document it. For example, if alicence expries",
+ "why": "- operational\n- if you are procuring something for the service to run, you need to document it. For example, if alicence expries",
+ "tasks": [
+  "Check and document if you need additional software licenses or SSL certificates (ORR 3)"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "- SSL certificates",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

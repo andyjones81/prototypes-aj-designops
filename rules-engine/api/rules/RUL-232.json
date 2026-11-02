@@ -1,0 +1,53 @@
+{
+ "id": "RUL-232",
+ "name": "Have you identified and documented the business and technology information assets in scope of the service?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "This applies from:\n- Discovery\n- Requirements gathering\n- Design\n- Build\n- Live operation\nAsset information should also be reviewed whenever the service changes.",
+ "phases": [
+  "Discovery",
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you identified and documented the business and technology information assets in scope of the service?",
+ "requirementDescription": "Have you made a list of everything valuable that the service uses, stores, manages or depends on?",
+ "why": "You cannot protect assets if you do not know they exist.\nThe guidance states that documenting assets helps organisations:\n- Understand what needs protecting.\n- Manage risks and vulnerabilities.\n- Identify accountability.\n- Assess the impact of loss or compromise.",
+ "tasks": [
+  "Customer data",
+  "Employee information",
+  "Financial records",
+  "Intellectual property"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/documenting-service-assets/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

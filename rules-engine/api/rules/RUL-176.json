@@ -1,0 +1,36 @@
+{
+ "id": "RUL-176",
+ "name": "All administrative and privileged access (Cloud Consoles, Prod DBs, CI/CD Admin) MUST be protected by MFA to prevent account takeover and mass compromise.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "This applies specifically to administrative and privileged accounts. It is triggered when a user has elevated permissions",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "All administrative and privileged access (Cloud Consoles, Prod DBs, CI/CD Admin) MUST be protected by MFA to prevent account takeover and mass compromise.",
+ "requirementDescription": "Anyone with powerful access to systems, infrastructure, databases, cloud platforms, or deployment pipelines must use Multi-Factor Authentication (MFA), not just a username and password.",
+ "why": "Because compromising one privileged account can affect entire services.",
+ "tasks": [
+  "All administrative and privileged access (Cloud Consoles, Prod DBs, CI/CD Admin) MUST be protected by MFA to prevent account takeover and ma"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

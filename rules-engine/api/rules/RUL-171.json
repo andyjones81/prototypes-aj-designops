@@ -1,0 +1,36 @@
+{
+ "id": "RUL-171",
+ "name": "DLP controls MUST be implemented on email, collaboration tools, and corporate endpoints to prevent the unauthorized transmission of high-risk sensitive data.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "Email, Teams, SharePoint, OneDrive, or corporate devices.",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "DLP controls MUST be implemented on email, collaboration tools, and corporate endpoints to prevent the unauthorized transmission of high-risk sensitive data.",
+ "requirementDescription": "The organisation must have controls (DLP - Data Loss Prevention) in place to detect and stop people from accidentally or deliberately sending sensitive information outside the organisation through email, Teams/SharePoint, or company devices.",
+ "why": "Most data breaches don't involve sophisticated hackers.\nMany occur because of accidental disclosure, unauthorised sharing, and insider activity",
+ "tasks": [
+  "DLP controls MUST be implemented on email, collaboration tools, and corporate endpoints to prevent the unauthorized transmission of high-ris"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

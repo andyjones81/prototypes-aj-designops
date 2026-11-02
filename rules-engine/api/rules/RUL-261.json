@@ -1,0 +1,54 @@
+{
+ "id": "RUL-261",
+ "name": "Are you conducting regular code reviews as part of the development process?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build",
+    "Run / Serve"
+   ]
+  }
+ ],
+ "conditionsText": "Code reviews should form part of the development/change process and should be performed by someone suitably experienced who did not submit the relevant change.\nThe extent of review can be proportionate to the nature and risk of the change. Platform rules and review checklists can also be used to make the process consistent",
+ "phases": [
+  "Alpha",
+  "Private beta",
+  "Public beta",
+  "Live"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Are you conducting regular code reviews as part of the development process?",
+ "requirementDescription": "Does another suitably experienced person review code changes before they are accepted or deployed?",
+ "why": "Developers can unintentionally introduce:\n- security weaknesses\n- coding errors\n- insecure configurations\n- unintended behaviour\n- problems created by changes elsewhere in the system.",
+ "tasks": [
+  "Define when code review is required.",
+  "Require an appropriate independent reviewer.",
+  "Prevent relevant changes from being merged/deployed until required reviews are complete.",
+  "Include security considerations in review criteria where appropriate."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

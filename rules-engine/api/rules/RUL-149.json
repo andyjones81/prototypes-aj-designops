@@ -1,0 +1,36 @@
+{
+ "id": "RUL-149",
+ "name": "Must use GitHub for any new projects. Existing projects should have migration plans developed asap.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "When using a repository/development platform",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Must use GitHub for any new projects. Existing projects should have migration plans developed asap.",
+ "requirementDescription": "Any projects using something other than GitHub \nshould have migration plans in place and new projects can only use GitHub for source code repository and development platform",
+ "why": "Enables security measures to be designed once and re-used many times, otherwise all teams and projects are required to duplicate effort, and any errors introduce security risk.",
+ "tasks": [
+  "Must use GitHub for any new projects. Existing projects should have migration plans developed asap."
+ ],
+ "standards": [],
+ "systems": "All repos and platform development",
+ "guidance": "https://technical-guidance.education.gov.uk/principles/general/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

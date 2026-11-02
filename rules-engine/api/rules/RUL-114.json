@@ -1,0 +1,46 @@
+{
+ "id": "RUL-114",
+ "name": "If you are processing information, register on Information Asset Database (IAR) (ORR 13)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Not stated",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "If you are processing information, register on Information Asset Database (IAR) (ORR 13)",
+ "requirementDescription": "",
+ "why": "",
+ "tasks": [
+  "If you are processing information, register on Information Asset Database (IAR) (ORR 13)"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://educationgovuk.sharepoint.com/sites/manage-information/SitePages/managing-information-assets.aspx?web=1",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "id": "RUL-191",
+ "name": "All services MUST have local incident response plans aligned to the CISD standard to ensure consistency in handling and escalating incidents.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "All services MUST have local incident response plans aligned to the CISD standard to ensure consistency in handling and escalating incidents.",
+ "requirementDescription": "Every service must have its own documented plan for responding to security incidents, and that plan must follow the standards and processes defined by CISD so that incidents are handled consistently across the organisation.",
+ "why": "During an incident people are under pressure and may not know who to call, what actions to take, who can approve decisions or when to involve CISD, A documented plan avoids confusion",
+ "tasks": [
+  "All services MUST have local incident response plans aligned to the CISD standard to ensure consistency in handling and escalating incidents"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "policy-cyber-incident-response-management.docx\n\npolicy-information-security-exception.doc",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "id": "RUL-139",
+ "name": "Train support team on tools required (ORR 35 linked with 34 - merge?)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Should have",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "Train support team on tools required (ORR 35 linked with 34 - merge?)",
+ "requirementDescription": "Where you have a team providing 1st or 2nd line support - ensuring they have necessary training",
+ "why": "- operational\n- good practice",
+ "tasks": [
+  "Train support team on tools required (ORR 35 linked with 34 - merge?)"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

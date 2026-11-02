@@ -1,0 +1,48 @@
+{
+ "id": "RUL-247",
+ "name": "Have you documented the service's risks (for example in a risk register)?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "Relevant identified security risks should be captured, including risks that have been accepted and those that are above the project's acceptable risk level and therefore require treatment.\nThe guidance recommends describing security risks in terms of the threat actor, threat event, vulnerability and resulting consequences.",
+ "phases": [
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you documented the service's risks (for example in a risk register)?",
+ "requirementDescription": "Have all the security risks you've identified been formally written down somewhere where they can be tracked, owned and managed?",
+ "why": "Identifying a risk in a workshop or conversation isn't enough.\nRisks need to be recorded so the organisation can understand:\n- what could happen\n- what could cause it\n- what would be affected\n- how serious it is\n- who owns it\n- what is being done about it\n- whether the remaining risk is acceptable.\nThis also provides an audit trail for security and risk decisions.",
+ "tasks": [
+  "Have you documented the service's risks (for example in a risk register)?"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

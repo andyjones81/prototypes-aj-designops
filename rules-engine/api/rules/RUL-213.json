@@ -1,0 +1,48 @@
+{
+ "id": "RUL-213",
+ "name": "Have you considered the risk appetite of any organisations the service shares or exchanges data with?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test"
+   ]
+  }
+ ],
+ "conditionsText": "Applies when:\n- Data is shared externally.\n- Systems are integrated.\n- Services rely on third parties.\n- Multiple organisations are involved.",
+ "phases": [
+  "Discovery",
+  "Alpha"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you considered the risk appetite of any organisations the service shares or exchanges data with?",
+ "requirementDescription": "If your service shares data with another organisation, have you considered whether they have stricter security requirements or lower tolerance for risk than you do?",
+ "why": "A service may interact with:\n- Other government departments\n- Local authorities\n- Arm's length bodies\n- Suppliers\n- Partner organisations\nA risk that seems acceptable internally may be unacceptable to a partner organisation.\nThe guidance highlights the need to understand dependencies and how other projects or organisations influence risk management decisions.",
+ "tasks": [
+  "Have you considered the risk appetite of any organisations the service shares or exchanges data with?"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

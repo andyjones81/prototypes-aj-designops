@@ -1,0 +1,42 @@
+{
+ "id": "RUL-175",
+ "name": "\"Team\" passwords MUST be prohibited because they make accountability impossible and are easy to steal.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "transactional",
+   "op": "is",
+   "value": "Yes"
+  }
+ ],
+ "conditionsText": "In order to maintain accurate audit logs transactional services or services that allows users to update, delete and mantain records should all follow this rule",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "\"Team\" passwords MUST be prohibited because they make accountability impossible and are easy to steal.",
+ "requirementDescription": "Shared passwords used by multiple people (\"team passwords\") are not allowed because you cannot tell who used the account, and shared credentials are more likely to be compromised.",
+ "why": "If everyone logs in using the same password and if a critical change is made, there is no way to identify who did it.",
+ "tasks": [
+  "\"Team\" passwords MUST be prohibited because they make accountability impossible and are easy to steal."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

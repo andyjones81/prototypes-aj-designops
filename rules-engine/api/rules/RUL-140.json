@@ -1,0 +1,46 @@
+{
+ "id": "RUL-140",
+ "name": "Document a release management process (ORR 36)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Should have",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "- depends on service, may have service with continual iteration/deploying things vs something with change once a year \n- most digital \n- have it by private beta - whenever you have got users on system",
+ "phases": [
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Document a release management process (ORR 36)",
+ "requirementDescription": "When you make continual release changes (e.g. bug fixes, improvements to service) \n\nThere may be downtime\n\nHow are you going to deploy the releases, who will you communicate with to let them know that's happening",
+ "why": "- operational\n- good practice",
+ "tasks": [
+  "Document a release management process (ORR 36)"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

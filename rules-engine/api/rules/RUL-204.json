@@ -1,0 +1,53 @@
+{
+ "id": "RUL-204",
+ "name": "Does the project have a resource plan showing security roles and skills required to support the delivery of the service?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "Applies when:\n- Creating a new service.\n- Delivering significant changes.\n- Preparing business cases and project plans.\n- Seeking funding or approvals.",
+ "phases": [
+  "Discovery",
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Does the project have a resource plan showing security roles and skills required to support the delivery of the service?",
+ "requirementDescription": "Have you documented who is needed to support security on the project, what they will do, and what skills they need?",
+ "why": "Security activities do not happen automatically. Projects need suitably skilled people available at the right time. Without planning for security resources, key activities such as threat modelling, security architecture reviews, security testing and risk management may not happen. The guidance requires a comprehensive security resource plan covering the people involved throughout the project lifecycle.",
+ "tasks": [
+  "Security roles required.",
+  "Key responsibilities.",
+  "Required skills and expertise.",
+  "When resources are needed."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/identifying-security-resources/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

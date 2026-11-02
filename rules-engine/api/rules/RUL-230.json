@@ -1,0 +1,49 @@
+{
+ "id": "RUL-230",
+ "name": "Have you taken business objectives into account when making security decisions?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding"
+   ]
+  }
+ ],
+ "conditionsText": "This applies when:\n- Defining security requirements\n- Designing security controls\n- Making architecture decisions\n- Prioritising risks\n- Designing operational processes",
+ "phases": [
+  "Discovery"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you taken business objectives into account when making security decisions?",
+ "requirementDescription": "When choosing security controls, have you considered what the service is trying to achieve for the organisation?",
+ "why": "Security should help the organisation achieve its objectives safely, not get in the way.\nIf security decisions are made without understanding the business purpose, you can end up with:\n- Unnecessary controls\n- Increased costs\n- Delays to delivery\n- Reduced business benefits",
+ "tasks": [
+  "Business objectives were identified.",
+  "Security requirements were linked to those objectives.",
+  "Security decisions considered business impact.",
+  "Any trade-offs between security and business needs were documented."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-business-objectives-and-user-needs/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

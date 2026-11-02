@@ -1,0 +1,51 @@
+{
+ "id": "RUL-244",
+ "name": "Do the scoring scales used for your service's security risk assessment align with your organisation's risk management processes?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "This applies wherever the service uses a scoring system to determine the likelihood, impact or overall severity of security risks.",
+ "phases": [
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Do the scoring scales used for your service's security risk assessment align with your organisation's risk management processes?",
+ "requirementDescription": "Does the way you score security risks match the way your organisation scores and understands risk more generally?",
+ "why": "Security risks ultimately need to be understood and managed alongside other organisational risks.\nUsing aligned scoring means:\n- risks can be compared consistently\n- senior decision-makers understand what the ratings mean\n- escalation thresholds are consistent\n- risks aren't understated or overstated because different teams use different definitions\n- security risks can feed into wider organisational risk management.",
+ "tasks": [
+  "Identify the organisation's existing risk scoring framework.",
+  "Use the same scales or establish a clear mapping between the security risk scale and organisational scale.",
+  "Define what each likelihood, impact and severity rating means.",
+  "Agree the scoring parameters with the appropriate risk/security stakeholders."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

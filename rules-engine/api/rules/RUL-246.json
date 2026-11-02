@@ -1,0 +1,51 @@
+{
+ "id": "RUL-246",
+ "name": "Have you validated the timeliness of the threat and business impact sources?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "Check the age and relevance of information used to determine:\n- threat actors and their capabilities\n- threat likelihood\n- vulnerabilities and attack techniques\n- asset importance\n- sensitivity of information\n- number/type of users\n- operational dependency on the service\n- business consequences of compromise.",
+ "phases": [
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you validated the timeliness of the threat and business impact sources?",
+ "requirementDescription": "Have you checked that the information you're using to assess risk is still current enough to be relied upon?",
+ "why": "A risk assessment is only as good as the information it is based on.\nFor example, a threat assessment could become outdated because new threats or attack techniques have emerged. Equally, an impact assessment could become outdated because the service now processes more sensitive information or serves significantly more users.\nUsing outdated information could result in the service underestimating or misrepresenting its actual security risk.",
+ "tasks": [
+  "Record the sources and dates of the threat and business-impact information used.",
+  "Check that those sources are still relevant and current.",
+  "Define when the information needs reviewing.",
+  "Reassess it when significant changes occur to the service or threat landscape."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

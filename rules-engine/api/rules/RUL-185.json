@@ -1,0 +1,36 @@
+{
+ "id": "RUL-185",
+ "name": "Services MUST have an out-of-hours on-call contact for critical service incident escalation to ensure immediate action can be taken during high-risk periods.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Services MUST have an out-of-hours on-call contact for critical service incident escalation to ensure immediate action can be taken during high-risk periods.",
+ "requirementDescription": "Every service must have someone available to be contacted outside normal working hours in case a serious incident occurs and urgent action is needed.",
+ "why": "- Critical incidents can happen at any time.\n- Fast response often reduces damage and recovery time.\n- Security teams need someone who understands the service.\n- Business-critical services may require 24/7 support arrangements.",
+ "tasks": [
+  "Services MUST have an out-of-hours on-call contact for critical service incident escalation to ensure immediate action can be taken during h"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "id": "RUL-238",
+ "name": "Have you considered threat intelligence and the history of previous attacks on the organisation (or similar organisations) as part of the threat assessment?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test"
+   ]
+  }
+ ],
+ "conditionsText": "Applies when:\n- Producing or updating threat assessments.\n- Identifying likely attackers.\n- Assessing threat levels.",
+ "phases": [
+  "Discovery",
+  "Alpha"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you considered threat intelligence and the history of previous attacks on the organisation (or similar organisations) as part of the threat assessment?",
+ "requirementDescription": "Have you looked at real-world evidence about attacks that have already happened, either to your organisation or to similar organisations?",
+ "why": "Threat assessments should be evidence-based rather than based on assumptions.\nThe guidance states that threat assessments should use:\n- Cyber Threat Intelligence (CTI)\n- Reputable intelligence sources\n- Research into previous attacks on the organisation\n- Research into attacks against similar organisations",
+ "tasks": [
+  "Internal security incident history.",
+  "Cyber Threat Intelligence reports.",
+  "NCSC threat reporting.",
+  "Industry intelligence feeds."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/sourcing-a-threat-assessment/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

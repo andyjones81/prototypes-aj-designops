@@ -1,0 +1,46 @@
+{
+ "id": "RUL-108",
+ "name": "Do a peer review for technical architecture work (ORR 7)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Not stated",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "Steve Goff",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "Depends on nature of what you are building",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "Do a peer review for technical architecture work (ORR 7)",
+ "requirementDescription": "- operational\n- security\n- good practice",
+ "why": "- operational\n- security\n- good practice",
+ "tasks": [
+  "Do a peer review for technical architecture work (ORR 7)"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://deliver-good-services.education.gov.uk/guides/architecture-design-governance-and-assurance/things-to-help-you",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

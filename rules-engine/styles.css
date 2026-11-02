@@ -158,3 +158,9 @@ html, html.govuk-template, .govuk-template__body, .govuk-template__body > .govuk
 .filter-bar .govuk-select { min-width: 0; max-width: 260px; }
 .filter-bar__actions { display: flex; align-items: center; gap: 14px; }
 .filter-bar__actions .govuk-button { margin: 0; }
+
+/* Rules API and trigger interface */
+.api-line { display: grid; grid-template-columns: 140px 1fr; gap: 16px; align-items: end; }
+.api-code, .api-out { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; }
+.api-out { background: #f3f2f1; border-left: 4px solid #1d70b8; padding: 16px; max-height: 480px; overflow: auto; white-space: pre-wrap; word-break: break-word; margin: 0 0 30px; }
+code { background: #f3f2f1; padding: 1px 5px; font-size: 14px; }

@@ -1,0 +1,46 @@
+{
+ "id": "RUL-141",
+ "name": "Confirm who is responsible for internal and external comms (ORR 37)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Should have",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "- depends on nature of service, way you communicate may be different, for example, a big policy change may go through DfE comms, or small internal could use Teams channel",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "Confirm who is responsible for internal and external comms (ORR 37)",
+ "requirementDescription": "In context of new service going live, how are you communcating with end users and stakeholders during dleivery",
+ "why": "- good practice",
+ "tasks": [
+  "Confirm who is responsible for internal and external comms (ORR 37)"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

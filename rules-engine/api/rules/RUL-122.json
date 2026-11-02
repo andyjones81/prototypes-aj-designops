@@ -1,0 +1,50 @@
+{
+ "id": "RUL-122",
+ "name": "Consider identity and access management for your service (ORR 16)",
+ "source": "Identity Management B2B,Identity Management B2C,Identity Management B2E",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "Dominic Harley,Jane Ludlow",
+ "activityOwner": "Technical",
+ "stakeholder": "Dominic Harley,Steve Goff",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Idea",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "If a service requires users to securely access the service or information",
+ "phases": [
+  "Explore",
+  "Build"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Consider identity and access management for your service (ORR 16)",
+ "requirementDescription": "Enable users to securely access the digital services and information they need while protecting departmental data and systems.",
+ "why": "- provide a consistent and secure user experience in your service or product\n- reduce the number of identities and passwords users need to manage\n- improve security through modern authentication and authorisation controls\n- enable services to adopt common departmental identity standards and platforms\n- reduce duplication of effort and technology across services",
+ "tasks": [
+  "Consider identity and access management for your service (ORR 16)"
+ ],
+ "standards": [
+  "Identity Management B2B,Identity Management B2C,Identity Management B2E"
+ ],
+ "systems": "- GOV.UK One Login\n- DfE sign-in\n- Entra ID - Single Sign-on\n-",
+ "guidance": "Identity and Access Management (IdAM) intranet page, word of mouth through Dominic Harley or Jane Ludlow.\nDfE Sign-in Homepagehttps://educationgovuk.sharepoint.com/sites/lvewp00518\nOne Login guidance page \nhttps://www.sign-in.service.gov.uk/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "RUL-144",
+ "name": "Get help with DDT tasks and projects ('Demand' process)",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Should have",
+ "owner": "Jo Wright",
+ "activityOwner": "DDT Demand team",
+ "stakeholder": "",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Idea"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Explore"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Get help with DDT tasks and projects ('Demand' process)",
+ "requirementDescription": "Review of requests from across DfE for DDT time, knowledge and expertise, usually with a view to developing a solution to a problem, or augmenting an existing service.",
+ "why": "Centralised way into DDT for people who don't have ways into DDT. Demand can signpost people to the right place.",
+ "tasks": [
+  "a clear description of the problem and its impact",
+  "what kind of help they are seeking. For example, options appraisal or planning advice",
+  "timescales and confirmed funding",
+  "work already done. For example, research, options considered, guidance reviewed"
+ ],
+ "standards": [],
+ "systems": "MS Form, SharePoint List, Power BI",
+ "guidance": "Get help with DDT tasks and projects",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "RUL-223",
+ "name": "Have you met obligations in relation to financial information (such as credit card details) being processed, stored or transmitted by the service?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding"
+   ]
+  }
+ ],
+ "conditionsText": "Any services that use financial data:\n- Credit card details\n- Bank account information\n- Payment records\n- Financial transactions",
+ "phases": [
+  "Discovery"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you met obligations in relation to financial information (such as credit card details) being processed, stored or transmitted by the service?",
+ "requirementDescription": "If the service handles financial data, have you complied with the relevant security and regulatory requirements?",
+ "why": "Financial data is often highly attractive to attackers and subject to additional controls.",
+ "tasks": [
+  "PCI-DSS compliance where applicable",
+  "Encryption",
+  "Strong access control",
+  "Secure transmission"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "id": "RUL-167",
+ "name": "Public Web Applications MUST sit behind a Web Application Firewall (WAF) in Blocking Mode to stop common automated attacks.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "All public web applications",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Public Web Applications MUST sit behind a Web Application Firewall (WAF) in Blocking Mode to stop common automated attacks.",
+ "requirementDescription": "Any website or web application accessible from the internet must be protected by a Web Application Firewall (WAF), and the WAF must be actively blocking malicious traffic rather than just monitoring it.",
+ "why": "Many attacks are:\n- Automated\n- Opportunistic\n- Well known\nAttackers don't necessarily target DfE specifically.\nInstead, they scan the internet looking for vulnerable applications. A WAF provides an additional layer of defence",
+ "tasks": [
+  "Public Web Applications MUST sit behind a Web Application Firewall (WAF) in Blocking Mode to stop common automated attacks."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

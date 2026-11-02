@@ -1,0 +1,56 @@
+{
+ "id": "RUL-199",
+ "name": "Have you consulted relevant security stakeholders when developing your business case?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test",
+    "Build",
+    "Run / Serve"
+   ]
+  }
+ ],
+ "conditionsText": "This applies whenever:\n- A new service, product, system or change is being proposed.\n- A business case is being developed.\n- Security risks or obligations could arise.",
+ "phases": [
+  "Discovery",
+  "Alpha",
+  "Private beta",
+  "Public beta",
+  "Live"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you consulted relevant security stakeholders when developing your business case?",
+ "requirementDescription": "Have you spoken to the people who are responsible for security and technology to get their input while creating the business case?",
+ "why": "Project teams often do not have specialist security expertise. Security stakeholders can identify risks, obligations, costs, and requirements that might otherwise be missed. The guidance specifically states that the SRO, service owner, business analyst, CTO, CISO and technical security assurance teams should contribute to the business case",
+ "tasks": [
+  "Discussions with Security, Cyber, Architecture or Assurance teams.",
+  "Review meetings.",
+  "Feedback incorporated into the business case.",
+  "Approval or endorsement from appropriate security representatives."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/\n\nService Engagement Form\n\nProcurements and suppliers – security considerations",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

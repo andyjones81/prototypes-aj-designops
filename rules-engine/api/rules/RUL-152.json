@@ -1,0 +1,38 @@
+{
+ "id": "RUL-152",
+ "name": "Secret scanning MUST be enabled in the repository to ensure proactive detection and remediation of accidental secret exposure.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "When using a repository",
+ "phases": [
+  "https://technical-guidance.education.gov.uk/standards/storing-source-code/#repository-requirements"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Secret scanning MUST be enabled in the repository to ensure proactive detection and remediation of accidental secret exposure.",
+ "requirementDescription": "Your code repository must automatically scan for passwords, API keys, tokens, certificates, and other secrets so that accidental exposures are detected and fixed quickly.",
+ "why": "Developers sometimes accidentally commit secrets to Git repositories. Once committed, the secret becomes part of the Git history and may be exposed to\n- Other developers\n- Contractors\n- Automated repository scanners\n- Attackers if the repository is public or compromised\nSecret scanning helps catch these mistakes before they become security incidents. Leaked secrets are exploited in real-time and can enable direct attacker access to our systems and data.",
+ "tasks": [
+  "Secret scanning MUST be enabled in the repository to ensure proactive detection and remediation of accidental secret exposure."
+ ],
+ "standards": [],
+ "systems": "All repos and platform development",
+ "guidance": "https://technical-guidance.education.gov.uk/standards/storing-source-code/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

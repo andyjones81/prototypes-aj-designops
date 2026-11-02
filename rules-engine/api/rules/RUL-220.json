@@ -1,0 +1,49 @@
+{
+ "id": "RUL-220",
+ "name": "Have you discussed security obligations, including government policies, regulations, laws and contracts, for your service with your organisation's compliance or information security teams?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Discovery"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you discussed security obligations, including government policies, regulations, laws and contracts, for your service with your organisation's compliance or information security teams?",
+ "requirementDescription": "Have you spoken to the people who understand legal, regulatory and security requirements to determine what rules your service must follow?\nThe guidance specifically recommends consulting legal, commercial and information management teams alongside security specialists",
+ "why": "Different services have different obligations.\nFor example:\n- UK GDPR\n- Data Protection Act\n- PCI-DSS\n- Government Security Policies\n- Supplier contracts\nMissing a requirement can lead to non-compliance, fines or operational risk",
+ "tasks": [
+  "Compliance workshops",
+  "Legal reviews",
+  "Security reviews",
+  "Governance meeting outputs"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

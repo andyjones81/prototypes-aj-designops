@@ -1,0 +1,56 @@
+{
+ "id": "RUL-203",
+ "name": "Does the management case include details of the security governance and assurance approach?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test",
+    "Build",
+    "Run / Serve"
+   ]
+  }
+ ],
+ "conditionsText": "Applies during:\n- Project delivery.\n- Transition to live service.\n- Live operation.\n- Change management activities.",
+ "phases": [
+  "Discovery",
+  "Alpha",
+  "Private beta",
+  "Public beta",
+  "Live"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Does the management case include details of the security governance and assurance approach?",
+ "requirementDescription": "Have you explained who will oversee security, how security decisions will be made, and how you will check security is working throughout delivery?",
+ "why": "Security cannot simply be designed and forgotten. There must be ongoing governance, monitoring and assurance to ensure controls continue to work and risks remain managed. The guidance states that the management case should define security roles and responsibilities, governance arrangements, risk management processes, change assessment processes and security assurance activities",
+ "tasks": [
+  "Security governance structure.",
+  "Security roles and responsibilities.",
+  "Risk management processes.",
+  "Security assurance activities and reviews."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

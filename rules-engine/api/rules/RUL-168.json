@@ -1,0 +1,36 @@
+{
+ "id": "RUL-168",
+ "name": "Production environments MUST NOT communicate with Non-Production environments (Segmentation) to prevent a test environment compromise from spreading to live systems.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "Any applicable in house built service",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Production environments MUST NOT communicate with Non-Production environments (Segmentation) to prevent a test environment compromise from spreading to live systems.",
+ "requirementDescription": "Production systems should be isolated from development, test, and UAT environments. A compromise in a non-production environment should not provide a path into live production systems.",
+ "why": "Non-production environments are often less secure than production because they may have:\n- Weaker access controls\n- Shared accounts\n- Less monitoring\n- Experimental code\n- Temporary configurations\nAttackers know this.",
+ "tasks": [
+  "Production environments MUST NOT communicate with Non-Production environments (Segmentation) to prevent a test environment compromise from s"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

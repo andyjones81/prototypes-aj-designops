@@ -1,0 +1,36 @@
+{
+ "id": "RUL-177",
+ "name": "\"Break-glass\" accounts MUST be disabled by default and alert immediately upon usage to prevent abuse and unauthorised use.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "Applies to Identity platforms, Cloud Platform administration, Privileged access management systems, CI/CD and source control platforms and production infrastructure",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "\"Break-glass\" accounts MUST be disabled by default and alert immediately upon usage to prevent abuse and unauthorised use.",
+ "requirementDescription": "Emergency (\"break-glass\") accounts should not be available for everyday use. They should only be enabled or used in exceptional situations, and any use of them should generate an immediate alert so it can be investigated.",
+ "why": "Because break-glass accounts are:\n- Necessary for recovery during emergencies.\n- Extremely powerful, making them attractive targets for attackers.",
+ "tasks": [
+  "\"Break-glass\" accounts MUST be disabled by default and alert immediately upon usage to prevent abuse and unauthorised use."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

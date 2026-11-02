@@ -1,0 +1,36 @@
+{
+ "id": "RUL-196",
+ "name": "Base container images MUST be pulled from a trusted internal registry and MUST be refreshed/patched at least monthly to prevent systems from being built using old, vulnerable software components.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "Services using containers, kubernetes, Docker, AKS, container apps and other containerised workloads. Not applicable to SaaS products you dont build, standard sharepoint solutions conventional virtual machines that dont use containers",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Base container images MUST be pulled from a trusted internal registry and MUST be refreshed/patched at least monthly to prevent systems from being built using old, vulnerable software components.",
+ "requirementDescription": "When building containerised applications (e.g., Docker containers), teams must use approved base images from the organisation's trusted registry, and those images must be updated regularly so new deployments aren't built on top of vulnerable software.",
+ "why": "To prevent systems from being built using old, vulnerable software components",
+ "tasks": [
+  "Base container images MUST be pulled from a trusted internal registry and MUST be refreshed/patched at least monthly to prevent systems from"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

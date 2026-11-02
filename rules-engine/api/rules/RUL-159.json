@@ -1,0 +1,36 @@
+{
+ "id": "RUL-159",
+ "name": "Any externally accessible system that: - Handle sensitive or business‑critical data - Provide authentication or user accounts - Connect into internal networks - Offer custom functionality (web apps, APIs, integrations) - Could cause material impact if compromised MUST undergo annual penetration testing against the live production version. Above a threshold this must be an external IT Healthcheck.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "A service or webpage externally accessible and handles sensitive or business critical data (pupil data, financial information, staff data etc), provides authentication or user accounts (login portals, admin portals, identity services etc). If the service connects to internal networks and could cause material impact if compromised",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Any externally accessible system that: - Handle sensitive or business‑critical data - Provide authentication or user accounts - Connect into internal networks - Offer custom functionality (web apps, APIs, integrations) - Could cause material impact if compromised MUST undergo annual penetration testing against the live production version. Above a threshold this must be an external IT Healthcheck.",
+ "requirementDescription": "If a system is exposed to the internet and is important enough to pose a security or business risk, it must be tested by security specialists at least once a year to identify vulnerabilities that automated scanning might miss.",
+ "why": "Penetration testing provides assurance that real attackers cannot easily exploit the service.",
+ "tasks": [
+  "Any externally accessible system that:\n- Handle sensitive or business‑critical data\n- Provide authentication or user accounts\n- Connect into"
+ ],
+ "standards": [],
+ "systems": "Service Health Check app and any services who meets the condition criteria",
+ "guidance": "https://educationgovuk.sharepoint.com/sites/security/SitePages/it-health-check-services.aspx",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

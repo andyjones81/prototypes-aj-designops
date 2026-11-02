@@ -1,0 +1,54 @@
+{
+ "id": "RUL-256",
+ "name": "Have you tested the controls and confirmed they're working as intended?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build",
+    "Run / Serve"
+   ]
+  }
+ ],
+ "conditionsText": "When controls have been designed, built, configured and deployed.",
+ "phases": [
+  "Alpha",
+  "Private beta",
+  "Public beta",
+  "Live"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you tested the controls and confirmed they're working as intended?",
+ "requirementDescription": "Have you checked that the security controls actually work in practice?",
+ "why": "A control that exists on paper may not work correctly. Secure by Design places emphasis on assessing the effectiveness of security controls and continuing assurance throughout delivery. A control only reduces risk if it operates as intended.",
+ "tasks": [
+  "Penetration testing.",
+  "Vulnerability scanning.",
+  "Security design reviews.",
+  "Configuration reviews."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

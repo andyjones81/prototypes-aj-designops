@@ -1,0 +1,36 @@
+{
+ "id": "RUL-172",
+ "name": "Sensitive data MUST be encrypted At Rest (using managed keys) and In Transit (using TLS 1.2+) to ensure data is protected even if communications are intercepted or storage is compromised.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "Any system that stores, processes or transmits sensitive data",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Sensitive data MUST be encrypted At Rest (using managed keys) and In Transit (using TLS 1.2+) to ensure data is protected even if communications are intercepted or storage is compromised.",
+ "requirementDescription": "Any sensitive data must be encrypted both when it is stored and when it is being transmitted between systems, so that even if someone gains access to the storage or intercepts the communication, they cannot easily read the data.",
+ "why": "To ensure data is protected even if communications are intercepted or storage is compromised",
+ "tasks": [
+  "Sensitive data MUST be encrypted At Rest (using managed keys) and In Transit (using TLS 1.2+) to ensure data is protected even if communicat"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

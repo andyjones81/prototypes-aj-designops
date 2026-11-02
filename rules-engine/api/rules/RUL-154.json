@@ -1,0 +1,36 @@
+{
+ "id": "RUL-154",
+ "name": "All infrastructure and cloud services MUST be securely configured to meet the CIS IG1 baseline/benchmark because this closes known security gaps that hackers actively exploit.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "Configuration Management on platforms, cloud resource and servers",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "All infrastructure and cloud services MUST be securely configured to meet the CIS IG1 baseline/benchmark because this closes known security gaps that hackers actively exploit.",
+ "requirementDescription": "All servers, cloud resources, platforms, and services must be configured according to the CIS IG1 security baseline so they are protected against common and well-known attacks.",
+ "why": "Most successful attacks don't rely on sophisticated hacking.\nInstead, attackers often exploit:\n- Default settings\n- Excessive permissions\n- Open ports\n- Missing encryption\n- Poor configurations",
+ "tasks": [
+  "All infrastructure and cloud services MUST be securely configured to meet the CIS IG1 baseline/benchmark because this closes known security "
+ ],
+ "standards": [],
+ "systems": "Platforms, cloud resource and servers",
+ "guidance": "None found",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

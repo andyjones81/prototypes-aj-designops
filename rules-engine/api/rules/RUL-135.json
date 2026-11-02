@@ -1,0 +1,48 @@
+{
+ "id": "RUL-135",
+ "name": "Create support documentation for live support (ORR 31 - could link to ORR 11, 34 and 35))",
+ "source": "Service Standard 14",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Should have",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "Steve Goff",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "Create support documentation for live support (ORR 31 - could link to ORR 11, 34 and 35))",
+ "requirementDescription": "- For operational reasons, if something goes wrong - runbook for service\n- supports meeting Service Standard 14",
+ "why": "- For operational reasons, if something goes wrong - runbook for service\n- supports meeting Service Standard 14",
+ "tasks": [
+  "Create support documentation for live support (ORR 31 - could link to ORR 11, 34 and 35))"
+ ],
+ "standards": [
+  "Service Standard 14"
+ ],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

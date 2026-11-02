@@ -1,0 +1,36 @@
+{
+ "id": "RUL-193",
+ "name": "Business important and critical services MUST span Availbility Zones (AZs) to ensure resilience against major cloud failures",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Not stated",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Business important and critical services MUST span Availbility Zones (AZs) to ensure resilience against major cloud failures",
+ "requirementDescription": "",
+ "why": "",
+ "tasks": [
+  "Business important and critical services MUST span Availbility Zones (AZs) to ensure resilience against major cloud failures"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

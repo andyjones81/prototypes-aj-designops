@@ -1,0 +1,36 @@
+{
+ "id": "RUL-198",
+ "name": "The use of End-of-Life software is PROHIBITED because it contains unpatchable flaws that are easy for hackers to compromise.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "Any service that uses end of life software, which means the vendor has stopped supporting the product, e.g unsupported versions of windows server, outdated Java runtime, an old version of SQL server",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "The use of End-of-Life software is PROHIBITED because it contains unpatchable flaws that are easy for hackers to compromise.",
+ "requirementDescription": "You must not use software that is no longer supported by the vendor, because security vulnerabilities will no longer be fixed and attackers actively target these systems.",
+ "why": "Security teams generally consider EOL software to be a significant risk because it creates a situation where, even if you know about a vulnerability, you cannot properly remediate it",
+ "tasks": [
+  "The use of End-of-Life software is PROHIBITED because it contains unpatchable flaws that are easy for hackers to compromise."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

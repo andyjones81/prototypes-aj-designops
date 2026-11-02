@@ -1,0 +1,48 @@
+{
+ "id": "RUL-212",
+ "name": "Have you established a clear governance structure around risk management decision making?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test"
+   ]
+  }
+ ],
+ "conditionsText": "Applies whenever Security risks are are being assessed, being escalated, and accepted. Also when Security decisions affect project delivery",
+ "phases": [
+  "Discovery",
+  "Alpha"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you established a clear governance structure around risk management decision making?",
+ "requirementDescription": "Is it clear who makes risk decisions, who approves risk acceptance, who escalates risks and who monitors them?",
+ "why": "Good risk management requires accountability.\nWithout governance:\n- Risks may be ignored.\n- Risks may be accepted by someone without authority.\n- Important decisions may be delayed.\n- Different teams may use different standards.\nThe guidance emphasises that the risk appetite must be communicated and used by delivery teams to support risk management decision-making and governance",
+ "tasks": [
+  "Have you established a clear governance structure around risk management decision making?"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

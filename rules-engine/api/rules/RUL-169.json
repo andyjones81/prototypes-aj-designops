@@ -1,0 +1,36 @@
+{
+ "id": "RUL-169",
+ "name": "\"Default Encryption\" policies MUST be enabled on all Storage Accounts/S3/Blob storage to ensure sensitive data is not accidentally stored without protection.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "This obligation is relevant if your service:\n- Stores files, documents, backups, logs, or databases in cloud storage.\n- Uses Azure Storage Accounts, Blob Storage, AWS S3, or similar services.\n- Handles personal, sensitive, financial, or business-critical data.\nCloud storage services:\nBlob Storage - Azure\nS3 buckets - AWS (Amazon web services) and similar cloud storage solutions",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "\"Default Encryption\" policies MUST be enabled on all Storage Accounts/S3/Blob storage to ensure sensitive data is not accidentally stored without protection.",
+ "requirementDescription": "Encryption must be turned on by default for all cloud storage services so that any data saved there is automatically protected, even if someone forgets to configure encryption manually.",
+ "why": "Its a security control that reduces the impact of a beach and protects against misconfigured storage, unauthorised access, insider threats and cloud account compromise",
+ "tasks": [
+  "\"Default Encryption\" policies MUST be enabled on all Storage Accounts/S3/Blob storage to ensure sensitive data is not accidentally stored wi"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

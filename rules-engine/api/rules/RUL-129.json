@@ -1,0 +1,46 @@
+{
+ "id": "RUL-129",
+ "name": "Manage DSAM3 actions (ORR 22). Manage actions from ITHC",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "Steve Goff",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "Manage DSAM3 actions (ORR 22). Manage actions from ITHC",
+ "requirementDescription": "To ensure that their systems are safe and security",
+ "why": "To ensure that their systems are safe and security",
+ "tasks": [
+  "Manage DSAM3 actions (ORR 22). Manage actions from ITHC"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "id": "RUL-272",
+ "name": "Have you conducted a retirement risk assessment with an appropriate plan put together based on the classification and sensitivity of data?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build",
+    "Run / Serve"
+   ]
+  }
+ ],
+ "conditionsText": "The assessment should consider:\n- the classification and sensitivity of the data\n- data-retention requirements\n- whether data needs to be archived, migrated or deleted\n- regulatory or contractual requirements\n- backups\n- dependencies on other systems\n- effects on connected services\n- temporary risks during the retirement process\n- remaining infrastructure, accounts and access\n- residual risks following retirement.\nThe required disposal method should be proportionate to the sensitivity of the information. guidance specifically notes that simply deleting files may not prevent recovery of data and recommends sanitisation where storage media has contained data sensitive to the organisation",
+ "phases": [
+  "Alpha",
+  "Private beta",
+  "Public beta",
+  "Live"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you conducted a retirement risk assessment with an appropriate plan put together based on the classification and sensitivity of data?",
+ "requirementDescription": "Before switching something off or getting rid of it, have you assessed what could go wrong and created a plan for safely dealing with the systems and data involved?",
+ "why": "Retiring a component can itself introduce security risks.\nFor example:\n- sensitive data could inadvertently remain behind\n- information that legally needs retaining could be accidentally destroyed\n- necessary data could become inaccessible\n- a connected service could stop working\n- old infrastructure could remain accessible\n- user/admin access could remain active\n- data could be inadequately deleted and later recovered.",
+ "tasks": [
+  "Have you conducted a retirement risk assessment with an appropriate plan put together based on the classification and sensitivity of data?"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/retiring-service-components-securely/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

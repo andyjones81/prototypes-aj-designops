@@ -1,0 +1,46 @@
+{
+ "id": "RUL-104",
+ "name": "Enagage with SROs/SOs of services in the existing landscape who may be affected by change (ORR 2)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Should have",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "Steve Goff",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "'- not required in something completely managed service driven (supplier built and hosted) \n- not required if brand new service, works in isolation, doesn't interface with anything else",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "Enagage with SROs/SOs of services in the existing landscape who may be affected by change (ORR 2)",
+ "requirementDescription": "If the new service or application interacts with existing applications or technologies, the owners of the existing apps or tech are made aware and provide consent.",
+ "why": "If the new service or application interacts with existing applications or technologies, the owners of the existing apps or tech are made aware and provide consent.",
+ "tasks": [
+  "Enagage with SROs/SOs of services in the existing landscape who may be affected by change (ORR 2)"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

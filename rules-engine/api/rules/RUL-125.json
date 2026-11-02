@@ -1,0 +1,46 @@
+{
+ "id": "RUL-125",
+ "name": "Complete a service engagement form to register your service with Information Security (ORR 19)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "Steve Goff",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "Complete a service engagement form to register your service with Information Security (ORR 19)",
+ "requirementDescription": "To ensure appropriate security assurance undertaken for your service",
+ "why": "To ensure appropriate security assurance undertaken for your service",
+ "tasks": [
+  "complete a Service engagement form"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "Service engagement form",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

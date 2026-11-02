@@ -1,0 +1,53 @@
+{
+ "id": "RUL-207",
+ "name": "Have you considered pre-approved or recommended architectural patterns available from your organisation or other government departments?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "Applies when:\n- Designing a new solution.\n- Selecting technology.\n- Creating target architecture.\n- Implementing security controls.",
+ "phases": [
+  "Discovery",
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you considered pre-approved or recommended architectural patterns available from your organisation or other government departments?",
+ "requirementDescription": "Before designing something new, did you check whether there is already a recognised secure design pattern that could be reused?",
+ "why": "DfE does have approved architectures, security patterns and reference designs that have already been reviewed and assessed. Reusing these approaches reduces risk, improves consistency and avoids unnecessary design effort. The guidance encourages using existing organisational capabilities, policies, procedures and resources where possible",
+ "tasks": [
+  "Reviewed relevant organisational standards.",
+  "Considered existing government patterns and frameworks.",
+  "Assessed whether approved architectures meet project needs.",
+  "Documented any decision to deviate from established patterns."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/identifying-security-resources/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

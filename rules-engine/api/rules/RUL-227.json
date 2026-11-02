@@ -1,0 +1,49 @@
+{
+ "id": "RUL-227",
+ "name": "Have you defined data sharing agreements with any organisations you are sharing data with?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Discovery"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you defined data sharing agreements with any organisations you are sharing data with?",
+ "requirementDescription": "Have you formally agreed how shared data will be protected, used and managed?",
+ "why": "Data sharing creates accountability and legal obligations that need to be documented.",
+ "tasks": [
+  "Purpose of sharing",
+  "Types of data",
+  "Security controls",
+  "Retention arrangements"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "id": "RUL-211",
+ "name": "Have you used the organisation's risk appetite statements and applied them to the nature of the service to determine the security risk appetite level for the project?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test"
+   ]
+  }
+ ],
+ "conditionsText": "This applies when:\n- A service is being planned.\n- Discovery is underway.\n- Security requirements are being established.\n- Risk assessments are being performed.\nThe guidance says this should be established during Discovery (or requirements gathering) and reviewed whenever major changes occur.",
+ "phases": [
+  "Discovery",
+  "Alpha"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you used the organisation's risk appetite statements and applied them to the nature of the service to determine the security risk appetite level for the project?",
+ "requirementDescription": "Have you taken your organisation's existing risk appetite and worked out what it means for this specific service or project?",
+ "why": "Different organisations tolerate different levels of risk.\nFor example:\n- A public information website may tolerate more risk.\n- A system holding sensitive personal data may tolerate very little risk.\n- A payment service may have almost no tolerance for integrity failures.\nWithout a defined risk appetite:\n- Teams make inconsistent decisions.\n- Security investments become difficult to justify.\n- Risks may be accepted unintentionally.\nThe guidance states that a project risk appetite helps determine acceptable and unacceptable risks and supports informed risk management decisions",
+ "tasks": [
+  "Have you used the organisation's risk appetite statements and applied them to the nature of the service to determine the security risk appet"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-malware-defence.docx?d=w382fcc54b9914b188634973a39e96cb5&csf=1&web=1&e=igfgSR\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-secure-configuration-management.docx?d=w910934615be84c86996d8b094dff9b9c&csf=1&web=1&e=og2TdO",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

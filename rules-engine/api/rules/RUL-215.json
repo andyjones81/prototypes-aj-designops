@@ -1,0 +1,48 @@
+{
+ "id": "RUL-215",
+ "name": "Have you considered the appropriate Cyber Assessment Framework (CAF) profile for all the components of the service?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test"
+   ]
+  }
+ ],
+ "conditionsText": "Applies when:\n- Designing the service architecture.\n- Selecting controls.\n- Planning assurance activities.\n- Determining security requirements.",
+ "phases": [
+  "Discovery",
+  "Alpha"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you considered the appropriate Cyber Assessment Framework (CAF) profile for all the components of the service?",
+ "requirementDescription": "Have you worked out what level of assurance and security expectations apply to each part of the service based on its risk and importance?",
+ "why": "Different components may require different levels of security.",
+ "tasks": [
+  "Have you considered the appropriate Cyber Assessment Framework (CAF) profile for all the components of the service?"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

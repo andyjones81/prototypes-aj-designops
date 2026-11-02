@@ -1,0 +1,54 @@
+{
+ "id": "RUL-262",
+ "name": "Are you using a manual or automated code testing method (for example, Static Application Security Testing (SAST) or Dynamic Application Security Testing (DAST))?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build",
+    "Run / Serve"
+   ]
+  }
+ ],
+ "conditionsText": "The testing methods should be:\n- suitable for the technology being used\n- proportionate to relevant threats and risk\n- run at appropriate points in development\n- repeated at suitable frequencies\n- capable of feeding findings to the people responsible for remediation.\nThe guidance distinguishes between continual tests, periodic tests and tests triggered by events such as deployment or the integration of new third-party software",
+ "phases": [
+  "Alpha",
+  "Private beta",
+  "Public beta",
+  "Live"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Are you using a manual or automated code testing method (for example, Static Application Security Testing (SAST) or Dynamic Application Security Testing (DAST))?",
+ "requirementDescription": "Are you actively testing the application for security weaknesses using appropriate security testing techniques or tools?",
+ "why": "Human code review alone may not detect every vulnerability.\nAutomated and manual security testing provides additional layers of assurance and can identify vulnerabilities earlier and more consistently.\nThe guidance recommends multiple methods rather than relying on one vulnerability-discovery process.",
+ "tasks": [
+  "Select appropriate code/application security testing methods.",
+  "Integrate automated testing into development pipelines where appropriate.",
+  "Define when tests will run.",
+  "Configure alerts/reporting so developers see important findings."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

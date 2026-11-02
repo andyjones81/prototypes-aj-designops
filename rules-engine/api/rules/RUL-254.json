@@ -1,0 +1,54 @@
+{
+ "id": "RUL-254",
+ "name": "Did you select the security controls based on risk, threats and exposure?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build",
+    "Run / Serve"
+   ]
+  }
+ ],
+ "conditionsText": "When:\n- Threat assessments have been completed.\n- Risks have been identified.\n- Security architecture is being defined.\nWhen:\n- Threat assessments have been completed.\n- Risks have been identified.\n- Security architecture is being defined.",
+ "phases": [
+  "Alpha",
+  "Private beta",
+  "Public beta",
+  "Live"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Did you select the security controls based on risk, threats and exposure?",
+ "requirementDescription": "Did you choose security controls because they address real threats and risks, rather than simply applying controls because they are standard or familiar?",
+ "why": "Secure by Design promotes a risk-driven approach. Controls should directly relate to the threats facing the service. Over-securing wastes money, while under-securing leaves vulnerabilities exposed",
+ "tasks": [
+  "Threats were identified.",
+  "Risks were assessed.",
+  "Controls were selected to reduce those specific risks.",
+  "Control decisions can be traced back to identified risks."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

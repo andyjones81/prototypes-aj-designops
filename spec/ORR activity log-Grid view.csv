@@ -1,0 +1,168 @@
+﻿Action,What it means,Mandatory status,Why does this exist,Conditions,What needs to happen,Delivery phase,Standards applicable,Systems,Guidance,[Delete?] Metrics,Activity owner,Assurance owner,Stakeholder,[Delete] Who else is involved,[Unsure] Trigger,[Unsure?] Assurance point,Pain points,Opportunities,Any other notes,[Unsure about field] Standard or Activity,[Unsure about field] Category,[Delete?] Delivery method
+Understand the impact on the existing landscape (ORR item 1),,Must have - legal,"- good practice
+- helps people understand impact what they are doing is having on another people
+- understand dependencies",,"- impact assessment
+- understand technical and business process dependency 
+- a conversation with Steve?
+- mapping things out",,Service standard - 2,,,,,,Steve Goff,,,,,,"- Difficult to assure against
+- Not sure if you could self-serve assurance 
+- Also gets picked up at DDT triage",Activity,,
+"Meet accessibility standards (ORR item 27, 28, 29) ",,,So services are accessible ,,"- book an accessibility audit 
+- get a report
+- meet WCAG 2.2 AA guidelines ",,,,,,,,Steve Goff,,,,,,,Activity,,
+Register your service on the Accessibility statement service (ORR 30),,Must have - legal,"The accessibility statement service helps the department track known accessibility issues across products and services 
+- produces a compliant accessibility statement for your service",,Get onboarded to the service by DesignOps,,,,https://accessibility-statements.education.gov.uk/,,,,Jake Lloyd,,,,,,,Activity,,
+Enagage with SROs/SOs of services in the existing landscape who may be affected by change (ORR 2),,Should have,"If the new service or application interacts with existing applications or technologies, the owners of the existing apps or tech are made aware and provide consent.","'- not required in something completely managed service driven (supplier built and hosted) 
+- not required if brand new service, works in isolation, doesn't interface with anything else
+",Conversations with relevant teams		,,,,,,,,Steve Goff,,,,,,,Activity,,
+Check and document if you need additional software licenses or SSL certificates (ORR 3),,,"- operational
+- if you are procuring something for the service to run, you need to document it. For example, if alicence expries",If not using any additional software licence and SSL certificates,Check if you need money for it,,,,- SSL certificates,,,,Steve Goff,,,,,,This one is very out of place. ORR not in any order,Activity,,
+"Agree commercial and contractual agreements. For example, Statements of Work",,Must have - legal,"Ensure suppliers understand their roles and responsibilities, and being able to hold them to account",,"- document expectations of supplier
+- create a Statement of Work",,,,,,,,Steve Goff,,,,,,,Activity,,
+Document High Level Design (HLD) and Low Level Design (LLD). Factor DfE standards into technical design (ORR 5 and ORR 6),,,"- operational
+- security
+- good practice
+- people need to understand how the thing is built - to support it and build it ",If it is something completely third-party hosted because they can't follow technical standards. Still would expect them to meet legal standards.  ,"Depends on nature of service for the type and level of detail included. 
+
+- managed supplier - tend to give HLD 
+
+- build in DfE - expect more LLD
+- follow the technical DfE standards",,,,,,,,Steve Goff,,,,,,No standard for technical HL or LL design - would one help,Activity,,
+Do a peer review for technical architecture work (ORR 7),,,"- operational
+- security
+- good practice",Depends on nature of what you are building,,,,,https://deliver-good-services.education.gov.uk/guides/architecture-design-governance-and-assurance/things-to-help-you,,,,Steve Goff,,,,,,ACTION: check difference between tech design/tech architecture. This one needs ratifying with Luke S,Activity,,
+"Create and document a testing mechanism. For example, load testing, user testing (ORR 8) ",,,"- operational
+- secuirty
+- good practice","- depends on the nature of what you are building
+- you must inform DfE Networks and obtain consent before any performance or load testing takes place.",,,,,,,,,Steve Goff,,,,,,"'- Could split into diff types of testing (e.g. user throughout, load when thing is built) 
+- Is it built on scalable architecture",Activity,,
+Conduct testing and action any changes needed on the user journey  (ORR 9),,,Good practice,"Depends on the nature of what you are building
+",,,,,,,,,Steve Goff,,,,,,"Note from SG: revisit and make more specific
+
+This is currently user and business journey but should be split out - but should it for our work?",Activity,,
+"If you have developed an API, contact Find and use an API (FaUAPI) (ORR 10) ",,,"- ensures re-use
+- avoids duplication","If you have developed an API that services data to public, wider department or cross-government","- contact Find and use an API 
+- try to host API through FuAPI
+- if not get it on FuAPI register",,,,https://dfe.service-now.com/mydfe?id=sc_cat_item&sys_id=ee072d3f1bf79ed0593ddce7b04bcb10&table=sc_cat_item&searchTerm=fauapi,,,,Steve Goff,,,,,,,Activity,,
+"Document or update documentation for the overview of your service (like a runbook, Service Operating Manual, or equivalent)  (ORR 11) (could link to ORR 31, 34 and 35)",,,"- security
+- operational
+- good practice",,"- SOM will include what needs to happen
+- although, team can do it in a different format",,Service Standard 14,,,,,,Steve Goff,,,,,,"- what's an SDM in this case? Service delivery manager? Yes
+- where does this live? TBC used to live in Infrastucture Ops
+- teams could use a Wiki, something on GH - cannot mandate use of SOM 
+- 'We think this essential to meeting standard 14'
+- SOM should be referred to in standard 14 ASSiDfE
+- get SOM template - SG sharing",Activity,,
+Create a service offering in CMDB (ServiceNow) (ORR 12),,Must have - governance framework,"CMDB is single source of truth for all DfE services have built, managed or responsible for. Without it, other operational and assurance processes would not work. ",,"'- create a service offering in CMDB (ServiceNow)
+- ask to create a relationship link on CMDB with any upstream and downstream dependencies",,,,https://dfe.service-now.com/mydfe?id=sc_cat_item&sys_id=b97008b81b7680d02fe864606e4bcb9d&referrer=recent_items,,,,,,,,,,,Activity,,
+"If you are processing information, register on Information Asset Database (IAR) (ORR 13)",,,,,,,,,https://educationgovuk.sharepoint.com/sites/manage-information/SitePages/managing-information-assets.aspx?web=1,,,,,,,,,,Steve said to check the guidance: https://educationgovuk.sharepoint.com/sites/manage-information/SitePages/managing-information-assets.aspx?web=1,,,
+Book a discovery peer review (ORR 14),,Must have - governance framework,To provide assurance that moving to alpha is the right next step. ,All DfE discoveries must have a peer review.,Book a discovery peer review,Discovery,Service Standard,,"- Discovery peer review guidance
+
+- Book a discovery peer review
+- Service Standard
+- Apply the Service Standard in DfE",,,,Gary Perkins,,Ideally book at least 5 weeks before the end of discovery.,,Not all discoveries have one. How do we detect?,,Separated out into each end of phase - may want to pull back together.,Activity,,
+Book an alpha service assessment (ORR 14),,Must have - governance framework,To check services are meeting the Service Standard.,,Book a service assessment,Alpha,Service Standard,,"- Service assessment guidance
+
+- Book a service assessment
+- Service Standard
+- Apply the Service Standard in DfE
+",,,,Gary Perkins,,,,Right now people ask ORR team if they need to do it,,Services which don't use GDS framework - how tackle? ,Activity,,
+Book a private beta service assessment (ORR 14),,Must have - governance framework,To check services are meeting the Service Standard.,,Book a service assessment,Private beta,Service Standard,,"- Service assessment guidance
+
+- Book a service assessment
+- Service Standard
+- Apply the Service Standard in DfE
+- 
+",,,,Gary Perkins,,,,,,,Activity,,
+Book a public beta service assessment (ORR 14),,Must have - governance framework,To check services are meeting the Service Standard.,,Book a service assessment,Public beta,Service Standard,,"- Service assessment guidance
+
+- Book a service assessment
+- Service Standard
+- Apply the Service Standard in DfE
+",,,,Gary Perkins,,,,,,,Activity,,
+Book a live service assessment (ORR 14),,Must have - governance framework,To check services are meeting the Service Standard.,,Book a service assessment,Live,Service Standard,,"- Service assessment guidance
+
+- Book a service assessment
+- Service Standard
+- Apply the Service Standard in DfE
+
+",,,,,,,,,,,Activity,,
+Document a Disaster Recovery Plan (ORR 15),,Must have - governance framework,"To stop exposing your service to risk if taken down, you won't be able to recover","- If service is hosted by managed supplier, would be up to managed supplier to provide. You need to have, it's about who does it",,,,,,,,,,,,,,,,Activity,,
+Document a Business Continuity Plan (ORR 15),,Must have - governance framework,"To stop exposing your service to risk if taken down, you won't be able to recover",,,,,,,,,,,,,,,,"Operational, on SHCA as mandatory policy ",,,
+Consider identity and access management for your service (ORR 16),Enable users to securely access the digital services and information they need while protecting departmental data and systems.,Must have - governance framework,"- provide a consistent and secure user experience in your service or product
+- reduce the number of identities and passwords users need to manage
+- improve security through modern authentication and authorisation controls
+- enable services to adopt common departmental identity standards and platforms
+- reduce duplication of effort and technology across services 
+
+",If a service requires users to securely access the service or information ,"When exploring (disco and alpha) user journeys, think about whether you will need users to log-in or create an account (authentication).
+
+If so, consider in what capacity users will be interacting with your product or service (as a citizen, on behalf of an organisation, on behalf of the DfE, or a combination)
+ 
+When building (beta), engage with Dominic Harley if you are unsure which is the right option for your service and users. Or, if you know what solution fits your service best, engage directly with the onboarding team","Explore,Build","Identity Management B2B,Identity Management B2C,Identity Management B2E","- GOV.UK One Login
+- DfE sign-in
+- Entra ID - Single Sign-on
+- ","Identity and Access Management (IdAM) intranet page, word of mouth through Dominic Harley or Jane Ludlow.
+DfE Sign-in Homepagehttps://educationgovuk.sharepoint.com/sites/lvewp00518
+One Login guidance page 
+https://www.sign-in.service.gov.uk/",,Technical,"Dominic Harley,Jane Ludlow","Dominic Harley,Steve Goff",,"When exploring (usually in disco and alpha phases) a solution, decide whether you will need users to log-in or create an account (authentication).
+
+
+",,"- Teams create their own identity and access management services 
+- Lead time could be a delivery risk ",- Referencing it on Apply the Service Standard in the Department for Education,"Content sent to Dom for review, 9/9.
+
+Dom feedback: Single sign-on is a functionality within Entra ID so one line but if it parses a bit funny happy for it to be expanded upon.
+
+- Notes from chat with id management team can help with this one: https://lucid.app/lucidspark/9f363fd5-ea41-4e2d-b3f3-e446698af04e/edit?page=0_0&invitationId=inv_1ceecded-13a8-4930-be16-ab7070153aa6#
+- different types of id systems: B2B, B2C, B2E
+- B2C - GOV ONE LOG IN
+- B2B - DfE Sign-In
+- B2E - like EntralD (internal DfE users)
+
+
+
+",,,
+Follow the supplier assurance process (ORR 17),,Must have - governance framework,To ensure suppliers that have access to DfE systems and data have appropriate security controls in place.,"- relevant if you have suppliers
+- follow supplier assurance process
+- depends on suppliers - needs to be people building thing on behalf of Dfe, have access to DfE systems and/or hosting",Supplier assurance team will ask supplier questions,,,,,,,,Steve Goff,,,,,,"- depends on suppliers - needs to be people building thing on behalf of Dfe, have access to DfE systems and/or hosting
+- not 'body shopping' like DfE delivery team ",,,
+"If accessible outside of DfE, like on the internet, incorporate WAF solution into design (either Azure Front Door or Barracuda) (ORR 18)",,,,,,,,,,,,,Steve Goff,,,,,,Expect in tech arch standard. 	SPEAK TO LUKE S.,Standard,,
+Complete a service engagement form to register your service with Information Security (ORR 19),,Must have - governance framework,To ensure appropriate security assurance undertaken for your service,,- complete a Service engagement form,,,,Service engagement form,,,,Steve Goff,,,,,,"Entry point - have to register service on CMDB
+
+SPEAK TO SHERENE ABOUT THIS ONE AND NUMBER 20.",,,
+Follow Secure by Design principles (ORR 19),,,,,,,,,,,,,Steve Goff,,,,,,Need link to this and confirmation we pull out as sep to line above.,,,
+Check your security assurance pathway classification (ORR 20),This is the output from completing a service engagement form.,,,,,,,,,,,,Steve Goff,,"Fill out form, classification, take action",,,,"Output of ORR 19 completing a service engagement form
+",,,
+Complete an IT health check (ORR 21),,Must have - governance framework,To ensure that their systems are safe and security, If your service or product is publically accessible or internally accessible but is medium or above security classification,,,,,,,,,Steve Goff,,,,,,"'- Recently changed, before every service - now only if your thing is publically accessible or internally accessible but is medium or above security classification
+- When you IT health check you get 2 outputs - 1 is spreadsheet (like a risk log which you use to manage remedial vulnerabilities), 2 is full pdf report (more detail) 
+- Will only happen if on CMDB ",,,
+Manage DSAM3 actions (ORR 22). Manage actions from ITHC,,Must have - governance framework,To ensure that their systems are safe and security,,,,,,,,,,Steve Goff,,,,,,"- Recently changed, before every service - now only if your thing is publically accessible or internally accessible but is medium or above security classification
+- According to Service Standard 9 in ASSiDfE you start DSAM process in discovery",,,
+Start DSAM process (not ORR but added as result of ORR 22),,Must have - governance framework,To ensure that their systems are safe and security,,- start a Departmental Security Assurance model process,Discovery,,,https://educationgovuk.sharepoint.com/sites/security/SitePages/assurance.aspx#departmental-security-assurance-model-%28dsam%29-process,,,,Steve Goff,,,,,,,,,
+ReceIve security assurance and address risks (that are above DfE's risk appetite) (ORR 23) (Links to ORR21),,Must have - governance framework,Keep systems safe and secure,"- no conditions
+- having an IT health check could be pre-req for it",- output of registering security,,,,,,,,Steve Goff,,,,,,Can we amalgamate with OOR21?,,,
+Complete a Data Privacy Impact Assessment (DPIA) screener (ORR 24),,Must have - legal,To follow GDPR ,Only need to do it if storing personal data (e.g. transactional service) ,DPIA team will give you a list of actions,,,,https://educationgovuk.sharepoint.com/sites/lvewp00158/SitePages/DPIA.aspx,,,,Steve Goff,,,,,,CHK the exact definition of wo needs to do this,,,
+"If off-shoring data, get approval for off-shoring data (ORR 25)",,Must have - legal,Apply appropriate security controls and part of data protection guidance,"If off-shoring data:
+- depends where data is held and processed
+- Exception most services are in Azure Tenancies for EU West Europe (near shore) but if service (inc managed suppliers) off shoring data
+",,,,,Off-shoring advice,,,,Steve Goff,,,,,,Note from Steve: spk to Karen,,,
+Add a privacy statement to your service (ORR 26),,Must have - legal,Part of GDPR - have to tell people what you're doing with data,"- if web-based
+- if gathering information [CHK THIS]",,,,,,,,,Steve Goff,,,,,,"Check this with others, maybe GDPR team - anyone else need a privacy statement.",,,
+"Create support documentation for live support (ORR 31 - could link to ORR 11, 34 and 35))",,Should have,"- For operational reasons, if something goes wrong - runbook for service
+- supports meeting Service Standard 14",,,,Service Standard 14,,,,,,Steve Goff,,,,,,"Steve to send run book example, but one also linked to from ASSiDfE standard 14 - this runbook is archived tho",,,
+"Store repository documentation in one place and share with stakeholders (ORR 32, could be linked to 31)",,Should have,"So that the delivery team, including service owners and senior responsible officers, can find and manage how to run the service",,,,,,,,,,Steve Goff,,,,,,Could we merge with one above?,Activity,,
+Agree an Early Life Support (ELS) plan (ORR 33),,,,"So that things like staffing can be in place for the early weeks of the service being run, if this is different to longer-term running plans",,"Public beta,Live",,,,,,,,,Moving into live,,,,"Could be referred to as hyper care, period after live to have heightened reporting awareness of what's going on ",Activity,,
+Document a support model for users (ORR 34 - could it be merged with 31?),,Should have,"- operational
+- good practice
+- process for user who is asking for support from system. For example, user raises incident, passes to 3rd line",CHK: what if service has no users and is a piece of tech or automation?,,,,,,,,,,,,,,,,Activity,,
+Train support team on tools required  (ORR 35 linked with 34 - merge?),Where you have a team providing 1st or 2nd line support - ensuring they have necessary training,Should have,"- operational
+- good practice",,,,,,,,,,,,,,,,,Activity,,
+Document a release management process (ORR 36),"When you make continual release changes (e.g. bug fixes, improvements to service) 
+
+There may be downtime
+
+How are you going to deploy the releases, who will you communicate with to let them know that's happening",Should have,"- operational
+- good practice","- depends on service, may have service with continual iteration/deploying things vs something with change once a year 
+- most digital 
+- have it by private beta - whenever you have got users on system",,Private beta,,,,,,,,,,,,,,Activity,,
+Confirm who is responsible for internal and external comms (ORR 37),"In context of new service going live, how are you communcating with end users and stakeholders during dleivery ",Should have,- good practice,"- depends on nature of service, way you communicate may be different, for example, a big policy change may go through DfE comms, or small internal could use Teams channel",,,,,,,,,,,,,,,,Activity,,

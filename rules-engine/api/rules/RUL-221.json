@@ -1,0 +1,46 @@
+{
+ "id": "RUL-221",
+ "name": "Have you fed compliance requirements into risk management activities?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Discovery"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you fed compliance requirements into risk management activities?",
+ "requirementDescription": "Have you used compliance requirements to influence your risk assessments, controls and mitigation plans?",
+ "why": "Compliance requirements often represent risks. Secure by Design expects obligations to be incorporated into service design and risk management.",
+ "tasks": [
+  "Have you fed compliance requirements into risk management activities?"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

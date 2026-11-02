@@ -1,0 +1,48 @@
+{
+ "id": "RUL-111",
+ "name": "If you have developed an API, contact Find and use an API (FaUAPI) (ORR 10)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Not stated",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "Steve Goff",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "If you have developed an API that services data to public, wider department or cross-government",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "If you have developed an API, contact Find and use an API (FaUAPI) (ORR 10)",
+ "requirementDescription": "- ensures re-use\n- avoids duplication",
+ "why": "- ensures re-use\n- avoids duplication",
+ "tasks": [
+  "contact Find and use an API",
+  "try to host API through FuAPI",
+  "if not get it on FuAPI register"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://dfe.service-now.com/mydfe?id=sc_cat_item&sys_id=ee072d3f1bf79ed0593ddce7b04bcb10&table=sc_cat_item&searchTerm=fauapi",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

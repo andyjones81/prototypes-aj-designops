@@ -1,0 +1,53 @@
+{
+ "id": "RUL-235",
+ "name": "Did you consult with business stakeholders when creating the impact assessment?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "Applies whenever:\n- An asset evaluation is being completed.\n- Business impacts are being scored.\n- Security priorities are being established",
+ "phases": [
+  "Discovery",
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Did you consult with business stakeholders when creating the impact assessment?",
+ "requirementDescription": "Did you involve the people who understand how the service operates and how the organisation would be affected by a security incident?",
+ "why": "Technical teams understand systems.\nBusiness stakeholders understand:\n- Operational impacts.\n- Financial impacts.\n- Regulatory consequences.\n- Reputational damage.\n- User impacts.\nThe guidance specifically recommends involving asset owners, service owners, security professionals and other business stakeholders when assessing asset importance. Workshops and surveys are recommended methods for gathering this information.",
+ "tasks": [
+  "Workshops.",
+  "Interviews.",
+  "Surveys.",
+  "Stakeholder review sessions."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-importance-of-service-assets/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-cyber-incident-response-management.docx?d=w7301f468a0794a398af702bf34ee2c4a&csf=1&web=1&e=PkTsJi",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

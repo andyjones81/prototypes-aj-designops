@@ -1,0 +1,46 @@
+{
+ "id": "RUL-136",
+ "name": "Store repository documentation in one place and share with stakeholders (ORR 32, could be linked to 31)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Should have",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "Steve Goff",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "Store repository documentation in one place and share with stakeholders (ORR 32, could be linked to 31)",
+ "requirementDescription": "So that the delivery team, including service owners and senior responsible officers, can find and manage how to run the service",
+ "why": "So that the delivery team, including service owners and senior responsible officers, can find and manage how to run the service",
+ "tasks": [
+  "Store repository documentation in one place and share with stakeholders (ORR 32, could be linked to 31)"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

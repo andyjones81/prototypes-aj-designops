@@ -1,0 +1,36 @@
+{
+ "id": "RUL-163",
+ "name": "Service Owners MUST own their risk, and risks above tolerance REQUIRE formal consultation with the CISO before acceptance to ensure senior leadership accountability.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "Where a cyber/security risk is above our tolerance the CISO must be consulted before the risk is accepted (no action planned to address the risk/breach)",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Service Owners MUST own their risk, and risks above tolerance REQUIRE formal consultation with the CISO before acceptance to ensure senior leadership accountability.",
+ "requirementDescription": "The person responsible for a service is responsible for the risks associated with that service. If a risk is considered too high (above the organisation's risk tolerance), they cannot simply accept it on their own and must consult the Chief Information Security Officer (CISO) before deciding to proceed.",
+ "why": "This control exists because the people closest to a service are often the ones making risk decisions, but the consequences of a poor decision can affect the whole organisation.\nWithout this rule, it's easy for teams to make local decisions that create enterprise-wide security risk.",
+ "tasks": [
+  "Service Owners MUST own their risk, and risks above tolerance REQUIRE formal consultation with the CISO before acceptance to ensure senior l"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

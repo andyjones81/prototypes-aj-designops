@@ -1,0 +1,48 @@
+{
+ "id": "RUL-239",
+ "name": "Have you documented the technical architecture for the end-to-end service and system?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "This is relevant where a service:\n- consists of multiple technical components\n- integrates with other systems\n- processes or stores information\n- uses cloud infrastructure\n- exposes APIs or other interfaces\n- relies on external suppliers or services\n- has different user types or administrative access\n- crosses organisational or network boundaries",
+ "phases": [
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you documented the technical architecture for the end-to-end service and system?",
+ "requirementDescription": "Can someone look at your documentation and understand how the whole service works technically, including all the systems, components, integrations and data flows involved?",
+ "why": "You cannot properly assess security if you do not know what actually makes up the service.\nArchitecture documentation provides the foundation for the remaining security work. It allows security specialists and delivery teams to determine:\n- where sensitive information is stored\n- where information enters and leaves the service\n- which systems communicate with each other\n- where users authenticate\n- which components are exposed externally\n- where trust boundaries exist\n- which third parties are relied upon\n- what an attacker could potentially target",
+ "tasks": [
+  "Have you documented the technical architecture for the end-to-end service and system?"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-threat-modelling/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

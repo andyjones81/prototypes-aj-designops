@@ -1,0 +1,47 @@
+{
+ "id": "RUL-113",
+ "name": "Create a service offering in CMDB (ServiceNow) (ORR 12)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "Create a service offering in CMDB (ServiceNow) (ORR 12)",
+ "requirementDescription": "CMDB is single source of truth for all DfE services have built, managed or responsible for. Without it, other operational and assurance processes would not work.",
+ "why": "CMDB is single source of truth for all DfE services have built, managed or responsible for. Without it, other operational and assurance processes would not work.",
+ "tasks": [
+  "create a service offering in CMDB (ServiceNow)",
+  "ask to create a relationship link on CMDB with any upstream and downstream dependencies"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://dfe.service-now.com/mydfe?id=sc_cat_item&sys_id=b97008b81b7680d02fe864606e4bcb9d&referrer=recent_items",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "RUL-226",
+ "name": "Have you ensured that other organisations you plan to share data with as part of the service delivery are compliant with the relevant cyber security obligations?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding"
+   ]
+  }
+ ],
+ "conditionsText": "Any service that shares data with another organisation",
+ "phases": [
+  "Discovery"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you ensured that other organisations you plan to share data with as part of the service delivery are compliant with the relevant cyber security obligations?",
+ "requirementDescription": "Before sharing information with another organisation, have you checked they meet the required security standards?",
+ "why": "Your security obligations do not disappear when data leaves your organisation.\nThe receiving organisation must also be capable of protecting the information appropriately.",
+ "tasks": [
+  "Security controls",
+  "Compliance status",
+  "Relevant certifications",
+  "Data handling arrangements"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

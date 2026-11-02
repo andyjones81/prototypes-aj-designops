@@ -1,0 +1,50 @@
+{
+ "id": "RUL-209",
+ "name": "Have you appointed a Senior Responsible Owner (SRO), service owner or equivalent, and informed the individual of their responsibilities?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "Applies whenever:\n- A service is being developed.\n- A major change is being delivered.\n- A programme or project requires governance.\n- Cyber risks need ownership.",
+ "phases": [
+  "Discovery",
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you appointed a Senior Responsible Owner (SRO), service owner or equivalent, and informed the individual of their responsibilities?",
+ "requirementDescription": "Has someone been formally made accountable for the security risks and security outcomes of the service?\nThis person doesn't necessarily perform security activities themselves, but they are ultimately accountable for ensuring they happen.\nThe guidance identifies the Senior Responsible Owner (SRO) and Service Owner as key roles for agreeing and overseeing security responsibilities.",
+ "why": "Without a clearly accountable person:\n- Security decisions may be delayed.\n- Risks may remain unresolved.\n- Nobody owns difficult decisions.\n- Security issues can fall between teams.\nSecure by Design promotes clear accountability for cyber risk from the beginning of delivery.",
+ "tasks": [
+  "Have you appointed a Senior Responsible Owner (SRO), service owner or equivalent, and informed the individual of their responsibilities?"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-roles-and-responsibilities/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

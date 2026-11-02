@@ -1,0 +1,36 @@
+{
+ "id": "RUL-164",
+ "name": "Services MUST undergo mandatory assurance thru DSAM to ensure critical risks are detected and managed effectively.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Services MUST undergo mandatory assurance thru DSAM to ensure critical risks are detected and managed effectively.",
+ "requirementDescription": "Before a service can proceed through key stages of its lifecycle it must go through the DSAM assurance process so that significant risks are identified, assessed, and addressed.",
+ "why": "Without assurance, teams may unintentionally introduce:\n- Security vulnerabilities\n- Unsupported technologies\n- Compliance issues\n- Single points of failure\n- Poor operational processes\nA formal assurance process provides an independent review and challenge before those issues affect production services.",
+ "tasks": [
+  "Services MUST undergo mandatory assurance thru DSAM to ensure critical risks are detected and managed effectively."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

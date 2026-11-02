@@ -1,0 +1,46 @@
+{
+ "id": "RUL-147",
+ "name": "The DfE security.txt file needs to be accessible from active DfE websites to ensure vulnerabilities can be quickly reported via the HMG-mandated VdP. The file MUST be accessible without authentication and implemented on all domains resolvable from the public Internet",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "When using a repository",
+ "phases": [
+  "Public beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "The DfE security.txt file needs to be accessible from active DfE websites to ensure vulnerabilities can be quickly reported via the HMG-mandated VdP. The file MUST be accessible without authentication and implemented on all domains resolvable from the public Internet",
+ "requirementDescription": "Every public-facing DfE website must publish a security.txt file so that security researchers can easily find out how to report vulnerabilities to the Department for Education through the government's Vulnerability Disclosure Programme (VdP)",
+ "why": "Without a clear reporting mechanism, a reported may:\n- Not know who to contact.\n- Send reports to a generic inbox that nobody monitors.\n- Give up reporting the issue.\n- Publicly disclose the vulnerability instead of reporting it responsibly.",
+ "tasks": [
+  "The DfE security.txt file needs to be accessible from active DfE websites to ensure vulnerabilities can be quickly reported via the HMG-mand"
+ ],
+ "standards": [],
+ "systems": "GitHub",
+ "guidance": "None found",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

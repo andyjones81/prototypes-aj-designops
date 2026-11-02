@@ -1,0 +1,49 @@
+{
+ "id": "RUL-225",
+ "name": "Have you documented the legal, regulatory and contractual requirements that must be met by the service?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Discovery"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you documented the legal, regulatory and contractual requirements that must be met by the service?",
+ "requirementDescription": "Have you created a list of all the rules, laws, regulations and contractual commitments that the service must comply with?",
+ "why": "Teams cannot comply with requirements they have not identified.\nThe obligations profile should be documented and shared across the project.",
+ "tasks": [
+  "Applicable laws",
+  "Regulations",
+  "Government policies",
+  "Standards"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

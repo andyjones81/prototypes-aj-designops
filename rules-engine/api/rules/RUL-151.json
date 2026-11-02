@@ -1,0 +1,36 @@
+{
+ "id": "RUL-151",
+ "name": "Dependency scanning (SCA) MUST be implemented in build pipelines to detect known vulnerabilities in third-party libraries, and critical vulnerabilities MUST break the build to prevent deployment of compromised code.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "When using a repository",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Dependency scanning (SCA) MUST be implemented in build pipelines to detect known vulnerabilities in third-party libraries, and critical vulnerabilities MUST break the build to prevent deployment of compromised code.",
+ "requirementDescription": "Your CI/CD pipeline must automatically scan all third-party packages and libraries for known security vulnerabilities. If a critical vulnerability is found, the deployment must be stopped until it is fixed or formally approved as an exception.",
+ "why": "Modern attacks often exploit weaknesses in third-party libraries rather than vulnerabilities in code written by our developers.\nMost applications rely on hundreds or thousands of open-source packages. If one of those packages contains a known critical vulnerability, an attacker may be able to compromise an entire application.",
+ "tasks": [
+  "Dependency scanning (SCA) MUST be implemented in build pipelines to detect known vulnerabilities in third-party libraries, and critical vuln"
+ ],
+ "standards": [],
+ "systems": "GitHub",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

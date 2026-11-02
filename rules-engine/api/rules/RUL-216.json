@@ -1,0 +1,53 @@
+{
+ "id": "RUL-216",
+ "name": "Have you reviewed the security risks of any cloud technology (such as IaaS, PaaS, SaaS) before using it?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "Applies whenever the service uses IaaS, PaaS and SaaS:\n- Microsoft Azure\n- AWS\n- Google Cloud\n- SaaS products\n- Cloud-hosted platforms\n- Cloud storage services",
+ "phases": [
+  "Discovery",
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you reviewed the security risks of any cloud technology (such as IaaS, PaaS, SaaS) before using it?",
+ "requirementDescription": "Before deciding to use a cloud service, have you assessed the security risks it might introduce?\n- Infrastructure as a Service (IaaS)\n- Platform as a Service (PaaS)\n- Software as a Service (SaaS)",
+ "why": "Cloud services can introduce risks relating to:\n- Data protection\n- Access control\n- Supplier security\n- Resilience and availability\n- Data location\n- Regulatory compliance\nSecure by Design requires organisations to perform security due diligence on third-party technology products before relying on them.",
+ "tasks": [
+  "What information will be stored?",
+  "Who can access the environment?",
+  "Where is the data hosted?",
+  "What security certifications exist?"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-third-party-product-security-risks/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

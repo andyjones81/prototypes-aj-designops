@@ -1,0 +1,54 @@
+{
+ "id": "RUL-270",
+ "name": "Are you appropriately escalating any changes that create risks above the project's risk appetite?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build",
+    "Run / Serve"
+   ]
+  }
+ ],
+ "conditionsText": "This applies where the security assessment of a proposed change identifies new or increased security risk, risk is assessed, resulting rating exceeds the project's agreed risk appetite.\nThe change-management process should therefore connect to the project's wider risk-management and governance arrangements.",
+ "phases": [
+  "Alpha",
+  "Private beta",
+  "Public beta",
+  "Live"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Are you appropriately escalating any changes that create risks above the project's risk appetite?",
+ "requirementDescription": "If a proposed change creates a security risk that is greater than the level the project is authorised to accept, is that risk being raised with someone who has the authority to decide what happens?",
+ "why": "Some security decisions are bigger than the delivery team's authority.\nIf a change creates an unacceptable risk, an appropriate decision-maker may need to determine whether to:\n- introduce additional controls\n- modify the change\n- delay the change\n- not proceed\n- accept the residual risk where they have authority to do so.\nThis preserves accountability for significant security-risk decisions and prevents unacceptable risks being accepted informally as part of routine delivery.",
+ "tasks": [
+  "Assess the security risk associated with relevant changes.",
+  "Compare the resulting risk rating with the project's risk appetite.",
+  "Identify additional mitigations where possible.",
+  "Escalate risks above appetite to the appropriate risk owner or decision-maker."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/evaluating-the-security-impact-of-changes/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

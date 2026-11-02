@@ -1,0 +1,53 @@
+{
+ "id": "RUL-234",
+ "name": "Have you completed a business impact assessment to determine the confidentiality, integrity and availability of data if the service was compromised?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "This applies when:\n- A new service is being developed.\n- Existing services are changing significantly.\n- Information assets have been identified.\n- Security risks are being assessed.\nThe guidance recommends completing this during discovery or requirements gathering and updating it whenever significant assets change",
+ "phases": [
+  "Discovery",
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you completed a business impact assessment to determine the confidentiality, integrity and availability of data if the service was compromised?",
+ "requirementDescription": "Have you assessed what would happen to the organisation, users and service if its data or systems were:\n- Read by unauthorised people (Confidentiality)\n- Changed or corrupted (Integrity)\n- Unavailable (Availability)",
+ "why": "Not all information and systems are equally important.\nThe organisation needs to understand which assets would cause the greatest damage if compromised so it can:\n- Prioritise security investment.\n- Identify the most important risks.\n- Design appropriate security controls.\n- Support threat modelling and risk assessments.",
+ "tasks": [
+  "Assets being assessed.",
+  "Impact ratings.",
+  "Consequences of compromise.",
+  "Overall business impact."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-importance-of-service-assets/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

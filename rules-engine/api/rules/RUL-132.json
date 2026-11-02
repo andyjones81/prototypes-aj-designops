@@ -1,0 +1,56 @@
+{
+ "id": "RUL-132",
+ "name": "Complete a Data Privacy Impact Assessment (DPIA) screener (ORR 24)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - legal",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "Steve Goff",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  },
+  {
+   "field": "transactional",
+   "op": "is",
+   "value": "Yes"
+  },
+  {
+   "field": "personalData",
+   "op": "is",
+   "value": "Yes"
+  }
+ ],
+ "conditionsText": "Only need to do it if storing personal data (e.g. transactional service)",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "Complete a Data Privacy Impact Assessment (DPIA) screener (ORR 24)",
+ "requirementDescription": "To follow GDPR",
+ "why": "To follow GDPR",
+ "tasks": [
+  "Complete a Data Privacy Impact Assessment (DPIA) screener (ORR 24)"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://educationgovuk.sharepoint.com/sites/lvewp00158/SitePages/DPIA.aspx",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

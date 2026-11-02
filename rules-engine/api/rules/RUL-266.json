@@ -1,0 +1,51 @@
+{
+ "id": "RUL-266",
+ "name": "Do you have a documented approach for analysing your logs and monitoring the alerts generated?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "The approach should reflect the importance and urgency of different events.\nFor example, some information might simply require periodic review, while more serious events might require immediate alerts or automated action. The guidance recommends applying appropriate actions to each observable and incorporating observability into the threat model",
+ "phases": [
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Do you have a documented approach for analysing your logs and monitoring the alerts generated?",
+ "requirementDescription": "Do you have a documented approach for analysing your logs and monitoring the alerts generated?",
+ "why": "An alert only protects the service if something appropriate happens as a result.\nA documented monitoring process helps ensure that:\n- alerts are seen by the right people\n- genuine incidents are identified\n- false positives can be investigated\n- serious events are escalated quickly\n- incident management processes are triggered where necessary\n- responsibilities are clear.",
+ "tasks": [
+  "which logs and alerts will be monitored",
+  "who is responsible for monitoring them",
+  "how frequently they are reviewed",
+  "which events require investigation"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-observability/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-audit-log-management.docx?d=wf21b346e355840cfbbb61487fb8f39de&csf=1&web=1&e=ekpmJ4",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

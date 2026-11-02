@@ -1,0 +1,54 @@
+{
+ "id": "RUL-253",
+ "name": "Have you documented the risk mitigations (for example in a risk treatment plan)?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build",
+    "Run / Serve"
+   ]
+  }
+ ],
+ "conditionsText": "Applies when:\n- Risks have been identified.\n- Controls are needed.\n- Risk responses have been agreed.",
+ "phases": [
+  "Alpha",
+  "Private beta",
+  "Public beta",
+  "Live"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you documented the risk mitigations (for example in a risk treatment plan)?",
+ "requirementDescription": "Have you written down exactly what actions will be taken to reduce security risks?",
+ "why": "Mitigations that exist only in conversations are easily forgotten. A documented treatment plan provides accountability, allows progress to be tracked and demonstrates that risks are being managed systematically. Secure by Design recommends documenting and approving mitigation activities as part of risk management.",
+ "tasks": [
+  "The risk.",
+  "Proposed mitigation.",
+  "Owner.",
+  "Due date."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/responding-to-and-mitigating-security-risks/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

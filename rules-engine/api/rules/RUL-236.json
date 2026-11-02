@@ -1,0 +1,48 @@
+{
+ "id": "RUL-236",
+ "name": "Have you obtained the organisation's overarching threat assessment (or completed your own if there is not one available)?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test"
+   ]
+  }
+ ],
+ "conditionsText": "Applies when:\n- Starting discovery or alpha phase.\n- Performing threat modelling.\n- Conducting risk assessments.\n- Designing security controls.\nThe guidance strongly recommends having a threat assessment before threat modelling or risk assessment activities begin.",
+ "phases": [
+  "Discovery",
+  "Alpha"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you obtained the organisation's overarching threat assessment (or completed your own if there is not one available)?",
+ "requirementDescription": "Have you identified an existing organisational threat assessment and used it, or created a service-specific threat assessment if none exists?",
+ "why": "Projects should not start from scratch if the organisation already understands its threat landscape.\nThe guidance states that many organisations already have threat assessments that can be used as the foundation for service-level assessments. If one is unavailable, a new assessment should be commissioned or produced.",
+ "tasks": [
+  "Have you obtained the organisation's overarching threat assessment (or completed your own if there is not one available)?"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/sourcing-a-threat-assessment/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

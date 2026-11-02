@@ -1,0 +1,46 @@
+{
+ "id": "RUL-124",
+ "name": "If accessible outside of DfE, like on the internet, incorporate WAF solution into design (either Azure Front Door or Barracuda) (ORR 18)",
+ "source": "Operational Readiness Review",
+ "dataset": "Operational Readiness Review",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Not stated",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "Steve Goff",
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "",
+ "phases": [
+  "Build"
+ ],
+ "phasesAssumed": true,
+ "requirementTitle": "If accessible outside of DfE, like on the internet, incorporate WAF solution into design (either Azure Front Door or Barracuda) (ORR 18)",
+ "requirementDescription": "",
+ "why": "",
+ "tasks": [
+  "If accessible outside of DfE, like on the internet, incorporate WAF solution into design (either Azure Front Door or Barracuda) (ORR 18)"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from ORR activity log-Grid view.csv."
+  }
+ ]
+}

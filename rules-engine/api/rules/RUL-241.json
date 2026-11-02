@@ -1,0 +1,48 @@
+{
+ "id": "RUL-241",
+ "name": "Have you identified and documented what security controls are available to reduce the likelihood of threat events?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "For each meaningful threat identified during threat modelling, the team should consider:\n- What existing controls already address it?\n- Are those controls sufficient?\n- Are additional controls required?\n- Is the control preventative, detective or corrective?\n- Who owns the control?\n- Has it actually been implemented?\n- How will the team know that it works?",
+ "phases": [
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you identified and documented what security controls are available to reduce the likelihood of threat events?",
+ "requirementDescription": "Once you know what could go wrong, this question asks:\nHave you worked out what protections can prevent those things from happening, or make them much less likely, and documented them?",
+ "why": "Identifying threats without deciding what will be done about them does not actually reduce risk.\nThe intended chain should be:\nThreat → Risk → Security control → Reduced risk\nIt also helps prevent controls being introduced without knowing what problem they are supposed to solve.",
+ "tasks": [
+  "Have you identified and documented what security controls are available to reduce the likelihood of threat events?"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-threat-modelling/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

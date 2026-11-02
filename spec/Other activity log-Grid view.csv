@@ -1,0 +1,1408 @@
+﻿Action,What it means,Mandatory status,Why does this exist,Conditions,What needs to happen,Delivery phase,Standards applicable,Systems,Guidance,[Delete?] Metrics,Activity owner,Assurance owner,Stakeholder,[Delete] Who else is involved,[Unsure] Trigger,[Unsure?] Assurance point,Pain points,Opportunities,Any other notes,[Unsure about field] Standard or Activity,[Unsure about field] Category,[Delete?] Delivery method
+Complete 'Operational Readiness Review' (ORR) ,Complete a checklist of activities to consider when building a service,Could have,"It's an ITIL* process which other organisations use. It started in 2016 and has accumulated over time. 
+
+It is seen as something that will help people deliver good services. Parts of the ORR are also 'must haves', like ORR item 29 on meeting WCAG 2.2 AA guidelines.  
+
+*ITIL is a widely used framework of best practices for IT Service Management. ","Universal - any digital, data, technology service:
+- new service
+- major change
+- decommissioning service","'- Team finds out about Steve/ORR and engages with Steve (this varies but typically in alpha)
+- Steve guides people through the ORR, he goes through it line by line to talk about what people need to do
+- Team fills out ORR and sends it to Steve","Build,Alpha,Private beta,Public beta,Live,Decomissioning",Related to standards but not under a standard,"- ORR spreadsheet 
+- Email inbox and Teams messages
+- ORR tracker","No written guidance, Steve Goff provides guidance",,Delivery Manager,Steve Goff,Steve Goff,,,,"- Reliance on people and manual processes, Steve is a single point of failure 
+- People don't find out about the ORR at the right point 
+- People don't have budget for compliance activities 
+- Compliance is inconsistent 
+- Data and systems are not updated or interoperable ","- ORR currently being looked at for improvements
+- A 'front door' for assurance that tells you what you need to do ",,,,"Agile,Waterfall"
+Complete or update 'Service Health Check App' (SHCA) ,A tool to declare compliance to DfE standards and policies on a yearly basis. ,Must have - governance framework,"This came out of audit in April 2023 which found DfE doesn't have a mechanism to view the compliance landscape of their services and for teams to declare compliance. SHCA aims to do this. The standards in it are based on things established in the Standards Forum.
+
+","For 'genuine' services (ones that DfE create to deliver things): 
+- transactional 
+- has users 
+- an interface","'- Once a service gets a service offering, it will get pulled into SHCA 
+- Steve looks at what has been registered on CMDB in the last 7 days
+- Steve chases people to complete it (if they haven't already)
+- Delivery team goes on SHCA intranet page to find link and guidance  
+- Delivery team reports on whether they are meeting the conditions against their service(s) and, if not, what activity is required to achieve each standard  
+- Steve is able to check compliance against each standard for a service
+- Delivery team is notified yearly to update their entry","Run,Live",Related to standards but not under a standard,- Power BI,Intranet page for Service Health Check Hub,,Delivery Manager,Steve Goff,Steve Goff,,,,"'- Manual reminders for people to fill it out
+- People don't find out at the right point 
+- Data and systems not updated (e.g. if names of team members go out of date, Steve has to run around to find out who is responsible) 
+- Data and systems not connection (e.g. believe there is duplication between the ORR and SHCA) ",,,,,"Agile,Waterfall"
+Get help with DDT tasks and projects ('Demand' process),"Review of requests from across DfE for DDT time, knowledge and expertise, usually with a view to developing a solution to a problem, or augmenting an existing service.",Should have,Centralised way into DDT for people who don't have ways into DDT. Demand can signpost people to the right place.,,"Teams complete the DDT request form.
+They will need to provide:
+- a clear description of the problem and its impact
+- what kind of help they are seeking. For example, options appraisal or planning advice
+- timescales and confirmed funding
+- work already done. For example, research, options considered, guidance reviewed
+The team will review the demand request and take it through the triage process if there is merit to it.",Explore,,"MS Form, SharePoint List, Power BI",Get help with DDT tasks and projects,"Demand measures are tracked on Power BI:
+- Number received
+- Days to assignment/close
+- Status
+- Indicator (strategic tags)
+- Division assigned
+etc",DDT Demand team,Jo Wright,,"Sam Rye,Lou Clarke,DDT business partners,DDT colleagues",Receive a demand,"Informal: Weekly Demand Review
+Formal: High Level Triage and Delivery Triage","Quality of demand submission, DDT colleague understanding of Demand's existence, contact tracing",Aim is to move onto COMPASS for stratgic overview of all demand and smooth handoffs into work items,"Work is initiated through a request process, assessed and prioritised through governance, then allocated to delivery teams who implement the agreed solution.
+ 
+Key objectives:
+Provide a single, transparent entry point for DDT service requests​
+
+Triage and assess demand for feasibility, alignment, and urgency​
+
+Route requests to appropriate governance boards or delivery teams​
+
+Maintain visibility of pipeline and demand trends​
+
+Support strategic prioritisation and resource planning​",,,Demand-led
+Design and run board,To check how a service is being designed and run. This helps track whether DfE services are being designed correctly. ,Should have,,,,,,,,,,,,,,,,,,,,
+Delivery board,To check how a service is being run. To evaluate risk. ,Should have,,,- G6s/G7s with oversight of an area attend the board meeting. ,"Build,Alpha,Private beta,Public beta",,- Teams meeting,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+The DfE security.txt file needs to be accessible from active DfE websites to ensure vulnerabilities can be quickly reported via the HMG-mandated VdP. The file MUST be accessible without authentication and implemented on all domains resolvable from the public Internet,Every public-facing DfE website must publish a security.txt file so that security researchers can easily find out how to report vulnerabilities to the Department for Education through the government's Vulnerability Disclosure Programme (VdP),Must have - governance framework,"Without a clear reporting mechanism, a reported may:
+- Not know who to contact.
+- Send reports to a generic inbox that nobody monitors.
+- Give up reporting the issue.
+- Publicly disclose the vulnerability instead of reporting it responsibly.
+",When using a repository,The file must be accessible without authentication and implemented on all domains that can be reached by the public internet,Public beta,,GitHub,None found,,,,,,,,,,,Activity,Security,
+"GitHub Repositories must be tagged to clearly identify service, division and directorate.",Naming and labelling on GitHub repositories is important so that in the even of a Cyber incident the right person or team can be found quickly,Must have - governance framework,Ensures vulnerabilities and other security incidents can be quickly routed to the correct owner when speed and accuracy is of the essence to prevent a serious cyber incident occurring.,When using a repository,"Repositories must be labelled with the service, division and directorate",,,GitHub,"Naming things - DfE Technical Guidance
+
+Storing source code - DfE Technical Guidance",,,,,,,,,,,Standard,Security,
+Must use GitHub for any new projects. Existing projects should have migration plans developed asap.,"Any projects using something other than GitHub 
+should have migration plans in place and new projects can only use GitHub for source code repository and development platform",Must have - governance framework,"Enables security measures to be designed once and re-used many times, otherwise all teams and projects are required to duplicate effort, and any errors introduce security risk.",When using a repository/development platform,"All new project build using GitHub, all existing project have migration plans to move to GitHub asap
+",,,All repos and platform development,https://technical-guidance.education.gov.uk/principles/general/,,,,,,,,,,Are Azure DevOps Pipelines still an approved service?,Standard,Security,
+"Secrets (API keys, passwords, connection strings, certificates) MUST NOT be committed to Git repositories or baked into container images because this prevents immediate compromise of systems and data.",Never store sensitive credentials in source code repositories or inside container images. Store them in a secure secrets-management solution instead.,Must have - governance framework,Leaked secrets are exploited in real-time and can enable direct attacker access to our systems and data.,When using a repository,Application secrets should not be stored in Git repositories or container images,,,GitHub,"https://technical-guidance.education.gov.uk/infrastructure/security/managing-secrets/
+
+Github actions - DfE Technical Guidance
+
+Azure CIP - DfE Technical Guidance
+
+Disaster recovery - DfE Technical Guidance",,,,,,,,,,,Standard,Security,
+"Dependency scanning (SCA) MUST be implemented in build pipelines to detect known vulnerabilities in third-party libraries, and critical vulnerabilities MUST break the build to prevent deployment of compromised code.","Your CI/CD pipeline must automatically scan all third-party packages and libraries for known security vulnerabilities. If a critical vulnerability is found, the deployment must be stopped until it is fixed or formally approved as an exception.",Must have - governance framework,"Modern attacks often exploit weaknesses in third-party libraries rather than vulnerabilities in code written by our developers.
+Most applications rely on hundreds or thousands of open-source packages. If  one of those packages contains a known critical vulnerability, an attacker may be able to compromise an entire application.",When using a repository,Add dependency scanning to the CI/CD pipeline. Define the vulnerability thresholds so the pipeline breaks when the threshold is overwhelmed and create a remediation process,,,GitHub,,,,,,,,,,,"A CI/CD pipeline is an automated process that helps developers build, test, and deploy software changes quickly and safely. CI - Continuous Integration and CD - Continuous Delivery merging code and the automated process for preparing for release",Standard,Security,
+Secret scanning MUST be enabled in the repository to ensure proactive detection and remediation of accidental secret exposure.,"Your code repository must automatically scan for passwords, API keys, tokens, certificates, and other secrets so that accidental exposures are detected and fixed quickly.",Must have - governance framework,"Developers sometimes accidentally commit secrets to Git repositories. Once committed, the secret becomes part of the Git history and may be exposed to
+- Other developers
+- Contractors
+- Automated repository scanners
+- Attackers if the repository is public or compromised
+Secret scanning helps catch these mistakes before they become security incidents. Leaked secrets are exploited in real-time and can enable direct attacker access to our systems and data.",When using a repository,Put automated detection in place so it is found and remediated before it can be abused.,https://technical-guidance.education.gov.uk/standards/storing-source-code/#repository-requirements,,All repos and platform development,https://technical-guidance.education.gov.uk/standards/storing-source-code/,,,,,,,,,,"Secret scanning tools examine repository contents and look for patterns that resemble credentials.
+For example, they can identify:
+- Azure keys
+- GitHub tokens
+- AWS access keys
+- Connection strings
+- Private keys
+- Certificates
+- Hardcoded passwords
+",Standard,Security,
+"All infrastructure and digital services MUST be registered and identifiable, and all cloud resources MUST have Owner, CostCenter, and Env tags because this prevents the existence of unsecured, orphaned infrastructure.","Every system, service, server, database, application, storage account, and cloud resource must be known, recorded, and clearly owned by someone. Cloud resources must also be tagged so they can be identified, managed, secured, and costed correctly.",Must have - governance framework,Because this prevents the existence of unsecured infrastructure where it is unclear as to who owns it (orphaned resource). We cannot secure what we do not know exists. Orphaned infrastructure is a primary attack vector.,Cloud Environments,"Resources shouldn't exist in the cloud that nobody owns, nobody pays for, and nobody is responsible for securing",,,Cloud Platforms,None found,,,,,,,"If it isn't tagged, the central security function reserves the right to decommission it after a 14-day warning.",,,,Standard,Security,
+All infrastructure and cloud services MUST be securely configured to meet the CIS IG1 baseline/benchmark because this closes known security gaps that hackers actively exploit.,"All servers, cloud resources, platforms, and services must be configured according to the CIS IG1 security baseline so they are protected against common and well-known attacks.",Must have - governance framework,"Most successful attacks don't rely on sophisticated hacking.
+Instead, attackers often exploit:
+- Default settings
+- Excessive permissions
+- Open ports
+- Missing encryption
+- Poor configurations
+","Configuration Management on platforms, cloud resource and servers","Teams should build against the approved standard. Don't rely on vendor defaults. Configure every server, cloud resource, and platform according to recognised security standards (CIS IG1) and continuously check that those settings remain in place.",,,"Platforms, cloud resource and servers",None found,,,,,,,,,,,Standard,Security,
+All SaaS/Software MUST be registered in the CMDB to ensure a complete and auditable inventory of digital assets.,Every software application or SaaS service used by the organisation must be formally recorded in the CMDB (Configuration Management Database) so there is a complete record of what software exists,Must have - governance framework,We cannot secure what we do not know exists. SaaS is easy to lose track of because it can be bought and used without infrastructure being deployed internally,When a product or team purchase a SaaS product,If a team procures a SaaS product they should use the create a service offering form in Service Now to register the product in the CMDB,,,SaaS products,"https://dfe.service-now.com/mydfe?id=kbarticle&sys_id=f8d6cb8fdbb854100929b29f29961994
+
+https://dfe.service-now.com/mydfe?id=sc_cat_item&sys_id=b97008b81b7680d02fe864606e4bcb9d&referrer=recent_items
+",,,,,,,,,,"Software as a Service (SaaS) is software that is hosted and managed by a third-party provider and accessed over the internet, rather than being installed and operated by our own organisation",Standard,Security,
+All foundation systems MUST meet phase 1 mandated security controls by March 31st 2026 to ensure critical protection against common attacks.,"The organisation has identified a minimum set of essential security controls. Any critical foundational platform must have those controls in place by 31 March 2026, because those controls provide protection against the most common cyber attacks.",Must have - governance framework,"The purpose is to implement the most important security controls first, reducing risks from common threats such as:
+- Phishing
+- Credential theft
+- Unpatched vulnerabilities
+- Misconfigured cloud resources
+- Excessive privileges
+- Ransomware
+",,,,,,None found,,,,,,,,,,What are our foundation systems? What are the controls?,Activity,Security,
+All new services MUST comply with the 10 principles of Secure by Design to ensure security is built-in from the outset.,"When creating a new service, security must be considered from the beginning of the design process, rather than being added later as an afterthought.",Must have - governance framework,"Don't build a service first and worry about security later. Design and build security into the service from day one, following the Secure by Design principles.",When building services and making major changes,Follow Secure by design principles and use the self assessment tracker to monitor progress,,,All products and services built in house,"https://technical-guidance.education.gov.uk/principles/secure-by-design-principles/
+
+Secure by Design - UK Government Security - Beta
+
+Secure by Design Principles - UK Government Security - Beta
+
+",,,,,,,,,,,Activity,Security,
+"All security tooling procurement MUST be agreed with CISD to ensure consistency, prevent duplication, and avoid unnecessary spend.","Teams cannot independently buy, subscribe to, or implement security tools without first getting agreement from CISD.",Must have - governance framework,The organisation wants a single view and governance process for security tooling.,If a team believe they need security tooling they should consult with CISD before procuring any tools/software,,,,Security Tooling procurement,,,,,,,,,,,,Activity,Security,
+"Any externally accessible system that:
+- Handle sensitive or business‑critical data
+- Provide authentication or user accounts
+- Connect into internal networks
+- Offer custom functionality (web apps, APIs, integrations)
+- Could cause material impact if compromised
+MUST undergo annual penetration testing against the live production version. Above a threshold this must be an external IT Healthcheck.","If a system is exposed to the internet and is important enough to pose a security or business risk, it must be tested by security specialists at least once a year to identify vulnerabilities that automated scanning might miss.",Must have - governance framework,Penetration testing provides assurance that real attackers cannot easily exploit the service.,"A service or webpage externally accessible and handles sensitive or business critical data (pupil data, financial information, staff data etc), provides authentication or user accounts (login portals, admin portals, identity services etc). If the service connects to internal networks and could cause material impact if compromised",Penetration testing and IT Health Check,,,Service Health Check app and any services who meets the condition criteria,https://educationgovuk.sharepoint.com/sites/security/SitePages/it-health-check-services.aspx,,,,,,,,,,,Activity,Security,
+All new services REQUIRE a Security Design Review to ensure security flaws are identified and fixed in the cheapest and easiest stage of the lifecycle.,"Before a new service is built or launched, it must undergo a Security Design Review to identify and address security weaknesses early, when they are easier and less expensive to fix.",Must have - governance framework,It is much cheaper and safer to identify issues early rather than discovering the problem after the application has gone live and exposed sensitive data.,During the design phase of the project a security design review is required,Security Design review	,"Alpha,Private beta",,,None found,,,,,,,,,,,Activity,Assurance,
+GovAssure is mandatory if identified as in-scope to ensure compliance with a statutory obligation.,"If your system or service has been identified as being within the scope of GovAssure, then participating in the GovAssure process is not optional. It is a mandatory requirement because it supports a legal or government policy obligation.",Must have - governance framework,GovAssure is the UK Government's cyber security assurance scheme. It assesses critical government systems against the NCSC Cyber Assessment Framework (CAF) to measure cyber security and resilience.,,,,,,None found,,,,,,,,,,,Activity,Assurance,
+Third-party tools and integrations (including SaaS) MUST undergo a Vendor Security Assessment before they can be used to prevent breaches via vulnerable suppliers.,"Before a team can use a new supplier, SaaS product, API, integration, or security tool, the supplier's security controls must be assessed and approved.",Must have - governance framework,The purpose is to avoid introducing security risks through external vendors.,,,,,,,,,,,,,,,,,Activity,Assurance,
+"Service Owners MUST own their risk, and risks above tolerance REQUIRE formal consultation with the CISO before acceptance to ensure senior leadership accountability.","The person responsible for a service is responsible for the risks associated with that service. If a risk is considered too high (above the organisation's risk tolerance), they cannot simply accept it on their own and must consult the Chief Information Security Officer (CISO) before deciding to proceed.",Must have - governance framework,"This control exists because the people closest to a service are often the ones making risk decisions, but the consequences of a poor decision can affect the whole organisation.
+Without this rule, it's easy for teams to make local decisions that create enterprise-wide security risk.",Where a cyber/security risk is above our tolerance the CISO must be consulted before the risk is accepted (no action planned to address the risk/breach),CISO needs to be consulted as a part of the decision making about the risk acceptance	,,,,,,,,,,,,,,,Activity,Assurance,
+Services MUST undergo mandatory assurance thru DSAM to ensure critical risks are detected and managed effectively.,"Before a service can proceed through key stages of its lifecycle it must go through the DSAM assurance process so that significant risks are identified, assessed, and addressed.",Must have - governance framework,"Without assurance, teams may unintentionally introduce:
+- Security vulnerabilities
+- Unsupported technologies
+- Compliance issues
+- Single points of failure
+- Poor operational processes
+A formal assurance process provides an independent review and challenge before those issues affect production services.",,,,,,,,,,,,,,,,,Activity,Assurance,
+All systems MUST comply with the requirements stipulated in our Continuous Assurance platform to ensure a minimum baseline of security hardening is applied.,Every system must meet the security requirements and checks defined by the organisation's Continuous Assurance platform. The platform is used to continuously verify that systems meet a minimum security standard and remain securely configured over time,Must have - governance framework,"The platform continuously checks that a minimum set of security hardening controls remain in place, helping to detect configuration weaknesses and compliance issues before they become security incidents.",,,,,,,,,,,,,,,,"All systems is quite clear but what about legacy systems, on-premise systems, SaaS and supplier hosted solutions are they included?",Activity,Assurance,
+"Management interfaces (RDP, SSH, SMB, SQL) MUST NOT be exposed directly to the public internet because this is the fastest way to suffer a critical ransomware event.","Do not allow administrative access to systems directly from the internet. Management services such as RDP, SSH, SMB, and SQL should only be accessible through secure, controlled routes",Must have - governance framework,Attackers constantly scan the internet looking for exposed management services. Administrative services should never be directly reachable from the internet. They must be protected behind secure access mechanisms,"Services that utilise RDP, SSH, SMB or SQL and similar",,,,,,,,,,,,,,,"RDP (Remote Desktop Protocol), allows remote log in to Windows servers. SSH (Secure Shell) remotely manage Linux servers. SMB (Server Message Block) file sharing and administration. SQL ports direct administration of databases",Standard,Security,
+Public Web Applications MUST sit behind a Web Application Firewall (WAF) in Blocking Mode to stop common automated attacks.,"Any website or web application accessible from the internet must be protected by a Web Application Firewall (WAF), and the WAF must be actively blocking malicious traffic rather than just monitoring it.",Must have - governance framework,"Many attacks are:
+- Automated
+- Opportunistic
+- Well known
+Attackers don't necessarily target DfE specifically.
+Instead, they scan the internet looking for vulnerable applications. A WAF provides an additional layer of defence",All public web applications,A Web Applicational Firewall must be implemented,,,,,,,,,,,,,,,Standard,Security,
+Production environments MUST NOT communicate with Non-Production environments (Segmentation) to prevent a test environment compromise from spreading to live systems.,"Production systems should be isolated from development, test, and UAT environments. A compromise in a non-production environment should not provide a path into live production systems.",Must have - governance framework,"Non-production environments are often less secure than production because they may have:
+- Weaker access controls
+- Shared accounts
+- Less monitoring
+- Experimental code
+- Temporary configurations
+Attackers know this.",Any applicable in house built service,"Keep Production and Non-Production environments separate. If a development or test system is compromised, the attacker should not be able to use it as a stepping stone into live production services or data.",,,,,,,,,,,,,,,Standard,Security,
+"""Default Encryption"" policies MUST be enabled on all Storage Accounts/S3/Blob storage to ensure sensitive data is not accidentally stored without protection.","Encryption must be turned on by default for all cloud storage services so that any data saved there is automatically protected, even if someone forgets to configure encryption manually.",Must have - governance framework,"Its a security control that reduces the impact of a beach and protects against misconfigured storage, unauthorised access, insider threats and cloud account compromise","This obligation is relevant if your service:
+- Stores files, documents, backups, logs, or databases in cloud storage.
+- Uses Azure Storage Accounts, Blob Storage, AWS S3, or similar services.
+- Handles personal, sensitive, financial, or business-critical data.
+Cloud storage services:
+Blob Storage - Azure
+S3 buckets - AWS (Amazon web services) and similar cloud storage solutions",All cloud storage services must have encryption enabled by default so that any data stored within them is automatically protected from unauthorised access.,,,,,,,,,,,,,,,Standard,Security,
+"All data repositories (S3, Blob, SQL, SharePoint) MUST be classified to ensure effective data defence.",Every place where data is stored must have its data classified (labelled according to its sensitivity and importance) so that the correct security controls can be applied.,Must have - governance framework,Because you can't apply the right security controls if you don't know what data you're protecting.,"Every database, storage account, SharePoint site, or data store","Every database, storage account, SharePoint site, or data store must be labelled according to the sensitivity of the data it contains. This allows the organisation to apply the correct level of protection and ensures sensitive data receives stronger security controls than low-risk information.",,,,,,,,,,,,,,,Standard,Security,
+"DLP controls MUST be implemented on email, collaboration tools, and corporate endpoints to prevent the unauthorized transmission of high-risk sensitive data.","The organisation must have controls (DLP - Data Loss Prevention) in place to detect and stop people from accidentally or deliberately sending sensitive information outside the organisation through email, Teams/SharePoint, or company devices.",Must have - governance framework,"Most data breaches don't involve sophisticated hackers.
+Many occur because of accidental disclosure, unauthorised sharing, and insider activity","Email, Teams, SharePoint, OneDrive, or corporate devices.","Implement controls that can detect and stop sensitive information leaving the organisation through email, Teams/SharePoint/OneDrive, or corporate devices.",,,,,,,,,,,,,,,Standard,Security,
+Sensitive data MUST be encrypted At Rest (using managed keys) and In Transit (using TLS 1.2+) to ensure data is protected even if communications are intercepted or storage is compromised.,"Any sensitive data must be encrypted both when it is stored and when it is being transmitted between systems, so that even if someone gains access to the storage or intercepts the communication, they cannot easily read the data.",Must have - governance framework,To ensure data is protected even if communications are intercepted or storage is compromised,"Any system that stores, processes or transmits sensitive data",Sensitive data must be encrypted whenever it is stored and whenever it is transmitted. Use the platform's managed encryption capabilities and modern TLS (1.2 or higher) so that data remains protected if storage systems are compromised or network traffic is intercepted.,,,,,,,,,,,,,,"Managed keys are like Azure Key Vault or can be managed by the cloud platform. TLS 1.2 is the technology behind HTTPS, TLS stands for Transport Layer Security",Standard,Security,
+Real PII MUST NEVER be used in Non-Prod/Test environments; synthetic or anonymised data MUST be used instead because anonymisation scripts are unreliable and real data causes major data breaches.,"You must not copy real personal data into development, test, UAT, or training environments. Instead, use fake (synthetic) data or properly anonymised data",Must have - governance framework,"Production environments have strict access controls, monitoring, security reviews and limited admin access, but test environments have wider access, temporary configurations so having PII in these environments creates unneccessary risk",All test and pre-production environments,"Test with fake data instead. If a test environment is compromised, no real individual should be affected.",,,,,,,,,,,,,,,Standard,Security,
+All cloud-hosted compute instances and corporate devices MUST run an approved EDR tool with 24/7 monitoring and alerting to the central SoC to ensure detection and stop hackers who bypass initial defences.,"Every cloud server and company-managed device must have an approved Endpoint Detection and Response (EDR) security tool installed, and that tool must be continuously monitored by the Security Operations Centre (SOC) so that attacks can be detected and stopped quickly.",Must have - governance framework,"Organisations assume that, despite firewalls, secure passwords, email filtering, and other protections, an attacker may still manage to get onto a device or server. EDR is there to detect and respond when that happens.",Applies to all company devices and any cloud servers,All company devices and cloud servers must have approved security monitoring software installed and connected to the security operations team so cyber attacks can be detected and stopped as quickly as possible.,,,,,,,,,,,,,,"EDR is End-point detection and response which is an advanced security software that monitors devices for suspicious activity, malware and ransomware, investigates security incidents and unusual behaviour. SOC is the Security Operations Centre the team responsible for monitoring and responding to cyber threats.",Standard,Security,
+"""Team"" passwords MUST be prohibited because they make accountability impossible and are easy to steal.","Shared passwords used by multiple people (""team passwords"") are not allowed because you cannot tell who used the account, and shared credentials are more likely to be compromised.",Must have - governance framework,"If everyone logs in using the same password and if a critical change is made, there is no way to identify who did it.","In order to maintain accurate audit logs transactional services or services that allows users to update, delete and mantain records should all follow this rule",People must not share passwords. Everyone should use their own account so actions can be traced to a specific individual and the risk of credential theft is reduced.,,,,,,,,,,,,,,,Standard,Security,
+"All administrative and privileged access (Cloud Consoles, Prod DBs, CI/CD Admin) MUST be protected by MFA to prevent account takeover and mass compromise.","Anyone with powerful access to systems, infrastructure, databases, cloud platforms, or deployment pipelines must use Multi-Factor Authentication (MFA), not just a username and password.",Must have - governance framework,Because compromising one privileged account can affect entire services.,This applies specifically to administrative and privileged accounts. It is triggered when a user has elevated permissions,"If an account can administer systems, access sensitive production resources, or make significant changes, MFA must be enforced.",,,,,,,,,,,,,,"Powerful access means accounts that can make significant changes, portal admins etc, they have much more power than normal user accounts. Cloud consoles are used to create and delete resources. Prod DBs are production databases SQL server, Azure SQL, PostgreSql etc. CI/CD admin is a pipeline administrator, these systems control what gets deployed to production. MFA is multifactor authentication. One privileged account can affect entire services",Activity,Security,
+"""Break-glass"" accounts MUST be disabled by default and alert immediately upon usage to prevent abuse and unauthorised use.","Emergency (""break-glass"") accounts should not be available for everyday use. They should only be enabled or used in exceptional situations, and any use of them should generate an immediate alert so it can be investigated.",Must have - governance framework,"Because break-glass accounts are:
+- Necessary for recovery during emergencies.
+- Extremely powerful, making them attractive targets for attackers.
+","Applies to Identity platforms, Cloud Platform administration, Privileged access management systems, CI/CD  and source control platforms and production infrastructure","Emergency administrator accounts should only be used as a last resort. They should not be active for normal work, and whenever they are used, the security team should be alerted immediately so any misuse can be detected and investigated.",,,,,,,,,,,,,,"Break glass account is a highly privileged emergency account that can be used when normal access methods fail. Admins locked out of Microsoft entra, MFA unavailable etc",Activity,Security,
+Standing admin rights MUST NOT exist; Just-in-Time (JIT) or Least Privilege scoping MUST be used to limit the potential damage an attacker can inflict.,"People should not permanently have administrator access. Instead, admin permissions should only be granted when needed (Just-in-Time) or restricted to the minimum permissions required (Least Privilege)",Must have - governance framework,To limit the potential damage an attacker can inflict,Wherever privileged access exists,"People should not walk around with permanent administrator privileges. Give the minimum permissions needed, and where elevated access is required, grant it temporarily and remove it automatically when the task is complete.",,,,,,,,,,,,,,"Just in Time (JIT) means admin access is granted only when required. Least privilege, give people only the permissions they actually need.",Standard,Security,
+"Legacy, non-MFA compatible authentication protocols (e.g., POP3, IMAP, SMTP) MUST be explicitly disabled because they eliminate easy ways for hackers to bypass strong MFA.",Older authentication methods that do not support Multi-Factor Authentication (MFA) must be turned off so attackers cannot use them to avoid MFA protections.,Must have - governance framework,"- Passwords are frequently stolen through phishing attacks.
+- MFA is one of the most effective defences against account compromise.
+- Legacy protocols can undermine MFA.
+- Attackers specifically target old authentication methods because they are easier to exploit.
+",Any service that uses older authentication methods and do not support MFA,"Turn off old sign-in methods that only use usernames and passwords, because they can allow attackers to access accounts without going through MFA. The organisation should actively block these protocols rather than simply hoping nobody uses them.",,,,,,,,,,,,,,"These are older email and access protocols such as:
+- POP3 (Post Office Protocol)
+- IMAP (Internet Message Access Protocol)
+- SMTP Authentication (used to send email)
+- Older Exchange protocols
+- Basic Authentication methods using only a username and password
+",Standard,Security,
+Service-to-service communication MUST use managed identities or short-lived tokens (Machine Identity); hardcoded keys MUST NOT be used to prevent permanent key theft.,"When one system talks to another system, it should authenticate using managed identities or temporary credentials. It should not use long-lived passwords, secrets, or API keys stored in code or configuration files.",Must have - governance framework,To prevent permanent key theft which means an attacker could have access for months when there arent stored credentials its much harder for an attacker,"When one application talks to another, applications accessing Azure, service accesses a database, APIs authenticate to other APIs and when CI/CD pipelines deploy infrastructure","Whenever systems authenticate to other systems, use managed identities or temporary tokens instead of passwords, API keys, or connection strings embedded in code",,,,,,,,,,,,,,,Standard,Security,
+Multi-Factor Authentication (MFA) MUST be mandatory for ALL externally accessible users without exception because it is the single best way to stop account takeover.,Anyone who can access a service from outside the organisation's network must use Multi-Factor Authentication (MFA). A password alone is not sufficient.,Must have - governance framework,"Most account compromises start with:
+- Phishing
+- Password reuse
+- Credential stuffing
+- Stolen passwords
+- Malware
+",Applies to users accessing services from outside the organisation's internal network,"If a user can sign in to a system from outside the organisation, MFA must be enabled for that account.",,,,,,,,,,,,,,,Standard,Security,
+Shared Accounts MUST NOT be used; every action MUST be traceable to a specific named user or Service Principal to ensure accountability for all system changes.,"Every user, administrator, application, or automated process must have its own identity. You should never use generic shared accounts because it must always be possible to identify who performed an action.",Must have - governance framework,"For accountability and security investigations. With individual accounts the audit trail is clear and seeing when, who and where people make changes supports security investigations",Wherever authentication exists,"Don't use generic usernames that multiple people share. Every human should have their own account, and every application should have its own service identity",,,,https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/standards-account-and-credential-management.docx?d=wadf8d20c50e247d0a9a72109fd4cbfaf&csf=1&web=1&e=QczeUw,,,,,,,,,,,Standard,Security,
+Single Sign-On (SSO) MUST be used  where possible to reduce password fatigue and simplify the adoption of MFA.,"Users should sign in once with their organisational account (for example, their DfE Entra ID/Microsoft 365 account) and then be able to access approved systems without managing separate usernames and passwords for each application.",Should have,Better security. instead of 20 apps and 20 passwords we have 1 identity and 1 MFA process. Better governance means one someone leaves the ID is disabled and access is removed everywhere,Wherever authentication exists,"Wherever possible, applications should use the organisation's central identity provider (such as Microsoft Entra ID) rather than separate usernames and passwords",,,,,,,,,,,,,,"- What are the exceptions here? A legacy application doesn't support SSO.
+- A supplier doesn't offer SSO integration.
+- The cost of enabling SSO is disproportionate
+Why is this an obligation if there are exceptions?",Standard,Security,
+"All Identity logs (Sign-ins, Failures), Cloud Audit Trails (config changes), and Application Error logs MUST go to the Central SIEM to ensure comprehensive breach detection and investigation.","Important security, audit, and application logs must be collected in SIEM the central monitoring platform so the security team can detect attacks, investigate incidents, and understand what happened.",Must have - governance framework,"- Security incidents can be detected quickly.
+- Investigators have evidence when something goes wrong.
+- Suspicious activity can be correlated across multiple systems.
+- Regulatory and audit requirements can be met.
+- Attackers cannot hide their actions by exploiting gaps between different logging systems
+","All services that use authentication, cloud storage and applications","All sign-in logs, cloud configuration change logs, and application logs must be sent to SIEM",,,,,,,,,,,,,,,Activity,Security,
+Services MUST have an out-of-hours on-call contact for critical service incident escalation to ensure immediate action can be taken during high-risk periods.,Every service must have someone available to be contacted outside normal working hours in case a serious incident occurs and urgent action is needed.,Must have - governance framework,"- Critical incidents can happen at any time.
+- Fast response often reduces damage and recovery time.
+- Security teams need someone who understands the service.
+- Business-critical services may require 24/7 support arrangements.
+",,Every service must have a person or team that can be contacted outside normal working hours so that serious incidents can be responded to immediately rather than waiting until the next working day.,,,,,,,,,,,,,,What kinds of service does this link to ciriticality or transactional services?,Activity,Security,
+Log Retention MUST be 90 Days Hot / 1 Year Cold (managed centrally) to ensure sufficient evidence is available for all security incident investigations.,"Security and audit logs must be kept in a searchable format for at least 90 days and archived for at least 1 year, so investigators have enough evidence if a security incident is discovered.",Must have - governance framework,"For incident investigations security teams need to know when the attack started, which accounts were affected, what data was accessed etc. Many organisations need to be able to demonstrate security monitoring and the logs support this","Services that use cloud storage solutions, there may be some other conditions",Keep logs readily searchable for at least 90 days and retain them in archive form for at least 1 year.,,,,https://educationgovuk.sharepoint.com/sites/lvewp00047/SitePages/Testing.aspx,,,,,,,,,,"Hot storage means logs can be searched immediately, and quick to retrieve. Cold storage means logs are archived, slower to access and usually lower cost",Activity,Security,
+Physical or logical separation of admin privileges is REQUIRED to prevent a simple phishing email from compromising everything.,"The account you use for everyday activities (email, Teams, web browsing) should be separate from the account you use to administer systems.",Must have - governance framework,"Most major incidents start with a compromised user account, separating the privileged admin account means the breach is contain and isnt service wide","Any service that has privileged admin access, or elevated permissions
+- Azure Administrators
+- Entra ID Administrators
+- Microsoft 365 Administrators
+- Database Administrators
+- GitHub Administrators
+- Azure DevOps Administrators
+- Server Administrators
+- Security Tool Administrators
+",Administrators should use separate accounts (and sometimes separate devices) for privileged activities.,,,,"standards-account-and-credential-management.docx
+
+",,,,,,,,,,,Standard,Security,
+"Administrative work is ONLY permitted on Managed, Encrypted, EDR-protected devices to ensure the highest level of security for high-privilege operations.","If you're performing administrative tasks, you must do so from a company-approved device that is managed, encrypted, and actively monitored by security tooling. You must not administer systems from personal, unmanaged, or insecure devices.",Must have - governance framework,We do not want high-privilege accounts being used from personal or unmanaged devices because compromising the device could lead directly to a major security breach.,Any activity performed using a privileged account,"If you're carrying out administrative or privileged activities, you must use a secure corporate-managed device that is encrypted and monitored by EDR.",,,,,,,,,,,,,,,Standard,Security,
+"Any suspected breach, lost device, or accidental data exposure MUST be reported to CISD immediately to ensure a small incident does not become a major breach","If you think a security incident might have happened, don't try to decide how serious it is yourself. Report it to CISD immediately so it can be investigated and managed before it gets worse.",Must have - governance framework,Early reporting gives the organisation the best chance of containing the issue before it turns into a major security incident or data breach.,Any service that has a data breach,"If something security-related happens, or you think it might have happened, tell CISD immediately.",,,,Report a security incident,,,,,,,,,,,Standard,Security,
+All staff MUST complete Security Awareness training annually because staff are the best defence against human error.,Every employee must complete security awareness training at least once a year so they understand common cyber risks and know how to avoid causing or contributing to security incidents.,Must have - governance framework,Many security incidents involve human actions rather than technical failures.,All staff are required to complete the training,"Everyone must complete cyber security awareness training every year so they can recognise threats, handle information safely, and help prevent incidents caused by mistakes or social engineering attacks.",,,,,,,,,,,,,,,N/A,Security,
+All services MUST have local incident response plans aligned to the CISD standard to ensure consistency in handling and escalating incidents.,"Every service must have its own documented plan for responding to security incidents, and that plan must follow the standards and processes defined by CISD so that incidents are handled consistently across the organisation.",Must have - governance framework,"During an incident people are under pressure and may not know who to call, what actions to take, who can approve decisions or when to involve CISD, A documented plan avoids confusion",,"Every service needs a documented playbook for responding to incidents, and it must follow the organisation's CISD incident management approach so that security incidents are handled quickly, consistently, and with the right escalation route",,,,"policy-cyber-incident-response-management.docx
+
+policy-information-security-exception.doc",,,,,,,,,,Are there specific services that need this or is it all services?,Activity,Security,
+All stateful data MUST be backed up to a separate region/location (Immutable backups preferred) to ensure all systems and data can be recovered after a major attack or disaster.,"Any data that changes and needs to be retained must be backed up, and those backups must be stored somewhere separate from the primary system. Ideally, the backups should be immutable (cannot be changed or deleted) so they can still be recovered after a ransomware attack or major outage.",Must have - governance framework,"The goal is to ensure the service can recover from ransomware, accidental deletion, corruption, or a major disaster.","Definitely services that use cloud storage, I am not sure if we have any on-prem legacy services and what the rules would be for that","Any important data must be backed up and stored separately from production systems. Ideally, the backups should be immutable so attackers cannot delete them.",,,,https://educationgovuk.sharepoint.com/sites/lvewp00047/SitePages/Disaster-Recovery.aspx,,,,,,,,,,,Activity,Security,
+Business important and critical services MUST span Availbility Zones (AZs) to ensure resilience against major cloud failures,,,,,,,,,,,,,,,,,,,,,,
+Restoration capability MUST be tested/proved annually (Drills) because a backup that is never tested is not a backup.,It's not enough to create backups. The organisation must regularly prove that those backups can actually be restored successfully.,Must have - governance framework,Because many organisations discover problems only when they need the backup.,Any service that backs up their data,"Don't just create backups and assume they're fine. At least once a year, prove that you can successfully restore systems and data so that, during a real incident, recovery is reliable and predictable.",,,,,,,,,,,,,,,Activity,Security,
+Incident response plans SHOULD be tested on an annual basis to ensure people are familiar with the process under pressure.,"Service teams should practise responding to security incidents at least once a year so that, if a real incident occurs, people know what to do and can respond quickly and effectively",Should have,"People discover during a real incident that contact lists are out of date, nobody knows who owns the service, escalation paths are unclear and people have never read the plan,. Testing helps identify those issues before a real emergency",Every service,Don't wait for a real cyber incident to discover whether your response process works. Practise it at least annually so that the people involved know their roles and can respond confidently when under pressure.,,,,Testing and Updating,,,,,,,,,,,Activity,Security,
+"Base container images MUST be pulled from a trusted internal registry and MUST be refreshed/patched at least monthly to prevent systems from being built using old, vulnerable software components.","When building containerised applications (e.g., Docker containers), teams must use approved base images from the organisation's trusted registry, and those images must be updated regularly so new deployments aren't built on top of vulnerable software.",Must have - governance framework,"To prevent systems from being built using old, vulnerable software components","Services using containers, kubernetes, Docker, AKS, container apps and other containerised workloads. Not applicable to SaaS products you dont build, standard sharepoint solutions conventional virtual machines that dont use containers","If you're deploying containers, use approved base images from the organisation's trusted registry and update those images regularly.",,,,,,,,,,,,,,"Containers are like a shipping container, it runs on the idea build it once and run it anywhere. You build everything within that container and then whatever is inside that container travels together. So you can lift and shift your application within that container to any environment. A base container image is the foundational image that provides the operating system and runtime environment for your containerised application, and everything built on top inherits its configuration, dependencies, and security posture.",Standard,Security,
+"Operating Systems and runtimes MUST be patched regularly, with Critical patches = 14 Days and High = 30 Days SLA, to ensure known flaws are fixed before hackers can exploit them.","Servers, operating systems, and software runtimes must be kept up to date, and serious security vulnerabilities must be fixed within defined timeframes before attackers can exploit them.",Must have - governance framework,To ensure known flaws are fixed before hackers can exploit them,"Servers, virtual machines, operating systems, container hosts, application runtimes and cloud compute instances. Usually less applicable to fully managed SaaS products where the supplier patches the underlying operating systems and runtime",Keep operating systems and software platforms up to date. Critical security vulnerabilities must be fixed within 14 days and High vulnerabilities within 30 days so attackers can't exploit known weaknesses that already have a fix available.,,,,,,,,,,,,,,,Activity,Security,
+The use of End-of-Life software is PROHIBITED because it contains unpatchable flaws that are easy for hackers to compromise.,"You must not use software that is no longer supported by the vendor, because security vulnerabilities will no longer be fixed and attackers actively target these systems.",Must have - governance framework,"Security teams generally consider EOL software to be a significant risk because it creates a situation where, even if you know about a vulnerability, you cannot properly remediate it","Any service that uses end of life software, which means the vendor has stopped supporting the product, e.g unsupported versions of windows server, outdated Java runtime, an old version of SQL server",Upgrade the software and ensure there is funding available,,,,,,,,,,,,,,"End of life means no security patches, no bug fixes, no technical support and no feature updates. When software becomes EOL the vendor will usually offer discounts or incentives to procure the new version of the EOL software you have or provide information on similar software offered by other vendors",Standard,Security,
+,,,,,,,,,,,,,,,,,,,,,,
+Have you consulted relevant security stakeholders when developing your business case?,Have you spoken to the people who are responsible for security and technology to get their input while creating the business case?,Must have - governance framework,"Project teams often do not have specialist security expertise. Security stakeholders can identify risks, obligations, costs, and requirements that might otherwise be missed. The guidance specifically states that the SRO, service owner, business analyst, CTO, CISO and technical security assurance teams should contribute to the business case","This applies whenever:
+- A new service, product, system or change is being proposed.
+- A business case is being developed.
+- Security risks or obligations could arise.
+","Evidence should show that relevant security stakeholders were engaged, for example:
+- Discussions with Security, Cyber, Architecture or Assurance teams.
+- Review meetings.
+- Feedback incorporated into the business case.
+- Approval or endorsement from appropriate security representatives.","Discovery,Alpha,Private beta,Public beta,Live",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/
+
+Service Engagement Form
+
+Procurements and suppliers – security considerations",,,,,,,,,,,,,
+Does the business case include cyber security considerations? ,"Does the business case clearly explain any security requirements, risks, controls, obligations and costs associated with the proposal?",Must have - governance framework,"Security affects scope, delivery time, resources, funding and user trust. If these considerations are not identified early, projects can be delayed, become more expensive, or introduce unacceptable risks. The guidance states that security should be included throughout the business case so that the true costs and effort are understood from the outset","All business cases involving:
+- Digital services.
+- Technology solutions.
+- Data processing.
+- Third-party technology suppliers.
+","The business case should include security information such as:
+- Security obligations (legal, regulatory, policy).
+- Threats and risks.
+- Security controls.
+- Resource requirements.
+- Security governance arrangements.
+- Security-related costs
+","Discovery,Alpha,Private beta,Public beta,Live",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/
+
+https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-cyber-security-exceptions.docx?d=w02ee54ef6559470fa25d82db421d9cd9&csf=1&web=1&e=1tSTxr
+https://educationgovuk.sharepoint.com/:x:/r/sites/security/_layouts/15/Doc.aspx?sourcedoc=%7BCC3503B2-472A-4C0C-99BB-CA86DAA7C1CC%7D&file=security-obligations-is-policy.xlsx&wdLOR=c17A97CF7-BB69-417A-BE55-FA66A12B45C7&action=default&mobileredirect=true
+
+https://educationgovuk.sharepoint.com/sites/commercial-and-procurement/SitePages/manage-a-contract-as-the-senior-business-owner.aspx
+
+https://educationgovuk.sharepoint.com/:w:/r/sites/security/_layouts/15/Doc.aspx?sourcedoc=%7B03CA32FB-D42D-4724-B4A5-7EB589AF55FE%7D&file=policy-supplier-security-management.docx&wdLOR=c738C59F9-5F7D-4A9C-94F1-102FD425C1B7&action=default&mobileredirect=true
+
+",,,,,,,,,,,,,
+"Does the economic case include an analysis with the security threats, security risk tolerance, security objectives and cyber resilience as part of critical success factors?","When comparing options, have you assessed:
+- What security threats exist?
+- How much risk the organisation is willing to accept?
+- What security outcomes need to be achieved?
+- How resilient the service needs to be?
+- Whether these factors influence which option is the best choice?",Must have - governance framework,A cheaper option is not necessarily the best option if it exposes the organisation to significant cyber risk. The economic case should consider security impacts when deciding which option delivers the greatest overall value. The guidance states that the economic case should include information about security threats and assess resilience against security attacks as part of the success criteria.,"This is relevant when:
+- Comparing multiple delivery options.
+- Assessing value for money.
+- Producing economic appraisals under Green Book principles.
+","The economic case should show:
+- Key cyber threats.
+- Defined risk appetite or risk tolerance.
+- Security objectives.
+- Resilience requirements.
+- How security contributes to critical success factors.
+- How these considerations were used to evaluate options. 
+","Discovery,Alpha,Private beta,Public beta,Live",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/
+
+https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP
+
+",,,,,,,,,,,,,
+Does the economic case consider varying levels of security when calculating value for money?,"Have you considered how different levels of security investment affect costs, risks and benefits?",Must have - governance framework,"Security is not all-or-nothing. Different options may provide:
+- Basic security.
+- Enhanced security.
+- High-assurance security.
+Each level has different costs and benefits. The guidance states that making security integral to scope, delivery and implementation should be assessed as part of achieving value for money.","When:
+- Assessing options.
+- Developing cost-benefit analyses.
+- Determining preferred solutions.
+","You should demonstrate:
+- Security was included in option appraisals.
+- Different security levels were assessed where appropriate.
+- Costs of security controls were considered.
+- Costs of security incidents or failures were considered.
+- The selected option provides an appropriate balance between cost and security","Discovery,Alpha,Private beta,Public beta,Live",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/,,,,,,,,,,,,,
+Does the management case include details of the security governance and assurance approach?,"Have you explained who will oversee security, how security decisions will be made, and how you will check security is working throughout delivery?",Must have - governance framework,"Security cannot simply be designed and forgotten. There must be ongoing governance, monitoring and assurance to ensure controls continue to work and risks remain managed. The guidance states that the management case should define security roles and responsibilities, governance arrangements, risk management processes, change assessment processes and security assurance activities","Applies during:
+- Project delivery.
+- Transition to live service.
+- Live operation.
+- Change management activities.","The management case should include:
+- Security governance structure.
+- Security roles and responsibilities.
+- Risk management processes.
+- Security assurance activities and reviews.
+- Change control processes.
+- Testing and validation arrangements.
+- Monitoring and reporting mechanisms.","Discovery,Alpha,Private beta,Public beta,Live",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/,,,,,,,,,,,,,
+Does the project have a resource plan showing security roles and skills required to support the delivery of the service?,"Have you documented who is needed to support security on the project, what they will do, and what skills they need?",Must have - governance framework,"Security activities do not happen automatically. Projects need suitably skilled people available at the right time. Without planning for security resources, key activities such as threat modelling, security architecture reviews, security testing and risk management may not happen. The guidance requires a comprehensive security resource plan covering the people involved throughout the project lifecycle.","Applies when:
+- Creating a new service.
+- Delivering significant changes.
+- Preparing business cases and project plans.
+- Seeking funding or approvals.","There should be a documented security resource plan showing:
+- Security roles required.
+- Key responsibilities.
+- Required skills and expertise.
+- When resources are needed.
+- Whether resources are internal, shared or externally contracted.
+- Estimated effort and costs","Discovery,Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/identifying-security-resources/,,,,,,,,,,,,,
+Have you identified and captured the skills required to carry out security activities and engaged with your organisation's security team to support the delivery?,"Do you know what security expertise is needed, and have you involved the people in your organisation who can provide it?",Must have - governance framework,"Many project teams do not contain all the specialist skills required for Secure by Design. The guidance specifically recommends consulting security professionals, security architects, CTOs, CISOs and other specialists to identify required skills and provide support","Applies when:
+- Security-related activities are planned.
+- Specialist security knowledge is required.
+- Internal capability gaps may exist.","You should be able to show:
+- A list of required security skills.
+- Which activities need those skills.
+- Evidence of engagement with security teams.
+- Plans for training if skills are missing.
+- Assigned individuals or teams for key security activities","Discovery,Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/identifying-security-resources/,,,,,,,,,,,,,
+"Have you identified and captured the required technology resources such as software development environments, tools and security capabilities that will be required for the project?","Have you worked out what security tools, platforms and technical capabilities will be needed to build and operate the service securely?",Must have - governance framework,"Security depends on more than people. Projects often require specialist tools and infrastructure to support secure development, testing, monitoring and operations. The guidance requires teams to assess and document the technology resources needed.","Applies when:
+- Planning delivery.
+- Designing technical solutions.
+- Estimating project costs.
+- Operating live services.","The project should identify:
+- Existing organisational security capabilities.
+- Additional tools required.
+- Development and testing environments.
+- Monitoring and detection capabilities.
+- Identity and access management tooling.
+- Security testing tools","Discovery,Alpha,Private beta",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/identifying-security-resources/
+
+https://educationgovuk.sharepoint.com/sites/security/SitePages/it-health-check-services.aspx
+
+",,,,,,,,,,,,,
+Have you considered pre-approved or recommended architectural patterns available from your organisation or other government departments?,"Before designing something new, did you check whether there is already a recognised secure design pattern that could be reused?",Must have - governance framework,"DfE does have approved architectures, security patterns and reference designs that have already been reviewed and assessed. Reusing these approaches reduces risk, improves consistency and avoids unnecessary design effort. The guidance encourages using existing organisational capabilities, policies, procedures and resources where possible","Applies when:
+- Designing a new solution.
+- Selecting technology.
+- Creating target architecture.
+- Implementing security controls.","You should be able to demonstrate that you have:
+- Reviewed relevant organisational standards.
+- Considered existing government patterns and frameworks.
+- Assessed whether approved architectures meet project needs.
+- Documented any decision to deviate from established patterns.","Discovery,Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/identifying-security-resources/,,,,,,,,,,,,,
+"Have you assigned the Secure by Design responsibilities (for example, in a RACI matrix) and communicated them to the relevant parties?","Have you clearly defined who is responsible for each security activity, and made sure everyone understands their role?
+In other words:
+- Who does the work?
+- Who approves the work?
+- Who needs to be consulted?
+- Who needs to be kept informed?
+The guidance recommends using a RACI matrix to make this clear. A RACI identifies who is Responsible, Accountable, Consulted, and Informed for each activity",Must have - governance framework,"Security activities often fail because everyone assumes someone else is dealing with them.
+The guidance states that agreeing responsibilities helps organisations:
+- assign ownership of security activities
+- identify skills and resource gaps
+- make individuals personally responsible for managing cyber risk","This applies:
+- At the start of a project.
+- When delivery teams are formed.
+- When responsibilities change.
+- When new security activities are introduced.
+- During periodic project reviews.","Responsibilities have been identified,","Discovery,Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-roles-and-responsibilities/,,,,,,,,,,,,,
+"Have you appointed a Senior Responsible Owner (SRO), service owner or equivalent, and informed the individual of their responsibilities?","Has someone been formally made accountable for the security risks and security outcomes of the service?
+This person doesn't necessarily perform security activities themselves, but they are ultimately accountable for ensuring they happen.
+The guidance identifies the Senior Responsible Owner (SRO) and Service Owner as key roles for agreeing and overseeing security responsibilities.",Must have - governance framework,"Without a clearly accountable person:
+- Security decisions may be delayed.
+- Risks may remain unresolved.
+- Nobody owns difficult decisions.
+- Security issues can fall between teams.
+Secure by Design promotes clear accountability for cyber risk from the beginning of delivery.","Applies whenever:
+- A service is being developed.
+- A major change is being delivered.
+- A programme or project requires governance.
+- Cyber risks need ownership.","An accountable individual must be identified, and responsibilities must be clearly explained.","Discovery,Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-roles-and-responsibilities/,,,,,,,,,,,,,
+Have you included continuous assurance processes in the service's project delivery workflow?,"Have you built regular security checks and reviews into the way the project is delivered, rather than only checking security at the end?",Must have - governance framework,"Traditional projects often perform a single security review shortly before go-live. Secure by Design requires security to be continually assessed throughout the service lifecycle because threats, risks and designs change over time. Continuous assurance helps identify issues early and provides confidence that security remains effective.","This applies whenever:
+- A service is being designed, built or maintained.
+- Agile delivery methods are used.
+- Technology or business requirements are changing.
+- Security controls need ongoing validation.
+","Evidence might include:
+- Security reviews built into sprint cycles.
+- Security checkpoints within delivery governance.
+- Threat assessments being regularly reviewed.
+- Security testing occurring throughout development.
+- Regular risk reviews.
+- Assurance activities included in project plans.","Discovery,Alpha,Private beta,Public beta,Live",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/tracking-secure-by-design-progress/,,,,,,,,,,,,,
+Have you used the organisation's risk appetite statements and applied them to the nature of the service to determine the security risk appetite level for the project? ,Have you taken your organisation's existing risk appetite and worked out what it means for this specific service or project?,Must have - governance framework,"Different organisations tolerate different levels of risk.
+For example:
+- A public information website may tolerate more risk.
+- A system holding sensitive personal data may tolerate very little risk.
+- A payment service may have almost no tolerance for integrity failures.
+Without a defined risk appetite:
+- Teams make inconsistent decisions.
+- Security investments become difficult to justify.
+- Risks may be accepted unintentionally.
+The guidance states that a project risk appetite helps determine acceptable and unacceptable risks and supports informed risk management decisions","This applies when:
+- A service is being planned.
+- Discovery is underway.
+- Security requirements are being established.
+- Risk assessments are being performed.
+The guidance says this should be established during Discovery (or requirements gathering) and reviewed whenever major changes occur.","You should be able to show DfEs risk appetite was reviewed, the service specific implications were identified, a project level risk appetite statement was produced, and the statement was approved and shared","Discovery,Alpha",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/
+
+https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-malware-defence.docx?d=w382fcc54b9914b188634973a39e96cb5&csf=1&web=1&e=igfgSR
+
+https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-secure-configuration-management.docx?d=w910934615be84c86996d8b094dff9b9c&csf=1&web=1&e=og2TdO
+",,,,,,,,,,,,,
+Have you established a clear governance structure around risk management decision making?,"Is it clear who makes risk decisions, who approves risk acceptance, who escalates risks and who monitors them?",Must have - governance framework,"Good risk management requires accountability.
+Without governance:
+- Risks may be ignored.
+- Risks may be accepted by someone without authority.
+- Important decisions may be delayed.
+- Different teams may use different standards.
+The guidance emphasises that the risk appetite must be communicated and used by delivery teams to support risk management decision-making and governance","Applies whenever Security risks are are being assessed, being escalated, and accepted. Also when Security decisions affect project delivery","The governance model should explain, who owns risks, who approves risk acceptance, and how escalation works","Discovery,Alpha",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/,,,,,,,,,,,,,
+Have you considered the risk appetite of any organisations the service shares or exchanges data with?,"If your service shares data with another organisation, have you considered whether they have stricter security requirements or lower tolerance for risk than you do?",Must have - governance framework,"A service may interact with:
+- Other government departments
+- Local authorities
+- Arm's length bodies
+- Suppliers
+- Partner organisations
+A risk that seems acceptable internally may be unacceptable to a partner organisation.
+The guidance highlights the need to understand dependencies and how other projects or organisations influence risk management decisions.","Applies when:
+- Data is shared externally.
+- Systems are integrated.
+- Services rely on third parties.
+- Multiple organisations are involved.
+","Consider data sharing arrangements, partner organisations expectations, and differences in risk appetite","Discovery,Alpha",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/,,,,,,,,,,,,,
+Have you considered whether the service is part of the Critical National Infrastructure (CNI) or fundamental to the organisation's output and missions?,Have you assessed how important the service is to government operations or national infrastructure?.. What happens if this service fails or is compromised?,Must have - governance framework,"Not all services have the same consequences if they fail, some may have a low impact some may have high impact.","Relevant whenever a service:
+- Supports critical operations.
+- Processes critical data.
+- Provides essential services.
+- Supports departmental missions.
+- Could cause significant operational disruption if unavailable.
+","You should assess Service Criticality, national impact and required resilience","Discovery,Alpha",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/,,,,,,,,,,,,,
+Have you considered the appropriate Cyber Assessment Framework (CAF) profile for all the components of the service?,Have you worked out what level of assurance and security expectations apply to each part of the service based on its risk and importance?,Must have - governance framework,Different components may require different levels of security.,"Applies when:
+- Designing the service architecture.
+- Selecting controls.
+- Planning assurance activities.
+- Determining security requirements.
+","Assess each major service component, appropriate CAF expectations, traceability, provide evidence in CAF assessment, security architecture documents etc","Discovery,Alpha",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/,,,,,,,,,,,,,
+"Have you reviewed the security risks of any cloud technology (such as IaaS, PaaS, SaaS) before using it?","Before deciding to use a cloud service, have you assessed the security risks it might introduce?
+- Infrastructure as a Service (IaaS)
+- Platform as a Service (PaaS)
+- Software as a Service (SaaS)
+",Must have - governance framework,"Cloud services can introduce risks relating to:
+- Data protection
+- Access control
+- Supplier security
+- Resilience and availability
+- Data location
+- Regulatory compliance
+Secure by Design requires organisations to perform security due diligence on third-party technology products before relying on them.","Applies whenever the service uses IaaS, PaaS and SaaS:
+- Microsoft Azure
+- AWS
+- Google Cloud
+- SaaS products
+- Cloud-hosted platforms
+- Cloud storage services
+","You should assess:
+- What information will be stored?
+- Who can access the environment?
+- Where is the data hosted?
+- What security certifications exist?
+- What security controls are provided?
+- What risks remain?","Discovery,Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-third-party-product-security-risks/,,,,,,,,,,,,,
+Have you identified the security risks related to third-party Managed Service Providers (MSPs) prior to using them?,"Before appointing an external provider to deliver or operate services on your behalf, have you assessed the risks they introduce?",Must have - governance framework,"MSPs often receive significant access to:
+- Systems
+- Infrastructure
+- Data
+- Administrative accounts
+A security weakness within the MSP can become a security weakness in your service.
+Secure by Design requires security due diligence on third-party providers","Applies when:
+- Outsourcing support services
+- Using managed hosting
+- Using managed security services
+- Using outsourced operational teams","You should assess:
+- Supplier security maturity
+- Access management controls
+- Incident response capabilities
+- Personnel vetting
+- Monitoring arrangements
+- Business continuity arrangements","Discovery,Alpha,Private beta",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-third-party-product-security-risks/
+
+https://educationgovuk.sharepoint.com/sites/security/SitePages/procurement-suppliers.aspx
+
+Business Continuity Home",,,,,,,,,,,,,
+Have you assessed and managed the risks associated with any third-party development environments or software prior to committing to using them? ,"Before using external development tools, frameworks, code repositories or software products, have you checked whether they introduce security risks?",Must have - governance framework,"Development tools can create risks such as:
+- Software supply-chain attacks
+- Vulnerable dependencies
+- Malicious code
+- Insecure build pipelines
+- Exposure of source code","Applies when using:
+- GitHub
+- GitLab
+- CI/CD platforms
+- Development frameworks
+- Open-source libraries
+- Code generation tools","You should assess:
+- Supplier reputation
+- Known vulnerabilities
+- Security updates process
+- Dependency risks
+- Access controls
+- Licence implications","Discovery,Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-third-party-product-security-risks/,,,,,,,,,,,,,
+"Have you created a report that highlights any security risks associated with using third-party products, including recommendations on how to manage those risks?",Have you formally documented the risks introduced by third-party products and explained how those risks will be managed?,Must have - governance framework,"Decision makers need visibility of supplier risks before approving technology choices.
+The report provides evidence that due diligence has been completed and allows risk owners to make informed decisions","Applies whenever:
+- Third-party products are used.
+- Security risks are identified.
+- Procurement decisions are being made.","The report should contain:
+- Product description
+- Identified risks
+- Impact assessment
+- Risk ratings
+- Proposed mitigations
+- Residual risks
+- Recommendations","Discovery,Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-third-party-product-security-risks/,,,,,,,,,,,,,
+"Have you discussed security obligations, including government policies, regulations, laws and contracts, for your service with your organisation's compliance or information security teams?","Have you spoken to the people who understand legal, regulatory and security requirements to determine what rules your service must follow?
+The guidance specifically recommends consulting legal, commercial and information management teams alongside security specialists",Must have - governance framework,"Different services have different obligations.
+For example:
+- UK GDPR
+- Data Protection Act
+- PCI-DSS
+- Government Security Policies
+- Supplier contracts
+Missing a requirement can lead to non-compliance, fines or operational risk",,"Evidence could include:
+- Compliance workshops
+- Legal reviews
+- Security reviews
+- Governance meeting outputs",Discovery,,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/,,,,,,,,,,,,,
+Have you fed compliance requirements into risk management activities?,"Have you used compliance requirements to influence your risk assessments, controls and mitigation plans?",Must have - governance framework,Compliance requirements often represent risks. Secure by Design expects obligations to be incorporated into service design and risk management.,,"You should be able to trace:
+Requirement → Risk → Control",Discovery,,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/,,,,,,,,,,,,,
+"Have you met obligations in relation to personally identifiable information (PII) being processed, stored or transmitted by the service?","If the system uses personal information, have you met all legal and security requirements for protecting it?",Must have - governance framework,Personal information requires special protection under privacy and data protection laws,"Any services that use PII: Examples:
+- Names
+- Addresses
+- National Insurance numbers
+- Contact details
+- Employee records","Typically:
+- Data minimisation applied
+- Appropriate security controls implemented
+- Retention arrangements defined
+- DPIA completed where required",Discovery,,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/
+
+Data Protection Impact Assessment (DPIA) Portal",,,,,,,,,,,,,
+"Have you met obligations in relation to financial information (such as credit card details) being processed, stored or transmitted by the service?","If the service handles financial data, have you complied with the relevant security and regulatory requirements?",Must have - governance framework,Financial data is often highly attractive to attackers and subject to additional controls.,"Any services that use financial data:
+- Credit card details
+- Bank account information
+- Payment records
+- Financial transactions","Examples:
+- PCI-DSS compliance where applicable
+- Encryption
+- Strong access control
+- Secure transmission",Discovery,,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/,,,,,,,,,,,,,
+"Have you met obligations in relation to intellectual property (IP) data being processed, stored or transmitted by the service?","If the system handles intellectual property, have you implemented the protections required to safeguard it?",Must have - governance framework,"Loss of intellectual property can:
+- Harm the organisation
+- Create legal liabilities
+- Damage commercial value",,"You should understand:
+- Ownership arrangements
+- Licensing restrictions
+- Contractual obligations
+- Security classification requirements",Discovery,,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/,,,,,,,,,,,,,
+"Have you documented the legal, regulatory and contractual requirements that must be met by the service?","Have you created a list of all the rules, laws, regulations and contractual commitments that the service must comply with?",Must have - governance framework,"Teams cannot comply with requirements they have not identified.
+The obligations profile should be documented and shared across the project.",,"You should maintain a record showing:
+- Applicable laws
+- Regulations
+- Government policies
+- Standards
+- Contract obligations",Discovery,,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/,,,,,,,,,,,,,
+Have you ensured that other organisations you plan to share data with as part of the service delivery are compliant with the relevant cyber security obligations?,"Before sharing information with another organisation, have you checked they meet the required security standards?",Must have - governance framework,"Your security obligations do not disappear when data leaves your organisation.
+The receiving organisation must also be capable of protecting the information appropriately.",Any service that shares data with another organisation,"You should assess:
+- Security controls
+- Compliance status
+- Relevant certifications
+- Data handling arrangements",Discovery,,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/,,,,,,,,,,,,,
+Have you defined data sharing agreements with any organisations you are sharing data with?,"Have you formally agreed how shared data will be protected, used and managed?",Must have - governance framework,Data sharing creates accountability and legal obligations that need to be documented.,,"A data sharing agreement should normally define:
+- Purpose of sharing
+- Types of data
+- Security controls
+- Retention arrangements
+- Incident reporting
+- Responsibilities",Discovery,,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/,,,,,,,,,,,,,
+"If data will be processed, stored or transmitted outside the UK or the European Economic Area (EEA), have you considered the relevant security obligations?","If information leaves the UK or EEA, have you checked what legal and security requirements apply?",Must have - governance framework,"Cross-border data movement may create additional legal and privacy obligations.
+Secure by Design requires teams to understand applicable obligations based on the nature of the service and its data.",,"You should assess:
+- Where data is stored
+- International transfer mechanisms
+- Legal restrictions
+- Supplier arrangements",Discovery,,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/,,,,,,,,,,,,,
+Have you completed a Data Protection and Impact Assessment (DPIA)?,Have you formally assessed how the service affects people's privacy and identified actions needed to protect personal data?,Must have - governance framework,A DPIA helps identify privacy risks before a service is implemented and ensures appropriate safeguards are designed into the service from the outset.,"Usually required when:
+- Processing personal data
+- Introducing new technology
+- Conducting large-scale processing
+- Monitoring individuals","A DPIA should:
+- Describe the processing
+- Identify privacy risks
+- Assess impacts on individuals
+- Define mitigations
+- Be reviewed by appropriate specialists",Discovery,,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/
+
+https://educationgovuk.sharepoint.com/sites/lvewp00158/SitePages/DPIA.aspx
+",,,,,,,,,,,,,
+Have you taken business objectives into account when making security decisions? ,"When choosing security controls, have you considered what the service is trying to achieve for the organisation?",Must have - governance framework,"Security should help the organisation achieve its objectives safely, not get in the way.
+If security decisions are made without understanding the business purpose, you can end up with:
+- Unnecessary controls
+- Increased costs
+- Delays to delivery
+- Reduced business benefits","This applies when:
+- Defining security requirements
+- Designing security controls
+- Making architecture decisions
+- Prioritising risks
+- Designing operational processes","You should be able to show that:
+- Business objectives were identified.
+- Security requirements were linked to those objectives.
+- Security decisions considered business impact.
+- Any trade-offs between security and business needs were documented.",Discovery,,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-business-objectives-and-user-needs/,,,,,,,,,,,,,
+Have you taken user needs into account when making security decisions? ,Have you considered how real users will interact with security controls and whether those controls are practical and usable?,Must have - governance framework,"Poorly designed security controls often lead users to:
+- Work around the controls
+- Circumvent processes
+- Make mistakes
+- Become frustrated","This applies when designing:
+- Authentication processes
+- Access controls
+- User journeys
+- Security policies
+- Business processes","You should be able to demonstrate that:
+- User research was considered.
+- Security requirements were balanced against usability.
+- User groups were identified.
+- Controls were designed around how users actually work.
+- User needs continue to be reviewed as the service evolves.",Discovery,,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-business-objectives-and-user-needs/,,,,,,,,,,,,,
+Have you identified and documented the business and technology information assets in scope of the service?,"Have you made a list of everything valuable that the service uses, stores, manages or depends on?",Must have - governance framework,"You cannot protect assets if you do not know they exist.
+The guidance states that documenting assets helps organisations:
+- Understand what needs protecting.
+- Manage risks and vulnerabilities.
+- Identify accountability.
+- Assess the impact of loss or compromise.","This applies from:
+- Discovery
+- Requirements gathering
+- Design
+- Build
+- Live operation
+Asset information should also be reviewed whenever the service changes.","Create and maintain an inventory of assets in scope such as:
+Business assets
+- Customer data
+- Employee information
+- Financial records
+- Intellectual property
+Technology assets
+- Applications
+- Servers
+- Databases
+- APIs
+- Networks
+- Cloud environments
+It should also be reviewed and maintained as the service evolves","Discovery,Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/documenting-service-assets/,,,,,,,,,,,,,
+Have you identified and documented a service owner or information asset owner for each asset?,Does every important asset have a named person responsible for it?,Must have - governance framework,"If nobody owns an asset:
+- Security issues may not be addressed.
+- Risks may not be reviewed.
+- Decisions may be delayed.
+- Vulnerabilities may remain unmanaged.
+The guidance specifically highlights the need to understand who is responsible for each asset so that accountability for protection is clear.","Applies to all assets identified within the service, including:
+- Data assets
+- Applications
+- Infrastructure
+- Platforms
+- Shared services","For every asset, there should be:
+- A named owner.
+- A defined role.
+- Accountability for security decisions.
+- Responsibility for managing risks relating to the asset.","Discovery,Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/documenting-service-assets/,,,,,,,,,,,,,
+"Have you completed a business impact assessment to determine the confidentiality, integrity and availability of data if the service was compromised?","Have you assessed what would happen to the organisation, users and service if its data or systems were:
+- Read by unauthorised people (Confidentiality)
+- Changed or corrupted (Integrity)
+- Unavailable (Availability)",Must have - governance framework,"Not all information and systems are equally important.
+The organisation needs to understand which assets would cause the greatest damage if compromised so it can:
+- Prioritise security investment.
+- Identify the most important risks.
+- Design appropriate security controls.
+- Support threat modelling and risk assessments.","This applies when:
+- A new service is being developed.
+- Existing services are changing significantly.
+- Information assets have been identified.
+- Security risks are being assessed.
+The guidance recommends completing this during discovery or requirements gathering and updating it whenever significant assets change","The assessment should consider, confidentiality, integrity and availability. The assessment should document:
+- Assets being assessed.
+- Impact ratings.
+- Consequences of compromise.
+- Overall business impact.
+","Discovery,Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-importance-of-service-assets/,,,,,,,,,,,,,
+Did you consult with business stakeholders when creating the impact assessment?,Did you involve the people who understand how the service operates and how the organisation would be affected by a security incident?,Must have - governance framework,"Technical teams understand systems.
+Business stakeholders understand:
+- Operational impacts.
+- Financial impacts.
+- Regulatory consequences.
+- Reputational damage.
+- User impacts.
+The guidance specifically recommends involving asset owners, service owners, security professionals and other business stakeholders when assessing asset importance. Workshops and surveys are recommended methods for gathering this information.","Applies whenever:
+- An asset evaluation is being completed.
+- Business impacts are being scored.
+- Security priorities are being established
+","Evidence could include:
+- Workshops.
+- Interviews.
+- Surveys.
+- Stakeholder review sessions.
+- Sign-off from asset owners or service owners.
+The assessment should demonstrate input from relevant stakeholders rather than being produced solely by technical teams","Discovery,Alpha,Private beta",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-importance-of-service-assets/
+
+https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-cyber-incident-response-management.docx?d=w7301f468a0794a398af702bf34ee2c4a&csf=1&web=1&e=PkTsJi
+",,,,,,,,,,,,,
+Have you obtained the organisation's overarching threat assessment (or completed your own if there is not one available)?,"Have you identified an existing organisational threat assessment and used it, or created a service-specific threat assessment if none exists?",Must have - governance framework,"Projects should not start from scratch if the organisation already understands its threat landscape.
+The guidance states that many organisations already have threat assessments that can be used as the foundation for service-level assessments. If one is unavailable, a new assessment should be commissioned or produced.","Applies when:
+- Starting discovery or alpha phase.
+- Performing threat modelling.
+- Conducting risk assessments.
+- Designing security controls.
+The guidance strongly recommends having a threat assessment before threat modelling or risk assessment activities begin.","You should:
+1. Check whether an organisational threat assessment exists.
+2. Obtain and review it.
+3. Tailor it to your service if necessary.
+4. Create a new assessment if none exists.
+5. Keep it updated when the service changes.","Discovery,Alpha",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/sourcing-a-threat-assessment/,,,,,,,,,,,,,
+"Does your threat assessment include the motives, intent and capability of the threat actors relevant to your service?","Does your assessment explain:
+- Who might attack the service?
+- Why they would attack it?
+- What they are trying to achieve?
+- Whether they have the ability to succeed?",Must have - governance framework,"Understanding attackers helps teams design proportionate security controls.
+Secure by Design states that threat assessments should capture threat actor:
+- Motivation
+- Intent
+- Capability
+- Type of threat actor","Applies when:
+- Threat assessments are being performed.
+- Threat modelling is underway.
+- Security controls are being selected.","The assessment should document threat actors and their motivation, intent, and capability","Discovery,Alpha",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/sourcing-a-threat-assessment/
+
+https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP
+",,,,,,,,,,,,,
+Have you considered threat intelligence and the history of previous attacks on the organisation (or similar organisations) as part of the threat assessment?,"Have you looked at real-world evidence about attacks that have already happened, either to your organisation or to similar organisations?",Must have - governance framework,"Threat assessments should be evidence-based rather than based on assumptions.
+The guidance states that threat assessments should use:
+- Cyber Threat Intelligence (CTI)
+- Reputable intelligence sources
+- Research into previous attacks on the organisation
+- Research into attacks against similar organisations","Applies when:
+- Producing or updating threat assessments.
+- Identifying likely attackers.
+- Assessing threat levels.","You should demonstrate consideration of:
+- Internal security incident history.
+- Cyber Threat Intelligence reports.
+- NCSC threat reporting.
+- Industry intelligence feeds.
+- Lessons learned from similar organisations.
+- Known attacker tactics and techniques.","Discovery,Alpha",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/sourcing-a-threat-assessment/,,,,,,,,,,,,,
+Have you documented the technical architecture for the end-to-end service and system?,"Can someone look at your documentation and understand how the whole service works technically, including all the systems, components, integrations and data flows involved?		",Must have - governance framework,"You cannot properly assess security if you do not know what actually makes up the service.
+Architecture documentation provides the foundation for the remaining security work. It allows security specialists and delivery teams to determine:
+- where sensitive information is stored
+- where information enters and leaves the service
+- which systems communicate with each other
+- where users authenticate
+- which components are exposed externally
+- where trust boundaries exist
+- which third parties are relied upon
+- what an attacker could potentially target","This is relevant where a service:
+- consists of multiple technical components
+- integrates with other systems
+- processes or stores information
+- uses cloud infrastructure
+- exposes APIs or other interfaces
+- relies on external suppliers or services
+- has different user types or administrative access
+- crosses organisational or network boundaries","The team should produce and maintain appropriate technical architecture documentation.
+That would normally include things such as:
+Architecture diagram
+Showing the major technical components and how they connect.
+Data-flow information
+Showing important data moving between components or systems.
+Interfaces and integrations
+Documenting APIs, third-party systems, identity services and other dependencies.
+Trust/security boundaries
+Showing where the security context changes, for example between the public internet and an internal environment.
+Hosting/infrastructure
+Documenting where components are hosted and the major infrastructure involved.
+The documentation should also be current. An architecture diagram created early in discovery but no longer representing the live design would not really satisfy the intent of the rule.","Alpha,Private beta",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-threat-modelling/
+
+https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP",,,,,,,,,,,,,
+Have you identified and documented the possible attack paths or threat events that could be used to exploit vulnerabilities in the service?,Have you worked out the realistic ways somebody could attack or misuse the service and written them down?,Must have - governance framework,"Simply identifying technical components is not enough. The team needs to think about, given our architecture what could actually go wrong from a security perspective?
+Doing this systematically helps find security weaknesses before they become incidents.
+It also helps teams prioritise security investment according to realistic threats rather than simply implementing generic security features.","Threat modelling should consider, where applicable:
+- external attackers
+- compromised user accounts
+- malicious or accidental insider activity
+- unauthorised access
+- privilege escalation
+- vulnerable integrations
+- exposed interfaces
+- manipulation of information
+- disclosure of sensitive information
+- service disruption
+- compromised dependencies
+- misuse of legitimate functionality.
+Not every imaginable threat needs to be treated equally. The important point is identifying credible threats relevant to the service and its architecture.","The team should carry out a structured threat assessment or threat-modelling exercise.
+There should be evidence showing:
+1. What is being protected?
+    - systems
+    - sensitive information
+    - user accounts
+    - privileged functions
+    - critical services.
+1. What could threaten it?
+    - identified threat events or scenarios.
+1. Where could the threat occur?
+    - component, interface, data flow or trust boundary.
+1. What would happen if it succeeded?
+    - impact on confidentiality, integrity or availability.
+1. How significant is the threat?
+    - some form of evaluation/prioritisation.
+The identified threats should be documented and traceable back to the architecture.","Alpha,Private beta",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-threat-modelling/
+
+https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP
+",,,,,,,,,,,,,
+Have you identified and documented what security controls are available to reduce the likelihood of threat events?,"Once you know what could go wrong, this question asks:
+Have you worked out what protections can prevent those things from happening, or make them much less likely, and documented them?",Must have - governance framework,"Identifying threats without deciding what will be done about them does not actually reduce risk.
+The intended chain should be:
+Threat → Risk → Security control → Reduced risk
+It also helps prevent controls being introduced without knowing what problem they are supposed to solve.","For each meaningful threat identified during threat modelling, the team should consider:
+- What existing controls already address it?
+- Are those controls sufficient?
+- Are additional controls required?
+- Is the control preventative, detective or corrective?
+- Who owns the control?
+- Has it actually been implemented?
+- How will the team know that it works?","Ideally, there should be traceability between threats and controls.
+","Alpha,Private beta",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-threat-modelling/
+
+https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP
+",,,,,,,,,,,,,
+Have you identified and documented any security controls that could mitigate multiple threat events?,Have you looked for security protections that solve more than one of the security problems you identified?,Must have - governance framework,"This encourages the team to think about security holistically rather than threat-by-threat in isolation.
+It can:
+- provide stronger defence across the service
+- reduce duplicated security solutions
+- help prioritise high-value controls
+- simplify security architecture
+- make security controls easier to maintain
+- identify critical controls on which several security protections depend.
+Importantly, it can also expose concentration risk.
+If ten important threats are all mitigated by one security control, failure","This is particularly relevant once:
+1. threats have been identified; and
+2. possible security controls have been identified.
+The team can then map controls against threats.","An acceptable piece of evidence is a threat-to-control matrix. 
+This makes it much easier to see:
+- which controls protect against multiple threats
+- threats with inadequate protection
+- duplicated controls
+- especially important controls
+- possible single points of security failure.
+The outcome should not simply be ""we have MFA"", for example. The documentation should demonstrate which identified threats the control is intended to mitigate.","Alpha,Private beta",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-threat-modelling/
+
+https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP
+",,,,,,,,,,,,,
+Have you conducted a security design review against good practice principles and patterns?,"Has someone suitably knowledgeable stepped back and checked that the proposed security design is sensible, follows recognised good practice, and doesn't contain obvious architectural security weaknesses? This is slightly different from threat modelling.
+Threat modelling asks how could this particular system be attacked or misused?”
+A security design review asks, is the way we've designed the system fundamentally secure and consistent with accepted security principles?”
+",Must have - governance framework,"A team can identify individual threats and still end up with a poor overall security design.
+For example, controls may exist but:
+- be implemented in the wrong place
+- rely too heavily on one component
+- give users excessive privileges
+- trust systems unnecessarily
+- fail securely only in some circumstances
+- produce inadequate security logs
+- create unnecessarily complex security arrangements.
+A design review provides another perspective on the overall security architecture.","The security design review should reflect the nature and risk of the service and consider relevant good-practice principles, including:
+- least privilege and separation of duties
+- defence in depth and secure-by-default design
+- minimising the attack surface
+- strong authentication and access controls
+- appropriate encryption and secure credential management
+- logging, monitoring and auditing
+- resilience, secure failure and appropriate security boundaries","Complete and document a security design review using the current architecture, identified threats and proposed security controls. The review should:
+- assess the design against recognised security principles and patterns
+- identify any weaknesses, gaps or recommendations
+- record actions and assign owners
+- track significant issues through to resolution or formal risk acceptance
+For higher-risk services, consider an independent or specialist security review.","Alpha,Private beta",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-threat-modelling/
+
+https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP
+",,,,,,,,,,,,,
+Do the scoring scales used for your service's security risk assessment align with your organisation's risk management processes?,Does the way you score security risks match the way your organisation scores and understands risk more generally?,Must have - governance framework,"Security risks ultimately need to be understood and managed alongside other organisational risks.
+Using aligned scoring means:
+- risks can be compared consistently
+- senior decision-makers understand what the ratings mean
+- escalation thresholds are consistent
+- risks aren't understated or overstated because different teams use different definitions
+- security risks can feed into wider organisational risk management.","This applies wherever the service uses a scoring system to determine the likelihood, impact or overall severity of security risks.","- Identify the organisation's existing risk scoring framework.
+- Use the same scales or establish a clear mapping between the security risk scale and organisational scale.
+- Define what each likelihood, impact and severity rating means.
+- Agree the scoring parameters with the appropriate risk/security stakeholders.
+- Apply the scoring consistently across the service's security risks.","Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/,,,,,,,,,,,,,
+Have you documented the risk assessment method used to perform a risk assessment?,Have you written down how you assess security risks so that someone can understand the process you followed and repeat it?,Must have - governance framework,"Risk assessments involve judgement. Without a defined method, two people could assess exactly the same risk and reach very different conclusions.
+Documenting the method makes the assessment:
+- consistent
+- repeatable
+- understandable
+- auditable
+- easier to review and update.","The documented method should cover the scope and approach to the assessment, including how threats, vulnerabilities, business impacts, likelihood and risk severity are identified and evaluated.
+It should also define important terminology, assumptions and constraints. The guidance recommends documenting the assessment boundary and identifying what is in and out of scope.","Document the risk assessment methodology, including:
+- scope and boundaries
+- terminology and definitions
+- assumptions and constraints
+- information/sources used
+- how threats, vulnerabilities and impacts are assessed
+- how likelihood and impact are scored
+- how the overall risk rating is calculated
+- how and when risks will be reviewed.","Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/,,,,,,,,,,,,,
+Have you validated the timeliness of the threat and business impact sources?,Have you checked that the information you're using to assess risk is still current enough to be relied upon?,Must have - governance framework,"A risk assessment is only as good as the information it is based on.
+For example, a threat assessment could become outdated because new threats or attack techniques have emerged. Equally, an impact assessment could become outdated because the service now processes more sensitive information or serves significantly more users.
+Using outdated information could result in the service underestimating or misrepresenting its actual security risk.","Check the age and relevance of information used to determine:
+- threat actors and their capabilities
+- threat likelihood
+- vulnerabilities and attack techniques
+- asset importance
+- sensitivity of information
+- number/type of users
+- operational dependency on the service
+- business consequences of compromise.","- Record the sources and dates of the threat and business-impact information used.
+- Check that those sources are still relevant and current.
+- Define when the information needs reviewing.
+- Reassess it when significant changes occur to the service or threat landscape.
+- Update the risk assessment where newer information changes likelihood or impact.","Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/,,,,,,,,,,,,,
+Have you documented the service's risks (for example in a risk register)?,"Have all the security risks you've identified been formally written down somewhere where they can be tracked, owned and managed?",Must have - governance framework,"Identifying a risk in a workshop or conversation isn't enough.
+Risks need to be recorded so the organisation can understand:
+- what could happen
+- what could cause it
+- what would be affected
+- how serious it is
+- who owns it
+- what is being done about it
+- whether the remaining risk is acceptable.
+This also provides an audit trail for security and risk decisions.","Relevant identified security risks should be captured, including risks that have been accepted and those that are above the project's acceptable risk level and therefore require treatment.
+The guidance recommends describing security risks in terms of the threat actor, threat event, vulnerability and resulting consequences.","Create and maintain a risk register, it should be kept up to date, shared with the people responsible for decision-making and mitigation, and updated when controls are introduced or circumstances change. The guidance specifically describes the register as a ""living document"" and says scores should be updated following implementation of security controls to reflect the latest information.","Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/,,,,,,,,,,,,,
+Have you identified the cyber security standards that are relevant to the service?,"Have you worked out which recognised security standards, frameworks and guidance apply to the type of service you are building and the things it needs to protect?",Must have - governance framework,"Recognised standards and frameworks provide an established baseline of good security practice, rather than requiring each project to invent its own approach.
+Using relevant standards helps teams:
+- identify appropriate security protections
+- avoid overlooking common security requirements
+- manage vulnerabilities and risks consistently
+- use a common security language
+- support legal, regulatory and governance requirements.","The frameworks selected should reflect:
+- what assets and information the service needs to protect
+- the service's technical architecture and environment
+- identified vulnerabilities and security risks
+- whether it is cloud, SaaS, web, network-based, etc.
+- applicable organisational, legal or regulatory security requirements.
+The guidance says the service's assets, design, architecture and vulnerabilities should provide the basis for shortlisting appropriate security frameworks","- Identify what needs protecting.
+- Review recognised standards and security frameworks.
+- Decide which are relevant to the service and why.
+- Document the standards/frameworks selected.
+- Revisit them when the service or technology changes significantly.","Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-a-security-controls-set-for-your-service/,,,,,,,,,,,,,
+Have you agreed the security control frameworks you intend to use with your organisation’s security function?,Has your organisation's security team been involved in deciding and agreeing which security frameworks the service will use?,Must have - governance framework,"Your organisation may already have:
+- required security frameworks
+- standard security controls
+- an organisational security controls taxonomy
+- approved security patterns
+- established security policies
+- regulatory or compliance requirements.
+Engaging the security function avoids individual services adopting inconsistent or unsuitable approaches and gives the project access to people who understand how the frameworks should be applied.","The selected frameworks should be appropriate to the assets, architecture, risks and technology of the service, while also meeting organisational security requirements.
+The guidance says this activity should be led by technical and security architects in collaboration with security teams that understand security frameworks and how to interpret them","- Engage the organisation's security function.
+- Identify any existing organisational security framework or controls taxonomy.
+- Discuss which additional frameworks are relevant to the service.
+- Agree which frameworks will provide the basis for the service's controls.
+- Record that decision and make it available to the relevant delivery teams.","Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-a-security-controls-set-for-your-service/,,,,,,,,,,,,,
+Have you created a security controls set relevant to your service?,Have you turned the selected frameworks into a practical list of security controls that this particular service needs to implement?,Must have - governance framework,"Generic frameworks can contain many controls, not all of which will be relevant to every service.
+Creating a service-specific controls set helps ensure that security measures are:
+- appropriate to the service
+- proportionate to its risks
+- connected to what needs protecting
+- understandable to delivery teams
+- capable of being implemented and evidenced
+- maintained as the service evolves.","The controls selected should take account of:
+- service assets
+- security risks and vulnerabilities
+- technical architecture
+- service environment
+- applicable security obligations
+- relevant security frameworks
+- organisational security requirements.
+If the standard frameworks do not address a particular security need, the guidance allows appropriate custom processes or controls to be added, with advice from the organisation's security professionals","Create and maintain a documented set of security controls specifically applicable to the service.
+- what controls are required
+- where the controls came from
+- why they are relevant
+- what part of the service they apply to
+- how they relate to identified risks or requirements
+- any service-specific/custom controls needed.
+The controls set should also be shared with delivery teams and reviewed when significant functionality or components are added","Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-a-security-controls-set-for-your-service/,,,,,,,,,,,,,
+Does your security controls set map to the NCSC Cyber Assessment Framework (CAF)?,Can you show how the security controls selected for your service relate to the security outcomes in the National Cyber Security Centre (NCSC) Cyber Assessment Framework?,Must have - governance framework,"The CAF provides a common, outcome-focused way of looking at cyber security and resilience.
+The National Cyber Security Centre (NCSC) describes CAF as a systematic approach to assessing how cyber risks are being managed. Its high-level objectives and principles are expressed as security outcomes rather than a simple checklist of individual technical measures.","The mapping should cover the service's relevant controls against applicable CAF outcomes.
+CAF is structured around four high-level areas:
+1. Managing security risk
+2. Protecting against cyber attack
+3. Detecting cyber security events
+4. Minimising the impact of cyber security incidents
+","- Take the service's agreed security controls set.
+- Map each relevant control to the corresponding CAF outcome/principle.
+- Identify any CAF areas with insufficient control coverage.
+- Address or explain gaps where appropriate.
+- Maintain the mapping as the controls and service change.","Alpha,Private beta",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-a-security-controls-set-for-your-service/,,,,,,,,,,,,,
+Have you treated the risks that have a rating above the project's risk appetite?,"If any risks are larger than the level of risk the organisation is willing to accept, have you done something about them?",Must have - governance framework,Risk appetite defines how much security risk an organisation is prepared to tolerate. Risks that exceed this threshold cannot simply be ignored. Secure by Design states that risks should be reduced to an acceptable level through appropriate mitigations or approved acceptance decisions,"Applies when:
+- A security risk assessment has been completed.
+- Risks have been scored.
+- Some risks exceed agreed thresholds.","For every risk above tolerance, one of the following should occur:
+- Reduce the risk through controls.
+- Transfer the risk.
+- Avoid the risk by changing the design.
+- Escalate and formally accept the risk.
+There should be clear evidence of the chosen approach.","Alpha,Private beta,Public beta,Live",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/responding-to-and-mitigating-security-risks/,,,,,,,,,,,,,
+Have you documented the risk mitigations (for example in a risk treatment plan)?,Have you written down exactly what actions will be taken to reduce security risks?,Must have - governance framework,"Mitigations that exist only in conversations are easily forgotten. A documented treatment plan provides accountability, allows progress to be tracked and demonstrates that risks are being managed systematically. Secure by Design recommends documenting and approving mitigation activities as part of risk management.","Applies when:
+- Risks have been identified.
+- Controls are needed.
+- Risk responses have been agreed.","The documentation should show:
+- The risk.
+- Proposed mitigation.
+- Owner.
+- Due date.
+- Current status.
+- Expected reduction in risk.","Alpha,Private beta,Public beta,Live",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/responding-to-and-mitigating-security-risks/,,,,,,,,,,,,,
+"Did you select the security controls based on risk, threats and exposure?","Did you choose security controls because they address real threats and risks, rather than simply applying controls because they are standard or familiar?",Must have - governance framework,"Secure by Design promotes a risk-driven approach. Controls should directly relate to the threats facing the service. Over-securing wastes money, while under-securing leaves vulnerabilities exposed","When:
+- Threat assessments have been completed.
+- Risks have been identified.
+- Security architecture is being defined.
+When:
+- Threat assessments have been completed.
+- Risks have been identified.
+- Security architecture is being defined.","You should be able to demonstrate:
+- Threats were identified.
+- Risks were assessed.
+- Controls were selected to reduce those specific risks.
+- Control decisions can be traced back to identified risks.","Alpha,Private beta,Public beta,Live",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/,,,,,,,,,,,,,
+Have you documented the selected controls?,Have you recorded which security controls will be implemented and why?,Must have - governance framework,"Without documentation there is no reliable evidence of what protections are expected, what has been implemented, or what auditors and assurance teams should verify. Secure by Design encourages use of security control frameworks and taxonomies to record selected controls","Applies when:
+- Security controls have been identified.
+- Solution design is underway.
+- Assurance activities need traceability.","The documentation should include:
+- Control name.
+- Purpose.
+- Associated risk.
+- Owner.
+- Implementation status.
+- Relevant standards/framework references.","Alpha,Private beta,Public beta,Live",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/,,,,,,,,,,,,,
+Have you tested the controls and confirmed they're working as intended?,Have you checked that the security controls actually work in practice?,Must have - governance framework,A control that exists on paper may not work correctly. Secure by Design places emphasis on assessing the effectiveness of security controls and continuing assurance throughout delivery. A control only reduces risk if it operates as intended.,"When controls have been designed, built, configured and deployed.
+","Testing may include:
+- Penetration testing.
+- Vulnerability scanning.
+- Security design reviews.
+- Configuration reviews.
+- User access testing.
+- Red team exercises.
+- Evidence-based assurance reviews.
+","Alpha,Private beta,Public beta,Live",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/,,,,,,,,,,,,,
+Have you identified any residual risks and raised them with risk owners for sign-off?,"After all controls have been implemented, are there any risks that still remain, and have the people responsible formally agreed to accept them?",Must have - governance framework,"No service is completely risk-free. Even after mitigation, some residual risk usually remains. Secure by Design requires accountability for those remaining risks, meaning appropriate risk owners must understand and formally accept them.","Applies when:
+- Security controls have been implemented.
+- Risks have been reassessed.
+- Some level of risk remains.","You should:
+1. Recalculate the risk after mitigation.
+2. Identify remaining residual risks.
+3. Record them in the risk register.
+4. Present them to the appropriate risk owner.
+5. Obtain formal acceptance or direction for further action.","Alpha,Private beta,Public beta,Live",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/,,,,,,,,,,,,,
+"Do you have a documented approach on how to classify, prioritise and redress vulnerabilities?","Have you agreed and written down how you will judge how serious a vulnerability is, decide which ones need fixing first, and determine how and when they will be fixed?",Must have - governance framework,"Not every vulnerability presents the same level of risk. A minor weakness in a low-risk component should not necessarily receive the same priority as a critical vulnerability affecting an important internet-facing system.
+Having an agreed process ensures vulnerabilities are handled consistently and that teams focus first on weaknesses presenting the greatest risk.","Different vulnerabilities may require different responses. The guidance gives examples including patches or updates, compensating controls, code fixes and workarounds, with more serious issues potentially requiring senior-management escalation","Create and maintain a documented vulnerability management process that defines:
+- how vulnerabilities are classified and scored
+- how priority is determined
+- expected remediation timescales
+- available remediation approaches
+- who is responsible for resolving them
+- when vulnerabilities need escalating
+- how remediation is tested and confirmed
+- how vulnerabilities are recorded and tracked.
+","Alpha,Private beta",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/implementing-a-vulnerability-management-process/
+
+https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-vulnerability-management.docx?d=w6fef653e7774430a85e62302f2e28132&csf=1&web=1&e=kAWAnp
+",,,,,,,,,,,,,
+"Do you have a documented process for identifying and responding to new vulnerabilities in your code, systems or supply chain?",Do you have an ongoing way of finding out when new security weaknesses affect your service and a clear process for deciding what to do when one is discovered?,Must have - governance framework,A service may be secure today but become vulnerable tomorrow because a new weakness is discovered in software or a dependency it uses.,"The process should cover vulnerabilities discovered through sources such as:
+- vulnerability scanning
+- security testing
+- automated dependency tools
+- supplier/vendor notifications
+- vulnerability or threat alerts
+- penetration tests
+- internal reporting
+- external vulnerability reports.","Document how the team will:
+1. monitor for new vulnerabilities
+2. determine whether the service is affected
+3. record the vulnerability
+4. assess its severity and impact
+5. notify or escalate it to the appropriate people
+6. assign remediation work
+7. patch, fix or mitigate it
+8. test that the action worked
+9. update the vulnerability register.","Alpha,Private beta",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/implementing-a-vulnerability-management-process/
+
+https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-vulnerability-management.docx?d=w6fef653e7774430a85e62302f2e28132&csf=1&web=1&e=kAWAnp
+",,,,,,,,,,,,,
+Are you following a secure systems software development life cycle policy or process?,"Is security built into the way the service is designed, developed, tested, deployed and maintained, rather than being checked only at the end?",Must have - governance framework,"Security problems are generally easier to address when they are identified as part of normal development rather than after the service is complete or live.
+A secure development lifecycle encourages teams to consider security while, Designing 
+Building
+Reviewing
+Testing 
+Deploying 
+Operating
+rather than relying solely on a final security assessment.","The appropriate process will depend on the service, but should incorporate relevant security activities throughout development, such as:
+- threat modelling
+- secure design
+- code review
+- automated security testing
+- dependency checking
+- vulnerability scanning
+- remediation
+- appropriate security testing before deployment.","- Have an agreed secure development lifecycle or development process.
+- Define the security activities required at appropriate development stages.
+- Build appropriate security checks into development and deployment workflows.
+- Define who is responsible for completing those checks.
+- Record and address vulnerabilities discovered.
+- Continue security testing after the service goes live.","Alpha,Private beta,Public beta,Live",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/,,,,,,,,,,,,,
+Are you conducting regular code reviews as part of the development process? ,Does another suitably experienced person review code changes before they are accepted or deployed?,Must have - governance framework,"Developers can unintentionally introduce:
+- security weaknesses
+- coding errors
+- insecure configurations
+- unintended behaviour
+- problems created by changes elsewhere in the system.","Code reviews should form part of the development/change process and should be performed by someone suitably experienced who did not submit the relevant change.
+The extent of review can be proportionate to the nature and risk of the change. Platform rules and review checklists can also be used to make the process consistent","- Define when code review is required.
+- Require an appropriate independent reviewer.
+- Prevent relevant changes from being merged/deployed until required reviews are complete.
+- Include security considerations in review criteria where appropriate.
+- Maintain evidence that reviews occurred.
+- Address issues identified before release.","Alpha,Private beta,Public beta,Live",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/,,,,,,,,,,,,,
+"Are you using a manual or automated code testing method (for example, Static Application Security Testing (SAST) or Dynamic Application Security Testing (DAST))?",Are you actively testing the application for security weaknesses using appropriate security testing techniques or tools?,Must have - governance framework,"Human code review alone may not detect every vulnerability.
+Automated and manual security testing provides additional layers of assurance and can identify vulnerabilities earlier and more consistently.
+The guidance recommends multiple methods rather than relying on one vulnerability-discovery process.","The testing methods should be:
+- suitable for the technology being used
+- proportionate to relevant threats and risk
+- run at appropriate points in development
+- repeated at suitable frequencies
+- capable of feeding findings to the people responsible for remediation.
+The guidance distinguishes between continual tests, periodic tests and tests triggered by events such as deployment or the integration of new third-party software","- Select appropriate code/application security testing methods.
+- Integrate automated testing into development pipelines where appropriate.
+- Define when tests will run.
+- Configure alerts/reporting so developers see important findings.
+- Record identified vulnerabilities.
+- Prioritise and remediate findings using the vulnerability management process.
+- Retest where appropriate to confirm remediation.","Alpha,Private beta,Public beta,Live",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/,,,,,,,,,,,,,
+Do you have a plan for carrying out penetration tests with appropriate scopes?,Have you planned when penetration testing will happen and clearly defined what the testers are supposed to test and what the test is intended to prove?,Must have - governance framework,"A penetration test is much more useful when it is targeted at the relevant risks and parts of the service.
+A poorly scoped test could miss important systems or attack paths, while testing against a realistic threat scenario can provide assurance about whether the service's protections work as expected. The guidance emphasises that penetration testing is primarily a means of gaining assurance in security and vulnerability-management processes, rather than being the organisation's sole method for identifying vulnerabilities.","Planning should consider:
+- what systems/applications are being tested
+- the objective of the test
+- relevant threat scenarios
+- what is in and out of scope
+- the appropriate timing
+- who will undertake the test
+- how results will be reported and managed.
+The frequency should reflect the threats and risk involved, and vulnerability testing may also need to be triggered by significant service changes or new third-party components","Create a documented penetration-testing plan that establishes:
+- purpose: what assurance the test should provide
+- scope: applications, infrastructure, APIs or other components included
+- boundaries: what's specifically excluded
+- threat scenarios: what realistic risks the test should examine
+- timing/frequency: when testing will happen
+- responsibility: who will commission and perform it
+- reporting: how findings will be recorded and communicated
+- remediation: how identified vulnerabilities will be prioritised, assigned and fixed.
+","Alpha,Private beta,Public beta,Live",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/
+
+Procuring external IT security assurance expertise, including SIRAs and ITHCs",,,,,,,,,,,,,
+Do you have a documented approach for what events should be logged to help identify security incidents?,Have you decided and written down which activities and events within the service need to be recorded so that suspicious behaviour or a security incident can be detected and investigated?,Must have - governance framework,"If important events are not recorded, you may not know that an attack or security incident has happened.
+Appropriate logging allows teams to:
+- spot unusual or suspicious behaviour
+- investigate potential security incidents
+- understand what happened and when
+- provide information to incident response teams
+- monitor whether security controls are working
+- identify opportunities to improve security.","The events you log should reflect the service's architecture, assets, threats and risks. The guidance specifically recommends using the threat assessment, threat model and security risk mitigations to help determine what information could be useful during an incident.","- Identify the security events and information that need to be captured.
+- Link them to relevant service assets, risks and threats.
+- Document what will be logged and why.
+- Make sure appropriate systems/components generate the required information.
+- Secure the logs against unauthorised access, alteration or deletion.
+- Define suitable retention arrangements.
+- Review logging requirements when the service or threat landscape changes.","Alpha,Private beta",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-observability/
+
+https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-audit-log-management.docx?d=wf21b346e355840cfbbb61487fb8f39de&csf=1&web=1&e=ekpmJ4",,,,,,,,,,,,,
+Have you determined the tools required to log and analyse the event logs and trigger alerts?,"Have you worked out what technology is needed to collect security information, analyse it and notify the right people when something suspicious happens?",Must have - governance framework,"A service could generate millions of log entries. It may be unrealistic for people to manually read those records looking for suspicious activity.
+Appropriate tools help teams:
+- bring relevant security information together
+- search and analyse events
+- identify patterns or anomalies
+- generate alerts when defined conditions occur
+- provide information to security or incident-response teams.
+The guidance recommends investigating whether appropriate capabilities exist to collect and monitor observables and identifying additional capabilities needed to provide sufficient visibility.","The tools should reflect:
+- the type and volume of information produced
+- identified security threats
+- service architecture
+- monitoring requirements
+- organisational security capabilities
+- incident-response arrangements
+- third-party services.
+Where third-party suppliers provide service components, their monitoring, logging and alerting capabilities should also be considered.","'- Identify what logs and security information need collecting.
+- Determine which existing organisational tools can be used.
+- Identify any additional monitoring capability required.
+- Configure tools to collect and securely store the required information.
+- Configure appropriate alerts.
+- Ensure information can be searched and analysed.
+- Integrate with the DfE's Security Operations Centre (SOC) or incident-response capabilities where appropriate.","Alpha,Private beta",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-observability/
+
+https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-audit-log-management.docx?d=wf21b346e355840cfbbb61487fb8f39de&csf=1&web=1&e=ekpmJ4",,,,,,,,,,,,,
+Do you have a documented approach for analysing your logs and monitoring the alerts generated?,Do you have a documented approach for analysing your logs and monitoring the alerts generated?,Must have - governance framework,"An alert only protects the service if something appropriate happens as a result.
+A documented monitoring process helps ensure that:
+- alerts are seen by the right people
+- genuine incidents are identified
+- false positives can be investigated
+- serious events are escalated quickly
+- incident management processes are triggered where necessary
+- responsibilities are clear.","The approach should reflect the importance and urgency of different events.
+For example, some information might simply require periodic review, while more serious events might require immediate alerts or automated action. The guidance recommends applying appropriate actions to each observable and incorporating observability into the threat model","Document:
+- which logs and alerts will be monitored
+- who is responsible for monitoring them
+- how frequently they are reviewed
+- which events require investigation
+- when an alert should be generated
+- how alerts are prioritised
+- who receives alerts
+- when an incident should be escalated
+- what automated responses exist, where appropriate
+- how monitoring feeds into incident management.
+The process should be reviewed when the service or threats change.","Alpha,Private beta",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-observability/
+
+https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-audit-log-management.docx?d=wf21b346e355840cfbbb61487fb8f39de&csf=1&web=1&e=ekpmJ4
+",,,,,,,,,,,,,
+Does the service delivery change management process consider the impact of changes to security?,"Whenever someone proposes a change to the service, is security considered before that change is approved and released?",Must have - governance framework,"A service that is secure today may become less secure after a change.
+Changes can introduce:
+- vulnerabilities
+- new attack routes
+- insecure configurations
+- changes to data exposure
+- weakened security controls
+- new dependencies.
+The guidance states that changes can affect the service's security posture regardless of whether they are relatively small technical modifications or major changes to the service design.","Security impact should be considered for service changes, particularly those affecting areas such as:
+- applications or operating systems
+- infrastructure
+- ports, protocols or services
+- hardware platforms
+- processing, storage or transmission of information
+- identity and access management
+- cryptography
+- security/privacy controls
+- third-party services
+- procedures that could create opportunities for misuse or fraud.
+","Build security checks into the change-management process so that:
+- the scope and purpose of the change are documented
+- affected systems, components and data are identified
+- security impacts are assessed
+- impacts on existing security controls are considered
+- additional controls are identified where necessary
+- appropriate security testing takes place before release
+- the outcome is recorded within the change-management tooling.","Alpha,Private beta,Public beta,Live",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/evaluating-the-security-impact-of-changes/
+
+How do I? - Change Enablement Policy Process and Procedure v1.05 - MyDfE",,,,,,,,,,,,,
+Are you reflecting requested changes in the service’s threat model?,"When the service changes, do you check whether that change introduces new threats or attack routes and update the threat model where necessary?",Must have - governance framework,"A threat model represents the security threats relevant to a particular design.
+If the design changes but the threat model does not, the model may no longer accurately describe the risks facing the service.
+Keeping it updated also ensures security controls remain appropriate to the current service rather than an earlier version of it.","Changes should be assessed to determine whether they affect:
+- service architecture
+- attack surface
+- data flows
+- trust boundaries
+- users or access
+- external integrations
+- vulnerabilities
+- existing attack paths
+- existing security controls.
+Where the change does not materially affect threats, record that conclusion. Where it does, update the relevant threat documentation.","- Review proposed changes for security implications.
+- Determine whether threats or attack paths have changed.
+- Add new threats where appropriate.
+- Update existing threats where their likelihood or impact has changed.
+- Identify any additional security controls required.
+- Keep the threat model aligned with the latest service design.","Alpha,Private beta,Public beta,Live",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/evaluating-the-security-impact-of-changes/
+
+How do I? - Change Enablement Policy Process and Procedure v1.05 - MyDfE",,,,,,,,,,,,,
+Are you considering requested changes as part of risk assessment and treatment activities?,"When something changes in the service, do you check whether it creates new security risks or changes existing ones, and do you decide what action is required?",Must have - governance framework,"A change could:
+- create a completely new risk
+- increase an existing risk
+- reduce an existing risk
+- make a security control less effective
+- require an additional security control.
+Risk assessment therefore needs to remain aligned with the current service.","Consider whether the change affects:
+- threats or vulnerabilities
+- likelihood of an incident
+- potential business impact
+- attack surface
+- existing risk ratings
+- effectiveness of existing controls
+- need for additional controls.
+The depth of reassessment should be proportionate to the security significance of the change","For relevant changes:
+1. assess the security impact
+2. review affected risks
+3. identify new risks where needed
+4. reassess likelihood and impact where appropriate
+5. update the risk register
+6. review whether existing mitigations remain effective
+7. identify additional controls or mitigations if required
+8. test security recommendations before release.","Alpha,Private beta,Public beta,Live",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/evaluating-the-security-impact-of-changes/
+
+How do I? - Change Enablement Policy Process and Procedure v1.05 - MyDfE",,,,,,,,,,,,,
+Are you appropriately escalating any changes that create risks above the project's risk appetite?,"If a proposed change creates a security risk that is greater than the level the project is authorised to accept, is that risk being raised with someone who has the authority to decide what happens?",Must have - governance framework,"Some security decisions are bigger than the delivery team's authority.
+If a change creates an unacceptable risk, an appropriate decision-maker may need to determine whether to:
+- introduce additional controls
+- modify the change
+- delay the change
+- not proceed
+- accept the residual risk where they have authority to do so.
+This preserves accountability for significant security-risk decisions and prevents unacceptable risks being accepted informally as part of routine delivery.","This applies where the security assessment of a proposed change identifies new or increased security risk,  risk is assessed, resulting rating exceeds the project's agreed risk appetite.
+The change-management process should therefore connect to the project's wider risk-management and governance arrangements.","- Assess the security risk associated with relevant changes.
+- Compare the resulting risk rating with the project's risk appetite.
+- Identify additional mitigations where possible.
+- Escalate risks above appetite to the appropriate risk owner or decision-maker.
+- Record the decision and any conditions or actions.
+- Do not treat significant risk acceptance as an informal delivery-team decision.
+- Update the risk register and treatment actions accordingly.","Alpha,Private beta,Public beta,Live",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/evaluating-the-security-impact-of-changes/,,,,,,,,,,,,,
+Have you identified components to be retired in the asset inventory?,"Have you clearly identified and recorded which parts of the service are going to be switched off, removed, replaced or decommissioned?",Must have - governance framework,"You cannot safely retire something unless you understand what it is, what information it contains and what relies upon it.
+For example, simply switching off an application could leave behind:
+- cloud infrastructure that is still publicly accessible
+- unused accounts or credentials
+- databases containing sensitive information
+- domains that are no longer managed
+- integrations pointing at systems that no longer exist
+- forgotten test or pre-production environments.","This rule applies whenever an asset or component is:
+- no longer required
+- being replaced
+- reaching end of life
+- being removed following a service change
+- affected by the end of a supplier contract
+- left over from a pilot or trial
+- being retired as part of shutting down the entire service.
+Connected assets and dependencies also need to be considered, not just the main component being retired","- Maintain an up-to-date inventory of service assets.
+- Clearly identify the components scheduled for retirement.
+- Identify the asset owner.
+- Record what data the component holds or processes.
+- Identify dependent or connected systems.
+- Involve the relevant asset owners in retirement planning.
+- After retirement, update the asset inventory to show that the component is no longer active.","Alpha,Private beta,Public beta,Live",,,"https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/retiring-service-components-securely/
+
+
+
+DfE Data Decommissioning Handbook.pdf",,,,,,,,,,,,,
+Have you conducted a retirement risk assessment with an appropriate plan put together based on the classification and sensitivity of data?,"Before switching something off or getting rid of it, have you assessed what could go wrong and created a plan for safely dealing with the systems and data involved?",Must have - governance framework,"Retiring a component can itself introduce security risks.
+For example:
+- sensitive data could inadvertently remain behind
+- information that legally needs retaining could be accidentally destroyed
+- necessary data could become inaccessible
+- a connected service could stop working
+- old infrastructure could remain accessible
+- user/admin access could remain active
+- data could be inadequately deleted and later recovered.
+","The assessment should consider:
+- the classification and sensitivity of the data
+- data-retention requirements
+- whether data needs to be archived, migrated or deleted
+- regulatory or contractual requirements
+- backups
+- dependencies on other systems
+- effects on connected services
+- temporary risks during the retirement process
+- remaining infrastructure, accounts and access
+- residual risks following retirement.
+The required disposal method should be proportionate to the sensitivity of the information. guidance specifically notes that simply deleting files may not prevent recovery of data and recommends sanitisation where storage media has contained data sensitive to the organisation","Conduct and document a retirement risk assessment and use it to create a retirement/decommissioning plan. Where backups must be retained, the guidance says they should continue to receive appropriate security protection and should be tested to ensure required information can actually be restored","Alpha,Private beta,Public beta,Live",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/retiring-service-components-securely/,,,,,,,,,,,,,
+Have you included security considerations within a formal closeout report to be shared with relevant stakeholders?,"Once the component or service has been retired, have you formally documented what was done, confirmed that the security actions were completed, recorded anything still outstanding, and shared that information with the appropriate people?",Must have - governance framework,"A retirement project should not simply finish when a system is switched off.
+There needs to be confidence that:
+- components were actually decommissioned
+- access was removed
+- information was appropriately migrated or destroyed
+- infrastructure was removed
+- relevant records were updated
+- outstanding security risks were identified
+- someone remains responsible for those risks.
+The closeout report creates an audit trail and provides senior stakeholders with assurance that decommissioning was completed safely","The report should reflect the actual outcome of the retirement activity. This becomes particularly important if the project or delivery team itself is being closed, because any remaining responsibilities and risks need to be transferred rather than becoming ownerless. The guidance notes that senior responsible owners, service owners and product managers should be kept informed, and that the CISO or CDIO may need involvement where responsible project roles are being wound down","Create a formal closeout report confirming:
+- what was retired
+- what security actions were completed
+- how relevant data was handled
+- whether access and infrastructure were removed
+- whether asset records have been updated
+- any outstanding actions
+- any residual risks
+- recommendations or follow-up activity
+- who owns any remaining risks or responsibilities.
+Share the report with the relevant stakeholders and decision-makers.","Alpha,Private beta,Public beta,Live",,,https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/retiring-service-components-securely/,,,,,,,,,,,,,

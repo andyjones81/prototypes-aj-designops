@@ -1,0 +1,48 @@
+{
+ "id": "RUL-160",
+ "name": "All new services REQUIRE a Security Design Review to ensure security flaws are identified and fixed in the cheapest and easiest stage of the lifecycle.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "During the design phase of the project a security design review is required",
+ "phases": [
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "All new services REQUIRE a Security Design Review to ensure security flaws are identified and fixed in the cheapest and easiest stage of the lifecycle.",
+ "requirementDescription": "Before a new service is built or launched, it must undergo a Security Design Review to identify and address security weaknesses early, when they are easier and less expensive to fix.",
+ "why": "It is much cheaper and safer to identify issues early rather than discovering the problem after the application has gone live and exposed sensitive data.",
+ "tasks": [
+  "All new services REQUIRE a Security Design Review to ensure security flaws are identified and fixed in the cheapest and easiest stage of the"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "None found",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

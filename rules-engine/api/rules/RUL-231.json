@@ -1,0 +1,49 @@
+{
+ "id": "RUL-231",
+ "name": "Have you taken user needs into account when making security decisions?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding"
+   ]
+  }
+ ],
+ "conditionsText": "This applies when designing:\n- Authentication processes\n- Access controls\n- User journeys\n- Security policies\n- Business processes",
+ "phases": [
+  "Discovery"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you taken user needs into account when making security decisions?",
+ "requirementDescription": "Have you considered how real users will interact with security controls and whether those controls are practical and usable?",
+ "why": "Poorly designed security controls often lead users to:\n- Work around the controls\n- Circumvent processes\n- Make mistakes\n- Become frustrated",
+ "tasks": [
+  "User research was considered.",
+  "Security requirements were balanced against usability.",
+  "User groups were identified.",
+  "Controls were designed around how users actually work."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-business-objectives-and-user-needs/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

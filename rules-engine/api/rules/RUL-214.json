@@ -1,0 +1,48 @@
+{
+ "id": "RUL-214",
+ "name": "Have you considered whether the service is part of the Critical National Infrastructure (CNI) or fundamental to the organisation's output and missions?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test"
+   ]
+  }
+ ],
+ "conditionsText": "Relevant whenever a service:\n- Supports critical operations.\n- Processes critical data.\n- Provides essential services.\n- Supports departmental missions.\n- Could cause significant operational disruption if unavailable.",
+ "phases": [
+  "Discovery",
+  "Alpha"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you considered whether the service is part of the Critical National Infrastructure (CNI) or fundamental to the organisation's output and missions?",
+ "requirementDescription": "Have you assessed how important the service is to government operations or national infrastructure?.. What happens if this service fails or is compromised?",
+ "why": "Not all services have the same consequences if they fail, some may have a low impact some may have high impact.",
+ "tasks": [
+  "Have you considered whether the service is part of the Critical National Infrastructure (CNI) or fundamental to the organisation's output an"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "id": "RUL-178",
+ "name": "Standing admin rights MUST NOT exist; Just-in-Time (JIT) or Least Privilege scoping MUST be used to limit the potential damage an attacker can inflict.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "Wherever privileged access exists",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "Standing admin rights MUST NOT exist; Just-in-Time (JIT) or Least Privilege scoping MUST be used to limit the potential damage an attacker can inflict.",
+ "requirementDescription": "People should not permanently have administrator access. Instead, admin permissions should only be granted when needed (Just-in-Time) or restricted to the minimum permissions required (Least Privilege)",
+ "why": "To limit the potential damage an attacker can inflict",
+ "tasks": [
+  "Standing admin rights MUST NOT exist; Just-in-Time (JIT) or Least Privilege scoping MUST be used to limit the potential damage an attacker c"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "id": "RUL-250",
+ "name": "Have you created a security controls set relevant to your service?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Design and test",
+    "Build"
+   ]
+  }
+ ],
+ "conditionsText": "The controls selected should take account of:\n- service assets\n- security risks and vulnerabilities\n- technical architecture\n- service environment\n- applicable security obligations\n- relevant security frameworks\n- organisational security requirements.\nIf the standard frameworks do not address a particular security need, the guidance allows appropriate custom processes or controls to be added, with advice from the organisation's security professionals",
+ "phases": [
+  "Alpha",
+  "Private beta"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Have you created a security controls set relevant to your service?",
+ "requirementDescription": "Have you turned the selected frameworks into a practical list of security controls that this particular service needs to implement?",
+ "why": "Generic frameworks can contain many controls, not all of which will be relevant to every service.\nCreating a service-specific controls set helps ensure that security measures are:\n- appropriate to the service\n- proportionate to its risks\n- connected to what needs protecting\n- understandable to delivery teams\n- capable of being implemented and evidenced\n- maintained as the service evolves.",
+ "tasks": [
+  "what controls are required",
+  "where the controls came from",
+  "why they are relevant",
+  "what part of the service they apply to"
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-a-security-controls-set-for-your-service/",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

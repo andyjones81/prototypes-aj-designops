@@ -1,0 +1,36 @@
+{
+ "id": "RUL-148",
+ "name": "GitHub Repositories must be tagged to clearly identify service, division and directorate.",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [],
+ "conditionsText": "When using a repository",
+ "phases": [],
+ "phasesAssumed": false,
+ "requirementTitle": "GitHub Repositories must be tagged to clearly identify service, division and directorate.",
+ "requirementDescription": "Naming and labelling on GitHub repositories is important so that in the even of a Cyber incident the right person or team can be found quickly",
+ "why": "Ensures vulnerabilities and other security incidents can be quickly routed to the correct owner when speed and accuracy is of the essence to prevent a serious cyber incident occurring.",
+ "tasks": [
+  "GitHub Repositories must be tagged to clearly identify service, division and directorate."
+ ],
+ "standards": [],
+ "systems": "GitHub",
+ "guidance": "Naming things - DfE Technical Guidance\n\nStoring source code - DfE Technical Guidance",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}

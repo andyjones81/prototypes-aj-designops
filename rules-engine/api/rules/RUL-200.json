@@ -1,0 +1,56 @@
+{
+ "id": "RUL-200",
+ "name": "Does the business case include cyber security considerations?",
+ "source": "DDT activity log",
+ "dataset": "DDT activity log",
+ "kind": "Activity",
+ "category": "",
+ "mandatory": "Must have - governance framework",
+ "owner": "",
+ "activityOwner": "",
+ "stakeholder": "",
+ "enabled": false,
+ "status": "Draft",
+ "conditions": [
+  {
+   "field": "stage",
+   "op": "in",
+   "value": [
+    "Understanding",
+    "Design and test",
+    "Build",
+    "Run / Serve"
+   ]
+  }
+ ],
+ "conditionsText": "All business cases involving:\n- Digital services.\n- Technology solutions.\n- Data processing.\n- Third-party technology suppliers.",
+ "phases": [
+  "Discovery",
+  "Alpha",
+  "Private beta",
+  "Public beta",
+  "Live"
+ ],
+ "phasesAssumed": false,
+ "requirementTitle": "Does the business case include cyber security considerations?",
+ "requirementDescription": "Does the business case clearly explain any security requirements, risks, controls, obligations and costs associated with the proposal?",
+ "why": "Security affects scope, delivery time, resources, funding and user trust. If these considerations are not identified early, projects can be delayed, become more expensive, or introduce unacceptable risks. The guidance states that security should be included throughout the business case so that the true costs and effort are understood from the outset",
+ "tasks": [
+  "Security obligations (legal, regulatory, policy).",
+  "Threats and risks.",
+  "Security controls.",
+  "Resource requirements."
+ ],
+ "standards": [],
+ "systems": "",
+ "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-cyber-security-exceptions.docx?d=w02ee54ef6559470fa25d82db421d9cd9&csf=1&web=1&e=1tSTxr\nhttps://educationgovuk.sharepoint.com/:x:/r/sites/security/_layouts/15/Doc.aspx?sourcedoc=%7BCC3503B2-472A-4C0C-99BB-CA86DAA7C1CC%7D&file=security-obligations-is-policy.xlsx&wdLOR=c17A97CF7-BB69-417A-BE55-FA66A12B45C7&action=default&mobileredirect=true\n\nhttps://educationgovuk.sharepoint.com/sites/commercial-and-procurement/SitePages/manage-a-contract-as-the-senior-business-owner.aspx\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/_layouts/15/Doc.aspx?sourcedoc=%7B03CA32FB-D42D-4724-B4A5-7EB589AF55FE%7D&file=policy-supplier-security-management.docx&wdLOR=c738C59F9-5F7D-4A9C-94F1-102FD425C1B7&action=default&mobileredirect=true",
+ "version": 1,
+ "versions": [
+  {
+   "v": 1,
+   "at": "2026-01-12T09:00:00.000Z",
+   "by": "CSV import",
+   "note": "Imported from Other activity log-Grid view.csv."
+  }
+ ]
+}
