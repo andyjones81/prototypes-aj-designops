@@ -390,35 +390,59 @@ const RULE_SORTS = [['id', 'Rule ID'], ['name', 'Name A to Z'], ['owner', 'Owner
 function ownerCell(r) {
   return r.owner ? esc(r.owner) + '<br>' + tag(OWNER_TYPE(r.owner) || 'Owner', OWNER_TYPE(r.owner) === 'Team' ? 'govuk-tag--turquoise' : 'govuk-tag--purple') : '<span class="muted">Unassigned</span>';
 }
+function ruleDataset(r) { return r.dataset || 'Other'; }
+function ruleAtStage(r, stage) {
+  return r.conditions.some((c) => c.field === 'stage' && (c.op === 'is' ? String(c.value) === stage : c.op === 'in' && arr(c.value).includes(stage)));
+}
+function sourceLabel(r) {
+  const parts = String(r.source || '').split(',').map((s) => s.trim()).filter(Boolean);
+  if (!parts.length) return ruleDataset(r);
+  return parts.length > 1 ? parts[0] + ' +' + (parts.length - 1) : parts[0];
+}
+function clipText(s, n) {
+  s = String(s || '').replace(/\s+/g, ' ').trim();
+  return s.length > n ? s.slice(0, n - 1).trim() + '…' : s;
+}
 function vRules() {
-  const p = qs(), q = (p.get('q') || '').trim().toLowerCase(), fo = p.get('owner') || '', fs = p.get('source') || '', fe = p.get('status') || '', sort = p.get('sort') || 'id';
+  const p = qs(), q = (p.get('q') || '').trim().toLowerCase(), fo = p.get('owner') || '', fd = p.get('dataset') || '', fst = p.get('stage') || '', fe = p.get('status') || '', sort = p.get('sort') || 'id';
   const count = (r) => S.works.filter((w) => ruleMatches(w, r)).length;
-  let list = S.rules.filter((r) => (!q || [r.id, r.name, r.source, r.owner, r.requirementTitle].join(' ').toLowerCase().includes(q)) &&
-    (!fo || (fo === '__none' ? !r.owner : r.owner === fo)) && (!fs || r.source === fs) && (!fe || r.status === fe));
+  const hay = (r) => [r.id, r.name, r.source, r.owner, r.requirementTitle, r.dataset, r.mandatory, r.conditionsText, (r.phases || []).join(' ')].join(' ').toLowerCase();
+  const inPool = (r) => (!q || hay(r).includes(q)) && (!fo || (fo === '__none' ? !r.owner : r.owner === fo)) && (!fd || ruleDataset(r) === fd) && (!fst || ruleAtStage(r, fst));
+  let list = S.rules.filter((r) => inPool(r) && (!fe || r.status === fe));
   const cmp = { id: (a, b) => a.id.localeCompare(b.id), name: (a, b) => a.name.localeCompare(b.name), owner: (a, b) => (a.owner || '\uffff').localeCompare(b.owner || '\uffff') || a.name.localeCompare(b.name),
     source: (a, b) => a.source.localeCompare(b.source) || a.name.localeCompare(b.name), work: (a, b) => count(b) - count(a) || a.name.localeCompare(b.name), status: (a, b) => (b.status === 'Published') - (a.status === 'Published') || a.id.localeCompare(b.id) };
   list = list.slice().sort(cmp[sort] || cmp.id);
   const opt = (v, l, cur) => '<option value="' + esc(v) + '"' + (v === cur ? ' selected' : '') + '>' + esc(l) + '</option>';
-  const owners = Array.from(new Set(S.rules.map((r) => r.owner).filter(Boolean))).sort(), sources = Array.from(new Set(S.rules.map((r) => r.source))).sort();
+  const owners = Array.from(new Set(S.rules.map((r) => r.owner).filter(Boolean))).sort();
+  const datasets = Array.from(new Set(S.rules.map(ruleDataset))).sort();
   const sel = (name, label, opts) => '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="rf-' + name + '">' + label + '</label><select class="govuk-select" id="rf-' + name + '" name="' + name + '" data-act="rule-filter">' + opts + '</select></div>';
-  const filtered = q || fo || fs;
-  const pool = S.rules.filter((r) => (!q || [r.id, r.name, r.source, r.owner, r.requirementTitle].join(' ').toLowerCase().includes(q)) && (!fo || (fo === '__none' ? !r.owner : r.owner === fo)) && (!fs || r.source === fs));
+  const filtered = q || fo || fd || fst;
+  const pool = S.rules.filter(inPool);
   const pg = paged(list, p);
-  const bar = '<form class="filter-bar" data-form="rule-filter" role="search" aria-label="Filter and sort rules">' + (fe ? '<input type="hidden" name="status" value="' + esc(fe) + '">' : '') + '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="rf-q">Search</label><input class="govuk-input" id="rf-q" name="q" type="search" value="' + esc(p.get('q') || '') + '" placeholder="Name, ID, policy or owner"></div>' +
+  const bar = '<form class="filter-bar" data-form="rule-filter" role="search" aria-label="Filter and sort rules">' + (fe ? '<input type="hidden" name="status" value="' + esc(fe) + '">' : '') + '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="rf-q">Search</label><input class="govuk-input" id="rf-q" name="q" type="search" value="' + esc(p.get('q') || '') + '" placeholder="Name, ID, owner or condition"></div>' +
+    sel('dataset', 'Rule set', opt('', 'All rule sets', fd) + datasets.map((o) => opt(o, o, fd)).join('')) +
+    sel('stage', 'Stage', opt('', 'Any stage', fst) + OPT.stage.map((o) => opt(o, o, fst)).join('')) +
     sel('owner', 'Owner', opt('', 'All owners', fo) + opt('__none', 'Unassigned', fo) + owners.map((o) => opt(o, o, fo)).join('')) +
-    sel('source', 'Policy or standard', opt('', 'All', fs) + sources.map((o) => opt(o, o, fs)).join('')) +
     sel('sort', 'Sort by', RULE_SORTS.map((o) => opt(o[0], o[1], sort)).join('')) +
     '<div class="govuk-form-group filter-bar__actions"><button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit">Apply</button>' + (filtered || sort !== 'id' ? ' <a class="govuk-link" href="#/rules">Clear</a>' : '') + '</div></form>';
-  return banner() + pageHead('Rules', 'Rulesets based on policies, standards and processes. They run on trigger events and return requirements.', btn('#/rules/new', 'Add rule')) + bar +
+  const rows = pg.items.map((r) => {
+    const n = count(r);
+    const sameReturn = (r.requirementTitle || '').trim().toLowerCase() === (r.name || '').trim().toLowerCase();
+    const note = clipText(r.conditionsText, 180);
+    const phases = (r.phases || []).filter(Boolean);
+    const meta = [phases.length ? esc(phases.join(', ')) : '', r.mandatory ? esc(r.mandatory) : '', (r.actions || []).length + ' action' + ((r.actions || []).length === 1 ? '' : 's'), r.owner ? esc(r.owner) : 'Unassigned'].filter(Boolean);
+    return '<li class="rrow"><div class="rrow-main"><p class="rrow-k">' + ruleChip(r.id) + ' <span>' + esc(sourceLabel(r)) + '</span> ' + statusRule(r) + ' <span class="muted">v' + r.version + '</span></p>' +
+      '<h2 class="rrow-t"><a class="govuk-link govuk-link--no-visited-state" href="#/rules/' + r.id + '">' + esc(r.name) + '</a></h2>' +
+      '<p class="rrow-w"><strong>When</strong> ' + (r.conditions.length ? r.conditions.map((c) => '<span class="cpill">' + esc(condText(c)) + '</span>').join('<span class="cand">and</span>') : '<span class="muted">No conditions</span>') + '</p>' +
+      (note ? '<p class="rrow-note">' + esc(note) + '</p>' : '') +
+      (sameReturn ? '' : '<p class="rrow-w"><strong>Returns</strong> ' + esc(r.requirementTitle) + '</p>') +
+      '<p class="rrow-meta">' + meta.join('<span aria-hidden="true">·</span>') + '</p></div>' +
+      '<div class="rrow-side"><span class="rrow-n"><b>' + n + '</b> work item' + (n === 1 ? '' : 's') + '</span></div></li>';
+  }).join('');
+  return banner() + pageHead('Rules', 'Published rules run when their conditions match a piece of work, and return actions.', btn('#/rules/new', 'Add rule')) + bar +
     tabsNav('rules', p, 'status', [['', 'All', pool.length], ['Published', 'Published', pool.filter((r) => r.status === 'Published').length], ['Draft', 'Draft', pool.filter((r) => r.status === 'Draft').length], ['Retired', 'Retired', pool.filter((r) => r.status === 'Retired').length]], '', 'Rule status') +
-    (pg.items.length ? '' : '<div class="panel"><p class="govuk-body">No rules match these filters.</p></div>') + (pg.items.length ? '<ul class="rlist">' + pg.items.map((r) => {
-      const n = count(r);
-      return '<li class="rrow"><div class="rrow-main"><p class="rrow-k">' + ruleChip(r.id) + ' <span>' + esc(r.source) + '</span></p><h2 class="rrow-t"><a class="govuk-link govuk-link--no-visited-state" href="#/rules/' + r.id + '">' + esc(r.name) + '</a></h2>' +
-        '<p class="rrow-w"><strong>When</strong> ' + r.conditions.map((c) => '<span class="cpill">' + esc(condText(c)) + '</span>').join('<span class="cand">and</span>') + '</p>' +
-        '<p class="rrow-w"><strong>Returns</strong> ' + esc(r.requirementTitle) + '</p></div>' +
-        '<div class="rrow-side"><span class="rrow-n"><b>' + n + '</b> work item' + (n === 1 ? '' : 's') + '</span><span class="rrow-o">' + ownerCell(r) + '</span></div>' +
-        '<div class="rrow-st">' + statusRule(r) + '<span class="muted">v' + r.version + '</span></div></li>';
-    }).join('') + '</ul>' + pager('rules', p, pg) : '');
+    (pg.total ? '<p class="govuk-body-s muted rcount">Showing ' + pg.from + ' to ' + pg.to + ' of ' + pg.total + ' rules</p>' : '') +
+    (pg.items.length ? '<ul class="rlist">' + rows + '</ul>' + pager('rules', p, pg) : '<div class="panel"><p class="govuk-body">No rules match these filters.</p></div>');
 }
 
 function condRow(c, i) {
@@ -1235,6 +1259,7 @@ function workRail(w, all, active, open, doneL) {
 const ACT_TYPES = [['evidence', 'Evidence', 'A document, link or output that shows the action is done'], ['note', 'Note', 'A progress update'], ['decision', 'Decision', 'A decision made about this action'], ['exception', 'Exception', 'The action cannot be met as written']];
 function vActionDetail(id) {
   const a = S.actions.find((x) => x.id === id); if (!a) return notFound();
+  flowTick(a);
   const rule = ruleOf(a.ruleId), d = actDef(a), w = S.works.find((x) => x.id === a.workId);
   const ev = a.updates.filter((u) => u.type === 'evidence').slice().reverse();
   const rest = a.updates.slice().reverse();
@@ -1247,7 +1272,7 @@ function vActionDetail(id) {
     '<span class="govuk-caption-m">' + a.id + ' · <a class="govuk-link" href="#/work/' + a.workId + '">' + esc(workName(a.workId)) + '</a>' + (w ? ' · ' + esc(w.stage) : '') + '</span>' +
     pageHead(esc(a.title), statusTag(a.status) + ' ' + legalTag(d) + (a.ruleVersion ? ' <span class="muted">Rule ' + esc(a.ruleId) + ' v' + a.ruleVersion + '</span>' : ''),
       act ? '<button type="button" class="govuk-button" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="evidence">Add evidence</button><button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="note">Add note or update status</button>' : '') +
-    '<div class="two-col"><section>' +
+    '<div class="two-col"><section>' + flowPanel(a) +
     '<h2 class="govuk-heading-m">About this action</h2><dl class="govuk-summary-list"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">What this involves</dt><dd class="govuk-summary-list__value">' + stepList(d.description) + '</dd></div>' +
     '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Expected evidence</dt><dd class="govuk-summary-list__value">' + (d.evidence ? esc(d.evidence) : '<span class="muted">Not yet defined.</span>') + '</dd></div>' +
     '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Requirement</dt><dd class="govuk-summary-list__value">' + (rule ? esc(rule.requirementTitle) + '<br><span class="muted">' + esc(rule.source) + '</span>' : 'Not linked to a rule') + '</dd></div></dl>' +
@@ -1256,6 +1281,98 @@ function vActionDetail(id) {
     '<h2 class="govuk-heading-m">Activity</h2><ol class="tlist">' + rest.map(tl).join('') + '</ol></section>' +
     '<aside><div class="panel"><h2 class="govuk-heading-s">Status</h2><ol class="steps">' + STATUSES.filter((s) => s !== 'No longer required' || a.status === s).map((s) => '<li class="' + (s === a.status ? 'on' : '') + '">' + esc(s) + '</li>').join('') + '</ol></div>' +
     (sibs.length ? '<h2 class="govuk-heading-s govuk-!-margin-top-6">Other actions for this requirement</h2><ul class="govuk-list govuk-body-s">' + sibs.map((s) => '<li><a class="govuk-link" href="#/actions/' + s.id + '">' + esc(s.title) + '</a> ' + statusTag(s.status) + '</li>').join('') + '</ul>' : '') + '</aside></div>';
+}
+const SCREENER_Q = [['personal', 'Does the service collect or use personal data?'], ['special', 'Will it process special category data, such as health, ethnicity or biometrics?'], ['children', 'Will it process data about children?'],
+  ['scale', 'Will it process data about more than 10,000 people?'], ['auto', 'Will it make automated decisions or profile people?'], ['share', 'Will data be shared with other organisations or sent outside the UK?'], ['monitor', 'Will it use new technology or monitor people?']];
+const REVIEW_MS = 10000, ENROL_STEPS = ['Checking the service details', 'Sending the enrolment request to AISS', 'Creating the service record', 'Setting up the accessibility statement', 'Confirming enrolment'], ENROL_STEP_MS = 2000;
+let flowTimer = null;
+const flowKind = (a) => (a.title === 'Complete screener' ? 'screener' : a.title === 'Enrol service' ? 'enrol' : null);
+function screenerOutcome(ans) {
+  if (ans.personal !== 'Yes') return { code: 'none', title: 'No full DPIA needed', text: 'The service does not use personal data. Keep the screener as your record.' };
+  const yes = SCREENER_Q.slice(1).filter((q) => ans[q[0]] === 'Yes');
+  if (ans.special === 'Yes' || ans.children === 'Yes' || yes.length >= 2) return { code: 'full', title: 'A full DPIA is required', text: 'The Data Protection Officer found high-risk processing (' + yes.map((q) => q[1].replace(/^Will (it )?/, '').replace(/\?$/, '')).join('; ') + '). Complete the full DPIA before go-live.' };
+  return { code: 'low', title: 'Approved: no full DPIA needed', text: 'The Data Protection Officer found the risk is low. Record your data protection decisions in the service documentation.' };
+}
+function flowTick(a) {
+  const f = a.flow; if (!f) return;
+  if (f.stage === 'review' && Date.now() - f.start >= REVIEW_MS) {
+    const o = screenerOutcome(f.answers); f.stage = 'outcome'; f.outcome = o; f.doneAt = now();
+    a.updates.push({ at: now(), type: 'decision', text: 'Data Protection Officer review outcome: ' + o.title + '. ' + o.text });
+    a.updates.push({ at: now(), type: 'system', text: 'Status changed from ' + a.status + ' to Complete.' }); a.status = 'Complete'; save();
+  } else if (f.stage === 'enrolling' && Date.now() - f.start >= ENROL_STEPS.length * ENROL_STEP_MS) {
+    f.stage = 'enrolled'; f.ref = 'AISS-' + (10000 + Math.floor(Math.random() * 89999)); f.doneAt = now();
+    a.updates.push({ at: now(), type: 'evidence', text: 'Enrolment confirmed by AISS. Reference ' + f.ref + '.' });
+    a.updates.push({ at: now(), type: 'system', text: 'Status changed from ' + a.status + ' to Complete.' }); a.status = 'Complete'; save();
+  }
+}
+function flowTracker(names, cur) {
+  return '<ol class="flow-steps">' + names.map((n, i) => '<li class="' + (i < cur ? 'done' : i === cur ? 'on' : '') + '"><span class="flow-n">' + (i < cur ? '✓' : i + 1) + '</span>' + esc(n) + '</li>').join('') + '</ol>';
+}
+function flowPanel(a) {
+  const k = flowKind(a); if (!k) return '';
+  const w = S.works.find((x) => x.id === a.workId) || {}, f = a.flow;
+  clearTimeout(flowTimer);
+  if (f && (f.stage === 'review' || f.stage === 'enrolling')) flowTimer = setTimeout(() => { if (location.hash.indexOf('#/actions/' + a.id) === 0) rerender(); }, 1000);
+  const head = (t, p) => '<section class="flow"><h2 class="flow-t">' + t + '</h2>' + (p ? '<p class="flow-p">' + p + '</p>' : '');
+  const again = '<p class="flow-p"><button type="button" class="link-btn" data-act="flow-reset" data-id="' + a.id + '">Start again</button></p>';
+  if (k === 'screener') {
+    const names = ['Answer questions', 'Submitted', 'Data Protection Officer review', 'Outcome'];
+    if (!f) {
+      return head('DPIA high risk screener', 'Answer these questions about ' + esc(w.title || 'the service') + '. A Data Protection Officer will review your answers.') + flowTracker(names, 0) +
+        '<form id="flow-screener" data-id="' + a.id + '" novalidate>' + SCREENER_Q.map((q, i) => '<div class="govuk-form-group" id="fq-' + q[0] + '"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s">' + (i + 1) + '. ' + esc(q[1]) + '</legend><div class="fq-err"></div>' +
+          '<div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">' + ['Yes', 'No'].map((v) => '<div class="govuk-radios__item"><input class="govuk-radios__input" id="fq-' + q[0] + '-' + v + '" name="' + q[0] + '" type="radio" value="' + v + '"><label class="govuk-label govuk-radios__label" for="fq-' + q[0] + '-' + v + '">' + v + '</label></div>').join('') + '</div></fieldset></div>').join('') +
+        '<div class="govuk-form-group" id="fq-purpose"><label class="govuk-label govuk-label--s" for="fq-purpose-t">8. What is the purpose of processing the data?</label><div class="fq-err"></div><textarea class="govuk-textarea" id="fq-purpose-t" name="purpose" rows="3"></textarea></div>' +
+        '<button class="govuk-button" type="submit" data-module="govuk-button">Submit for review</button></form></section>';
+    }
+    const ans = '<dl class="govuk-summary-list govuk-summary-list--no-border">' + SCREENER_Q.map((q) => '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">' + esc(q[1]) + '</dt><dd class="govuk-summary-list__value">' + esc(f.answers[q[0]]) + '</dd></div>').join('') + '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Purpose</dt><dd class="govuk-summary-list__value">' + esc(f.answers.purpose) + '</dd></div></dl>';
+    if (f.stage === 'review') {
+      const pct = Math.min(100, Math.round((Date.now() - f.start) / REVIEW_MS * 100));
+      return head('Being reviewed', 'Submitted ' + fmt(f.submittedAt) + '. The Data Protection Officer is reviewing your answers.') + flowTracker(names, 2) + bar(pct, 'Review ' + pct + '% complete') + '<details class="govuk-details"><summary class="govuk-details__summary"><span class="govuk-details__summary-text">Your answers</span></summary><div class="govuk-details__text">' + ans + '</div></details></section>';
+    }
+    const o = f.outcome, cls = o.code === 'full' ? '' : ' govuk-notification-banner--success';
+    return head('Review outcome') + flowTracker(names, 4) + '<div class="govuk-notification-banner' + cls + '" role="alert"><div class="govuk-notification-banner__header"><h2 class="govuk-notification-banner__title">' + (o.code === 'full' ? 'Important' : 'Review complete') + '</h2></div><div class="govuk-notification-banner__content"><p class="govuk-notification-banner__heading">' + esc(o.title) + '</p><p class="govuk-body">' + esc(o.text) + '</p><p class="govuk-body-s">Reviewed ' + fmt(f.doneAt) + '</p></div></div>' +
+      '<details class="govuk-details"><summary class="govuk-details__summary"><span class="govuk-details__summary-text">Your answers</span></summary><div class="govuk-details__text">' + ans + '</div></details>' + again + '</section>';
+  }
+  const names = ['Confirm details', 'Enrolling with AISS', 'Enrolled'];
+  if (!f) {
+    return head('Enrol in the Accessibility Issues and Statement Service (AISS)', 'Enrolment is sent to AISS for you. Check the details, then start.') + flowTracker(names, 0) +
+      '<form id="flow-enrol" data-id="' + a.id + '" novalidate><dl class="govuk-summary-list"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Service</dt><dd class="govuk-summary-list__value">' + esc(w.title || '') + '</dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Stage</dt><dd class="govuk-summary-list__value">' + esc(w.stage || '') + '</dd></div></dl>' +
+      '<div class="govuk-form-group" id="fe-url"><label class="govuk-label govuk-label--s" for="fe-url-t">Service URL</label><div class="fq-err"></div><input class="govuk-input" id="fe-url-t" name="url" type="url" value="https://' + esc((w.title || 'service').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')) + '.service.gov.uk"></div>' +
+      '<div class="govuk-form-group" id="fe-email"><label class="govuk-label govuk-label--s" for="fe-email-t">Contact email for accessibility issues</label><div class="fq-err"></div><input class="govuk-input" id="fe-email-t" name="email" type="email" spellcheck="false"></div>' +
+      '<button class="govuk-button" type="submit" data-module="govuk-button">Enrol service</button></form></section>';
+  }
+  if (f.stage === 'enrolling') {
+    const idx = Math.min(ENROL_STEPS.length, Math.floor((Date.now() - f.start) / ENROL_STEP_MS));
+    return head('Enrolling with AISS', 'Sending the request to the AISS API. This takes a few seconds.') + flowTracker(names, 1) +
+      '<ul class="api-steps">' + ENROL_STEPS.map((t, i) => '<li class="' + (i < idx ? 'done' : i === idx ? 'on' : '') + '"><span class="api-dot">' + (i < idx ? '✓' : i === idx ? '…' : '') + '</span>' + esc(t) + '</li>').join('') + '</ul></section>';
+  }
+  return head('Enrolment complete') + flowTracker(names, 3) + '<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"><div class="govuk-notification-banner__header"><h2 class="govuk-notification-banner__title">Success</h2></div><div class="govuk-notification-banner__content"><p class="govuk-notification-banner__heading">' + esc(w.title || 'The service') + ' is enrolled in AISS</p><p class="govuk-body">Reference <strong>' + esc(f.ref) + '</strong>. AISS will email ' + esc(f.email) + ' when accessibility checks are due. Next, publish your accessibility statement.</p></div></div>' + again + '</section>';
+}
+function flowErr(form, key, msg) {
+  const g = form.querySelector('#' + key); if (!g) return;
+  g.classList.add('govuk-form-group--error'); const e = g.querySelector('.fq-err'); e.innerHTML = '<p class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> ' + esc(msg) + '</p>';
+}
+function submitFlow(form) {
+  const a = S.actions.find((x) => x.id === form.dataset.id); if (!a) return;
+  const d = formData(form); let bad = 0;
+  form.querySelectorAll('.govuk-form-group--error').forEach((g) => { g.classList.remove('govuk-form-group--error'); g.querySelector('.fq-err').innerHTML = ''; });
+  if (form.id === 'flow-screener') {
+    SCREENER_Q.forEach((q) => { if (!d[q[0]]) { flowErr(form, 'fq-' + q[0], 'Select yes or no'); bad++; } });
+    if (!(d.purpose || '').trim()) { flowErr(form, 'fq-purpose', 'Enter the purpose of processing'); bad++; }
+    if (bad) { const g = form.querySelector('.govuk-form-group--error'); if (g) g.scrollIntoView({ block: 'center' }); return; }
+    const answers = {}; SCREENER_Q.forEach((q) => { answers[q[0]] = d[q[0]]; }); answers.purpose = d.purpose.trim();
+    a.flow = { stage: 'review', answers, start: Date.now(), submittedAt: now() };
+    a.updates.push({ at: now(), type: 'evidence', text: 'Completed DPIA screener submitted for review (' + SCREENER_Q.filter((q) => answers[q[0]] === 'Yes').length + ' of ' + SCREENER_Q.length + ' answered yes).' });
+    a.updates.push({ at: now(), type: 'system', text: 'Sent to the Data Protection Officer for review.' });
+  } else {
+    if (!/^https?:\/\/\S+\.\S+/i.test((d.url || '').trim())) { flowErr(form, 'fe-url', 'Enter a service URL that starts with https://'); bad++; }
+    if (!/^\S+@\S+\.\S+$/.test((d.email || '').trim())) { flowErr(form, 'fe-email', 'Enter an email address, like name@example.gov.uk'); bad++; }
+    if (bad) return;
+    a.flow = { stage: 'enrolling', url: d.url.trim(), email: d.email.trim(), start: Date.now() };
+    a.updates.push({ at: now(), type: 'system', text: 'Enrolment request sent to AISS for ' + a.flow.url + '.' });
+  }
+  if (a.status !== 'In progress') { a.updates.push({ at: now(), type: 'system', text: 'Status changed from ' + a.status + ' to In progress.' }); a.status = 'In progress'; }
+  save(); rerender();
 }
 function openAddAction(workId) {
   const w = S.works.find((x) => x.id === workId); if (!w) return;
@@ -1306,12 +1423,14 @@ document.addEventListener('submit', (e) => {
   const f = e.target;
   if (f.id === 'cats-form') { e.preventDefault(); e.stopImmediatePropagation(); applyCats(f); }
   else if (f.id === 'activity-form') { e.preventDefault(); e.stopImmediatePropagation(); saveActivity(f); }
+  else if (f.id === 'flow-screener' || f.id === 'flow-enrol') { e.preventDefault(); e.stopImmediatePropagation(); submitFlow(f); }
   else if (f.id === 'addaction-form') { e.preventDefault(); e.stopImmediatePropagation(); saveAddAction(f); }
 }, true);
 document.addEventListener('click', (e) => {
   const t = e.target.closest('[data-act]'); if (!t) return;
   if (t.dataset.act === 'cats-open') openCats(t.dataset.id, t.dataset.field || '');
   else if (t.dataset.act === 'activity-open') openActivity(t.dataset.id, t.dataset.type);
+  else if (t.dataset.act === 'flow-reset') { const a = S.actions.find((x) => x.id === t.dataset.id); if (a) { delete a.flow; a.updates.push({ at: now(), type: 'system', text: 'Workflow restarted.' }); save(); rerender(); } }
   else if (t.dataset.act === 'add-action-open') openAddAction(t.dataset.id);
 });
 document.addEventListener('change', (e) => {

@@ -472,17 +472,20 @@ html, html.govuk-template, .govuk-template__body, .app-body, .govuk-main-wrapper
 .with-rail .two-col { grid-template-columns: 1fr; }
 
 /* Rules list */
+.rcount { margin: 0 0 10px; }
 .rlist{list-style:none;margin:0 0 20px;padding:0;background:#fff;border:1px solid #e1e4e8}
-.rrow{display:grid;grid-template-columns:minmax(0,1fr) 190px 110px;gap:24px;align-items:start;padding:16px 20px;border-bottom:1px solid #e1e4e8}
+.rrow{display:grid;grid-template-columns:minmax(0,1fr) 110px;gap:16px;align-items:start;padding:14px 18px;border-bottom:1px solid #e1e4e8}
 .rrow:last-child{border-bottom:0}.rrow:hover{background:#f8fafc}
-.rrow-k{margin:0 0 2px;font-size:.8rem;color:#505a5f}
-.rrow-t{margin:0 0 8px;font-size:1.15rem;font-weight:700}
-.rrow-w{margin:4px 0;font-size:.95rem}.rrow-w strong{display:inline-block;min-width:60px;color:#505a5f;font-size:.8rem;text-transform:uppercase;letter-spacing:.03em}
+.rrow-k{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 4px;font-size:.85rem;color:#505a5f}
+.rrow-t{margin:0 0 6px;font-size:1.15rem;font-weight:700;line-height:1.3}
+.rrow-w{margin:4px 0;font-size:.95rem}.rrow-w strong{display:inline-block;min-width:52px;color:#505a5f;font-size:.75rem;text-transform:uppercase;letter-spacing:.03em}
+.rrow-note{margin:2px 0 0 52px;color:#505a5f;font-size:.9rem}
+.rrow-meta{display:flex;flex-wrap:wrap;gap:4px 10px;margin:8px 0 0;color:#505a5f;font-size:.85rem}
 .cpill{display:inline-block;background:#eef3f8;border:1px solid #cfdbe6;padding:1px 8px;font-size:.85rem;margin:2px 4px 2px 0}
 .cand{font-size:.8rem;color:#505a5f;margin-right:4px}
-.rrow-side{display:flex;flex-direction:column;gap:6px;font-size:.95rem}.rrow-o{color:#505a5f;font-size:.85rem}
-.rrow-st{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
-@media(max-width:900px){.rrow{grid-template-columns:1fr}}
+.rrow-side{text-align:right;font-size:.9rem;color:#505a5f}
+.rrow-n b{display:block;font-size:1.35rem;line-height:1.1;color:#0b0c0c}
+@media(max-width:900px){.rrow{grid-template-columns:1fr}.rrow-side{text-align:left}}
 
 /* API explorer */
 .api-meta{display:flex;flex-wrap:wrap;gap:8px 24px;background:#f8f8f8;padding:14px 20px;margin-bottom:24px;font-size:.95rem}
@@ -500,3 +503,18 @@ html, html.govuk-template, .govuk-template__body, .app-body, .govuk-main-wrapper
 .api-code{font-family:monospace;font-size:.9rem}
 .api-out{background:#0b0c0c;color:#e8f1f8;padding:14px;overflow:auto;max-height:460px;font-size:.85rem;margin:0}.api-out--s{max-height:none;white-space:pre-wrap}
 .api-code-tag{display:inline-block;padding:1px 8px;color:#fff;background:#505a5f;font-size:.85rem}.api-code-tag.ok{background:#00703c}.api-code-tag.bad{background:#d4351c}
+
+/* Workflows */
+.flow{background:#f8f8f8;border-left:5px solid #1d70b8;padding:24px;margin-bottom:28px}
+.flow-t{margin:0 0 8px;font-size:1.5rem}.flow-p{margin:0 0 16px}
+.flow-steps{list-style:none;display:flex;gap:0;margin:0 0 24px;padding:0;flex-wrap:wrap}
+.flow-steps li{flex:1;min-width:130px;display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:4px solid #b1b4b6;font-weight:700;color:#505a5f;font-size:.95rem}
+.flow-steps li.on{border-color:#1d70b8;color:#0b0c0c}.flow-steps li.done{border-color:#00703c;color:#00703c}
+.flow-n{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:#b1b4b6;color:#fff;border-radius:50%!important;font-size:.85rem}
+.flow-steps .on .flow-n{background:#1d70b8}.flow-steps .done .flow-n{background:#00703c}
+.flow .govuk-summary-list,.flow .govuk-details__text{background:#fff}.flow .govuk-details__text{padding:16px}
+.api-steps{list-style:none;margin:0;padding:0;background:#fff}
+.api-steps li{display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:1px solid #e1e4e8;color:#505a5f}
+.api-steps li.on{color:#0b0c0c;font-weight:700;background:#eef3f8}.api-steps li.done{color:#00703c}
+.api-dot{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border:2px solid #b1b4b6;border-radius:50%!important;font-weight:700}
+.api-steps .done .api-dot{background:#00703c;border-color:#00703c;color:#fff}.api-steps .on .api-dot{border-color:#1d70b8;color:#1d70b8}
