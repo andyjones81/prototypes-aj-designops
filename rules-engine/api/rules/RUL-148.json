@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "GitHub Repositories must be tagged to clearly identify service, division and directorate.",
-   "description": "",
+   "description": "Repositories must be labelled with the service, division and directorate",
    "evidence": "",
    "legal": false
   }

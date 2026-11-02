@@ -269,3 +269,4 @@ a.kpi:hover { box-shadow: 0 4px 12px rgba(16,24,40,.1); }
 .wlist--side .wrow { grid-template-columns: 1fr auto; }
 .wlist--side .wrow-prog { grid-column: 1 / -1; grid-row: 2; }
 .wlist--side .wrow-chg { grid-column: 1 / -1; justify-self: start; }
+.govuk-summary-list__value, .govuk-body-s, .act-edit textarea { white-space: pre-line; }

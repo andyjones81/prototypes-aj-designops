@@ -29,19 +29,12 @@
  "requirementDescription": "Ensure suppliers understand their roles and responsibilities, and being able to hold them to account",
  "why": "Ensure suppliers understand their roles and responsibilities, and being able to hold them to account",
  "tasks": [
-  "document expectations of supplier",
-  "create a Statement of Work"
+  "Agree commercial and contractual agreements. For example, Statements of Work"
  ],
  "actions": [
   {
-   "title": "document expectations of supplier",
-   "description": "",
-   "evidence": "",
-   "legal": true
-  },
-  {
-   "title": "create a Statement of Work",
-   "description": "",
+   "title": "Agree commercial and contractual agreements. For example, Statements of Work",
+   "description": "• document expectations of supplier\n• create a Statement of Work",
    "evidence": "",
    "legal": true
   }

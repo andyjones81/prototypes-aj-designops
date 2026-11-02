@@ -36,33 +36,12 @@
  "requirementDescription": "Have you spoken to the people who are responsible for security and technology to get their input while creating the business case?",
  "why": "Project teams often do not have specialist security expertise. Security stakeholders can identify risks, obligations, costs, and requirements that might otherwise be missed. The guidance specifically states that the SRO, service owner, business analyst, CTO, CISO and technical security assurance teams should contribute to the business case",
  "tasks": [
-  "Discussions with Security, Cyber, Architecture or Assurance teams.",
-  "Review meetings.",
-  "Feedback incorporated into the business case.",
-  "Approval or endorsement from appropriate security representatives."
+  "Have you consulted relevant security stakeholders when developing your business case?"
  ],
  "actions": [
   {
-   "title": "Discussions with Security, Cyber, Architecture or Assurance teams.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Review meetings.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Feedback incorporated into the business case.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Approval or endorsement from appropriate security representatives.",
-   "description": "",
+   "title": "Have you consulted relevant security stakeholders when developing your business case?",
+   "description": "Evidence should show that relevant security stakeholders were engaged, for example:\n• Discussions with Security, Cyber, Architecture or Assurance teams.\n• Review meetings.\n• Feedback incorporated into the business case.\n• Approval or endorsement from appropriate security representatives.",
    "evidence": "",
    "legal": false
   }

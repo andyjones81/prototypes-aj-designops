@@ -29,12 +29,12 @@
  "requirementDescription": "To ensure appropriate security assurance undertaken for your service",
  "why": "To ensure appropriate security assurance undertaken for your service",
  "tasks": [
-  "complete a Service engagement form"
+  "Complete a service engagement form to register your service with Information Security (ORR 19)"
  ],
  "actions": [
   {
-   "title": "complete a Service engagement form",
-   "description": "",
+   "title": "Complete a service engagement form to register your service with Information Security (ORR 19)",
+   "description": "• complete a Service engagement form",
    "evidence": "",
    "legal": false
   }

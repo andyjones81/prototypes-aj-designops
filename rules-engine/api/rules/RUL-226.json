@@ -29,33 +29,12 @@
  "requirementDescription": "Before sharing information with another organisation, have you checked they meet the required security standards?",
  "why": "Your security obligations do not disappear when data leaves your organisation.\nThe receiving organisation must also be capable of protecting the information appropriately.",
  "tasks": [
-  "Security controls",
-  "Compliance status",
-  "Relevant certifications",
-  "Data handling arrangements"
+  "Have you ensured that other organisations you plan to share data with as part of the service delivery are compliant with the relevant cyber "
  ],
  "actions": [
   {
-   "title": "Security controls",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Compliance status",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Relevant certifications",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Data handling arrangements",
-   "description": "",
+   "title": "Have you ensured that other organisations you plan to share data with as part of the service delivery are compliant with the relevant cyber ",
+   "description": "You should assess:\n• Security controls\n• Compliance status\n• Relevant certifications\n• Data handling arrangements",
    "evidence": "",
    "legal": false
   }

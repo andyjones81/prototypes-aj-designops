@@ -34,33 +34,12 @@
  "requirementDescription": "Have you formally assessed how the service affects people's privacy and identified actions needed to protect personal data?",
  "why": "A DPIA helps identify privacy risks before a service is implemented and ensures appropriate safeguards are designed into the service from the outset.",
  "tasks": [
-  "Describe the processing",
-  "Identify privacy risks",
-  "Assess impacts on individuals",
-  "Define mitigations"
+  "Have you completed a Data Protection and Impact Assessment (DPIA)?"
  ],
  "actions": [
   {
-   "title": "Describe the processing",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Identify privacy risks",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Assess impacts on individuals",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Define mitigations",
-   "description": "",
+   "title": "Have you completed a Data Protection and Impact Assessment (DPIA)?",
+   "description": "A DPIA should:\n• Describe the processing\n• Identify privacy risks\n• Assess impacts on individuals\n• Define mitigations\n• Be reviewed by appropriate specialists",
    "evidence": "",
    "legal": false
   }

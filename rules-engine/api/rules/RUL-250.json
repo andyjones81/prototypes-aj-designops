@@ -31,33 +31,12 @@
  "requirementDescription": "Have you turned the selected frameworks into a practical list of security controls that this particular service needs to implement?",
  "why": "Generic frameworks can contain many controls, not all of which will be relevant to every service.\nCreating a service-specific controls set helps ensure that security measures are:\n- appropriate to the service\n- proportionate to its risks\n- connected to what needs protecting\n- understandable to delivery teams\n- capable of being implemented and evidenced\n- maintained as the service evolves.",
  "tasks": [
-  "what controls are required",
-  "where the controls came from",
-  "why they are relevant",
-  "what part of the service they apply to"
+  "Have you created a security controls set relevant to your service?"
  ],
  "actions": [
   {
-   "title": "what controls are required",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "where the controls came from",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "why they are relevant",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "what part of the service they apply to",
-   "description": "",
+   "title": "Have you created a security controls set relevant to your service?",
+   "description": "Create and maintain a documented set of security controls specifically applicable to the service.\n• what controls are required\n• where the controls came from\n• why they are relevant\n• what part of the service they apply to\n• how they relate to identified risks or requirements\n• any service-specific/custom controls needed.\nThe controls set should also be shared with delivery teams and reviewed when significant functionality or components are added",
    "evidence": "",
    "legal": false
   }

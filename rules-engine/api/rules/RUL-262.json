@@ -34,33 +34,12 @@
  "requirementDescription": "Are you actively testing the application for security weaknesses using appropriate security testing techniques or tools?",
  "why": "Human code review alone may not detect every vulnerability.\nAutomated and manual security testing provides additional layers of assurance and can identify vulnerabilities earlier and more consistently.\nThe guidance recommends multiple methods rather than relying on one vulnerability-discovery process.",
  "tasks": [
-  "Select appropriate code/application security testing methods.",
-  "Integrate automated testing into development pipelines where appropriate.",
-  "Define when tests will run.",
-  "Configure alerts/reporting so developers see important findings."
+  "Are you using a manual or automated code testing method (for example, Static Application Security Testing (SAST) or Dynamic Application Secu"
  ],
  "actions": [
   {
-   "title": "Select appropriate code/application security testing methods.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Integrate automated testing into development pipelines where appropriate.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Define when tests will run.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Configure alerts/reporting so developers see important findings.",
-   "description": "",
+   "title": "Are you using a manual or automated code testing method (for example, Static Application Security Testing (SAST) or Dynamic Application Secu",
+   "description": "• Select appropriate code/application security testing methods.\n• Integrate automated testing into development pipelines where appropriate.\n• Define when tests will run.\n• Configure alerts/reporting so developers see important findings.\n• Record identified vulnerabilities.\n• Prioritise and remediate findings using the vulnerability management process.\n• Retest where appropriate to confirm remediation.",
    "evidence": "",
    "legal": false
   }

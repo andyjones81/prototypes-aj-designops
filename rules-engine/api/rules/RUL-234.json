@@ -33,33 +33,12 @@
  "requirementDescription": "Have you assessed what would happen to the organisation, users and service if its data or systems were:\n- Read by unauthorised people (Confidentiality)\n- Changed or corrupted (Integrity)\n- Unavailable (Availability)",
  "why": "Not all information and systems are equally important.\nThe organisation needs to understand which assets would cause the greatest damage if compromised so it can:\n- Prioritise security investment.\n- Identify the most important risks.\n- Design appropriate security controls.\n- Support threat modelling and risk assessments.",
  "tasks": [
-  "Assets being assessed.",
-  "Impact ratings.",
-  "Consequences of compromise.",
-  "Overall business impact."
+  "Have you completed a business impact assessment to determine the confidentiality, integrity and availability of data if the service was comp"
  ],
  "actions": [
   {
-   "title": "Assets being assessed.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Impact ratings.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Consequences of compromise.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Overall business impact.",
-   "description": "",
+   "title": "Have you completed a business impact assessment to determine the confidentiality, integrity and availability of data if the service was comp",
+   "description": "The assessment should consider, confidentiality, integrity and availability. The assessment should document:\n• Assets being assessed.\n• Impact ratings.\n• Consequences of compromise.\n• Overall business impact.",
    "evidence": "",
    "legal": false
   }

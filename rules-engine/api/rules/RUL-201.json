@@ -36,33 +36,12 @@
  "requirementDescription": "When comparing options, have you assessed:\n- What security threats exist?\n- How much risk the organisation is willing to accept?\n- What security outcomes need to be achieved?\n- How resilient the service needs to be?\n- Whether these factors influence which option is the best choice?",
  "why": "A cheaper option is not necessarily the best option if it exposes the organisation to significant cyber risk. The economic case should consider security impacts when deciding which option delivers the greatest overall value. The guidance states that the economic case should include information about security threats and assess resilience against security attacks as part of the success criteria.",
  "tasks": [
-  "Key cyber threats.",
-  "Defined risk appetite or risk tolerance.",
-  "Security objectives.",
-  "Resilience requirements."
+  "Does the economic case include an analysis with the security threats, security risk tolerance, security objectives and cyber resilience as p"
  ],
  "actions": [
   {
-   "title": "Key cyber threats.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Defined risk appetite or risk tolerance.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Security objectives.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Resilience requirements.",
-   "description": "",
+   "title": "Does the economic case include an analysis with the security threats, security risk tolerance, security objectives and cyber resilience as p",
+   "description": "The economic case should show:\n• Key cyber threats.\n• Defined risk appetite or risk tolerance.\n• Security objectives.\n• Resilience requirements.\n• How security contributes to critical success factors.\n• How these considerations were used to evaluate options.",
    "evidence": "",
    "legal": false
   }

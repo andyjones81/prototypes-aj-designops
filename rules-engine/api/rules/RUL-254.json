@@ -34,33 +34,12 @@
  "requirementDescription": "Did you choose security controls because they address real threats and risks, rather than simply applying controls because they are standard or familiar?",
  "why": "Secure by Design promotes a risk-driven approach. Controls should directly relate to the threats facing the service. Over-securing wastes money, while under-securing leaves vulnerabilities exposed",
  "tasks": [
-  "Threats were identified.",
-  "Risks were assessed.",
-  "Controls were selected to reduce those specific risks.",
-  "Control decisions can be traced back to identified risks."
+  "Did you select the security controls based on risk, threats and exposure?"
  ],
  "actions": [
   {
-   "title": "Threats were identified.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Risks were assessed.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Controls were selected to reduce those specific risks.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Control decisions can be traced back to identified risks.",
-   "description": "",
+   "title": "Did you select the security controls based on risk, threats and exposure?",
+   "description": "You should be able to demonstrate:\n• Threats were identified.\n• Risks were assessed.\n• Controls were selected to reduce those specific risks.\n• Control decisions can be traced back to identified risks.",
    "evidence": "",
    "legal": false
   }

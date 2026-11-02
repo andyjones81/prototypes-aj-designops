@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Services MUST have an out-of-hours on-call contact for critical service incident escalation to ensure immediate action can be taken during h",
-   "description": "",
+   "description": "Every service must have a person or team that can be contacted outside normal working hours so that serious incidents can be responded to immediately rather than waiting until the next working day.",
    "evidence": "",
    "legal": false
   }

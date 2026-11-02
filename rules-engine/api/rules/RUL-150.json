@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Secrets (API keys, passwords, connection strings, certificates) MUST NOT be committed to Git repositories or baked into container images bec",
-   "description": "",
+   "description": "Application secrets should not be stored in Git repositories or container images",
    "evidence": "",
    "legal": false
   }

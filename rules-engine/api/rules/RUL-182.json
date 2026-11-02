@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Shared Accounts MUST NOT be used; every action MUST be traceable to a specific named user or Service Principal to ensure accountability for ",
-   "description": "",
+   "description": "Don't use generic usernames that multiple people share. Every human should have their own account, and every application should have its own service identity",
    "evidence": "",
    "legal": false
   }

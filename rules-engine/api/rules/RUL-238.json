@@ -31,33 +31,12 @@
  "requirementDescription": "Have you looked at real-world evidence about attacks that have already happened, either to your organisation or to similar organisations?",
  "why": "Threat assessments should be evidence-based rather than based on assumptions.\nThe guidance states that threat assessments should use:\n- Cyber Threat Intelligence (CTI)\n- Reputable intelligence sources\n- Research into previous attacks on the organisation\n- Research into attacks against similar organisations",
  "tasks": [
-  "Internal security incident history.",
-  "Cyber Threat Intelligence reports.",
-  "NCSC threat reporting.",
-  "Industry intelligence feeds."
+  "Have you considered threat intelligence and the history of previous attacks on the organisation (or similar organisations) as part of the th"
  ],
  "actions": [
   {
-   "title": "Internal security incident history.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Cyber Threat Intelligence reports.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "NCSC threat reporting.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Industry intelligence feeds.",
-   "description": "",
+   "title": "Have you considered threat intelligence and the history of previous attacks on the organisation (or similar organisations) as part of the th",
+   "description": "You should demonstrate consideration of:\n• Internal security incident history.\n• Cyber Threat Intelligence reports.\n• NCSC threat reporting.\n• Industry intelligence feeds.\n• Lessons learned from similar organisations.\n• Known attacker tactics and techniques.",
    "evidence": "",
    "legal": false
   }

@@ -31,33 +31,12 @@
  "requirementDescription": "Have you worked out what technology is needed to collect security information, analyse it and notify the right people when something suspicious happens?",
  "why": "A service could generate millions of log entries. It may be unrealistic for people to manually read those records looking for suspicious activity.\nAppropriate tools help teams:\n- bring relevant security information together\n- search and analyse events\n- identify patterns or anomalies\n- generate alerts when defined conditions occur\n- provide information to security or incident-response teams.\nThe guidance recommends investigating whether appropriate capabilities exist to collect and monitor observables and identifying additional capabilities needed to provide sufficient visibility.",
  "tasks": [
-  "Identify what logs and security information need collecting.",
-  "Determine which existing organisational tools can be used.",
-  "Identify any additional monitoring capability required.",
-  "Configure tools to collect and securely store the required information."
+  "Have you determined the tools required to log and analyse the event logs and trigger alerts?"
  ],
  "actions": [
   {
-   "title": "Identify what logs and security information need collecting.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Determine which existing organisational tools can be used.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Identify any additional monitoring capability required.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Configure tools to collect and securely store the required information.",
-   "description": "",
+   "title": "Have you determined the tools required to log and analyse the event logs and trigger alerts?",
+   "description": "• Identify what logs and security information need collecting.\n• Determine which existing organisational tools can be used.\n• Identify any additional monitoring capability required.\n• Configure tools to collect and securely store the required information.\n• Configure appropriate alerts.\n• Ensure information can be searched and analysed.\n• Integrate with the DfE's Security Operations Centre (SOC) or incident-response capabilities where appropriate.",
    "evidence": "",
    "legal": false
   }

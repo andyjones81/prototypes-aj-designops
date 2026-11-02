@@ -34,33 +34,12 @@
  "requirementDescription": "Have you checked that the security controls actually work in practice?",
  "why": "A control that exists on paper may not work correctly. Secure by Design places emphasis on assessing the effectiveness of security controls and continuing assurance throughout delivery. A control only reduces risk if it operates as intended.",
  "tasks": [
-  "Penetration testing.",
-  "Vulnerability scanning.",
-  "Security design reviews.",
-  "Configuration reviews."
+  "Have you tested the controls and confirmed they're working as intended?"
  ],
  "actions": [
   {
-   "title": "Penetration testing.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Vulnerability scanning.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Security design reviews.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Configuration reviews.",
-   "description": "",
+   "title": "Have you tested the controls and confirmed they're working as intended?",
+   "description": "Testing may include:\n• Penetration testing.\n• Vulnerability scanning.\n• Security design reviews.\n• Configuration reviews.\n• User access testing.\n• Red team exercises.\n• Evidence-based assurance reviews.",
    "evidence": "",
    "legal": false
   }

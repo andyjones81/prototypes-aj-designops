@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Management interfaces (RDP, SSH, SMB, SQL) MUST NOT be exposed directly to the public internet because this is the fastest way to suffer a c",
-   "description": "",
+   "description": "Do not allow administrative access to systems directly from the internet. Management services such as RDP, SSH, SMB, and SQL should only be accessible through secure, controlled routes",
    "evidence": "",
    "legal": false
   }

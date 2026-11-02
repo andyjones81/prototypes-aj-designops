@@ -31,33 +31,12 @@
  "requirementDescription": "Has your organisation's security team been involved in deciding and agreeing which security frameworks the service will use?",
  "why": "Your organisation may already have:\n- required security frameworks\n- standard security controls\n- an organisational security controls taxonomy\n- approved security patterns\n- established security policies\n- regulatory or compliance requirements.\nEngaging the security function avoids individual services adopting inconsistent or unsuitable approaches and gives the project access to people who understand how the frameworks should be applied.",
  "tasks": [
-  "Engage the organisation's security function.",
-  "Identify any existing organisational security framework or controls taxonomy.",
-  "Discuss which additional frameworks are relevant to the service.",
-  "Agree which frameworks will provide the basis for the service's controls."
+  "Have you agreed the security control frameworks you intend to use with your organisation’s security function?"
  ],
  "actions": [
   {
-   "title": "Engage the organisation's security function.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Identify any existing organisational security framework or controls taxonomy.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Discuss which additional frameworks are relevant to the service.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Agree which frameworks will provide the basis for the service's controls.",
-   "description": "",
+   "title": "Have you agreed the security control frameworks you intend to use with your organisation’s security function?",
+   "description": "• Engage the organisation's security function.\n• Identify any existing organisational security framework or controls taxonomy.\n• Discuss which additional frameworks are relevant to the service.\n• Agree which frameworks will provide the basis for the service's controls.\n• Record that decision and make it available to the relevant delivery teams.",
    "evidence": "",
    "legal": false
   }

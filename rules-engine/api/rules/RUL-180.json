@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Service-to-service communication MUST use managed identities or short-lived tokens (Machine Identity); hardcoded keys MUST NOT be used to pr",
-   "description": "",
+   "description": "Whenever systems authenticate to other systems, use managed identities or temporary tokens instead of passwords, API keys, or connection strings embedded in code",
    "evidence": "",
    "legal": false
   }

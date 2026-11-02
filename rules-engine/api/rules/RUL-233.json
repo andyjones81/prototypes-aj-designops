@@ -33,33 +33,12 @@
  "requirementDescription": "Does every important asset have a named person responsible for it?",
  "why": "If nobody owns an asset:\n- Security issues may not be addressed.\n- Risks may not be reviewed.\n- Decisions may be delayed.\n- Vulnerabilities may remain unmanaged.\nThe guidance specifically highlights the need to understand who is responsible for each asset so that accountability for protection is clear.",
  "tasks": [
-  "A named owner.",
-  "A defined role.",
-  "Accountability for security decisions.",
-  "Responsibility for managing risks relating to the asset."
+  "Have you identified and documented a service owner or information asset owner for each asset?"
  ],
  "actions": [
   {
-   "title": "A named owner.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "A defined role.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Accountability for security decisions.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Responsibility for managing risks relating to the asset.",
-   "description": "",
+   "title": "Have you identified and documented a service owner or information asset owner for each asset?",
+   "description": "For every asset, there should be:\n• A named owner.\n• A defined role.\n• Accountability for security decisions.\n• Responsibility for managing risks relating to the asset.",
    "evidence": "",
    "legal": false
   }

@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Multi-Factor Authentication (MFA) MUST be mandatory for ALL externally accessible users without exception because it is the single best way ",
-   "description": "",
+   "description": "If a user can sign in to a system from outside the organisation, MFA must be enabled for that account.",
    "evidence": "",
    "legal": false
   }

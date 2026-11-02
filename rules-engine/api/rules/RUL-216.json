@@ -33,33 +33,12 @@
  "requirementDescription": "Before deciding to use a cloud service, have you assessed the security risks it might introduce?\n- Infrastructure as a Service (IaaS)\n- Platform as a Service (PaaS)\n- Software as a Service (SaaS)",
  "why": "Cloud services can introduce risks relating to:\n- Data protection\n- Access control\n- Supplier security\n- Resilience and availability\n- Data location\n- Regulatory compliance\nSecure by Design requires organisations to perform security due diligence on third-party technology products before relying on them.",
  "tasks": [
-  "What information will be stored?",
-  "Who can access the environment?",
-  "Where is the data hosted?",
-  "What security certifications exist?"
+  "Have you reviewed the security risks of any cloud technology (such as IaaS, PaaS, SaaS) before using it?"
  ],
  "actions": [
   {
-   "title": "What information will be stored?",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Who can access the environment?",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Where is the data hosted?",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "What security certifications exist?",
-   "description": "",
+   "title": "Have you reviewed the security risks of any cloud technology (such as IaaS, PaaS, SaaS) before using it?",
+   "description": "You should assess:\n• What information will be stored?\n• Who can access the environment?\n• Where is the data hosted?\n• What security certifications exist?\n• What security controls are provided?\n• What risks remain?",
    "evidence": "",
    "legal": false
   }

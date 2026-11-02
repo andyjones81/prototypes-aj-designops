@@ -34,33 +34,12 @@
  "requirementDescription": "Have you planned when penetration testing will happen and clearly defined what the testers are supposed to test and what the test is intended to prove?",
  "why": "A penetration test is much more useful when it is targeted at the relevant risks and parts of the service.\nA poorly scoped test could miss important systems or attack paths, while testing against a realistic threat scenario can provide assurance about whether the service's protections work as expected. The guidance emphasises that penetration testing is primarily a means of gaining assurance in security and vulnerability-management processes, rather than being the organisation's sole method for identifying vulnerabilities.",
  "tasks": [
-  "purpose: what assurance the test should provide",
-  "scope: applications, infrastructure, APIs or other components included",
-  "boundaries: what's specifically excluded",
-  "threat scenarios: what realistic risks the test should examine"
+  "Do you have a plan for carrying out penetration tests with appropriate scopes?"
  ],
  "actions": [
   {
-   "title": "purpose: what assurance the test should provide",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "scope: applications, infrastructure, APIs or other components included",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "boundaries: what's specifically excluded",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "threat scenarios: what realistic risks the test should examine",
-   "description": "",
+   "title": "Do you have a plan for carrying out penetration tests with appropriate scopes?",
+   "description": "Create a documented penetration-testing plan that establishes:\n• purpose: what assurance the test should provide\n• scope: applications, infrastructure, APIs or other components included\n• boundaries: what's specifically excluded\n• threat scenarios: what realistic risks the test should examine\n• timing/frequency: when testing will happen\n• responsibility: who will commission and perform it\n• reporting: how findings will be recorded and communicated\n• remediation: how identified vulnerabilities will be prioritised, assigned and fixed.",
    "evidence": "",
    "legal": false
   }

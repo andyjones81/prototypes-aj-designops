@@ -31,33 +31,12 @@
  "requirementDescription": "Have you worked out which recognised security standards, frameworks and guidance apply to the type of service you are building and the things it needs to protect?",
  "why": "Recognised standards and frameworks provide an established baseline of good security practice, rather than requiring each project to invent its own approach.\nUsing relevant standards helps teams:\n- identify appropriate security protections\n- avoid overlooking common security requirements\n- manage vulnerabilities and risks consistently\n- use a common security language\n- support legal, regulatory and governance requirements.",
  "tasks": [
-  "Identify what needs protecting.",
-  "Review recognised standards and security frameworks.",
-  "Decide which are relevant to the service and why.",
-  "Document the standards/frameworks selected."
+  "Have you identified the cyber security standards that are relevant to the service?"
  ],
  "actions": [
   {
-   "title": "Identify what needs protecting.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Review recognised standards and security frameworks.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Decide which are relevant to the service and why.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Document the standards/frameworks selected.",
-   "description": "",
+   "title": "Have you identified the cyber security standards that are relevant to the service?",
+   "description": "• Identify what needs protecting.\n• Review recognised standards and security frameworks.\n• Decide which are relevant to the service and why.\n• Document the standards/frameworks selected.\n• Revisit them when the service or technology changes significantly.",
    "evidence": "",
    "legal": false
   }

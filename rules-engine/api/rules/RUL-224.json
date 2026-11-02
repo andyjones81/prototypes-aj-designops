@@ -29,33 +29,12 @@
  "requirementDescription": "If the system handles intellectual property, have you implemented the protections required to safeguard it?",
  "why": "Loss of intellectual property can:\n- Harm the organisation\n- Create legal liabilities\n- Damage commercial value",
  "tasks": [
-  "Ownership arrangements",
-  "Licensing restrictions",
-  "Contractual obligations",
-  "Security classification requirements"
+  "Have you met obligations in relation to intellectual property (IP) data being processed, stored or transmitted by the service?"
  ],
  "actions": [
   {
-   "title": "Ownership arrangements",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Licensing restrictions",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Contractual obligations",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Security classification requirements",
-   "description": "",
+   "title": "Have you met obligations in relation to intellectual property (IP) data being processed, stored or transmitted by the service?",
+   "description": "You should understand:\n• Ownership arrangements\n• Licensing restrictions\n• Contractual obligations\n• Security classification requirements",
    "evidence": "",
    "legal": false
   }

@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Operating Systems and runtimes MUST be patched regularly, with Critical patches = 14 Days and High = 30 Days SLA, to ensure known flaws are ",
-   "description": "",
+   "description": "Keep operating systems and software platforms up to date. Critical security vulnerabilities must be fixed within 14 days and High vulnerabilities within 30 days so attackers can't exploit known weaknesses that already have a fix available.",
    "evidence": "",
    "legal": false
   }

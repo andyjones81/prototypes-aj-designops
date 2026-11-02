@@ -33,33 +33,12 @@
  "requirementDescription": "Have you documented who is needed to support security on the project, what they will do, and what skills they need?",
  "why": "Security activities do not happen automatically. Projects need suitably skilled people available at the right time. Without planning for security resources, key activities such as threat modelling, security architecture reviews, security testing and risk management may not happen. The guidance requires a comprehensive security resource plan covering the people involved throughout the project lifecycle.",
  "tasks": [
-  "Security roles required.",
-  "Key responsibilities.",
-  "Required skills and expertise.",
-  "When resources are needed."
+  "Does the project have a resource plan showing security roles and skills required to support the delivery of the service?"
  ],
  "actions": [
   {
-   "title": "Security roles required.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Key responsibilities.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Required skills and expertise.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "When resources are needed.",
-   "description": "",
+   "title": "Does the project have a resource plan showing security roles and skills required to support the delivery of the service?",
+   "description": "There should be a documented security resource plan showing:\n• Security roles required.\n• Key responsibilities.\n• Required skills and expertise.\n• When resources are needed.\n• Whether resources are internal, shared or externally contracted.\n• Estimated effort and costs",
    "evidence": "",
    "legal": false
   }

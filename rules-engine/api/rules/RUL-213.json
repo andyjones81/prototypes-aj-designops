@@ -36,7 +36,7 @@
  "actions": [
   {
    "title": "Have you considered the risk appetite of any organisations the service shares or exchanges data with?",
-   "description": "",
+   "description": "Consider data sharing arrangements, partner organisations expectations, and differences in risk appetite",
    "evidence": "",
    "legal": false
   }

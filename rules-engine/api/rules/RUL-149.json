@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Must use GitHub for any new projects. Existing projects should have migration plans developed asap.",
-   "description": "",
+   "description": "All new project build using GitHub, all existing project have migration plans to move to GitHub asap",
    "evidence": "",
    "legal": false
   }

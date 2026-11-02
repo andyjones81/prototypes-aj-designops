@@ -34,33 +34,12 @@
  "requirementDescription": "When the service changes, do you check whether that change introduces new threats or attack routes and update the threat model where necessary?",
  "why": "A threat model represents the security threats relevant to a particular design.\nIf the design changes but the threat model does not, the model may no longer accurately describe the risks facing the service.\nKeeping it updated also ensures security controls remain appropriate to the current service rather than an earlier version of it.",
  "tasks": [
-  "Review proposed changes for security implications.",
-  "Determine whether threats or attack paths have changed.",
-  "Add new threats where appropriate.",
-  "Update existing threats where their likelihood or impact has changed."
+  "Are you reflecting requested changes in the service’s threat model?"
  ],
  "actions": [
   {
-   "title": "Review proposed changes for security implications.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Determine whether threats or attack paths have changed.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Add new threats where appropriate.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Update existing threats where their likelihood or impact has changed.",
-   "description": "",
+   "title": "Are you reflecting requested changes in the service’s threat model?",
+   "description": "• Review proposed changes for security implications.\n• Determine whether threats or attack paths have changed.\n• Add new threats where appropriate.\n• Update existing threats where their likelihood or impact has changed.\n• Identify any additional security controls required.\n• Keep the threat model aligned with the latest service design.",
    "evidence": "",
    "legal": false
   }

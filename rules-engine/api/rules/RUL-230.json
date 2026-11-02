@@ -29,33 +29,12 @@
  "requirementDescription": "When choosing security controls, have you considered what the service is trying to achieve for the organisation?",
  "why": "Security should help the organisation achieve its objectives safely, not get in the way.\nIf security decisions are made without understanding the business purpose, you can end up with:\n- Unnecessary controls\n- Increased costs\n- Delays to delivery\n- Reduced business benefits",
  "tasks": [
-  "Business objectives were identified.",
-  "Security requirements were linked to those objectives.",
-  "Security decisions considered business impact.",
-  "Any trade-offs between security and business needs were documented."
+  "Have you taken business objectives into account when making security decisions?"
  ],
  "actions": [
   {
-   "title": "Business objectives were identified.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Security requirements were linked to those objectives.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Security decisions considered business impact.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Any trade-offs between security and business needs were documented.",
-   "description": "",
+   "title": "Have you taken business objectives into account when making security decisions?",
+   "description": "You should be able to show that:\n• Business objectives were identified.\n• Security requirements were linked to those objectives.\n• Security decisions considered business impact.\n• Any trade-offs between security and business needs were documented.",
    "evidence": "",
    "legal": false
   }

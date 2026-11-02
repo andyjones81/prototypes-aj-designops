@@ -36,7 +36,7 @@
  "actions": [
   {
    "title": "Have you established a clear governance structure around risk management decision making?",
-   "description": "",
+   "description": "The governance model should explain, who owns risks, who approves risk acceptance, and how escalation works",
    "evidence": "",
    "legal": false
   }

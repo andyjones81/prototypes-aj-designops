@@ -29,33 +29,12 @@
  "requirementDescription": "Have you considered how real users will interact with security controls and whether those controls are practical and usable?",
  "why": "Poorly designed security controls often lead users to:\n- Work around the controls\n- Circumvent processes\n- Make mistakes\n- Become frustrated",
  "tasks": [
-  "User research was considered.",
-  "Security requirements were balanced against usability.",
-  "User groups were identified.",
-  "Controls were designed around how users actually work."
+  "Have you taken user needs into account when making security decisions?"
  ],
  "actions": [
   {
-   "title": "User research was considered.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Security requirements were balanced against usability.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "User groups were identified.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Controls were designed around how users actually work.",
-   "description": "",
+   "title": "Have you taken user needs into account when making security decisions?",
+   "description": "You should be able to demonstrate that:\n• User research was considered.\n• Security requirements were balanced against usability.\n• User groups were identified.\n• Controls were designed around how users actually work.\n• User needs continue to be reviewed as the service evolves.",
    "evidence": "",
    "legal": false
   }

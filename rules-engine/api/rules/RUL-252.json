@@ -34,33 +34,12 @@
  "requirementDescription": "If any risks are larger than the level of risk the organisation is willing to accept, have you done something about them?",
  "why": "Risk appetite defines how much security risk an organisation is prepared to tolerate. Risks that exceed this threshold cannot simply be ignored. Secure by Design states that risks should be reduced to an acceptable level through appropriate mitigations or approved acceptance decisions",
  "tasks": [
-  "Reduce the risk through controls.",
-  "Transfer the risk.",
-  "Avoid the risk by changing the design.",
-  "Escalate and formally accept the risk."
+  "Have you treated the risks that have a rating above the project's risk appetite?"
  ],
  "actions": [
   {
-   "title": "Reduce the risk through controls.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Transfer the risk.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Avoid the risk by changing the design.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Escalate and formally accept the risk.",
-   "description": "",
+   "title": "Have you treated the risks that have a rating above the project's risk appetite?",
+   "description": "For every risk above tolerance, one of the following should occur:\n• Reduce the risk through controls.\n• Transfer the risk.\n• Avoid the risk by changing the design.\n• Escalate and formally accept the risk.\nThere should be clear evidence of the chosen approach.",
    "evidence": "",
    "legal": false
   }

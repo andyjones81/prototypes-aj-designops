@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "All infrastructure and digital services MUST be registered and identifiable, and all cloud resources MUST have Owner, CostCenter, and Env ta",
-   "description": "",
+   "description": "Resources shouldn't exist in the cloud that nobody owns, nobody pays for, and nobody is responsible for securing",
    "evidence": "",
    "legal": false
   }

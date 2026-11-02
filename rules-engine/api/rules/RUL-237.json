@@ -36,7 +36,7 @@
  "actions": [
   {
    "title": "Does your threat assessment include the motives, intent and capability of the threat actors relevant to your service?",
-   "description": "",
+   "description": "The assessment should document threat actors and their motivation, intent, and capability",
    "evidence": "",
    "legal": false
   }

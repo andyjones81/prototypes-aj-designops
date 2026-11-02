@@ -33,33 +33,12 @@
  "requirementDescription": "Before designing something new, did you check whether there is already a recognised secure design pattern that could be reused?",
  "why": "DfE does have approved architectures, security patterns and reference designs that have already been reviewed and assessed. Reusing these approaches reduces risk, improves consistency and avoids unnecessary design effort. The guidance encourages using existing organisational capabilities, policies, procedures and resources where possible",
  "tasks": [
-  "Reviewed relevant organisational standards.",
-  "Considered existing government patterns and frameworks.",
-  "Assessed whether approved architectures meet project needs.",
-  "Documented any decision to deviate from established patterns."
+  "Have you considered pre-approved or recommended architectural patterns available from your organisation or other government departments?"
  ],
  "actions": [
   {
-   "title": "Reviewed relevant organisational standards.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Considered existing government patterns and frameworks.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Assessed whether approved architectures meet project needs.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Documented any decision to deviate from established patterns.",
-   "description": "",
+   "title": "Have you considered pre-approved or recommended architectural patterns available from your organisation or other government departments?",
+   "description": "You should be able to demonstrate that you have:\n• Reviewed relevant organisational standards.\n• Considered existing government patterns and frameworks.\n• Assessed whether approved architectures meet project needs.\n• Documented any decision to deviate from established patterns.",
    "evidence": "",
    "legal": false
   }

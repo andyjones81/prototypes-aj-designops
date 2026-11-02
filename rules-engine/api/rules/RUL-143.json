@@ -35,33 +35,12 @@
  "requirementDescription": "A tool to declare compliance to DfE standards and policies on a yearly basis.",
  "why": "This came out of audit in April 2023 which found DfE doesn't have a mechanism to view the compliance landscape of their services and for teams to declare compliance. SHCA aims to do this. The standards in it are based on things established in the Standards Forum.",
  "tasks": [
-  "Once a service gets a service offering, it will get pulled into SHCA",
-  "Steve looks at what has been registered on CMDB in the last 7 days",
-  "Steve chases people to complete it (if they haven't already)",
-  "Delivery team goes on SHCA intranet page to find link and guidance"
+  "Complete or update 'Service Health Check App' (SHCA)"
  ],
  "actions": [
   {
-   "title": "Once a service gets a service offering, it will get pulled into SHCA",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Steve looks at what has been registered on CMDB in the last 7 days",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Steve chases people to complete it (if they haven't already)",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Delivery team goes on SHCA intranet page to find link and guidance",
-   "description": "",
+   "title": "Complete or update 'Service Health Check App' (SHCA)",
+   "description": "• Once a service gets a service offering, it will get pulled into SHCA\n• Steve looks at what has been registered on CMDB in the last 7 days\n• Steve chases people to complete it (if they haven't already)\n• Delivery team goes on SHCA intranet page to find link and guidance\n• Delivery team reports on whether they are meeting the conditions against their service(s) and, if not, what activity is required to achieve each standard\n• Steve is able to check compliance against each standard for a service\n• Delivery team is notified yearly to update their entry",
    "evidence": "",
    "legal": false
   }

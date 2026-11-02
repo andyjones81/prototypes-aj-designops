@@ -34,7 +34,7 @@
  "actions": [
   {
    "title": "Have you fed compliance requirements into risk management activities?",
-   "description": "",
+   "description": "You should be able to trace:\nRequirement → Risk → Control",
    "evidence": "",
    "legal": false
   }

@@ -34,7 +34,7 @@
  "actions": [
   {
    "title": "Document a release management process (ORR 36)",
-   "description": "",
+   "description": "When you make continual release changes (e.g. bug fixes, improvements to service) \n\nThere may be downtime\n\nHow are you going to deploy the releases, who will you communicate with to let them know that's happening",
    "evidence": "",
    "legal": false
   }

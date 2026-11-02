@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Physical or logical separation of admin privileges is REQUIRED to prevent a simple phishing email from compromising everything.",
-   "description": "",
+   "description": "Administrators should use separate accounts (and sometimes separate devices) for privileged activities.",
    "evidence": "",
    "legal": false
   }

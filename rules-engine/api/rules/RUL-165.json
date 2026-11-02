@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "All systems MUST comply with the requirements stipulated in our Continuous Assurance platform to ensure a minimum baseline of security harde",
-   "description": "",
+   "description": "Every system must meet the security requirements and checks defined by the organisation's Continuous Assurance platform. The platform is used to continuously verify that systems meet a minimum security standard and remain securely configured over time",
    "evidence": "",
    "legal": false
   }

@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "All foundation systems MUST meet phase 1 mandated security controls by March 31st 2026 to ensure critical protection against common attacks.",
-   "description": "",
+   "description": "The organisation has identified a minimum set of essential security controls. Any critical foundational platform must have those controls in place by 31 March 2026, because those controls provide protection against the most common cyber attacks.",
    "evidence": "",
    "legal": false
   }

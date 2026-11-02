@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "All cloud-hosted compute instances and corporate devices MUST run an approved EDR tool with 24/7 monitoring and alerting to the central SoC ",
-   "description": "",
+   "description": "All company devices and cloud servers must have approved security monitoring software installed and connected to the security operations team so cyber attacks can be detected and stopped as quickly as possible.",
    "evidence": "",
    "legal": false
   }

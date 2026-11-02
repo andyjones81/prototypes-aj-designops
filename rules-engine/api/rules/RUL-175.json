@@ -30,7 +30,7 @@
  "actions": [
   {
    "title": "\"Team\" passwords MUST be prohibited because they make accountability impossible and are easy to steal.",
-   "description": "",
+   "description": "People must not share passwords. Everyone should use their own account so actions can be traced to a specific individual and the risk of credential theft is reduced.",
    "evidence": "",
    "legal": false
   }

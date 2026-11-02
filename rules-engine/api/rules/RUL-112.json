@@ -29,19 +29,12 @@
  "requirementDescription": "- security\n- operational\n- good practice",
  "why": "- security\n- operational\n- good practice",
  "tasks": [
-  "SOM will include what needs to happen",
-  "although, team can do it in a different format"
+  "Document or update documentation for the overview of your service (like a runbook, Service Operating Manual, or equivalent) (ORR 11) (could "
  ],
  "actions": [
   {
-   "title": "SOM will include what needs to happen",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "although, team can do it in a different format",
-   "description": "",
+   "title": "Document or update documentation for the overview of your service (like a runbook, Service Operating Manual, or equivalent) (ORR 11) (could ",
+   "description": "• SOM will include what needs to happen\n• although, team can do it in a different format",
    "evidence": "",
    "legal": false
   }

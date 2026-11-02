@@ -34,33 +34,12 @@
  "requirementDescription": "Have you clearly identified and recorded which parts of the service are going to be switched off, removed, replaced or decommissioned?",
  "why": "You cannot safely retire something unless you understand what it is, what information it contains and what relies upon it.\nFor example, simply switching off an application could leave behind:\n- cloud infrastructure that is still publicly accessible\n- unused accounts or credentials\n- databases containing sensitive information\n- domains that are no longer managed\n- integrations pointing at systems that no longer exist\n- forgotten test or pre-production environments.",
  "tasks": [
-  "Maintain an up-to-date inventory of service assets.",
-  "Clearly identify the components scheduled for retirement.",
-  "Identify the asset owner.",
-  "Record what data the component holds or processes."
+  "Have you identified components to be retired in the asset inventory?"
  ],
  "actions": [
   {
-   "title": "Maintain an up-to-date inventory of service assets.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Clearly identify the components scheduled for retirement.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Identify the asset owner.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Record what data the component holds or processes.",
-   "description": "",
+   "title": "Have you identified components to be retired in the asset inventory?",
+   "description": "• Maintain an up-to-date inventory of service assets.\n• Clearly identify the components scheduled for retirement.\n• Identify the asset owner.\n• Record what data the component holds or processes.\n• Identify dependent or connected systems.\n• Involve the relevant asset owners in retirement planning.\n• After retirement, update the asset inventory to show that the component is no longer active.",
    "evidence": "",
    "legal": false
   }

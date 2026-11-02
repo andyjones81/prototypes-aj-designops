@@ -21,15 +21,21 @@ def clean(s):
     return re.sub(r'[ \t]+', ' ', (s or '').replace('\r', '')).strip()
 
 
-def tasks_from(text, name):
-    out = []
+def steps_text(text):
+    """The 'What needs to happen' cell as readable steps: bullets stay together as one description."""
+    lines = []
     for line in clean(text).split('\n'):
         l = line.strip().lstrip("'").strip()
+        if not l:
+            continue
         if l.startswith(('-', '•', '*')):
-            l = l.lstrip('-•* ').strip()
-            if len(l) > 3:
-                out.append(l[:140])
-    return out[:4] or [name[:140]]
+            l = '• ' + l.lstrip('-•* ').strip()
+        lines.append(l)
+    return '\n'.join(lines)[:700]
+
+
+def action_title(name):
+    return re.sub(r'\s+', ' ', name).strip()[:140]
 
 
 def derive_conditions(text, phases):
@@ -84,8 +90,8 @@ def build():
                 'requirementTitle': re.sub(r'\s+', ' ', name),
                 'requirementDescription': clean(r['What it means']) or clean(r['Why does this exist']),
                 'why': clean(r['Why does this exist']),
-                'tasks': tasks_from(r['What needs to happen'], name),
-                'actions': [{'title': t, 'description': '', 'evidence': '', 'legal': 'legal' in clean(r['Mandatory status']).lower()} for t in tasks_from(r['What needs to happen'], name)],
+                'tasks': [action_title(name)],
+                'actions': [{'title': action_title(name), 'description': steps_text(r['What needs to happen']) or clean(r['What it means']), 'evidence': '', 'legal': 'legal' in clean(r['Mandatory status']).lower()}],
                 'standards': standards,
                 'systems': clean(r['Systems']),
                 'guidance': clean(r['Guidance']),

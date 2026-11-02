@@ -29,26 +29,12 @@
  "requirementDescription": "So services are accessible",
  "why": "So services are accessible",
  "tasks": [
-  "book an accessibility audit",
-  "get a report",
-  "meet WCAG 2.2 AA guidelines"
+  "Meet accessibility standards (ORR item 27, 28, 29)"
  ],
  "actions": [
   {
-   "title": "book an accessibility audit",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "get a report",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "meet WCAG 2.2 AA guidelines",
-   "description": "",
+   "title": "Meet accessibility standards (ORR item 27, 28, 29)",
+   "description": "• book an accessibility audit\n• get a report\n• meet WCAG 2.2 AA guidelines",
    "evidence": "",
    "legal": false
   }

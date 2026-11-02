@@ -36,7 +36,7 @@
  "actions": [
   {
    "title": "Have you considered whether the service is part of the Critical National Infrastructure (CNI) or fundamental to the organisation's output an",
-   "description": "",
+   "description": "You should assess Service Criticality, national impact and required resilience",
    "evidence": "",
    "legal": false
   }

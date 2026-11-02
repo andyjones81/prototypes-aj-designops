@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "All infrastructure and cloud services MUST be securely configured to meet the CIS IG1 baseline/benchmark because this closes known security ",
-   "description": "",
+   "description": "Teams should build against the approved standard. Don't rely on vendor defaults. Configure every server, cloud resource, and platform according to recognised security standards (CIS IG1) and continuously check that those settings remain in place.",
    "evidence": "",
    "legal": false
   }

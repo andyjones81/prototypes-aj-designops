@@ -34,7 +34,7 @@
  "actions": [
   {
    "title": "The DfE security.txt file needs to be accessible from active DfE websites to ensure vulnerabilities can be quickly reported via the HMG-mand",
-   "description": "",
+   "description": "The file must be accessible without authentication and implemented on all domains that can be reached by the public internet",
    "evidence": "",
    "legal": false
   }

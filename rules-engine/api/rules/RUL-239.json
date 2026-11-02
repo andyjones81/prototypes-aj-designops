@@ -36,7 +36,7 @@
  "actions": [
   {
    "title": "Have you documented the technical architecture for the end-to-end service and system?",
-   "description": "",
+   "description": "The team should produce and maintain appropriate technical architecture documentation.\nThat would normally include things such as:\nArchitecture diagram\nShowing the major technical components and how they connect.\nData-flow information\nShowing important data moving between components or systems.\nInterfaces and integrations\nDocumenting APIs, third-party systems, identity services and other dependencies.\nTrust/security boundaries\nShowing where the security context changes, for example between the public internet and an internal environment.\nHosting/infrastructure\nDocumenting where components are hosted and the major infrastructure involved.\nThe documentation should also be current. An architect",
    "evidence": "",
    "legal": false
   }

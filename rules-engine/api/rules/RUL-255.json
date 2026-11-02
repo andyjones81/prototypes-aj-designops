@@ -34,33 +34,12 @@
  "requirementDescription": "Have you recorded which security controls will be implemented and why?",
  "why": "Without documentation there is no reliable evidence of what protections are expected, what has been implemented, or what auditors and assurance teams should verify. Secure by Design encourages use of security control frameworks and taxonomies to record selected controls",
  "tasks": [
-  "Control name.",
-  "Purpose.",
-  "Associated risk.",
-  "Owner."
+  "Have you documented the selected controls?"
  ],
  "actions": [
   {
-   "title": "Control name.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Purpose.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Associated risk.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Owner.",
-   "description": "",
+   "title": "Have you documented the selected controls?",
+   "description": "The documentation should include:\n• Control name.\n• Purpose.\n• Associated risk.\n• Owner.\n• Implementation status.\n• Relevant standards/framework references.",
    "evidence": "",
    "legal": false
   }

@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "All SaaS/Software MUST be registered in the CMDB to ensure a complete and auditable inventory of digital assets.",
-   "description": "",
+   "description": "If a team procures a SaaS product they should use the create a service offering form in Service Now to register the product in the CMDB",
    "evidence": "",
    "legal": false
   }

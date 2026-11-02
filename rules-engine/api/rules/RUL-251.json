@@ -31,33 +31,12 @@
  "requirementDescription": "Can you show how the security controls selected for your service relate to the security outcomes in the National Cyber Security Centre (NCSC) Cyber Assessment Framework?",
  "why": "The CAF provides a common, outcome-focused way of looking at cyber security and resilience.\nThe National Cyber Security Centre (NCSC) describes CAF as a systematic approach to assessing how cyber risks are being managed. Its high-level objectives and principles are expressed as security outcomes rather than a simple checklist of individual technical measures.",
  "tasks": [
-  "Take the service's agreed security controls set.",
-  "Map each relevant control to the corresponding CAF outcome/principle.",
-  "Identify any CAF areas with insufficient control coverage.",
-  "Address or explain gaps where appropriate."
+  "Does your security controls set map to the NCSC Cyber Assessment Framework (CAF)?"
  ],
  "actions": [
   {
-   "title": "Take the service's agreed security controls set.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Map each relevant control to the corresponding CAF outcome/principle.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Identify any CAF areas with insufficient control coverage.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Address or explain gaps where appropriate.",
-   "description": "",
+   "title": "Does your security controls set map to the NCSC Cyber Assessment Framework (CAF)?",
+   "description": "• Take the service's agreed security controls set.\n• Map each relevant control to the corresponding CAF outcome/principle.\n• Identify any CAF areas with insufficient control coverage.\n• Address or explain gaps where appropriate.\n• Maintain the mapping as the controls and service change.",
    "evidence": "",
    "legal": false
   }

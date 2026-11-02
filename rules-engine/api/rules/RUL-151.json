@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Dependency scanning (SCA) MUST be implemented in build pipelines to detect known vulnerabilities in third-party libraries, and critical vuln",
-   "description": "",
+   "description": "Add dependency scanning to the CI/CD pipeline. Define the vulnerability thresholds so the pipeline breaks when the threshold is overwhelmed and create a remediation process",
    "evidence": "",
    "legal": false
   }

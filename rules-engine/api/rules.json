@@ -37,33 +37,12 @@
    "requirementDescription": "- good practice\n- helps people understand impact what they are doing is having on another people\n- understand dependencies",
    "why": "- good practice\n- helps people understand impact what they are doing is having on another people\n- understand dependencies",
    "tasks": [
-    "impact assessment",
-    "understand technical and business process dependency",
-    "a conversation with Steve?",
-    "mapping things out"
+    "Understand the impact on the existing landscape (ORR item 1)"
    ],
    "actions": [
     {
-     "title": "impact assessment",
-     "description": "",
-     "evidence": "",
-     "legal": true
-    },
-    {
-     "title": "understand technical and business process dependency",
-     "description": "",
-     "evidence": "",
-     "legal": true
-    },
-    {
-     "title": "a conversation with Steve?",
-     "description": "",
-     "evidence": "",
-     "legal": true
-    },
-    {
-     "title": "mapping things out",
-     "description": "",
+     "title": "Understand the impact on the existing landscape (ORR item 1)",
+     "description": "• impact assessment\n• understand technical and business process dependency\n• a conversation with Steve?\n• mapping things out",
      "evidence": "",
      "legal": true
     }
@@ -114,26 +93,12 @@
    "requirementDescription": "So services are accessible",
    "why": "So services are accessible",
    "tasks": [
-    "book an accessibility audit",
-    "get a report",
-    "meet WCAG 2.2 AA guidelines"
+    "Meet accessibility standards (ORR item 27, 28, 29)"
    ],
    "actions": [
     {
-     "title": "book an accessibility audit",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "get a report",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "meet WCAG 2.2 AA guidelines",
-     "description": "",
+     "title": "Meet accessibility standards (ORR item 27, 28, 29)",
+     "description": "• book an accessibility audit\n• get a report\n• meet WCAG 2.2 AA guidelines",
      "evidence": "",
      "legal": false
     }
@@ -187,7 +152,7 @@
    "actions": [
     {
      "title": "Register your service on the Accessibility statement service (ORR 30)",
-     "description": "",
+     "description": "Get onboarded to the service by DesignOps",
      "evidence": "",
      "legal": true
     }
@@ -241,7 +206,7 @@
    "actions": [
     {
      "title": "Enagage with SROs/SOs of services in the existing landscape who may be affected by change (ORR 2)",
-     "description": "",
+     "description": "Conversations with relevant teams",
      "evidence": "",
      "legal": false
     }
@@ -295,7 +260,7 @@
    "actions": [
     {
      "title": "Check and document if you need additional software licenses or SSL certificates (ORR 3)",
-     "description": "",
+     "description": "Check if you need money for it",
      "evidence": "",
      "legal": false
     }
@@ -344,19 +309,12 @@
    "requirementDescription": "Ensure suppliers understand their roles and responsibilities, and being able to hold them to account",
    "why": "Ensure suppliers understand their roles and responsibilities, and being able to hold them to account",
    "tasks": [
-    "document expectations of supplier",
-    "create a Statement of Work"
+    "Agree commercial and contractual agreements. For example, Statements of Work"
    ],
    "actions": [
     {
-     "title": "document expectations of supplier",
-     "description": "",
-     "evidence": "",
-     "legal": true
-    },
-    {
-     "title": "create a Statement of Work",
-     "description": "",
+     "title": "Agree commercial and contractual agreements. For example, Statements of Work",
+     "description": "• document expectations of supplier\n• create a Statement of Work",
      "evidence": "",
      "legal": true
     }
@@ -405,26 +363,12 @@
    "requirementDescription": "- operational\n- security\n- good practice\n- people need to understand how the thing is built - to support it and build it",
    "why": "- operational\n- security\n- good practice\n- people need to understand how the thing is built - to support it and build it",
    "tasks": [
-    "managed supplier - tend to give HLD",
-    "build in DfE - expect more LLD",
-    "follow the technical DfE standards"
+    "Document High Level Design (HLD) and Low Level Design (LLD). Factor DfE standards into technical design (ORR 5 and ORR 6)"
    ],
    "actions": [
     {
-     "title": "managed supplier - tend to give HLD",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "build in DfE - expect more LLD",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "follow the technical DfE standards",
-     "description": "",
+     "title": "Document High Level Design (HLD) and Low Level Design (LLD). Factor DfE standards into technical design (ORR 5 and ORR 6)",
+     "description": "Depends on nature of service for the type and level of detail included.\n• managed supplier - tend to give HLD\n• build in DfE - expect more LLD\n• follow the technical DfE standards",
      "evidence": "",
      "legal": false
     }
@@ -635,26 +579,12 @@
    "requirementDescription": "- ensures re-use\n- avoids duplication",
    "why": "- ensures re-use\n- avoids duplication",
    "tasks": [
-    "contact Find and use an API",
-    "try to host API through FuAPI",
-    "if not get it on FuAPI register"
+    "If you have developed an API, contact Find and use an API (FaUAPI) (ORR 10)"
    ],
    "actions": [
     {
-     "title": "contact Find and use an API",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "try to host API through FuAPI",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "if not get it on FuAPI register",
-     "description": "",
+     "title": "If you have developed an API, contact Find and use an API (FaUAPI) (ORR 10)",
+     "description": "• contact Find and use an API\n• try to host API through FuAPI\n• if not get it on FuAPI register",
      "evidence": "",
      "legal": false
     }
@@ -703,19 +633,12 @@
    "requirementDescription": "- security\n- operational\n- good practice",
    "why": "- security\n- operational\n- good practice",
    "tasks": [
-    "SOM will include what needs to happen",
-    "although, team can do it in a different format"
+    "Document or update documentation for the overview of your service (like a runbook, Service Operating Manual, or equivalent) (ORR 11) (could "
    ],
    "actions": [
     {
-     "title": "SOM will include what needs to happen",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "although, team can do it in a different format",
-     "description": "",
+     "title": "Document or update documentation for the overview of your service (like a runbook, Service Operating Manual, or equivalent) (ORR 11) (could ",
+     "description": "• SOM will include what needs to happen\n• although, team can do it in a different format",
      "evidence": "",
      "legal": false
     }
@@ -766,19 +689,12 @@
    "requirementDescription": "CMDB is single source of truth for all DfE services have built, managed or responsible for. Without it, other operational and assurance processes would not work.",
    "why": "CMDB is single source of truth for all DfE services have built, managed or responsible for. Without it, other operational and assurance processes would not work.",
    "tasks": [
-    "create a service offering in CMDB (ServiceNow)",
-    "ask to create a relationship link on CMDB with any upstream and downstream dependencies"
+    "Create a service offering in CMDB (ServiceNow) (ORR 12)"
    ],
    "actions": [
     {
-     "title": "create a service offering in CMDB (ServiceNow)",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "ask to create a relationship link on CMDB with any upstream and downstream dependencies",
-     "description": "",
+     "title": "Create a service offering in CMDB (ServiceNow) (ORR 12)",
+     "description": "• create a service offering in CMDB (ServiceNow)\n• ask to create a relationship link on CMDB with any upstream and downstream dependencies",
      "evidence": "",
      "legal": false
     }
@@ -886,7 +802,7 @@
    "actions": [
     {
      "title": "Book a discovery peer review (ORR 14)",
-     "description": "",
+     "description": "Book a discovery peer review",
      "evidence": "",
      "legal": false
     }
@@ -942,7 +858,7 @@
    "actions": [
     {
      "title": "Book an alpha service assessment (ORR 14)",
-     "description": "",
+     "description": "Book a service assessment",
      "evidence": "",
      "legal": false
     }
@@ -998,7 +914,7 @@
    "actions": [
     {
      "title": "Book a private beta service assessment (ORR 14)",
-     "description": "",
+     "description": "Book a service assessment",
      "evidence": "",
      "legal": false
     }
@@ -1054,7 +970,7 @@
    "actions": [
     {
      "title": "Book a public beta service assessment (ORR 14)",
-     "description": "",
+     "description": "Book a service assessment",
      "evidence": "",
      "legal": false
     }
@@ -1110,7 +1026,7 @@
    "actions": [
     {
      "title": "Book a live service assessment (ORR 14)",
-     "description": "",
+     "description": "Book a service assessment",
      "evidence": "",
      "legal": false
     }
@@ -1276,7 +1192,7 @@
    "actions": [
     {
      "title": "Consider identity and access management for your service (ORR 16)",
-     "description": "",
+     "description": "When exploring (disco and alpha) user journeys, think about whether you will need users to log-in or create an account (authentication).\nIf so, consider in what capacity users will be interacting with your product or service (as a citizen, on behalf of an organisation, on behalf of the DfE, or a combination)\nWhen building (beta), engage with Dominic Harley if you are unsure which is the right option for your service and users. Or, if you know what solution fits your service best, engage directly with the onboarding team",
      "evidence": "",
      "legal": false
     }
@@ -1332,7 +1248,7 @@
    "actions": [
     {
      "title": "Follow the supplier assurance process (ORR 17)",
-     "description": "",
+     "description": "Supplier assurance team will ask supplier questions",
      "evidence": "",
      "legal": false
     }
@@ -1435,12 +1351,12 @@
    "requirementDescription": "To ensure appropriate security assurance undertaken for your service",
    "why": "To ensure appropriate security assurance undertaken for your service",
    "tasks": [
-    "complete a Service engagement form"
+    "Complete a service engagement form to register your service with Information Security (ORR 19)"
    ],
    "actions": [
     {
-     "title": "complete a Service engagement form",
-     "description": "",
+     "title": "Complete a service engagement form to register your service with Information Security (ORR 19)",
+     "description": "• complete a Service engagement form",
      "evidence": "",
      "legal": false
     }
@@ -1548,7 +1464,7 @@
    "actions": [
     {
      "title": "Check your security assurance pathway classification (ORR 20)",
-     "description": "",
+     "description": "This is the output from completing a service engagement form.",
      "evidence": "",
      "legal": false
     }
@@ -1705,12 +1621,12 @@
    "requirementDescription": "To ensure that their systems are safe and security",
    "why": "To ensure that their systems are safe and security",
    "tasks": [
-    "start a Departmental Security Assurance model process"
+    "Start DSAM process (not ORR but added as result of ORR 22)"
    ],
    "actions": [
     {
-     "title": "start a Departmental Security Assurance model process",
-     "description": "",
+     "title": "Start DSAM process (not ORR but added as result of ORR 22)",
+     "description": "• start a Departmental Security Assurance model process",
      "evidence": "",
      "legal": false
     }
@@ -1759,12 +1675,12 @@
    "requirementDescription": "Keep systems safe and secure",
    "why": "Keep systems safe and secure",
    "tasks": [
-    "output of registering security"
+    "ReceIve security assurance and address risks (that are above DfE's risk appetite) (ORR 23) (Links to ORR21)"
    ],
    "actions": [
     {
-     "title": "output of registering security",
-     "description": "",
+     "title": "ReceIve security assurance and address risks (that are above DfE's risk appetite) (ORR 23) (Links to ORR21)",
+     "description": "• output of registering security",
      "evidence": "",
      "legal": false
     }
@@ -1828,7 +1744,7 @@
    "actions": [
     {
      "title": "Complete a Data Privacy Impact Assessment (DPIA) screener (ORR 24)",
-     "description": "",
+     "description": "DPIA team will give you a list of actions",
      "evidence": "",
      "legal": true
     }
@@ -2210,7 +2126,7 @@
    "actions": [
     {
      "title": "Train support team on tools required (ORR 35 linked with 34 - merge?)",
-     "description": "",
+     "description": "Where you have a team providing 1st or 2nd line support - ensuring they have necessary training",
      "evidence": "",
      "legal": false
     }
@@ -2264,7 +2180,7 @@
    "actions": [
     {
      "title": "Document a release management process (ORR 36)",
-     "description": "",
+     "description": "When you make continual release changes (e.g. bug fixes, improvements to service) \n\nThere may be downtime\n\nHow are you going to deploy the releases, who will you communicate with to let them know that's happening",
      "evidence": "",
      "legal": false
     }
@@ -2318,7 +2234,7 @@
    "actions": [
     {
      "title": "Confirm who is responsible for internal and external comms (ORR 37)",
-     "description": "",
+     "description": "In context of new service going live, how are you communcating with end users and stakeholders during dleivery",
      "evidence": "",
      "legal": false
     }
@@ -2375,26 +2291,12 @@
    "requirementDescription": "Complete a checklist of activities to consider when building a service",
    "why": "It's an ITIL* process which other organisations use. It started in 2016 and has accumulated over time. \n\nIt is seen as something that will help people deliver good services. Parts of the ORR are also 'must haves', like ORR item 29 on meeting WCAG 2.2 AA guidelines. \n\n*ITIL is a widely used framework of best practices for IT Service Management.",
    "tasks": [
-    "Team finds out about Steve/ORR and engages with Steve (this varies but typically in alpha)",
-    "Steve guides people through the ORR, he goes through it line by line to talk about what people need to do",
-    "Team fills out ORR and sends it to Steve"
+    "Complete 'Operational Readiness Review' (ORR)"
    ],
    "actions": [
     {
-     "title": "Team finds out about Steve/ORR and engages with Steve (this varies but typically in alpha)",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Steve guides people through the ORR, he goes through it line by line to talk about what people need to do",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Team fills out ORR and sends it to Steve",
-     "description": "",
+     "title": "Complete 'Operational Readiness Review' (ORR)",
+     "description": "• Team finds out about Steve/ORR and engages with Steve (this varies but typically in alpha)\n• Steve guides people through the ORR, he goes through it line by line to talk about what people need to do\n• Team fills out ORR and sends it to Steve",
      "evidence": "",
      "legal": false
     }
@@ -2451,33 +2353,12 @@
    "requirementDescription": "A tool to declare compliance to DfE standards and policies on a yearly basis.",
    "why": "This came out of audit in April 2023 which found DfE doesn't have a mechanism to view the compliance landscape of their services and for teams to declare compliance. SHCA aims to do this. The standards in it are based on things established in the Standards Forum.",
    "tasks": [
-    "Once a service gets a service offering, it will get pulled into SHCA",
-    "Steve looks at what has been registered on CMDB in the last 7 days",
-    "Steve chases people to complete it (if they haven't already)",
-    "Delivery team goes on SHCA intranet page to find link and guidance"
+    "Complete or update 'Service Health Check App' (SHCA)"
    ],
    "actions": [
     {
-     "title": "Once a service gets a service offering, it will get pulled into SHCA",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Steve looks at what has been registered on CMDB in the last 7 days",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Steve chases people to complete it (if they haven't already)",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Delivery team goes on SHCA intranet page to find link and guidance",
-     "description": "",
+     "title": "Complete or update 'Service Health Check App' (SHCA)",
+     "description": "• Once a service gets a service offering, it will get pulled into SHCA\n• Steve looks at what has been registered on CMDB in the last 7 days\n• Steve chases people to complete it (if they haven't already)\n• Delivery team goes on SHCA intranet page to find link and guidance\n• Delivery team reports on whether they are meeting the conditions against their service(s) and, if not, what activity is required to achieve each standard\n• Steve is able to check compliance against each standard for a service\n• Delivery team is notified yearly to update their entry",
      "evidence": "",
      "legal": false
     }
@@ -2528,33 +2409,12 @@
    "requirementDescription": "Review of requests from across DfE for DDT time, knowledge and expertise, usually with a view to developing a solution to a problem, or augmenting an existing service.",
    "why": "Centralised way into DDT for people who don't have ways into DDT. Demand can signpost people to the right place.",
    "tasks": [
-    "a clear description of the problem and its impact",
-    "what kind of help they are seeking. For example, options appraisal or planning advice",
-    "timescales and confirmed funding",
-    "work already done. For example, research, options considered, guidance reviewed"
+    "Get help with DDT tasks and projects ('Demand' process)"
    ],
    "actions": [
     {
-     "title": "a clear description of the problem and its impact",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "what kind of help they are seeking. For example, options appraisal or planning advice",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "timescales and confirmed funding",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "work already done. For example, research, options considered, guidance reviewed",
-     "description": "",
+     "title": "Get help with DDT tasks and projects ('Demand' process)",
+     "description": "Teams complete the DDT request form.\nThey will need to provide:\n• a clear description of the problem and its impact\n• what kind of help they are seeking. For example, options appraisal or planning advice\n• timescales and confirmed funding\n• work already done. For example, research, options considered, guidance reviewed\nThe team will review the demand request and take it through the triage process if there is merit to it.",
      "evidence": "",
      "legal": false
     }
@@ -2598,7 +2458,7 @@
    "actions": [
     {
      "title": "Design and run board",
-     "description": "",
+     "description": "To check how a service is being designed and run. This helps track whether DfE services are being designed correctly.",
      "evidence": "",
      "legal": false
     }
@@ -2651,12 +2511,12 @@
    "requirementDescription": "To check how a service is being run. To evaluate risk.",
    "why": "",
    "tasks": [
-    "G6s/G7s with oversight of an area attend the board meeting."
+    "Delivery board"
    ],
    "actions": [
     {
-     "title": "G6s/G7s with oversight of an area attend the board meeting.",
-     "description": "",
+     "title": "Delivery board",
+     "description": "• G6s/G7s with oversight of an area attend the board meeting.",
      "evidence": "",
      "legal": false
     }
@@ -2710,7 +2570,7 @@
    "actions": [
     {
      "title": "The DfE security.txt file needs to be accessible from active DfE websites to ensure vulnerabilities can be quickly reported via the HMG-mand",
-     "description": "",
+     "description": "The file must be accessible without authentication and implemented on all domains that can be reached by the public internet",
      "evidence": "",
      "legal": false
     }
@@ -2754,7 +2614,7 @@
    "actions": [
     {
      "title": "GitHub Repositories must be tagged to clearly identify service, division and directorate.",
-     "description": "",
+     "description": "Repositories must be labelled with the service, division and directorate",
      "evidence": "",
      "legal": false
     }
@@ -2798,7 +2658,7 @@
    "actions": [
     {
      "title": "Must use GitHub for any new projects. Existing projects should have migration plans developed asap.",
-     "description": "",
+     "description": "All new project build using GitHub, all existing project have migration plans to move to GitHub asap",
      "evidence": "",
      "legal": false
     }
@@ -2842,7 +2702,7 @@
    "actions": [
     {
      "title": "Secrets (API keys, passwords, connection strings, certificates) MUST NOT be committed to Git repositories or baked into container images bec",
-     "description": "",
+     "description": "Application secrets should not be stored in Git repositories or container images",
      "evidence": "",
      "legal": false
     }
@@ -2886,7 +2746,7 @@
    "actions": [
     {
      "title": "Dependency scanning (SCA) MUST be implemented in build pipelines to detect known vulnerabilities in third-party libraries, and critical vuln",
-     "description": "",
+     "description": "Add dependency scanning to the CI/CD pipeline. Define the vulnerability thresholds so the pipeline breaks when the threshold is overwhelmed and create a remediation process",
      "evidence": "",
      "legal": false
     }
@@ -2932,7 +2792,7 @@
    "actions": [
     {
      "title": "Secret scanning MUST be enabled in the repository to ensure proactive detection and remediation of accidental secret exposure.",
-     "description": "",
+     "description": "Put automated detection in place so it is found and remediated before it can be abused.",
      "evidence": "",
      "legal": false
     }
@@ -2976,7 +2836,7 @@
    "actions": [
     {
      "title": "All infrastructure and digital services MUST be registered and identifiable, and all cloud resources MUST have Owner, CostCenter, and Env ta",
-     "description": "",
+     "description": "Resources shouldn't exist in the cloud that nobody owns, nobody pays for, and nobody is responsible for securing",
      "evidence": "",
      "legal": false
     }
@@ -3020,7 +2880,7 @@
    "actions": [
     {
      "title": "All infrastructure and cloud services MUST be securely configured to meet the CIS IG1 baseline/benchmark because this closes known security ",
-     "description": "",
+     "description": "Teams should build against the approved standard. Don't rely on vendor defaults. Configure every server, cloud resource, and platform according to recognised security standards (CIS IG1) and continuously check that those settings remain in place.",
      "evidence": "",
      "legal": false
     }
@@ -3064,7 +2924,7 @@
    "actions": [
     {
      "title": "All SaaS/Software MUST be registered in the CMDB to ensure a complete and auditable inventory of digital assets.",
-     "description": "",
+     "description": "If a team procures a SaaS product they should use the create a service offering form in Service Now to register the product in the CMDB",
      "evidence": "",
      "legal": false
     }
@@ -3108,7 +2968,7 @@
    "actions": [
     {
      "title": "All foundation systems MUST meet phase 1 mandated security controls by March 31st 2026 to ensure critical protection against common attacks.",
-     "description": "",
+     "description": "The organisation has identified a minimum set of essential security controls. Any critical foundational platform must have those controls in place by 31 March 2026, because those controls provide protection against the most common cyber attacks.",
      "evidence": "",
      "legal": false
     }
@@ -3152,7 +3012,7 @@
    "actions": [
     {
      "title": "All new services MUST comply with the 10 principles of Secure by Design to ensure security is built-in from the outset.",
-     "description": "",
+     "description": "Follow Secure by design principles and use the self assessment tracker to monitor progress",
      "evidence": "",
      "legal": false
     }
@@ -3196,7 +3056,7 @@
    "actions": [
     {
      "title": "All security tooling procurement MUST be agreed with CISD to ensure consistency, prevent duplication, and avoid unnecessary spend.",
-     "description": "",
+     "description": "Teams cannot independently buy, subscribe to, or implement security tools without first getting agreement from CISD.",
      "evidence": "",
      "legal": false
     }
@@ -3235,12 +3095,12 @@
    "requirementDescription": "If a system is exposed to the internet and is important enough to pose a security or business risk, it must be tested by security specialists at least once a year to identify vulnerabilities that automated scanning might miss.",
    "why": "Penetration testing provides assurance that real attackers cannot easily exploit the service.",
    "tasks": [
-    "Any externally accessible system that:\n- Handle sensitive or business‑critical data\n- Provide authentication or user accounts\n- Connect into"
+    "Any externally accessible system that: - Handle sensitive or business‑critical data - Provide authentication or user accounts - Connect into"
    ],
    "actions": [
     {
-     "title": "Any externally accessible system that:\n- Handle sensitive or business‑critical data\n- Provide authentication or user accounts\n- Connect into",
-     "description": "",
+     "title": "Any externally accessible system that: - Handle sensitive or business‑critical data - Provide authentication or user accounts - Connect into",
+     "description": "Penetration testing and IT Health Check",
      "evidence": "",
      "legal": false
     }
@@ -3296,7 +3156,7 @@
    "actions": [
     {
      "title": "All new services REQUIRE a Security Design Review to ensure security flaws are identified and fixed in the cheapest and easiest stage of the",
-     "description": "",
+     "description": "Security Design review",
      "evidence": "",
      "legal": false
     }
@@ -3340,7 +3200,7 @@
    "actions": [
     {
      "title": "GovAssure is mandatory if identified as in-scope to ensure compliance with a statutory obligation.",
-     "description": "",
+     "description": "If your system or service has been identified as being within the scope of GovAssure, then participating in the GovAssure process is not optional. It is a mandatory requirement because it supports a legal or government policy obligation.",
      "evidence": "",
      "legal": false
     }
@@ -3384,7 +3244,7 @@
    "actions": [
     {
      "title": "Third-party tools and integrations (including SaaS) MUST undergo a Vendor Security Assessment before they can be used to prevent breaches vi",
-     "description": "",
+     "description": "Before a team can use a new supplier, SaaS product, API, integration, or security tool, the supplier's security controls must be assessed and approved.",
      "evidence": "",
      "legal": false
     }
@@ -3428,7 +3288,7 @@
    "actions": [
     {
      "title": "Service Owners MUST own their risk, and risks above tolerance REQUIRE formal consultation with the CISO before acceptance to ensure senior l",
-     "description": "",
+     "description": "CISO needs to be consulted as a part of the decision making about the risk acceptance",
      "evidence": "",
      "legal": false
     }
@@ -3472,7 +3332,7 @@
    "actions": [
     {
      "title": "Services MUST undergo mandatory assurance thru DSAM to ensure critical risks are detected and managed effectively.",
-     "description": "",
+     "description": "Before a service can proceed through key stages of its lifecycle it must go through the DSAM assurance process so that significant risks are identified, assessed, and addressed.",
      "evidence": "",
      "legal": false
     }
@@ -3516,7 +3376,7 @@
    "actions": [
     {
      "title": "All systems MUST comply with the requirements stipulated in our Continuous Assurance platform to ensure a minimum baseline of security harde",
-     "description": "",
+     "description": "Every system must meet the security requirements and checks defined by the organisation's Continuous Assurance platform. The platform is used to continuously verify that systems meet a minimum security standard and remain securely configured over time",
      "evidence": "",
      "legal": false
     }
@@ -3560,7 +3420,7 @@
    "actions": [
     {
      "title": "Management interfaces (RDP, SSH, SMB, SQL) MUST NOT be exposed directly to the public internet because this is the fastest way to suffer a c",
-     "description": "",
+     "description": "Do not allow administrative access to systems directly from the internet. Management services such as RDP, SSH, SMB, and SQL should only be accessible through secure, controlled routes",
      "evidence": "",
      "legal": false
     }
@@ -3604,7 +3464,7 @@
    "actions": [
     {
      "title": "Public Web Applications MUST sit behind a Web Application Firewall (WAF) in Blocking Mode to stop common automated attacks.",
-     "description": "",
+     "description": "A Web Applicational Firewall must be implemented",
      "evidence": "",
      "legal": false
     }
@@ -3648,7 +3508,7 @@
    "actions": [
     {
      "title": "Production environments MUST NOT communicate with Non-Production environments (Segmentation) to prevent a test environment compromise from s",
-     "description": "",
+     "description": "Keep Production and Non-Production environments separate. If a development or test system is compromised, the attacker should not be able to use it as a stepping stone into live production services or data.",
      "evidence": "",
      "legal": false
     }
@@ -3692,7 +3552,7 @@
    "actions": [
     {
      "title": "\"Default Encryption\" policies MUST be enabled on all Storage Accounts/S3/Blob storage to ensure sensitive data is not accidentally stored wi",
-     "description": "",
+     "description": "All cloud storage services must have encryption enabled by default so that any data stored within them is automatically protected from unauthorised access.",
      "evidence": "",
      "legal": false
     }
@@ -3736,7 +3596,7 @@
    "actions": [
     {
      "title": "All data repositories (S3, Blob, SQL, SharePoint) MUST be classified to ensure effective data defence.",
-     "description": "",
+     "description": "Every database, storage account, SharePoint site, or data store must be labelled according to the sensitivity of the data it contains. This allows the organisation to apply the correct level of protection and ensures sensitive data receives stronger security controls than low-risk information.",
      "evidence": "",
      "legal": false
     }
@@ -3780,7 +3640,7 @@
    "actions": [
     {
      "title": "DLP controls MUST be implemented on email, collaboration tools, and corporate endpoints to prevent the unauthorized transmission of high-ris",
-     "description": "",
+     "description": "Implement controls that can detect and stop sensitive information leaving the organisation through email, Teams/SharePoint/OneDrive, or corporate devices.",
      "evidence": "",
      "legal": false
     }
@@ -3824,7 +3684,7 @@
    "actions": [
     {
      "title": "Sensitive data MUST be encrypted At Rest (using managed keys) and In Transit (using TLS 1.2+) to ensure data is protected even if communicat",
-     "description": "",
+     "description": "Sensitive data must be encrypted whenever it is stored and whenever it is transmitted. Use the platform's managed encryption capabilities and modern TLS (1.2 or higher) so that data remains protected if storage systems are compromised or network traffic is intercepted.",
      "evidence": "",
      "legal": false
     }
@@ -3868,7 +3728,7 @@
    "actions": [
     {
      "title": "Real PII MUST NEVER be used in Non-Prod/Test environments; synthetic or anonymised data MUST be used instead because anonymisation scripts a",
-     "description": "",
+     "description": "Test with fake data instead. If a test environment is compromised, no real individual should be affected.",
      "evidence": "",
      "legal": false
     }
@@ -3912,7 +3772,7 @@
    "actions": [
     {
      "title": "All cloud-hosted compute instances and corporate devices MUST run an approved EDR tool with 24/7 monitoring and alerting to the central SoC ",
-     "description": "",
+     "description": "All company devices and cloud servers must have approved security monitoring software installed and connected to the security operations team so cyber attacks can be detected and stopped as quickly as possible.",
      "evidence": "",
      "legal": false
     }
@@ -3962,7 +3822,7 @@
    "actions": [
     {
      "title": "\"Team\" passwords MUST be prohibited because they make accountability impossible and are easy to steal.",
-     "description": "",
+     "description": "People must not share passwords. Everyone should use their own account so actions can be traced to a specific individual and the risk of credential theft is reduced.",
      "evidence": "",
      "legal": false
     }
@@ -4006,7 +3866,7 @@
    "actions": [
     {
      "title": "All administrative and privileged access (Cloud Consoles, Prod DBs, CI/CD Admin) MUST be protected by MFA to prevent account takeover and ma",
-     "description": "",
+     "description": "If an account can administer systems, access sensitive production resources, or make significant changes, MFA must be enforced.",
      "evidence": "",
      "legal": false
     }
@@ -4050,7 +3910,7 @@
    "actions": [
     {
      "title": "\"Break-glass\" accounts MUST be disabled by default and alert immediately upon usage to prevent abuse and unauthorised use.",
-     "description": "",
+     "description": "Emergency administrator accounts should only be used as a last resort. They should not be active for normal work, and whenever they are used, the security team should be alerted immediately so any misuse can be detected and investigated.",
      "evidence": "",
      "legal": false
     }
@@ -4094,7 +3954,7 @@
    "actions": [
     {
      "title": "Standing admin rights MUST NOT exist; Just-in-Time (JIT) or Least Privilege scoping MUST be used to limit the potential damage an attacker c",
-     "description": "",
+     "description": "People should not walk around with permanent administrator privileges. Give the minimum permissions needed, and where elevated access is required, grant it temporarily and remove it automatically when the task is complete.",
      "evidence": "",
      "legal": false
     }
@@ -4138,7 +3998,7 @@
    "actions": [
     {
      "title": "Legacy, non-MFA compatible authentication protocols (e.g., POP3, IMAP, SMTP) MUST be explicitly disabled because they eliminate easy ways fo",
-     "description": "",
+     "description": "Turn off old sign-in methods that only use usernames and passwords, because they can allow attackers to access accounts without going through MFA. The organisation should actively block these protocols rather than simply hoping nobody uses them.",
      "evidence": "",
      "legal": false
     }
@@ -4182,7 +4042,7 @@
    "actions": [
     {
      "title": "Service-to-service communication MUST use managed identities or short-lived tokens (Machine Identity); hardcoded keys MUST NOT be used to pr",
-     "description": "",
+     "description": "Whenever systems authenticate to other systems, use managed identities or temporary tokens instead of passwords, API keys, or connection strings embedded in code",
      "evidence": "",
      "legal": false
     }
@@ -4226,7 +4086,7 @@
    "actions": [
     {
      "title": "Multi-Factor Authentication (MFA) MUST be mandatory for ALL externally accessible users without exception because it is the single best way ",
-     "description": "",
+     "description": "If a user can sign in to a system from outside the organisation, MFA must be enabled for that account.",
      "evidence": "",
      "legal": false
     }
@@ -4270,7 +4130,7 @@
    "actions": [
     {
      "title": "Shared Accounts MUST NOT be used; every action MUST be traceable to a specific named user or Service Principal to ensure accountability for ",
-     "description": "",
+     "description": "Don't use generic usernames that multiple people share. Every human should have their own account, and every application should have its own service identity",
      "evidence": "",
      "legal": false
     }
@@ -4314,7 +4174,7 @@
    "actions": [
     {
      "title": "Single Sign-On (SSO) MUST be used where possible to reduce password fatigue and simplify the adoption of MFA.",
-     "description": "",
+     "description": "Wherever possible, applications should use the organisation's central identity provider (such as Microsoft Entra ID) rather than separate usernames and passwords",
      "evidence": "",
      "legal": false
     }
@@ -4358,7 +4218,7 @@
    "actions": [
     {
      "title": "All Identity logs (Sign-ins, Failures), Cloud Audit Trails (config changes), and Application Error logs MUST go to the Central SIEM to ensur",
-     "description": "",
+     "description": "All sign-in logs, cloud configuration change logs, and application logs must be sent to SIEM",
      "evidence": "",
      "legal": false
     }
@@ -4402,7 +4262,7 @@
    "actions": [
     {
      "title": "Services MUST have an out-of-hours on-call contact for critical service incident escalation to ensure immediate action can be taken during h",
-     "description": "",
+     "description": "Every service must have a person or team that can be contacted outside normal working hours so that serious incidents can be responded to immediately rather than waiting until the next working day.",
      "evidence": "",
      "legal": false
     }
@@ -4446,7 +4306,7 @@
    "actions": [
     {
      "title": "Log Retention MUST be 90 Days Hot / 1 Year Cold (managed centrally) to ensure sufficient evidence is available for all security incident inv",
-     "description": "",
+     "description": "Keep logs readily searchable for at least 90 days and retain them in archive form for at least 1 year.",
      "evidence": "",
      "legal": false
     }
@@ -4490,7 +4350,7 @@
    "actions": [
     {
      "title": "Physical or logical separation of admin privileges is REQUIRED to prevent a simple phishing email from compromising everything.",
-     "description": "",
+     "description": "Administrators should use separate accounts (and sometimes separate devices) for privileged activities.",
      "evidence": "",
      "legal": false
     }
@@ -4534,7 +4394,7 @@
    "actions": [
     {
      "title": "Administrative work is ONLY permitted on Managed, Encrypted, EDR-protected devices to ensure the highest level of security for high-privileg",
-     "description": "",
+     "description": "If you're carrying out administrative or privileged activities, you must use a secure corporate-managed device that is encrypted and monitored by EDR.",
      "evidence": "",
      "legal": false
     }
@@ -4578,7 +4438,7 @@
    "actions": [
     {
      "title": "Any suspected breach, lost device, or accidental data exposure MUST be reported to CISD immediately to ensure a small incident does not beco",
-     "description": "",
+     "description": "If something security-related happens, or you think it might have happened, tell CISD immediately.",
      "evidence": "",
      "legal": false
     }
@@ -4622,7 +4482,7 @@
    "actions": [
     {
      "title": "All staff MUST complete Security Awareness training annually because staff are the best defence against human error.",
-     "description": "",
+     "description": "Everyone must complete cyber security awareness training every year so they can recognise threats, handle information safely, and help prevent incidents caused by mistakes or social engineering attacks.",
      "evidence": "",
      "legal": false
     }
@@ -4666,7 +4526,7 @@
    "actions": [
     {
      "title": "All services MUST have local incident response plans aligned to the CISD standard to ensure consistency in handling and escalating incidents",
-     "description": "",
+     "description": "Every service needs a documented playbook for responding to incidents, and it must follow the organisation's CISD incident management approach so that security incidents are handled quickly, consistently, and with the right escalation route",
      "evidence": "",
      "legal": false
     }
@@ -4710,7 +4570,7 @@
    "actions": [
     {
      "title": "All stateful data MUST be backed up to a separate region/location (Immutable backups preferred) to ensure all systems and data can be recove",
-     "description": "",
+     "description": "Any important data must be backed up and stored separately from production systems. Ideally, the backups should be immutable so attackers cannot delete them.",
      "evidence": "",
      "legal": false
     }
@@ -4798,7 +4658,7 @@
    "actions": [
     {
      "title": "Restoration capability MUST be tested/proved annually (Drills) because a backup that is never tested is not a backup.",
-     "description": "",
+     "description": "Don't just create backups and assume they're fine. At least once a year, prove that you can successfully restore systems and data so that, during a real incident, recovery is reliable and predictable.",
      "evidence": "",
      "legal": false
     }
@@ -4842,7 +4702,7 @@
    "actions": [
     {
      "title": "Incident response plans SHOULD be tested on an annual basis to ensure people are familiar with the process under pressure.",
-     "description": "",
+     "description": "Don't wait for a real cyber incident to discover whether your response process works. Practise it at least annually so that the people involved know their roles and can respond confidently when under pressure.",
      "evidence": "",
      "legal": false
     }
@@ -4886,7 +4746,7 @@
    "actions": [
     {
      "title": "Base container images MUST be pulled from a trusted internal registry and MUST be refreshed/patched at least monthly to prevent systems from",
-     "description": "",
+     "description": "If you're deploying containers, use approved base images from the organisation's trusted registry and update those images regularly.",
      "evidence": "",
      "legal": false
     }
@@ -4930,7 +4790,7 @@
    "actions": [
     {
      "title": "Operating Systems and runtimes MUST be patched regularly, with Critical patches = 14 Days and High = 30 Days SLA, to ensure known flaws are ",
-     "description": "",
+     "description": "Keep operating systems and software platforms up to date. Critical security vulnerabilities must be fixed within 14 days and High vulnerabilities within 30 days so attackers can't exploit known weaknesses that already have a fix available.",
      "evidence": "",
      "legal": false
     }
@@ -4974,7 +4834,7 @@
    "actions": [
     {
      "title": "The use of End-of-Life software is PROHIBITED because it contains unpatchable flaws that are easy for hackers to compromise.",
-     "description": "",
+     "description": "Upgrade the software and ensure there is funding available",
      "evidence": "",
      "legal": false
     }
@@ -5030,33 +4890,12 @@
    "requirementDescription": "Have you spoken to the people who are responsible for security and technology to get their input while creating the business case?",
    "why": "Project teams often do not have specialist security expertise. Security stakeholders can identify risks, obligations, costs, and requirements that might otherwise be missed. The guidance specifically states that the SRO, service owner, business analyst, CTO, CISO and technical security assurance teams should contribute to the business case",
    "tasks": [
-    "Discussions with Security, Cyber, Architecture or Assurance teams.",
-    "Review meetings.",
-    "Feedback incorporated into the business case.",
-    "Approval or endorsement from appropriate security representatives."
+    "Have you consulted relevant security stakeholders when developing your business case?"
    ],
    "actions": [
     {
-     "title": "Discussions with Security, Cyber, Architecture or Assurance teams.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Review meetings.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Feedback incorporated into the business case.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Approval or endorsement from appropriate security representatives.",
-     "description": "",
+     "title": "Have you consulted relevant security stakeholders when developing your business case?",
+     "description": "Evidence should show that relevant security stakeholders were engaged, for example:\n• Discussions with Security, Cyber, Architecture or Assurance teams.\n• Review meetings.\n• Feedback incorporated into the business case.\n• Approval or endorsement from appropriate security representatives.",
      "evidence": "",
      "legal": false
     }
@@ -5112,33 +4951,12 @@
    "requirementDescription": "Does the business case clearly explain any security requirements, risks, controls, obligations and costs associated with the proposal?",
    "why": "Security affects scope, delivery time, resources, funding and user trust. If these considerations are not identified early, projects can be delayed, become more expensive, or introduce unacceptable risks. The guidance states that security should be included throughout the business case so that the true costs and effort are understood from the outset",
    "tasks": [
-    "Security obligations (legal, regulatory, policy).",
-    "Threats and risks.",
-    "Security controls.",
-    "Resource requirements."
+    "Does the business case include cyber security considerations?"
    ],
    "actions": [
     {
-     "title": "Security obligations (legal, regulatory, policy).",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Threats and risks.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Security controls.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Resource requirements.",
-     "description": "",
+     "title": "Does the business case include cyber security considerations?",
+     "description": "The business case should include security information such as:\n• Security obligations (legal, regulatory, policy).\n• Threats and risks.\n• Security controls.\n• Resource requirements.\n• Security governance arrangements.\n• Security-related costs",
      "evidence": "",
      "legal": false
     }
@@ -5194,33 +5012,12 @@
    "requirementDescription": "When comparing options, have you assessed:\n- What security threats exist?\n- How much risk the organisation is willing to accept?\n- What security outcomes need to be achieved?\n- How resilient the service needs to be?\n- Whether these factors influence which option is the best choice?",
    "why": "A cheaper option is not necessarily the best option if it exposes the organisation to significant cyber risk. The economic case should consider security impacts when deciding which option delivers the greatest overall value. The guidance states that the economic case should include information about security threats and assess resilience against security attacks as part of the success criteria.",
    "tasks": [
-    "Key cyber threats.",
-    "Defined risk appetite or risk tolerance.",
-    "Security objectives.",
-    "Resilience requirements."
+    "Does the economic case include an analysis with the security threats, security risk tolerance, security objectives and cyber resilience as p"
    ],
    "actions": [
     {
-     "title": "Key cyber threats.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Defined risk appetite or risk tolerance.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Security objectives.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Resilience requirements.",
-     "description": "",
+     "title": "Does the economic case include an analysis with the security threats, security risk tolerance, security objectives and cyber resilience as p",
+     "description": "The economic case should show:\n• Key cyber threats.\n• Defined risk appetite or risk tolerance.\n• Security objectives.\n• Resilience requirements.\n• How security contributes to critical success factors.\n• How these considerations were used to evaluate options.",
      "evidence": "",
      "legal": false
     }
@@ -5276,33 +5073,12 @@
    "requirementDescription": "Have you considered how different levels of security investment affect costs, risks and benefits?",
    "why": "Security is not all-or-nothing. Different options may provide:\n- Basic security.\n- Enhanced security.\n- High-assurance security.\nEach level has different costs and benefits. The guidance states that making security integral to scope, delivery and implementation should be assessed as part of achieving value for money.",
    "tasks": [
-    "Security was included in option appraisals.",
-    "Different security levels were assessed where appropriate.",
-    "Costs of security controls were considered.",
-    "Costs of security incidents or failures were considered."
+    "Does the economic case consider varying levels of security when calculating value for money?"
    ],
    "actions": [
     {
-     "title": "Security was included in option appraisals.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Different security levels were assessed where appropriate.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Costs of security controls were considered.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Costs of security incidents or failures were considered.",
-     "description": "",
+     "title": "Does the economic case consider varying levels of security when calculating value for money?",
+     "description": "You should demonstrate:\n• Security was included in option appraisals.\n• Different security levels were assessed where appropriate.\n• Costs of security controls were considered.\n• Costs of security incidents or failures were considered.\n• The selected option provides an appropriate balance between cost and security",
      "evidence": "",
      "legal": false
     }
@@ -5358,33 +5134,12 @@
    "requirementDescription": "Have you explained who will oversee security, how security decisions will be made, and how you will check security is working throughout delivery?",
    "why": "Security cannot simply be designed and forgotten. There must be ongoing governance, monitoring and assurance to ensure controls continue to work and risks remain managed. The guidance states that the management case should define security roles and responsibilities, governance arrangements, risk management processes, change assessment processes and security assurance activities",
    "tasks": [
-    "Security governance structure.",
-    "Security roles and responsibilities.",
-    "Risk management processes.",
-    "Security assurance activities and reviews."
+    "Does the management case include details of the security governance and assurance approach?"
    ],
    "actions": [
     {
-     "title": "Security governance structure.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Security roles and responsibilities.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Risk management processes.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Security assurance activities and reviews.",
-     "description": "",
+     "title": "Does the management case include details of the security governance and assurance approach?",
+     "description": "The management case should include:\n• Security governance structure.\n• Security roles and responsibilities.\n• Risk management processes.\n• Security assurance activities and reviews.\n• Change control processes.\n• Testing and validation arrangements.\n• Monitoring and reporting mechanisms.",
      "evidence": "",
      "legal": false
     }
@@ -5437,33 +5192,12 @@
    "requirementDescription": "Have you documented who is needed to support security on the project, what they will do, and what skills they need?",
    "why": "Security activities do not happen automatically. Projects need suitably skilled people available at the right time. Without planning for security resources, key activities such as threat modelling, security architecture reviews, security testing and risk management may not happen. The guidance requires a comprehensive security resource plan covering the people involved throughout the project lifecycle.",
    "tasks": [
-    "Security roles required.",
-    "Key responsibilities.",
-    "Required skills and expertise.",
-    "When resources are needed."
+    "Does the project have a resource plan showing security roles and skills required to support the delivery of the service?"
    ],
    "actions": [
     {
-     "title": "Security roles required.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Key responsibilities.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Required skills and expertise.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "When resources are needed.",
-     "description": "",
+     "title": "Does the project have a resource plan showing security roles and skills required to support the delivery of the service?",
+     "description": "There should be a documented security resource plan showing:\n• Security roles required.\n• Key responsibilities.\n• Required skills and expertise.\n• When resources are needed.\n• Whether resources are internal, shared or externally contracted.\n• Estimated effort and costs",
      "evidence": "",
      "legal": false
     }
@@ -5516,33 +5250,12 @@
    "requirementDescription": "Do you know what security expertise is needed, and have you involved the people in your organisation who can provide it?",
    "why": "Many project teams do not contain all the specialist skills required for Secure by Design. The guidance specifically recommends consulting security professionals, security architects, CTOs, CISOs and other specialists to identify required skills and provide support",
    "tasks": [
-    "A list of required security skills.",
-    "Which activities need those skills.",
-    "Evidence of engagement with security teams.",
-    "Plans for training if skills are missing."
+    "Have you identified and captured the skills required to carry out security activities and engaged with your organisation's security team to "
    ],
    "actions": [
     {
-     "title": "A list of required security skills.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Which activities need those skills.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Evidence of engagement with security teams.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Plans for training if skills are missing.",
-     "description": "",
+     "title": "Have you identified and captured the skills required to carry out security activities and engaged with your organisation's security team to ",
+     "description": "You should be able to show:\n• A list of required security skills.\n• Which activities need those skills.\n• Evidence of engagement with security teams.\n• Plans for training if skills are missing.\n• Assigned individuals or teams for key security activities",
      "evidence": "",
      "legal": false
     }
@@ -5595,33 +5308,12 @@
    "requirementDescription": "Have you worked out what security tools, platforms and technical capabilities will be needed to build and operate the service securely?",
    "why": "Security depends on more than people. Projects often require specialist tools and infrastructure to support secure development, testing, monitoring and operations. The guidance requires teams to assess and document the technology resources needed.",
    "tasks": [
-    "Existing organisational security capabilities.",
-    "Additional tools required.",
-    "Development and testing environments.",
-    "Monitoring and detection capabilities."
+    "Have you identified and captured the required technology resources such as software development environments, tools and security capabilitie"
    ],
    "actions": [
     {
-     "title": "Existing organisational security capabilities.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Additional tools required.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Development and testing environments.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Monitoring and detection capabilities.",
-     "description": "",
+     "title": "Have you identified and captured the required technology resources such as software development environments, tools and security capabilitie",
+     "description": "The project should identify:\n• Existing organisational security capabilities.\n• Additional tools required.\n• Development and testing environments.\n• Monitoring and detection capabilities.\n• Identity and access management tooling.\n• Security testing tools",
      "evidence": "",
      "legal": false
     }
@@ -5674,33 +5366,12 @@
    "requirementDescription": "Before designing something new, did you check whether there is already a recognised secure design pattern that could be reused?",
    "why": "DfE does have approved architectures, security patterns and reference designs that have already been reviewed and assessed. Reusing these approaches reduces risk, improves consistency and avoids unnecessary design effort. The guidance encourages using existing organisational capabilities, policies, procedures and resources where possible",
    "tasks": [
-    "Reviewed relevant organisational standards.",
-    "Considered existing government patterns and frameworks.",
-    "Assessed whether approved architectures meet project needs.",
-    "Documented any decision to deviate from established patterns."
+    "Have you considered pre-approved or recommended architectural patterns available from your organisation or other government departments?"
    ],
    "actions": [
     {
-     "title": "Reviewed relevant organisational standards.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Considered existing government patterns and frameworks.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Assessed whether approved architectures meet project needs.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Documented any decision to deviate from established patterns.",
-     "description": "",
+     "title": "Have you considered pre-approved or recommended architectural patterns available from your organisation or other government departments?",
+     "description": "You should be able to demonstrate that you have:\n• Reviewed relevant organisational standards.\n• Considered existing government patterns and frameworks.\n• Assessed whether approved architectures meet project needs.\n• Documented any decision to deviate from established patterns.",
      "evidence": "",
      "legal": false
     }
@@ -5758,7 +5429,7 @@
    "actions": [
     {
      "title": "Have you assigned the Secure by Design responsibilities (for example, in a RACI matrix) and communicated them to the relevant parties?",
-     "description": "",
+     "description": "Responsibilities have been identified,",
      "evidence": "",
      "legal": false
     }
@@ -5816,7 +5487,7 @@
    "actions": [
     {
      "title": "Have you appointed a Senior Responsible Owner (SRO), service owner or equivalent, and informed the individual of their responsibilities?",
-     "description": "",
+     "description": "An accountable individual must be identified, and responsibilities must be clearly explained.",
      "evidence": "",
      "legal": false
     }
@@ -5872,33 +5543,12 @@
    "requirementDescription": "Have you built regular security checks and reviews into the way the project is delivered, rather than only checking security at the end?",
    "why": "Traditional projects often perform a single security review shortly before go-live. Secure by Design requires security to be continually assessed throughout the service lifecycle because threats, risks and designs change over time. Continuous assurance helps identify issues early and provides confidence that security remains effective.",
    "tasks": [
-    "Security reviews built into sprint cycles.",
-    "Security checkpoints within delivery governance.",
-    "Threat assessments being regularly reviewed.",
-    "Security testing occurring throughout development."
+    "Have you included continuous assurance processes in the service's project delivery workflow?"
    ],
    "actions": [
     {
-     "title": "Security reviews built into sprint cycles.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Security checkpoints within delivery governance.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Threat assessments being regularly reviewed.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Security testing occurring throughout development.",
-     "description": "",
+     "title": "Have you included continuous assurance processes in the service's project delivery workflow?",
+     "description": "Evidence might include:\n• Security reviews built into sprint cycles.\n• Security checkpoints within delivery governance.\n• Threat assessments being regularly reviewed.\n• Security testing occurring throughout development.\n• Regular risk reviews.\n• Assurance activities included in project plans.",
      "evidence": "",
      "legal": false
     }
@@ -5954,7 +5604,7 @@
    "actions": [
     {
      "title": "Have you used the organisation's risk appetite statements and applied them to the nature of the service to determine the security risk appet",
-     "description": "",
+     "description": "You should be able to show DfEs risk appetite was reviewed, the service specific implications were identified, a project level risk appetite statement was produced, and the statement was approved and shared",
      "evidence": "",
      "legal": false
     }
@@ -6010,7 +5660,7 @@
    "actions": [
     {
      "title": "Have you established a clear governance structure around risk management decision making?",
-     "description": "",
+     "description": "The governance model should explain, who owns risks, who approves risk acceptance, and how escalation works",
      "evidence": "",
      "legal": false
     }
@@ -6066,7 +5716,7 @@
    "actions": [
     {
      "title": "Have you considered the risk appetite of any organisations the service shares or exchanges data with?",
-     "description": "",
+     "description": "Consider data sharing arrangements, partner organisations expectations, and differences in risk appetite",
      "evidence": "",
      "legal": false
     }
@@ -6122,7 +5772,7 @@
    "actions": [
     {
      "title": "Have you considered whether the service is part of the Critical National Infrastructure (CNI) or fundamental to the organisation's output an",
-     "description": "",
+     "description": "You should assess Service Criticality, national impact and required resilience",
      "evidence": "",
      "legal": false
     }
@@ -6178,7 +5828,7 @@
    "actions": [
     {
      "title": "Have you considered the appropriate Cyber Assessment Framework (CAF) profile for all the components of the service?",
-     "description": "",
+     "description": "Assess each major service component, appropriate CAF expectations, traceability, provide evidence in CAF assessment, security architecture documents etc",
      "evidence": "",
      "legal": false
     }
@@ -6231,33 +5881,12 @@
    "requirementDescription": "Before deciding to use a cloud service, have you assessed the security risks it might introduce?\n- Infrastructure as a Service (IaaS)\n- Platform as a Service (PaaS)\n- Software as a Service (SaaS)",
    "why": "Cloud services can introduce risks relating to:\n- Data protection\n- Access control\n- Supplier security\n- Resilience and availability\n- Data location\n- Regulatory compliance\nSecure by Design requires organisations to perform security due diligence on third-party technology products before relying on them.",
    "tasks": [
-    "What information will be stored?",
-    "Who can access the environment?",
-    "Where is the data hosted?",
-    "What security certifications exist?"
+    "Have you reviewed the security risks of any cloud technology (such as IaaS, PaaS, SaaS) before using it?"
    ],
    "actions": [
     {
-     "title": "What information will be stored?",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Who can access the environment?",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Where is the data hosted?",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "What security certifications exist?",
-     "description": "",
+     "title": "Have you reviewed the security risks of any cloud technology (such as IaaS, PaaS, SaaS) before using it?",
+     "description": "You should assess:\n• What information will be stored?\n• Who can access the environment?\n• Where is the data hosted?\n• What security certifications exist?\n• What security controls are provided?\n• What risks remain?",
      "evidence": "",
      "legal": false
     }
@@ -6310,33 +5939,12 @@
    "requirementDescription": "Before appointing an external provider to deliver or operate services on your behalf, have you assessed the risks they introduce?",
    "why": "MSPs often receive significant access to:\n- Systems\n- Infrastructure\n- Data\n- Administrative accounts\nA security weakness within the MSP can become a security weakness in your service.\nSecure by Design requires security due diligence on third-party providers",
    "tasks": [
-    "Supplier security maturity",
-    "Access management controls",
-    "Incident response capabilities",
-    "Personnel vetting"
+    "Have you identified the security risks related to third-party Managed Service Providers (MSPs) prior to using them?"
    ],
    "actions": [
     {
-     "title": "Supplier security maturity",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Access management controls",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Incident response capabilities",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Personnel vetting",
-     "description": "",
+     "title": "Have you identified the security risks related to third-party Managed Service Providers (MSPs) prior to using them?",
+     "description": "You should assess:\n• Supplier security maturity\n• Access management controls\n• Incident response capabilities\n• Personnel vetting\n• Monitoring arrangements\n• Business continuity arrangements",
      "evidence": "",
      "legal": false
     }
@@ -6389,33 +5997,12 @@
    "requirementDescription": "Before using external development tools, frameworks, code repositories or software products, have you checked whether they introduce security risks?",
    "why": "Development tools can create risks such as:\n- Software supply-chain attacks\n- Vulnerable dependencies\n- Malicious code\n- Insecure build pipelines\n- Exposure of source code",
    "tasks": [
-    "Supplier reputation",
-    "Known vulnerabilities",
-    "Security updates process",
-    "Dependency risks"
+    "Have you assessed and managed the risks associated with any third-party development environments or software prior to committing to using th"
    ],
    "actions": [
     {
-     "title": "Supplier reputation",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Known vulnerabilities",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Security updates process",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Dependency risks",
-     "description": "",
+     "title": "Have you assessed and managed the risks associated with any third-party development environments or software prior to committing to using th",
+     "description": "You should assess:\n• Supplier reputation\n• Known vulnerabilities\n• Security updates process\n• Dependency risks\n• Access controls\n• Licence implications",
      "evidence": "",
      "legal": false
     }
@@ -6468,33 +6055,12 @@
    "requirementDescription": "Have you formally documented the risks introduced by third-party products and explained how those risks will be managed?",
    "why": "Decision makers need visibility of supplier risks before approving technology choices.\nThe report provides evidence that due diligence has been completed and allows risk owners to make informed decisions",
    "tasks": [
-    "Product description",
-    "Identified risks",
-    "Impact assessment",
-    "Risk ratings"
+    "Have you created a report that highlights any security risks associated with using third-party products, including recommendations on how to"
    ],
    "actions": [
     {
-     "title": "Product description",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Identified risks",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Impact assessment",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Risk ratings",
-     "description": "",
+     "title": "Have you created a report that highlights any security risks associated with using third-party products, including recommendations on how to",
+     "description": "The report should contain:\n• Product description\n• Identified risks\n• Impact assessment\n• Risk ratings\n• Proposed mitigations\n• Residual risks\n• Recommendations",
      "evidence": "",
      "legal": false
     }
@@ -6543,33 +6109,12 @@
    "requirementDescription": "Have you spoken to the people who understand legal, regulatory and security requirements to determine what rules your service must follow?\nThe guidance specifically recommends consulting legal, commercial and information management teams alongside security specialists",
    "why": "Different services have different obligations.\nFor example:\n- UK GDPR\n- Data Protection Act\n- PCI-DSS\n- Government Security Policies\n- Supplier contracts\nMissing a requirement can lead to non-compliance, fines or operational risk",
    "tasks": [
-    "Compliance workshops",
-    "Legal reviews",
-    "Security reviews",
-    "Governance meeting outputs"
+    "Have you discussed security obligations, including government policies, regulations, laws and contracts, for your service with your organisa"
    ],
    "actions": [
     {
-     "title": "Compliance workshops",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Legal reviews",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Security reviews",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Governance meeting outputs",
-     "description": "",
+     "title": "Have you discussed security obligations, including government policies, regulations, laws and contracts, for your service with your organisa",
+     "description": "Evidence could include:\n• Compliance workshops\n• Legal reviews\n• Security reviews\n• Governance meeting outputs",
      "evidence": "",
      "legal": false
     }
@@ -6623,7 +6168,7 @@
    "actions": [
     {
      "title": "Have you fed compliance requirements into risk management activities?",
-     "description": "",
+     "description": "You should be able to trace:\nRequirement → Risk → Control",
      "evidence": "",
      "legal": false
     }
@@ -6672,33 +6217,12 @@
    "requirementDescription": "If the system uses personal information, have you met all legal and security requirements for protecting it?",
    "why": "Personal information requires special protection under privacy and data protection laws",
    "tasks": [
-    "Data minimisation applied",
-    "Appropriate security controls implemented",
-    "Retention arrangements defined",
-    "DPIA completed where required"
+    "Have you met obligations in relation to personally identifiable information (PII) being processed, stored or transmitted by the service?"
    ],
    "actions": [
     {
-     "title": "Data minimisation applied",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Appropriate security controls implemented",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Retention arrangements defined",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "DPIA completed where required",
-     "description": "",
+     "title": "Have you met obligations in relation to personally identifiable information (PII) being processed, stored or transmitted by the service?",
+     "description": "Typically:\n• Data minimisation applied\n• Appropriate security controls implemented\n• Retention arrangements defined\n• DPIA completed where required",
      "evidence": "",
      "legal": false
     }
@@ -6747,33 +6271,12 @@
    "requirementDescription": "If the service handles financial data, have you complied with the relevant security and regulatory requirements?",
    "why": "Financial data is often highly attractive to attackers and subject to additional controls.",
    "tasks": [
-    "PCI-DSS compliance where applicable",
-    "Encryption",
-    "Strong access control",
-    "Secure transmission"
+    "Have you met obligations in relation to financial information (such as credit card details) being processed, stored or transmitted by the se"
    ],
    "actions": [
     {
-     "title": "PCI-DSS compliance where applicable",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Encryption",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Strong access control",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Secure transmission",
-     "description": "",
+     "title": "Have you met obligations in relation to financial information (such as credit card details) being processed, stored or transmitted by the se",
+     "description": "Examples:\n• PCI-DSS compliance where applicable\n• Encryption\n• Strong access control\n• Secure transmission",
      "evidence": "",
      "legal": false
     }
@@ -6822,33 +6325,12 @@
    "requirementDescription": "If the system handles intellectual property, have you implemented the protections required to safeguard it?",
    "why": "Loss of intellectual property can:\n- Harm the organisation\n- Create legal liabilities\n- Damage commercial value",
    "tasks": [
-    "Ownership arrangements",
-    "Licensing restrictions",
-    "Contractual obligations",
-    "Security classification requirements"
+    "Have you met obligations in relation to intellectual property (IP) data being processed, stored or transmitted by the service?"
    ],
    "actions": [
     {
-     "title": "Ownership arrangements",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Licensing restrictions",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Contractual obligations",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Security classification requirements",
-     "description": "",
+     "title": "Have you met obligations in relation to intellectual property (IP) data being processed, stored or transmitted by the service?",
+     "description": "You should understand:\n• Ownership arrangements\n• Licensing restrictions\n• Contractual obligations\n• Security classification requirements",
      "evidence": "",
      "legal": false
     }
@@ -6897,33 +6379,12 @@
    "requirementDescription": "Have you created a list of all the rules, laws, regulations and contractual commitments that the service must comply with?",
    "why": "Teams cannot comply with requirements they have not identified.\nThe obligations profile should be documented and shared across the project.",
    "tasks": [
-    "Applicable laws",
-    "Regulations",
-    "Government policies",
-    "Standards"
+    "Have you documented the legal, regulatory and contractual requirements that must be met by the service?"
    ],
    "actions": [
     {
-     "title": "Applicable laws",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Regulations",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Government policies",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Standards",
-     "description": "",
+     "title": "Have you documented the legal, regulatory and contractual requirements that must be met by the service?",
+     "description": "You should maintain a record showing:\n• Applicable laws\n• Regulations\n• Government policies\n• Standards\n• Contract obligations",
      "evidence": "",
      "legal": false
     }
@@ -6972,33 +6433,12 @@
    "requirementDescription": "Before sharing information with another organisation, have you checked they meet the required security standards?",
    "why": "Your security obligations do not disappear when data leaves your organisation.\nThe receiving organisation must also be capable of protecting the information appropriately.",
    "tasks": [
-    "Security controls",
-    "Compliance status",
-    "Relevant certifications",
-    "Data handling arrangements"
+    "Have you ensured that other organisations you plan to share data with as part of the service delivery are compliant with the relevant cyber "
    ],
    "actions": [
     {
-     "title": "Security controls",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Compliance status",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Relevant certifications",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Data handling arrangements",
-     "description": "",
+     "title": "Have you ensured that other organisations you plan to share data with as part of the service delivery are compliant with the relevant cyber ",
+     "description": "You should assess:\n• Security controls\n• Compliance status\n• Relevant certifications\n• Data handling arrangements",
      "evidence": "",
      "legal": false
     }
@@ -7047,33 +6487,12 @@
    "requirementDescription": "Have you formally agreed how shared data will be protected, used and managed?",
    "why": "Data sharing creates accountability and legal obligations that need to be documented.",
    "tasks": [
-    "Purpose of sharing",
-    "Types of data",
-    "Security controls",
-    "Retention arrangements"
+    "Have you defined data sharing agreements with any organisations you are sharing data with?"
    ],
    "actions": [
     {
-     "title": "Purpose of sharing",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Types of data",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Security controls",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Retention arrangements",
-     "description": "",
+     "title": "Have you defined data sharing agreements with any organisations you are sharing data with?",
+     "description": "A data sharing agreement should normally define:\n• Purpose of sharing\n• Types of data\n• Security controls\n• Retention arrangements\n• Incident reporting\n• Responsibilities",
      "evidence": "",
      "legal": false
     }
@@ -7122,33 +6541,12 @@
    "requirementDescription": "If information leaves the UK or EEA, have you checked what legal and security requirements apply?",
    "why": "Cross-border data movement may create additional legal and privacy obligations.\nSecure by Design requires teams to understand applicable obligations based on the nature of the service and its data.",
    "tasks": [
-    "Where data is stored",
-    "International transfer mechanisms",
-    "Legal restrictions",
-    "Supplier arrangements"
+    "If data will be processed, stored or transmitted outside the UK or the European Economic Area (EEA), have you considered the relevant securi"
    ],
    "actions": [
     {
-     "title": "Where data is stored",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "International transfer mechanisms",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Legal restrictions",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Supplier arrangements",
-     "description": "",
+     "title": "If data will be processed, stored or transmitted outside the UK or the European Economic Area (EEA), have you considered the relevant securi",
+     "description": "You should assess:\n• Where data is stored\n• International transfer mechanisms\n• Legal restrictions\n• Supplier arrangements",
      "evidence": "",
      "legal": false
     }
@@ -7202,33 +6600,12 @@
    "requirementDescription": "Have you formally assessed how the service affects people's privacy and identified actions needed to protect personal data?",
    "why": "A DPIA helps identify privacy risks before a service is implemented and ensures appropriate safeguards are designed into the service from the outset.",
    "tasks": [
-    "Describe the processing",
-    "Identify privacy risks",
-    "Assess impacts on individuals",
-    "Define mitigations"
+    "Have you completed a Data Protection and Impact Assessment (DPIA)?"
    ],
    "actions": [
     {
-     "title": "Describe the processing",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Identify privacy risks",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Assess impacts on individuals",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Define mitigations",
-     "description": "",
+     "title": "Have you completed a Data Protection and Impact Assessment (DPIA)?",
+     "description": "A DPIA should:\n• Describe the processing\n• Identify privacy risks\n• Assess impacts on individuals\n• Define mitigations\n• Be reviewed by appropriate specialists",
      "evidence": "",
      "legal": false
     }
@@ -7277,33 +6654,12 @@
    "requirementDescription": "When choosing security controls, have you considered what the service is trying to achieve for the organisation?",
    "why": "Security should help the organisation achieve its objectives safely, not get in the way.\nIf security decisions are made without understanding the business purpose, you can end up with:\n- Unnecessary controls\n- Increased costs\n- Delays to delivery\n- Reduced business benefits",
    "tasks": [
-    "Business objectives were identified.",
-    "Security requirements were linked to those objectives.",
-    "Security decisions considered business impact.",
-    "Any trade-offs between security and business needs were documented."
+    "Have you taken business objectives into account when making security decisions?"
    ],
    "actions": [
     {
-     "title": "Business objectives were identified.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Security requirements were linked to those objectives.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Security decisions considered business impact.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Any trade-offs between security and business needs were documented.",
-     "description": "",
+     "title": "Have you taken business objectives into account when making security decisions?",
+     "description": "You should be able to show that:\n• Business objectives were identified.\n• Security requirements were linked to those objectives.\n• Security decisions considered business impact.\n• Any trade-offs between security and business needs were documented.",
      "evidence": "",
      "legal": false
     }
@@ -7352,33 +6708,12 @@
    "requirementDescription": "Have you considered how real users will interact with security controls and whether those controls are practical and usable?",
    "why": "Poorly designed security controls often lead users to:\n- Work around the controls\n- Circumvent processes\n- Make mistakes\n- Become frustrated",
    "tasks": [
-    "User research was considered.",
-    "Security requirements were balanced against usability.",
-    "User groups were identified.",
-    "Controls were designed around how users actually work."
+    "Have you taken user needs into account when making security decisions?"
    ],
    "actions": [
     {
-     "title": "User research was considered.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Security requirements were balanced against usability.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "User groups were identified.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Controls were designed around how users actually work.",
-     "description": "",
+     "title": "Have you taken user needs into account when making security decisions?",
+     "description": "You should be able to demonstrate that:\n• User research was considered.\n• Security requirements were balanced against usability.\n• User groups were identified.\n• Controls were designed around how users actually work.\n• User needs continue to be reviewed as the service evolves.",
      "evidence": "",
      "legal": false
     }
@@ -7431,33 +6766,12 @@
    "requirementDescription": "Have you made a list of everything valuable that the service uses, stores, manages or depends on?",
    "why": "You cannot protect assets if you do not know they exist.\nThe guidance states that documenting assets helps organisations:\n- Understand what needs protecting.\n- Manage risks and vulnerabilities.\n- Identify accountability.\n- Assess the impact of loss or compromise.",
    "tasks": [
-    "Customer data",
-    "Employee information",
-    "Financial records",
-    "Intellectual property"
+    "Have you identified and documented the business and technology information assets in scope of the service?"
    ],
    "actions": [
     {
-     "title": "Customer data",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Employee information",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Financial records",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Intellectual property",
-     "description": "",
+     "title": "Have you identified and documented the business and technology information assets in scope of the service?",
+     "description": "Create and maintain an inventory of assets in scope such as:\nBusiness assets\n• Customer data\n• Employee information\n• Financial records\n• Intellectual property\nTechnology assets\n• Applications\n• Servers\n• Databases\n• APIs\n• Networks\n• Cloud environments\nIt should also be reviewed and maintained as the service evolves",
      "evidence": "",
      "legal": false
     }
@@ -7510,33 +6824,12 @@
    "requirementDescription": "Does every important asset have a named person responsible for it?",
    "why": "If nobody owns an asset:\n- Security issues may not be addressed.\n- Risks may not be reviewed.\n- Decisions may be delayed.\n- Vulnerabilities may remain unmanaged.\nThe guidance specifically highlights the need to understand who is responsible for each asset so that accountability for protection is clear.",
    "tasks": [
-    "A named owner.",
-    "A defined role.",
-    "Accountability for security decisions.",
-    "Responsibility for managing risks relating to the asset."
+    "Have you identified and documented a service owner or information asset owner for each asset?"
    ],
    "actions": [
     {
-     "title": "A named owner.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "A defined role.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Accountability for security decisions.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Responsibility for managing risks relating to the asset.",
-     "description": "",
+     "title": "Have you identified and documented a service owner or information asset owner for each asset?",
+     "description": "For every asset, there should be:\n• A named owner.\n• A defined role.\n• Accountability for security decisions.\n• Responsibility for managing risks relating to the asset.",
      "evidence": "",
      "legal": false
     }
@@ -7589,33 +6882,12 @@
    "requirementDescription": "Have you assessed what would happen to the organisation, users and service if its data or systems were:\n- Read by unauthorised people (Confidentiality)\n- Changed or corrupted (Integrity)\n- Unavailable (Availability)",
    "why": "Not all information and systems are equally important.\nThe organisation needs to understand which assets would cause the greatest damage if compromised so it can:\n- Prioritise security investment.\n- Identify the most important risks.\n- Design appropriate security controls.\n- Support threat modelling and risk assessments.",
    "tasks": [
-    "Assets being assessed.",
-    "Impact ratings.",
-    "Consequences of compromise.",
-    "Overall business impact."
+    "Have you completed a business impact assessment to determine the confidentiality, integrity and availability of data if the service was comp"
    ],
    "actions": [
     {
-     "title": "Assets being assessed.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Impact ratings.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Consequences of compromise.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Overall business impact.",
-     "description": "",
+     "title": "Have you completed a business impact assessment to determine the confidentiality, integrity and availability of data if the service was comp",
+     "description": "The assessment should consider, confidentiality, integrity and availability. The assessment should document:\n• Assets being assessed.\n• Impact ratings.\n• Consequences of compromise.\n• Overall business impact.",
      "evidence": "",
      "legal": false
     }
@@ -7668,33 +6940,12 @@
    "requirementDescription": "Did you involve the people who understand how the service operates and how the organisation would be affected by a security incident?",
    "why": "Technical teams understand systems.\nBusiness stakeholders understand:\n- Operational impacts.\n- Financial impacts.\n- Regulatory consequences.\n- Reputational damage.\n- User impacts.\nThe guidance specifically recommends involving asset owners, service owners, security professionals and other business stakeholders when assessing asset importance. Workshops and surveys are recommended methods for gathering this information.",
    "tasks": [
-    "Workshops.",
-    "Interviews.",
-    "Surveys.",
-    "Stakeholder review sessions."
+    "Did you consult with business stakeholders when creating the impact assessment?"
    ],
    "actions": [
     {
-     "title": "Workshops.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Interviews.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Surveys.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Stakeholder review sessions.",
-     "description": "",
+     "title": "Did you consult with business stakeholders when creating the impact assessment?",
+     "description": "Evidence could include:\n• Workshops.\n• Interviews.\n• Surveys.\n• Stakeholder review sessions.\n• Sign-off from asset owners or service owners.\nThe assessment should demonstrate input from relevant stakeholders rather than being produced solely by technical teams",
      "evidence": "",
      "legal": false
     }
@@ -7750,7 +7001,7 @@
    "actions": [
     {
      "title": "Have you obtained the organisation's overarching threat assessment (or completed your own if there is not one available)?",
-     "description": "",
+     "description": "You should:\n1. Check whether an organisational threat assessment exists.\n2. Obtain and review it.\n3. Tailor it to your service if necessary.\n4. Create a new assessment if none exists.\n5. Keep it updated when the service changes.",
      "evidence": "",
      "legal": false
     }
@@ -7806,7 +7057,7 @@
    "actions": [
     {
      "title": "Does your threat assessment include the motives, intent and capability of the threat actors relevant to your service?",
-     "description": "",
+     "description": "The assessment should document threat actors and their motivation, intent, and capability",
      "evidence": "",
      "legal": false
     }
@@ -7857,33 +7108,12 @@
    "requirementDescription": "Have you looked at real-world evidence about attacks that have already happened, either to your organisation or to similar organisations?",
    "why": "Threat assessments should be evidence-based rather than based on assumptions.\nThe guidance states that threat assessments should use:\n- Cyber Threat Intelligence (CTI)\n- Reputable intelligence sources\n- Research into previous attacks on the organisation\n- Research into attacks against similar organisations",
    "tasks": [
-    "Internal security incident history.",
-    "Cyber Threat Intelligence reports.",
-    "NCSC threat reporting.",
-    "Industry intelligence feeds."
+    "Have you considered threat intelligence and the history of previous attacks on the organisation (or similar organisations) as part of the th"
    ],
    "actions": [
     {
-     "title": "Internal security incident history.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Cyber Threat Intelligence reports.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "NCSC threat reporting.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Industry intelligence feeds.",
-     "description": "",
+     "title": "Have you considered threat intelligence and the history of previous attacks on the organisation (or similar organisations) as part of the th",
+     "description": "You should demonstrate consideration of:\n• Internal security incident history.\n• Cyber Threat Intelligence reports.\n• NCSC threat reporting.\n• Industry intelligence feeds.\n• Lessons learned from similar organisations.\n• Known attacker tactics and techniques.",
      "evidence": "",
      "legal": false
     }
@@ -7939,7 +7169,7 @@
    "actions": [
     {
      "title": "Have you documented the technical architecture for the end-to-end service and system?",
-     "description": "",
+     "description": "The team should produce and maintain appropriate technical architecture documentation.\nThat would normally include things such as:\nArchitecture diagram\nShowing the major technical components and how they connect.\nData-flow information\nShowing important data moving between components or systems.\nInterfaces and integrations\nDocumenting APIs, third-party systems, identity services and other dependencies.\nTrust/security boundaries\nShowing where the security context changes, for example between the public internet and an internal environment.\nHosting/infrastructure\nDocumenting where components are hosted and the major infrastructure involved.\nThe documentation should also be current. An architect",
      "evidence": "",
      "legal": false
     }
@@ -7990,33 +7220,12 @@
    "requirementDescription": "Have you worked out the realistic ways somebody could attack or misuse the service and written them down?",
    "why": "Simply identifying technical components is not enough. The team needs to think about, given our architecture what could actually go wrong from a security perspective?\nDoing this systematically helps find security weaknesses before they become incidents.\nIt also helps teams prioritise security investment according to realistic threats rather than simply implementing generic security features.",
    "tasks": [
-    "systems",
-    "sensitive information",
-    "user accounts",
-    "privileged functions"
+    "Have you identified and documented the possible attack paths or threat events that could be used to exploit vulnerabilities in the service?"
    ],
    "actions": [
     {
-     "title": "systems",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "sensitive information",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "user accounts",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "privileged functions",
-     "description": "",
+     "title": "Have you identified and documented the possible attack paths or threat events that could be used to exploit vulnerabilities in the service?",
+     "description": "The team should carry out a structured threat assessment or threat-modelling exercise.\nThere should be evidence showing:\n1. What is being protected?\n• systems\n• sensitive information\n• user accounts\n• privileged functions\n• critical services.\n1. What could threaten it?\n• identified threat events or scenarios.\n1. Where could the threat occur?\n• component, interface, data flow or trust boundary.\n1. What would happen if it succeeded?\n• impact on confidentiality, integrity or availability.\n1. How significant is the threat?\n• some form of evaluation/prioritisation.\nThe identified threats should be documented and traceable back to the architecture.",
      "evidence": "",
      "legal": false
     }
@@ -8072,7 +7281,7 @@
    "actions": [
     {
      "title": "Have you identified and documented what security controls are available to reduce the likelihood of threat events?",
-     "description": "",
+     "description": "Ideally, there should be traceability between threats and controls.",
      "evidence": "",
      "legal": false
     }
@@ -8123,33 +7332,12 @@
    "requirementDescription": "Have you looked for security protections that solve more than one of the security problems you identified?",
    "why": "This encourages the team to think about security holistically rather than threat-by-threat in isolation.\nIt can:\n- provide stronger defence across the service\n- reduce duplicated security solutions\n- help prioritise high-value controls\n- simplify security architecture\n- make security controls easier to maintain\n- identify critical controls on which several security protections depend.\nImportantly, it can also expose concentration risk.\nIf ten important threats are all mitigated by one security control, failure",
    "tasks": [
-    "which controls protect against multiple threats",
-    "threats with inadequate protection",
-    "duplicated controls",
-    "especially important controls"
+    "Have you identified and documented any security controls that could mitigate multiple threat events?"
    ],
    "actions": [
     {
-     "title": "which controls protect against multiple threats",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "threats with inadequate protection",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "duplicated controls",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "especially important controls",
-     "description": "",
+     "title": "Have you identified and documented any security controls that could mitigate multiple threat events?",
+     "description": "An acceptable piece of evidence is a threat-to-control matrix.\nThis makes it much easier to see:\n• which controls protect against multiple threats\n• threats with inadequate protection\n• duplicated controls\n• especially important controls\n• possible single points of security failure.\nThe outcome should not simply be \"we have MFA\", for example. The documentation should demonstrate which identified threats the control is intended to mitigate.",
      "evidence": "",
      "legal": false
     }
@@ -8200,33 +7388,12 @@
    "requirementDescription": "Has someone suitably knowledgeable stepped back and checked that the proposed security design is sensible, follows recognised good practice, and doesn't contain obvious architectural security weaknesses? This is slightly different from threat modelling.\nThreat modelling asks how could this particular system be attacked or misused?”\nA security design review asks, is the way we've designed the system fundamentally secure and consistent with accepted security principles?”",
    "why": "A team can identify individual threats and still end up with a poor overall security design.\nFor example, controls may exist but:\n- be implemented in the wrong place\n- rely too heavily on one component\n- give users excessive privileges\n- trust systems unnecessarily\n- fail securely only in some circumstances\n- produce inadequate security logs\n- create unnecessarily complex security arrangements.\nA design review provides another perspective on the overall security architecture.",
    "tasks": [
-    "assess the design against recognised security principles and patterns",
-    "identify any weaknesses, gaps or recommendations",
-    "record actions and assign owners",
-    "track significant issues through to resolution or formal risk acceptance"
+    "Have you conducted a security design review against good practice principles and patterns?"
    ],
    "actions": [
     {
-     "title": "assess the design against recognised security principles and patterns",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "identify any weaknesses, gaps or recommendations",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "record actions and assign owners",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "track significant issues through to resolution or formal risk acceptance",
-     "description": "",
+     "title": "Have you conducted a security design review against good practice principles and patterns?",
+     "description": "Complete and document a security design review using the current architecture, identified threats and proposed security controls. The review should:\n• assess the design against recognised security principles and patterns\n• identify any weaknesses, gaps or recommendations\n• record actions and assign owners\n• track significant issues through to resolution or formal risk acceptance\nFor higher-risk services, consider an independent or specialist security review.",
      "evidence": "",
      "legal": false
     }
@@ -8277,33 +7444,12 @@
    "requirementDescription": "Does the way you score security risks match the way your organisation scores and understands risk more generally?",
    "why": "Security risks ultimately need to be understood and managed alongside other organisational risks.\nUsing aligned scoring means:\n- risks can be compared consistently\n- senior decision-makers understand what the ratings mean\n- escalation thresholds are consistent\n- risks aren't understated or overstated because different teams use different definitions\n- security risks can feed into wider organisational risk management.",
    "tasks": [
-    "Identify the organisation's existing risk scoring framework.",
-    "Use the same scales or establish a clear mapping between the security risk scale and organisational scale.",
-    "Define what each likelihood, impact and severity rating means.",
-    "Agree the scoring parameters with the appropriate risk/security stakeholders."
+    "Do the scoring scales used for your service's security risk assessment align with your organisation's risk management processes?"
    ],
    "actions": [
     {
-     "title": "Identify the organisation's existing risk scoring framework.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Use the same scales or establish a clear mapping between the security risk scale and organisational scale.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Define what each likelihood, impact and severity rating means.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Agree the scoring parameters with the appropriate risk/security stakeholders.",
-     "description": "",
+     "title": "Do the scoring scales used for your service's security risk assessment align with your organisation's risk management processes?",
+     "description": "• Identify the organisation's existing risk scoring framework.\n• Use the same scales or establish a clear mapping between the security risk scale and organisational scale.\n• Define what each likelihood, impact and severity rating means.\n• Agree the scoring parameters with the appropriate risk/security stakeholders.\n• Apply the scoring consistently across the service's security risks.",
      "evidence": "",
      "legal": false
     }
@@ -8354,33 +7500,12 @@
    "requirementDescription": "Have you written down how you assess security risks so that someone can understand the process you followed and repeat it?",
    "why": "Risk assessments involve judgement. Without a defined method, two people could assess exactly the same risk and reach very different conclusions.\nDocumenting the method makes the assessment:\n- consistent\n- repeatable\n- understandable\n- auditable\n- easier to review and update.",
    "tasks": [
-    "scope and boundaries",
-    "terminology and definitions",
-    "assumptions and constraints",
-    "information/sources used"
+    "Have you documented the risk assessment method used to perform a risk assessment?"
    ],
    "actions": [
     {
-     "title": "scope and boundaries",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "terminology and definitions",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "assumptions and constraints",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "information/sources used",
-     "description": "",
+     "title": "Have you documented the risk assessment method used to perform a risk assessment?",
+     "description": "Document the risk assessment methodology, including:\n• scope and boundaries\n• terminology and definitions\n• assumptions and constraints\n• information/sources used\n• how threats, vulnerabilities and impacts are assessed\n• how likelihood and impact are scored\n• how the overall risk rating is calculated\n• how and when risks will be reviewed.",
      "evidence": "",
      "legal": false
     }
@@ -8431,33 +7556,12 @@
    "requirementDescription": "Have you checked that the information you're using to assess risk is still current enough to be relied upon?",
    "why": "A risk assessment is only as good as the information it is based on.\nFor example, a threat assessment could become outdated because new threats or attack techniques have emerged. Equally, an impact assessment could become outdated because the service now processes more sensitive information or serves significantly more users.\nUsing outdated information could result in the service underestimating or misrepresenting its actual security risk.",
    "tasks": [
-    "Record the sources and dates of the threat and business-impact information used.",
-    "Check that those sources are still relevant and current.",
-    "Define when the information needs reviewing.",
-    "Reassess it when significant changes occur to the service or threat landscape."
+    "Have you validated the timeliness of the threat and business impact sources?"
    ],
    "actions": [
     {
-     "title": "Record the sources and dates of the threat and business-impact information used.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Check that those sources are still relevant and current.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Define when the information needs reviewing.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Reassess it when significant changes occur to the service or threat landscape.",
-     "description": "",
+     "title": "Have you validated the timeliness of the threat and business impact sources?",
+     "description": "• Record the sources and dates of the threat and business-impact information used.\n• Check that those sources are still relevant and current.\n• Define when the information needs reviewing.\n• Reassess it when significant changes occur to the service or threat landscape.\n• Update the risk assessment where newer information changes likelihood or impact.",
      "evidence": "",
      "legal": false
     }
@@ -8513,7 +7617,7 @@
    "actions": [
     {
      "title": "Have you documented the service's risks (for example in a risk register)?",
-     "description": "",
+     "description": "Create and maintain a risk register, it should be kept up to date, shared with the people responsible for decision-making and mitigation, and updated when controls are introduced or circumstances change. The guidance specifically describes the register as a \"living document\" and says scores should be updated following implementation of security controls to reflect the latest information.",
      "evidence": "",
      "legal": false
     }
@@ -8564,33 +7668,12 @@
    "requirementDescription": "Have you worked out which recognised security standards, frameworks and guidance apply to the type of service you are building and the things it needs to protect?",
    "why": "Recognised standards and frameworks provide an established baseline of good security practice, rather than requiring each project to invent its own approach.\nUsing relevant standards helps teams:\n- identify appropriate security protections\n- avoid overlooking common security requirements\n- manage vulnerabilities and risks consistently\n- use a common security language\n- support legal, regulatory and governance requirements.",
    "tasks": [
-    "Identify what needs protecting.",
-    "Review recognised standards and security frameworks.",
-    "Decide which are relevant to the service and why.",
-    "Document the standards/frameworks selected."
+    "Have you identified the cyber security standards that are relevant to the service?"
    ],
    "actions": [
     {
-     "title": "Identify what needs protecting.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Review recognised standards and security frameworks.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Decide which are relevant to the service and why.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Document the standards/frameworks selected.",
-     "description": "",
+     "title": "Have you identified the cyber security standards that are relevant to the service?",
+     "description": "• Identify what needs protecting.\n• Review recognised standards and security frameworks.\n• Decide which are relevant to the service and why.\n• Document the standards/frameworks selected.\n• Revisit them when the service or technology changes significantly.",
      "evidence": "",
      "legal": false
     }
@@ -8641,33 +7724,12 @@
    "requirementDescription": "Has your organisation's security team been involved in deciding and agreeing which security frameworks the service will use?",
    "why": "Your organisation may already have:\n- required security frameworks\n- standard security controls\n- an organisational security controls taxonomy\n- approved security patterns\n- established security policies\n- regulatory or compliance requirements.\nEngaging the security function avoids individual services adopting inconsistent or unsuitable approaches and gives the project access to people who understand how the frameworks should be applied.",
    "tasks": [
-    "Engage the organisation's security function.",
-    "Identify any existing organisational security framework or controls taxonomy.",
-    "Discuss which additional frameworks are relevant to the service.",
-    "Agree which frameworks will provide the basis for the service's controls."
+    "Have you agreed the security control frameworks you intend to use with your organisation’s security function?"
    ],
    "actions": [
     {
-     "title": "Engage the organisation's security function.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Identify any existing organisational security framework or controls taxonomy.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Discuss which additional frameworks are relevant to the service.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Agree which frameworks will provide the basis for the service's controls.",
-     "description": "",
+     "title": "Have you agreed the security control frameworks you intend to use with your organisation’s security function?",
+     "description": "• Engage the organisation's security function.\n• Identify any existing organisational security framework or controls taxonomy.\n• Discuss which additional frameworks are relevant to the service.\n• Agree which frameworks will provide the basis for the service's controls.\n• Record that decision and make it available to the relevant delivery teams.",
      "evidence": "",
      "legal": false
     }
@@ -8718,33 +7780,12 @@
    "requirementDescription": "Have you turned the selected frameworks into a practical list of security controls that this particular service needs to implement?",
    "why": "Generic frameworks can contain many controls, not all of which will be relevant to every service.\nCreating a service-specific controls set helps ensure that security measures are:\n- appropriate to the service\n- proportionate to its risks\n- connected to what needs protecting\n- understandable to delivery teams\n- capable of being implemented and evidenced\n- maintained as the service evolves.",
    "tasks": [
-    "what controls are required",
-    "where the controls came from",
-    "why they are relevant",
-    "what part of the service they apply to"
+    "Have you created a security controls set relevant to your service?"
    ],
    "actions": [
     {
-     "title": "what controls are required",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "where the controls came from",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "why they are relevant",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "what part of the service they apply to",
-     "description": "",
+     "title": "Have you created a security controls set relevant to your service?",
+     "description": "Create and maintain a documented set of security controls specifically applicable to the service.\n• what controls are required\n• where the controls came from\n• why they are relevant\n• what part of the service they apply to\n• how they relate to identified risks or requirements\n• any service-specific/custom controls needed.\nThe controls set should also be shared with delivery teams and reviewed when significant functionality or components are added",
      "evidence": "",
      "legal": false
     }
@@ -8795,33 +7836,12 @@
    "requirementDescription": "Can you show how the security controls selected for your service relate to the security outcomes in the National Cyber Security Centre (NCSC) Cyber Assessment Framework?",
    "why": "The CAF provides a common, outcome-focused way of looking at cyber security and resilience.\nThe National Cyber Security Centre (NCSC) describes CAF as a systematic approach to assessing how cyber risks are being managed. Its high-level objectives and principles are expressed as security outcomes rather than a simple checklist of individual technical measures.",
    "tasks": [
-    "Take the service's agreed security controls set.",
-    "Map each relevant control to the corresponding CAF outcome/principle.",
-    "Identify any CAF areas with insufficient control coverage.",
-    "Address or explain gaps where appropriate."
+    "Does your security controls set map to the NCSC Cyber Assessment Framework (CAF)?"
    ],
    "actions": [
     {
-     "title": "Take the service's agreed security controls set.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Map each relevant control to the corresponding CAF outcome/principle.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Identify any CAF areas with insufficient control coverage.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Address or explain gaps where appropriate.",
-     "description": "",
+     "title": "Does your security controls set map to the NCSC Cyber Assessment Framework (CAF)?",
+     "description": "• Take the service's agreed security controls set.\n• Map each relevant control to the corresponding CAF outcome/principle.\n• Identify any CAF areas with insufficient control coverage.\n• Address or explain gaps where appropriate.\n• Maintain the mapping as the controls and service change.",
      "evidence": "",
      "legal": false
     }
@@ -8875,33 +7895,12 @@
    "requirementDescription": "If any risks are larger than the level of risk the organisation is willing to accept, have you done something about them?",
    "why": "Risk appetite defines how much security risk an organisation is prepared to tolerate. Risks that exceed this threshold cannot simply be ignored. Secure by Design states that risks should be reduced to an acceptable level through appropriate mitigations or approved acceptance decisions",
    "tasks": [
-    "Reduce the risk through controls.",
-    "Transfer the risk.",
-    "Avoid the risk by changing the design.",
-    "Escalate and formally accept the risk."
+    "Have you treated the risks that have a rating above the project's risk appetite?"
    ],
    "actions": [
     {
-     "title": "Reduce the risk through controls.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Transfer the risk.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Avoid the risk by changing the design.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Escalate and formally accept the risk.",
-     "description": "",
+     "title": "Have you treated the risks that have a rating above the project's risk appetite?",
+     "description": "For every risk above tolerance, one of the following should occur:\n• Reduce the risk through controls.\n• Transfer the risk.\n• Avoid the risk by changing the design.\n• Escalate and formally accept the risk.\nThere should be clear evidence of the chosen approach.",
      "evidence": "",
      "legal": false
     }
@@ -8955,33 +7954,12 @@
    "requirementDescription": "Have you written down exactly what actions will be taken to reduce security risks?",
    "why": "Mitigations that exist only in conversations are easily forgotten. A documented treatment plan provides accountability, allows progress to be tracked and demonstrates that risks are being managed systematically. Secure by Design recommends documenting and approving mitigation activities as part of risk management.",
    "tasks": [
-    "The risk.",
-    "Proposed mitigation.",
-    "Owner.",
-    "Due date."
+    "Have you documented the risk mitigations (for example in a risk treatment plan)?"
    ],
    "actions": [
     {
-     "title": "The risk.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Proposed mitigation.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Owner.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Due date.",
-     "description": "",
+     "title": "Have you documented the risk mitigations (for example in a risk treatment plan)?",
+     "description": "The documentation should show:\n• The risk.\n• Proposed mitigation.\n• Owner.\n• Due date.\n• Current status.\n• Expected reduction in risk.",
      "evidence": "",
      "legal": false
     }
@@ -9035,33 +8013,12 @@
    "requirementDescription": "Did you choose security controls because they address real threats and risks, rather than simply applying controls because they are standard or familiar?",
    "why": "Secure by Design promotes a risk-driven approach. Controls should directly relate to the threats facing the service. Over-securing wastes money, while under-securing leaves vulnerabilities exposed",
    "tasks": [
-    "Threats were identified.",
-    "Risks were assessed.",
-    "Controls were selected to reduce those specific risks.",
-    "Control decisions can be traced back to identified risks."
+    "Did you select the security controls based on risk, threats and exposure?"
    ],
    "actions": [
     {
-     "title": "Threats were identified.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Risks were assessed.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Controls were selected to reduce those specific risks.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Control decisions can be traced back to identified risks.",
-     "description": "",
+     "title": "Did you select the security controls based on risk, threats and exposure?",
+     "description": "You should be able to demonstrate:\n• Threats were identified.\n• Risks were assessed.\n• Controls were selected to reduce those specific risks.\n• Control decisions can be traced back to identified risks.",
      "evidence": "",
      "legal": false
     }
@@ -9115,33 +8072,12 @@
    "requirementDescription": "Have you recorded which security controls will be implemented and why?",
    "why": "Without documentation there is no reliable evidence of what protections are expected, what has been implemented, or what auditors and assurance teams should verify. Secure by Design encourages use of security control frameworks and taxonomies to record selected controls",
    "tasks": [
-    "Control name.",
-    "Purpose.",
-    "Associated risk.",
-    "Owner."
+    "Have you documented the selected controls?"
    ],
    "actions": [
     {
-     "title": "Control name.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Purpose.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Associated risk.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Owner.",
-     "description": "",
+     "title": "Have you documented the selected controls?",
+     "description": "The documentation should include:\n• Control name.\n• Purpose.\n• Associated risk.\n• Owner.\n• Implementation status.\n• Relevant standards/framework references.",
      "evidence": "",
      "legal": false
     }
@@ -9195,33 +8131,12 @@
    "requirementDescription": "Have you checked that the security controls actually work in practice?",
    "why": "A control that exists on paper may not work correctly. Secure by Design places emphasis on assessing the effectiveness of security controls and continuing assurance throughout delivery. A control only reduces risk if it operates as intended.",
    "tasks": [
-    "Penetration testing.",
-    "Vulnerability scanning.",
-    "Security design reviews.",
-    "Configuration reviews."
+    "Have you tested the controls and confirmed they're working as intended?"
    ],
    "actions": [
     {
-     "title": "Penetration testing.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Vulnerability scanning.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Security design reviews.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Configuration reviews.",
-     "description": "",
+     "title": "Have you tested the controls and confirmed they're working as intended?",
+     "description": "Testing may include:\n• Penetration testing.\n• Vulnerability scanning.\n• Security design reviews.\n• Configuration reviews.\n• User access testing.\n• Red team exercises.\n• Evidence-based assurance reviews.",
      "evidence": "",
      "legal": false
     }
@@ -9280,7 +8195,7 @@
    "actions": [
     {
      "title": "Have you identified any residual risks and raised them with risk owners for sign-off?",
-     "description": "",
+     "description": "You should:\n1. Recalculate the risk after mitigation.\n2. Identify remaining residual risks.\n3. Record them in the risk register.\n4. Present them to the appropriate risk owner.\n5. Obtain formal acceptance or direction for further action.",
      "evidence": "",
      "legal": false
     }
@@ -9331,33 +8246,12 @@
    "requirementDescription": "Have you agreed and written down how you will judge how serious a vulnerability is, decide which ones need fixing first, and determine how and when they will be fixed?",
    "why": "Not every vulnerability presents the same level of risk. A minor weakness in a low-risk component should not necessarily receive the same priority as a critical vulnerability affecting an important internet-facing system.\nHaving an agreed process ensures vulnerabilities are handled consistently and that teams focus first on weaknesses presenting the greatest risk.",
    "tasks": [
-    "how vulnerabilities are classified and scored",
-    "how priority is determined",
-    "expected remediation timescales",
-    "available remediation approaches"
+    "Do you have a documented approach on how to classify, prioritise and redress vulnerabilities?"
    ],
    "actions": [
     {
-     "title": "how vulnerabilities are classified and scored",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "how priority is determined",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "expected remediation timescales",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "available remediation approaches",
-     "description": "",
+     "title": "Do you have a documented approach on how to classify, prioritise and redress vulnerabilities?",
+     "description": "Create and maintain a documented vulnerability management process that defines:\n• how vulnerabilities are classified and scored\n• how priority is determined\n• expected remediation timescales\n• available remediation approaches\n• who is responsible for resolving them\n• when vulnerabilities need escalating\n• how remediation is tested and confirmed\n• how vulnerabilities are recorded and tracked.",
      "evidence": "",
      "legal": false
     }
@@ -9413,7 +8307,7 @@
    "actions": [
     {
      "title": "Do you have a documented process for identifying and responding to new vulnerabilities in your code, systems or supply chain?",
-     "description": "",
+     "description": "Document how the team will:\n1. monitor for new vulnerabilities\n2. determine whether the service is affected\n3. record the vulnerability\n4. assess its severity and impact\n5. notify or escalate it to the appropriate people\n6. assign remediation work\n7. patch, fix or mitigate it\n8. test that the action worked\n9. update the vulnerability register.",
      "evidence": "",
      "legal": false
     }
@@ -9467,33 +8361,12 @@
    "requirementDescription": "Is security built into the way the service is designed, developed, tested, deployed and maintained, rather than being checked only at the end?",
    "why": "Security problems are generally easier to address when they are identified as part of normal development rather than after the service is complete or live.\nA secure development lifecycle encourages teams to consider security while, Designing \nBuilding\nReviewing\nTesting \nDeploying \nOperating\nrather than relying solely on a final security assessment.",
    "tasks": [
-    "Have an agreed secure development lifecycle or development process.",
-    "Define the security activities required at appropriate development stages.",
-    "Build appropriate security checks into development and deployment workflows.",
-    "Define who is responsible for completing those checks."
+    "Are you following a secure systems software development life cycle policy or process?"
    ],
    "actions": [
     {
-     "title": "Have an agreed secure development lifecycle or development process.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Define the security activities required at appropriate development stages.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Build appropriate security checks into development and deployment workflows.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Define who is responsible for completing those checks.",
-     "description": "",
+     "title": "Are you following a secure systems software development life cycle policy or process?",
+     "description": "• Have an agreed secure development lifecycle or development process.\n• Define the security activities required at appropriate development stages.\n• Build appropriate security checks into development and deployment workflows.\n• Define who is responsible for completing those checks.\n• Record and address vulnerabilities discovered.\n• Continue security testing after the service goes live.",
      "evidence": "",
      "legal": false
     }
@@ -9547,33 +8420,12 @@
    "requirementDescription": "Does another suitably experienced person review code changes before they are accepted or deployed?",
    "why": "Developers can unintentionally introduce:\n- security weaknesses\n- coding errors\n- insecure configurations\n- unintended behaviour\n- problems created by changes elsewhere in the system.",
    "tasks": [
-    "Define when code review is required.",
-    "Require an appropriate independent reviewer.",
-    "Prevent relevant changes from being merged/deployed until required reviews are complete.",
-    "Include security considerations in review criteria where appropriate."
+    "Are you conducting regular code reviews as part of the development process?"
    ],
    "actions": [
     {
-     "title": "Define when code review is required.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Require an appropriate independent reviewer.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Prevent relevant changes from being merged/deployed until required reviews are complete.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Include security considerations in review criteria where appropriate.",
-     "description": "",
+     "title": "Are you conducting regular code reviews as part of the development process?",
+     "description": "• Define when code review is required.\n• Require an appropriate independent reviewer.\n• Prevent relevant changes from being merged/deployed until required reviews are complete.\n• Include security considerations in review criteria where appropriate.\n• Maintain evidence that reviews occurred.\n• Address issues identified before release.",
      "evidence": "",
      "legal": false
     }
@@ -9627,33 +8479,12 @@
    "requirementDescription": "Are you actively testing the application for security weaknesses using appropriate security testing techniques or tools?",
    "why": "Human code review alone may not detect every vulnerability.\nAutomated and manual security testing provides additional layers of assurance and can identify vulnerabilities earlier and more consistently.\nThe guidance recommends multiple methods rather than relying on one vulnerability-discovery process.",
    "tasks": [
-    "Select appropriate code/application security testing methods.",
-    "Integrate automated testing into development pipelines where appropriate.",
-    "Define when tests will run.",
-    "Configure alerts/reporting so developers see important findings."
+    "Are you using a manual or automated code testing method (for example, Static Application Security Testing (SAST) or Dynamic Application Secu"
    ],
    "actions": [
     {
-     "title": "Select appropriate code/application security testing methods.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Integrate automated testing into development pipelines where appropriate.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Define when tests will run.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Configure alerts/reporting so developers see important findings.",
-     "description": "",
+     "title": "Are you using a manual or automated code testing method (for example, Static Application Security Testing (SAST) or Dynamic Application Secu",
+     "description": "• Select appropriate code/application security testing methods.\n• Integrate automated testing into development pipelines where appropriate.\n• Define when tests will run.\n• Configure alerts/reporting so developers see important findings.\n• Record identified vulnerabilities.\n• Prioritise and remediate findings using the vulnerability management process.\n• Retest where appropriate to confirm remediation.",
      "evidence": "",
      "legal": false
     }
@@ -9707,33 +8538,12 @@
    "requirementDescription": "Have you planned when penetration testing will happen and clearly defined what the testers are supposed to test and what the test is intended to prove?",
    "why": "A penetration test is much more useful when it is targeted at the relevant risks and parts of the service.\nA poorly scoped test could miss important systems or attack paths, while testing against a realistic threat scenario can provide assurance about whether the service's protections work as expected. The guidance emphasises that penetration testing is primarily a means of gaining assurance in security and vulnerability-management processes, rather than being the organisation's sole method for identifying vulnerabilities.",
    "tasks": [
-    "purpose: what assurance the test should provide",
-    "scope: applications, infrastructure, APIs or other components included",
-    "boundaries: what's specifically excluded",
-    "threat scenarios: what realistic risks the test should examine"
+    "Do you have a plan for carrying out penetration tests with appropriate scopes?"
    ],
    "actions": [
     {
-     "title": "purpose: what assurance the test should provide",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "scope: applications, infrastructure, APIs or other components included",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "boundaries: what's specifically excluded",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "threat scenarios: what realistic risks the test should examine",
-     "description": "",
+     "title": "Do you have a plan for carrying out penetration tests with appropriate scopes?",
+     "description": "Create a documented penetration-testing plan that establishes:\n• purpose: what assurance the test should provide\n• scope: applications, infrastructure, APIs or other components included\n• boundaries: what's specifically excluded\n• threat scenarios: what realistic risks the test should examine\n• timing/frequency: when testing will happen\n• responsibility: who will commission and perform it\n• reporting: how findings will be recorded and communicated\n• remediation: how identified vulnerabilities will be prioritised, assigned and fixed.",
      "evidence": "",
      "legal": false
     }
@@ -9784,33 +8594,12 @@
    "requirementDescription": "Have you decided and written down which activities and events within the service need to be recorded so that suspicious behaviour or a security incident can be detected and investigated?",
    "why": "If important events are not recorded, you may not know that an attack or security incident has happened.\nAppropriate logging allows teams to:\n- spot unusual or suspicious behaviour\n- investigate potential security incidents\n- understand what happened and when\n- provide information to incident response teams\n- monitor whether security controls are working\n- identify opportunities to improve security.",
    "tasks": [
-    "Identify the security events and information that need to be captured.",
-    "Link them to relevant service assets, risks and threats.",
-    "Document what will be logged and why.",
-    "Make sure appropriate systems/components generate the required information."
+    "Do you have a documented approach for what events should be logged to help identify security incidents?"
    ],
    "actions": [
     {
-     "title": "Identify the security events and information that need to be captured.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Link them to relevant service assets, risks and threats.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Document what will be logged and why.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Make sure appropriate systems/components generate the required information.",
-     "description": "",
+     "title": "Do you have a documented approach for what events should be logged to help identify security incidents?",
+     "description": "• Identify the security events and information that need to be captured.\n• Link them to relevant service assets, risks and threats.\n• Document what will be logged and why.\n• Make sure appropriate systems/components generate the required information.\n• Secure the logs against unauthorised access, alteration or deletion.\n• Define suitable retention arrangements.\n• Review logging requirements when the service or threat landscape changes.",
      "evidence": "",
      "legal": false
     }
@@ -9861,33 +8650,12 @@
    "requirementDescription": "Have you worked out what technology is needed to collect security information, analyse it and notify the right people when something suspicious happens?",
    "why": "A service could generate millions of log entries. It may be unrealistic for people to manually read those records looking for suspicious activity.\nAppropriate tools help teams:\n- bring relevant security information together\n- search and analyse events\n- identify patterns or anomalies\n- generate alerts when defined conditions occur\n- provide information to security or incident-response teams.\nThe guidance recommends investigating whether appropriate capabilities exist to collect and monitor observables and identifying additional capabilities needed to provide sufficient visibility.",
    "tasks": [
-    "Identify what logs and security information need collecting.",
-    "Determine which existing organisational tools can be used.",
-    "Identify any additional monitoring capability required.",
-    "Configure tools to collect and securely store the required information."
+    "Have you determined the tools required to log and analyse the event logs and trigger alerts?"
    ],
    "actions": [
     {
-     "title": "Identify what logs and security information need collecting.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Determine which existing organisational tools can be used.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Identify any additional monitoring capability required.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Configure tools to collect and securely store the required information.",
-     "description": "",
+     "title": "Have you determined the tools required to log and analyse the event logs and trigger alerts?",
+     "description": "• Identify what logs and security information need collecting.\n• Determine which existing organisational tools can be used.\n• Identify any additional monitoring capability required.\n• Configure tools to collect and securely store the required information.\n• Configure appropriate alerts.\n• Ensure information can be searched and analysed.\n• Integrate with the DfE's Security Operations Centre (SOC) or incident-response capabilities where appropriate.",
      "evidence": "",
      "legal": false
     }
@@ -9938,33 +8706,12 @@
    "requirementDescription": "Do you have a documented approach for analysing your logs and monitoring the alerts generated?",
    "why": "An alert only protects the service if something appropriate happens as a result.\nA documented monitoring process helps ensure that:\n- alerts are seen by the right people\n- genuine incidents are identified\n- false positives can be investigated\n- serious events are escalated quickly\n- incident management processes are triggered where necessary\n- responsibilities are clear.",
    "tasks": [
-    "which logs and alerts will be monitored",
-    "who is responsible for monitoring them",
-    "how frequently they are reviewed",
-    "which events require investigation"
+    "Do you have a documented approach for analysing your logs and monitoring the alerts generated?"
    ],
    "actions": [
     {
-     "title": "which logs and alerts will be monitored",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "who is responsible for monitoring them",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "how frequently they are reviewed",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "which events require investigation",
-     "description": "",
+     "title": "Do you have a documented approach for analysing your logs and monitoring the alerts generated?",
+     "description": "Document:\n• which logs and alerts will be monitored\n• who is responsible for monitoring them\n• how frequently they are reviewed\n• which events require investigation\n• when an alert should be generated\n• how alerts are prioritised\n• who receives alerts\n• when an incident should be escalated\n• what automated responses exist, where appropriate\n• how monitoring feeds into incident management.\nThe process should be reviewed when the service or threats change.",
      "evidence": "",
      "legal": false
     }
@@ -10018,33 +8765,12 @@
    "requirementDescription": "Whenever someone proposes a change to the service, is security considered before that change is approved and released?",
    "why": "A service that is secure today may become less secure after a change.\nChanges can introduce:\n- vulnerabilities\n- new attack routes\n- insecure configurations\n- changes to data exposure\n- weakened security controls\n- new dependencies.\nThe guidance states that changes can affect the service's security posture regardless of whether they are relatively small technical modifications or major changes to the service design.",
    "tasks": [
-    "the scope and purpose of the change are documented",
-    "affected systems, components and data are identified",
-    "security impacts are assessed",
-    "impacts on existing security controls are considered"
+    "Does the service delivery change management process consider the impact of changes to security?"
    ],
    "actions": [
     {
-     "title": "the scope and purpose of the change are documented",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "affected systems, components and data are identified",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "security impacts are assessed",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "impacts on existing security controls are considered",
-     "description": "",
+     "title": "Does the service delivery change management process consider the impact of changes to security?",
+     "description": "Build security checks into the change-management process so that:\n• the scope and purpose of the change are documented\n• affected systems, components and data are identified\n• security impacts are assessed\n• impacts on existing security controls are considered\n• additional controls are identified where necessary\n• appropriate security testing takes place before release\n• the outcome is recorded within the change-management tooling.",
      "evidence": "",
      "legal": false
     }
@@ -10098,33 +8824,12 @@
    "requirementDescription": "When the service changes, do you check whether that change introduces new threats or attack routes and update the threat model where necessary?",
    "why": "A threat model represents the security threats relevant to a particular design.\nIf the design changes but the threat model does not, the model may no longer accurately describe the risks facing the service.\nKeeping it updated also ensures security controls remain appropriate to the current service rather than an earlier version of it.",
    "tasks": [
-    "Review proposed changes for security implications.",
-    "Determine whether threats or attack paths have changed.",
-    "Add new threats where appropriate.",
-    "Update existing threats where their likelihood or impact has changed."
+    "Are you reflecting requested changes in the service’s threat model?"
    ],
    "actions": [
     {
-     "title": "Review proposed changes for security implications.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Determine whether threats or attack paths have changed.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Add new threats where appropriate.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Update existing threats where their likelihood or impact has changed.",
-     "description": "",
+     "title": "Are you reflecting requested changes in the service’s threat model?",
+     "description": "• Review proposed changes for security implications.\n• Determine whether threats or attack paths have changed.\n• Add new threats where appropriate.\n• Update existing threats where their likelihood or impact has changed.\n• Identify any additional security controls required.\n• Keep the threat model aligned with the latest service design.",
      "evidence": "",
      "legal": false
     }
@@ -10183,7 +8888,7 @@
    "actions": [
     {
      "title": "Are you considering requested changes as part of risk assessment and treatment activities?",
-     "description": "",
+     "description": "For relevant changes:\n1. assess the security impact\n2. review affected risks\n3. identify new risks where needed\n4. reassess likelihood and impact where appropriate\n5. update the risk register\n6. review whether existing mitigations remain effective\n7. identify additional controls or mitigations if required\n8. test security recommendations before release.",
      "evidence": "",
      "legal": false
     }
@@ -10237,33 +8942,12 @@
    "requirementDescription": "If a proposed change creates a security risk that is greater than the level the project is authorised to accept, is that risk being raised with someone who has the authority to decide what happens?",
    "why": "Some security decisions are bigger than the delivery team's authority.\nIf a change creates an unacceptable risk, an appropriate decision-maker may need to determine whether to:\n- introduce additional controls\n- modify the change\n- delay the change\n- not proceed\n- accept the residual risk where they have authority to do so.\nThis preserves accountability for significant security-risk decisions and prevents unacceptable risks being accepted informally as part of routine delivery.",
    "tasks": [
-    "Assess the security risk associated with relevant changes.",
-    "Compare the resulting risk rating with the project's risk appetite.",
-    "Identify additional mitigations where possible.",
-    "Escalate risks above appetite to the appropriate risk owner or decision-maker."
+    "Are you appropriately escalating any changes that create risks above the project's risk appetite?"
    ],
    "actions": [
     {
-     "title": "Assess the security risk associated with relevant changes.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Compare the resulting risk rating with the project's risk appetite.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Identify additional mitigations where possible.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Escalate risks above appetite to the appropriate risk owner or decision-maker.",
-     "description": "",
+     "title": "Are you appropriately escalating any changes that create risks above the project's risk appetite?",
+     "description": "• Assess the security risk associated with relevant changes.\n• Compare the resulting risk rating with the project's risk appetite.\n• Identify additional mitigations where possible.\n• Escalate risks above appetite to the appropriate risk owner or decision-maker.\n• Record the decision and any conditions or actions.\n• Do not treat significant risk acceptance as an informal delivery-team decision.\n• Update the risk register and treatment actions accordingly.",
      "evidence": "",
      "legal": false
     }
@@ -10317,33 +9001,12 @@
    "requirementDescription": "Have you clearly identified and recorded which parts of the service are going to be switched off, removed, replaced or decommissioned?",
    "why": "You cannot safely retire something unless you understand what it is, what information it contains and what relies upon it.\nFor example, simply switching off an application could leave behind:\n- cloud infrastructure that is still publicly accessible\n- unused accounts or credentials\n- databases containing sensitive information\n- domains that are no longer managed\n- integrations pointing at systems that no longer exist\n- forgotten test or pre-production environments.",
    "tasks": [
-    "Maintain an up-to-date inventory of service assets.",
-    "Clearly identify the components scheduled for retirement.",
-    "Identify the asset owner.",
-    "Record what data the component holds or processes."
+    "Have you identified components to be retired in the asset inventory?"
    ],
    "actions": [
     {
-     "title": "Maintain an up-to-date inventory of service assets.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Clearly identify the components scheduled for retirement.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Identify the asset owner.",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "Record what data the component holds or processes.",
-     "description": "",
+     "title": "Have you identified components to be retired in the asset inventory?",
+     "description": "• Maintain an up-to-date inventory of service assets.\n• Clearly identify the components scheduled for retirement.\n• Identify the asset owner.\n• Record what data the component holds or processes.\n• Identify dependent or connected systems.\n• Involve the relevant asset owners in retirement planning.\n• After retirement, update the asset inventory to show that the component is no longer active.",
      "evidence": "",
      "legal": false
     }
@@ -10402,7 +9065,7 @@
    "actions": [
     {
      "title": "Have you conducted a retirement risk assessment with an appropriate plan put together based on the classification and sensitivity of data?",
-     "description": "",
+     "description": "Conduct and document a retirement risk assessment and use it to create a retirement/decommissioning plan. Where backups must be retained, the guidance says they should continue to receive appropriate security protection and should be tested to ensure required information can actually be restored",
      "evidence": "",
      "legal": false
     }
@@ -10456,33 +9119,12 @@
    "requirementDescription": "Once the component or service has been retired, have you formally documented what was done, confirmed that the security actions were completed, recorded anything still outstanding, and shared that information with the appropriate people?",
    "why": "A retirement project should not simply finish when a system is switched off.\nThere needs to be confidence that:\n- components were actually decommissioned\n- access was removed\n- information was appropriately migrated or destroyed\n- infrastructure was removed\n- relevant records were updated\n- outstanding security risks were identified\n- someone remains responsible for those risks.\nThe closeout report creates an audit trail and provides senior stakeholders with assurance that decommissioning was completed safely",
    "tasks": [
-    "what was retired",
-    "what security actions were completed",
-    "how relevant data was handled",
-    "whether access and infrastructure were removed"
+    "Have you included security considerations within a formal closeout report to be shared with relevant stakeholders?"
    ],
    "actions": [
     {
-     "title": "what was retired",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "what security actions were completed",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "how relevant data was handled",
-     "description": "",
-     "evidence": "",
-     "legal": false
-    },
-    {
-     "title": "whether access and infrastructure were removed",
-     "description": "",
+     "title": "Have you included security considerations within a formal closeout report to be shared with relevant stakeholders?",
+     "description": "Create a formal closeout report confirming:\n• what was retired\n• what security actions were completed\n• how relevant data was handled\n• whether access and infrastructure were removed\n• whether asset records have been updated\n• any outstanding actions\n• any residual risks\n• recommendations or follow-up activity\n• who owns any remaining risks or responsibilities.\nShare the report with the relevant stakeholders and decision-makers.",
      "evidence": "",
      "legal": false
     }

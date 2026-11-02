@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Administrative work is ONLY permitted on Managed, Encrypted, EDR-protected devices to ensure the highest level of security for high-privileg",
-   "description": "",
+   "description": "If you're carrying out administrative or privileged activities, you must use a secure corporate-managed device that is encrypted and monitored by EDR.",
    "evidence": "",
    "legal": false
   }

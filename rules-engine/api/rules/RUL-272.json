@@ -39,7 +39,7 @@
  "actions": [
   {
    "title": "Have you conducted a retirement risk assessment with an appropriate plan put together based on the classification and sensitivity of data?",
-   "description": "",
+   "description": "Conduct and document a retirement risk assessment and use it to create a retirement/decommissioning plan. Where backups must be retained, the guidance says they should continue to receive appropriate security protection and should be tested to ensure required information can actually be restored",
    "evidence": "",
    "legal": false
   }

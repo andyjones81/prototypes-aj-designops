@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Real PII MUST NEVER be used in Non-Prod/Test environments; synthetic or anonymised data MUST be used instead because anonymisation scripts a",
-   "description": "",
+   "description": "Test with fake data instead. If a test environment is compromised, no real individual should be affected.",
    "evidence": "",
    "legal": false
   }

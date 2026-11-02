@@ -29,33 +29,12 @@
  "requirementDescription": "Have you spoken to the people who understand legal, regulatory and security requirements to determine what rules your service must follow?\nThe guidance specifically recommends consulting legal, commercial and information management teams alongside security specialists",
  "why": "Different services have different obligations.\nFor example:\n- UK GDPR\n- Data Protection Act\n- PCI-DSS\n- Government Security Policies\n- Supplier contracts\nMissing a requirement can lead to non-compliance, fines or operational risk",
  "tasks": [
-  "Compliance workshops",
-  "Legal reviews",
-  "Security reviews",
-  "Governance meeting outputs"
+  "Have you discussed security obligations, including government policies, regulations, laws and contracts, for your service with your organisa"
  ],
  "actions": [
   {
-   "title": "Compliance workshops",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Legal reviews",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Security reviews",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Governance meeting outputs",
-   "description": "",
+   "title": "Have you discussed security obligations, including government policies, regulations, laws and contracts, for your service with your organisa",
+   "description": "Evidence could include:\n• Compliance workshops\n• Legal reviews\n• Security reviews\n• Governance meeting outputs",
    "evidence": "",
    "legal": false
   }

@@ -35,7 +35,7 @@ const OPS = {
 const OP_LABEL = { in: 'is one of', is: 'is', isnot: 'is not', includes: 'includes', gte: 'is at least', lte: 'is at most' };
 const STATUSES = ['Not started', 'In progress', 'Complete', 'Exception', 'No longer required'];
 const STATUS_TAG = { 'Not started': 'govuk-tag--grey', 'In progress': 'govuk-tag--blue', 'Complete': 'govuk-tag--green', 'Exception': 'govuk-tag--orange', 'No longer required': 'govuk-tag--purple' };
-const KEY = 'compass-rules-engine-v3';
+const KEY = 'compass-rules-engine-v4';
 
 /* ---------- State ---------- */
 let S;

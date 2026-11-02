@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "\"Break-glass\" accounts MUST be disabled by default and alert immediately upon usage to prevent abuse and unauthorised use.",
-   "description": "",
+   "description": "Emergency administrator accounts should only be used as a last resort. They should not be active for normal work, and whenever they are used, the security team should be alerted immediately so any misuse can be detected and investigated.",
    "evidence": "",
    "legal": false
   }

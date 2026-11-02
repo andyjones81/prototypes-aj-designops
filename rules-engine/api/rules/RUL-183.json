@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Single Sign-On (SSO) MUST be used where possible to reduce password fatigue and simplify the adoption of MFA.",
-   "description": "",
+   "description": "Wherever possible, applications should use the organisation's central identity provider (such as Microsoft Entra ID) rather than separate usernames and passwords",
    "evidence": "",
    "legal": false
   }

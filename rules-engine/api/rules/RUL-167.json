@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Public Web Applications MUST sit behind a Web Application Firewall (WAF) in Blocking Mode to stop common automated attacks.",
-   "description": "",
+   "description": "A Web Applicational Firewall must be implemented",
    "evidence": "",
    "legal": false
   }

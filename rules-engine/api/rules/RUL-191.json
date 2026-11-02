@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "All services MUST have local incident response plans aligned to the CISD standard to ensure consistency in handling and escalating incidents",
-   "description": "",
+   "description": "Every service needs a documented playbook for responding to incidents, and it must follow the organisation's CISD incident management approach so that security incidents are handled quickly, consistently, and with the right escalation route",
    "evidence": "",
    "legal": false
   }

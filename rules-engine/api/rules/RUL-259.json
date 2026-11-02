@@ -36,7 +36,7 @@
  "actions": [
   {
    "title": "Do you have a documented process for identifying and responding to new vulnerabilities in your code, systems or supply chain?",
-   "description": "",
+   "description": "Document how the team will:\n1. monitor for new vulnerabilities\n2. determine whether the service is affected\n3. record the vulnerability\n4. assess its severity and impact\n5. notify or escalate it to the appropriate people\n6. assign remediation work\n7. patch, fix or mitigate it\n8. test that the action worked\n9. update the vulnerability register.",
    "evidence": "",
    "legal": false
   }

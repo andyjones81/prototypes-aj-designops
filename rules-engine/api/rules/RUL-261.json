@@ -34,33 +34,12 @@
  "requirementDescription": "Does another suitably experienced person review code changes before they are accepted or deployed?",
  "why": "Developers can unintentionally introduce:\n- security weaknesses\n- coding errors\n- insecure configurations\n- unintended behaviour\n- problems created by changes elsewhere in the system.",
  "tasks": [
-  "Define when code review is required.",
-  "Require an appropriate independent reviewer.",
-  "Prevent relevant changes from being merged/deployed until required reviews are complete.",
-  "Include security considerations in review criteria where appropriate."
+  "Are you conducting regular code reviews as part of the development process?"
  ],
  "actions": [
   {
-   "title": "Define when code review is required.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Require an appropriate independent reviewer.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Prevent relevant changes from being merged/deployed until required reviews are complete.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Include security considerations in review criteria where appropriate.",
-   "description": "",
+   "title": "Are you conducting regular code reviews as part of the development process?",
+   "description": "• Define when code review is required.\n• Require an appropriate independent reviewer.\n• Prevent relevant changes from being merged/deployed until required reviews are complete.\n• Include security considerations in review criteria where appropriate.\n• Maintain evidence that reviews occurred.\n• Address issues identified before release.",
    "evidence": "",
    "legal": false
   }

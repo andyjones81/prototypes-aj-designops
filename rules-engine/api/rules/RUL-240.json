@@ -31,33 +31,12 @@
  "requirementDescription": "Have you worked out the realistic ways somebody could attack or misuse the service and written them down?",
  "why": "Simply identifying technical components is not enough. The team needs to think about, given our architecture what could actually go wrong from a security perspective?\nDoing this systematically helps find security weaknesses before they become incidents.\nIt also helps teams prioritise security investment according to realistic threats rather than simply implementing generic security features.",
  "tasks": [
-  "systems",
-  "sensitive information",
-  "user accounts",
-  "privileged functions"
+  "Have you identified and documented the possible attack paths or threat events that could be used to exploit vulnerabilities in the service?"
  ],
  "actions": [
   {
-   "title": "systems",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "sensitive information",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "user accounts",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "privileged functions",
-   "description": "",
+   "title": "Have you identified and documented the possible attack paths or threat events that could be used to exploit vulnerabilities in the service?",
+   "description": "The team should carry out a structured threat assessment or threat-modelling exercise.\nThere should be evidence showing:\n1. What is being protected?\n• systems\n• sensitive information\n• user accounts\n• privileged functions\n• critical services.\n1. What could threaten it?\n• identified threat events or scenarios.\n1. Where could the threat occur?\n• component, interface, data flow or trust boundary.\n1. What would happen if it succeeded?\n• impact on confidentiality, integrity or availability.\n1. How significant is the threat?\n• some form of evaluation/prioritisation.\nThe identified threats should be documented and traceable back to the architecture.",
    "evidence": "",
    "legal": false
   }

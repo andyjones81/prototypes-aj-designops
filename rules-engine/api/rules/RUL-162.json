@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Third-party tools and integrations (including SaaS) MUST undergo a Vendor Security Assessment before they can be used to prevent breaches vi",
-   "description": "",
+   "description": "Before a team can use a new supplier, SaaS product, API, integration, or security tool, the supplier's security controls must be assessed and approved.",
    "evidence": "",
    "legal": false
   }

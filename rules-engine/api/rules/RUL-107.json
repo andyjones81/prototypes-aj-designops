@@ -29,26 +29,12 @@
  "requirementDescription": "- operational\n- security\n- good practice\n- people need to understand how the thing is built - to support it and build it",
  "why": "- operational\n- security\n- good practice\n- people need to understand how the thing is built - to support it and build it",
  "tasks": [
-  "managed supplier - tend to give HLD",
-  "build in DfE - expect more LLD",
-  "follow the technical DfE standards"
+  "Document High Level Design (HLD) and Low Level Design (LLD). Factor DfE standards into technical design (ORR 5 and ORR 6)"
  ],
  "actions": [
   {
-   "title": "managed supplier - tend to give HLD",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "build in DfE - expect more LLD",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "follow the technical DfE standards",
-   "description": "",
+   "title": "Document High Level Design (HLD) and Low Level Design (LLD). Factor DfE standards into technical design (ORR 5 and ORR 6)",
+   "description": "Depends on nature of service for the type and level of detail included.\n• managed supplier - tend to give HLD\n• build in DfE - expect more LLD\n• follow the technical DfE standards",
    "evidence": "",
    "legal": false
   }

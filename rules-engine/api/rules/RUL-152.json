@@ -26,7 +26,7 @@
  "actions": [
   {
    "title": "Secret scanning MUST be enabled in the repository to ensure proactive detection and remediation of accidental secret exposure.",
-   "description": "",
+   "description": "Put automated detection in place so it is found and remediated before it can be abused.",
    "evidence": "",
    "legal": false
   }

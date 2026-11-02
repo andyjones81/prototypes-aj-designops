@@ -31,33 +31,12 @@
  "requirementDescription": "Have you looked for security protections that solve more than one of the security problems you identified?",
  "why": "This encourages the team to think about security holistically rather than threat-by-threat in isolation.\nIt can:\n- provide stronger defence across the service\n- reduce duplicated security solutions\n- help prioritise high-value controls\n- simplify security architecture\n- make security controls easier to maintain\n- identify critical controls on which several security protections depend.\nImportantly, it can also expose concentration risk.\nIf ten important threats are all mitigated by one security control, failure",
  "tasks": [
-  "which controls protect against multiple threats",
-  "threats with inadequate protection",
-  "duplicated controls",
-  "especially important controls"
+  "Have you identified and documented any security controls that could mitigate multiple threat events?"
  ],
  "actions": [
   {
-   "title": "which controls protect against multiple threats",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "threats with inadequate protection",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "duplicated controls",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "especially important controls",
-   "description": "",
+   "title": "Have you identified and documented any security controls that could mitigate multiple threat events?",
+   "description": "An acceptable piece of evidence is a threat-to-control matrix.\nThis makes it much easier to see:\n• which controls protect against multiple threats\n• threats with inadequate protection\n• duplicated controls\n• especially important controls\n• possible single points of security failure.\nThe outcome should not simply be \"we have MFA\", for example. The documentation should demonstrate which identified threats the control is intended to mitigate.",
    "evidence": "",
    "legal": false
   }

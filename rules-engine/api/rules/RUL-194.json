@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Restoration capability MUST be tested/proved annually (Drills) because a backup that is never tested is not a backup.",
-   "description": "",
+   "description": "Don't just create backups and assume they're fine. At least once a year, prove that you can successfully restore systems and data so that, during a real incident, recovery is reliable and predictable.",
    "evidence": "",
    "legal": false
   }

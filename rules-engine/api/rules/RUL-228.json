@@ -29,33 +29,12 @@
  "requirementDescription": "If information leaves the UK or EEA, have you checked what legal and security requirements apply?",
  "why": "Cross-border data movement may create additional legal and privacy obligations.\nSecure by Design requires teams to understand applicable obligations based on the nature of the service and its data.",
  "tasks": [
-  "Where data is stored",
-  "International transfer mechanisms",
-  "Legal restrictions",
-  "Supplier arrangements"
+  "If data will be processed, stored or transmitted outside the UK or the European Economic Area (EEA), have you considered the relevant securi"
  ],
  "actions": [
   {
-   "title": "Where data is stored",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "International transfer mechanisms",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Legal restrictions",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Supplier arrangements",
-   "description": "",
+   "title": "If data will be processed, stored or transmitted outside the UK or the European Economic Area (EEA), have you considered the relevant securi",
+   "description": "You should assess:\n• Where data is stored\n• International transfer mechanisms\n• Legal restrictions\n• Supplier arrangements",
    "evidence": "",
    "legal": false
   }

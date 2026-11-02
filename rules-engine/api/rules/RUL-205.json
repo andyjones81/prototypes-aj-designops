@@ -33,33 +33,12 @@
  "requirementDescription": "Do you know what security expertise is needed, and have you involved the people in your organisation who can provide it?",
  "why": "Many project teams do not contain all the specialist skills required for Secure by Design. The guidance specifically recommends consulting security professionals, security architects, CTOs, CISOs and other specialists to identify required skills and provide support",
  "tasks": [
-  "A list of required security skills.",
-  "Which activities need those skills.",
-  "Evidence of engagement with security teams.",
-  "Plans for training if skills are missing."
+  "Have you identified and captured the skills required to carry out security activities and engaged with your organisation's security team to "
  ],
  "actions": [
   {
-   "title": "A list of required security skills.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Which activities need those skills.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Evidence of engagement with security teams.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Plans for training if skills are missing.",
-   "description": "",
+   "title": "Have you identified and captured the skills required to carry out security activities and engaged with your organisation's security team to ",
+   "description": "You should be able to show:\n• A list of required security skills.\n• Which activities need those skills.\n• Evidence of engagement with security teams.\n• Plans for training if skills are missing.\n• Assigned individuals or teams for key security activities",
    "evidence": "",
    "legal": false
   }

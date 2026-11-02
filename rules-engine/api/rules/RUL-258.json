@@ -31,33 +31,12 @@
  "requirementDescription": "Have you agreed and written down how you will judge how serious a vulnerability is, decide which ones need fixing first, and determine how and when they will be fixed?",
  "why": "Not every vulnerability presents the same level of risk. A minor weakness in a low-risk component should not necessarily receive the same priority as a critical vulnerability affecting an important internet-facing system.\nHaving an agreed process ensures vulnerabilities are handled consistently and that teams focus first on weaknesses presenting the greatest risk.",
  "tasks": [
-  "how vulnerabilities are classified and scored",
-  "how priority is determined",
-  "expected remediation timescales",
-  "available remediation approaches"
+  "Do you have a documented approach on how to classify, prioritise and redress vulnerabilities?"
  ],
  "actions": [
   {
-   "title": "how vulnerabilities are classified and scored",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "how priority is determined",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "expected remediation timescales",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "available remediation approaches",
-   "description": "",
+   "title": "Do you have a documented approach on how to classify, prioritise and redress vulnerabilities?",
+   "description": "Create and maintain a documented vulnerability management process that defines:\n• how vulnerabilities are classified and scored\n• how priority is determined\n• expected remediation timescales\n• available remediation approaches\n• who is responsible for resolving them\n• when vulnerabilities need escalating\n• how remediation is tested and confirmed\n• how vulnerabilities are recorded and tracked.",
    "evidence": "",
    "legal": false
   }

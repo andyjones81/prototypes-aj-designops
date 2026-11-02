@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "All administrative and privileged access (Cloud Consoles, Prod DBs, CI/CD Admin) MUST be protected by MFA to prevent account takeover and ma",
-   "description": "",
+   "description": "If an account can administer systems, access sensitive production resources, or make significant changes, MFA must be enforced.",
    "evidence": "",
    "legal": false
   }

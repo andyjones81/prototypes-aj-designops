@@ -33,33 +33,12 @@
  "requirementDescription": "Have you formally documented the risks introduced by third-party products and explained how those risks will be managed?",
  "why": "Decision makers need visibility of supplier risks before approving technology choices.\nThe report provides evidence that due diligence has been completed and allows risk owners to make informed decisions",
  "tasks": [
-  "Product description",
-  "Identified risks",
-  "Impact assessment",
-  "Risk ratings"
+  "Have you created a report that highlights any security risks associated with using third-party products, including recommendations on how to"
  ],
  "actions": [
   {
-   "title": "Product description",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Identified risks",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Impact assessment",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Risk ratings",
-   "description": "",
+   "title": "Have you created a report that highlights any security risks associated with using third-party products, including recommendations on how to",
+   "description": "The report should contain:\n• Product description\n• Identified risks\n• Impact assessment\n• Risk ratings\n• Proposed mitigations\n• Residual risks\n• Recommendations",
    "evidence": "",
    "legal": false
   }

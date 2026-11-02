@@ -29,33 +29,12 @@
  "requirementDescription": "If the system uses personal information, have you met all legal and security requirements for protecting it?",
  "why": "Personal information requires special protection under privacy and data protection laws",
  "tasks": [
-  "Data minimisation applied",
-  "Appropriate security controls implemented",
-  "Retention arrangements defined",
-  "DPIA completed where required"
+  "Have you met obligations in relation to personally identifiable information (PII) being processed, stored or transmitted by the service?"
  ],
  "actions": [
   {
-   "title": "Data minimisation applied",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Appropriate security controls implemented",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Retention arrangements defined",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "DPIA completed where required",
-   "description": "",
+   "title": "Have you met obligations in relation to personally identifiable information (PII) being processed, stored or transmitted by the service?",
+   "description": "Typically:\n• Data minimisation applied\n• Appropriate security controls implemented\n• Retention arrangements defined\n• DPIA completed where required",
    "evidence": "",
    "legal": false
   }

@@ -29,33 +29,12 @@
  "requirementDescription": "- good practice\n- helps people understand impact what they are doing is having on another people\n- understand dependencies",
  "why": "- good practice\n- helps people understand impact what they are doing is having on another people\n- understand dependencies",
  "tasks": [
-  "impact assessment",
-  "understand technical and business process dependency",
-  "a conversation with Steve?",
-  "mapping things out"
+  "Understand the impact on the existing landscape (ORR item 1)"
  ],
  "actions": [
   {
-   "title": "impact assessment",
-   "description": "",
-   "evidence": "",
-   "legal": true
-  },
-  {
-   "title": "understand technical and business process dependency",
-   "description": "",
-   "evidence": "",
-   "legal": true
-  },
-  {
-   "title": "a conversation with Steve?",
-   "description": "",
-   "evidence": "",
-   "legal": true
-  },
-  {
-   "title": "mapping things out",
-   "description": "",
+   "title": "Understand the impact on the existing landscape (ORR item 1)",
+   "description": "• impact assessment\n• understand technical and business process dependency\n• a conversation with Steve?\n• mapping things out",
    "evidence": "",
    "legal": true
   }

@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Incident response plans SHOULD be tested on an annual basis to ensure people are familiar with the process under pressure.",
-   "description": "",
+   "description": "Don't wait for a real cyber incident to discover whether your response process works. Practise it at least annually so that the people involved know their roles and can respond confidently when under pressure.",
    "evidence": "",
    "legal": false
   }

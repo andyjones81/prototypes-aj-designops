@@ -33,33 +33,12 @@
  "requirementDescription": "Before appointing an external provider to deliver or operate services on your behalf, have you assessed the risks they introduce?",
  "why": "MSPs often receive significant access to:\n- Systems\n- Infrastructure\n- Data\n- Administrative accounts\nA security weakness within the MSP can become a security weakness in your service.\nSecure by Design requires security due diligence on third-party providers",
  "tasks": [
-  "Supplier security maturity",
-  "Access management controls",
-  "Incident response capabilities",
-  "Personnel vetting"
+  "Have you identified the security risks related to third-party Managed Service Providers (MSPs) prior to using them?"
  ],
  "actions": [
   {
-   "title": "Supplier security maturity",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Access management controls",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Incident response capabilities",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Personnel vetting",
-   "description": "",
+   "title": "Have you identified the security risks related to third-party Managed Service Providers (MSPs) prior to using them?",
+   "description": "You should assess:\n• Supplier security maturity\n• Access management controls\n• Incident response capabilities\n• Personnel vetting\n• Monitoring arrangements\n• Business continuity arrangements",
    "evidence": "",
    "legal": false
   }

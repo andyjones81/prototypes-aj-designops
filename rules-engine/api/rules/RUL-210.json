@@ -36,33 +36,12 @@
  "requirementDescription": "Have you built regular security checks and reviews into the way the project is delivered, rather than only checking security at the end?",
  "why": "Traditional projects often perform a single security review shortly before go-live. Secure by Design requires security to be continually assessed throughout the service lifecycle because threats, risks and designs change over time. Continuous assurance helps identify issues early and provides confidence that security remains effective.",
  "tasks": [
-  "Security reviews built into sprint cycles.",
-  "Security checkpoints within delivery governance.",
-  "Threat assessments being regularly reviewed.",
-  "Security testing occurring throughout development."
+  "Have you included continuous assurance processes in the service's project delivery workflow?"
  ],
  "actions": [
   {
-   "title": "Security reviews built into sprint cycles.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Security checkpoints within delivery governance.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Threat assessments being regularly reviewed.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Security testing occurring throughout development.",
-   "description": "",
+   "title": "Have you included continuous assurance processes in the service's project delivery workflow?",
+   "description": "Evidence might include:\n• Security reviews built into sprint cycles.\n• Security checkpoints within delivery governance.\n• Threat assessments being regularly reviewed.\n• Security testing occurring throughout development.\n• Regular risk reviews.\n• Assurance activities included in project plans.",
    "evidence": "",
    "legal": false
   }

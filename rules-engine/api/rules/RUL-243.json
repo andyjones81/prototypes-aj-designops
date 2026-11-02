@@ -31,33 +31,12 @@
  "requirementDescription": "Has someone suitably knowledgeable stepped back and checked that the proposed security design is sensible, follows recognised good practice, and doesn't contain obvious architectural security weaknesses? This is slightly different from threat modelling.\nThreat modelling asks how could this particular system be attacked or misused?”\nA security design review asks, is the way we've designed the system fundamentally secure and consistent with accepted security principles?”",
  "why": "A team can identify individual threats and still end up with a poor overall security design.\nFor example, controls may exist but:\n- be implemented in the wrong place\n- rely too heavily on one component\n- give users excessive privileges\n- trust systems unnecessarily\n- fail securely only in some circumstances\n- produce inadequate security logs\n- create unnecessarily complex security arrangements.\nA design review provides another perspective on the overall security architecture.",
  "tasks": [
-  "assess the design against recognised security principles and patterns",
-  "identify any weaknesses, gaps or recommendations",
-  "record actions and assign owners",
-  "track significant issues through to resolution or formal risk acceptance"
+  "Have you conducted a security design review against good practice principles and patterns?"
  ],
  "actions": [
   {
-   "title": "assess the design against recognised security principles and patterns",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "identify any weaknesses, gaps or recommendations",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "record actions and assign owners",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "track significant issues through to resolution or formal risk acceptance",
-   "description": "",
+   "title": "Have you conducted a security design review against good practice principles and patterns?",
+   "description": "Complete and document a security design review using the current architecture, identified threats and proposed security controls. The review should:\n• assess the design against recognised security principles and patterns\n• identify any weaknesses, gaps or recommendations\n• record actions and assign owners\n• track significant issues through to resolution or formal risk acceptance\nFor higher-risk services, consider an independent or specialist security review.",
    "evidence": "",
    "legal": false
   }

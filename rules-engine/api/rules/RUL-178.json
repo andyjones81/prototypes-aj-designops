@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Standing admin rights MUST NOT exist; Just-in-Time (JIT) or Least Privilege scoping MUST be used to limit the potential damage an attacker c",
-   "description": "",
+   "description": "People should not walk around with permanent administrator privileges. Give the minimum permissions needed, and where elevated access is required, grant it temporarily and remove it automatically when the task is complete.",
    "evidence": "",
    "legal": false
   }

@@ -33,33 +33,12 @@
  "requirementDescription": "Before using external development tools, frameworks, code repositories or software products, have you checked whether they introduce security risks?",
  "why": "Development tools can create risks such as:\n- Software supply-chain attacks\n- Vulnerable dependencies\n- Malicious code\n- Insecure build pipelines\n- Exposure of source code",
  "tasks": [
-  "Supplier reputation",
-  "Known vulnerabilities",
-  "Security updates process",
-  "Dependency risks"
+  "Have you assessed and managed the risks associated with any third-party development environments or software prior to committing to using th"
  ],
  "actions": [
   {
-   "title": "Supplier reputation",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Known vulnerabilities",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Security updates process",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Dependency risks",
-   "description": "",
+   "title": "Have you assessed and managed the risks associated with any third-party development environments or software prior to committing to using th",
+   "description": "You should assess:\n• Supplier reputation\n• Known vulnerabilities\n• Security updates process\n• Dependency risks\n• Access controls\n• Licence implications",
    "evidence": "",
    "legal": false
   }

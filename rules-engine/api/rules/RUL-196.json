@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Base container images MUST be pulled from a trusted internal registry and MUST be refreshed/patched at least monthly to prevent systems from",
-   "description": "",
+   "description": "If you're deploying containers, use approved base images from the organisation's trusted registry and update those images regularly.",
    "evidence": "",
    "legal": false
   }

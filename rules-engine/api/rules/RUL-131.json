@@ -29,12 +29,12 @@
  "requirementDescription": "Keep systems safe and secure",
  "why": "Keep systems safe and secure",
  "tasks": [
-  "output of registering security"
+  "ReceIve security assurance and address risks (that are above DfE's risk appetite) (ORR 23) (Links to ORR21)"
  ],
  "actions": [
   {
-   "title": "output of registering security",
-   "description": "",
+   "title": "ReceIve security assurance and address risks (that are above DfE's risk appetite) (ORR 23) (Links to ORR21)",
+   "description": "• output of registering security",
    "evidence": "",
    "legal": false
   }

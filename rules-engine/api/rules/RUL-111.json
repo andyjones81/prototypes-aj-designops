@@ -29,26 +29,12 @@
  "requirementDescription": "- ensures re-use\n- avoids duplication",
  "why": "- ensures re-use\n- avoids duplication",
  "tasks": [
-  "contact Find and use an API",
-  "try to host API through FuAPI",
-  "if not get it on FuAPI register"
+  "If you have developed an API, contact Find and use an API (FaUAPI) (ORR 10)"
  ],
  "actions": [
   {
-   "title": "contact Find and use an API",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "try to host API through FuAPI",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "if not get it on FuAPI register",
-   "description": "",
+   "title": "If you have developed an API, contact Find and use an API (FaUAPI) (ORR 10)",
+   "description": "• contact Find and use an API\n• try to host API through FuAPI\n• if not get it on FuAPI register",
    "evidence": "",
    "legal": false
   }

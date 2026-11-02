@@ -31,33 +31,12 @@
  "requirementDescription": "Does the way you score security risks match the way your organisation scores and understands risk more generally?",
  "why": "Security risks ultimately need to be understood and managed alongside other organisational risks.\nUsing aligned scoring means:\n- risks can be compared consistently\n- senior decision-makers understand what the ratings mean\n- escalation thresholds are consistent\n- risks aren't understated or overstated because different teams use different definitions\n- security risks can feed into wider organisational risk management.",
  "tasks": [
-  "Identify the organisation's existing risk scoring framework.",
-  "Use the same scales or establish a clear mapping between the security risk scale and organisational scale.",
-  "Define what each likelihood, impact and severity rating means.",
-  "Agree the scoring parameters with the appropriate risk/security stakeholders."
+  "Do the scoring scales used for your service's security risk assessment align with your organisation's risk management processes?"
  ],
  "actions": [
   {
-   "title": "Identify the organisation's existing risk scoring framework.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Use the same scales or establish a clear mapping between the security risk scale and organisational scale.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Define what each likelihood, impact and severity rating means.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Agree the scoring parameters with the appropriate risk/security stakeholders.",
-   "description": "",
+   "title": "Do the scoring scales used for your service's security risk assessment align with your organisation's risk management processes?",
+   "description": "• Identify the organisation's existing risk scoring framework.\n• Use the same scales or establish a clear mapping between the security risk scale and organisational scale.\n• Define what each likelihood, impact and severity rating means.\n• Agree the scoring parameters with the appropriate risk/security stakeholders.\n• Apply the scoring consistently across the service's security risks.",
    "evidence": "",
    "legal": false
   }

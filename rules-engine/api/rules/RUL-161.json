@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "GovAssure is mandatory if identified as in-scope to ensure compliance with a statutory obligation.",
-   "description": "",
+   "description": "If your system or service has been identified as being within the scope of GovAssure, then participating in the GovAssure process is not optional. It is a mandatory requirement because it supports a legal or government policy obligation.",
    "evidence": "",
    "legal": false
   }

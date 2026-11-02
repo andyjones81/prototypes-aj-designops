@@ -29,33 +29,12 @@
  "requirementDescription": "Review of requests from across DfE for DDT time, knowledge and expertise, usually with a view to developing a solution to a problem, or augmenting an existing service.",
  "why": "Centralised way into DDT for people who don't have ways into DDT. Demand can signpost people to the right place.",
  "tasks": [
-  "a clear description of the problem and its impact",
-  "what kind of help they are seeking. For example, options appraisal or planning advice",
-  "timescales and confirmed funding",
-  "work already done. For example, research, options considered, guidance reviewed"
+  "Get help with DDT tasks and projects ('Demand' process)"
  ],
  "actions": [
   {
-   "title": "a clear description of the problem and its impact",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "what kind of help they are seeking. For example, options appraisal or planning advice",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "timescales and confirmed funding",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "work already done. For example, research, options considered, guidance reviewed",
-   "description": "",
+   "title": "Get help with DDT tasks and projects ('Demand' process)",
+   "description": "Teams complete the DDT request form.\nThey will need to provide:\n• a clear description of the problem and its impact\n• what kind of help they are seeking. For example, options appraisal or planning advice\n• timescales and confirmed funding\n• work already done. For example, research, options considered, guidance reviewed\nThe team will review the demand request and take it through the triage process if there is merit to it.",
    "evidence": "",
    "legal": false
   }

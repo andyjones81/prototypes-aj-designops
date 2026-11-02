@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "All data repositories (S3, Blob, SQL, SharePoint) MUST be classified to ensure effective data defence.",
-   "description": "",
+   "description": "Every database, storage account, SharePoint site, or data store must be labelled according to the sensitivity of the data it contains. This allows the organisation to apply the correct level of protection and ensures sensitive data receives stronger security controls than low-risk information.",
    "evidence": "",
    "legal": false
   }

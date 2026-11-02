@@ -31,33 +31,12 @@
  "requirementDescription": "Do you have a documented approach for analysing your logs and monitoring the alerts generated?",
  "why": "An alert only protects the service if something appropriate happens as a result.\nA documented monitoring process helps ensure that:\n- alerts are seen by the right people\n- genuine incidents are identified\n- false positives can be investigated\n- serious events are escalated quickly\n- incident management processes are triggered where necessary\n- responsibilities are clear.",
  "tasks": [
-  "which logs and alerts will be monitored",
-  "who is responsible for monitoring them",
-  "how frequently they are reviewed",
-  "which events require investigation"
+  "Do you have a documented approach for analysing your logs and monitoring the alerts generated?"
  ],
  "actions": [
   {
-   "title": "which logs and alerts will be monitored",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "who is responsible for monitoring them",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "how frequently they are reviewed",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "which events require investigation",
-   "description": "",
+   "title": "Do you have a documented approach for analysing your logs and monitoring the alerts generated?",
+   "description": "Document:\n• which logs and alerts will be monitored\n• who is responsible for monitoring them\n• how frequently they are reviewed\n• which events require investigation\n• when an alert should be generated\n• how alerts are prioritised\n• who receives alerts\n• when an incident should be escalated\n• what automated responses exist, where appropriate\n• how monitoring feeds into incident management.\nThe process should be reviewed when the service or threats change.",
    "evidence": "",
    "legal": false
   }

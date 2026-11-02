@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "All stateful data MUST be backed up to a separate region/location (Immutable backups preferred) to ensure all systems and data can be recove",
-   "description": "",
+   "description": "Any important data must be backed up and stored separately from production systems. Ideally, the backups should be immutable so attackers cannot delete them.",
    "evidence": "",
    "legal": false
   }

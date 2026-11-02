@@ -36,7 +36,7 @@
  "actions": [
   {
    "title": "Have you identified and documented what security controls are available to reduce the likelihood of threat events?",
-   "description": "",
+   "description": "Ideally, there should be traceability between threats and controls.",
    "evidence": "",
    "legal": false
   }

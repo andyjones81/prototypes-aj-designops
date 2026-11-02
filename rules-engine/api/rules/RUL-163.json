@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Service Owners MUST own their risk, and risks above tolerance REQUIRE formal consultation with the CISO before acceptance to ensure senior l",
-   "description": "",
+   "description": "CISO needs to be consulted as a part of the decision making about the risk acceptance",
    "evidence": "",
    "legal": false
   }

@@ -36,7 +36,7 @@
  "actions": [
   {
    "title": "Have you considered the appropriate Cyber Assessment Framework (CAF) profile for all the components of the service?",
-   "description": "",
+   "description": "Assess each major service component, appropriate CAF expectations, traceability, provide evidence in CAF assessment, security architecture documents etc",
    "evidence": "",
    "legal": false
   }

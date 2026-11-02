@@ -31,33 +31,12 @@
  "requirementDescription": "Have you decided and written down which activities and events within the service need to be recorded so that suspicious behaviour or a security incident can be detected and investigated?",
  "why": "If important events are not recorded, you may not know that an attack or security incident has happened.\nAppropriate logging allows teams to:\n- spot unusual or suspicious behaviour\n- investigate potential security incidents\n- understand what happened and when\n- provide information to incident response teams\n- monitor whether security controls are working\n- identify opportunities to improve security.",
  "tasks": [
-  "Identify the security events and information that need to be captured.",
-  "Link them to relevant service assets, risks and threats.",
-  "Document what will be logged and why.",
-  "Make sure appropriate systems/components generate the required information."
+  "Do you have a documented approach for what events should be logged to help identify security incidents?"
  ],
  "actions": [
   {
-   "title": "Identify the security events and information that need to be captured.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Link them to relevant service assets, risks and threats.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Document what will be logged and why.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Make sure appropriate systems/components generate the required information.",
-   "description": "",
+   "title": "Do you have a documented approach for what events should be logged to help identify security incidents?",
+   "description": "• Identify the security events and information that need to be captured.\n• Link them to relevant service assets, risks and threats.\n• Document what will be logged and why.\n• Make sure appropriate systems/components generate the required information.\n• Secure the logs against unauthorised access, alteration or deletion.\n• Define suitable retention arrangements.\n• Review logging requirements when the service or threat landscape changes.",
    "evidence": "",
    "legal": false
   }

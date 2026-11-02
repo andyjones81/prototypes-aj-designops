@@ -36,7 +36,7 @@
  "actions": [
   {
    "title": "Have you obtained the organisation's overarching threat assessment (or completed your own if there is not one available)?",
-   "description": "",
+   "description": "You should:\n1. Check whether an organisational threat assessment exists.\n2. Obtain and review it.\n3. Tailor it to your service if necessary.\n4. Create a new assessment if none exists.\n5. Keep it updated when the service changes.",
    "evidence": "",
    "legal": false
   }

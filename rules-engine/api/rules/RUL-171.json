@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "DLP controls MUST be implemented on email, collaboration tools, and corporate endpoints to prevent the unauthorized transmission of high-ris",
-   "description": "",
+   "description": "Implement controls that can detect and stop sensitive information leaving the organisation through email, Teams/SharePoint/OneDrive, or corporate devices.",
    "evidence": "",
    "legal": false
   }

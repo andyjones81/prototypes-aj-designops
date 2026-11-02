@@ -34,7 +34,7 @@
  "actions": [
   {
    "title": "Book a live service assessment (ORR 14)",
-   "description": "",
+   "description": "Book a service assessment",
    "evidence": "",
    "legal": false
   }

@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Production environments MUST NOT communicate with Non-Production environments (Segmentation) to prevent a test environment compromise from s",
-   "description": "",
+   "description": "Keep Production and Non-Production environments separate. If a development or test system is compromised, the attacker should not be able to use it as a stepping stone into live production services or data.",
    "evidence": "",
    "legal": false
   }

@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "\"Default Encryption\" policies MUST be enabled on all Storage Accounts/S3/Blob storage to ensure sensitive data is not accidentally stored wi",
-   "description": "",
+   "description": "All cloud storage services must have encryption enabled by default so that any data stored within them is automatically protected from unauthorised access.",
    "evidence": "",
    "legal": false
   }

@@ -19,12 +19,12 @@
  "requirementDescription": "If a system is exposed to the internet and is important enough to pose a security or business risk, it must be tested by security specialists at least once a year to identify vulnerabilities that automated scanning might miss.",
  "why": "Penetration testing provides assurance that real attackers cannot easily exploit the service.",
  "tasks": [
-  "Any externally accessible system that:\n- Handle sensitive or business‑critical data\n- Provide authentication or user accounts\n- Connect into"
+  "Any externally accessible system that: - Handle sensitive or business‑critical data - Provide authentication or user accounts - Connect into"
  ],
  "actions": [
   {
-   "title": "Any externally accessible system that:\n- Handle sensitive or business‑critical data\n- Provide authentication or user accounts\n- Connect into",
-   "description": "",
+   "title": "Any externally accessible system that: - Handle sensitive or business‑critical data - Provide authentication or user accounts - Connect into",
+   "description": "Penetration testing and IT Health Check",
    "evidence": "",
    "legal": false
   }

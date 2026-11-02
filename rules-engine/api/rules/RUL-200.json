@@ -36,33 +36,12 @@
  "requirementDescription": "Does the business case clearly explain any security requirements, risks, controls, obligations and costs associated with the proposal?",
  "why": "Security affects scope, delivery time, resources, funding and user trust. If these considerations are not identified early, projects can be delayed, become more expensive, or introduce unacceptable risks. The guidance states that security should be included throughout the business case so that the true costs and effort are understood from the outset",
  "tasks": [
-  "Security obligations (legal, regulatory, policy).",
-  "Threats and risks.",
-  "Security controls.",
-  "Resource requirements."
+  "Does the business case include cyber security considerations?"
  ],
  "actions": [
   {
-   "title": "Security obligations (legal, regulatory, policy).",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Threats and risks.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Security controls.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Resource requirements.",
-   "description": "",
+   "title": "Does the business case include cyber security considerations?",
+   "description": "The business case should include security information such as:\n• Security obligations (legal, regulatory, policy).\n• Threats and risks.\n• Security controls.\n• Resource requirements.\n• Security governance arrangements.\n• Security-related costs",
    "evidence": "",
    "legal": false
   }

@@ -39,7 +39,7 @@
  "actions": [
   {
    "title": "Are you considering requested changes as part of risk assessment and treatment activities?",
-   "description": "",
+   "description": "For relevant changes:\n1. assess the security impact\n2. review affected risks\n3. identify new risks where needed\n4. reassess likelihood and impact where appropriate\n5. update the risk register\n6. review whether existing mitigations remain effective\n7. identify additional controls or mitigations if required\n8. test security recommendations before release.",
    "evidence": "",
    "legal": false
   }

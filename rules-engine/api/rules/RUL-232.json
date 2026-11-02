@@ -33,33 +33,12 @@
  "requirementDescription": "Have you made a list of everything valuable that the service uses, stores, manages or depends on?",
  "why": "You cannot protect assets if you do not know they exist.\nThe guidance states that documenting assets helps organisations:\n- Understand what needs protecting.\n- Manage risks and vulnerabilities.\n- Identify accountability.\n- Assess the impact of loss or compromise.",
  "tasks": [
-  "Customer data",
-  "Employee information",
-  "Financial records",
-  "Intellectual property"
+  "Have you identified and documented the business and technology information assets in scope of the service?"
  ],
  "actions": [
   {
-   "title": "Customer data",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Employee information",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Financial records",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Intellectual property",
-   "description": "",
+   "title": "Have you identified and documented the business and technology information assets in scope of the service?",
+   "description": "Create and maintain an inventory of assets in scope such as:\nBusiness assets\n• Customer data\n• Employee information\n• Financial records\n• Intellectual property\nTechnology assets\n• Applications\n• Servers\n• Databases\n• APIs\n• Networks\n• Cloud environments\nIt should also be reviewed and maintained as the service evolves",
    "evidence": "",
    "legal": false
   }

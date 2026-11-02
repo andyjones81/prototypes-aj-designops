@@ -29,33 +29,12 @@
  "requirementDescription": "If the service handles financial data, have you complied with the relevant security and regulatory requirements?",
  "why": "Financial data is often highly attractive to attackers and subject to additional controls.",
  "tasks": [
-  "PCI-DSS compliance where applicable",
-  "Encryption",
-  "Strong access control",
-  "Secure transmission"
+  "Have you met obligations in relation to financial information (such as credit card details) being processed, stored or transmitted by the se"
  ],
  "actions": [
   {
-   "title": "PCI-DSS compliance where applicable",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Encryption",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Strong access control",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Secure transmission",
-   "description": "",
+   "title": "Have you met obligations in relation to financial information (such as credit card details) being processed, stored or transmitted by the se",
+   "description": "Examples:\n• PCI-DSS compliance where applicable\n• Encryption\n• Strong access control\n• Secure transmission",
    "evidence": "",
    "legal": false
   }

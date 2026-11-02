@@ -34,33 +34,12 @@
  "requirementDescription": "Have you written down exactly what actions will be taken to reduce security risks?",
  "why": "Mitigations that exist only in conversations are easily forgotten. A documented treatment plan provides accountability, allows progress to be tracked and demonstrates that risks are being managed systematically. Secure by Design recommends documenting and approving mitigation activities as part of risk management.",
  "tasks": [
-  "The risk.",
-  "Proposed mitigation.",
-  "Owner.",
-  "Due date."
+  "Have you documented the risk mitigations (for example in a risk treatment plan)?"
  ],
  "actions": [
   {
-   "title": "The risk.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Proposed mitigation.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Owner.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Due date.",
-   "description": "",
+   "title": "Have you documented the risk mitigations (for example in a risk treatment plan)?",
+   "description": "The documentation should show:\n• The risk.\n• Proposed mitigation.\n• Owner.\n• Due date.\n• Current status.\n• Expected reduction in risk.",
    "evidence": "",
    "legal": false
   }

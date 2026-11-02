@@ -37,26 +37,12 @@
  "requirementDescription": "Complete a checklist of activities to consider when building a service",
  "why": "It's an ITIL* process which other organisations use. It started in 2016 and has accumulated over time. \n\nIt is seen as something that will help people deliver good services. Parts of the ORR are also 'must haves', like ORR item 29 on meeting WCAG 2.2 AA guidelines. \n\n*ITIL is a widely used framework of best practices for IT Service Management.",
  "tasks": [
-  "Team finds out about Steve/ORR and engages with Steve (this varies but typically in alpha)",
-  "Steve guides people through the ORR, he goes through it line by line to talk about what people need to do",
-  "Team fills out ORR and sends it to Steve"
+  "Complete 'Operational Readiness Review' (ORR)"
  ],
  "actions": [
   {
-   "title": "Team finds out about Steve/ORR and engages with Steve (this varies but typically in alpha)",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Steve guides people through the ORR, he goes through it line by line to talk about what people need to do",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Team fills out ORR and sends it to Steve",
-   "description": "",
+   "title": "Complete 'Operational Readiness Review' (ORR)",
+   "description": "• Team finds out about Steve/ORR and engages with Steve (this varies but typically in alpha)\n• Steve guides people through the ORR, he goes through it line by line to talk about what people need to do\n• Team fills out ORR and sends it to Steve",
    "evidence": "",
    "legal": false
   }

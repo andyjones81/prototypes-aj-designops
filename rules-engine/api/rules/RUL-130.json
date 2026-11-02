@@ -29,12 +29,12 @@
  "requirementDescription": "To ensure that their systems are safe and security",
  "why": "To ensure that their systems are safe and security",
  "tasks": [
-  "start a Departmental Security Assurance model process"
+  "Start DSAM process (not ORR but added as result of ORR 22)"
  ],
  "actions": [
   {
-   "title": "start a Departmental Security Assurance model process",
-   "description": "",
+   "title": "Start DSAM process (not ORR but added as result of ORR 22)",
+   "description": "• start a Departmental Security Assurance model process",
    "evidence": "",
    "legal": false
   }

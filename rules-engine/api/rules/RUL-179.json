@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Legacy, non-MFA compatible authentication protocols (e.g., POP3, IMAP, SMTP) MUST be explicitly disabled because they eliminate easy ways fo",
-   "description": "",
+   "description": "Turn off old sign-in methods that only use usernames and passwords, because they can allow attackers to access accounts without going through MFA. The organisation should actively block these protocols rather than simply hoping nobody uses them.",
    "evidence": "",
    "legal": false
   }

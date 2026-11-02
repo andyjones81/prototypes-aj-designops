@@ -36,7 +36,7 @@
  "actions": [
   {
    "title": "Consider identity and access management for your service (ORR 16)",
-   "description": "",
+   "description": "When exploring (disco and alpha) user journeys, think about whether you will need users to log-in or create an account (authentication).\nIf so, consider in what capacity users will be interacting with your product or service (as a citizen, on behalf of an organisation, on behalf of the DfE, or a combination)\nWhen building (beta), engage with Dominic Harley if you are unsure which is the right option for your service and users. Or, if you know what solution fits your service best, engage directly with the onboarding team",
    "evidence": "",
    "legal": false
   }

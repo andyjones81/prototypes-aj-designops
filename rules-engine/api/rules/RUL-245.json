@@ -31,33 +31,12 @@
  "requirementDescription": "Have you written down how you assess security risks so that someone can understand the process you followed and repeat it?",
  "why": "Risk assessments involve judgement. Without a defined method, two people could assess exactly the same risk and reach very different conclusions.\nDocumenting the method makes the assessment:\n- consistent\n- repeatable\n- understandable\n- auditable\n- easier to review and update.",
  "tasks": [
-  "scope and boundaries",
-  "terminology and definitions",
-  "assumptions and constraints",
-  "information/sources used"
+  "Have you documented the risk assessment method used to perform a risk assessment?"
  ],
  "actions": [
   {
-   "title": "scope and boundaries",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "terminology and definitions",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "assumptions and constraints",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "information/sources used",
-   "description": "",
+   "title": "Have you documented the risk assessment method used to perform a risk assessment?",
+   "description": "Document the risk assessment methodology, including:\n• scope and boundaries\n• terminology and definitions\n• assumptions and constraints\n• information/sources used\n• how threats, vulnerabilities and impacts are assessed\n• how likelihood and impact are scored\n• how the overall risk rating is calculated\n• how and when risks will be reviewed.",
    "evidence": "",
    "legal": false
   }

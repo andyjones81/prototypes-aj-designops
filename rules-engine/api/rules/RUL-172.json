@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Sensitive data MUST be encrypted At Rest (using managed keys) and In Transit (using TLS 1.2+) to ensure data is protected even if communicat",
-   "description": "",
+   "description": "Sensitive data must be encrypted whenever it is stored and whenever it is transmitted. Use the platform's managed encryption capabilities and modern TLS (1.2 or higher) so that data remains protected if storage systems are compromised or network traffic is intercepted.",
    "evidence": "",
    "legal": false
   }

@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Any suspected breach, lost device, or accidental data exposure MUST be reported to CISD immediately to ensure a small incident does not beco",
-   "description": "",
+   "description": "If something security-related happens, or you think it might have happened, tell CISD immediately.",
    "evidence": "",
    "legal": false
   }

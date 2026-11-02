@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "Services MUST undergo mandatory assurance thru DSAM to ensure critical risks are detected and managed effectively.",
-   "description": "",
+   "description": "Before a service can proceed through key stages of its lifecycle it must go through the DSAM assurance process so that significant risks are identified, assessed, and addressed.",
    "evidence": "",
    "legal": false
   }

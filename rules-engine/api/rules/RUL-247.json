@@ -36,7 +36,7 @@
  "actions": [
   {
    "title": "Have you documented the service's risks (for example in a risk register)?",
-   "description": "",
+   "description": "Create and maintain a risk register, it should be kept up to date, shared with the people responsible for decision-making and mitigation, and updated when controls are introduced or circumstances change. The guidance specifically describes the register as a \"living document\" and says scores should be updated following implementation of security controls to reflect the latest information.",
    "evidence": "",
    "legal": false
   }

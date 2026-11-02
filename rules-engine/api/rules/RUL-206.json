@@ -33,33 +33,12 @@
  "requirementDescription": "Have you worked out what security tools, platforms and technical capabilities will be needed to build and operate the service securely?",
  "why": "Security depends on more than people. Projects often require specialist tools and infrastructure to support secure development, testing, monitoring and operations. The guidance requires teams to assess and document the technology resources needed.",
  "tasks": [
-  "Existing organisational security capabilities.",
-  "Additional tools required.",
-  "Development and testing environments.",
-  "Monitoring and detection capabilities."
+  "Have you identified and captured the required technology resources such as software development environments, tools and security capabilitie"
  ],
  "actions": [
   {
-   "title": "Existing organisational security capabilities.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Additional tools required.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Development and testing environments.",
-   "description": "",
-   "evidence": "",
-   "legal": false
-  },
-  {
-   "title": "Monitoring and detection capabilities.",
-   "description": "",
+   "title": "Have you identified and captured the required technology resources such as software development environments, tools and security capabilitie",
+   "description": "The project should identify:\n• Existing organisational security capabilities.\n• Additional tools required.\n• Development and testing environments.\n• Monitoring and detection capabilities.\n• Identity and access management tooling.\n• Security testing tools",
    "evidence": "",
    "legal": false
   }

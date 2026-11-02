@@ -24,7 +24,7 @@
  "actions": [
   {
    "title": "All Identity logs (Sign-ins, Failures), Cloud Audit Trails (config changes), and Application Error logs MUST go to the Central SIEM to ensur",
-   "description": "",
+   "description": "All sign-in logs, cloud configuration change logs, and application logs must be sent to SIEM",
    "evidence": "",
    "legal": false
   }
