@@ -523,3 +523,58 @@ html, html.govuk-template, .govuk-template__body, .app-body, .govuk-main-wrapper
 .flow-group{background:#fff;padding:16px 20px;margin-bottom:16px;border:1px solid #e1e4e8}.flow-gt{margin:0 0 8px;font-size:1.05rem}
 .flow .fx{margin-top:10px;padding-left:14px;border-left:4px solid #b1b4b6}
 .prefill{display:inline-block;background:#d2e2f1;color:#003078;font-size:.75rem;font-weight:700;padding:1px 6px;margin-left:6px}
+
+/* Screener layout */
+.flow{border-left:0;padding:0;background:transparent}
+.flow>.flow-t,.flow>.flow-p,.flow>.flow-steps,.flow>.govuk-inset-text,.flow>.govuk-notification-banner,.flow>details,.flow>.govuk-summary-list,.flow>.flow-h,.flow>.govuk-body,.flow>p{background:transparent}
+.flow>.flow-t{font-size:1.6rem}
+.flow>.flow-steps{background:#fff;padding:0 20px;border:1px solid #e1e4e8}
+.flow .govuk-inset-text{margin:0 0 16px;padding:12px 16px;background:#e8f1f8;border-left-color:#1d70b8;font-size:1rem}
+.fsec{background:#fff;border:1px solid #e1e4e8;border-top:3px solid #1d70b8;padding:22px 24px 8px;margin-bottom:20px}
+.fsec .flow-h{display:flex;align-items:center;gap:12px;border-top:0;margin:0 0 18px;padding:0;font-size:1.3rem}
+.fnum{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:#1d70b8;color:#fff;border-radius:50%!important;font-size:1rem}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.fgrid .govuk-input{width:100%!important;max-width:none}
+.fsec .govuk-input.govuk-\!-width-two-thirds{width:100%}
+.fsec .govuk-form-group{margin-bottom:18px}
+.flow-group{border:0;padding:0;margin:0 0 24px;background:transparent}
+.flow-gt{background:#f3f2f1;margin:0;padding:10px 14px;font-size:1rem;border-left:4px solid #1d70b8}
+.flow-group>.govuk-hint{margin:8px 14px}
+.flow-group .govuk-form-group{margin:0;padding:12px 14px;border-bottom:1px solid #e1e4e8}
+.flow-group .govuk-form-group:hover{background:#fafafa}
+.flow-group fieldset{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:4px 24px;align-items:center}
+.flow-group legend{float:none;display:block;grid-column:1;grid-row:1;max-width:none;margin:0;font-size:1rem}
+.flow-group .fq-err{grid-column:1/-1;grid-row:2}
+.flow-group .govuk-radios{grid-column:2;grid-row:1;margin:0}
+.flow-group .fx{margin:12px 0 4px}
+.flow-bar{position:sticky;bottom:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:16px;background:#fff;border:1px solid #b1b4b6;border-top:3px solid #0b0c0c;padding:12px 20px;margin-top:8px}
+.flow-bar .govuk-button-group{margin:0}.flow-bar .govuk-button{margin-bottom:0}.flow-bar-t{color:#505a5f}
+@media(max-width:800px){.fgrid{grid-template-columns:1fr}.flow-group fieldset{grid-template-columns:1fr}.flow-group .govuk-radios{grid-column:1;grid-row:2}}
+
+.two-col.flow-page{grid-template-columns:minmax(0,1fr)!important}
+.two-col.flow-page>aside{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}
+.two-col.flow-page>aside .govuk-heading-s{margin-top:0!important}
+.flow-group fieldset{grid-template-columns:minmax(0,1fr) 190px}
+.flow-group .govuk-radios--inline{display:flex;flex-wrap:nowrap;gap:0 18px}
+.flow-group .govuk-radios--inline .govuk-radios__item{float:none;margin:0}
+.fgrid{grid-template-columns:1fr 1fr}
+.fgrid .govuk-form-group{min-width:0}
+
+.flow-group fieldset.govuk-fieldset{display:grid!important;grid-template-columns:minmax(0,1fr) 190px!important;align-items:center}
+.flow-group .govuk-fieldset__legend{grid-column:1!important;grid-row:1!important;width:auto!important;display:block!important}
+.flow-group .govuk-radios{grid-column:2!important;grid-row:1!important}
+.flow-group .fq-err{grid-column:1/-1!important;grid-row:2!important}
+
+/* Enrolment progress */
+.enrol-card{background:#fff;border:1px solid #e1e4e8;border-top:3px solid #1d70b8;padding:20px 24px;margin-bottom:20px}
+.enrol-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:14px}
+.enrol-pct{text-align:right}.enrol-pct b{display:block;font-size:2rem;line-height:1;color:#1d70b8}
+.enrol-steps{list-style:none;margin:20px 0 0;padding:0}
+.enrol-steps li{display:grid;grid-template-columns:36px 1fr auto;gap:14px;align-items:center;padding:14px 0;border-top:1px solid #e1e4e8;color:#505a5f}
+.enrol-ic{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border:2px solid #b1b4b6;border-radius:50%!important;font-weight:700}
+.enrol-tx strong{display:block;color:#0b0c0c}.enrol-tx span{font-size:.9rem}
+.enrol-st{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.enrol-steps .on{background:#eef3f8;margin:0 -24px;padding-left:24px;padding-right:24px}.enrol-steps .on .enrol-ic{border-color:#1d70b8}.enrol-steps .on .enrol-st{color:#1d70b8}
+.enrol-steps .done .enrol-ic{background:#00703c;border-color:#00703c;color:#fff}.enrol-steps .done .enrol-st{color:#00703c}
+.spin{width:16px;height:16px;border:3px solid #cfdbe6;border-top-color:#1d70b8;border-radius:50%!important;animation:sp .8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}

@@ -1273,7 +1273,7 @@ function vActionDetail(id) {
     '<span class="govuk-caption-m">' + a.id + ' · <a class="govuk-link" href="#/work/' + a.workId + '">' + esc(workName(a.workId)) + '</a>' + (w ? ' · ' + esc(w.stage) : '') + '</span>' +
     pageHead(esc(a.title), statusTag(a.status) + ' ' + legalTag(d) + (a.ruleVersion ? ' <span class="muted">Rule ' + esc(a.ruleId) + ' v' + a.ruleVersion + '</span>' : ''),
       act ? (flowKind(a) ? '' : '<button type="button" class="govuk-button" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="evidence">Add evidence</button>') + '<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="note">Add note or update status</button>' : '') +
-    '<div class="two-col"><section>' + flowPanel(a) +
+    '<div class="two-col' + (flowKind(a) ? ' flow-page' : '') + '"><section>' + flowPanel(a) +
     '<h2 class="govuk-heading-m">About this action</h2><dl class="govuk-summary-list"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">What this involves</dt><dd class="govuk-summary-list__value">' + stepList(d.description) + '</dd></div>' +
     '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Expected evidence</dt><dd class="govuk-summary-list__value">' + (d.evidence ? esc(d.evidence) : '<span class="muted">Not yet defined.</span>') + '</dd></div>' +
     '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Requirement</dt><dd class="govuk-summary-list__value">' + (rule ? esc(rule.requirementTitle) + '<br><span class="muted">' + esc(rule.source) + '</span>' : 'Not linked to a rule') + '</dd></div></dl>' +
@@ -1317,7 +1317,7 @@ function screenerPrefill(w) {
   return v;
 }
 const SCR_FACTORS = SCR_GROUPS.reduce((l, g) => l.concat(g.f.map((x) => ({ key: x[0], text: x[1], prompt: x[2], g: g.id }))), []);
-const REVIEW_MS = 10000, ENROL_STEPS = ['Checking the service details', 'Sending the enrolment request to AISS', 'Creating the service record', 'Setting up the accessibility statement', 'Confirming enrolment'], ENROL_STEP_MS = 2000;
+const REVIEW_MS = 10000, ENROL_STEPS = [['Check the service details', 'Validating the service URL and contact email'], ['Send the enrolment request', 'POST /v1/services to the AISS API'], ['Create the service record', 'AISS registers the service and issues a reference'], ['Set up the accessibility statement', 'Creating the statement template for the service'], ['Confirm enrolment', 'Receiving the confirmation from AISS']], ENROL_STEP_MS = 2000;
 let flowTimer = null;
 const flowKind = (a) => (a.title === 'Complete screener' ? 'screener' : a.title === 'Enrol service' ? 'enrol' : null);
 function screenerOutcome(ans) {
@@ -1365,15 +1365,15 @@ function flowPanel(a) {
       return head('High risk screening document', 'Completing this form is the evidence for this action. Save a draft at any time and come back to finish it. When you send it, the Office of the Data Protection Officer reviews it.') + flowTracker(names, 0) +
         (f ? '<div class="govuk-inset-text">Draft saved ' + fmt(f.savedAt) + '. Nothing has been sent yet.</div>' : '') +
         '<div class="govuk-inset-text">We have filled in what we know from <strong>' + esc(w.title || 'the work item') + '</strong> and your account. Check every answer.</div>' +
-        '<form id="flow-screener" data-id="' + a.id + '" novalidate><h3 class="flow-h">1. About your processing activity</h3>' +
-        txt('name', 'Name of the processing activity') + txt('uname', 'Your name') + txt('uemail', 'Your email address', '', 0, 'email') + txt('team', 'Group, directorate or team responsible') + txt('sro', 'Senior Responsible Officer (SRO) for this activity') +
+        '<form id="flow-screener" data-id="' + a.id + '" novalidate><section class="fsec"><h3 class="flow-h"><span class="fnum">1</span>About your processing activity</h3><div class="fgrid">' +
+        txt('name', 'Name of the processing activity') + txt('team', 'Group, directorate or team responsible') + txt('uname', 'Your name') + txt('uemail', 'Your email address', '', 0, 'email') + txt('sro', 'Senior Responsible Officer (SRO) for this activity') + '</div>' +
         yn('wider', 'Does this form part of a wider service, contract or activity?', 'Name of the service and how this activity fits into it') + txt('dpias', 'Linked DPIAs (optional)', 'Have you considered updating an existing DPIA instead? Does this replace one?', 2) +
-        '<h3 class="flow-h">2. Describe the processing</h3>' + txt('what', 'What are you doing?', 'Do not use acronyms or terms only your work area will understand.', 3) + txt('why', 'Why are you doing it?', '', 3) +
+        '</section><section class="fsec"><h3 class="flow-h"><span class="fnum">2</span>Describe the processing</h3>' + txt('what', 'What are you doing?', 'Do not use acronyms or terms only your work area will understand.', 3) + txt('why', 'Why are you doing it?', '', 3) +
         yn('legislation', 'Does it involve or require new legislation?', 'Give details') + yn('ai', 'Are you intending to use AI, such as machine learning or large language models?', 'Give details') +
-        '<h3 class="flow-h">3. Risk factors</h3><p class="govuk-body">Read the definitions and guidance before you answer. For every Yes, explain why, with evidence that you meet the criteria.</p>' +
+        '</section><section class="fsec"><h3 class="flow-h"><span class="fnum">3</span>Risk factors</h3>' + '<p class="govuk-body">Read the definitions and guidance before you answer. For every Yes, explain why, with evidence that you meet the criteria.</p>' +
         SCR_GROUPS.map((g, gi) => '<div class="flow-group"><h4 class="flow-gt">Set ' + (gi + 1) + ' of ' + SCR_GROUPS.length + ': ' + esc(g.t) + '</h4>' + (g.hint ? '<p class="govuk-hint">' + esc(g.hint) + '</p>' : '') + g.f.map((x) => yn('f_' + x[0], esc(x[1]), x[2])).join('') + '</div>').join('') +
-        '<h3 class="flow-h">4. Good practice</h3>' + yn('major', 'Is this a major project involving personal data, such as a high-profile new national programme?', 'Explain, with any relevant press coverage or historical background') +
-        '<div class="govuk-button-group"><button class="govuk-button" type="submit" data-module="govuk-button">Send to the data protection team</button><button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="flow-draft" data-id="' + a.id + '">Save draft</button></div></form></section>';
+        '</section><section class="fsec"><h3 class="flow-h"><span class="fnum">4</span>Good practice</h3>' + yn('major', 'Is this a major project involving personal data, such as a high-profile new national programme?', 'Explain, with any relevant press coverage or historical background') +
+        '</section><div class="flow-bar"><span class="flow-bar-t">Your answers are only sent when you choose Send.</span><div class="govuk-button-group"><button class="govuk-button" type="submit" data-module="govuk-button">Send to the data protection team</button><button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="flow-draft" data-id="' + a.id + '">Save draft</button></div></div></form></section>';
     }
     const ys = SCR_FACTORS.filter((x) => f.answers['f_' + x.key] === 'Yes');
     const row = (k, v) => '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">' + k + '</dt><dd class="govuk-summary-list__value">' + v + '</dd></div>';
@@ -1397,12 +1397,18 @@ function flowPanel(a) {
       '<div class="govuk-form-group" id="fe-email"><label class="govuk-label govuk-label--s" for="fe-email-t">Contact email for accessibility issues</label><div class="fq-err"></div><input class="govuk-input" id="fe-email-t" name="email" type="email" spellcheck="false"></div>' +
       '<button class="govuk-button" type="submit" data-module="govuk-button">Enrol service</button></form></section>';
   }
+  const stepsHtml = (idx, f2) => '<ol class="enrol-steps">' + ENROL_STEPS.map((t, i) => {
+    const st = i < idx ? 'done' : i === idx ? 'on' : '';
+    return '<li class="' + st + '"><span class="enrol-ic">' + (i < idx ? '✓' : i === idx ? '<span class="spin"></span>' : i + 1) + '</span><div class="enrol-tx"><strong>' + esc(t[0]) + '</strong><span>' + esc(t[1]) + '</span></div><span class="enrol-st">' + (i < idx ? 'Done' : i === idx ? 'In progress' : 'Waiting') + '</span></li>';
+  }).join('') + '</ol>';
   if (f.stage === 'enrolling') {
-    const idx = Math.min(ENROL_STEPS.length, Math.floor((Date.now() - f.start) / ENROL_STEP_MS));
-    return head('Enrolling with AISS', 'Sending the request to the AISS API. This takes a few seconds.') + flowTracker(names, 1) +
-      '<ul class="api-steps">' + ENROL_STEPS.map((t, i) => '<li class="' + (i < idx ? 'done' : i === idx ? 'on' : '') + '"><span class="api-dot">' + (i < idx ? '✓' : i === idx ? '…' : '') + '</span>' + esc(t) + '</li>').join('') + '</ul></section>';
+    const el = Date.now() - f.start, total = ENROL_STEPS.length * ENROL_STEP_MS, idx = Math.min(ENROL_STEPS.length, Math.floor(el / ENROL_STEP_MS)), pct = Math.min(99, Math.round(el / total * 100));
+    return head('Enrolling with AISS', 'We are sending your service to the Accessibility Issues and Statement Service. You do not need to do anything.') + flowTracker(names, 1) +
+      '<div class="enrol-card"><div class="enrol-top"><div><strong>' + esc(w.title || 'Service') + '</strong><br><span class="muted">' + esc(f.url) + '</span></div><div class="enrol-pct"><b>' + pct + '%</b><span class="muted">Step ' + Math.min(idx + 1, ENROL_STEPS.length) + ' of ' + ENROL_STEPS.length + '</span></div></div>' + bar(pct, 'Enrolment ' + pct + '% complete') + stepsHtml(idx) + '</div></section>';
   }
-  return head('Enrolment complete') + flowTracker(names, 3) + '<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"><div class="govuk-notification-banner__header"><h2 class="govuk-notification-banner__title">Success</h2></div><div class="govuk-notification-banner__content"><p class="govuk-notification-banner__heading">' + esc(w.title || 'The service') + ' is enrolled in AISS</p><p class="govuk-body">Reference <strong>' + esc(f.ref) + '</strong>. AISS will email ' + esc(f.email) + ' when accessibility checks are due. Next, publish your accessibility statement.</p></div></div>' + again + '</section>';
+  const receipt = JSON.stringify({ status: 'enrolled', reference: f.ref, service: w.title, url: f.url, contact: f.email, enrolledAt: f.doneAt }, null, 2);
+  return head('Enrolment complete') + flowTracker(names, 3) + '<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"><div class="govuk-notification-banner__header"><h2 class="govuk-notification-banner__title">Success</h2></div><div class="govuk-notification-banner__content"><p class="govuk-notification-banner__heading">' + esc(w.title || 'The service') + ' is enrolled in AISS</p><p class="govuk-body">Reference <strong>' + esc(f.ref) + '</strong>. AISS will email ' + esc(f.email) + ' when accessibility checks are due. Next, publish your accessibility statement.</p></div></div>' +
+    '<div class="enrol-card">' + stepsHtml(ENROL_STEPS.length) + '</div><details class="govuk-details"><summary class="govuk-details__summary"><span class="govuk-details__summary-text">Response from AISS</span></summary><div class="govuk-details__text"><pre class="api-out">' + esc(receipt) + '</pre></div></details>' + again + '</section>';
 }
 function saveDraft(form) {
   const a = S.actions.find((x) => x.id === form.dataset.id); if (!a) return;
