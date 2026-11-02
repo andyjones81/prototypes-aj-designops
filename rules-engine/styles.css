@@ -454,3 +454,16 @@ html, html.govuk-template, .govuk-template__body, .app-body, .govuk-main-wrapper
 .app-body .sbar { margin-top: 4px; }
 .app-body .two-col aside .panel { padding: 18px 20px; }
 @media (max-width: 800px) { .app-body { padding: 16px 12px 24px; } .app-top { margin: -16px -12px 16px; } .app-body > main.govuk-main-wrapper { padding: 18px 16px 24px; } }
+
+/* Polish: tables, forms, panes */
+.wrow.sel { background: #e8f1f8; box-shadow: inset 4px 0 #1d70b8; }
+.pane .qlist { border: 1px solid #e1e4e8; }
+.split .wrow { grid-template-columns: minmax(0, 1fr) 150px auto; }
+.split .wrow .wrow-chg { display: none; }
+.app-body .govuk-table__cell .govuk-checkboxes { margin: 0; }
+.app-body .govuk-table__cell:last-child { white-space: nowrap; padding-right: 16px; }
+.app-body .govuk-table__cell .btn-sm, .app-body .govuk-table__cell .govuk-button { margin: 0; }
+.app-body .govuk-table__cell { vertical-align: middle; }
+.app-body .govuk-table__cell .govuk-checkboxes__label { white-space: nowrap; }
+.app-body .govuk-form-group > .govuk-input, .app-body .govuk-form-group > .govuk-textarea { max-width: 720px; }
+.with-rail .two-col { grid-template-columns: 1fr; }

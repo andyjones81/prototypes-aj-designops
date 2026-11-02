@@ -513,10 +513,10 @@ function qrow(a, showWork, href, sel) {
   const flag = a.status === 'Exception' ? '<span class="flag flag--orange">Exception</span>' : a.status === 'Complete' ? (evCount(a) ? '' : '<span class="flag flag--yellow">No evidence</span>') : actLegal(a) ? '<span class="flag flag--red">Legal</span>' : '';
   return '<li class="qrow' + (sel ? ' sel' : '') + '"><span class="dot dot--' + DOT[a.status] + '" aria-hidden="true"></span><div class="qrow-m"><a class="qrow-t govuk-link govuk-link--no-visited-state" href="' + (href || '#/actions/' + a.id) + '"' + (sel ? ' aria-current="true"' : '') + '>' + esc(a.title) + '</a><span class="qrow-s">' + (showWork === false ? '' : esc(workName(a.workId)) + ' · ') + esc(reqTitle(a)) + '</span></div><div class="qrow-r">' + flag + '<button type="button" class="info-btn" data-act="action-info" data-id="' + a.id + '" aria-label="Help for ' + esc(a.title) + '" aria-haspopup="dialog">?</button><span class="qrow-st">' + a.status + '</span></div></li>';
 }
-function workRow(w) {
+function workRow(w, href, sel) {
   const acts = S.actions.filter((a) => a.workId === w.id && isActive(a)), open = acts.filter(isOpen), p = workPct(w.id);
   const legal = open.filter(actLegal).length, exc = acts.filter((a) => a.status === 'Exception').length;
-  return '<li class="wrow"><div class="wrow-main"><h2 class="wrow-title"><a class="govuk-link govuk-link--no-visited-state" href="#/work/' + w.id + '">' + esc(w.title) + '</a></h2>' +
+  return '<li class="wrow' + (sel ? ' sel' : '') + '"><div class="wrow-main"><h2 class="wrow-title"><a class="govuk-link govuk-link--no-visited-state" href="' + (href || '#/work/' + w.id) + '"' + (sel ? ' aria-current="true"' : '') + '>' + esc(w.title) + '</a></h2>' +
     '<p class="wrow-desc">' + esc(w.stage) + ' · ' + esc(w.type) + (w.risk === 'High' ? ' · <strong class="red">High risk</strong>' : '') + '</p></div>' +
     '<div class="wrow-prog">' + bar(p, p + '% of actions complete') + '<span class="muted">' + (acts.length - open.length) + ' of ' + acts.length + ' done</span></div>' +
     '<div class="wrow-flags">' + (exc ? '<span class="flag flag--orange">' + exc + ' exception' + (exc === 1 ? '' : 's') + '</span>' : '') + (legal ? '<span class="flag flag--red">' + legal + ' legal</span>' : '') + (!exc && !legal ? '<span class="flag flag--green">On track</span>' : '') + '</div>' +
@@ -532,7 +532,10 @@ function vWork() {
     { name: 'stage', label: 'Stage', opts: [['', 'All stages']].concat(OPT.stage.map((o) => [o, o])) }, { name: 'priority', label: 'Priority', opts: [['', 'Any priority']].concat(OPT.level.map((o) => [o, o])) }], ['tab']);
   return banner() + pageHead('Work', 'Everything in flight. Change a work item\'s categories and the rules engine updates what applies.', btn('#/work/new', 'Add work')) +
     tabsNav('work', p, 'tab', [['all', 'All work', base.length], ['attention', 'Needs attention', base.filter(blocked).length], ['active', 'In progress', base.filter((w) => workPct(w.id) < 100).length]], 'all', 'Work filter') + fb +
-    (list.length ? '<ul class="wlist">' + list.map(workRow).join('') + '</ul>' : '<div class="panel"><p class="govuk-body">No work matches these filters.</p></div>');
+    (() => {
+      const selW = list.find((w) => w.id === p.get('sel')) || list[0];
+      return list.length ? '<div class="split"><div class="split-list"><ul class="wlist">' + list.map((w) => workRow(w, qhref('work', p, { sel: w.id }), selW && w.id === selW.id)).join('') + '</ul></div>' + workPane(selW) + '</div>' : '<div class="panel"><p class="govuk-body">No work matches these filters.</p></div>';
+    })();
 }
 
 const ACT_TABS = [['open', 'Open'], ['Not started', 'To do'], ['In progress', 'In progress'], ['Exception', 'Exception'], ['Complete', 'Done'], ['all', 'All']];
@@ -569,6 +572,15 @@ function vActions() {
   return banner() + pageHead('Actions', 'Every requirement the rules engine has raised. Exceptions and legal requirements come first.', seg) + fb + body;
 }
 
+function workPane(w) {
+  const acts = S.actions.filter((a) => a.workId === w.id && isActive(a)), open = acts.filter(isOpen).sort(byPrio), pc = workPct(w.id), legal = open.filter(actLegal).length;
+  return '<aside class="pane" aria-label="Work details"><p class="pane-k">' + esc(w.id) + ' · ' + esc(w.type) + ' · ' + esc(w.stage) + '</p><h2 class="pane-t">' + esc(w.title) + '</h2>' +
+    '<p class="pane-tags">' + prioTag(w.priority) + (legal ? '<span class="flag flag--red">' + legal + ' legal open</span>' : '') + '</p>' +
+    '<p class="pane-p">' + esc(w.description) + '</p>' +
+    '<div class="govuk-button-group"><a class="govuk-button" role="button" draggable="false" href="#/work/' + w.id + '">Open work</a><button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="cats-open" data-id="' + w.id + '">Change categories</button></div>' +
+    '<h3 class="pane-h">Progress</h3>' + bar(pc, pc + '% complete') + '<p class="pane-p muted">' + (acts.length - open.length) + ' of ' + acts.length + ' actions done</p>' +
+    '<h3 class="pane-h">Do next</h3>' + (open.length ? '<ul class="qlist">' + open.slice(0, 4).map((a) => qrow(a, false)).join('') + '</ul>' : '<p class="pane-p muted">Nothing left to do.</p>') + '</aside>';
+}
 function actionPane(a) {
   const df = actDef(a), r = ruleOf(a.ruleId), w = S.works.find((x) => x.id === a.workId), recent = a.updates.slice().reverse().slice(0, 4);
   return '<aside class="pane" aria-label="Action details"><p class="pane-k">' + esc(a.id) + ' · <a class="govuk-link" href="#/work/' + a.workId + '">' + esc(workName(a.workId)) + '</a></p>' +
@@ -1150,7 +1162,7 @@ function vWorkDetail(id) {
   return banner() + '<a href="#/work" class="govuk-back-link">Back to work</a>' + errorSummary() +
     '<div class="case-head"><div class="ring ring--sm" style="--p:' + pc + '"><span>' + pc + '%</span></div><div class="case-title"><p class="case-sub">' + w.id + ' · ' + esc(w.type) + ' · ' + esc(w.stage) + '</p><h1 class="govuk-heading-l">' + esc(w.title) + '</h1>' +
     '<p class="case-sub">' + esc(w.description) + '</p><p class="case-flags">' + prioTag(w.priority) + (legalOpen ? '<span class="flag flag--red">' + legalOpen + ' legal open</span>' : '') + (exc ? '<span class="flag flag--orange">' + exc + ' exception' + (exc === 1 ? '' : 's') + '</span>' : '') + '</p></div>' +
-    '<div class="page-actions"><button type="button" class="govuk-button" data-module="govuk-button" data-act="cats-open" data-id="' + w.id + '">Change categories</button>' + btn('#/work/' + w.id + '/edit', 'Edit details', true) + '</div></div>' +
+    '<div class="page-actions"><button type="button" class="govuk-button" data-module="govuk-button" data-act="cats-open" data-id="' + w.id + '">Change categories</button>' + btn('#/work/' + w.id + '/edit', 'Edit details', true) + '<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="add-action-open" data-id="' + w.id + '">Add action</button>' + '</div></div>' +
     tabs + '<div class="with-rail"><div class="rail-main">' + body + '</div>' + workRail(w, all, active, open, doneL) + '</div>';
 }
 function workRail(w, all, active, open, doneL) {
@@ -1188,6 +1200,26 @@ function vActionDetail(id) {
     '<aside><div class="panel"><h2 class="govuk-heading-s">Status</h2><ol class="steps">' + STATUSES.filter((s) => s !== 'No longer required' || a.status === s).map((s) => '<li class="' + (s === a.status ? 'on' : '') + '">' + esc(s) + '</li>').join('') + '</ol></div>' +
     (sibs.length ? '<h2 class="govuk-heading-s govuk-!-margin-top-6">Other actions for this requirement</h2><ul class="govuk-list govuk-body-s">' + sibs.map((s) => '<li><a class="govuk-link" href="#/actions/' + s.id + '">' + esc(s.title) + '</a> ' + statusTag(s.status) + '</li>').join('') + '</ul>' : '') + '</aside></div>';
 }
+function openAddAction(workId) {
+  const w = S.works.find((x) => x.id === workId); if (!w) return;
+  const groups = reqGroups(workId).filter((g) => g.ruleId);
+  openModal(modalHead(w.title, 'Add an action') +
+    '<form id="addaction-form" data-work="' + workId + '" novalidate><div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="na-title">What needs to be done?</label><input class="govuk-input" id="na-title" name="title" type="text"></div>' +
+    '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="na-rule">Which requirement does it belong to?</label><select class="govuk-select" id="na-rule" name="rule"><option value="">Other actions</option>' + groups.map((g) => '<option value="' + esc(g.ruleId) + '">' + esc(g.title) + '</option>').join('') + '</select></div>' +
+    '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="na-desc">Details (optional)</label><textarea class="govuk-textarea" id="na-desc" name="description" rows="3"></textarea></div>' +
+    '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="na-ev">Expected evidence (optional)</label><input class="govuk-input" id="na-ev" name="evidence" type="text"></div>' +
+    '<div class="govuk-checkboxes govuk-checkboxes--small govuk-form-group" data-module="govuk-checkboxes"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="na-legal" name="legal" type="checkbox" value="1"><label class="govuk-label govuk-checkboxes__label" for="na-legal">This is a legal requirement</label></div></div>' +
+    '<div id="act-err" role="alert"></div><div class="govuk-button-group"><button class="govuk-button" type="submit" data-module="govuk-button" data-prevent-double-click="true">Add action</button><button type="button" class="govuk-button govuk-button--secondary" data-act="dialog-close">Cancel</button></div></form>', 'wide');
+  const t = document.getElementById('na-title'); if (t) t.focus();
+}
+function saveAddAction(form) {
+  const d = formData(form), title = (d.title || '').trim(), err = document.getElementById('act-err');
+  if (!title) { err.innerHTML = '<p class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Enter what needs to be done</p>'; return; }
+  const rule = d.rule ? ruleOf(d.rule) : null;
+  S.actions.push({ id: uid('ACT'), workId: form.dataset.work, ruleId: d.rule || null, title, description: (d.description || '').trim(), evidence: (d.evidence || '').trim(), legal: !!d.legal, status: 'Not started', created: now(), custom: true,
+    updates: [{ at: now(), type: 'system', text: 'Action added manually' + (rule ? ' to ' + rule.requirementTitle : '') + '.' }] });
+  save(); flash = { title: 'Success', html: '<p class="govuk-notification-banner__heading">Action added.</p>' }; closeDialog(); rerender();
+}
 function openActivity(id, type) {
   const a = S.actions.find((x) => x.id === id); if (!a) return;
   openModal(modalHead(a.id + ' · ' + a.title, 'Record activity') +
@@ -1217,11 +1249,13 @@ document.addEventListener('submit', (e) => {
   const f = e.target;
   if (f.id === 'cats-form') { e.preventDefault(); e.stopImmediatePropagation(); applyCats(f); }
   else if (f.id === 'activity-form') { e.preventDefault(); e.stopImmediatePropagation(); saveActivity(f); }
+  else if (f.id === 'addaction-form') { e.preventDefault(); e.stopImmediatePropagation(); saveAddAction(f); }
 }, true);
 document.addEventListener('click', (e) => {
   const t = e.target.closest('[data-act]'); if (!t) return;
   if (t.dataset.act === 'cats-open') openCats(t.dataset.id, t.dataset.field || '');
   else if (t.dataset.act === 'activity-open') openActivity(t.dataset.id, t.dataset.type);
+  else if (t.dataset.act === 'add-action-open') openAddAction(t.dataset.id);
 });
 document.addEventListener('change', (e) => {
   const t = e.target;
