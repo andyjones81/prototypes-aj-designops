@@ -511,7 +511,7 @@ const nextAction = (w) => S.actions.filter((a) => a.workId === w.id && isOpen(a)
 const DOT = { 'Not started': 'grey', 'In progress': 'blue', 'Exception': 'orange', 'Complete': 'green', 'No longer required': 'grey' };
 function qrow(a, showWork) {
   const flag = a.status === 'Exception' ? '<span class="flag flag--orange">Exception</span>' : a.status === 'Complete' ? (evCount(a) ? '' : '<span class="flag flag--yellow">No evidence</span>') : actLegal(a) ? '<span class="flag flag--red">Legal</span>' : '';
-  return '<li class="qrow"><span class="dot dot--' + DOT[a.status] + '" aria-hidden="true"></span><div class="qrow-m"><a class="qrow-t govuk-link govuk-link--no-visited-state" href="#/actions/' + a.id + '">' + esc(a.title) + '</a><span class="qrow-s">' + (showWork === false ? '' : esc(workName(a.workId)) + ' · ') + esc(reqTitle(a)) + '</span></div><div class="qrow-r">' + flag + '<span class="qrow-st">' + a.status + '</span></div></li>';
+  return '<li class="qrow"><span class="dot dot--' + DOT[a.status] + '" aria-hidden="true"></span><div class="qrow-m"><a class="qrow-t govuk-link govuk-link--no-visited-state" href="#/actions/' + a.id + '">' + esc(a.title) + '</a><span class="qrow-s">' + (showWork === false ? '' : esc(workName(a.workId)) + ' · ') + esc(reqTitle(a)) + '</span></div><div class="qrow-r">' + flag + '<button type="button" class="info-btn" data-act="action-info" data-id="' + a.id + '" aria-label="Help for ' + esc(a.title) + '" aria-haspopup="dialog">?</button><span class="qrow-st">' + a.status + '</span></div></li>';
 }
 function workRow(w) {
   const acts = S.actions.filter((a) => a.workId === w.id && isActive(a)), open = acts.filter(isOpen), p = workPct(w.id);
@@ -642,13 +642,11 @@ function render(keep) {
   else if (a === 'reset') html = vConfirm({ title: 'Are you sure you want to reset the demo data?', warning: 'All work, rules, actions, evidence and trigger history will be replaced with the demo set.', button: 'Reset demo data', act: 'reset', back: '#/work' });
   else html = notFound();
   const main = document.getElementById('main-content');
-  document.body.classList.toggle('wide', a === 'rules' && !b);
   main.innerHTML = html;
   document.querySelectorAll('[data-nav]').forEach((li) => {
     const on = li.dataset.nav === nav, link = li.firstElementChild;
-    li.classList.toggle('govuk-service-navigation__item--active', on);
-    if (on) { link.setAttribute('aria-current', 'true'); link.innerHTML = '<strong class="govuk-service-navigation__active-fallback">' + link.textContent + '</strong>'; }
-    else { link.removeAttribute('aria-current'); link.textContent = link.textContent; }
+    li.classList.toggle('on', on);
+    if (on) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
   });
   const h1 = main.querySelector('h1');
   document.title = (hasErr() ? 'Error: ' : '') + (h1 ? h1.textContent : 'Rules engine') + ' - Rules engine';
@@ -794,6 +792,7 @@ document.addEventListener('click', (e) => {
   const t = e.target.closest('[data-act]'); if (!t) return;
   const act = t.dataset.act;
   if (act === 'rule-info') ruleInfo(t.dataset.id);
+  else if (act === 'action-info') actionInfo(t.dataset.id);
   else if (act === 'dialog-close') closeDialog();
   else if (act === 'focus-field') { e.preventDefault(); const el = document.getElementById(t.dataset.field); if (el) { el.scrollIntoView({ block: 'center' }); el.focus(); } }
   else if (act === 'cond-add') { readRuleDraft(t.closest('form')); ruleDraft.rule.conditions.push({ field: 'type', op: 'is', value: OPT.type[0] }); ERR = {}; rerender(); }
@@ -829,6 +828,18 @@ function ruleInfo(id) {
     (r.actions.length ? '<h3 class="govuk-heading-s">Actions raised</h3>' + actionDefList(r) : '') +
     '<h3 class="govuk-heading-s">Currently applies to</h3>' + (apps.length ? '<ul class="govuk-list">' + apps.map((w) => '<li><a class="govuk-link" href="#/work/' + w.id + '" data-act="dialog-close">' + esc(w.title) + '</a></li>').join('') + '</ul>' : '<p class="govuk-body">No work items.</p>') +
     '<div class="govuk-button-group"><a class="govuk-button" role="button" draggable="false" href="#/rules/' + r.id + '" data-act="dialog-close">Edit rule</a><button type="button" class="govuk-button govuk-button--secondary" data-act="dialog-close">Close</button></div>';
+  if (d.showModal) d.showModal(); else d.setAttribute('open', '');
+}
+function actionInfo(id) {
+  const a = S.actions.find((x) => x.id === id), d = document.getElementById('rule-dialog'); if (!a || !d) return;
+  const df = actDef(a), r = ruleOf(a.ruleId);
+  d.className = 'rule-dialog';
+  d.innerHTML = '<div class="dlg-head"><div><span class="govuk-caption-m">' + esc(a.id) + ' · Help</span><h2 class="govuk-heading-m" id="rule-dialog-title">' + esc(a.title) + '</h2></div><button type="button" class="dlg-x" data-act="dialog-close" aria-label="Close">&times;</button></div>' +
+    '<p class="govuk-body">' + statusTag(a.status) + ' ' + legalTag(df) + '</p>' +
+    '<h3 class="govuk-heading-s">What this involves</h3><p class="govuk-body">' + (df.description ? esc(df.description) : '<span class="muted">Not yet described.</span>') + '</p>' +
+    '<h3 class="govuk-heading-s">Expected evidence</h3><p class="govuk-body">' + (df.evidence ? esc(df.evidence) : '<span class="muted">Not yet defined.</span>') + '</p>' +
+    '<h3 class="govuk-heading-s">Why it applies</h3><p class="govuk-body">' + (r ? esc(r.requirementTitle) + '<br><span class="muted">' + esc(r.source) + '</span> ' + ruleChip(r.id) : 'Not linked to a rule.') + '</p>' +
+    '<div class="govuk-button-group"><a class="govuk-button" role="button" draggable="false" href="#/actions/' + a.id + '" data-act="dialog-close">Open action</a><button type="button" class="govuk-button govuk-button--secondary" data-act="dialog-close">Close</button></div>';
   if (d.showModal) d.showModal(); else d.setAttribute('open', '');
 }
 function closeDialog() { const d = document.getElementById('rule-dialog'); if (d && d.open) { d.close ? d.close() : d.removeAttribute('open'); } }

@@ -92,7 +92,6 @@ button.rule-chip:focus { outline: 3px solid #fd0; outline-offset: 0; background:
 @media (max-width: 560px) { .board { grid-template-columns: 1fr; } }
 
 /* Compact, square, task-oriented layout */
-html { font-size: 87.5%; }
 *, *::before, *::after { border-radius: 0 !important; }
 .stat-n { font-size: 1.6rem; }
 .stat { padding: 12px 14px; }
@@ -288,3 +287,34 @@ a.kpi:hover { box-shadow: 0 4px 12px rgba(16,24,40,.1); }
 .catcell-l { font-size: .8rem; color: #505a5f; }
 .catcell-v { font-weight: 600; }
 .catcell .link-btn { justify-self: start; font-size: .85rem; }
+
+/* Admin shell: left navigation, full-width body, right-hand blade */
+.app-shell { display: flex; align-items: stretch; min-height: calc(100vh - 60px); }
+.app-side { flex: none; width: 232px; box-sizing: border-box; padding: 20px 0; background: #f8f8f8; border-right: 1px solid #b1b4b6; }
+.app-side-name { display: block; padding: 0 20px 14px; font-weight: 700; font-size: 1.2rem; color: #0b0c0c; text-decoration: none; }
+.app-side-h { margin: 14px 0 4px; padding: 0 20px; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: #505a5f; }
+.app-side-list { list-style: none; margin: 0; padding: 0; }
+.app-side-list a { display: block; padding: 8px 20px 8px 17px; border-left: 3px solid transparent; color: #1d70b8; text-decoration: none; }
+.app-side-list a:hover { background: #eef0f3; text-decoration: underline; }
+.app-side-list a:focus { outline: 3px solid transparent; background: #fd0; color: #0b0c0c; box-shadow: 0 -2px #fd0, 0 4px #0b0c0c; }
+.app-side-list li.on a { border-left-color: #1d70b8; background: #fff; color: #0b0c0c; font-weight: 700; }
+.app-body { flex: 1; min-width: 0; padding: 0 32px 32px; }
+.app-body .govuk-phase-banner { margin-top: 0; }
+.app-body .govuk-main-wrapper { padding-top: 20px; }
+.govuk-footer { margin-top: 0; }
+@media (max-width: 800px) {
+  .app-shell { flex-direction: column; }
+  .app-side { width: auto; border-right: 0; border-bottom: 1px solid #b1b4b6; padding: 12px 0; }
+  .app-side-list { display: flex; flex-wrap: wrap; }
+  .app-body { padding: 0 15px 24px; }
+}
+dialog.rule-dialog { position: fixed; inset: 0 0 0 auto; margin: 0; height: 100vh; max-height: 100vh; width: min(560px, 100vw); box-sizing: border-box; padding: 24px 28px; overflow-y: auto; border: 0; border-left: 1px solid #b1b4b6; box-shadow: -8px 0 30px rgba(0,0,0,.2); }
+dialog.rule-dialog.wide { width: min(720px, 100vw); }
+dialog.rule-dialog[open] { animation: blade-in .22s ease-out; }
+dialog.rule-dialog::backdrop { background: rgba(11,12,12,.35); }
+@keyframes blade-in { from { transform: translateX(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { dialog.rule-dialog[open] { animation: none; } }
+.info-btn { position: relative; z-index: 2; width: 26px; height: 26px; padding: 0; border: 1px solid #b1b4b6; border-radius: 50% !important; background: #fff; color: #1d70b8; font: inherit; font-weight: 700; cursor: pointer; }
+.info-btn:hover { background: #eef0f3; }
+.info-btn:focus { outline: 3px solid #fd0; background: #fd0; color: #0b0c0c; }
+.govuk-header .govuk-width-container { max-width: none; margin: 0 20px; }

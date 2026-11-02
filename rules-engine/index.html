@@ -34,36 +34,32 @@
     </div>
   </header>
 
-  <section aria-label="Service information" class="govuk-service-navigation" data-module="govuk-service-navigation">
-    <div class="govuk-width-container">
-      <div class="govuk-service-navigation__container">
-        <span class="govuk-service-navigation__service-name">
-          <a href="#/dashboard" class="govuk-service-navigation__link">Rules engine</a>
-        </span>
-        <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
-          <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden aria-hidden="true">Menu</button>
-          <ul class="govuk-service-navigation__list" id="navigation">
-            <li class="govuk-service-navigation__item" data-nav="dashboard"><a class="govuk-service-navigation__link" href="#/dashboard">Dashboard</a></li>
-            <li class="govuk-service-navigation__item" data-nav="work"><a class="govuk-service-navigation__link" href="#/work">Work</a></li>
-            <li class="govuk-service-navigation__item" data-nav="actions"><a class="govuk-service-navigation__link" href="#/actions">Actions</a></li>
-            <li class="govuk-service-navigation__item" data-nav="tasks"><a class="govuk-service-navigation__link" href="#/tasks">Tasks</a></li>
-            <li class="govuk-service-navigation__item" data-nav="triggers"><a class="govuk-service-navigation__link" href="#/triggers">Triggers</a></li>
-            <li class="govuk-service-navigation__item" data-nav="rules"><a class="govuk-service-navigation__link" href="#/rules">Rules</a></li>
-            <li class="govuk-service-navigation__item" data-nav="api"><a class="govuk-service-navigation__link" href="#/api">API</a></li>
-          </ul>
-        </nav>
+  <div class="app-shell">
+    <nav class="app-side" aria-label="Rules engine">
+      <a href="#/dashboard" class="app-side-name">Rules engine</a>
+        <p class="app-side-h">Overview</p>
+        <ul class="app-side-list">
+          <li data-nav="dashboard"><a href="#/dashboard">Dashboard</a></li>
+          <li data-nav="work"><a href="#/work">Work</a></li>
+          <li data-nav="actions"><a href="#/actions">Actions</a></li>
+          <li data-nav="tasks"><a href="#/tasks">Tasks</a></li>
+        </ul>
+        <p class="app-side-h">Rules engine</p>
+        <ul class="app-side-list">
+          <li data-nav="triggers"><a href="#/triggers">Triggers</a></li>
+          <li data-nav="rules"><a href="#/rules">Rules</a></li>
+          <li data-nav="api"><a href="#/api">API</a></li>
+        </ul>
+    </nav>
+    <div class="app-body">
+      <div class="govuk-phase-banner">
+        <p class="govuk-phase-banner__content">
+          <strong class="govuk-tag govuk-phase-banner__content__tag">Prototype</strong>
+          <span class="govuk-phase-banner__text">Data is stored only in your browser. <a class="govuk-link" href="../">All prototypes</a></span>
+        </p>
       </div>
+      <main class="govuk-main-wrapper" id="main-content"></main>
     </div>
-  </section>
-
-  <div class="govuk-width-container">
-    <div class="govuk-phase-banner">
-      <p class="govuk-phase-banner__content">
-        <strong class="govuk-tag govuk-phase-banner__content__tag">Prototype</strong>
-        <span class="govuk-phase-banner__text">Data is stored only in your browser. <a class="govuk-link" href="../">All prototypes</a></span>
-      </p>
-    </div>
-    <main class="govuk-main-wrapper" id="main-content"></main>
   </div>
 
   <footer class="govuk-footer">
