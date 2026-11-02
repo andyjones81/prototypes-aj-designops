@@ -270,3 +270,21 @@ a.kpi:hover { box-shadow: 0 4px 12px rgba(16,24,40,.1); }
 .wlist--side .wrow-prog { grid-column: 1 / -1; grid-row: 2; }
 .wlist--side .wrow-chg { grid-column: 1 / -1; justify-self: start; }
 .govuk-summary-list__value, .govuk-body-s, .act-edit textarea { white-space: pre-line; }
+
+.case-head { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; margin: 8px 0 18px; }
+.case-title { flex: 1 1 320px; min-width: 0; }
+.case-title h1 { margin: 2px 0 4px; }
+.case-sub { margin: 0 0 6px; color: #505a5f; font-size: .95rem; }
+.case-flags { display: flex; gap: 8px; align-items: center; margin: 0; }
+.case-flags .govuk-tag { margin: 0; }
+.ring--sm { width: 84px; height: 84px; }
+.nextup { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 20px; background: #fff; border: 1px solid #e1e4e8; border-left: 6px solid #1d70b8; padding: 18px 20px; margin-bottom: 14px; }
+.nextup-k { margin: 0 0 2px; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: #1d70b8; }
+.nextup-t { margin: 0 0 4px; font-size: 1.35rem; }
+.nextup-s { margin: 0; color: #505a5f; }
+.nextup-b .govuk-button { margin: 0; }
+.catgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; margin-bottom: 14px; }
+.catcell { display: grid; gap: 2px; background: #fff; border: 1px solid #e1e4e8; padding: 12px 14px; }
+.catcell-l { font-size: .8rem; color: #505a5f; }
+.catcell-v { font-weight: 600; }
+.catcell .link-btn { justify-self: start; font-size: .85rem; }

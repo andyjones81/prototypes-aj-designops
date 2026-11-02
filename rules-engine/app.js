@@ -651,7 +651,7 @@ function render(keep) {
     else { link.removeAttribute('aria-current'); link.textContent = link.textContent; }
   });
   const h1 = main.querySelector('h1');
-  document.title = (hasErr() ? 'Error: ' : '') + (h1 ? h1.textContent : 'Rules engine') + ' - COMPASS rules engine';
+  document.title = (hasErr() ? 'Error: ' : '') + (h1 ? h1.textContent : 'Rules engine') + ' - Rules engine';
   if (!keep) window.scrollTo(0, 0);
   if (window.govukInit) window.govukInit(main);
 }
@@ -1086,24 +1086,39 @@ function actRow(a) {
 }
 function vWorkDetail(id) {
   const w = S.works.find((x) => x.id === id); if (!w) return notFound();
-  const active = S.actions.filter((a) => a.workId === id && isActive(a)), p = workPct(id);
-  const legalOpen = active.filter((a) => actDef(a).legal && isOpen(a)).length, exc = active.filter((a) => a.status === 'Exception').length;
-  const trig = S.triggers.filter((t) => t.workId === id);
-  const cats = Object.keys(FIELDS).map((k) => '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">' + FIELDS[k].label + '</dt><dd class="govuk-summary-list__value">' + esc(fieldVal(w, k)) + '</dd><dd class="govuk-summary-list__actions"><button type="button" class="link-btn" data-act="cats-open" data-id="' + w.id + '" data-field="' + k + '">Change<span class="govuk-visually-hidden"> ' + FIELDS[k].label.toLowerCase() + '</span></button></dd></div>').join('');
-  const groups = reqGroups(id).map((g) => {
-    const r = ruleOf(g.ruleId), done = g.actions.filter((a) => a.status === 'Complete').length, open = g.actions.some(isOpen), pc = Math.round(done / g.actions.length * 100);
-    return '<details class="req2"' + (open ? ' open' : '') + '><summary class="req2-head"><span class="req2-t">' + esc(g.title) + '</span><span class="req2-c">' + (g.ruleId ? '<span class="rule-chip rule-chip--static">' + esc(g.ruleId) + '</span> ' : '') + done + ' of ' + g.actions.length + ' complete</span></summary>' +
-      bar(pc, pc + '% of this requirement complete') + (r ? '<p class="govuk-body-s muted req2-src">' + esc(r.source) + (r.mandatory ? ' · ' + esc(r.mandatory) : '') + ' · <button type="button" class="link-btn" data-act="rule-info" data-id="' + esc(r.id) + '">Rule details</button></p>' : '') +
-      '<ul class="alist">' + g.actions.map(actRow).join('') + '</ul></details>';
-  }).join('');
-  const retired = S.actions.filter((a) => a.workId === id && !isActive(a));
+  const p = qs(), tab = p.get('tab') || 'todo', base = 'work/' + id;
+  const all = S.actions.filter((a) => a.workId === id), active = all.filter(isActive), open = active.filter(isOpen), doneL = active.filter((a) => a.status === 'Complete'), pc = workPct(id);
+  const legalOpen = open.filter(actLegal).length, exc = active.filter((a) => a.status === 'Exception').length;
+  const tabs = tabsNav(base, p, 'tab', [['todo', 'To do', open.length], ['done', 'Done', doneL.length], ['reqs', 'Requirements', reqGroups(id).length], ['cats', 'Categories'], ['activity', 'Activity']], 'todo', 'Work sections');
+  let body = '';
+  if (tab === 'todo') {
+    const list = open.slice().sort(byPrio), nx = list[0];
+    body = (nx ? '<section class="nextup"><div><p class="nextup-k">Next up</p><h2 class="nextup-t"><a class="govuk-link govuk-link--no-visited-state" href="#/actions/' + nx.id + '">' + esc(nx.title) + '</a></h2><p class="nextup-s">' + esc(reqTitle(nx)) + (actLegal(nx) ? ' · <strong class="red">Legal requirement</strong>' : '') + '</p></div>' +
+      '<div class="nextup-b"><button type="button" class="govuk-button" data-module="govuk-button" data-act="activity-open" data-id="' + nx.id + '" data-type="evidence">Record activity</button></div></section>' : '<div class="panel"><p class="govuk-body">Nothing left to do. Every action is complete.</p></div>') +
+      (list.length > 1 ? '<ul class="qlist">' + list.slice(1).map((a) => qrow(a, false)).join('') + '</ul>' : '');
+  } else if (tab === 'done') {
+    body = doneL.length ? '<ul class="qlist">' + doneL.map((a) => qrow(a, false)).join('') + '</ul>' : '<div class="panel"><p class="govuk-body">Nothing is done yet.</p></div>';
+    const gone = all.filter((a) => !isActive(a));
+    if (gone.length) body += '<h2 class="govuk-heading-s">No longer required</h2><ul class="qlist">' + gone.map((a) => qrow(a, false)).join('') + '</ul>';
+  } else if (tab === 'reqs') {
+    body = '<ul class="qlist">' + (reqGroups(id).map((g) => {
+      const r = ruleOf(g.ruleId), d = g.actions.filter((a) => a.status === 'Complete').length, pg = Math.round(d / g.actions.length * 100);
+      return '<li class="qrow"><div class="qrow-m"><strong>' + esc(g.title) + '</strong><span class="qrow-s">' + (r ? esc(r.source) + (r.mandatory ? ' · ' + esc(r.mandatory) : '') : '') + '</span></div><div class="qrow-r"><span class="muted">' + d + ' of ' + g.actions.length + ' done</span>' + (g.ruleId ? ruleChip(g.ruleId) : '') + '</div></li>';
+    }).join('') || '<li class="qrow"><span class="muted">No requirements apply to this work yet.</span></li>') + '</ul>';
+  } else if (tab === 'cats') {
+    body = '<div class="catgrid">' + Object.keys(FIELDS).map((k) => '<div class="catcell"><span class="catcell-l">' + FIELDS[k].label + '</span><span class="catcell-v">' + esc(fieldVal(w, k) || 'Not set') + '</span><button type="button" class="link-btn" data-act="cats-open" data-id="' + w.id + '" data-field="' + k + '">Change<span class="govuk-visually-hidden"> ' + FIELDS[k].label.toLowerCase() + '</span></button></div>').join('') + '</div>' +
+      '<p class="govuk-hint">Changing a category runs the rules engine straight away. You will see what will change before you apply it.</p>';
+  } else {
+    const ups = all.flatMap((a) => a.updates.filter((u) => u.type !== 'system').map((u) => ({ u, a }))).sort((x, y) => String(y.u.at).localeCompare(String(x.u.at))).slice(0, 10);
+    const trig = S.triggers.filter((t) => t.workId === id).slice(0, 5);
+    body = '<div class="two-col"><section><h2 class="govuk-heading-s">Updates on actions</h2>' + (ups.length ? ups.map((x) => '<div class="log-entry ' + esc(x.u.type) + '"><p class="govuk-body-s govuk-!-margin-bottom-1">' + fmt(x.u.at) + ' · <a class="govuk-link" href="#/actions/' + x.a.id + '">' + esc(x.a.title) + '</a></p><p class="govuk-body govuk-!-margin-bottom-0"><strong>' + esc(x.u.type) + '</strong>: ' + esc(x.u.text) + '</p></div>').join('') : '<p class="govuk-body muted">No updates recorded yet.</p>') + '</section>' +
+      '<section><h2 class="govuk-heading-s">Rules engine runs</h2>' + (trig.length ? triggerList(trig) : '<p class="govuk-body muted">None yet.</p>') + '</section></div>';
+  }
   return banner() + '<a href="#/work" class="govuk-back-link">Back to work</a>' + errorSummary() +
-    '<span class="govuk-caption-m">' + w.id + '</span>' + pageHead(esc(w.title) + ' ' + tag(w.stage, 'govuk-tag--blue'), esc(w.description), '<button type="button" class="govuk-button" data-module="govuk-button" data-act="cats-open" data-id="' + w.id + '">Change categories</button>' + btn('#/work/' + w.id + '/edit', 'Edit details', true)) +
-    '<div class="stats"><div class="stat"><span class="stat-n">' + p + '%</span><span class="stat-l">Complete</span></div><div class="stat"><span class="stat-n">' + active.filter(isOpen).length + '</span><span class="stat-l">Open actions</span></div><div class="stat' + (legalOpen ? ' stat--warn' : '') + '"><span class="stat-n">' + legalOpen + '</span><span class="stat-l">Legal actions open</span></div><div class="stat"><span class="stat-n">' + exc + '</span><span class="stat-l">Exceptions</span></div></div>' +
-    '<div class="two-col"><section><h2 class="govuk-heading-m">Actions to complete</h2><p class="govuk-body-s muted">Open an action to record activity and evidence against it.</p>' + (groups || '<p class="govuk-body">No requirements apply to this work yet.</p>') +
-    (retired.length ? '<details class="govuk-details"><summary class="govuk-details__summary"><span class="govuk-details__summary-text">' + retired.length + ' no longer required</span></summary><div class="govuk-details__text"><ul class="alist">' + retired.map(actRow).join('') + '</ul></div></details>' : '') + '</section>' +
-    '<aside><div class="panel"><h2 class="govuk-heading-s">Categories</h2><dl class="govuk-summary-list govuk-summary-list--compact">' + cats + '</dl></div>' +
-    '<h2 class="govuk-heading-s govuk-!-margin-top-6">Recent triggers</h2>' + (trig.length ? triggerList(trig.slice(0, 3)) + (trig.length > 3 ? '<p class="govuk-body-s"><a class="govuk-link" href="#/triggers">All triggers</a></p>' : '') : '<p class="govuk-body-s muted">None yet.</p>') + '</aside></div>';
+    '<div class="case-head"><div class="ring ring--sm" style="--p:' + pc + '"><span>' + pc + '%</span></div><div class="case-title"><p class="case-sub">' + w.id + ' · ' + esc(w.type) + ' · ' + esc(w.stage) + '</p><h1 class="govuk-heading-l">' + esc(w.title) + '</h1>' +
+    '<p class="case-sub">' + esc(w.description) + '</p><p class="case-flags">' + prioTag(w.priority) + (legalOpen ? '<span class="flag flag--red">' + legalOpen + ' legal open</span>' : '') + (exc ? '<span class="flag flag--orange">' + exc + ' exception' + (exc === 1 ? '' : 's') + '</span>' : '') + '</p></div>' +
+    '<div class="page-actions"><button type="button" class="govuk-button" data-module="govuk-button" data-act="cats-open" data-id="' + w.id + '">Change categories</button>' + btn('#/work/' + w.id + '/edit', 'Edit details', true) + '</div></div>' +
+    tabs + body;
 }
 
 /* ---------- Action detail: evidence and activity ---------- */
