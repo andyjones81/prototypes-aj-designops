@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Prototype Manager</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.demo-bar { color: #0b0c0c; padding: 0; font-weight: 600; font-size: .9rem; margin-bottom: 10px; }
+.demo-bar strong { background: #fcefd2; color: #6b4300; padding: 2px 7px 1px; margin-right: 8px; font-size: .8rem; }
+.persona-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; font-size: .9rem; }
+.persona-bar .govuk-select { min-width: 0; font-size: .9rem; height: 34px; padding: 2px 6px; }
+.persona-bar label { font-weight: 600; margin: 0; }
+.pipeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; margin: 10px 0 14px; }
+.pipeline > div { border: 2px solid #b1b4b6; padding: 10px; background: none; position: relative; margin-right: 14px; }
+.pipeline > div:not(:last-child)::after { content: '\2192'; position: absolute; right: -17px; top: 50%; margin-top: -10px; font-weight: 700; }
+.pipeline .is-done { border-color: #00703c; } .pipeline .is-running { border-color: #1d70b8; } .pipeline .is-failed { border-color: #d4351c; }
+.pipeline b { display: block; margin-bottom: 4px; }
+.timeline { list-style: none; margin: 0; padding: 0; } .timeline li { border-left: 3px solid #b1b4b6; padding: 4px 0 8px 12px; margin-left: 4px; font-size: .9rem; }
+.timeline li.is-done { border-color: #00703c; } .timeline li.is-failed { border-color: #d4351c; } .timeline li.is-running { border-color: #1d70b8; }
+.steps { list-style: none; margin: 0; padding: 0; } .steps li { display: grid; grid-template-columns: 28px 1fr; gap: 8px; padding: 8px 0; border-bottom: 1px solid #e1e4e8; }
+.steps .num { font-weight: 700; text-align: center; background: #e8ebef; height: 24px; line-height: 24px; }
+.steps .is-done .num { background: #00703c; color: #fff; } .steps .is-failed .num { background: #d4351c; color: #fff; } .steps .is-running .num { background: #1d70b8; color: #fff; }
+pre.code { background: #0b0c0c; color: #fff; padding: 10px 12px; overflow: auto; font-size: .85rem; margin: 0 0 12px; white-space: pre-wrap; word-break: break-all; }
+.sha { font-family: ui-monospace, Menlo, monospace; font-size: .85rem; }
+.scroll { overflow-x: auto; } .scroll table { min-width: 880px; }
+.disabled-link { color: #505a5f; text-decoration: line-through; cursor: not-allowed; }
+.tpl-choice { border: 1px solid #b1b4b6; background: none; padding: 10px 12px; margin-bottom: 8px; }
+.tpl-choice.is-disabled { color: #505a5f; }
+.mask { letter-spacing: 2px; font-family: ui-monospace, Menlo, monospace; }
+.notif-unread { font-weight: 600; }
+.govuk-table__cell, .govuk-table__header { vertical-align: top; }
+@media (max-width: 640px) { .two-col, .grid-2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<script>
+window.PROTO = { id: 'prototype-manager', name: 'Prototype Manager', homeHref: '#/', root: '../', nav: [
+  { id: 'mine', label: 'My prototypes', href: '#/' },
+  { id: 'create', label: 'Create prototype', href: '#/create' },
+  { id: 'about', label: 'About this demo', href: '#/about' }
+], note: 'Demo: simulated GitHub and Azure. Fictional data stored only in your browser. Nothing is real.' };
+</script>
+<script src="../assets/shell.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/ui.js"></script>
+<script src="pm-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

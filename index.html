@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Enabling services prototypes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>window.PROTO = { id: 'home', name: 'Enabling services prototypes', root: './', nav: [] };</script>
+</head>
+<body>
+<script src="assets/shell.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/ui.js"></script>
+<script>
+(function () {
+  var P = [
+    { id: 'enabling-services', href: 'enabling-services/', name: 'Service and enabling service management', module: 'Journeys A and B',
+      desc: 'Register of services, what each one needs and why, activation tasks, and what changes when a service is reclassified.',
+      points: ['See rule-driven enabling service obligations with reasons', 'Change a service classification and review the before and after', 'Provenance and mismatch warnings'], kind: 'Simulated integrations' },
+    { id: 'feedback-satisfaction', href: 'feedback-satisfaction/', name: 'Feedback and satisfaction', module: 'Journey C',
+      desc: 'Page feedback and journey satisfaction: widget previews, dashboards and signals that turn into actions.',
+      points: ['Try the feedback widget and survey', 'Simulate falling satisfaction', 'Confirm a signal into a COMPASS action'], kind: 'Simulated integrations' },
+    { id: 'analytics-reporting', href: 'analytics-reporting/', name: 'Analytics and central reporting', module: 'Reporting contract',
+      desc: 'Analytics connectors, harmonised metrics, data quality and portfolio reporting with drill-through.',
+      points: ['Connector health and data gaps', 'Trend charts with annotations', 'Portfolio roll-up'], kind: 'Simulated integrations' },
+    { id: 'assurance', href: 'assurance/', name: 'Assurance', module: 'AISS, DDT standards, SAS',
+      desc: 'Accessibility, standards compliance and service assessments, with reusable evidence and linked risks.',
+      points: ['Accessibility issues and statements', 'Applicable standards per service', 'Assessment findings and actions'], kind: 'Manual handoffs' },
+    { id: 'admin', href: 'admin/', name: 'Admin console', module: 'Journey D',
+      desc: 'Portfolio adoption and gaps, rule versioning with simulation, exceptions, connector health and audit.',
+      points: ['Draft, test and publish a rule change', 'Coverage and gaps by enabling service', 'Audit trail and event log'], kind: 'Simulated integrations' },
+    { id: 'rules-engine', href: 'rules-engine/', name: 'COMPASS work, rules and actions', module: 'Work and actions',
+      desc: 'Work, triggers, rules and per-action evidence. Changing a category re-runs the rules and brings in new actions.',
+      points: ['Per-action evidence', 'Category triggers', 'Rule detail dialogs'], kind: 'Standalone prototype' }
+  ];
+  var Q = [
+    { href: 'cbp/', name: 'CBP assessment management', module: 'Journey A',
+      desc: 'Candidate submission, two independent assessor reviews, joint moderation and published feedback on a 0 to 3 scale.',
+      points: ['Switch persona: candidate, assessor, moderator, administrator', 'Immutable submissions and reviews', 'Re-submission as a linked new attempt'], kind: 'Simulated integrations' },
+    { href: 'skills/', name: 'Skills and capability', module: 'Journeys B and C',
+      desc: 'Versioned skills framework, self-assessment, sourced gap view and aggregated profession insight with suppression.',
+      points: ['Self-assessed and formal evidence kept separate', 'Framework versions do not change past assessments', 'Small groups suppressed'], kind: 'Simulated integrations' },
+    { href: 'learning/', name: 'Learning and development', module: 'Journeys A and C',
+      desc: 'Catalogue mapped to skills, transparent recommendations, development plans, reflections and profession interventions.',
+      points: ['Every recommendation shows why', 'Plan, reflect and apply to work', 'L&D sessions, capacity and impact'], kind: 'Simulated integrations' },
+    { href: 'people-admin/', name: 'People capability administration', module: 'Admin and reporting',
+      desc: 'Privacy thresholds, privacy-safe reporting preview, mock identity import, integrations, event log, API contracts and audit.',
+      points: ['Central reporting preview with no personal data', 'Imported role changes with provenance', 'Audit of sensitive actions'], kind: 'Simulated integrations' }
+  ];
+  var T = [
+    { href: 'prototype-manager/', name: 'Prototype Manager', module: 'Platform tooling',
+      desc: 'Create, deploy, share and retire GOV.UK prototypes: GitHub repository, Azure hosting, commit-to-deployment tracking and estate administration.',
+      points: ['Provisioning timeline with safe retry', 'Latest commit against deployed commit', 'Failed deployments keep last known good'], kind: 'Simulated integrations' }
+  ];
+  function card(p) {
+    return '<section class="proto"><span class="govuk-hint" style="margin:0">' + UI.esc(p.module) + '</span><h3 class="govuk-heading-s" style="margin:0"><a class="govuk-link" href="' + p.href + '">' + UI.esc(p.name) + '</a></h3><p>' + UI.esc(p.desc) + '</p><ul>' +
+      p.points.map(function (x) { return '<li>' + UI.esc(x) + '</li>'; }).join('') + '</ul><p><span class="int int--' + (p.kind.indexOf('Manual') === 0 ? 'manual' : 'simulated') + '">' + UI.esc(p.kind) + '</span></p>' +
+      '<a class="govuk-button" data-module="govuk-button" href="' + p.href + '">Open prototype</a></section>';
+  }
+  document.getElementById('main-content').innerHTML =
+    '<div class="page-head"><div><h1 class="govuk-heading-l">Enabling services prototypes</h1><p class="govuk-body">Choose a prototype to try. They share one set of fictional services, so a change in one appears in the others. Everything runs in your browser and nothing is sent anywhere.</p></div></div>' +
+    '<h2 class="govuk-heading-m">Enabling services</h2><div class="proto-grid">' + P.map(card).join('') + '</div>' +
+    '<h2 class="govuk-heading-m">People capability: CBP, skills and learning</h2><p class="govuk-body">These four share a separate set of invented staff records. Use the persona switcher at the top of each to see different roles.</p><div class="proto-grid">' + Q.map(card).join('') + '</div>' +
+    '<h2 class="govuk-heading-m">Platform tooling</h2><div class="proto-grid">' + T.map(card).join('') + '</div>' +
+    '<p class="govuk-body-s">All data is fictional and stored in this browser only. Integrations are simulated or manual handoffs; none is live. Read the <a class="govuk-link" href="spec/enabling-services-prototype-specification.md">enabling services specification</a> and the <a class="govuk-link" href="spec/cbp-skills-learning-development-prototype-specification.md">CBP, skills and learning specification</a>.</p>';
+  if (window.govukInit) window.govukInit(document);
+})();
+</script>
+</body>
+</html>
