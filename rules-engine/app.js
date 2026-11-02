@@ -509,9 +509,9 @@ const workLink = (id) => '<a class="govuk-link govuk-link--no-visited-state" hre
 const nextAction = (w) => S.actions.filter((a) => a.workId === w.id && isOpen(a)).sort(byPrio)[0];
 
 const DOT = { 'Not started': 'grey', 'In progress': 'blue', 'Exception': 'orange', 'Complete': 'green', 'No longer required': 'grey' };
-function qrow(a, showWork) {
+function qrow(a, showWork, href, sel) {
   const flag = a.status === 'Exception' ? '<span class="flag flag--orange">Exception</span>' : a.status === 'Complete' ? (evCount(a) ? '' : '<span class="flag flag--yellow">No evidence</span>') : actLegal(a) ? '<span class="flag flag--red">Legal</span>' : '';
-  return '<li class="qrow"><span class="dot dot--' + DOT[a.status] + '" aria-hidden="true"></span><div class="qrow-m"><a class="qrow-t govuk-link govuk-link--no-visited-state" href="#/actions/' + a.id + '">' + esc(a.title) + '</a><span class="qrow-s">' + (showWork === false ? '' : esc(workName(a.workId)) + ' · ') + esc(reqTitle(a)) + '</span></div><div class="qrow-r">' + flag + '<button type="button" class="info-btn" data-act="action-info" data-id="' + a.id + '" aria-label="Help for ' + esc(a.title) + '" aria-haspopup="dialog">?</button><span class="qrow-st">' + a.status + '</span></div></li>';
+  return '<li class="qrow' + (sel ? ' sel' : '') + '"><span class="dot dot--' + DOT[a.status] + '" aria-hidden="true"></span><div class="qrow-m"><a class="qrow-t govuk-link govuk-link--no-visited-state" href="' + (href || '#/actions/' + a.id) + '"' + (sel ? ' aria-current="true"' : '') + '>' + esc(a.title) + '</a><span class="qrow-s">' + (showWork === false ? '' : esc(workName(a.workId)) + ' · ') + esc(reqTitle(a)) + '</span></div><div class="qrow-r">' + flag + '<button type="button" class="info-btn" data-act="action-info" data-id="' + a.id + '" aria-label="Help for ' + esc(a.title) + '" aria-haspopup="dialog">?</button><span class="qrow-st">' + a.status + '</span></div></li>';
 }
 function workRow(w) {
   const acts = S.actions.filter((a) => a.workId === w.id && isActive(a)), open = acts.filter(isOpen), p = workPct(w.id);
@@ -560,9 +560,24 @@ function vActions() {
   } else {
     const list = base.filter((a) => inTab(a, tab)).sort(byPrio), pg = paged(list, p);
     body = tabsNav('actions', p, 'tab', ACT_TABS.map((t) => [t[0], t[1], base.filter((a) => inTab(a, t[0])).length]), 'open', 'Action status') +
-      (pg.items.length ? '<ul class="qlist">' + pg.items.map((a) => qrow(a)).join('') + '</ul>' + pager('actions', p, pg) : '<div class="panel"><p class="govuk-body">No actions match these filters.</p></div>');
+      (() => {
+        const selA = list.find((a) => a.id === p.get('sel')) || pg.items[0];
+        const lst = pg.items.length ? '<ul class="qlist">' + pg.items.map((a) => qrow(a, true, qhref('actions', p, { sel: a.id }), selA && a.id === selA.id)).join('') + '</ul>' + pager('actions', p, pg) : '<div class="panel"><p class="govuk-body">No actions match these filters.</p></div>';
+        return '<div class="split"><div class="split-list">' + lst + '</div>' + (selA ? actionPane(selA) : '') + '</div>';
+      })();
   }
   return banner() + pageHead('Actions', 'Every requirement the rules engine has raised. Exceptions and legal requirements come first.', seg) + fb + body;
+}
+
+function actionPane(a) {
+  const df = actDef(a), r = ruleOf(a.ruleId), w = S.works.find((x) => x.id === a.workId), recent = a.updates.slice().reverse().slice(0, 4);
+  return '<aside class="pane" aria-label="Action details"><p class="pane-k">' + esc(a.id) + ' · <a class="govuk-link" href="#/work/' + a.workId + '">' + esc(workName(a.workId)) + '</a></p>' +
+    '<h2 class="pane-t">' + esc(a.title) + '</h2><p class="pane-tags">' + statusTag(a.status) + ' ' + legalTag(df) + '</p>' +
+    (isActive(a) ? '<div class="govuk-button-group"><button type="button" class="govuk-button" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="evidence">Add evidence</button><a class="govuk-button govuk-button--secondary" role="button" draggable="false" href="#/actions/' + a.id + '">Open full page</a></div>' : '') +
+    '<h3 class="pane-h">What this involves</h3><p class="pane-p">' + (df.description ? esc(df.description) : '<span class="muted">Not yet described.</span>') + '</p>' +
+    '<h3 class="pane-h">Expected evidence</h3><p class="pane-p">' + (df.evidence ? esc(df.evidence) : '<span class="muted">Not yet defined.</span>') + '</p>' +
+    '<h3 class="pane-h">Requirement</h3><p class="pane-p">' + (r ? esc(r.requirementTitle) + '<br><span class="muted">' + esc(r.source) + '</span> ' + ruleChip(r.id) : 'Not linked to a rule.') + (w ? '<br><span class="muted">' + esc(w.stage) + '</span>' : '') + '</p>' +
+    '<h3 class="pane-h">Recent activity</h3>' + (recent.length ? '<ul class="pane-log">' + recent.map((u) => '<li><strong>' + esc(u.type) + '</strong> <span class="muted">' + fmt(u.at) + '</span><br>' + esc(u.text || u.link || '') + '</li>').join('') + '</ul>' : '<p class="pane-p muted">Nothing recorded yet.</p>') + '</aside>';
 }
 
 function vTasks() {
@@ -646,6 +661,8 @@ function render(keep) {
   document.querySelectorAll('[data-nav]').forEach((li) => {
     const on = li.dataset.nav === nav, link = li.firstElementChild;
     li.classList.toggle('on', on);
+    const cnt = { actions: S.actions.filter((x) => isActive(x) && isOpen(x)).length, work: S.works.length }[li.dataset.nav];
+    let nc = link.querySelector('.nav-count'); if (cnt != null) { if (!nc) { nc = document.createElement('span'); nc.className = 'nav-count'; link.appendChild(nc); } nc.textContent = cnt; }
     if (on) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
   });
   const cr = document.getElementById('crumbs');
@@ -1228,3 +1245,8 @@ function moveAction(id, status) {
 window.addEventListener('hashchange', () => { closeDialog(); ERR = {}; workDraft = null; render(); });
 render();
 })();
+
+document.addEventListener('submit', (e) => {
+  const f = e.target.closest('form[data-form=global-search]'); if (!f) return;
+  e.preventDefault(); const v = f.elements.q.value.trim(); go('#/actions' + (v ? '?q=' + encodeURIComponent(v) : ''));
+});
