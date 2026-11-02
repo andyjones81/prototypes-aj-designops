@@ -5,11 +5,33 @@
 <title>Enabling services prototypes</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>window.PROTO = { id: 'home', name: 'Enabling services prototypes', root: './', nav: [] };</script>
+<style>
+.prow-list { list-style: none; margin: 0 0 32px; padding: 0; border-top: 1px solid #b1b4b6; }
+.prow { display: grid; grid-template-columns: 1fr 150px; gap: 8px 32px; align-items: center; padding: 20px 0; border-bottom: 1px solid #b1b4b6; break-inside: avoid; }
+.prow__module { font-size: .85rem; color: #505a5f; margin: 0 0 2px; }
+.prow__name { margin: 0 0 6px; font-size: 1.35rem; font-weight: 700; }
+.prow__desc { margin: 0 0 8px; max-width: 46em; }
+.prow ul { margin: 0 0 10px; padding-left: 20px; font-size: .95rem; }
+.prow li { break-inside: avoid; margin-bottom: 2px; }
+.prow__act { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.prow__act .govuk-button { margin: 0; }
+.prow__qr { text-align: center; }
+.prow__qr svg { width: 128px; height: 128px; display: block; margin: 0 auto 4px; }
+.prow__qr span { display: block; font-size: .75rem; color: #505a5f; word-break: break-all; }
+.home-tools { margin: 0 0 20px; }
+@media (max-width: 640px) { .prow { grid-template-columns: 1fr; } .prow ul { columns: 1; } .prow__qr { text-align: left; } .prow__qr svg { margin: 0 0 4px; } }
+@media print {
+  .govuk-header, .govuk-service-navigation, .govuk-footer, .home-tools, .prow__act, .demo-bar, .govuk-phase-banner, .govuk-skip-link { display: none !important; }
+  .prow { padding: 12px 0; grid-template-columns: 1fr 140px; } .prow__qr svg { width: 120px; height: 120px; }
+  .prow__name { font-size: 1.2rem; }
+}
+</style>
 </head>
 <body>
 <script src="assets/shell.js"></script>
 <script src="assets/data.js"></script>
 <script src="assets/ui.js"></script>
+<script src="assets/qrcode.js"></script>
 <script>
 (function () {
   var P = [
@@ -51,16 +73,24 @@
       desc: 'Create, deploy, share and retire GOV.UK prototypes: GitHub repository, Azure hosting, commit-to-deployment tracking and estate administration.',
       points: ['Provisioning timeline with safe retry', 'Latest commit against deployed commit', 'Failed deployments keep last known good'], kind: 'Simulated integrations' }
   ];
-  function card(p) {
-    return '<section class="proto"><span class="govuk-hint" style="margin:0">' + UI.esc(p.module) + '</span><h3 class="govuk-heading-s" style="margin:0"><a class="govuk-link" href="' + p.href + '">' + UI.esc(p.name) + '</a></h3><p>' + UI.esc(p.desc) + '</p><ul>' +
-      p.points.map(function (x) { return '<li>' + UI.esc(x) + '</li>'; }).join('') + '</ul><p><span class="int int--' + (p.kind.indexOf('Manual') === 0 ? 'manual' : 'simulated') + '">' + UI.esc(p.kind) + '</span></p>' +
-      '<a class="govuk-button" data-module="govuk-button" href="' + p.href + '">Open prototype</a></section>';
+  function qr(url) {
+    var q = qrcode(0, 'M'); q.addData(url); q.make();
+    var n = q.getModuleCount(), m = 2, d = '';
+    for (var r = 0; r < n; r++) for (var c = 0; c < n; c++) if (q.isDark(r, c)) d += 'M' + (c + m) + ' ' + (r + m) + 'h1v1h-1z';
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + (n + 2 * m) + ' ' + (n + 2 * m) + '" shape-rendering="crispEdges" role="img" aria-label="QR code linking to ' + UI.esc(url) + '"><rect width="100%" height="100%" fill="#fff"/><path d="' + d + '" fill="#000"/></svg>';
   }
+  function card(p) {
+    var url = new URL(p.href, location.href).href;
+    return '<li class="prow"><div><p class="prow__module">' + UI.esc(p.module) + '</p><h3 class="prow__name"><a class="govuk-link" href="' + p.href + '">' + UI.esc(p.name) + '</a></h3><p class="prow__desc">' + UI.esc(p.desc) + '</p><ul>' +
+      p.points.map(function (x) { return '<li>' + UI.esc(x) + '</li>'; }).join('') + '</ul><div class="prow__act"><a class="govuk-button" data-module="govuk-button" href="' + p.href + '">Open prototype</a><span class="int int--' + (p.kind.indexOf('Manual') === 0 ? 'manual' : 'simulated') + '">' + UI.esc(p.kind) + '</span></div></div>' +
+      '<div class="prow__qr">' + qr(url) + '<span>Scan to open</span><span>' + UI.esc(url.replace(/^https?:\/\//, '')) + '</span></div></li>';
+  }
+  function list(a) { return '<ul class="prow-list">' + a.map(card).join('') + '</ul>'; }
   document.getElementById('main-content').innerHTML =
-    '<div class="page-head"><div><h1 class="govuk-heading-l">Enabling services prototypes</h1><p class="govuk-body">Choose a prototype to try. They share one set of fictional services, so a change in one appears in the others. Everything runs in your browser and nothing is sent anywhere.</p></div></div>' +
-    '<h2 class="govuk-heading-m">Enabling services</h2><div class="proto-grid">' + P.map(card).join('') + '</div>' +
-    '<h2 class="govuk-heading-m">People capability: CBP, skills and learning</h2><p class="govuk-body">These four share a separate set of invented staff records. Use the persona switcher at the top of each to see different roles.</p><div class="proto-grid">' + Q.map(card).join('') + '</div>' +
-    '<h2 class="govuk-heading-m">Platform tooling</h2><div class="proto-grid">' + T.map(card).join('') + '</div>' +
+    '<div class="page-head"><div><h1 class="govuk-heading-l">Enabling services prototypes</h1><p class="govuk-body">Choose a prototype to try. They share one set of fictional services, so a change in one appears in the others. Everything runs in your browser and nothing is sent anywhere.</p></div><div class="home-tools"><button type="button" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" data-module="govuk-button" onclick="window.print()">Print this page with QR codes</button></div></div>' +
+    '<h2 class="govuk-heading-m">Enabling services</h2>' + list(P) + '' +
+    '<h2 class="govuk-heading-m">People capability: CBP, skills and learning</h2><p class="govuk-body">These four share a separate set of invented staff records. Use the persona switcher at the top of each to see different roles.</p>' + list(Q) + '' +
+    '<h2 class="govuk-heading-m">Platform tooling</h2>' + list(T) + '' +
     '<p class="govuk-body-s">All data is fictional and stored in this browser only. Integrations are simulated or manual handoffs; none is live. Read the <a class="govuk-link" href="spec/enabling-services-prototype-specification.md">enabling services specification</a> and the <a class="govuk-link" href="spec/cbp-skills-learning-development-prototype-specification.md">CBP, skills and learning specification</a>.</p>';
   if (window.govukInit) window.govukInit(document);
 })();
