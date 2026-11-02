@@ -518,3 +518,7 @@ html, html.govuk-template, .govuk-template__body, .app-body, .govuk-main-wrapper
 .api-steps li.on{color:#0b0c0c;font-weight:700;background:#eef3f8}.api-steps li.done{color:#00703c}
 .api-dot{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border:2px solid #b1b4b6;border-radius:50%!important;font-weight:700}
 .api-steps .done .api-dot{background:#00703c;border-color:#00703c;color:#fff}.api-steps .on .api-dot{border-color:#1d70b8;color:#1d70b8}
+
+.flow-h{font-size:1.25rem;margin:28px 0 12px;padding-top:16px;border-top:1px solid #b1b4b6}
+.flow-group{background:#fff;padding:16px 20px;margin-bottom:16px;border:1px solid #e1e4e8}.flow-gt{margin:0 0 8px;font-size:1.05rem}
+.flow .fx{margin-top:10px;padding-left:14px;border-left:4px solid #b1b4b6}

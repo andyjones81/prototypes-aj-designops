@@ -842,6 +842,7 @@ function applyRuleFilter(form) {
 document.addEventListener('submit', (e) => { if (e.target.dataset && e.target.dataset.form === 'rule-filter') { e.preventDefault(); applyRuleFilter(e.target); } });
 document.addEventListener('change', (e) => {
   const t = e.target;
+  if (t.dataset && t.dataset.act === 'flow-yn') { const x = t.closest('.govuk-form-group').querySelector('.fx'); if (x) x.hidden = t.value !== 'Yes'; }
   if (t.dataset.act === 'rule-filter') { applyRuleFilter(t.form); return; }
   if (t.dataset.act === 'move') moveAction(t.dataset.id, t.value);
   else if (t.dataset.act === 'filter-work') { const p = qs(); if (t.value) p.set('work', t.value); else p.delete('work'); const q = p.toString(); go('#/' + t.dataset.base + (q ? '?' + q : '')); }
@@ -1282,22 +1283,52 @@ function vActionDetail(id) {
     '<aside><div class="panel"><h2 class="govuk-heading-s">Status</h2><ol class="steps">' + STATUSES.filter((s) => s !== 'No longer required' || a.status === s).map((s) => '<li class="' + (s === a.status ? 'on' : '') + '">' + esc(s) + '</li>').join('') + '</ol></div>' +
     (sibs.length ? '<h2 class="govuk-heading-s govuk-!-margin-top-6">Other actions for this requirement</h2><ul class="govuk-list govuk-body-s">' + sibs.map((s) => '<li><a class="govuk-link" href="#/actions/' + s.id + '">' + esc(s.title) + '</a> ' + statusTag(s.status) + '</li>').join('') + '</ul>' : '') + '</aside></div>';
 }
-const SCREENER_Q = [['personal', 'Does the service collect or use personal data?'], ['special', 'Will it process special category data, such as health, ethnicity or biometrics?'], ['children', 'Will it process data about children?'],
-  ['scale', 'Will it process data about more than 10,000 people?'], ['auto', 'Will it make automated decisions or profile people?'], ['share', 'Will data be shared with other organisations or sent outside the UK?'], ['monitor', 'Will it use new technology or monitor people?']];
+const SCR_GROUPS = [
+  { id: 'g1', t: 'Does the processing activity involve any of the following?', hint: 'These are on the ICO list of processing that always needs a DPIA.', f: [
+    ['adm', 'Use systematic and extensive profiling or automated decision-making to make significant decisions about people.', 'What decisions or profiles, who is affected and why?'],
+    ['specialLarge', 'Process special category data or criminal offence data on a large scale.', 'List all fields and why you need them, including whose data you are processing and how many people.'],
+    ['publicMonitor', 'Systematically monitor a publicly accessible area on a large scale.', 'Who is monitored, why and where?']] },
+  { id: 'g2', t: 'Does the processing activity involve any of the following?', f: [
+    ['accessDecision', 'Make decisions on someone\'s access to a service or product on the basis of automated decision making (including profiling) or the processing of special category data.', 'Which decisions, who is affected and why?'],
+    ['profilingLarge', 'Carry out profiling on a large scale.', 'Who is profiled, why and how many people?'],
+    ['matching', 'Match or combine datasets obtained from multiple sources, from two or more processing operations performed for different purposes or by different data controllers, in a way that would exceed the reasonable expectations of the data subject.', 'Is it all DfE data? Is there non-DfE data? Would people expect this? Why are you matching the data?'],
+    ['children', 'Profile children, target marketing at them or offer online services to them.', 'Describe how children are affected.'],
+    ['harm', 'Use personal information that might result in physical harm in the event of a personal data breach.', 'Describe the data and the potential harm.']] },
+  { id: 'g3', t: 'Does the processing activity involve any of the following?', f: [
+    ['innovative', 'Use innovative technology.', 'How does this apply? Is it an existing dataset processed in a new way? What data, what technology and why?'],
+    ['biometric', 'Process biometric data for the purpose of uniquely identifying an individual.', 'What biometric data, whose and why?'],
+    ['genetic', 'Process genetic data.', 'What genetic data, whose and why?'],
+    ['invisible', 'Collect personal data from a third party or source without providing a privacy notice to the individuals (invisible processing).', 'What data, from whom and why is no notice given?'],
+    ['tracking', 'Track individuals\' online or offline location or behaviour.', 'Who is tracked, how and why?']] },
+  { id: 'g4', t: 'Does the processing activity involve any of the following?', f: [
+    ['scoring', 'Undertake evaluation or scoring.', 'Who is evaluated or scored, how and why?'],
+    ['sysMon', 'Systematic monitoring.', 'Who is monitored, why and where?'],
+    ['sensitive', 'Use sensitive personal data or data of a highly personal nature, including criminal offence data.', 'List all fields and why you need them, including whose data you are processing.'],
+    ['large', 'Process personal data on a large scale.', 'How many individuals? Is the scope local, regional, national or international? Is it one-off, time-limited or ongoing?'],
+    ['vulnerable', 'Use the personal data of vulnerable data subjects.', 'Who are they? Do they have a choice? Are there negative impacts? What are the benefits?'],
+    ['rights', 'Prevent people from exercising a right or using a service or a contract.', 'Who, why and what is prevented?'],
+    ['admLegal', 'Use automated decision-making with a legal or similar significant effect.', 'What decisions, who is affected and why?']] }
+];
+const SCR_FACTORS = SCR_GROUPS.reduce((l, g) => l.concat(g.f.map((x) => ({ key: x[0], text: x[1], prompt: x[2], g: g.id }))), []);
 const REVIEW_MS = 10000, ENROL_STEPS = ['Checking the service details', 'Sending the enrolment request to AISS', 'Creating the service record', 'Setting up the accessibility statement', 'Confirming enrolment'], ENROL_STEP_MS = 2000;
 let flowTimer = null;
 const flowKind = (a) => (a.title === 'Complete screener' ? 'screener' : a.title === 'Enrol service' ? 'enrol' : null);
 function screenerOutcome(ans) {
-  if (ans.personal !== 'Yes') return { code: 'none', title: 'No full DPIA needed', text: 'The service does not use personal data. Keep the screener as your record.' };
-  const yes = SCREENER_Q.slice(1).filter((q) => ans[q[0]] === 'Yes');
-  if (ans.special === 'Yes' || ans.children === 'Yes' || yes.length >= 2) return { code: 'full', title: 'A full DPIA is required', text: 'The Data Protection Officer found high-risk processing (' + yes.map((q) => q[1].replace(/^Will (it )?/, '').replace(/\?$/, '')).join('; ') + '). Complete the full DPIA before go-live.' };
-  return { code: 'low', title: 'Approved: no full DPIA needed', text: 'The Data Protection Officer found the risk is low. Record your data protection decisions in the service documentation.' };
+  const yes = SCR_FACTORS.filter((f) => ans['f_' + f.key] === 'Yes'), ico = yes.filter((f) => f.g === 'g1'), other = yes.filter((f) => f.g !== 'g1');
+  const list = (a) => a.map((f) => f.text.replace(/\.$/, '').toLowerCase()).join('; ');
+  let dpia, advise, rationale;
+  if (ico.length) { dpia = 'Yes'; advise = 'Yes'; rationale = 'The activity is on the ICO list of processing that requires a DPIA: ' + list(ico) + '.'; }
+  else if (other.length >= 2) { dpia = 'Yes'; advise = 'Yes'; rationale = 'Two or more EDPB high-risk factors apply together: ' + list(other) + '.'; }
+  else if (other.length === 1 || ans.major === 'Yes') { dpia = 'No'; advise = 'Yes'; rationale = (other.length ? 'One risk factor applies (' + list(other) + ')' : 'This is a major project') + '. A DPIA is not strictly required but the SRO should consider one.'; }
+  else { dpia = 'No'; advise = 'No'; rationale = 'No high-risk factors were identified. No further data protection assessment is needed.'; }
+  return { code: dpia === 'Yes' ? 'full' : advise === 'Yes' ? 'low' : 'none', dpia, advise, rationale,
+    title: dpia === 'Yes' ? 'A DPIA is required' : advise === 'Yes' ? 'A DPIA is not required, but consider one' : 'No DPIA required', text: rationale };
 }
 function flowTick(a) {
   const f = a.flow; if (!f) return;
   if (f.stage === 'review' && Date.now() - f.start >= REVIEW_MS) {
     const o = screenerOutcome(f.answers); f.stage = 'outcome'; f.outcome = o; f.doneAt = now();
-    a.updates.push({ at: now(), type: 'decision', text: 'Data Protection Officer review outcome: ' + o.title + '. ' + o.text });
+    a.updates.push({ at: now(), type: 'decision', text: 'Data protection review outcome: ' + o.title + '. ' + o.text });
     a.updates.push({ at: now(), type: 'system', text: 'Status changed from ' + a.status + ' to Complete.' }); a.status = 'Complete'; save();
   } else if (f.stage === 'enrolling' && Date.now() - f.start >= ENROL_STEPS.length * ENROL_STEP_MS) {
     f.stage = 'enrolled'; f.ref = 'AISS-' + (10000 + Math.floor(Math.random() * 89999)); f.doneAt = now();
@@ -1316,21 +1347,35 @@ function flowPanel(a) {
   const head = (t, p) => '<section class="flow"><h2 class="flow-t">' + t + '</h2>' + (p ? '<p class="flow-p">' + p + '</p>' : '');
   const again = '<p class="flow-p"><button type="button" class="link-btn" data-act="flow-reset" data-id="' + a.id + '">Start again</button></p>';
   if (k === 'screener') {
-    const names = ['Answer questions', 'Submitted', 'Data Protection Officer review', 'Outcome'];
+    const names = ['Complete the form', 'Submitted', 'Data protection review', 'Outcome'];
+    const yn = (name, label, extra) => '<div class="govuk-form-group" id="fq-' + name + '"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend">' + label + '</legend><div class="fq-err"></div><div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">' +
+      ['Yes', 'No'].map((v) => '<div class="govuk-radios__item"><input class="govuk-radios__input" id="fq-' + name + '-' + v + '" name="' + name + '" type="radio" value="' + v + '" data-act="flow-yn"><label class="govuk-label govuk-radios__label" for="fq-' + name + '-' + v + '">' + v + '</label></div>').join('') + '</div></fieldset>' +
+      (extra ? '<div class="fx" hidden><label class="govuk-label" for="fx-' + name + '">' + esc(extra) + '</label><textarea class="govuk-textarea" id="fx-' + name + '" name="x_' + name + '" rows="3"></textarea></div>' : '') + '</div>';
+    const txt = (name, label, hint, rows) => '<div class="govuk-form-group" id="fq-' + name + '"><label class="govuk-label govuk-label--s" for="fq-' + name + '-t">' + label + '</label>' + (hint ? '<div class="govuk-hint">' + hint + '</div>' : '') + '<div class="fq-err"></div>' + (rows ? '<textarea class="govuk-textarea" id="fq-' + name + '-t" name="' + name + '" rows="' + rows + '"></textarea>' : '<input class="govuk-input" id="fq-' + name + '-t" name="' + name + '" type="text">') + '</div>';
     if (!f) {
-      return head('DPIA high risk screener', 'Answer these questions about ' + esc(w.title || 'the service') + '. A Data Protection Officer will review your answers.') + flowTracker(names, 0) +
-        '<form id="flow-screener" data-id="' + a.id + '" novalidate>' + SCREENER_Q.map((q, i) => '<div class="govuk-form-group" id="fq-' + q[0] + '"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s">' + (i + 1) + '. ' + esc(q[1]) + '</legend><div class="fq-err"></div>' +
-          '<div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">' + ['Yes', 'No'].map((v) => '<div class="govuk-radios__item"><input class="govuk-radios__input" id="fq-' + q[0] + '-' + v + '" name="' + q[0] + '" type="radio" value="' + v + '"><label class="govuk-label govuk-radios__label" for="fq-' + q[0] + '-' + v + '">' + v + '</label></div>').join('') + '</div></fieldset></div>').join('') +
-        '<div class="govuk-form-group" id="fq-purpose"><label class="govuk-label govuk-label--s" for="fq-purpose-t">8. What is the purpose of processing the data?</label><div class="fq-err"></div><textarea class="govuk-textarea" id="fq-purpose-t" name="purpose" rows="3"></textarea></div>' +
-        '<button class="govuk-button" type="submit" data-module="govuk-button">Submit for review</button></form></section>';
+      return head('High risk screening document', 'Answer these questions about the processing activity. The Office of the Data Protection Officer will review them and say whether a DPIA is needed.') + flowTracker(names, 0) +
+        '<form id="flow-screener" data-id="' + a.id + '" novalidate><h3 class="flow-h">1. About your processing activity</h3>' +
+        txt('name', 'Name of the processing activity', '', 0).replace('name="name" type="text"', 'name="name" type="text" value="' + esc(w.title || '') + '"') + txt('owner', 'Your name and email', '', 0) + txt('team', 'Group, directorate or team responsible', '', 0) + txt('sro', 'Senior Responsible Officer (SRO) for this activity', '', 0) +
+        yn('wider', 'Does this form part of a wider service, contract or activity?', 'Name of the service and how this activity fits into it') + txt('dpias', 'Linked DPIAs (optional)', 'Have you considered updating an existing DPIA instead? Does this replace one?', 2) +
+        '<h3 class="flow-h">2. Describe the processing</h3>' + txt('what', 'What are you doing?', 'Do not use acronyms or terms only your work area will understand.', 3) + txt('why', 'Why are you doing it?', '', 3) +
+        yn('legislation', 'Does it involve or require new legislation?', 'Give details') + yn('ai', 'Are you intending to use AI, such as machine learning or large language models?', 'Give details') +
+        '<h3 class="flow-h">3. Risk factors</h3><p class="govuk-body">Read the definitions and guidance before you answer. For every Yes, explain why, with evidence that you meet the criteria.</p>' +
+        SCR_GROUPS.map((g, gi) => '<div class="flow-group"><h4 class="flow-gt">' + 'Set ' + (gi + 1) + ' of ' + SCR_GROUPS.length + ': ' + esc(g.t) + '</h4>' + (g.hint ? '<p class="govuk-hint">' + esc(g.hint) + '</p>' : '') + g.f.map((x) => yn('f_' + x[0], esc(x[1]), x[2])).join('') + '</div>').join('') +
+        '<h3 class="flow-h">4. Good practice</h3>' + yn('major', 'Is this a major project involving personal data, such as a high-profile new national programme?', 'Explain, with any relevant press coverage or historical background') +
+        '<button class="govuk-button" type="submit" data-module="govuk-button">Send to the data protection team</button></form></section>';
     }
-    const ans = '<dl class="govuk-summary-list govuk-summary-list--no-border">' + SCREENER_Q.map((q) => '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">' + esc(q[1]) + '</dt><dd class="govuk-summary-list__value">' + esc(f.answers[q[0]]) + '</dd></div>').join('') + '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Purpose</dt><dd class="govuk-summary-list__value">' + esc(f.answers.purpose) + '</dd></div></dl>';
+    const ys = SCR_FACTORS.filter((x) => f.answers['f_' + x.key] === 'Yes');
+    const row = (k, v) => '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">' + k + '</dt><dd class="govuk-summary-list__value">' + v + '</dd></div>';
+    const ans = '<dl class="govuk-summary-list govuk-summary-list--no-border">' + row('Activity', esc(f.answers.name)) + row('Team', esc(f.answers.team)) + row('SRO', esc(f.answers.sro)) + row('What and why', esc(f.answers.what) + '<br>' + esc(f.answers.why)) +
+      row('AI', esc(f.answers.ai || 'No') + (f.answers.x_ai ? ': ' + esc(f.answers.x_ai) : '')) + row('Major project', esc(f.answers.major || 'No')) +
+      row('Risk factors', ys.length ? '<ul class="govuk-list govuk-list--bullet">' + ys.map((x) => '<li>' + esc(x.text) + (f.answers['x_f_' + x.key] ? '<br><span class="muted">' + esc(f.answers['x_f_' + x.key]) + '</span>' : '') + '</li>').join('') + '</ul>' : 'None') + '</dl>';
     if (f.stage === 'review') {
       const pct = Math.min(100, Math.round((Date.now() - f.start) / REVIEW_MS * 100));
-      return head('Being reviewed', 'Submitted ' + fmt(f.submittedAt) + '. The Data Protection Officer is reviewing your answers.') + flowTracker(names, 2) + bar(pct, 'Review ' + pct + '% complete') + '<details class="govuk-details"><summary class="govuk-details__summary"><span class="govuk-details__summary-text">Your answers</span></summary><div class="govuk-details__text">' + ans + '</div></details></section>';
+      return head('Being reviewed', 'Sent ' + fmt(f.submittedAt) + '. The Office of the Data Protection Officer is reviewing your form.') + flowTracker(names, 2) + bar(pct, 'Review ' + pct + '% complete') + '<details class="govuk-details"><summary class="govuk-details__summary"><span class="govuk-details__summary-text">Your answers</span></summary><div class="govuk-details__text">' + ans + '</div></details></section>';
     }
     const o = f.outcome, cls = o.code === 'full' ? '' : ' govuk-notification-banner--success';
-    return head('Review outcome') + flowTracker(names, 4) + '<div class="govuk-notification-banner' + cls + '" role="alert"><div class="govuk-notification-banner__header"><h2 class="govuk-notification-banner__title">' + (o.code === 'full' ? 'Important' : 'Review complete') + '</h2></div><div class="govuk-notification-banner__content"><p class="govuk-notification-banner__heading">' + esc(o.title) + '</p><p class="govuk-body">' + esc(o.text) + '</p><p class="govuk-body-s">Reviewed ' + fmt(f.doneAt) + '</p></div></div>' +
+    return head('Review outcome') + flowTracker(names, 4) + '<div class="govuk-notification-banner' + cls + '" role="alert"><div class="govuk-notification-banner__header"><h2 class="govuk-notification-banner__title">' + (o.code === 'full' ? 'Important' : 'Review complete') + '</h2></div><div class="govuk-notification-banner__content"><p class="govuk-notification-banner__heading">' + esc(o.title) + '</p><p class="govuk-body">' + esc(o.rationale) + '</p></div></div>' +
+      '<h3 class="flow-h">Data protection team review</h3><dl class="govuk-summary-list">' + row('Is a DPIA required by UK GDPR or the ICO?', o.dpia) + row('Should the SRO consider a DPIA regardless?', o.advise) + row('Rationale', esc(o.rationale)) + row('Reviewed by', 'Office of the Data Protection Officer, ' + fmt(f.doneAt)) + '</dl>' +
       '<details class="govuk-details"><summary class="govuk-details__summary"><span class="govuk-details__summary-text">Your answers</span></summary><div class="govuk-details__text">' + ans + '</div></details>' + again + '</section>';
   }
   const names = ['Confirm details', 'Enrolling with AISS', 'Enrolled'];
@@ -1357,13 +1402,18 @@ function submitFlow(form) {
   const d = formData(form); let bad = 0;
   form.querySelectorAll('.govuk-form-group--error').forEach((g) => { g.classList.remove('govuk-form-group--error'); g.querySelector('.fq-err').innerHTML = ''; });
   if (form.id === 'flow-screener') {
-    SCREENER_Q.forEach((q) => { if (!d[q[0]]) { flowErr(form, 'fq-' + q[0], 'Select yes or no'); bad++; } });
-    if (!(d.purpose || '').trim()) { flowErr(form, 'fq-purpose', 'Enter the purpose of processing'); bad++; }
+    const req = (k, m) => { if (!(d[k] || '').trim()) { flowErr(form, 'fq-' + k, m); bad++; } };
+    ['name:Enter the name of the processing activity', 'owner:Enter your name and email', 'team:Enter the team responsible', 'sro:Enter the Senior Responsible Officer', 'what:Enter what you are doing', 'why:Enter why you are doing it'].forEach((x) => req(x.split(':')[0], x.split(':')[1]));
+    ['wider', 'legislation', 'ai', 'major'].concat(SCR_FACTORS.map((x) => 'f_' + x.key)).forEach((k) => {
+      if (!d[k]) { flowErr(form, 'fq-' + k, 'Select yes or no'); bad++; }
+      else if (d[k] === 'Yes' && /^(f_|major$)/.test(k) && !(d['x_' + k] || '').trim()) { flowErr(form, 'fq-' + k, 'Explain why you answered yes'); bad++; }
+    });
     if (bad) { const g = form.querySelector('.govuk-form-group--error'); if (g) g.scrollIntoView({ block: 'center' }); return; }
-    const answers = {}; SCREENER_Q.forEach((q) => { answers[q[0]] = d[q[0]]; }); answers.purpose = d.purpose.trim();
+    const answers = {}; Object.keys(d).forEach((k) => { answers[k] = typeof d[k] === 'string' ? d[k].trim() : d[k]; });
     a.flow = { stage: 'review', answers, start: Date.now(), submittedAt: now() };
-    a.updates.push({ at: now(), type: 'evidence', text: 'Completed DPIA screener submitted for review (' + SCREENER_Q.filter((q) => answers[q[0]] === 'Yes').length + ' of ' + SCREENER_Q.length + ' answered yes).' });
-    a.updates.push({ at: now(), type: 'system', text: 'Sent to the Data Protection Officer for review.' });
+    const n = SCR_FACTORS.filter((x) => answers['f_' + x.key] === 'Yes').length;
+    a.updates.push({ at: now(), type: 'evidence', text: 'High risk screening document submitted for review (' + n + ' risk factor' + (n === 1 ? '' : 's') + ' identified).' });
+    a.updates.push({ at: now(), type: 'system', text: 'Sent to the Office of the Data Protection Officer for review.' });
   } else {
     if (!/^https?:\/\/\S+\.\S+/i.test((d.url || '').trim())) { flowErr(form, 'fe-url', 'Enter a service URL that starts with https://'); bad++; }
     if (!/^\S+@\S+\.\S+$/.test((d.email || '').trim())) { flowErr(form, 'fe-email', 'Enter an email address, like name@example.gov.uk'); bad++; }
