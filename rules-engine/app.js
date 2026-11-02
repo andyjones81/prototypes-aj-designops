@@ -61,9 +61,18 @@ const OWNERS = { Team: ['Data Protection Office', 'Service Assurance Team', 'Acc
 const OWNER_TYPE = (name) => OWNERS.Person.includes(name) ? 'Person' : OWNERS.Team.includes(name) ? 'Team' : '';
 const SEED_OWNER = { 'Service assessment for high volume transactional services': 'Service Assurance Team', 'DPIA high risk screener': 'Data Protection Office', 'Accessibility enrolment': 'Accessibility Team', 'Children and families safeguarding review': 'Safeguarding Team', 'Procurement route and commercial approval': 'Commercial Team', 'API standards review': 'Dan Fraser', 'Decommissioning plan': 'Jo Bennett', 'High risk assurance board': 'Risk and Assurance Team' };
 const legalTag = (a) => a.legal ? tag('Legal requirement', 'govuk-tag--red') : tag('Not a legal requirement', 'govuk-tag--grey');
+function stepItems(text) {
+  return String(text || '').split(/\n+/).map((l) => l.trim().replace(/^[-•*]\s*/, '').trim()).filter(Boolean);
+}
+function stepList(text) {
+  const items = stepItems(text);
+  if (!items.length) return '<p class="govuk-body"><span class="muted">No description yet.</span></p>';
+  if (items.length === 1) return '<p class="govuk-body">' + esc(items[0]) + '</p>';
+  return '<ul class="govuk-list govuk-list--bullet">' + items.map((l) => '<li>' + esc(l) + '</li>').join('') + '</ul>';
+}
 function actionDefList(r) {
   return '<ol class="act-list">' + r.actions.map((a) => '<li><p class="govuk-body govuk-!-margin-bottom-1"><strong>' + esc(a.title) + '</strong> ' + legalTag(a) + '</p>' +
-    '<p class="govuk-body-s govuk-!-margin-bottom-1">' + (a.description ? esc(a.description) : '<span class="muted">No description yet.</span>') + '</p>' +
+    stepList(a.description) +
     '<p class="govuk-body-s govuk-!-margin-bottom-0"><strong>Expected evidence:</strong> ' + (a.evidence ? esc(a.evidence) : '<span class="muted">Not yet defined.</span>') + '</p></li>').join('') + '</ol>';
 }
 const actDef = (a) => { const r = ruleOf(a.ruleId), d = r && r.actions.find((x) => x.title === a.title); return d || { description: a.description, evidence: a.evidence, legal: a.legal }; };
@@ -402,11 +411,14 @@ function vRules() {
     '<div class="govuk-form-group filter-bar__actions"><button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit">Apply</button>' + (filtered || sort !== 'id' ? ' <a class="govuk-link" href="#/rules">Clear</a>' : '') + '</div></form>';
   return banner() + pageHead('Rules', 'Rulesets based on policies, standards and processes. They run on trigger events and return requirements.', btn('#/rules/new', 'Add rule')) + bar +
     tabsNav('rules', p, 'status', [['', 'All', pool.length], ['Published', 'Published', pool.filter((r) => r.status === 'Published').length], ['Draft', 'Draft', pool.filter((r) => r.status === 'Draft').length], ['Retired', 'Retired', pool.filter((r) => r.status === 'Retired').length]], '', 'Rule status') +
-    (pg.items.length ? '' : '<div class="panel"><p class="govuk-body">No rules match these filters.</p></div>') + (pg.items.length ? table(['Rule', 'Owner', 'When', 'Requirement returned', 'Applies to', 'Status'], pg.items.map((r) => {
+    (pg.items.length ? '' : '<div class="panel"><p class="govuk-body">No rules match these filters.</p></div>') + (pg.items.length ? '<ul class="rlist">' + pg.items.map((r) => {
       const n = count(r);
-      return [ruleChip(r.id) + '<br><a class="govuk-link" href="#/rules/' + r.id + '">' + esc(r.name) + '</a><br><span class="govuk-body-s">' + esc(r.source) + '</span>', ownerCell(r),
-        r.conditions.map((c) => esc(condText(c))).join('<br>and '), esc(r.requirementTitle), n + ' work item' + (n === 1 ? '' : 's'), statusRule(r) + '<br><span class="muted">Version ' + r.version + '</span>'];
-    }), 'compact') + pager('rules', p, pg) : '');
+      return '<li class="rrow"><div class="rrow-main"><p class="rrow-k">' + ruleChip(r.id) + ' <span>' + esc(r.source) + '</span></p><h2 class="rrow-t"><a class="govuk-link govuk-link--no-visited-state" href="#/rules/' + r.id + '">' + esc(r.name) + '</a></h2>' +
+        '<p class="rrow-w"><strong>When</strong> ' + r.conditions.map((c) => '<span class="cpill">' + esc(condText(c)) + '</span>').join('<span class="cand">and</span>') + '</p>' +
+        '<p class="rrow-w"><strong>Returns</strong> ' + esc(r.requirementTitle) + '</p></div>' +
+        '<div class="rrow-side"><span class="rrow-n"><b>' + n + '</b> work item' + (n === 1 ? '' : 's') + '</span><span class="rrow-o">' + ownerCell(r) + '</span></div>' +
+        '<div class="rrow-st">' + statusRule(r) + '<span class="muted">v' + r.version + '</span></div></li>';
+    }).join('') + '</ul>' + pager('rules', p, pg) : '');
 }
 
 function condRow(c, i) {
@@ -425,9 +437,13 @@ function condRow(c, i) {
 }
 function actionEditor(a, i) {
   const f = (k, label, area, hint) => '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="a' + k + '-' + i + '">' + label + '</label>' + (hint ? '<div class="govuk-hint">' + hint + '</div>' : '') +
-    (area ? '<textarea class="govuk-textarea" id="a' + k + '-' + i + '" name="a' + k + i + '" rows="2">' + esc(a[k]) + '</textarea>' : '<input class="govuk-input" id="a' + k + '-' + i + '" name="a' + k + i + '" value="' + esc(a[k]) + '">') + '</div>';
+    (area ? '<textarea class="govuk-textarea" id="a' + k + '-' + i + '" name="a' + k + i + '" rows="3">' + esc(a[k]) + '</textarea>' : '<input class="govuk-input" id="a' + k + '-' + i + '" name="a' + k + i + '" value="' + esc(a[k]) + '">') + '</div>';
+  const steps = stepItems(a.description);
+  const involves = steps.length > 1
+    ? '<div class="govuk-form-group"><p class="govuk-label govuk-label--s">What this action involves</p>' + stepList(a.description) + '<input type="hidden" name="adescription' + i + '" value="' + esc(a.description) + '"></div>'
+    : f('description', 'What this action involves', true);
   return '<section class="act-edit"><div class="act-edit__head"><h3 class="govuk-heading-s govuk-!-margin-bottom-0">Action ' + (i + 1) + '</h3><button type="button" class="govuk-button govuk-button--warning govuk-!-margin-bottom-0" data-module="govuk-button" data-act="action-remove" data-i="' + i + '">Remove<span class="govuk-visually-hidden"> action ' + (i + 1) + '</span></button></div>' +
-    f('title', 'Action') + f('description', 'What this action involves', true) + f('evidence', 'Expected evidence', true, 'What the team should attach or record to show it is done, for example a report, approval or link.') +
+    f('title', 'Action') + involves + f('evidence', 'Expected evidence', true, 'What the team should attach or record to show it is done, for example a report, approval or link.') +
     '<div class="govuk-checkboxes govuk-checkboxes--small govuk-form-group" data-module="govuk-checkboxes"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" type="checkbox" id="alegal-' + i + '" name="alegal' + i + '" value="1"' + (a.legal ? ' checked' : '') + '><label class="govuk-label govuk-checkboxes__label" for="alegal-' + i + '">Legal requirement</label></div></div></section>';
 }
 function vRuleForm(id) {
@@ -868,7 +884,7 @@ function actionInfo(id) {
   d.className = 'rule-dialog';
   d.innerHTML = '<div class="dlg-head"><div><span class="govuk-caption-m">' + esc(a.id) + ' · Help</span><h2 class="govuk-heading-m" id="rule-dialog-title">' + esc(a.title) + '</h2></div><button type="button" class="dlg-x" data-act="dialog-close" aria-label="Close">&times;</button></div>' +
     '<p class="govuk-body">' + statusTag(a.status) + ' ' + legalTag(df) + '</p>' +
-    '<h3 class="govuk-heading-s">What this involves</h3><p class="govuk-body">' + (df.description ? esc(df.description) : '<span class="muted">Not yet described.</span>') + '</p>' +
+    '<h3 class="govuk-heading-s">What this involves</h3>' + stepList(df.description) +
     '<h3 class="govuk-heading-s">Expected evidence</h3><p class="govuk-body">' + (df.evidence ? esc(df.evidence) : '<span class="muted">Not yet defined.</span>') + '</p>' +
     '<h3 class="govuk-heading-s">Why it applies</h3><p class="govuk-body">' + (r ? esc(r.requirementTitle) + '<br><span class="muted">' + esc(r.source) + '</span> ' + ruleChip(r.id) : 'Not linked to a rule.') + '</p>' +
     '<div class="govuk-button-group"><a class="govuk-button" role="button" draggable="false" href="#/actions/' + a.id + '" data-act="dialog-close">Open action</a><button type="button" class="govuk-button govuk-button--secondary" data-act="dialog-close">Close</button></div>';
@@ -993,28 +1009,52 @@ function apiRequest(method, path, body) {
   return nf('No endpoint ' + method + ' /' + seg.join('/'));
 }
 window.RulesAPI = { request: apiRequest };
+const EVALUATE_EXAMPLE = {
+  title: 'School trips booking service',
+  stage: 'Build',
+  type: 'New',
+  demand: 'New demand',
+  characteristics: ['Transactional'],
+  channel: ['Online'],
+  users: ['Parents and Carers', 'Teachers'],
+  transactional: 'Yes',
+  estTransactions: '250000',
+  personalData: 'Yes',
+  priority: 'High',
+  risk: 'Medium'
+};
 const API_EXAMPLES = [
-  ['GET', 'api/rules.json', '', 'Static', 'Every rule built from the CSV logs, as a published file'],
-  ['GET', 'api/rules/RUL-101.json', '', 'Static', 'One rule, with its version history'],
-  ['GET', '/rules?status=Published&stage=Design and test', '', 'Live', 'Published rules that apply at a stage'],
-  ['GET', '/rules/RUL-001', '', 'Live', 'One rule from the admin store'],
-  ['GET', '/rules/RUL-001/versions', '', 'Live', 'Version history of a rule'],
+  ['POST', '/evaluate', JSON.stringify(EVALUATE_EXAMPLE, null, 2), 'Live', 'Rules and actions that apply to the work object you send'],
+  ['GET', '/rules?status=Published&stage=Build', '', 'Live', 'Published rules whose conditions include a stage'],
+  ['GET', '/rules/RUL-101', '', 'Live', 'One rule from the admin store'],
+  ['GET', '/rules/RUL-101/versions', '', 'Live', 'Version history of a rule'],
   ['GET', '/triggers', '', 'Live', 'Trigger definitions'],
-  ['GET', '/work/WRK-001/requirements', '', 'Live', 'Requirements and actions raised for a work item'],
-  ['POST', '/evaluate', JSON.stringify({ stage: 'Design and test', type: 'New', transactional: 'Yes', estTransactions: '250000', personalData: 'Yes', characteristics: ['Transactional'], channel: ['Online'] }, null, 2), 'Live', 'Which rules and actions apply to a described piece of work']
+  ['GET', '/work/WRK-001/requirements', '', 'Live', 'Requirements and actions already raised for a work item'],
+  ['GET', 'api/rules.json', '', 'Static', 'Every rule built from the CSV logs, as a published file'],
+  ['GET', 'api/rules/RUL-101.json', '', 'Static', 'One rule, as a static file']
 ];
+function apiStatusLine(method, path, res, chars) {
+  const matched = res.body && Array.isArray(res.body.matched) ? ' · ' + res.body.matched.length + ' rules apply · ' + (res.body.actionCount || 0) + ' actions' : '';
+  return method + ' ' + path + ' → ' + res.status + matched + ' · ' + chars.toLocaleString('en-GB') + ' characters';
+}
 function vApi() {
   const pub = S.rules.filter((r) => r.status === 'Published').length;
-  const ex = API_EXAMPLES[0];
-  return pageHead('Rules API', 'JSON for the rules library. Static files are published with this site. Live endpoints are served from the rule admin store in this browser, so edits show up straight away.', '<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="api-download">Download live rules.json</button>') +
-    '<p class="govuk-body">' + S.rules.length + ' rules in the library, ' + pub + ' published. Also available from the browser console as <code>RulesAPI.request(method, path, body)</code>.</p>' +
-    '<h2 class="govuk-heading-m">Endpoints</h2>' + table(['Method', 'Path', 'Type', 'Returns', ''], API_EXAMPLES.map((e) => ['<strong class="govuk-tag ' + (e[0] === 'GET' ? 'govuk-tag--blue' : 'govuk-tag--green') + '">' + e[0] + '</strong>', '<code>' + esc(e[1].split('\n')[0]) + '</code>', e[3] === 'Static' ? tag('Static file', 'govuk-tag--grey') : tag('Live', 'govuk-tag--turquoise'), esc(e[4]),
-      '<button type="button" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" data-module="govuk-button" data-act="api-try" data-method="' + e[0] + '" data-path="' + esc(e[1]) + '" data-body="' + esc(e[2]) + '">Try</button>'])) +
-    '<h2 class="govuk-heading-m">Try a request</h2><form id="api-form" data-form="api" novalidate><div class="api-line"><div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="api-method">Method</label><select class="govuk-select" id="api-method" name="method"><option>GET</option><option>POST</option></select></div>' +
-    '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="api-path">Path</label><input class="govuk-input" id="api-path" name="path" value="' + esc(ex[1]) + '"></div></div>' +
-    '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="api-body">Request body (POST)</label><textarea class="govuk-textarea api-code" id="api-body" name="body" rows="8" spellcheck="false"></textarea></div>' +
-    '<button class="govuk-button" type="submit" data-module="govuk-button">Send request</button></form>' +
-    '<h2 class="govuk-heading-m">Response</h2><p class="govuk-body-s muted" id="api-status">No request sent yet.</p><pre class="api-out" id="api-out" tabindex="0">{}</pre>';
+  const example = JSON.stringify(EVALUATE_EXAMPLE, null, 2);
+  const first = apiRequest('POST', '/evaluate', example);
+  const json = JSON.stringify(first.body, null, 2);
+  const shown = json.length > 20000 ? json.slice(0, 20000) + '\n… truncated for display (' + json.length.toLocaleString('en-GB') + ' characters)' : json;
+  return pageHead('Rules API', 'Send a work object and get back the published rules that apply.', '<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="api-download">Download live rules.json</button>') +
+    '<p class="govuk-body">' + S.rules.length + ' rules in the library, ' + pub + ' published. <code>POST /evaluate</code> checks them against the JSON you send. The same call is available in the console as <code>RulesAPI.request("POST", "/evaluate", body)</code>.</p>' +
+    '<div class="api-explorer">' +
+    '<section><h2 class="govuk-heading-m">Request</h2>' +
+    '<form id="api-form" data-form="api" novalidate><div class="api-line"><div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="api-method">Method</label><select class="govuk-select" id="api-method" name="method"><option>GET</option><option selected>POST</option></select></div>' +
+    '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="api-path">Path</label><input class="govuk-input" id="api-path" name="path" value="/evaluate"></div></div>' +
+    '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="api-body">Example JSON</label><div class="govuk-hint" id="api-body-hint">Describe the work. Use stage, type, demand, characteristics, channel, users, transactional, estTransactions, personalData, priority and risk.</div>' +
+    '<textarea class="govuk-textarea api-code" id="api-body" name="body" rows="18" spellcheck="false" aria-describedby="api-body-hint">' + esc(example) + '</textarea></div>' +
+    '<button class="govuk-button" type="submit" data-module="govuk-button">Send request</button></form></section>' +
+    '<section><h2 class="govuk-heading-m">Applicable rules</h2><p class="govuk-body-s" id="api-status">' + esc(apiStatusLine('POST', '/evaluate', first, json.length)) + '</p><pre class="api-out" id="api-out" tabindex="0">' + esc(shown) + '</pre></section></div>' +
+    '<h2 class="govuk-heading-m">Other endpoints</h2>' + table(['Method', 'Path', 'Type', 'Returns', ''], API_EXAMPLES.map((e) => ['<strong class="govuk-tag ' + (e[0] === 'GET' ? 'govuk-tag--blue' : 'govuk-tag--green') + '">' + e[0] + '</strong>', '<code>' + esc(e[1].split('\n')[0]) + '</code>', e[3] === 'Static' ? tag('Static file', 'govuk-tag--grey') : tag('Live', 'govuk-tag--turquoise'), esc(e[4]),
+      '<button type="button" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" data-module="govuk-button" data-act="api-try" data-method="' + e[0] + '" data-path="' + esc(e[1]) + '" data-body="' + esc(e[2]) + '">Try</button>']));
 }
 async function sendApi(form) {
   const d = formData(form), out = document.getElementById('api-out'), st = document.getElementById('api-status');
@@ -1025,7 +1065,7 @@ async function sendApi(form) {
     catch (e) { res = { status: 0, body: { error: 'Could not fetch the file. Static files need the site served over http(s), not opened from disk.' } }; }
   } else res = apiRequest(d.method, path, d.body);
   const json = typeof res.body === 'string' ? res.body : JSON.stringify(res.body, null, 2);
-  st.textContent = d.method + ' ' + path + ' → ' + res.status + ' · ' + (res.bytes || json.length).toLocaleString('en-GB') + ' characters';
+  st.textContent = apiStatusLine(d.method, path, res, res.bytes || json.length);
   out.textContent = json.length > 20000 ? json.slice(0, 20000) + '\n… truncated for display (' + json.length.toLocaleString('en-GB') + ' characters)' : json;
 }
 
@@ -1189,7 +1229,7 @@ function vActionDetail(id) {
     pageHead(esc(a.title), statusTag(a.status) + ' ' + legalTag(d) + (a.ruleVersion ? ' <span class="muted">Rule ' + esc(a.ruleId) + ' v' + a.ruleVersion + '</span>' : ''),
       act ? '<button type="button" class="govuk-button" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="evidence">Add evidence</button><button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="note">Add note or update status</button>' : '') +
     '<div class="two-col"><section>' +
-    '<h2 class="govuk-heading-m">About this action</h2><dl class="govuk-summary-list"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">What this involves</dt><dd class="govuk-summary-list__value">' + (d.description ? esc(d.description) : '<span class="muted">Not yet described.</span>') + '</dd></div>' +
+    '<h2 class="govuk-heading-m">About this action</h2><dl class="govuk-summary-list"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">What this involves</dt><dd class="govuk-summary-list__value">' + stepList(d.description) + '</dd></div>' +
     '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Expected evidence</dt><dd class="govuk-summary-list__value">' + (d.evidence ? esc(d.evidence) : '<span class="muted">Not yet defined.</span>') + '</dd></div>' +
     '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Requirement</dt><dd class="govuk-summary-list__value">' + (rule ? esc(rule.requirementTitle) + '<br><span class="muted">' + esc(rule.source) + '</span>' : 'Not linked to a rule') + '</dd></div></dl>' +
     '<h2 class="govuk-heading-m">Evidence <span class="muted">(' + ev.length + ')</span></h2>' +

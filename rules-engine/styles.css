@@ -153,9 +153,12 @@ html, html.govuk-template, .govuk-template__body, .govuk-template__body > .govuk
 .filter-bar__actions .govuk-button { margin: 0; }
 
 /* Rules API and trigger interface */
+.api-explorer { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; margin-bottom: 40px; }
 .api-line { display: grid; grid-template-columns: 140px 1fr; gap: 16px; align-items: end; }
 .api-code, .api-out { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; }
-.api-out { background: #f3f2f1; border-left: 4px solid #1d70b8; padding: 16px; max-height: 480px; overflow: auto; white-space: pre-wrap; word-break: break-word; margin: 0 0 30px; }
+.api-explorer .api-code { min-height: 420px; }
+.api-out { background: #f3f2f1; border-left: 4px solid #1d70b8; padding: 16px; max-height: 640px; overflow: auto; white-space: pre-wrap; word-break: break-word; margin: 0; }
+@media (max-width: 900px) { .api-explorer { grid-template-columns: 1fr; } }
 code { background: #f3f2f1; padding: 1px 5px; font-size: 14px; }
 
 .act-edit { border-left: 4px solid #b1b4b6; padding: 4px 0 0 16px; margin-bottom: 24px; }
@@ -467,3 +470,16 @@ html, html.govuk-template, .govuk-template__body, .app-body, .govuk-main-wrapper
 .app-body .govuk-table__cell .govuk-checkboxes__label { white-space: nowrap; }
 .app-body .govuk-form-group > .govuk-input, .app-body .govuk-form-group > .govuk-textarea { max-width: 720px; }
 .with-rail .two-col { grid-template-columns: 1fr; }
+
+/* Rules list */
+.rlist{list-style:none;margin:0 0 20px;padding:0;background:#fff;border:1px solid #e1e4e8}
+.rrow{display:grid;grid-template-columns:minmax(0,1fr) 190px 110px;gap:24px;align-items:start;padding:16px 20px;border-bottom:1px solid #e1e4e8}
+.rrow:last-child{border-bottom:0}.rrow:hover{background:#f8fafc}
+.rrow-k{margin:0 0 2px;font-size:.8rem;color:#505a5f}
+.rrow-t{margin:0 0 8px;font-size:1.15rem;font-weight:700}
+.rrow-w{margin:4px 0;font-size:.95rem}.rrow-w strong{display:inline-block;min-width:60px;color:#505a5f;font-size:.8rem;text-transform:uppercase;letter-spacing:.03em}
+.cpill{display:inline-block;background:#eef3f8;border:1px solid #cfdbe6;padding:1px 8px;font-size:.85rem;margin:2px 4px 2px 0}
+.cand{font-size:.8rem;color:#505a5f;margin-right:4px}
+.rrow-side{display:flex;flex-direction:column;gap:6px;font-size:.95rem}.rrow-o{color:#505a5f;font-size:.85rem}
+.rrow-st{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+@media(max-width:900px){.rrow{grid-template-columns:1fr}}
