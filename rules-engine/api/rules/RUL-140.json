@@ -31,6 +31,14 @@
  "tasks": [
   "Document a release management process (ORR 36)"
  ],
+ "actions": [
+  {
+   "title": "Document a release management process (ORR 36)",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

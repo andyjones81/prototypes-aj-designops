@@ -21,6 +21,14 @@
  "tasks": [
   "Management interfaces (RDP, SSH, SMB, SQL) MUST NOT be exposed directly to the public internet because this is the fastest way to suffer a c"
  ],
+ "actions": [
+  {
+   "title": "Management interfaces (RDP, SSH, SMB, SQL) MUST NOT be exposed directly to the public internet because this is the fastest way to suffer a c",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

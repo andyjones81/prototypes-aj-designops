@@ -33,6 +33,26 @@
   "try to host API through FuAPI",
   "if not get it on FuAPI register"
  ],
+ "actions": [
+  {
+   "title": "contact Find and use an API",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "try to host API through FuAPI",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "if not get it on FuAPI register",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://dfe.service-now.com/mydfe?id=sc_cat_item&sys_id=ee072d3f1bf79ed0593ddce7b04bcb10&table=sc_cat_item&searchTerm=fauapi",

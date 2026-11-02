@@ -21,6 +21,14 @@
  "tasks": [
   "Operating Systems and runtimes MUST be patched regularly, with Critical patches = 14 Days and High = 30 Days SLA, to ensure known flaws are "
  ],
+ "actions": [
+  {
+   "title": "Operating Systems and runtimes MUST be patched regularly, with Critical patches = 14 Days and High = 30 Days SLA, to ensure known flaws are ",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

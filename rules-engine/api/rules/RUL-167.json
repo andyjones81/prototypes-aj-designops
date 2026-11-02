@@ -21,6 +21,14 @@
  "tasks": [
   "Public Web Applications MUST sit behind a Web Application Firewall (WAF) in Blocking Mode to stop common automated attacks."
  ],
+ "actions": [
+  {
+   "title": "Public Web Applications MUST sit behind a Web Application Firewall (WAF) in Blocking Mode to stop common automated attacks.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

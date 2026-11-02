@@ -21,6 +21,14 @@
  "tasks": [
   "Business important and critical services MUST span Availbility Zones (AZs) to ensure resilience against major cloud failures"
  ],
+ "actions": [
+  {
+   "title": "Business important and critical services MUST span Availbility Zones (AZs) to ensure resilience against major cloud failures",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

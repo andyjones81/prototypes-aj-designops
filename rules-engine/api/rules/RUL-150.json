@@ -21,6 +21,14 @@
  "tasks": [
   "Secrets (API keys, passwords, connection strings, certificates) MUST NOT be committed to Git repositories or baked into container images bec"
  ],
+ "actions": [
+  {
+   "title": "Secrets (API keys, passwords, connection strings, certificates) MUST NOT be committed to Git repositories or baked into container images bec",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "GitHub",
  "guidance": "https://technical-guidance.education.gov.uk/infrastructure/security/managing-secrets/\n\nGithub actions - DfE Technical Guidance\n\nAzure CIP - DfE Technical Guidance\n\nDisaster recovery - DfE Technical Guidance",

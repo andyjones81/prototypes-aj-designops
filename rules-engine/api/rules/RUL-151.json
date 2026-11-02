@@ -21,6 +21,14 @@
  "tasks": [
   "Dependency scanning (SCA) MUST be implemented in build pipelines to detect known vulnerabilities in third-party libraries, and critical vuln"
  ],
+ "actions": [
+  {
+   "title": "Dependency scanning (SCA) MUST be implemented in build pipelines to detect known vulnerabilities in third-party libraries, and critical vuln",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "GitHub",
  "guidance": "",

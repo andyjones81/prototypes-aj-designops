@@ -33,6 +33,14 @@
  "tasks": [
   "Have you documented the service's risks (for example in a risk register)?"
  ],
+ "actions": [
+  {
+   "title": "Have you documented the service's risks (for example in a risk register)?",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/",

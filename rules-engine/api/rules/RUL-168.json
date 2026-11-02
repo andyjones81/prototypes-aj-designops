@@ -21,6 +21,14 @@
  "tasks": [
   "Production environments MUST NOT communicate with Non-Production environments (Segmentation) to prevent a test environment compromise from s"
  ],
+ "actions": [
+  {
+   "title": "Production environments MUST NOT communicate with Non-Production environments (Segmentation) to prevent a test environment compromise from s",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

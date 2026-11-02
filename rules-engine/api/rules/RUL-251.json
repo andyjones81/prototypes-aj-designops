@@ -36,6 +36,32 @@
   "Identify any CAF areas with insufficient control coverage.",
   "Address or explain gaps where appropriate."
  ],
+ "actions": [
+  {
+   "title": "Take the service's agreed security controls set.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Map each relevant control to the corresponding CAF outcome/principle.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Identify any CAF areas with insufficient control coverage.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Address or explain gaps where appropriate.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-a-security-controls-set-for-your-service/",

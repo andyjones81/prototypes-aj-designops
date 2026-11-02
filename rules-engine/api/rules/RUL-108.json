@@ -31,6 +31,14 @@
  "tasks": [
   "Do a peer review for technical architecture work (ORR 7)"
  ],
+ "actions": [
+  {
+   "title": "Do a peer review for technical architecture work (ORR 7)",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://deliver-good-services.education.gov.uk/guides/architecture-design-governance-and-assurance/things-to-help-you",

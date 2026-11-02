@@ -31,6 +31,14 @@
  "tasks": [
   "start a Departmental Security Assurance model process"
  ],
+ "actions": [
+  {
+   "title": "start a Departmental Security Assurance model process",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://educationgovuk.sharepoint.com/sites/security/SitePages/assurance.aspx#departmental-security-assurance-model-%28dsam%29-process",

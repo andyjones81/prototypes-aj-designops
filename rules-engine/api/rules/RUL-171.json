@@ -21,6 +21,14 @@
  "tasks": [
   "DLP controls MUST be implemented on email, collaboration tools, and corporate endpoints to prevent the unauthorized transmission of high-ris"
  ],
+ "actions": [
+  {
+   "title": "DLP controls MUST be implemented on email, collaboration tools, and corporate endpoints to prevent the unauthorized transmission of high-ris",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

@@ -21,6 +21,14 @@
  "tasks": [
   "Restoration capability MUST be tested/proved annually (Drills) because a backup that is never tested is not a backup."
  ],
+ "actions": [
+  {
+   "title": "Restoration capability MUST be tested/proved annually (Drills) because a backup that is never tested is not a backup.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

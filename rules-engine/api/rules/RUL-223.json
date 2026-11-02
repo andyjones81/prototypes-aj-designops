@@ -34,6 +34,32 @@
   "Strong access control",
   "Secure transmission"
  ],
+ "actions": [
+  {
+   "title": "PCI-DSS compliance where applicable",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Encryption",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Strong access control",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Secure transmission",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",

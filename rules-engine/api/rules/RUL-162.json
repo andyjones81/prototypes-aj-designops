@@ -21,6 +21,14 @@
  "tasks": [
   "Third-party tools and integrations (including SaaS) MUST undergo a Vendor Security Assessment before they can be used to prevent breaches vi"
  ],
+ "actions": [
+  {
+   "title": "Third-party tools and integrations (including SaaS) MUST undergo a Vendor Security Assessment before they can be used to prevent breaches vi",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

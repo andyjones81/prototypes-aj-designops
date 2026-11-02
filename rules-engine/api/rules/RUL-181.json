@@ -21,6 +21,14 @@
  "tasks": [
   "Multi-Factor Authentication (MFA) MUST be mandatory for ALL externally accessible users without exception because it is the single best way "
  ],
+ "actions": [
+  {
+   "title": "Multi-Factor Authentication (MFA) MUST be mandatory for ALL externally accessible users without exception because it is the single best way ",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

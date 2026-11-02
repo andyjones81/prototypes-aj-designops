@@ -21,6 +21,14 @@
  "tasks": [
   "All security tooling procurement MUST be agreed with CISD to ensure consistency, prevent duplication, and avoid unnecessary spend."
  ],
+ "actions": [
+  {
+   "title": "All security tooling procurement MUST be agreed with CISD to ensure consistency, prevent duplication, and avoid unnecessary spend.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "Security Tooling procurement",
  "guidance": "",

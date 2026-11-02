@@ -36,6 +36,32 @@
   "Discuss which additional frameworks are relevant to the service.",
   "Agree which frameworks will provide the basis for the service's controls."
  ],
+ "actions": [
+  {
+   "title": "Engage the organisation's security function.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Identify any existing organisational security framework or controls taxonomy.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Discuss which additional frameworks are relevant to the service.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Agree which frameworks will provide the basis for the service's controls.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-a-security-controls-set-for-your-service/",

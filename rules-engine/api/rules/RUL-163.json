@@ -21,6 +21,14 @@
  "tasks": [
   "Service Owners MUST own their risk, and risks above tolerance REQUIRE formal consultation with the CISO before acceptance to ensure senior l"
  ],
+ "actions": [
+  {
+   "title": "Service Owners MUST own their risk, and risks above tolerance REQUIRE formal consultation with the CISO before acceptance to ensure senior l",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

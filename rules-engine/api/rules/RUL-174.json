@@ -21,6 +21,14 @@
  "tasks": [
   "All cloud-hosted compute instances and corporate devices MUST run an approved EDR tool with 24/7 monitoring and alerting to the central SoC "
  ],
+ "actions": [
+  {
+   "title": "All cloud-hosted compute instances and corporate devices MUST run an approved EDR tool with 24/7 monitoring and alerting to the central SoC ",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

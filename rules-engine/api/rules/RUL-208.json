@@ -35,6 +35,14 @@
  "tasks": [
   "Have you assigned the Secure by Design responsibilities (for example, in a RACI matrix) and communicated them to the relevant parties?"
  ],
+ "actions": [
+  {
+   "title": "Have you assigned the Secure by Design responsibilities (for example, in a RACI matrix) and communicated them to the relevant parties?",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-roles-and-responsibilities/",

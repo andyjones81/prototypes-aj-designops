@@ -33,6 +33,26 @@
   "get a report",
   "meet WCAG 2.2 AA guidelines"
  ],
+ "actions": [
+  {
+   "title": "book an accessibility audit",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "get a report",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "meet WCAG 2.2 AA guidelines",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

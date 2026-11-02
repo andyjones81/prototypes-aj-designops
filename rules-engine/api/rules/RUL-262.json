@@ -39,6 +39,32 @@
   "Define when tests will run.",
   "Configure alerts/reporting so developers see important findings."
  ],
+ "actions": [
+  {
+   "title": "Select appropriate code/application security testing methods.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Integrate automated testing into development pipelines where appropriate.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Define when tests will run.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Configure alerts/reporting so developers see important findings.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/",

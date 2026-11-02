@@ -36,6 +36,32 @@
   "assumptions and constraints",
   "information/sources used"
  ],
+ "actions": [
+  {
+   "title": "scope and boundaries",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "terminology and definitions",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "assumptions and constraints",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "information/sources used",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/",

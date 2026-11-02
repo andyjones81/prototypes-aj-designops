@@ -39,6 +39,32 @@
   "Add new threats where appropriate.",
   "Update existing threats where their likelihood or impact has changed."
  ],
+ "actions": [
+  {
+   "title": "Review proposed changes for security implications.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Determine whether threats or attack paths have changed.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Add new threats where appropriate.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Update existing threats where their likelihood or impact has changed.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/evaluating-the-security-impact-of-changes/\n\nHow do I? - Change Enablement Policy Process and Procedure v1.05 - MyDfE",

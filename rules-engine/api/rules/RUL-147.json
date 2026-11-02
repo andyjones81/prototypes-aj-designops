@@ -31,6 +31,14 @@
  "tasks": [
   "The DfE security.txt file needs to be accessible from active DfE websites to ensure vulnerabilities can be quickly reported via the HMG-mand"
  ],
+ "actions": [
+  {
+   "title": "The DfE security.txt file needs to be accessible from active DfE websites to ensure vulnerabilities can be quickly reported via the HMG-mand",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "GitHub",
  "guidance": "None found",

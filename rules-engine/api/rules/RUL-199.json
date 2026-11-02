@@ -41,6 +41,32 @@
   "Feedback incorporated into the business case.",
   "Approval or endorsement from appropriate security representatives."
  ],
+ "actions": [
+  {
+   "title": "Discussions with Security, Cyber, Architecture or Assurance teams.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Review meetings.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Feedback incorporated into the business case.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Approval or endorsement from appropriate security representatives.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/\n\nService Engagement Form\n\nProcurements and suppliers – security considerations",

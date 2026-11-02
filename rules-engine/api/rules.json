@@ -42,6 +42,32 @@
     "a conversation with Steve?",
     "mapping things out"
    ],
+   "actions": [
+    {
+     "title": "impact assessment",
+     "description": "",
+     "evidence": "",
+     "legal": true
+    },
+    {
+     "title": "understand technical and business process dependency",
+     "description": "",
+     "evidence": "",
+     "legal": true
+    },
+    {
+     "title": "a conversation with Steve?",
+     "description": "",
+     "evidence": "",
+     "legal": true
+    },
+    {
+     "title": "mapping things out",
+     "description": "",
+     "evidence": "",
+     "legal": true
+    }
+   ],
    "standards": [
     "Service standard - 2"
    ],
@@ -92,6 +118,26 @@
     "get a report",
     "meet WCAG 2.2 AA guidelines"
    ],
+   "actions": [
+    {
+     "title": "book an accessibility audit",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "get a report",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "meet WCAG 2.2 AA guidelines",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -137,6 +183,14 @@
    "why": "The accessibility statement service helps the department track known accessibility issues across products and services \n- produces a compliant accessibility statement for your service",
    "tasks": [
     "Register your service on the Accessibility statement service (ORR 30)"
+   ],
+   "actions": [
+    {
+     "title": "Register your service on the Accessibility statement service (ORR 30)",
+     "description": "",
+     "evidence": "",
+     "legal": true
+    }
    ],
    "standards": [],
    "systems": "",
@@ -184,6 +238,14 @@
    "tasks": [
     "Enagage with SROs/SOs of services in the existing landscape who may be affected by change (ORR 2)"
    ],
+   "actions": [
+    {
+     "title": "Enagage with SROs/SOs of services in the existing landscape who may be affected by change (ORR 2)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -229,6 +291,14 @@
    "why": "- operational\n- if you are procuring something for the service to run, you need to document it. For example, if alicence expries",
    "tasks": [
     "Check and document if you need additional software licenses or SSL certificates (ORR 3)"
+   ],
+   "actions": [
+    {
+     "title": "Check and document if you need additional software licenses or SSL certificates (ORR 3)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -276,6 +346,20 @@
    "tasks": [
     "document expectations of supplier",
     "create a Statement of Work"
+   ],
+   "actions": [
+    {
+     "title": "document expectations of supplier",
+     "description": "",
+     "evidence": "",
+     "legal": true
+    },
+    {
+     "title": "create a Statement of Work",
+     "description": "",
+     "evidence": "",
+     "legal": true
+    }
    ],
    "standards": [],
    "systems": "",
@@ -325,6 +409,26 @@
     "build in DfE - expect more LLD",
     "follow the technical DfE standards"
    ],
+   "actions": [
+    {
+     "title": "managed supplier - tend to give HLD",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "build in DfE - expect more LLD",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "follow the technical DfE standards",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -370,6 +474,14 @@
    "why": "- operational\n- security\n- good practice",
    "tasks": [
     "Do a peer review for technical architecture work (ORR 7)"
+   ],
+   "actions": [
+    {
+     "title": "Do a peer review for technical architecture work (ORR 7)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -417,6 +529,14 @@
    "tasks": [
     "Create and document a testing mechanism. For example, load testing, user testing (ORR 8)"
    ],
+   "actions": [
+    {
+     "title": "Create and document a testing mechanism. For example, load testing, user testing (ORR 8)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -462,6 +582,14 @@
    "why": "Good practice",
    "tasks": [
     "Conduct testing and action any changes needed on the user journey (ORR 9)"
+   ],
+   "actions": [
+    {
+     "title": "Conduct testing and action any changes needed on the user journey (ORR 9)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -511,6 +639,26 @@
     "try to host API through FuAPI",
     "if not get it on FuAPI register"
    ],
+   "actions": [
+    {
+     "title": "contact Find and use an API",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "try to host API through FuAPI",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "if not get it on FuAPI register",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://dfe.service-now.com/mydfe?id=sc_cat_item&sys_id=ee072d3f1bf79ed0593ddce7b04bcb10&table=sc_cat_item&searchTerm=fauapi",
@@ -557,6 +705,20 @@
    "tasks": [
     "SOM will include what needs to happen",
     "although, team can do it in a different format"
+   ],
+   "actions": [
+    {
+     "title": "SOM will include what needs to happen",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "although, team can do it in a different format",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [
     "Service Standard 14"
@@ -607,6 +769,20 @@
     "create a service offering in CMDB (ServiceNow)",
     "ask to create a relationship link on CMDB with any upstream and downstream dependencies"
    ],
+   "actions": [
+    {
+     "title": "create a service offering in CMDB (ServiceNow)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "ask to create a relationship link on CMDB with any upstream and downstream dependencies",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://dfe.service-now.com/mydfe?id=sc_cat_item&sys_id=b97008b81b7680d02fe864606e4bcb9d&referrer=recent_items",
@@ -653,6 +829,14 @@
    "tasks": [
     "If you are processing information, register on Information Asset Database (IAR) (ORR 13)"
    ],
+   "actions": [
+    {
+     "title": "If you are processing information, register on Information Asset Database (IAR) (ORR 13)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://educationgovuk.sharepoint.com/sites/manage-information/SitePages/managing-information-assets.aspx?web=1",
@@ -698,6 +882,14 @@
    "why": "To provide assurance that moving to alpha is the right next step.",
    "tasks": [
     "Book a discovery peer review (ORR 14)"
+   ],
+   "actions": [
+    {
+     "title": "Book a discovery peer review (ORR 14)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [
     "Service Standard"
@@ -747,6 +939,14 @@
    "tasks": [
     "Book an alpha service assessment (ORR 14)"
    ],
+   "actions": [
+    {
+     "title": "Book an alpha service assessment (ORR 14)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [
     "Service Standard"
    ],
@@ -794,6 +994,14 @@
    "why": "To check services are meeting the Service Standard.",
    "tasks": [
     "Book a private beta service assessment (ORR 14)"
+   ],
+   "actions": [
+    {
+     "title": "Book a private beta service assessment (ORR 14)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [
     "Service Standard"
@@ -843,6 +1051,14 @@
    "tasks": [
     "Book a public beta service assessment (ORR 14)"
    ],
+   "actions": [
+    {
+     "title": "Book a public beta service assessment (ORR 14)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [
     "Service Standard"
    ],
@@ -890,6 +1106,14 @@
    "why": "To check services are meeting the Service Standard.",
    "tasks": [
     "Book a live service assessment (ORR 14)"
+   ],
+   "actions": [
+    {
+     "title": "Book a live service assessment (ORR 14)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [
     "Service Standard"
@@ -939,6 +1163,14 @@
    "tasks": [
     "Document a Disaster Recovery Plan (ORR 15)"
    ],
+   "actions": [
+    {
+     "title": "Document a Disaster Recovery Plan (ORR 15)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -984,6 +1216,14 @@
    "why": "To stop exposing your service to risk if taken down, you won't be able to recover",
    "tasks": [
     "Document a Business Continuity Plan (ORR 15)"
+   ],
+   "actions": [
+    {
+     "title": "Document a Business Continuity Plan (ORR 15)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -1033,6 +1273,14 @@
    "tasks": [
     "Consider identity and access management for your service (ORR 16)"
    ],
+   "actions": [
+    {
+     "title": "Consider identity and access management for your service (ORR 16)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [
     "Identity Management B2B,Identity Management B2C,Identity Management B2E"
    ],
@@ -1081,6 +1329,14 @@
    "tasks": [
     "Follow the supplier assurance process (ORR 17)"
    ],
+   "actions": [
+    {
+     "title": "Follow the supplier assurance process (ORR 17)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -1126,6 +1382,14 @@
    "why": "",
    "tasks": [
     "If accessible outside of DfE, like on the internet, incorporate WAF solution into design (either Azure Front Door or Barracuda) (ORR 18)"
+   ],
+   "actions": [
+    {
+     "title": "If accessible outside of DfE, like on the internet, incorporate WAF solution into design (either Azure Front Door or Barracuda) (ORR 18)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -1173,6 +1437,14 @@
    "tasks": [
     "complete a Service engagement form"
    ],
+   "actions": [
+    {
+     "title": "complete a Service engagement form",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "Service engagement form",
@@ -1218,6 +1490,14 @@
    "why": "",
    "tasks": [
     "Follow Secure by Design principles (ORR 19)"
+   ],
+   "actions": [
+    {
+     "title": "Follow Secure by Design principles (ORR 19)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -1265,6 +1545,14 @@
    "tasks": [
     "Check your security assurance pathway classification (ORR 20)"
    ],
+   "actions": [
+    {
+     "title": "Check your security assurance pathway classification (ORR 20)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -1310,6 +1598,14 @@
    "why": "To ensure that their systems are safe and security",
    "tasks": [
     "Complete an IT health check (ORR 21)"
+   ],
+   "actions": [
+    {
+     "title": "Complete an IT health check (ORR 21)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -1357,6 +1653,14 @@
    "tasks": [
     "Manage DSAM3 actions (ORR 22). Manage actions from ITHC"
    ],
+   "actions": [
+    {
+     "title": "Manage DSAM3 actions (ORR 22). Manage actions from ITHC",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -1403,6 +1707,14 @@
    "tasks": [
     "start a Departmental Security Assurance model process"
    ],
+   "actions": [
+    {
+     "title": "start a Departmental Security Assurance model process",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://educationgovuk.sharepoint.com/sites/security/SitePages/assurance.aspx#departmental-security-assurance-model-%28dsam%29-process",
@@ -1448,6 +1760,14 @@
    "why": "Keep systems safe and secure",
    "tasks": [
     "output of registering security"
+   ],
+   "actions": [
+    {
+     "title": "output of registering security",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -1505,6 +1825,14 @@
    "tasks": [
     "Complete a Data Privacy Impact Assessment (DPIA) screener (ORR 24)"
    ],
+   "actions": [
+    {
+     "title": "Complete a Data Privacy Impact Assessment (DPIA) screener (ORR 24)",
+     "description": "",
+     "evidence": "",
+     "legal": true
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://educationgovuk.sharepoint.com/sites/lvewp00158/SitePages/DPIA.aspx",
@@ -1550,6 +1878,14 @@
    "why": "Apply appropriate security controls and part of data protection guidance",
    "tasks": [
     "If off-shoring data, get approval for off-shoring data (ORR 25)"
+   ],
+   "actions": [
+    {
+     "title": "If off-shoring data, get approval for off-shoring data (ORR 25)",
+     "description": "",
+     "evidence": "",
+     "legal": true
+    }
    ],
    "standards": [],
    "systems": "",
@@ -1597,6 +1933,14 @@
    "tasks": [
     "Add a privacy statement to your service (ORR 26)"
    ],
+   "actions": [
+    {
+     "title": "Add a privacy statement to your service (ORR 26)",
+     "description": "",
+     "evidence": "",
+     "legal": true
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -1642,6 +1986,14 @@
    "why": "- For operational reasons, if something goes wrong - runbook for service\n- supports meeting Service Standard 14",
    "tasks": [
     "Create support documentation for live support (ORR 31 - could link to ORR 11, 34 and 35))"
+   ],
+   "actions": [
+    {
+     "title": "Create support documentation for live support (ORR 31 - could link to ORR 11, 34 and 35))",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [
     "Service Standard 14"
@@ -1691,6 +2043,14 @@
    "tasks": [
     "Store repository documentation in one place and share with stakeholders (ORR 32, could be linked to 31)"
    ],
+   "actions": [
+    {
+     "title": "Store repository documentation in one place and share with stakeholders (ORR 32, could be linked to 31)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -1739,6 +2099,14 @@
    "tasks": [
     "Agree an Early Life Support (ELS) plan (ORR 33)"
    ],
+   "actions": [
+    {
+     "title": "Agree an Early Life Support (ELS) plan (ORR 33)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -1784,6 +2152,14 @@
    "why": "- operational\n- good practice\n- process for user who is asking for support from system. For example, user raises incident, passes to 3rd line",
    "tasks": [
     "Document a support model for users (ORR 34 - could it be merged with 31?)"
+   ],
+   "actions": [
+    {
+     "title": "Document a support model for users (ORR 34 - could it be merged with 31?)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -1831,6 +2207,14 @@
    "tasks": [
     "Train support team on tools required (ORR 35 linked with 34 - merge?)"
    ],
+   "actions": [
+    {
+     "title": "Train support team on tools required (ORR 35 linked with 34 - merge?)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -1877,6 +2261,14 @@
    "tasks": [
     "Document a release management process (ORR 36)"
    ],
+   "actions": [
+    {
+     "title": "Document a release management process (ORR 36)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -1922,6 +2314,14 @@
    "why": "- good practice",
    "tasks": [
     "Confirm who is responsible for internal and external comms (ORR 37)"
+   ],
+   "actions": [
+    {
+     "title": "Confirm who is responsible for internal and external comms (ORR 37)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -1978,6 +2378,26 @@
     "Team finds out about Steve/ORR and engages with Steve (this varies but typically in alpha)",
     "Steve guides people through the ORR, he goes through it line by line to talk about what people need to do",
     "Team fills out ORR and sends it to Steve"
+   ],
+   "actions": [
+    {
+     "title": "Team finds out about Steve/ORR and engages with Steve (this varies but typically in alpha)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Steve guides people through the ORR, he goes through it line by line to talk about what people need to do",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Team fills out ORR and sends it to Steve",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [
     "Related to standards but not under a standard"
@@ -2036,6 +2456,32 @@
     "Steve chases people to complete it (if they haven't already)",
     "Delivery team goes on SHCA intranet page to find link and guidance"
    ],
+   "actions": [
+    {
+     "title": "Once a service gets a service offering, it will get pulled into SHCA",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Steve looks at what has been registered on CMDB in the last 7 days",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Steve chases people to complete it (if they haven't already)",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Delivery team goes on SHCA intranet page to find link and guidance",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [
     "Related to standards but not under a standard"
    ],
@@ -2087,6 +2533,32 @@
     "timescales and confirmed funding",
     "work already done. For example, research, options considered, guidance reviewed"
    ],
+   "actions": [
+    {
+     "title": "a clear description of the problem and its impact",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "what kind of help they are seeking. For example, options appraisal or planning advice",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "timescales and confirmed funding",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "work already done. For example, research, options considered, guidance reviewed",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "MS Form, SharePoint List, Power BI",
    "guidance": "Get help with DDT tasks and projects",
@@ -2122,6 +2594,14 @@
    "why": "",
    "tasks": [
     "Design and run board"
+   ],
+   "actions": [
+    {
+     "title": "Design and run board",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -2173,6 +2653,14 @@
    "tasks": [
     "G6s/G7s with oversight of an area attend the board meeting."
    ],
+   "actions": [
+    {
+     "title": "G6s/G7s with oversight of an area attend the board meeting.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "- Teams meeting",
    "guidance": "",
@@ -2219,6 +2707,14 @@
    "tasks": [
     "The DfE security.txt file needs to be accessible from active DfE websites to ensure vulnerabilities can be quickly reported via the HMG-mand"
    ],
+   "actions": [
+    {
+     "title": "The DfE security.txt file needs to be accessible from active DfE websites to ensure vulnerabilities can be quickly reported via the HMG-mand",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "GitHub",
    "guidance": "None found",
@@ -2254,6 +2750,14 @@
    "why": "Ensures vulnerabilities and other security incidents can be quickly routed to the correct owner when speed and accuracy is of the essence to prevent a serious cyber incident occurring.",
    "tasks": [
     "GitHub Repositories must be tagged to clearly identify service, division and directorate."
+   ],
+   "actions": [
+    {
+     "title": "GitHub Repositories must be tagged to clearly identify service, division and directorate.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "GitHub",
@@ -2291,6 +2795,14 @@
    "tasks": [
     "Must use GitHub for any new projects. Existing projects should have migration plans developed asap."
    ],
+   "actions": [
+    {
+     "title": "Must use GitHub for any new projects. Existing projects should have migration plans developed asap.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "All repos and platform development",
    "guidance": "https://technical-guidance.education.gov.uk/principles/general/",
@@ -2327,6 +2839,14 @@
    "tasks": [
     "Secrets (API keys, passwords, connection strings, certificates) MUST NOT be committed to Git repositories or baked into container images bec"
    ],
+   "actions": [
+    {
+     "title": "Secrets (API keys, passwords, connection strings, certificates) MUST NOT be committed to Git repositories or baked into container images bec",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "GitHub",
    "guidance": "https://technical-guidance.education.gov.uk/infrastructure/security/managing-secrets/\n\nGithub actions - DfE Technical Guidance\n\nAzure CIP - DfE Technical Guidance\n\nDisaster recovery - DfE Technical Guidance",
@@ -2362,6 +2882,14 @@
    "why": "Modern attacks often exploit weaknesses in third-party libraries rather than vulnerabilities in code written by our developers.\nMost applications rely on hundreds or thousands of open-source packages. If one of those packages contains a known critical vulnerability, an attacker may be able to compromise an entire application.",
    "tasks": [
     "Dependency scanning (SCA) MUST be implemented in build pipelines to detect known vulnerabilities in third-party libraries, and critical vuln"
+   ],
+   "actions": [
+    {
+     "title": "Dependency scanning (SCA) MUST be implemented in build pipelines to detect known vulnerabilities in third-party libraries, and critical vuln",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "GitHub",
@@ -2401,6 +2929,14 @@
    "tasks": [
     "Secret scanning MUST be enabled in the repository to ensure proactive detection and remediation of accidental secret exposure."
    ],
+   "actions": [
+    {
+     "title": "Secret scanning MUST be enabled in the repository to ensure proactive detection and remediation of accidental secret exposure.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "All repos and platform development",
    "guidance": "https://technical-guidance.education.gov.uk/standards/storing-source-code/",
@@ -2436,6 +2972,14 @@
    "why": "Because this prevents the existence of unsecured infrastructure where it is unclear as to who owns it (orphaned resource). We cannot secure what we do not know exists. Orphaned infrastructure is a primary attack vector.",
    "tasks": [
     "All infrastructure and digital services MUST be registered and identifiable, and all cloud resources MUST have Owner, CostCenter, and Env ta"
+   ],
+   "actions": [
+    {
+     "title": "All infrastructure and digital services MUST be registered and identifiable, and all cloud resources MUST have Owner, CostCenter, and Env ta",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "Cloud Platforms",
@@ -2473,6 +3017,14 @@
    "tasks": [
     "All infrastructure and cloud services MUST be securely configured to meet the CIS IG1 baseline/benchmark because this closes known security "
    ],
+   "actions": [
+    {
+     "title": "All infrastructure and cloud services MUST be securely configured to meet the CIS IG1 baseline/benchmark because this closes known security ",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "Platforms, cloud resource and servers",
    "guidance": "None found",
@@ -2508,6 +3060,14 @@
    "why": "We cannot secure what we do not know exists. SaaS is easy to lose track of because it can be bought and used without infrastructure being deployed internally",
    "tasks": [
     "All SaaS/Software MUST be registered in the CMDB to ensure a complete and auditable inventory of digital assets."
+   ],
+   "actions": [
+    {
+     "title": "All SaaS/Software MUST be registered in the CMDB to ensure a complete and auditable inventory of digital assets.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "SaaS products",
@@ -2545,6 +3105,14 @@
    "tasks": [
     "All foundation systems MUST meet phase 1 mandated security controls by March 31st 2026 to ensure critical protection against common attacks."
    ],
+   "actions": [
+    {
+     "title": "All foundation systems MUST meet phase 1 mandated security controls by March 31st 2026 to ensure critical protection against common attacks.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "None found",
@@ -2580,6 +3148,14 @@
    "why": "Don't build a service first and worry about security later. Design and build security into the service from day one, following the Secure by Design principles.",
    "tasks": [
     "All new services MUST comply with the 10 principles of Secure by Design to ensure security is built-in from the outset."
+   ],
+   "actions": [
+    {
+     "title": "All new services MUST comply with the 10 principles of Secure by Design to ensure security is built-in from the outset.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "All products and services built in house",
@@ -2617,6 +3193,14 @@
    "tasks": [
     "All security tooling procurement MUST be agreed with CISD to ensure consistency, prevent duplication, and avoid unnecessary spend."
    ],
+   "actions": [
+    {
+     "title": "All security tooling procurement MUST be agreed with CISD to ensure consistency, prevent duplication, and avoid unnecessary spend.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "Security Tooling procurement",
    "guidance": "",
@@ -2652,6 +3236,14 @@
    "why": "Penetration testing provides assurance that real attackers cannot easily exploit the service.",
    "tasks": [
     "Any externally accessible system that:\n- Handle sensitive or business‑critical data\n- Provide authentication or user accounts\n- Connect into"
+   ],
+   "actions": [
+    {
+     "title": "Any externally accessible system that:\n- Handle sensitive or business‑critical data\n- Provide authentication or user accounts\n- Connect into",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "Service Health Check app and any services who meets the condition criteria",
@@ -2701,6 +3293,14 @@
    "tasks": [
     "All new services REQUIRE a Security Design Review to ensure security flaws are identified and fixed in the cheapest and easiest stage of the"
    ],
+   "actions": [
+    {
+     "title": "All new services REQUIRE a Security Design Review to ensure security flaws are identified and fixed in the cheapest and easiest stage of the",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "None found",
@@ -2736,6 +3336,14 @@
    "why": "GovAssure is the UK Government's cyber security assurance scheme. It assesses critical government systems against the NCSC Cyber Assessment Framework (CAF) to measure cyber security and resilience.",
    "tasks": [
     "GovAssure is mandatory if identified as in-scope to ensure compliance with a statutory obligation."
+   ],
+   "actions": [
+    {
+     "title": "GovAssure is mandatory if identified as in-scope to ensure compliance with a statutory obligation.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -2773,6 +3381,14 @@
    "tasks": [
     "Third-party tools and integrations (including SaaS) MUST undergo a Vendor Security Assessment before they can be used to prevent breaches vi"
    ],
+   "actions": [
+    {
+     "title": "Third-party tools and integrations (including SaaS) MUST undergo a Vendor Security Assessment before they can be used to prevent breaches vi",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -2808,6 +3424,14 @@
    "why": "This control exists because the people closest to a service are often the ones making risk decisions, but the consequences of a poor decision can affect the whole organisation.\nWithout this rule, it's easy for teams to make local decisions that create enterprise-wide security risk.",
    "tasks": [
     "Service Owners MUST own their risk, and risks above tolerance REQUIRE formal consultation with the CISO before acceptance to ensure senior l"
+   ],
+   "actions": [
+    {
+     "title": "Service Owners MUST own their risk, and risks above tolerance REQUIRE formal consultation with the CISO before acceptance to ensure senior l",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -2845,6 +3469,14 @@
    "tasks": [
     "Services MUST undergo mandatory assurance thru DSAM to ensure critical risks are detected and managed effectively."
    ],
+   "actions": [
+    {
+     "title": "Services MUST undergo mandatory assurance thru DSAM to ensure critical risks are detected and managed effectively.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -2880,6 +3512,14 @@
    "why": "The platform continuously checks that a minimum set of security hardening controls remain in place, helping to detect configuration weaknesses and compliance issues before they become security incidents.",
    "tasks": [
     "All systems MUST comply with the requirements stipulated in our Continuous Assurance platform to ensure a minimum baseline of security harde"
+   ],
+   "actions": [
+    {
+     "title": "All systems MUST comply with the requirements stipulated in our Continuous Assurance platform to ensure a minimum baseline of security harde",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -2917,6 +3557,14 @@
    "tasks": [
     "Management interfaces (RDP, SSH, SMB, SQL) MUST NOT be exposed directly to the public internet because this is the fastest way to suffer a c"
    ],
+   "actions": [
+    {
+     "title": "Management interfaces (RDP, SSH, SMB, SQL) MUST NOT be exposed directly to the public internet because this is the fastest way to suffer a c",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -2952,6 +3600,14 @@
    "why": "Many attacks are:\n- Automated\n- Opportunistic\n- Well known\nAttackers don't necessarily target DfE specifically.\nInstead, they scan the internet looking for vulnerable applications. A WAF provides an additional layer of defence",
    "tasks": [
     "Public Web Applications MUST sit behind a Web Application Firewall (WAF) in Blocking Mode to stop common automated attacks."
+   ],
+   "actions": [
+    {
+     "title": "Public Web Applications MUST sit behind a Web Application Firewall (WAF) in Blocking Mode to stop common automated attacks.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -2989,6 +3645,14 @@
    "tasks": [
     "Production environments MUST NOT communicate with Non-Production environments (Segmentation) to prevent a test environment compromise from s"
    ],
+   "actions": [
+    {
+     "title": "Production environments MUST NOT communicate with Non-Production environments (Segmentation) to prevent a test environment compromise from s",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -3024,6 +3688,14 @@
    "why": "Its a security control that reduces the impact of a beach and protects against misconfigured storage, unauthorised access, insider threats and cloud account compromise",
    "tasks": [
     "\"Default Encryption\" policies MUST be enabled on all Storage Accounts/S3/Blob storage to ensure sensitive data is not accidentally stored wi"
+   ],
+   "actions": [
+    {
+     "title": "\"Default Encryption\" policies MUST be enabled on all Storage Accounts/S3/Blob storage to ensure sensitive data is not accidentally stored wi",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -3061,6 +3733,14 @@
    "tasks": [
     "All data repositories (S3, Blob, SQL, SharePoint) MUST be classified to ensure effective data defence."
    ],
+   "actions": [
+    {
+     "title": "All data repositories (S3, Blob, SQL, SharePoint) MUST be classified to ensure effective data defence.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -3096,6 +3776,14 @@
    "why": "Most data breaches don't involve sophisticated hackers.\nMany occur because of accidental disclosure, unauthorised sharing, and insider activity",
    "tasks": [
     "DLP controls MUST be implemented on email, collaboration tools, and corporate endpoints to prevent the unauthorized transmission of high-ris"
+   ],
+   "actions": [
+    {
+     "title": "DLP controls MUST be implemented on email, collaboration tools, and corporate endpoints to prevent the unauthorized transmission of high-ris",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -3133,6 +3821,14 @@
    "tasks": [
     "Sensitive data MUST be encrypted At Rest (using managed keys) and In Transit (using TLS 1.2+) to ensure data is protected even if communicat"
    ],
+   "actions": [
+    {
+     "title": "Sensitive data MUST be encrypted At Rest (using managed keys) and In Transit (using TLS 1.2+) to ensure data is protected even if communicat",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -3169,6 +3865,14 @@
    "tasks": [
     "Real PII MUST NEVER be used in Non-Prod/Test environments; synthetic or anonymised data MUST be used instead because anonymisation scripts a"
    ],
+   "actions": [
+    {
+     "title": "Real PII MUST NEVER be used in Non-Prod/Test environments; synthetic or anonymised data MUST be used instead because anonymisation scripts a",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -3204,6 +3908,14 @@
    "why": "Organisations assume that, despite firewalls, secure passwords, email filtering, and other protections, an attacker may still manage to get onto a device or server. EDR is there to detect and respond when that happens.",
    "tasks": [
     "All cloud-hosted compute instances and corporate devices MUST run an approved EDR tool with 24/7 monitoring and alerting to the central SoC "
+   ],
+   "actions": [
+    {
+     "title": "All cloud-hosted compute instances and corporate devices MUST run an approved EDR tool with 24/7 monitoring and alerting to the central SoC ",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -3247,6 +3959,14 @@
    "tasks": [
     "\"Team\" passwords MUST be prohibited because they make accountability impossible and are easy to steal."
    ],
+   "actions": [
+    {
+     "title": "\"Team\" passwords MUST be prohibited because they make accountability impossible and are easy to steal.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -3282,6 +4002,14 @@
    "why": "Because compromising one privileged account can affect entire services.",
    "tasks": [
     "All administrative and privileged access (Cloud Consoles, Prod DBs, CI/CD Admin) MUST be protected by MFA to prevent account takeover and ma"
+   ],
+   "actions": [
+    {
+     "title": "All administrative and privileged access (Cloud Consoles, Prod DBs, CI/CD Admin) MUST be protected by MFA to prevent account takeover and ma",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -3319,6 +4047,14 @@
    "tasks": [
     "\"Break-glass\" accounts MUST be disabled by default and alert immediately upon usage to prevent abuse and unauthorised use."
    ],
+   "actions": [
+    {
+     "title": "\"Break-glass\" accounts MUST be disabled by default and alert immediately upon usage to prevent abuse and unauthorised use.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -3354,6 +4090,14 @@
    "why": "To limit the potential damage an attacker can inflict",
    "tasks": [
     "Standing admin rights MUST NOT exist; Just-in-Time (JIT) or Least Privilege scoping MUST be used to limit the potential damage an attacker c"
+   ],
+   "actions": [
+    {
+     "title": "Standing admin rights MUST NOT exist; Just-in-Time (JIT) or Least Privilege scoping MUST be used to limit the potential damage an attacker c",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -3391,6 +4135,14 @@
    "tasks": [
     "Legacy, non-MFA compatible authentication protocols (e.g., POP3, IMAP, SMTP) MUST be explicitly disabled because they eliminate easy ways fo"
    ],
+   "actions": [
+    {
+     "title": "Legacy, non-MFA compatible authentication protocols (e.g., POP3, IMAP, SMTP) MUST be explicitly disabled because they eliminate easy ways fo",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -3426,6 +4178,14 @@
    "why": "To prevent permanent key theft which means an attacker could have access for months when there arent stored credentials its much harder for an attacker",
    "tasks": [
     "Service-to-service communication MUST use managed identities or short-lived tokens (Machine Identity); hardcoded keys MUST NOT be used to pr"
+   ],
+   "actions": [
+    {
+     "title": "Service-to-service communication MUST use managed identities or short-lived tokens (Machine Identity); hardcoded keys MUST NOT be used to pr",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -3463,6 +4223,14 @@
    "tasks": [
     "Multi-Factor Authentication (MFA) MUST be mandatory for ALL externally accessible users without exception because it is the single best way "
    ],
+   "actions": [
+    {
+     "title": "Multi-Factor Authentication (MFA) MUST be mandatory for ALL externally accessible users without exception because it is the single best way ",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -3498,6 +4266,14 @@
    "why": "For accountability and security investigations. With individual accounts the audit trail is clear and seeing when, who and where people make changes supports security investigations",
    "tasks": [
     "Shared Accounts MUST NOT be used; every action MUST be traceable to a specific named user or Service Principal to ensure accountability for "
+   ],
+   "actions": [
+    {
+     "title": "Shared Accounts MUST NOT be used; every action MUST be traceable to a specific named user or Service Principal to ensure accountability for ",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -3535,6 +4311,14 @@
    "tasks": [
     "Single Sign-On (SSO) MUST be used where possible to reduce password fatigue and simplify the adoption of MFA."
    ],
+   "actions": [
+    {
+     "title": "Single Sign-On (SSO) MUST be used where possible to reduce password fatigue and simplify the adoption of MFA.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -3570,6 +4354,14 @@
    "why": "- Security incidents can be detected quickly.\n- Investigators have evidence when something goes wrong.\n- Suspicious activity can be correlated across multiple systems.\n- Regulatory and audit requirements can be met.\n- Attackers cannot hide their actions by exploiting gaps between different logging systems",
    "tasks": [
     "All Identity logs (Sign-ins, Failures), Cloud Audit Trails (config changes), and Application Error logs MUST go to the Central SIEM to ensur"
+   ],
+   "actions": [
+    {
+     "title": "All Identity logs (Sign-ins, Failures), Cloud Audit Trails (config changes), and Application Error logs MUST go to the Central SIEM to ensur",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -3607,6 +4399,14 @@
    "tasks": [
     "Services MUST have an out-of-hours on-call contact for critical service incident escalation to ensure immediate action can be taken during h"
    ],
+   "actions": [
+    {
+     "title": "Services MUST have an out-of-hours on-call contact for critical service incident escalation to ensure immediate action can be taken during h",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -3642,6 +4442,14 @@
    "why": "For incident investigations security teams need to know when the attack started, which accounts were affected, what data was accessed etc. Many organisations need to be able to demonstrate security monitoring and the logs support this",
    "tasks": [
     "Log Retention MUST be 90 Days Hot / 1 Year Cold (managed centrally) to ensure sufficient evidence is available for all security incident inv"
+   ],
+   "actions": [
+    {
+     "title": "Log Retention MUST be 90 Days Hot / 1 Year Cold (managed centrally) to ensure sufficient evidence is available for all security incident inv",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -3679,6 +4487,14 @@
    "tasks": [
     "Physical or logical separation of admin privileges is REQUIRED to prevent a simple phishing email from compromising everything."
    ],
+   "actions": [
+    {
+     "title": "Physical or logical separation of admin privileges is REQUIRED to prevent a simple phishing email from compromising everything.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "standards-account-and-credential-management.docx",
@@ -3714,6 +4530,14 @@
    "why": "We do not want high-privilege accounts being used from personal or unmanaged devices because compromising the device could lead directly to a major security breach.",
    "tasks": [
     "Administrative work is ONLY permitted on Managed, Encrypted, EDR-protected devices to ensure the highest level of security for high-privileg"
+   ],
+   "actions": [
+    {
+     "title": "Administrative work is ONLY permitted on Managed, Encrypted, EDR-protected devices to ensure the highest level of security for high-privileg",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -3751,6 +4575,14 @@
    "tasks": [
     "Any suspected breach, lost device, or accidental data exposure MUST be reported to CISD immediately to ensure a small incident does not beco"
    ],
+   "actions": [
+    {
+     "title": "Any suspected breach, lost device, or accidental data exposure MUST be reported to CISD immediately to ensure a small incident does not beco",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "Report a security incident",
@@ -3786,6 +4618,14 @@
    "why": "Many security incidents involve human actions rather than technical failures.",
    "tasks": [
     "All staff MUST complete Security Awareness training annually because staff are the best defence against human error."
+   ],
+   "actions": [
+    {
+     "title": "All staff MUST complete Security Awareness training annually because staff are the best defence against human error.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -3823,6 +4663,14 @@
    "tasks": [
     "All services MUST have local incident response plans aligned to the CISD standard to ensure consistency in handling and escalating incidents"
    ],
+   "actions": [
+    {
+     "title": "All services MUST have local incident response plans aligned to the CISD standard to ensure consistency in handling and escalating incidents",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "policy-cyber-incident-response-management.docx\n\npolicy-information-security-exception.doc",
@@ -3858,6 +4706,14 @@
    "why": "The goal is to ensure the service can recover from ransomware, accidental deletion, corruption, or a major disaster.",
    "tasks": [
     "All stateful data MUST be backed up to a separate region/location (Immutable backups preferred) to ensure all systems and data can be recove"
+   ],
+   "actions": [
+    {
+     "title": "All stateful data MUST be backed up to a separate region/location (Immutable backups preferred) to ensure all systems and data can be recove",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -3895,6 +4751,14 @@
    "tasks": [
     "Business important and critical services MUST span Availbility Zones (AZs) to ensure resilience against major cloud failures"
    ],
+   "actions": [
+    {
+     "title": "Business important and critical services MUST span Availbility Zones (AZs) to ensure resilience against major cloud failures",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -3930,6 +4794,14 @@
    "why": "Because many organisations discover problems only when they need the backup.",
    "tasks": [
     "Restoration capability MUST be tested/proved annually (Drills) because a backup that is never tested is not a backup."
+   ],
+   "actions": [
+    {
+     "title": "Restoration capability MUST be tested/proved annually (Drills) because a backup that is never tested is not a backup.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -3967,6 +4839,14 @@
    "tasks": [
     "Incident response plans SHOULD be tested on an annual basis to ensure people are familiar with the process under pressure."
    ],
+   "actions": [
+    {
+     "title": "Incident response plans SHOULD be tested on an annual basis to ensure people are familiar with the process under pressure.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "Testing and Updating",
@@ -4002,6 +4882,14 @@
    "why": "To prevent systems from being built using old, vulnerable software components",
    "tasks": [
     "Base container images MUST be pulled from a trusted internal registry and MUST be refreshed/patched at least monthly to prevent systems from"
+   ],
+   "actions": [
+    {
+     "title": "Base container images MUST be pulled from a trusted internal registry and MUST be refreshed/patched at least monthly to prevent systems from",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -4039,6 +4927,14 @@
    "tasks": [
     "Operating Systems and runtimes MUST be patched regularly, with Critical patches = 14 Days and High = 30 Days SLA, to ensure known flaws are "
    ],
+   "actions": [
+    {
+     "title": "Operating Systems and runtimes MUST be patched regularly, with Critical patches = 14 Days and High = 30 Days SLA, to ensure known flaws are ",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "",
@@ -4074,6 +4970,14 @@
    "why": "Security teams generally consider EOL software to be a significant risk because it creates a situation where, even if you know about a vulnerability, you cannot properly remediate it",
    "tasks": [
     "The use of End-of-Life software is PROHIBITED because it contains unpatchable flaws that are easy for hackers to compromise."
+   ],
+   "actions": [
+    {
+     "title": "The use of End-of-Life software is PROHIBITED because it contains unpatchable flaws that are easy for hackers to compromise.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -4131,6 +5035,32 @@
     "Feedback incorporated into the business case.",
     "Approval or endorsement from appropriate security representatives."
    ],
+   "actions": [
+    {
+     "title": "Discussions with Security, Cyber, Architecture or Assurance teams.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Review meetings.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Feedback incorporated into the business case.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Approval or endorsement from appropriate security representatives.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/\n\nService Engagement Form\n\nProcurements and suppliers – security considerations",
@@ -4186,6 +5116,32 @@
     "Threats and risks.",
     "Security controls.",
     "Resource requirements."
+   ],
+   "actions": [
+    {
+     "title": "Security obligations (legal, regulatory, policy).",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Threats and risks.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Security controls.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Resource requirements.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -4243,6 +5199,32 @@
     "Security objectives.",
     "Resilience requirements."
    ],
+   "actions": [
+    {
+     "title": "Key cyber threats.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Defined risk appetite or risk tolerance.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Security objectives.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Resilience requirements.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP",
@@ -4298,6 +5280,32 @@
     "Different security levels were assessed where appropriate.",
     "Costs of security controls were considered.",
     "Costs of security incidents or failures were considered."
+   ],
+   "actions": [
+    {
+     "title": "Security was included in option appraisals.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Different security levels were assessed where appropriate.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Costs of security controls were considered.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Costs of security incidents or failures were considered.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -4355,6 +5363,32 @@
     "Risk management processes.",
     "Security assurance activities and reviews."
    ],
+   "actions": [
+    {
+     "title": "Security governance structure.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Security roles and responsibilities.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Risk management processes.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Security assurance activities and reviews.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/",
@@ -4407,6 +5441,32 @@
     "Key responsibilities.",
     "Required skills and expertise.",
     "When resources are needed."
+   ],
+   "actions": [
+    {
+     "title": "Security roles required.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Key responsibilities.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Required skills and expertise.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "When resources are needed.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -4461,6 +5521,32 @@
     "Evidence of engagement with security teams.",
     "Plans for training if skills are missing."
    ],
+   "actions": [
+    {
+     "title": "A list of required security skills.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Which activities need those skills.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Evidence of engagement with security teams.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Plans for training if skills are missing.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/identifying-security-resources/",
@@ -4513,6 +5599,32 @@
     "Additional tools required.",
     "Development and testing environments.",
     "Monitoring and detection capabilities."
+   ],
+   "actions": [
+    {
+     "title": "Existing organisational security capabilities.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Additional tools required.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Development and testing environments.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Monitoring and detection capabilities.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -4567,6 +5679,32 @@
     "Assessed whether approved architectures meet project needs.",
     "Documented any decision to deviate from established patterns."
    ],
+   "actions": [
+    {
+     "title": "Reviewed relevant organisational standards.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Considered existing government patterns and frameworks.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Assessed whether approved architectures meet project needs.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Documented any decision to deviate from established patterns.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/identifying-security-resources/",
@@ -4617,6 +5755,14 @@
    "tasks": [
     "Have you assigned the Secure by Design responsibilities (for example, in a RACI matrix) and communicated them to the relevant parties?"
    ],
+   "actions": [
+    {
+     "title": "Have you assigned the Secure by Design responsibilities (for example, in a RACI matrix) and communicated them to the relevant parties?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-roles-and-responsibilities/",
@@ -4666,6 +5812,14 @@
    "why": "Without a clearly accountable person:\n- Security decisions may be delayed.\n- Risks may remain unresolved.\n- Nobody owns difficult decisions.\n- Security issues can fall between teams.\nSecure by Design promotes clear accountability for cyber risk from the beginning of delivery.",
    "tasks": [
     "Have you appointed a Senior Responsible Owner (SRO), service owner or equivalent, and informed the individual of their responsibilities?"
+   ],
+   "actions": [
+    {
+     "title": "Have you appointed a Senior Responsible Owner (SRO), service owner or equivalent, and informed the individual of their responsibilities?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -4723,6 +5877,32 @@
     "Threat assessments being regularly reviewed.",
     "Security testing occurring throughout development."
    ],
+   "actions": [
+    {
+     "title": "Security reviews built into sprint cycles.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Security checkpoints within delivery governance.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Threat assessments being regularly reviewed.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Security testing occurring throughout development.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/tracking-secure-by-design-progress/",
@@ -4770,6 +5950,14 @@
    "why": "Different organisations tolerate different levels of risk.\nFor example:\n- A public information website may tolerate more risk.\n- A system holding sensitive personal data may tolerate very little risk.\n- A payment service may have almost no tolerance for integrity failures.\nWithout a defined risk appetite:\n- Teams make inconsistent decisions.\n- Security investments become difficult to justify.\n- Risks may be accepted unintentionally.\nThe guidance states that a project risk appetite helps determine acceptable and unacceptable risks and supports informed risk management decisions",
    "tasks": [
     "Have you used the organisation's risk appetite statements and applied them to the nature of the service to determine the security risk appet"
+   ],
+   "actions": [
+    {
+     "title": "Have you used the organisation's risk appetite statements and applied them to the nature of the service to determine the security risk appet",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -4819,6 +6007,14 @@
    "tasks": [
     "Have you established a clear governance structure around risk management decision making?"
    ],
+   "actions": [
+    {
+     "title": "Have you established a clear governance structure around risk management decision making?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/",
@@ -4866,6 +6062,14 @@
    "why": "A service may interact with:\n- Other government departments\n- Local authorities\n- Arm's length bodies\n- Suppliers\n- Partner organisations\nA risk that seems acceptable internally may be unacceptable to a partner organisation.\nThe guidance highlights the need to understand dependencies and how other projects or organisations influence risk management decisions.",
    "tasks": [
     "Have you considered the risk appetite of any organisations the service shares or exchanges data with?"
+   ],
+   "actions": [
+    {
+     "title": "Have you considered the risk appetite of any organisations the service shares or exchanges data with?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -4915,6 +6119,14 @@
    "tasks": [
     "Have you considered whether the service is part of the Critical National Infrastructure (CNI) or fundamental to the organisation's output an"
    ],
+   "actions": [
+    {
+     "title": "Have you considered whether the service is part of the Critical National Infrastructure (CNI) or fundamental to the organisation's output an",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/",
@@ -4962,6 +6174,14 @@
    "why": "Different components may require different levels of security.",
    "tasks": [
     "Have you considered the appropriate Cyber Assessment Framework (CAF) profile for all the components of the service?"
+   ],
+   "actions": [
+    {
+     "title": "Have you considered the appropriate Cyber Assessment Framework (CAF) profile for all the components of the service?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -5016,6 +6236,32 @@
     "Where is the data hosted?",
     "What security certifications exist?"
    ],
+   "actions": [
+    {
+     "title": "What information will be stored?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Who can access the environment?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Where is the data hosted?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "What security certifications exist?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-third-party-product-security-risks/",
@@ -5068,6 +6314,32 @@
     "Access management controls",
     "Incident response capabilities",
     "Personnel vetting"
+   ],
+   "actions": [
+    {
+     "title": "Supplier security maturity",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Access management controls",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Incident response capabilities",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Personnel vetting",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -5122,6 +6394,32 @@
     "Security updates process",
     "Dependency risks"
    ],
+   "actions": [
+    {
+     "title": "Supplier reputation",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Known vulnerabilities",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Security updates process",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Dependency risks",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-third-party-product-security-risks/",
@@ -5175,6 +6473,32 @@
     "Impact assessment",
     "Risk ratings"
    ],
+   "actions": [
+    {
+     "title": "Product description",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Identified risks",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Impact assessment",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Risk ratings",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-third-party-product-security-risks/",
@@ -5224,6 +6548,32 @@
     "Security reviews",
     "Governance meeting outputs"
    ],
+   "actions": [
+    {
+     "title": "Compliance workshops",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Legal reviews",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Security reviews",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Governance meeting outputs",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
@@ -5269,6 +6619,14 @@
    "why": "Compliance requirements often represent risks. Secure by Design expects obligations to be incorporated into service design and risk management.",
    "tasks": [
     "Have you fed compliance requirements into risk management activities?"
+   ],
+   "actions": [
+    {
+     "title": "Have you fed compliance requirements into risk management activities?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -5319,6 +6677,32 @@
     "Retention arrangements defined",
     "DPIA completed where required"
    ],
+   "actions": [
+    {
+     "title": "Data minimisation applied",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Appropriate security controls implemented",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Retention arrangements defined",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "DPIA completed where required",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/\n\nData Protection Impact Assessment (DPIA) Portal",
@@ -5367,6 +6751,32 @@
     "Encryption",
     "Strong access control",
     "Secure transmission"
+   ],
+   "actions": [
+    {
+     "title": "PCI-DSS compliance where applicable",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Encryption",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Strong access control",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Secure transmission",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -5417,6 +6827,32 @@
     "Contractual obligations",
     "Security classification requirements"
    ],
+   "actions": [
+    {
+     "title": "Ownership arrangements",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Licensing restrictions",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Contractual obligations",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Security classification requirements",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
@@ -5465,6 +6901,32 @@
     "Regulations",
     "Government policies",
     "Standards"
+   ],
+   "actions": [
+    {
+     "title": "Applicable laws",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Regulations",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Government policies",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Standards",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -5515,6 +6977,32 @@
     "Relevant certifications",
     "Data handling arrangements"
    ],
+   "actions": [
+    {
+     "title": "Security controls",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Compliance status",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Relevant certifications",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Data handling arrangements",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
@@ -5564,6 +7052,32 @@
     "Security controls",
     "Retention arrangements"
    ],
+   "actions": [
+    {
+     "title": "Purpose of sharing",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Types of data",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Security controls",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Retention arrangements",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
@@ -5612,6 +7126,32 @@
     "International transfer mechanisms",
     "Legal restrictions",
     "Supplier arrangements"
+   ],
+   "actions": [
+    {
+     "title": "Where data is stored",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "International transfer mechanisms",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Legal restrictions",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Supplier arrangements",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -5667,6 +7207,32 @@
     "Assess impacts on individuals",
     "Define mitigations"
    ],
+   "actions": [
+    {
+     "title": "Describe the processing",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Identify privacy risks",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Assess impacts on individuals",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Define mitigations",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/\n\nhttps://educationgovuk.sharepoint.com/sites/lvewp00158/SitePages/DPIA.aspx",
@@ -5716,6 +7282,32 @@
     "Security decisions considered business impact.",
     "Any trade-offs between security and business needs were documented."
    ],
+   "actions": [
+    {
+     "title": "Business objectives were identified.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Security requirements were linked to those objectives.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Security decisions considered business impact.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Any trade-offs between security and business needs were documented.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-business-objectives-and-user-needs/",
@@ -5764,6 +7356,32 @@
     "Security requirements were balanced against usability.",
     "User groups were identified.",
     "Controls were designed around how users actually work."
+   ],
+   "actions": [
+    {
+     "title": "User research was considered.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Security requirements were balanced against usability.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "User groups were identified.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Controls were designed around how users actually work.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -5818,6 +7436,32 @@
     "Financial records",
     "Intellectual property"
    ],
+   "actions": [
+    {
+     "title": "Customer data",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Employee information",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Financial records",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Intellectual property",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/documenting-service-assets/",
@@ -5870,6 +7514,32 @@
     "A defined role.",
     "Accountability for security decisions.",
     "Responsibility for managing risks relating to the asset."
+   ],
+   "actions": [
+    {
+     "title": "A named owner.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "A defined role.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Accountability for security decisions.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Responsibility for managing risks relating to the asset.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -5924,6 +7594,32 @@
     "Consequences of compromise.",
     "Overall business impact."
    ],
+   "actions": [
+    {
+     "title": "Assets being assessed.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Impact ratings.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Consequences of compromise.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Overall business impact.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-importance-of-service-assets/",
@@ -5977,6 +7673,32 @@
     "Surveys.",
     "Stakeholder review sessions."
    ],
+   "actions": [
+    {
+     "title": "Workshops.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Interviews.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Surveys.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Stakeholder review sessions.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-importance-of-service-assets/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-cyber-incident-response-management.docx?d=w7301f468a0794a398af702bf34ee2c4a&csf=1&web=1&e=PkTsJi",
@@ -6025,6 +7747,14 @@
    "tasks": [
     "Have you obtained the organisation's overarching threat assessment (or completed your own if there is not one available)?"
    ],
+   "actions": [
+    {
+     "title": "Have you obtained the organisation's overarching threat assessment (or completed your own if there is not one available)?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/sourcing-a-threat-assessment/",
@@ -6072,6 +7802,14 @@
    "why": "Understanding attackers helps teams design proportionate security controls.\nSecure by Design states that threat assessments should capture threat actor:\n- Motivation\n- Intent\n- Capability\n- Type of threat actor",
    "tasks": [
     "Does your threat assessment include the motives, intent and capability of the threat actors relevant to your service?"
+   ],
+   "actions": [
+    {
+     "title": "Does your threat assessment include the motives, intent and capability of the threat actors relevant to your service?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -6124,6 +7862,32 @@
     "NCSC threat reporting.",
     "Industry intelligence feeds."
    ],
+   "actions": [
+    {
+     "title": "Internal security incident history.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Cyber Threat Intelligence reports.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "NCSC threat reporting.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Industry intelligence feeds.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/sourcing-a-threat-assessment/",
@@ -6171,6 +7935,14 @@
    "why": "You cannot properly assess security if you do not know what actually makes up the service.\nArchitecture documentation provides the foundation for the remaining security work. It allows security specialists and delivery teams to determine:\n- where sensitive information is stored\n- where information enters and leaves the service\n- which systems communicate with each other\n- where users authenticate\n- which components are exposed externally\n- where trust boundaries exist\n- which third parties are relied upon\n- what an attacker could potentially target",
    "tasks": [
     "Have you documented the technical architecture for the end-to-end service and system?"
+   ],
+   "actions": [
+    {
+     "title": "Have you documented the technical architecture for the end-to-end service and system?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -6223,6 +7995,32 @@
     "user accounts",
     "privileged functions"
    ],
+   "actions": [
+    {
+     "title": "systems",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "sensitive information",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "user accounts",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "privileged functions",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-threat-modelling/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP",
@@ -6270,6 +8068,14 @@
    "why": "Identifying threats without deciding what will be done about them does not actually reduce risk.\nThe intended chain should be:\nThreat → Risk → Security control → Reduced risk\nIt also helps prevent controls being introduced without knowing what problem they are supposed to solve.",
    "tasks": [
     "Have you identified and documented what security controls are available to reduce the likelihood of threat events?"
+   ],
+   "actions": [
+    {
+     "title": "Have you identified and documented what security controls are available to reduce the likelihood of threat events?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -6322,6 +8128,32 @@
     "duplicated controls",
     "especially important controls"
    ],
+   "actions": [
+    {
+     "title": "which controls protect against multiple threats",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "threats with inadequate protection",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "duplicated controls",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "especially important controls",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-threat-modelling/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP",
@@ -6372,6 +8204,32 @@
     "identify any weaknesses, gaps or recommendations",
     "record actions and assign owners",
     "track significant issues through to resolution or formal risk acceptance"
+   ],
+   "actions": [
+    {
+     "title": "assess the design against recognised security principles and patterns",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "identify any weaknesses, gaps or recommendations",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "record actions and assign owners",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "track significant issues through to resolution or formal risk acceptance",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -6424,6 +8282,32 @@
     "Define what each likelihood, impact and severity rating means.",
     "Agree the scoring parameters with the appropriate risk/security stakeholders."
    ],
+   "actions": [
+    {
+     "title": "Identify the organisation's existing risk scoring framework.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Use the same scales or establish a clear mapping between the security risk scale and organisational scale.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Define what each likelihood, impact and severity rating means.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Agree the scoring parameters with the appropriate risk/security stakeholders.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/",
@@ -6474,6 +8358,32 @@
     "terminology and definitions",
     "assumptions and constraints",
     "information/sources used"
+   ],
+   "actions": [
+    {
+     "title": "scope and boundaries",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "terminology and definitions",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "assumptions and constraints",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "information/sources used",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -6526,6 +8436,32 @@
     "Define when the information needs reviewing.",
     "Reassess it when significant changes occur to the service or threat landscape."
    ],
+   "actions": [
+    {
+     "title": "Record the sources and dates of the threat and business-impact information used.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Check that those sources are still relevant and current.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Define when the information needs reviewing.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Reassess it when significant changes occur to the service or threat landscape.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/",
@@ -6573,6 +8509,14 @@
    "why": "Identifying a risk in a workshop or conversation isn't enough.\nRisks need to be recorded so the organisation can understand:\n- what could happen\n- what could cause it\n- what would be affected\n- how serious it is\n- who owns it\n- what is being done about it\n- whether the remaining risk is acceptable.\nThis also provides an audit trail for security and risk decisions.",
    "tasks": [
     "Have you documented the service's risks (for example in a risk register)?"
+   ],
+   "actions": [
+    {
+     "title": "Have you documented the service's risks (for example in a risk register)?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -6625,6 +8569,32 @@
     "Decide which are relevant to the service and why.",
     "Document the standards/frameworks selected."
    ],
+   "actions": [
+    {
+     "title": "Identify what needs protecting.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Review recognised standards and security frameworks.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Decide which are relevant to the service and why.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Document the standards/frameworks selected.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-a-security-controls-set-for-your-service/",
@@ -6675,6 +8645,32 @@
     "Identify any existing organisational security framework or controls taxonomy.",
     "Discuss which additional frameworks are relevant to the service.",
     "Agree which frameworks will provide the basis for the service's controls."
+   ],
+   "actions": [
+    {
+     "title": "Engage the organisation's security function.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Identify any existing organisational security framework or controls taxonomy.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Discuss which additional frameworks are relevant to the service.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Agree which frameworks will provide the basis for the service's controls.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -6727,6 +8723,32 @@
     "why they are relevant",
     "what part of the service they apply to"
    ],
+   "actions": [
+    {
+     "title": "what controls are required",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "where the controls came from",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "why they are relevant",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "what part of the service they apply to",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-a-security-controls-set-for-your-service/",
@@ -6777,6 +8799,32 @@
     "Map each relevant control to the corresponding CAF outcome/principle.",
     "Identify any CAF areas with insufficient control coverage.",
     "Address or explain gaps where appropriate."
+   ],
+   "actions": [
+    {
+     "title": "Take the service's agreed security controls set.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Map each relevant control to the corresponding CAF outcome/principle.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Identify any CAF areas with insufficient control coverage.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Address or explain gaps where appropriate.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -6832,6 +8880,32 @@
     "Avoid the risk by changing the design.",
     "Escalate and formally accept the risk."
    ],
+   "actions": [
+    {
+     "title": "Reduce the risk through controls.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Transfer the risk.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Avoid the risk by changing the design.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Escalate and formally accept the risk.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/responding-to-and-mitigating-security-risks/",
@@ -6885,6 +8959,32 @@
     "Proposed mitigation.",
     "Owner.",
     "Due date."
+   ],
+   "actions": [
+    {
+     "title": "The risk.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Proposed mitigation.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Owner.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Due date.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -6940,6 +9040,32 @@
     "Controls were selected to reduce those specific risks.",
     "Control decisions can be traced back to identified risks."
    ],
+   "actions": [
+    {
+     "title": "Threats were identified.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Risks were assessed.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Controls were selected to reduce those specific risks.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Control decisions can be traced back to identified risks.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/",
@@ -6993,6 +9119,32 @@
     "Purpose.",
     "Associated risk.",
     "Owner."
+   ],
+   "actions": [
+    {
+     "title": "Control name.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Purpose.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Associated risk.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Owner.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -7048,6 +9200,32 @@
     "Security design reviews.",
     "Configuration reviews."
    ],
+   "actions": [
+    {
+     "title": "Penetration testing.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Vulnerability scanning.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Security design reviews.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Configuration reviews.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/",
@@ -7098,6 +9276,14 @@
    "why": "No service is completely risk-free. Even after mitigation, some residual risk usually remains. Secure by Design requires accountability for those remaining risks, meaning appropriate risk owners must understand and formally accept them.",
    "tasks": [
     "Have you identified any residual risks and raised them with risk owners for sign-off?"
+   ],
+   "actions": [
+    {
+     "title": "Have you identified any residual risks and raised them with risk owners for sign-off?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -7150,6 +9336,32 @@
     "expected remediation timescales",
     "available remediation approaches"
    ],
+   "actions": [
+    {
+     "title": "how vulnerabilities are classified and scored",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "how priority is determined",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "expected remediation timescales",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "available remediation approaches",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/implementing-a-vulnerability-management-process/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-vulnerability-management.docx?d=w6fef653e7774430a85e62302f2e28132&csf=1&web=1&e=kAWAnp",
@@ -7197,6 +9409,14 @@
    "why": "A service may be secure today but become vulnerable tomorrow because a new weakness is discovered in software or a dependency it uses.",
    "tasks": [
     "Do you have a documented process for identifying and responding to new vulnerabilities in your code, systems or supply chain?"
+   ],
+   "actions": [
+    {
+     "title": "Do you have a documented process for identifying and responding to new vulnerabilities in your code, systems or supply chain?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -7252,6 +9472,32 @@
     "Build appropriate security checks into development and deployment workflows.",
     "Define who is responsible for completing those checks."
    ],
+   "actions": [
+    {
+     "title": "Have an agreed secure development lifecycle or development process.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Define the security activities required at appropriate development stages.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Build appropriate security checks into development and deployment workflows.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Define who is responsible for completing those checks.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/",
@@ -7305,6 +9551,32 @@
     "Require an appropriate independent reviewer.",
     "Prevent relevant changes from being merged/deployed until required reviews are complete.",
     "Include security considerations in review criteria where appropriate."
+   ],
+   "actions": [
+    {
+     "title": "Define when code review is required.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Require an appropriate independent reviewer.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Prevent relevant changes from being merged/deployed until required reviews are complete.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Include security considerations in review criteria where appropriate.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -7360,6 +9632,32 @@
     "Define when tests will run.",
     "Configure alerts/reporting so developers see important findings."
    ],
+   "actions": [
+    {
+     "title": "Select appropriate code/application security testing methods.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Integrate automated testing into development pipelines where appropriate.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Define when tests will run.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Configure alerts/reporting so developers see important findings.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/",
@@ -7414,6 +9712,32 @@
     "boundaries: what's specifically excluded",
     "threat scenarios: what realistic risks the test should examine"
    ],
+   "actions": [
+    {
+     "title": "purpose: what assurance the test should provide",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "scope: applications, infrastructure, APIs or other components included",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "boundaries: what's specifically excluded",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "threat scenarios: what realistic risks the test should examine",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/\n\nProcuring external IT security assurance expertise, including SIRAs and ITHCs",
@@ -7464,6 +9788,32 @@
     "Link them to relevant service assets, risks and threats.",
     "Document what will be logged and why.",
     "Make sure appropriate systems/components generate the required information."
+   ],
+   "actions": [
+    {
+     "title": "Identify the security events and information that need to be captured.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Link them to relevant service assets, risks and threats.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Document what will be logged and why.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Make sure appropriate systems/components generate the required information.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -7516,6 +9866,32 @@
     "Identify any additional monitoring capability required.",
     "Configure tools to collect and securely store the required information."
    ],
+   "actions": [
+    {
+     "title": "Identify what logs and security information need collecting.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Determine which existing organisational tools can be used.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Identify any additional monitoring capability required.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Configure tools to collect and securely store the required information.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-observability/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-audit-log-management.docx?d=wf21b346e355840cfbbb61487fb8f39de&csf=1&web=1&e=ekpmJ4",
@@ -7566,6 +9942,32 @@
     "who is responsible for monitoring them",
     "how frequently they are reviewed",
     "which events require investigation"
+   ],
+   "actions": [
+    {
+     "title": "which logs and alerts will be monitored",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "who is responsible for monitoring them",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "how frequently they are reviewed",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "which events require investigation",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -7621,6 +10023,32 @@
     "security impacts are assessed",
     "impacts on existing security controls are considered"
    ],
+   "actions": [
+    {
+     "title": "the scope and purpose of the change are documented",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "affected systems, components and data are identified",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "security impacts are assessed",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "impacts on existing security controls are considered",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/evaluating-the-security-impact-of-changes/\n\nHow do I? - Change Enablement Policy Process and Procedure v1.05 - MyDfE",
@@ -7675,6 +10103,32 @@
     "Add new threats where appropriate.",
     "Update existing threats where their likelihood or impact has changed."
    ],
+   "actions": [
+    {
+     "title": "Review proposed changes for security implications.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Determine whether threats or attack paths have changed.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Add new threats where appropriate.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Update existing threats where their likelihood or impact has changed.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/evaluating-the-security-impact-of-changes/\n\nHow do I? - Change Enablement Policy Process and Procedure v1.05 - MyDfE",
@@ -7725,6 +10179,14 @@
    "why": "A change could:\n- create a completely new risk\n- increase an existing risk\n- reduce an existing risk\n- make a security control less effective\n- require an additional security control.\nRisk assessment therefore needs to remain aligned with the current service.",
    "tasks": [
     "Are you considering requested changes as part of risk assessment and treatment activities?"
+   ],
+   "actions": [
+    {
+     "title": "Are you considering requested changes as part of risk assessment and treatment activities?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -7780,6 +10242,32 @@
     "Identify additional mitigations where possible.",
     "Escalate risks above appetite to the appropriate risk owner or decision-maker."
    ],
+   "actions": [
+    {
+     "title": "Assess the security risk associated with relevant changes.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Compare the resulting risk rating with the project's risk appetite.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Identify additional mitigations where possible.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Escalate risks above appetite to the appropriate risk owner or decision-maker.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/evaluating-the-security-impact-of-changes/",
@@ -7834,6 +10322,32 @@
     "Identify the asset owner.",
     "Record what data the component holds or processes."
    ],
+   "actions": [
+    {
+     "title": "Maintain an up-to-date inventory of service assets.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Clearly identify the components scheduled for retirement.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Identify the asset owner.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "Record what data the component holds or processes.",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
+   ],
    "standards": [],
    "systems": "",
    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/retiring-service-components-securely/\n\n\n\nDfE Data Decommissioning Handbook.pdf",
@@ -7884,6 +10398,14 @@
    "why": "Retiring a component can itself introduce security risks.\nFor example:\n- sensitive data could inadvertently remain behind\n- information that legally needs retaining could be accidentally destroyed\n- necessary data could become inaccessible\n- a connected service could stop working\n- old infrastructure could remain accessible\n- user/admin access could remain active\n- data could be inadequately deleted and later recovered.",
    "tasks": [
     "Have you conducted a retirement risk assessment with an appropriate plan put together based on the classification and sensitivity of data?"
+   ],
+   "actions": [
+    {
+     "title": "Have you conducted a retirement risk assessment with an appropriate plan put together based on the classification and sensitivity of data?",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",
@@ -7938,6 +10460,32 @@
     "what security actions were completed",
     "how relevant data was handled",
     "whether access and infrastructure were removed"
+   ],
+   "actions": [
+    {
+     "title": "what was retired",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "what security actions were completed",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "how relevant data was handled",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    },
+    {
+     "title": "whether access and infrastructure were removed",
+     "description": "",
+     "evidence": "",
+     "legal": false
+    }
    ],
    "standards": [],
    "systems": "",

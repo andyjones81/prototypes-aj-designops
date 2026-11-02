@@ -31,6 +31,14 @@
  "tasks": [
   "Check your security assurance pathway classification (ORR 20)"
  ],
+ "actions": [
+  {
+   "title": "Check your security assurance pathway classification (ORR 20)",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

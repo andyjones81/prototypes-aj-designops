@@ -32,6 +32,20 @@
   "create a service offering in CMDB (ServiceNow)",
   "ask to create a relationship link on CMDB with any upstream and downstream dependencies"
  ],
+ "actions": [
+  {
+   "title": "create a service offering in CMDB (ServiceNow)",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "ask to create a relationship link on CMDB with any upstream and downstream dependencies",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://dfe.service-now.com/mydfe?id=sc_cat_item&sys_id=b97008b81b7680d02fe864606e4bcb9d&referrer=recent_items",

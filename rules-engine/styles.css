@@ -164,3 +164,12 @@ html, html.govuk-template, .govuk-template__body, .govuk-template__body > .govuk
 .api-code, .api-out { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; }
 .api-out { background: #f3f2f1; border-left: 4px solid #1d70b8; padding: 16px; max-height: 480px; overflow: auto; white-space: pre-wrap; word-break: break-word; margin: 0 0 30px; }
 code { background: #f3f2f1; padding: 1px 5px; font-size: 14px; }
+
+.act-edit { border-left: 4px solid #b1b4b6; padding: 4px 0 0 16px; margin-bottom: 24px; }
+.act-edit__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.act-list { margin: 0 0 20px; padding: 0 0 0 22px; }
+.act-list li { padding: 10px 0; border-top: 1px solid #b1b4b6; }
+.act-list li:first-child { border-top: 0; }
+
+.cond-row { align-items: flex-start; flex-wrap: wrap; }
+.cond-row .govuk-checkboxes { margin-top: -6px; }

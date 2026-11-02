@@ -38,6 +38,32 @@
   "Surveys.",
   "Stakeholder review sessions."
  ],
+ "actions": [
+  {
+   "title": "Workshops.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Interviews.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Surveys.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Stakeholder review sessions.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-importance-of-service-assets/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-cyber-incident-response-management.docx?d=w7301f468a0794a398af702bf34ee2c4a&csf=1&web=1&e=PkTsJi",

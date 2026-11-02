@@ -21,6 +21,14 @@
  "tasks": [
   "All stateful data MUST be backed up to a separate region/location (Immutable backups preferred) to ensure all systems and data can be recove"
  ],
+ "actions": [
+  {
+   "title": "All stateful data MUST be backed up to a separate region/location (Immutable backups preferred) to ensure all systems and data can be recove",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://educationgovuk.sharepoint.com/sites/lvewp00047/SitePages/Disaster-Recovery.aspx",

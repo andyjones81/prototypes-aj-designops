@@ -31,6 +31,14 @@
  "tasks": [
   "output of registering security"
  ],
+ "actions": [
+  {
+   "title": "output of registering security",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

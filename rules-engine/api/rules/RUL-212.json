@@ -33,6 +33,14 @@
  "tasks": [
   "Have you established a clear governance structure around risk management decision making?"
  ],
+ "actions": [
+  {
+   "title": "Have you established a clear governance structure around risk management decision making?",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/",

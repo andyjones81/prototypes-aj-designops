@@ -41,6 +41,32 @@
   "Threat assessments being regularly reviewed.",
   "Security testing occurring throughout development."
  ],
+ "actions": [
+  {
+   "title": "Security reviews built into sprint cycles.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Security checkpoints within delivery governance.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Threat assessments being regularly reviewed.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Security testing occurring throughout development.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/tracking-secure-by-design-progress/",

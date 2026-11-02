@@ -40,6 +40,32 @@
   "Steve chases people to complete it (if they haven't already)",
   "Delivery team goes on SHCA intranet page to find link and guidance"
  ],
+ "actions": [
+  {
+   "title": "Once a service gets a service offering, it will get pulled into SHCA",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Steve looks at what has been registered on CMDB in the last 7 days",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Steve chases people to complete it (if they haven't already)",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Delivery team goes on SHCA intranet page to find link and guidance",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [
   "Related to standards but not under a standard"
  ],

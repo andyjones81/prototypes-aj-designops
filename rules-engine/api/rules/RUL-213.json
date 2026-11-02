@@ -33,6 +33,14 @@
  "tasks": [
   "Have you considered the risk appetite of any organisations the service shares or exchanges data with?"
  ],
+ "actions": [
+  {
+   "title": "Have you considered the risk appetite of any organisations the service shares or exchanges data with?",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/",

@@ -21,6 +21,14 @@
  "tasks": [
   "All SaaS/Software MUST be registered in the CMDB to ensure a complete and auditable inventory of digital assets."
  ],
+ "actions": [
+  {
+   "title": "All SaaS/Software MUST be registered in the CMDB to ensure a complete and auditable inventory of digital assets.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "SaaS products",
  "guidance": "https://dfe.service-now.com/mydfe?id=kbarticle&sys_id=f8d6cb8fdbb854100929b29f29961994\n\nhttps://dfe.service-now.com/mydfe?id=sc_cat_item&sys_id=b97008b81b7680d02fe864606e4bcb9d&referrer=recent_items",

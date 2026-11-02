@@ -36,6 +36,32 @@
   "NCSC threat reporting.",
   "Industry intelligence feeds."
  ],
+ "actions": [
+  {
+   "title": "Internal security incident history.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Cyber Threat Intelligence reports.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "NCSC threat reporting.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Industry intelligence feeds.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/sourcing-a-threat-assessment/",

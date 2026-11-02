@@ -21,6 +21,14 @@
  "tasks": [
   "All systems MUST comply with the requirements stipulated in our Continuous Assurance platform to ensure a minimum baseline of security harde"
  ],
+ "actions": [
+  {
+   "title": "All systems MUST comply with the requirements stipulated in our Continuous Assurance platform to ensure a minimum baseline of security harde",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

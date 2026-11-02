@@ -36,6 +36,14 @@
  "tasks": [
   "Have you identified any residual risks and raised them with risk owners for sign-off?"
  ],
+ "actions": [
+  {
+   "title": "Have you identified any residual risks and raised them with risk owners for sign-off?",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/",

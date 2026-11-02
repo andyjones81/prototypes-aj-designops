@@ -39,6 +39,32 @@
   "Owner.",
   "Due date."
  ],
+ "actions": [
+  {
+   "title": "The risk.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Proposed mitigation.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Owner.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Due date.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/responding-to-and-mitigating-security-risks/",

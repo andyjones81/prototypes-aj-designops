@@ -38,6 +38,32 @@
   "Impact assessment",
   "Risk ratings"
  ],
+ "actions": [
+  {
+   "title": "Product description",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Identified risks",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Impact assessment",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Risk ratings",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-third-party-product-security-risks/",

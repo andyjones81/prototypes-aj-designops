@@ -21,6 +21,14 @@
  "tasks": [
   "All infrastructure and cloud services MUST be securely configured to meet the CIS IG1 baseline/benchmark because this closes known security "
  ],
+ "actions": [
+  {
+   "title": "All infrastructure and cloud services MUST be securely configured to meet the CIS IG1 baseline/benchmark because this closes known security ",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "Platforms, cloud resource and servers",
  "guidance": "None found",

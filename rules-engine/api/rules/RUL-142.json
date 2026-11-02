@@ -41,6 +41,26 @@
   "Steve guides people through the ORR, he goes through it line by line to talk about what people need to do",
   "Team fills out ORR and sends it to Steve"
  ],
+ "actions": [
+  {
+   "title": "Team finds out about Steve/ORR and engages with Steve (this varies but typically in alpha)",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Steve guides people through the ORR, he goes through it line by line to talk about what people need to do",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Team fills out ORR and sends it to Steve",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [
   "Related to standards but not under a standard"
  ],

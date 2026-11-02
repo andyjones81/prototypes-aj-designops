@@ -34,6 +34,32 @@
   "User groups were identified.",
   "Controls were designed around how users actually work."
  ],
+ "actions": [
+  {
+   "title": "User research was considered.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Security requirements were balanced against usability.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "User groups were identified.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Controls were designed around how users actually work.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-business-objectives-and-user-needs/",

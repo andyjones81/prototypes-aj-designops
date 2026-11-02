@@ -38,6 +38,32 @@
   "Consequences of compromise.",
   "Overall business impact."
  ],
+ "actions": [
+  {
+   "title": "Assets being assessed.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Impact ratings.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Consequences of compromise.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Overall business impact.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-importance-of-service-assets/",

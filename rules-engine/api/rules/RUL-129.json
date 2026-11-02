@@ -31,6 +31,14 @@
  "tasks": [
   "Manage DSAM3 actions (ORR 22). Manage actions from ITHC"
  ],
+ "actions": [
+  {
+   "title": "Manage DSAM3 actions (ORR 22). Manage actions from ITHC",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

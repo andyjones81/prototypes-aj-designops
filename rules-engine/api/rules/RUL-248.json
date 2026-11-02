@@ -36,6 +36,32 @@
   "Decide which are relevant to the service and why.",
   "Document the standards/frameworks selected."
  ],
+ "actions": [
+  {
+   "title": "Identify what needs protecting.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Review recognised standards and security frameworks.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Decide which are relevant to the service and why.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Document the standards/frameworks selected.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-a-security-controls-set-for-your-service/",

@@ -39,6 +39,32 @@
   "Build appropriate security checks into development and deployment workflows.",
   "Define who is responsible for completing those checks."
  ],
+ "actions": [
+  {
+   "title": "Have an agreed secure development lifecycle or development process.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Define the security activities required at appropriate development stages.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Build appropriate security checks into development and deployment workflows.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Define who is responsible for completing those checks.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/",

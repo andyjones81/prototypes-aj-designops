@@ -36,6 +36,32 @@
   "Identify any additional monitoring capability required.",
   "Configure tools to collect and securely store the required information."
  ],
+ "actions": [
+  {
+   "title": "Identify what logs and security information need collecting.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Determine which existing organisational tools can be used.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Identify any additional monitoring capability required.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Configure tools to collect and securely store the required information.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-observability/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-audit-log-management.docx?d=wf21b346e355840cfbbb61487fb8f39de&csf=1&web=1&e=ekpmJ4",

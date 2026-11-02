@@ -34,6 +34,32 @@
   "Security controls",
   "Retention arrangements"
  ],
+ "actions": [
+  {
+   "title": "Purpose of sharing",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Types of data",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Security controls",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Retention arrangements",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",

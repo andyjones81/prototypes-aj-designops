@@ -34,6 +34,32 @@
   "Retention arrangements defined",
   "DPIA completed where required"
  ],
+ "actions": [
+  {
+   "title": "Data minimisation applied",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Appropriate security controls implemented",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Retention arrangements defined",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "DPIA completed where required",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/\n\nData Protection Impact Assessment (DPIA) Portal",

@@ -38,6 +38,32 @@
   "Security updates process",
   "Dependency risks"
  ],
+ "actions": [
+  {
+   "title": "Supplier reputation",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Known vulnerabilities",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Security updates process",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Dependency risks",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-third-party-product-security-risks/",

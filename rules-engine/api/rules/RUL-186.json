@@ -21,6 +21,14 @@
  "tasks": [
   "Log Retention MUST be 90 Days Hot / 1 Year Cold (managed centrally) to ensure sufficient evidence is available for all security incident inv"
  ],
+ "actions": [
+  {
+   "title": "Log Retention MUST be 90 Days Hot / 1 Year Cold (managed centrally) to ensure sufficient evidence is available for all security incident inv",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://educationgovuk.sharepoint.com/sites/lvewp00047/SitePages/Testing.aspx",

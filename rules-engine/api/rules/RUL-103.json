@@ -31,6 +31,14 @@
  "tasks": [
   "Register your service on the Accessibility statement service (ORR 30)"
  ],
+ "actions": [
+  {
+   "title": "Register your service on the Accessibility statement service (ORR 30)",
+   "description": "",
+   "evidence": "",
+   "legal": true
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://accessibility-statements.education.gov.uk/",

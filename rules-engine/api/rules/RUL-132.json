@@ -41,6 +41,14 @@
  "tasks": [
   "Complete a Data Privacy Impact Assessment (DPIA) screener (ORR 24)"
  ],
+ "actions": [
+  {
+   "title": "Complete a Data Privacy Impact Assessment (DPIA) screener (ORR 24)",
+   "description": "",
+   "evidence": "",
+   "legal": true
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://educationgovuk.sharepoint.com/sites/lvewp00158/SitePages/DPIA.aspx",

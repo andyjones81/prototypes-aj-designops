@@ -34,6 +34,32 @@
   "a conversation with Steve?",
   "mapping things out"
  ],
+ "actions": [
+  {
+   "title": "impact assessment",
+   "description": "",
+   "evidence": "",
+   "legal": true
+  },
+  {
+   "title": "understand technical and business process dependency",
+   "description": "",
+   "evidence": "",
+   "legal": true
+  },
+  {
+   "title": "a conversation with Steve?",
+   "description": "",
+   "evidence": "",
+   "legal": true
+  },
+  {
+   "title": "mapping things out",
+   "description": "",
+   "evidence": "",
+   "legal": true
+  }
+ ],
  "standards": [
   "Service standard - 2"
  ],

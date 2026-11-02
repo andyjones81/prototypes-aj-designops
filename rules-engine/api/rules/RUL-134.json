@@ -31,6 +31,14 @@
  "tasks": [
   "Add a privacy statement to your service (ORR 26)"
  ],
+ "actions": [
+  {
+   "title": "Add a privacy statement to your service (ORR 26)",
+   "description": "",
+   "evidence": "",
+   "legal": true
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

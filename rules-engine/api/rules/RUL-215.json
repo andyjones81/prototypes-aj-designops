@@ -33,6 +33,14 @@
  "tasks": [
   "Have you considered the appropriate Cyber Assessment Framework (CAF) profile for all the components of the service?"
  ],
+ "actions": [
+  {
+   "title": "Have you considered the appropriate Cyber Assessment Framework (CAF) profile for all the components of the service?",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/",

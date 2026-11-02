@@ -31,6 +31,14 @@
  "tasks": [
   "If off-shoring data, get approval for off-shoring data (ORR 25)"
  ],
+ "actions": [
+  {
+   "title": "If off-shoring data, get approval for off-shoring data (ORR 25)",
+   "description": "",
+   "evidence": "",
+   "legal": true
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "Off-shoring advice",

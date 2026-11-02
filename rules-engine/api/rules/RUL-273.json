@@ -39,6 +39,32 @@
   "how relevant data was handled",
   "whether access and infrastructure were removed"
  ],
+ "actions": [
+  {
+   "title": "what was retired",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "what security actions were completed",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "how relevant data was handled",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "whether access and infrastructure were removed",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/retiring-service-components-securely/",

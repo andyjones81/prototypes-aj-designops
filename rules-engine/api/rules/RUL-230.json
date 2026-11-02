@@ -34,6 +34,32 @@
   "Security decisions considered business impact.",
   "Any trade-offs between security and business needs were documented."
  ],
+ "actions": [
+  {
+   "title": "Business objectives were identified.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Security requirements were linked to those objectives.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Security decisions considered business impact.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Any trade-offs between security and business needs were documented.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-business-objectives-and-user-needs/",

@@ -21,6 +21,14 @@
  "tasks": [
   "Shared Accounts MUST NOT be used; every action MUST be traceable to a specific named user or Service Principal to ensure accountability for "
  ],
+ "actions": [
+  {
+   "title": "Shared Accounts MUST NOT be used; every action MUST be traceable to a specific named user or Service Principal to ensure accountability for ",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/standards-account-and-credential-management.docx?d=wadf8d20c50e247d0a9a72109fd4cbfaf&csf=1&web=1&e=QczeUw",

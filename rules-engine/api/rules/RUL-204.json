@@ -38,6 +38,32 @@
   "Required skills and expertise.",
   "When resources are needed."
  ],
+ "actions": [
+  {
+   "title": "Security roles required.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Key responsibilities.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Required skills and expertise.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "When resources are needed.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/identifying-security-resources/",

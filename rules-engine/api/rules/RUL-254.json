@@ -39,6 +39,32 @@
   "Controls were selected to reduce those specific risks.",
   "Control decisions can be traced back to identified risks."
  ],
+ "actions": [
+  {
+   "title": "Threats were identified.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Risks were assessed.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Controls were selected to reduce those specific risks.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Control decisions can be traced back to identified risks.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/",

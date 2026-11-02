@@ -33,6 +33,14 @@
  "tasks": [
   "Does your threat assessment include the motives, intent and capability of the threat actors relevant to your service?"
  ],
+ "actions": [
+  {
+   "title": "Does your threat assessment include the motives, intent and capability of the threat actors relevant to your service?",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/sourcing-a-threat-assessment/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP",

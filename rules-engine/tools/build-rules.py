@@ -85,6 +85,7 @@ def build():
                 'requirementDescription': clean(r['What it means']) or clean(r['Why does this exist']),
                 'why': clean(r['Why does this exist']),
                 'tasks': tasks_from(r['What needs to happen'], name),
+                'actions': [{'title': t, 'description': '', 'evidence': '', 'legal': 'legal' in clean(r['Mandatory status']).lower()} for t in tasks_from(r['What needs to happen'], name)],
                 'standards': standards,
                 'systems': clean(r['Systems']),
                 'guidance': clean(r['Guidance']),

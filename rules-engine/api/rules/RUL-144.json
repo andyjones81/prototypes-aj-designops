@@ -34,6 +34,32 @@
   "timescales and confirmed funding",
   "work already done. For example, research, options considered, guidance reviewed"
  ],
+ "actions": [
+  {
+   "title": "a clear description of the problem and its impact",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "what kind of help they are seeking. For example, options appraisal or planning advice",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "timescales and confirmed funding",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "work already done. For example, research, options considered, guidance reviewed",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "MS Form, SharePoint List, Power BI",
  "guidance": "Get help with DDT tasks and projects",

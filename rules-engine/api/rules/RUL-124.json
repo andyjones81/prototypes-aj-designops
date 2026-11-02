@@ -31,6 +31,14 @@
  "tasks": [
   "If accessible outside of DfE, like on the internet, incorporate WAF solution into design (either Azure Front Door or Barracuda) (ORR 18)"
  ],
+ "actions": [
+  {
+   "title": "If accessible outside of DfE, like on the internet, incorporate WAF solution into design (either Azure Front Door or Barracuda) (ORR 18)",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

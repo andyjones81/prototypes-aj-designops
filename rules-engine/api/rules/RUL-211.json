@@ -33,6 +33,14 @@
  "tasks": [
   "Have you used the organisation's risk appetite statements and applied them to the nature of the service to determine the security risk appet"
  ],
+ "actions": [
+  {
+   "title": "Have you used the organisation's risk appetite statements and applied them to the nature of the service to determine the security risk appet",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-malware-defence.docx?d=w382fcc54b9914b188634973a39e96cb5&csf=1&web=1&e=igfgSR\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-secure-configuration-management.docx?d=w910934615be84c86996d8b094dff9b9c&csf=1&web=1&e=og2TdO",

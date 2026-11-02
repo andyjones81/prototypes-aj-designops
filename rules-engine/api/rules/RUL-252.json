@@ -39,6 +39,32 @@
   "Avoid the risk by changing the design.",
   "Escalate and formally accept the risk."
  ],
+ "actions": [
+  {
+   "title": "Reduce the risk through controls.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Transfer the risk.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Avoid the risk by changing the design.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Escalate and formally accept the risk.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/responding-to-and-mitigating-security-risks/",

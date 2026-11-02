@@ -38,6 +38,32 @@
   "Accountability for security decisions.",
   "Responsibility for managing risks relating to the asset."
  ],
+ "actions": [
+  {
+   "title": "A named owner.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "A defined role.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Accountability for security decisions.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Responsibility for managing risks relating to the asset.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/documenting-service-assets/",

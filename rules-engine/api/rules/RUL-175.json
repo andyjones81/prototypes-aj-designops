@@ -27,6 +27,14 @@
  "tasks": [
   "\"Team\" passwords MUST be prohibited because they make accountability impossible and are easy to steal."
  ],
+ "actions": [
+  {
+   "title": "\"Team\" passwords MUST be prohibited because they make accountability impossible and are easy to steal.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

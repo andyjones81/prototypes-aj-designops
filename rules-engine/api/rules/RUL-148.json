@@ -21,6 +21,14 @@
  "tasks": [
   "GitHub Repositories must be tagged to clearly identify service, division and directorate."
  ],
+ "actions": [
+  {
+   "title": "GitHub Repositories must be tagged to clearly identify service, division and directorate.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "GitHub",
  "guidance": "Naming things - DfE Technical Guidance\n\nStoring source code - DfE Technical Guidance",

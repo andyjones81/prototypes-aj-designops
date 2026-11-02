@@ -32,6 +32,20 @@
   "document expectations of supplier",
   "create a Statement of Work"
  ],
+ "actions": [
+  {
+   "title": "document expectations of supplier",
+   "description": "",
+   "evidence": "",
+   "legal": true
+  },
+  {
+   "title": "create a Statement of Work",
+   "description": "",
+   "evidence": "",
+   "legal": true
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

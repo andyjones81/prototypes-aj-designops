@@ -21,6 +21,14 @@
  "tasks": [
   "All new services MUST comply with the 10 principles of Secure by Design to ensure security is built-in from the outset."
  ],
+ "actions": [
+  {
+   "title": "All new services MUST comply with the 10 principles of Secure by Design to ensure security is built-in from the outset.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "All products and services built in house",
  "guidance": "https://technical-guidance.education.gov.uk/principles/secure-by-design-principles/\n\nSecure by Design - UK Government Security - Beta\n\nSecure by Design Principles - UK Government Security - Beta",

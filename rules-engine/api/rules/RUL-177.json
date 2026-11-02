@@ -21,6 +21,14 @@
  "tasks": [
   "\"Break-glass\" accounts MUST be disabled by default and alert immediately upon usage to prevent abuse and unauthorised use."
  ],
+ "actions": [
+  {
+   "title": "\"Break-glass\" accounts MUST be disabled by default and alert immediately upon usage to prevent abuse and unauthorised use.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

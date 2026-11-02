@@ -39,6 +39,32 @@
   "Identify additional mitigations where possible.",
   "Escalate risks above appetite to the appropriate risk owner or decision-maker."
  ],
+ "actions": [
+  {
+   "title": "Assess the security risk associated with relevant changes.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Compare the resulting risk rating with the project's risk appetite.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Identify additional mitigations where possible.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Escalate risks above appetite to the appropriate risk owner or decision-maker.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/evaluating-the-security-impact-of-changes/",

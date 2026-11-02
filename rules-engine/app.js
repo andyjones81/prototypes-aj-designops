@@ -60,7 +60,18 @@ const arr = (v) => Array.isArray(v) ? v : (v ? [v] : []);
 const OWNERS = { Team: ['Data Protection Office', 'Service Assurance Team', 'Accessibility Team', 'Safeguarding Team', 'Commercial Team', 'Technical Standards Group', 'Risk and Assurance Team'], Person: ['Amara Okafor', 'Chris Walker', 'Dan Fraser', 'Jo Bennett'] };
 const OWNER_TYPE = (name) => OWNERS.Person.includes(name) ? 'Person' : OWNERS.Team.includes(name) ? 'Team' : '';
 const SEED_OWNER = { 'Service assessment for high volume transactional services': 'Service Assurance Team', 'DPIA high risk screener': 'Data Protection Office', 'Accessibility enrolment': 'Accessibility Team', 'Children and families safeguarding review': 'Safeguarding Team', 'Procurement route and commercial approval': 'Commercial Team', 'API standards review': 'Dan Fraser', 'Decommissioning plan': 'Jo Bennett', 'High risk assurance board': 'Risk and Assurance Team' };
+const legalTag = (a) => a.legal ? tag('Legal requirement', 'govuk-tag--red') : tag('Not a legal requirement', 'govuk-tag--grey');
+function actionDefList(r) {
+  return '<ol class="act-list">' + r.actions.map((a) => '<li><p class="govuk-body govuk-!-margin-bottom-1"><strong>' + esc(a.title) + '</strong> ' + legalTag(a) + '</p>' +
+    '<p class="govuk-body-s govuk-!-margin-bottom-1">' + (a.description ? esc(a.description) : '<span class="muted">No description yet.</span>') + '</p>' +
+    '<p class="govuk-body-s govuk-!-margin-bottom-0"><strong>Expected evidence:</strong> ' + (a.evidence ? esc(a.evidence) : '<span class="muted">Not yet defined.</span>') + '</p></li>').join('') + '</ol>';
+}
+const actDef = (a) => { const r = ruleOf(a.ruleId), d = r && r.actions.find((x) => x.title === a.title); return d || { description: a.description, evidence: a.evidence, legal: a.legal }; };
+const isLegal = (r) => /legal/i.test(r.mandatory || '');
+function actionsFromTasks(r) { return (r.tasks || []).map((t) => ({ title: t, description: '', evidence: '', legal: isLegal(r) })); }
 function normRule(r) {
+  if (!r.actions) r.actions = actionsFromTasks(r);
+  r.tasks = r.actions.map((a) => a.title);
   if (r.owner === undefined) r.owner = SEED_OWNER[r.name] || '';
   if (!r.status) r.status = r.enabled === false ? 'Retired' : 'Published';
   r.enabled = r.status === 'Published';
@@ -69,7 +80,7 @@ function normRule(r) {
   return r;
 }
 // The editable content of a rule, stored against each version so versions can be compared and restored.
-const SNAP_KEYS = ['name', 'source', 'owner', 'status', 'conditions', 'requirementTitle', 'requirementDescription', 'tasks', 'conditionsText', 'mandatory', 'why', 'kind', 'category', 'phases', 'standards', 'systems', 'guidance'];
+const SNAP_KEYS = ['name', 'source', 'owner', 'status', 'conditions', 'requirementTitle', 'requirementDescription', 'tasks', 'actions', 'conditionsText', 'mandatory', 'why', 'kind', 'category', 'phases', 'standards', 'systems', 'guidance'];
 function snapOf(r) { const o = {}; SNAP_KEYS.forEach((k) => { if (r[k] !== undefined) o[k] = JSON.parse(JSON.stringify(r[k])); }); return o; }
 const TRIGGER_SEED = [
   { name: 'Work created', event: 'created', fields: [] },
@@ -111,11 +122,12 @@ function runEngine(work, systemNote) {
   result.fired = matched.map((r) => r.id);
   // Each rule task becomes its own action with its own status, evidence and history.
   matched.forEach((rule) => {
-    rule.tasks.forEach((title) => {
+    rule.actions.forEach((def) => {
+      const title = def.title;
       const existing = S.actions.find((a) => a.workId === work.id && a.ruleId === rule.id && !a.custom && a.title === title);
       if (!existing) {
         const a = {
-          id: uid('ACT'), workId: work.id, ruleId: rule.id, ruleVersion: rule.version, title, status: 'Not started', created: now(),
+          id: uid('ACT'), workId: work.id, ruleId: rule.id, ruleVersion: rule.version, title, description: def.description || '', evidence: def.evidence || '', legal: !!def.legal, status: 'Not started', created: now(),
           updates: [{ at: now(), type: 'system', text: 'Raised by rule ' + rule.id + ' v' + rule.version + ' (' + rule.name + '). ' + systemNote }]
         };
         S.actions.push(a); result.added.push(a);
@@ -426,9 +438,16 @@ function condRow(c, i) {
     '<div class="govuk-form-group">' + valCtl + '</div>' +
     '<button type="button" class="govuk-button govuk-button--warning govuk-!-margin-bottom-0" data-act="cond-remove" data-i="' + i + '">Remove</button></div>';
 }
+function actionEditor(a, i) {
+  const f = (k, label, area, hint) => '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="a' + k + '-' + i + '">' + label + '</label>' + (hint ? '<div class="govuk-hint">' + hint + '</div>' : '') +
+    (area ? '<textarea class="govuk-textarea" id="a' + k + '-' + i + '" name="a' + k + i + '" rows="2">' + esc(a[k]) + '</textarea>' : '<input class="govuk-input" id="a' + k + '-' + i + '" name="a' + k + i + '" value="' + esc(a[k]) + '">') + '</div>';
+  return '<section class="act-edit"><div class="act-edit__head"><h3 class="govuk-heading-s govuk-!-margin-bottom-0">Action ' + (i + 1) + '</h3><button type="button" class="govuk-button govuk-button--warning govuk-!-margin-bottom-0" data-module="govuk-button" data-act="action-remove" data-i="' + i + '">Remove<span class="govuk-visually-hidden"> action ' + (i + 1) + '</span></button></div>' +
+    f('title', 'Action') + f('description', 'What this action involves', true) + f('evidence', 'Expected evidence', true, 'What the team should attach or record to show it is done, for example a report, approval or link.') +
+    '<div class="govuk-checkboxes govuk-checkboxes--small govuk-form-group" data-module="govuk-checkboxes"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" type="checkbox" id="alegal-' + i + '" name="alegal' + i + '" value="1"' + (a.legal ? ' checked' : '') + '><label class="govuk-label govuk-checkboxes__label" for="alegal-' + i + '">Legal requirement</label></div></div></section>';
+}
 function vRuleForm(id) {
   if (!ruleDraft || ruleDraft.key !== id) {
-    const r = id === 'new' ? { name: '', source: '', owner: '', status: 'Published', changeNote: '', conditions: [{ field: 'type', op: 'is', value: OPT.type[0] }], requirementTitle: '', requirementDescription: '', tasks: [] } : S.rules.find((x) => x.id === id);
+    const r = id === 'new' ? { name: '', source: '', owner: '', status: 'Published', changeNote: '', conditions: [{ field: 'type', op: 'is', value: OPT.type[0] }], requirementTitle: '', requirementDescription: '', mandatory: 'Must have', actions: [{ title: '', description: '', evidence: '', legal: false }] } : S.rules.find((x) => x.id === id);
     if (!r) return notFound();
     ruleDraft = { key: id, rule: JSON.parse(JSON.stringify(r)) };
   }
@@ -449,7 +468,9 @@ function vRuleForm(id) {
     '<h2 class="govuk-heading-m">Requirement returned</h2>' +
     text('requirementTitle', 'rt', r.requirementTitle, 'Requirement title') +
     text('requirementDescription', 'rd', r.requirementDescription, 'Description', { area: true, rows: 3 }) +
-    text('tasks', 'tasks', r.tasks.join('\n'), 'Actions', { area: true, rows: 4, hint: 'One per line. Each line becomes a separate action with its own status, evidence and history.' }) +
+    '<h2 class="govuk-heading-m">Actions</h2><p class="govuk-body">Each action is raised for the work, with its own status, evidence and history. Say what it is, what evidence is expected and whether it is a legal requirement.</p>' +
+    (ERR.actions ? '<div class="govuk-form-group govuk-form-group--error">' + errMsg('actions', 'atitle-0') : '<div>') + (r.actions || []).map(actionEditor).join('') + '</div>' +
+    '<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="action-add">Add action</button>' +
     radios('status', ['Published', 'Draft', 'Retired'], r.status || 'Published', 'Status') +
     '<p class="govuk-hint">Only published rules run. Draft and retired rules stay in the library but raise no actions.</p>' +
     text('changeNote', 'cn', r.changeNote || '', 'What changed in this version?', { hint: 'Shown in the version history.' }) +
@@ -524,7 +545,8 @@ function vActionDetail(id) {
   const sibs = S.actions.filter((x) => x.workId === a.workId && x.ruleId === a.ruleId && x.id !== a.id && isActive(x));
   return banner() + '<a href="#/work/' + a.workId + '" class="govuk-back-link">Back to ' + esc(workName(a.workId)) + '</a>' + errorSummary() +
     '<span class="govuk-caption-m">' + a.id + ' · <a class="govuk-link" href="#/work/' + a.workId + '">' + esc(workName(a.workId)) + '</a></span>' +
-    '<h1 class="govuk-heading-l">' + esc(a.title) + '</h1><p>' + statusTag(a.status) + ' ' + evBadge(a) + '</p>' +
+    '<h1 class="govuk-heading-l">' + esc(a.title) + '</h1><p>' + statusTag(a.status) + ' ' + evBadge(a) + ' ' + legalTag(actDef(a)) + '</p>' +
+    '<dl class="govuk-summary-list govuk-summary-list--no-border"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">What this involves</dt><dd class="govuk-summary-list__value">' + (actDef(a).description ? esc(actDef(a).description) : '<span class="muted">Not yet described.</span>') + '</dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Expected evidence</dt><dd class="govuk-summary-list__value">' + (actDef(a).evidence ? esc(actDef(a).evidence) : '<span class="muted">Not yet defined.</span>') + '</dd></div></dl>' +
     '<div class="two-col"><section><h2 class="govuk-heading-m">Record an update</h2><p class="govuk-body-s muted">Evidence, decisions and exceptions are recorded against this action only.</p>' +
     '<form id="update-form" data-id="' + a.id + '" novalidate>' +
     select('type', 'utype', ['Note', 'Evidence', 'Decision', 'Exception'], 'Note', 'Type of update').replace('<option value="">Select</option>', '') +
@@ -622,7 +644,7 @@ function saveWork(form) {
 function readRuleDraft(form) {
   const d = formData(form), r = ruleDraft.rule;
   r.name = d.name || ''; r.source = d.source || ''; r.owner = d.owner || ''; r.requirementTitle = d.requirementTitle || ''; r.requirementDescription = d.requirementDescription || '';
-  r.tasks = (d.tasks || '').split('\n').map((s) => s.trim()).filter(Boolean); r.status = d.status || 'Published'; r.enabled = r.status === 'Published'; r.changeNote = d.changeNote || '';
+  r.actions = r.actions.map((a, i) => ({ title: (d['atitle' + i] || '').trim(), description: (d['adescription' + i] || '').trim(), evidence: (d['aevidence' + i] || '').trim(), legal: !!d['alegal' + i] })); r.status = d.status || 'Published'; r.enabled = r.status === 'Published'; r.changeNote = d.changeNote || '';
   r.conditions = r.conditions.map((c, i) => ({ field: d['cfield' + i], op: d['cop' + i], value: d['cop' + i] === 'in' ? arr(d['cval' + i]) : (Array.isArray(d['cval' + i]) ? d['cval' + i][0] : d['cval' + i]) }));
 }
 
@@ -633,6 +655,7 @@ function saveRule(form) {
   if (!r.name.trim()) fail('name', 'Enter a rule name');
   if (!r.conditions.length) fail('cond', 'Add at least one condition', 'cond-add');
   else { const i = r.conditions.findIndex((c) => c.value === '' || c.value == null || (Array.isArray(c.value) && !c.value.length)); if (i >= 0) fail('cond', 'Enter a value for every condition', 'cval-' + i); }
+  if (!r.actions.length || r.actions.some((a) => !a.title)) fail('actions', r.actions.length ? 'Enter a name for every action' : 'Add at least one action', r.actions.length ? 'atitle-' + r.actions.findIndex((a) => !a.title) : 'action-add');
   if (!r.requirementTitle.trim()) fail('requirementTitle', 'Enter a requirement title', 'rt');
   if (!r.changeNote.trim()) fail('changeNote', 'Enter a note describing what changed in this version', 'cn');
   if (hasErr()) { rerender(); return; }
@@ -640,6 +663,7 @@ function saveRule(form) {
   r.status = r.status || 'Published'; r.enabled = r.status === 'Published';
   if (id === 'new') { saved = normRule(Object.assign({ id: uid('RUL'), version: 1, versions: [{}] }, r)); saved.versions = []; S.rules.push(saved); }
   else { saved = S.rules.find((x) => x.id === id); Object.assign(saved, r); saved.version = (saved.version || 1) + 1; }
+  saved.tasks = saved.actions.map((a) => a.title);
   saved.versions.push({ v: saved.version, at: now(), by: 'You', note: r.changeNote.trim(), snap: snapOf(saved) });
   // Existing actions keep their own history; newly added rule actions are raised on the re-run below.
   const added = [], withdrawn = [];
@@ -709,6 +733,8 @@ document.addEventListener('click', (e) => {
   else if (act === 'dialog-close') closeDialog();
   else if (act === 'focus-field') { e.preventDefault(); const el = document.getElementById(t.dataset.field); if (el) { el.scrollIntoView({ block: 'center' }); el.focus(); } }
   else if (act === 'cond-add') { readRuleDraft(t.closest('form')); ruleDraft.rule.conditions.push({ field: 'type', op: 'is', value: OPT.type[0] }); ERR = {}; rerender(); }
+  else if (act === 'action-add') { readRuleDraft(t.closest('form')); ruleDraft.rule.actions.push({ title: '', description: '', evidence: '', legal: false }); ERR = {}; rerender(); }
+  else if (act === 'action-remove') { readRuleDraft(t.closest('form')); ruleDraft.rule.actions.splice(Number(t.dataset.i), 1); ERR = {}; rerender(); }
   else if (act === 'cond-remove') { readRuleDraft(t.closest('form')); ruleDraft.rule.conditions.splice(Number(t.dataset.i), 1); ERR = {}; rerender(); }
   else if (act === 'rule-delete') {
     S.rules = S.rules.filter((r) => r.id !== t.dataset.id);
@@ -736,7 +762,7 @@ function ruleInfo(id) {
     '<h2 class="govuk-heading-l" id="rule-dialog-title">' + esc(r.name) + '</h2><p class="govuk-body-s">Source: ' + esc(r.source) + '<br>Owner: ' + (r.owner ? esc(r.owner) + ' (' + (OWNER_TYPE(r.owner) || 'owner').toLowerCase() + ')' : 'Unassigned') + '</p></div><button type="button" class="dlg-x" data-act="dialog-close" aria-label="Close">&times;</button></div>' +
     '<h3 class="govuk-heading-s">When</h3><ul class="govuk-list govuk-list--bullet">' + r.conditions.map((c) => '<li>' + esc(condText(c)) + '</li>').join('') + '</ul>' +
     '<h3 class="govuk-heading-s">Requirement returned</h3><p class="govuk-body"><strong>' + esc(r.requirementTitle) + '</strong><br>' + esc(r.requirementDescription || '') + '</p>' +
-    (r.tasks && r.tasks.length ? '<h3 class="govuk-heading-s">Actions raised</h3><ul class="govuk-list govuk-list--bullet">' + r.tasks.map((t) => '<li>' + esc(t) + '</li>').join('') + '</ul>' : '') +
+    (r.actions.length ? '<h3 class="govuk-heading-s">Actions raised</h3>' + actionDefList(r) : '') +
     '<h3 class="govuk-heading-s">Currently applies to</h3>' + (apps.length ? '<ul class="govuk-list">' + apps.map((w) => '<li><a class="govuk-link" href="#/work/' + w.id + '" data-act="dialog-close">' + esc(w.title) + '</a></li>').join('') + '</ul>' : '<p class="govuk-body">No work items.</p>') +
     '<div class="govuk-button-group"><a class="govuk-button" role="button" draggable="false" href="#/rules/' + r.id + '" data-act="dialog-close">Edit rule</a><button type="button" class="govuk-button govuk-button--secondary" data-act="dialog-close">Close</button></div>';
   if (d.showModal) d.showModal(); else d.setAttribute('open', '');
@@ -751,7 +777,7 @@ function workFromForm(form, base) {
     transactional: d.transactional || 'No', estTransactions: (d.estTransactions || '').trim(), personalData: d.personalData || 'No', priority: d.priority || '', risk: d.risk || '' });
 }
 function ruleLine(r) {
-  return '<li>' + ruleChip(r.id) + ' <a class="govuk-link" href="#/rules/' + r.id + '">' + esc(r.requirementTitle) + '</a> <span class="muted">v' + r.version + ' · ' + r.tasks.length + ' action' + (r.tasks.length === 1 ? '' : 's') + '</span></li>';
+  return '<li>' + ruleChip(r.id) + ' <a class="govuk-link" href="#/rules/' + r.id + '">' + esc(r.requirementTitle) + '</a> <span class="muted">v' + r.version + ' · ' + r.actions.length + ' action' + (r.actions.length === 1 ? '' : 's') + '</span></li>';
 }
 function listCap(list, fn, n) {
   return '<ul class="govuk-list">' + list.slice(0, n).map(fn).join('') + '</ul>' + (list.length > n ? '<p class="govuk-body-s muted">and ' + (list.length - n) + ' more</p>' : '');
@@ -791,7 +817,7 @@ function previewCats(form) {
 }
 
 /* ---------- Rule version history ---------- */
-const SNAP_LABEL = { name: 'name', source: 'policy or standard', owner: 'owner', status: 'status', conditions: 'conditions', requirementTitle: 'requirement title', requirementDescription: 'description', tasks: 'actions' };
+const SNAP_LABEL = { name: 'name', source: 'policy or standard', owner: 'owner', status: 'status', conditions: 'conditions', requirementTitle: 'requirement title', requirementDescription: 'description', actions: 'actions' };
 function snapDiff(a, b) {
   return Object.keys(SNAP_LABEL).filter((k) => JSON.stringify((a || {})[k]) !== JSON.stringify((b || {})[k])).map((k) => SNAP_LABEL[k]);
 }
@@ -842,11 +868,11 @@ function vTriggerForm(id) {
 }
 
 /* ---------- Rules API ---------- */
-const slim = (r) => ({ id: r.id, name: r.name, version: r.version, status: r.status, kind: r.kind || 'Policy', source: r.source, owner: r.owner, mandatory: r.mandatory || null, phases: r.phases || [], conditions: r.conditions, conditionsText: r.conditionsText || null, requirementTitle: r.requirementTitle, tasks: r.tasks, updated: r.versions[r.versions.length - 1].at });
+const slim = (r) => ({ id: r.id, name: r.name, version: r.version, status: r.status, kind: r.kind || 'Policy', source: r.source, owner: r.owner, mandatory: r.mandatory || null, phases: r.phases || [], conditions: r.conditions, conditionsText: r.conditionsText || null, requirementTitle: r.requirementTitle, actions: r.actions, updated: r.versions[r.versions.length - 1].at });
 function evaluate(input) {
   const w = Object.assign({ characteristics: [], channel: [], users: [], transactional: 'No', estTransactions: '', personalData: 'No', priority: 'Medium', risk: 'Medium' }, input || {});
   const matched = matchingRules(w);
-  return { work: w, rulesEvaluated: S.rules.filter((r) => r.enabled).length, matched: matched.map((r) => ({ id: r.id, name: r.name, version: r.version, mandatory: r.mandatory || null, requirementTitle: r.requirementTitle, actions: r.tasks })), actionCount: matched.reduce((n, r) => n + r.tasks.length, 0) };
+  return { work: w, rulesEvaluated: S.rules.filter((r) => r.enabled).length, matched: matched.map((r) => ({ id: r.id, name: r.name, version: r.version, mandatory: r.mandatory || null, requirementTitle: r.requirementTitle, actions: r.actions })), actionCount: matched.reduce((n, r) => n + r.actions.length, 0) };
 }
 function apiRequest(method, path, body) {
   const u = new URL(path.replace(/^\//, ''), 'http://api.local/'), seg = u.pathname.split('/').filter(Boolean), q = u.searchParams;
@@ -943,7 +969,7 @@ document.addEventListener('click', (e) => {
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'rules.json'; document.body.appendChild(a); a.click(); a.remove();
   } else if (act === 'rule-restore') {
     const r = ruleOf(t.dataset.id), v = r && r.versions.find((x) => String(x.v) === t.dataset.v); if (!v || !v.snap) return;
-    Object.assign(r, JSON.parse(JSON.stringify(v.snap))); r.enabled = r.status === 'Published'; r.version += 1;
+    Object.assign(r, JSON.parse(JSON.stringify(v.snap))); if (!v.snap.actions) r.actions = actionsFromTasks(r); r.tasks = r.actions.map((a) => a.title); r.enabled = r.status === 'Published'; r.version += 1;
     r.versions.push({ v: r.version, at: now(), by: 'You', note: 'Restored version ' + v.v + '.', snap: snapOf(r) });
     const rdef = S.triggerDefs.find((d) => d.enabled && d.event === 'rule'); let n = 0;
     if (rdef) S.works.forEach((w) => { const res = runEngine(w, 'Rule ' + r.id + ' v' + r.version + ' restored from v' + v.v + '.'); if (res.added.length || res.withdrawn.length || res.reinstated.length) { recordTrigger(w, 'Rule changed: ' + r.name + ' (v' + r.version + ')', [], res, rdef); n++; } });

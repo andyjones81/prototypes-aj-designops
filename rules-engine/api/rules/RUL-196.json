@@ -21,6 +21,14 @@
  "tasks": [
   "Base container images MUST be pulled from a trusted internal registry and MUST be refreshed/patched at least monthly to prevent systems from"
  ],
+ "actions": [
+  {
+   "title": "Base container images MUST be pulled from a trusted internal registry and MUST be refreshed/patched at least monthly to prevent systems from",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

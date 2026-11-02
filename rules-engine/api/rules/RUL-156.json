@@ -21,6 +21,14 @@
  "tasks": [
   "All foundation systems MUST meet phase 1 mandated security controls by March 31st 2026 to ensure critical protection against common attacks."
  ],
+ "actions": [
+  {
+   "title": "All foundation systems MUST meet phase 1 mandated security controls by March 31st 2026 to ensure critical protection against common attacks.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "None found",

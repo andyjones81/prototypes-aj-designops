@@ -39,6 +39,32 @@
   "boundaries: what's specifically excluded",
   "threat scenarios: what realistic risks the test should examine"
  ],
+ "actions": [
+  {
+   "title": "purpose: what assurance the test should provide",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "scope: applications, infrastructure, APIs or other components included",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "boundaries: what's specifically excluded",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "threat scenarios: what realistic risks the test should examine",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/\n\nProcuring external IT security assurance expertise, including SIRAs and ITHCs",

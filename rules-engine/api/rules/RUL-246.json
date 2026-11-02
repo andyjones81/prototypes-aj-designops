@@ -36,6 +36,32 @@
   "Define when the information needs reviewing.",
   "Reassess it when significant changes occur to the service or threat landscape."
  ],
+ "actions": [
+  {
+   "title": "Record the sources and dates of the threat and business-impact information used.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Check that those sources are still relevant and current.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Define when the information needs reviewing.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Reassess it when significant changes occur to the service or threat landscape.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/",

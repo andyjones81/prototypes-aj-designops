@@ -21,6 +21,14 @@
  "tasks": [
   "Any externally accessible system that:\n- Handle sensitive or business‑critical data\n- Provide authentication or user accounts\n- Connect into"
  ],
+ "actions": [
+  {
+   "title": "Any externally accessible system that:\n- Handle sensitive or business‑critical data\n- Provide authentication or user accounts\n- Connect into",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "Service Health Check app and any services who meets the condition criteria",
  "guidance": "https://educationgovuk.sharepoint.com/sites/security/SitePages/it-health-check-services.aspx",

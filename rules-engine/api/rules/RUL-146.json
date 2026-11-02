@@ -35,6 +35,14 @@
  "tasks": [
   "G6s/G7s with oversight of an area attend the board meeting."
  ],
+ "actions": [
+  {
+   "title": "G6s/G7s with oversight of an area attend the board meeting.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "- Teams meeting",
  "guidance": "",

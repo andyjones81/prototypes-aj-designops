@@ -21,6 +21,14 @@
  "tasks": [
   "Physical or logical separation of admin privileges is REQUIRED to prevent a simple phishing email from compromising everything."
  ],
+ "actions": [
+  {
+   "title": "Physical or logical separation of admin privileges is REQUIRED to prevent a simple phishing email from compromising everything.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "standards-account-and-credential-management.docx",

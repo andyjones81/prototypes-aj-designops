@@ -39,6 +39,32 @@
   "Associated risk.",
   "Owner."
  ],
+ "actions": [
+  {
+   "title": "Control name.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Purpose.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Associated risk.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Owner.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/",

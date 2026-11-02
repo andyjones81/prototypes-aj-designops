@@ -39,6 +39,32 @@
   "Assess impacts on individuals",
   "Define mitigations"
  ],
+ "actions": [
+  {
+   "title": "Describe the processing",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Identify privacy risks",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Assess impacts on individuals",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Define mitigations",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/\n\nhttps://educationgovuk.sharepoint.com/sites/lvewp00158/SitePages/DPIA.aspx",

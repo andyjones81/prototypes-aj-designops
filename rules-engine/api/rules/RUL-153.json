@@ -21,6 +21,14 @@
  "tasks": [
   "All infrastructure and digital services MUST be registered and identifiable, and all cloud resources MUST have Owner, CostCenter, and Env ta"
  ],
+ "actions": [
+  {
+   "title": "All infrastructure and digital services MUST be registered and identifiable, and all cloud resources MUST have Owner, CostCenter, and Env ta",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "Cloud Platforms",
  "guidance": "None found",

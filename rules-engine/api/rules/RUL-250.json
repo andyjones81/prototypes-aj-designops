@@ -36,6 +36,32 @@
   "why they are relevant",
   "what part of the service they apply to"
  ],
+ "actions": [
+  {
+   "title": "what controls are required",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "where the controls came from",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "why they are relevant",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "what part of the service they apply to",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-a-security-controls-set-for-your-service/",

@@ -39,6 +39,32 @@
   "Security design reviews.",
   "Configuration reviews."
  ],
+ "actions": [
+  {
+   "title": "Penetration testing.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Vulnerability scanning.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Security design reviews.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Configuration reviews.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/",

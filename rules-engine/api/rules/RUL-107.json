@@ -33,6 +33,26 @@
   "build in DfE - expect more LLD",
   "follow the technical DfE standards"
  ],
+ "actions": [
+  {
+   "title": "managed supplier - tend to give HLD",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "build in DfE - expect more LLD",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "follow the technical DfE standards",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

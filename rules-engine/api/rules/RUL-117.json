@@ -31,6 +31,14 @@
  "tasks": [
   "Book a private beta service assessment (ORR 14)"
  ],
+ "actions": [
+  {
+   "title": "Book a private beta service assessment (ORR 14)",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [
   "Service Standard"
  ],

@@ -23,6 +23,14 @@
  "tasks": [
   "Secret scanning MUST be enabled in the repository to ensure proactive detection and remediation of accidental secret exposure."
  ],
+ "actions": [
+  {
+   "title": "Secret scanning MUST be enabled in the repository to ensure proactive detection and remediation of accidental secret exposure.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "All repos and platform development",
  "guidance": "https://technical-guidance.education.gov.uk/standards/storing-source-code/",

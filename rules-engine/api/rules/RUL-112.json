@@ -32,6 +32,20 @@
   "SOM will include what needs to happen",
   "although, team can do it in a different format"
  ],
+ "actions": [
+  {
+   "title": "SOM will include what needs to happen",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "although, team can do it in a different format",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [
   "Service Standard 14"
  ],

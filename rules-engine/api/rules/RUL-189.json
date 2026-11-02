@@ -21,6 +21,14 @@
  "tasks": [
   "Any suspected breach, lost device, or accidental data exposure MUST be reported to CISD immediately to ensure a small incident does not beco"
  ],
+ "actions": [
+  {
+   "title": "Any suspected breach, lost device, or accidental data exposure MUST be reported to CISD immediately to ensure a small incident does not beco",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "Report a security incident",

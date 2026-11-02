@@ -38,6 +38,32 @@
   "Financial records",
   "Intellectual property"
  ],
+ "actions": [
+  {
+   "title": "Customer data",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Employee information",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Financial records",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Intellectual property",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/documenting-service-assets/",

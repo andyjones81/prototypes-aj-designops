@@ -31,6 +31,14 @@
  "tasks": [
   "Check and document if you need additional software licenses or SSL certificates (ORR 3)"
  ],
+ "actions": [
+  {
+   "title": "Check and document if you need additional software licenses or SSL certificates (ORR 3)",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "- SSL certificates",

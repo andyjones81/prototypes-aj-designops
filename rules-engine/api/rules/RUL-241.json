@@ -33,6 +33,14 @@
  "tasks": [
   "Have you identified and documented what security controls are available to reduce the likelihood of threat events?"
  ],
+ "actions": [
+  {
+   "title": "Have you identified and documented what security controls are available to reduce the likelihood of threat events?",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-threat-modelling/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP",

@@ -21,6 +21,14 @@
  "tasks": [
   "All services MUST have local incident response plans aligned to the CISD standard to ensure consistency in handling and escalating incidents"
  ],
+ "actions": [
+  {
+   "title": "All services MUST have local incident response plans aligned to the CISD standard to ensure consistency in handling and escalating incidents",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "policy-cyber-incident-response-management.docx\n\npolicy-information-security-exception.doc",

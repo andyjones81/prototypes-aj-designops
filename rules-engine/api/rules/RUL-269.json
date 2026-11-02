@@ -36,6 +36,14 @@
  "tasks": [
   "Are you considering requested changes as part of risk assessment and treatment activities?"
  ],
+ "actions": [
+  {
+   "title": "Are you considering requested changes as part of risk assessment and treatment activities?",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/evaluating-the-security-impact-of-changes/\n\nHow do I? - Change Enablement Policy Process and Procedure v1.05 - MyDfE",

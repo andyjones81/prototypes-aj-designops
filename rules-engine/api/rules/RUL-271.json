@@ -39,6 +39,32 @@
   "Identify the asset owner.",
   "Record what data the component holds or processes."
  ],
+ "actions": [
+  {
+   "title": "Maintain an up-to-date inventory of service assets.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Clearly identify the components scheduled for retirement.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Identify the asset owner.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Record what data the component holds or processes.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/retiring-service-components-securely/\n\n\n\nDfE Data Decommissioning Handbook.pdf",

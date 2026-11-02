@@ -38,6 +38,32 @@
   "Evidence of engagement with security teams.",
   "Plans for training if skills are missing."
  ],
+ "actions": [
+  {
+   "title": "A list of required security skills.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Which activities need those skills.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Evidence of engagement with security teams.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Plans for training if skills are missing.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/identifying-security-resources/",

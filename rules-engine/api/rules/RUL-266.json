@@ -36,6 +36,32 @@
   "how frequently they are reviewed",
   "which events require investigation"
  ],
+ "actions": [
+  {
+   "title": "which logs and alerts will be monitored",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "who is responsible for monitoring them",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "how frequently they are reviewed",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "which events require investigation",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-observability/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-audit-log-management.docx?d=wf21b346e355840cfbbb61487fb8f39de&csf=1&web=1&e=ekpmJ4",

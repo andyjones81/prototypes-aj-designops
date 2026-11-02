@@ -36,6 +36,32 @@
   "record actions and assign owners",
   "track significant issues through to resolution or formal risk acceptance"
  ],
+ "actions": [
+  {
+   "title": "assess the design against recognised security principles and patterns",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "identify any weaknesses, gaps or recommendations",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "record actions and assign owners",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "track significant issues through to resolution or formal risk acceptance",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-threat-modelling/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP",

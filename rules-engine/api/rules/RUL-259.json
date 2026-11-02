@@ -33,6 +33,14 @@
  "tasks": [
   "Do you have a documented process for identifying and responding to new vulnerabilities in your code, systems or supply chain?"
  ],
+ "actions": [
+  {
+   "title": "Do you have a documented process for identifying and responding to new vulnerabilities in your code, systems or supply chain?",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/implementing-a-vulnerability-management-process/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-vulnerability-management.docx?d=w6fef653e7774430a85e62302f2e28132&csf=1&web=1&e=kAWAnp",

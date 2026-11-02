@@ -36,6 +36,32 @@
   "Document what will be logged and why.",
   "Make sure appropriate systems/components generate the required information."
  ],
+ "actions": [
+  {
+   "title": "Identify the security events and information that need to be captured.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Link them to relevant service assets, risks and threats.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Document what will be logged and why.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Make sure appropriate systems/components generate the required information.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-observability/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-audit-log-management.docx?d=wf21b346e355840cfbbb61487fb8f39de&csf=1&web=1&e=ekpmJ4",

@@ -34,6 +34,32 @@
   "Security reviews",
   "Governance meeting outputs"
  ],
+ "actions": [
+  {
+   "title": "Compliance workshops",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Legal reviews",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Security reviews",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Governance meeting outputs",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",

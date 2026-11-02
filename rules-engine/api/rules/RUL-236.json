@@ -33,6 +33,14 @@
  "tasks": [
   "Have you obtained the organisation's overarching threat assessment (or completed your own if there is not one available)?"
  ],
+ "actions": [
+  {
+   "title": "Have you obtained the organisation's overarching threat assessment (or completed your own if there is not one available)?",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/sourcing-a-threat-assessment/",

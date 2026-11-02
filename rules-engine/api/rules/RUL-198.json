@@ -21,6 +21,14 @@
  "tasks": [
   "The use of End-of-Life software is PROHIBITED because it contains unpatchable flaws that are easy for hackers to compromise."
  ],
+ "actions": [
+  {
+   "title": "The use of End-of-Life software is PROHIBITED because it contains unpatchable flaws that are easy for hackers to compromise.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

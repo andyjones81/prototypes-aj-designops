@@ -21,6 +21,14 @@
  "tasks": [
   "Single Sign-On (SSO) MUST be used where possible to reduce password fatigue and simplify the adoption of MFA."
  ],
+ "actions": [
+  {
+   "title": "Single Sign-On (SSO) MUST be used where possible to reduce password fatigue and simplify the adoption of MFA.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

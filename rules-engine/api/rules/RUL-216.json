@@ -38,6 +38,32 @@
   "Where is the data hosted?",
   "What security certifications exist?"
  ],
+ "actions": [
+  {
+   "title": "What information will be stored?",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Who can access the environment?",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Where is the data hosted?",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "What security certifications exist?",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-third-party-product-security-risks/",

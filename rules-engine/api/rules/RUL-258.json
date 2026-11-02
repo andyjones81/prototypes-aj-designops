@@ -36,6 +36,32 @@
   "expected remediation timescales",
   "available remediation approaches"
  ],
+ "actions": [
+  {
+   "title": "how vulnerabilities are classified and scored",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "how priority is determined",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "expected remediation timescales",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "available remediation approaches",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/implementing-a-vulnerability-management-process/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-vulnerability-management.docx?d=w6fef653e7774430a85e62302f2e28132&csf=1&web=1&e=kAWAnp",

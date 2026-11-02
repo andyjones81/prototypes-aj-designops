@@ -38,6 +38,32 @@
   "Development and testing environments.",
   "Monitoring and detection capabilities."
  ],
+ "actions": [
+  {
+   "title": "Existing organisational security capabilities.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Additional tools required.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Development and testing environments.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Monitoring and detection capabilities.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/identifying-security-resources/\n\nhttps://educationgovuk.sharepoint.com/sites/security/SitePages/it-health-check-services.aspx",

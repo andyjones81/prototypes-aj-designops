@@ -36,6 +36,14 @@
  "tasks": [
   "Have you conducted a retirement risk assessment with an appropriate plan put together based on the classification and sensitivity of data?"
  ],
+ "actions": [
+  {
+   "title": "Have you conducted a retirement risk assessment with an appropriate plan put together based on the classification and sensitivity of data?",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/retiring-service-components-securely/",

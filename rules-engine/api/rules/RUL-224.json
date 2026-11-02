@@ -34,6 +34,32 @@
   "Contractual obligations",
   "Security classification requirements"
  ],
+ "actions": [
+  {
+   "title": "Ownership arrangements",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Licensing restrictions",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Contractual obligations",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Security classification requirements",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",

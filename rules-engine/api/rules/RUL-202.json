@@ -41,6 +41,32 @@
   "Costs of security controls were considered.",
   "Costs of security incidents or failures were considered."
  ],
+ "actions": [
+  {
+   "title": "Security was included in option appraisals.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Different security levels were assessed where appropriate.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Costs of security controls were considered.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Costs of security incidents or failures were considered.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/",

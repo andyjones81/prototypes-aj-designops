@@ -41,6 +41,32 @@
   "Risk management processes.",
   "Security assurance activities and reviews."
  ],
+ "actions": [
+  {
+   "title": "Security governance structure.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Security roles and responsibilities.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Risk management processes.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Security assurance activities and reviews.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/",

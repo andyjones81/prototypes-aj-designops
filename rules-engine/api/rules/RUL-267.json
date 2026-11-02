@@ -39,6 +39,32 @@
   "security impacts are assessed",
   "impacts on existing security controls are considered"
  ],
+ "actions": [
+  {
+   "title": "the scope and purpose of the change are documented",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "affected systems, components and data are identified",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "security impacts are assessed",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "impacts on existing security controls are considered",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/evaluating-the-security-impact-of-changes/\n\nHow do I? - Change Enablement Policy Process and Procedure v1.05 - MyDfE",

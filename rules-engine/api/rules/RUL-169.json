@@ -21,6 +21,14 @@
  "tasks": [
   "\"Default Encryption\" policies MUST be enabled on all Storage Accounts/S3/Blob storage to ensure sensitive data is not accidentally stored wi"
  ],
+ "actions": [
+  {
+   "title": "\"Default Encryption\" policies MUST be enabled on all Storage Accounts/S3/Blob storage to ensure sensitive data is not accidentally stored wi",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

@@ -36,6 +36,32 @@
   "Define what each likelihood, impact and severity rating means.",
   "Agree the scoring parameters with the appropriate risk/security stakeholders."
  ],
+ "actions": [
+  {
+   "title": "Identify the organisation's existing risk scoring framework.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Use the same scales or establish a clear mapping between the security risk scale and organisational scale.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Define what each likelihood, impact and severity rating means.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Agree the scoring parameters with the appropriate risk/security stakeholders.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/",

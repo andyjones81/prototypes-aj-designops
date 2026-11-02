@@ -39,6 +39,32 @@
   "Prevent relevant changes from being merged/deployed until required reviews are complete.",
   "Include security considerations in review criteria where appropriate."
  ],
+ "actions": [
+  {
+   "title": "Define when code review is required.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Require an appropriate independent reviewer.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Prevent relevant changes from being merged/deployed until required reviews are complete.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Include security considerations in review criteria where appropriate.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/",

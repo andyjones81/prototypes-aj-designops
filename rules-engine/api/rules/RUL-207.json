@@ -38,6 +38,32 @@
   "Assessed whether approved architectures meet project needs.",
   "Documented any decision to deviate from established patterns."
  ],
+ "actions": [
+  {
+   "title": "Reviewed relevant organisational standards.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Considered existing government patterns and frameworks.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Assessed whether approved architectures meet project needs.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Documented any decision to deviate from established patterns.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/identifying-security-resources/",

@@ -34,6 +34,32 @@
   "Government policies",
   "Standards"
  ],
+ "actions": [
+  {
+   "title": "Applicable laws",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Regulations",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Government policies",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Standards",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",

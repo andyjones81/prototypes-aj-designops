@@ -38,6 +38,32 @@
   "Incident response capabilities",
   "Personnel vetting"
  ],
+ "actions": [
+  {
+   "title": "Supplier security maturity",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Access management controls",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Incident response capabilities",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  },
+  {
+   "title": "Personnel vetting",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-third-party-product-security-risks/\n\nhttps://educationgovuk.sharepoint.com/sites/security/SitePages/procurement-suppliers.aspx\n\nBusiness Continuity Home",

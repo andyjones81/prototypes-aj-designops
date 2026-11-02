@@ -33,6 +33,14 @@
  "tasks": [
   "Have you considered whether the service is part of the Critical National Infrastructure (CNI) or fundamental to the organisation's output an"
  ],
+ "actions": [
+  {
+   "title": "Have you considered whether the service is part of the Critical National Infrastructure (CNI) or fundamental to the organisation's output an",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/",

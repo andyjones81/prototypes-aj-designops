@@ -21,6 +21,14 @@
  "tasks": [
   "All staff MUST complete Security Awareness training annually because staff are the best defence against human error."
  ],
+ "actions": [
+  {
+   "title": "All staff MUST complete Security Awareness training annually because staff are the best defence against human error.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

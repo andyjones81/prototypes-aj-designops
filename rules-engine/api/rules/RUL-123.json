@@ -31,6 +31,14 @@
  "tasks": [
   "Follow the supplier assurance process (ORR 17)"
  ],
+ "actions": [
+  {
+   "title": "Follow the supplier assurance process (ORR 17)",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

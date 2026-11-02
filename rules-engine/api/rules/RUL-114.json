@@ -31,6 +31,14 @@
  "tasks": [
   "If you are processing information, register on Information Asset Database (IAR) (ORR 13)"
  ],
+ "actions": [
+  {
+   "title": "If you are processing information, register on Information Asset Database (IAR) (ORR 13)",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://educationgovuk.sharepoint.com/sites/manage-information/SitePages/managing-information-assets.aspx?web=1",

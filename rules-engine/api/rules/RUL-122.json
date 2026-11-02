@@ -33,6 +33,14 @@
  "tasks": [
   "Consider identity and access management for your service (ORR 16)"
  ],
+ "actions": [
+  {
+   "title": "Consider identity and access management for your service (ORR 16)",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [
   "Identity Management B2B,Identity Management B2C,Identity Management B2E"
  ],

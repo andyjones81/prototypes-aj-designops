@@ -21,6 +21,14 @@
  "tasks": [
   "All data repositories (S3, Blob, SQL, SharePoint) MUST be classified to ensure effective data defence."
  ],
+ "actions": [
+  {
+   "title": "All data repositories (S3, Blob, SQL, SharePoint) MUST be classified to ensure effective data defence.",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "",

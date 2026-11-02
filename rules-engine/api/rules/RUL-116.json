@@ -31,6 +31,14 @@
  "tasks": [
   "Book an alpha service assessment (ORR 14)"
  ],
+ "actions": [
+  {
+   "title": "Book an alpha service assessment (ORR 14)",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [
   "Service Standard"
  ],

@@ -35,6 +35,14 @@
  "tasks": [
   "Have you appointed a Senior Responsible Owner (SRO), service owner or equivalent, and informed the individual of their responsibilities?"
  ],
+ "actions": [
+  {
+   "title": "Have you appointed a Senior Responsible Owner (SRO), service owner or equivalent, and informed the individual of their responsibilities?",
+   "description": "",
+   "evidence": "",
+   "legal": false
+  }
+ ],
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-roles-and-responsibilities/",
