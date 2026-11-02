@@ -170,7 +170,29 @@ function recordTrigger(work, event, changes, result, def) {
 function seed() {
   S = { seq: {}, works: [], rules: [], actions: [], triggers: [] };
   seedTriggerDefs();
+  const SEED_ACT = {
+    'Book assessment slot': ['Book a slot with the service assessment team.', 'Booking confirmation or calendar invite.', false],
+    'Prepare service assessment pack': ['Pull together the evidence and artefacts the panel asks for.', 'Link to the completed assessment pack.', false],
+    'Complete assessment and record outcome': ['Attend the assessment and record the panel outcome.', 'Assessment report with the outcome.', false],
+    'Complete screener': ['Answer the DPIA high risk screener questions.', 'Completed screener form.', true],
+    'Data Protection Officer review': ['The DPO reviews the screener and advises on a full DPIA.', 'DPO sign-off or advice note.', true],
+    'Enrol service': ['Enrol the service in the Accessibility Issues and Statement Service.', 'Enrolment confirmation.', true],
+    'Publish accessibility statement': ['Publish an accessibility statement on the live service.', 'Link to the published statement.', true],
+    'Safeguarding review': ['Review safeguarding risks for children, parents and carers.', 'Safeguarding review record.', false],
+    'Agree user research plan': ['Agree an inclusive research plan with the safeguarding team.', 'Approved research plan.', false],
+    'Confirm route to market': ['Confirm the procurement route.', 'Route to market decision record.', false],
+    'Commercial approval': ['Get commercial sign-off to proceed.', 'Approval email or record.', false],
+    'Cost and resource sign off': ['Agree costs and resourcing.', 'Signed-off cost and resource plan.', false],
+    'Register API in catalogue': ['Register the API in the API catalogue.', 'Catalogue entry link.', false],
+    'Architecture review': ['Review the design against the API standards.', 'Architecture review outcome.', false],
+    'Data retention decision': ['Decide what data is kept, archived or deleted.', 'Retention decision record.', true],
+    'User communications': ['Tell users the service is closing.', 'Copy of the communications sent.', false],
+    'Archive records': ['Archive records in line with the retention decision.', 'Archive confirmation.', true],
+    'Prepare risk summary': ['Summarise the risks and impact for the board.', 'Risk summary paper.', false],
+    'Present to board': ['Present the work to the assurance board.', 'Board minute or decision.', false]
+  };
   const R = (name, source, conditions, title, desc, tasks) => S.rules.push(normRule({
+    actions: tasks.map((t) => ({ title: t, description: (SEED_ACT[t] || [])[0] || '', evidence: (SEED_ACT[t] || [])[1] || '', legal: !!(SEED_ACT[t] || [])[2] })),
     id: uid('RUL'), name, source, owner: SEED_OWNER[name] || '', kind: 'Policy', mandatory: 'Must have', conditions, requirementTitle: title, requirementDescription: desc, tasks
   }));
   R('Service assessment for high volume transactional services', 'GDS Service Standard',
@@ -329,29 +351,6 @@ function actionRow(a, showWork) {
 }
 const actionTable = (list, showWork) => '<table class="govuk-table compact"><thead class="govuk-table__head"><tr class="govuk-table__row"><th scope="col" class="govuk-table__header">Action</th><th scope="col" class="govuk-table__header">Evidence</th><th scope="col" class="govuk-table__header">Status</th></tr></thead><tbody class="govuk-table__body">' + list.map((a) => actionRow(a, showWork)).join('') + '</tbody></table>';
 
-function vWorkDetail(id) {
-  const w = S.works.find((x) => x.id === id); if (!w) return notFound();
-  const active = S.actions.filter((a) => a.workId === id && isActive(a));
-  const trig = S.triggers.filter((t) => t.workId === id);
-  const summary = Object.keys(FIELDS).map((k) => '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">' + FIELDS[k].label + '</dt><dd class="govuk-summary-list__value">' + esc(fieldVal(w, k)) + '</dd><dd class="govuk-summary-list__actions"><a class="govuk-link" href="#/work/' + w.id + '/edit">Change<span class="govuk-visually-hidden"> ' + FIELDS[k].label.toLowerCase() + '</span></a></dd></div>').join('');
-  const p = workPct(id);
-  const groups = reqGroups(id).map((g) => {
-    const r = ruleOf(g.ruleId), done = g.actions.filter((a) => a.status === 'Complete').length, fid = 'newaction-' + (g.ruleId || 'x');
-    return '<section class="req"><div class="req-head"><h3 class="req-title">' + (g.ruleId ? ruleChip(g.ruleId) + ' ' : '') + esc(g.title) + '</h3><span class="muted">' + done + ' of ' + g.actions.length + ' actions complete</span></div>' +
-      (r ? '<p class="muted req-src">' + esc(r.source) + '</p>' : '') + actionTable(g.actions) +
-      (g.ruleId ? '<form class="addrow" id="' + fid + '-form" data-form="action" data-work="' + id + '" data-rule="' + esc(g.ruleId) + '" novalidate><div class="' + grp(fid) + '"><label class="govuk-visually-hidden" for="' + fid + '">Add an action to ' + esc(g.title) + '</label>' + errMsg(fid, fid) +
-        '<input class="govuk-input' + (ERR[fid] ? ' govuk-input--error' : '') + '" id="' + fid + '" name="newaction" placeholder="Add an action to this requirement"' + describedBy(fid, fid) + '></div><button class="govuk-button govuk-button--secondary" type="submit" data-module="govuk-button">Add action</button></form>' : '') + '</section>';
-  }).join('');
-  const retired = reqGroups(id, true).map((g) => ({ g, list: g.actions.filter((a) => !isActive(a)) })).filter((x) => x.list.length);
-  const retiredCount = retired.reduce((n, x) => n + x.list.length, 0);
-  return banner() + '<a href="#/work" class="govuk-back-link">Back to work</a>' + errorSummary() +
-    '<span class="govuk-caption-m">' + w.id + '</span>' + pageHead(esc(w.title), esc(w.description), btn('#/work/' + w.id + '/categories', 'Change categories') + btn('#/work/' + w.id + '/edit', 'Edit details', true)) +
-    '<div class="stats"><div class="stat"><span class="stat-n">' + p + '%</span><span class="stat-l">Actions complete</span></div><div class="stat"><span class="stat-n">' + active.filter(isOpen).length + '</span><span class="stat-l">Open actions</span></div><div class="stat"><span class="stat-n">' + active.filter((a) => a.status === 'Complete').length + '</span><span class="stat-l">Completed</span></div><div class="stat"><span class="stat-n">' + trig.length + '</span><span class="stat-l">Triggers</span></div></div>' +
-    '<div class="two-col"><section><h2 class="govuk-heading-m">Requirements and actions</h2>' + (groups || '<p class="govuk-body">No requirements apply to this work yet.</p>') +
-    (retiredCount ? '<details class="govuk-details"><summary class="govuk-details__summary"><span class="govuk-details__summary-text">' + retiredCount + ' no longer required</span></summary><div class="govuk-details__text">' + retired.map((x) => '<p class="govuk-body-s"><strong>' + esc(x.g.title) + '</strong></p>' + actionTable(x.list)).join('') + '</div></details>' : '') +
-    '<h2 class="govuk-heading-m">Trigger history</h2>' + triggerList(trig) + '</section>' +
-    '<aside><div class="panel"><h2 class="govuk-heading-s">Categorisation</h2><dl class="govuk-summary-list govuk-summary-list--compact">' + summary + '</dl></div></aside></div>';
-}
 
 function vWorkForm(id) {
   const isNew = id === 'new';
@@ -537,27 +536,6 @@ function vDashboard() {
     '<aside class="panel"><h2 class="govuk-heading-s">Latest triggers</h2>' + triggerList(S.triggers.slice(0, 3)) + '<p class="govuk-body-s"><a class="govuk-link" href="#/triggers">All triggers</a></p></aside></div>';
 }
 
-function vActionDetail(id) {
-  const a = S.actions.find((x) => x.id === id); if (!a) return notFound();
-  const log = a.updates.slice().reverse().map((u) => '<div class="log-entry ' + u.type + '"><p class="govuk-body-s govuk-!-margin-bottom-1">' + fmt(u.at) + ' · ' + tag(u.type, 'govuk-tag--grey') + '</p><p class="govuk-body govuk-!-margin-bottom-1">' + esc(u.text) + '</p>' +
-    (u.link ? '<p class="govuk-body-s"><a class="govuk-link" href="' + esc(u.link) + '" target="_blank" rel="noopener noreferrer">' + esc(u.link) + '</a></p>' : '') + '</div>').join('');
-  const rule = ruleOf(a.ruleId);
-  const sibs = S.actions.filter((x) => x.workId === a.workId && x.ruleId === a.ruleId && x.id !== a.id && isActive(x));
-  return banner() + '<a href="#/work/' + a.workId + '" class="govuk-back-link">Back to ' + esc(workName(a.workId)) + '</a>' + errorSummary() +
-    '<span class="govuk-caption-m">' + a.id + ' · <a class="govuk-link" href="#/work/' + a.workId + '">' + esc(workName(a.workId)) + '</a></span>' +
-    '<h1 class="govuk-heading-l">' + esc(a.title) + '</h1><p>' + statusTag(a.status) + ' ' + evBadge(a) + ' ' + legalTag(actDef(a)) + '</p>' +
-    '<dl class="govuk-summary-list govuk-summary-list--no-border"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">What this involves</dt><dd class="govuk-summary-list__value">' + (actDef(a).description ? esc(actDef(a).description) : '<span class="muted">Not yet described.</span>') + '</dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Expected evidence</dt><dd class="govuk-summary-list__value">' + (actDef(a).evidence ? esc(actDef(a).evidence) : '<span class="muted">Not yet defined.</span>') + '</dd></div></dl>' +
-    '<div class="two-col"><section><h2 class="govuk-heading-m">Record an update</h2><p class="govuk-body-s muted">Evidence, decisions and exceptions are recorded against this action only.</p>' +
-    '<form id="update-form" data-id="' + a.id + '" novalidate>' +
-    select('type', 'utype', ['Note', 'Evidence', 'Decision', 'Exception'], 'Note', 'Type of update').replace('<option value="">Select</option>', '') +
-    text('text', 'utext', '', 'Details', { area: true, rows: 3 }) +
-    text('link', 'ulink', '', 'Link to evidence (optional)', { type: 'url', hint: 'For example a link to a document, ticket or decision record.' }) +
-    select('status', 'ustatus', STATUSES, a.status, 'Status').replace('<option value="">Select</option>', '') +
-    '<button class="govuk-button" type="submit" data-module="govuk-button" data-prevent-double-click="true">Save update</button></form>' +
-    '<h2 class="govuk-heading-m">History</h2>' + log + '</section>' +
-    '<aside class="panel"><h2 class="govuk-heading-s">Requirement</h2>' + (rule ? '<p class="govuk-body-s">' + ruleChip(rule.id) + ' ' + esc(rule.requirementTitle) + '</p><p class="govuk-body-s muted">' + esc(rule.requirementDescription) + '<br>Source: ' + esc(rule.source) + '</p>' : '<p class="govuk-body-s">Not linked to a rule.</p>') +
-    (sibs.length ? '<h3 class="govuk-heading-s">Other actions for this requirement</h3><ul class="govuk-list govuk-body-s">' + sibs.map((s) => '<li><a class="govuk-link" href="#/actions/' + s.id + '">' + esc(s.title) + '</a> ' + statusTag(s.status) + '</li>').join('') + '</ul>' : '') + '</aside></div>';
-}
 function notFound() { return '<h1 class="govuk-heading-l">Page not found</h1><p class="govuk-body"><a class="govuk-link" href="#/work">Go to work</a></p>'; }
 
 /* ---------- Router ---------- */
@@ -758,7 +736,7 @@ document.addEventListener('click', (e) => {
 function ruleInfo(id) {
   const r = S.rules.find((x) => x.id === id), d = document.getElementById('rule-dialog'); if (!r || !d) return;
   const apps = S.works.filter((w) => ruleMatches(w, r));
-  d.innerHTML = '<div class="dlg-head"><div><span class="rule-chip rule-chip--static">' + esc(r.id) + '</span> ' + statusRule(r) + ' ' + tag('Version ' + r.version, 'govuk-tag--blue') +
+  d.className = 'rule-dialog'; d.innerHTML = '<div class="dlg-head"><div><span class="rule-chip rule-chip--static">' + esc(r.id) + '</span> ' + statusRule(r) + ' ' + tag('Version ' + r.version, 'govuk-tag--blue') +
     '<h2 class="govuk-heading-l" id="rule-dialog-title">' + esc(r.name) + '</h2><p class="govuk-body-s">Source: ' + esc(r.source) + '<br>Owner: ' + (r.owner ? esc(r.owner) + ' (' + (OWNER_TYPE(r.owner) || 'owner').toLowerCase() + ')' : 'Unassigned') + '</p></div><button type="button" class="dlg-x" data-act="dialog-close" aria-label="Close">&times;</button></div>' +
     '<h3 class="govuk-heading-s">When</h3><ul class="govuk-list govuk-list--bullet">' + r.conditions.map((c) => '<li>' + esc(condText(c)) + '</li>').join('') + '</ul>' +
     '<h3 class="govuk-heading-s">Requirement returned</h3><p class="govuk-body"><strong>' + esc(r.requirementTitle) + '</strong><br>' + esc(r.requirementDescription || '') + '</p>' +
@@ -777,7 +755,7 @@ function workFromForm(form, base) {
     transactional: d.transactional || 'No', estTransactions: (d.estTransactions || '').trim(), personalData: d.personalData || 'No', priority: d.priority || '', risk: d.risk || '' });
 }
 function ruleLine(r) {
-  return '<li>' + ruleChip(r.id) + ' <a class="govuk-link" href="#/rules/' + r.id + '">' + esc(r.requirementTitle) + '</a> <span class="muted">v' + r.version + ' · ' + r.actions.length + ' action' + (r.actions.length === 1 ? '' : 's') + '</span></li>';
+  return '<li><span class="rule-chip rule-chip--static">' + esc(r.id) + '</span> ' + esc(r.requirementTitle) + ' <span class="muted">v' + r.version + ' · ' + r.actions.length + ' action' + (r.actions.length === 1 ? '' : 's') + '</span></li>';
 }
 function listCap(list, fn, n) {
   return '<ul class="govuk-list">' + list.slice(0, n).map(fn).join('') + '</ul>' + (list.length > n ? '<p class="govuk-body-s muted">and ' + (list.length - n) + ' more</p>' : '');
@@ -813,7 +791,7 @@ function vWorkCats(id) {
 }
 function previewCats(form) {
   const w = S.works.find((x) => x.id === form.dataset.id), el = document.getElementById('cat-preview');
-  if (w && el) el.innerHTML = catsPreviewHtml(w, workFromForm(form, w));
+  if (w && el) el.innerHTML = catsPreviewHtml(w, form.dataset.fields ? catsFromForm(form, w) : workFromForm(form, w));
 }
 
 /* ---------- Rule version history ---------- */
@@ -975,6 +953,154 @@ document.addEventListener('click', (e) => {
     if (rdef) S.works.forEach((w) => { const res = runEngine(w, 'Rule ' + r.id + ' v' + r.version + ' restored from v' + v.v + '.'); if (res.added.length || res.withdrawn.length || res.reinstated.length) { recordTrigger(w, 'Rule changed: ' + r.name + ' (v' + r.version + ')', [], res, rdef); n++; } });
     save(); flash = { title: 'Success', html: '<p class="govuk-notification-banner__heading">Version ' + v.v + ' restored as version ' + r.version + '. Requirements changed for ' + n + ' work item' + (n === 1 ? '' : 's') + '.</p>' };
     go('#/rules/' + r.id + '/history');
+  }
+});
+
+/* ---------- Modals ---------- */
+function openModal(html, cls) {
+  const d = document.getElementById('rule-dialog'); if (!d) return;
+  d.className = 'rule-dialog' + (cls ? ' ' + cls : ''); d.innerHTML = html;
+  if (d.showModal) d.showModal(); else d.setAttribute('open', '');
+  if (window.govukInit) window.govukInit(d);
+}
+const modalHead = (cap, title) => '<div class="dlg-head"><div><span class="govuk-caption-m">' + esc(cap) + '</span><h2 class="govuk-heading-l govuk-!-margin-bottom-0" id="rule-dialog-title">' + esc(title) + '</h2></div><button type="button" class="dlg-x" data-act="dialog-close" aria-label="Close">&times;</button></div>';
+
+/* ---------- Work: change categories in a modal with a live rules preview ---------- */
+const CAT_GROUPS = { stage: ['stage'], type: ['type'], demand: ['demand'], characteristics: ['characteristics'], channel: ['channel'], users: ['users'], transactional: ['transactional', 'estTransactions'], estTransactions: ['transactional', 'estTransactions'], personalData: ['personalData'], priority: ['priority'], risk: ['risk'] };
+function catControl(k, w) {
+  const f = FIELDS[k];
+  if (k === 'estTransactions') return text(k, 'est', w[k], f.label, { cls: 'govuk-input--width-10', type: 'number' });
+  if (f.kind === 'single') return select(k, k, f.options, w[k], f.label);
+  if (f.kind === 'multi') return checks(k, f.options, w[k], f.label);
+  return radios(k, f.options, w[k], f.label);
+}
+function catsFromForm(form, w) {
+  const fd = new FormData(form), o = Object.assign({}, w);
+  (form.dataset.fields || '').split(',').filter(Boolean).forEach((k) => { o[k] = FIELDS[k].kind === 'multi' ? fd.getAll(k) : (fd.get(k) || ''); });
+  o.estTransactions = String(o.estTransactions == null ? '' : o.estTransactions).trim();
+  return o;
+}
+function openCats(id, field) {
+  const w = S.works.find((x) => x.id === id); if (!w) return;
+  const keys = field ? CAT_GROUPS[field] : Object.keys(FIELDS);
+  openModal(modalHead(w.id + ' · ' + w.title, field ? 'Change ' + FIELDS[field].label.toLowerCase() : 'Change categories') +
+    '<p class="govuk-body">The rules engine runs as soon as you apply the change. The result below updates as you choose.</p>' +
+    '<form id="cats-form" data-id="' + id + '" data-fields="' + keys.join(',') + '" data-mode="cats" novalidate>' + keys.map((k) => catControl(k, w)).join('') +
+    '<div class="panel preview" id="cat-preview" aria-live="polite">' + catsPreviewHtml(w, w) + '</div><div id="cats-err" role="alert"></div>' +
+    '<div class="govuk-button-group"><button class="govuk-button" type="submit" data-module="govuk-button" data-prevent-double-click="true">Apply and run rules</button><button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="dialog-close">Cancel</button></div></form>', 'wide');
+}
+function applyCats(form) {
+  const w = S.works.find((x) => x.id === form.dataset.id), d = catsFromForm(form, w), changes = diffWork(w, d), err = document.getElementById('cats-err');
+  const bad = (m) => { err.innerHTML = '<p class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> ' + esc(m) + '</p>'; };
+  if (!changes.length) { closeDialog(); return; }
+  if (!d.stage || !d.type || !d.demand) return bad('Stage, type of work and work source cannot be left blank');
+  if (d.estTransactions && !/^\d+$/.test(d.estTransactions)) return bad('Estimated transactions must be a whole number, like 250000');
+  if (d.transactional === 'Yes' && !d.estTransactions) return bad('Enter the estimated transactions per year for a transactional service');
+  Object.assign(w, { stage: d.stage, type: d.type, demand: d.demand, characteristics: d.characteristics, channel: d.channel, users: d.users, transactional: d.transactional, estTransactions: d.estTransactions, personalData: d.personalData, priority: d.priority, risk: d.risk });
+  const def = firingDef(changes, false), empty = { added: [], withdrawn: [], reinstated: [], fired: [] };
+  const result = def ? runEngine(w, 'Triggered by categorisation change.') : empty;
+  recordTrigger(w, def ? 'Categorisation changed' : 'Categorisation changed, but no enabled trigger watches these fields', changes, result, def);
+  save();
+  const li = (l, label) => l.length ? '<li>' + label + ': ' + l.map((a) => '<a class="govuk-notification-banner__link" href="#/actions/' + a.id + '">' + esc(a.title) + '</a>').join(', ') + '</li>' : '';
+  flash = { title: 'Success', html: '<p class="govuk-notification-banner__heading">' + (def ? changes.length + ' change' + (changes.length > 1 ? 's' : '') + ' saved and the rules engine ran (' + esc(def.name) + ').' : 'Saved. No enabled trigger watches the fields you changed, so the rules engine did not run.') + '</p><ul class="govuk-list govuk-list--bullet">' +
+    (li(result.added, 'New actions') + li(result.reinstated, 'Reinstated') + li(result.withdrawn, 'No longer required') || '<li>No action changes.</li>') + '</ul>' };
+  closeDialog(); rerender();
+}
+
+/* ---------- Work detail ---------- */
+function actRow(a) {
+  const d = actDef(a);
+  return '<li class="arow"><span class="arow-s">' + statusTag(a.status) + '</span><div class="arow-m"><a class="govuk-link govuk-link--no-visited-state" href="#/actions/' + a.id + '">' + esc(a.title) + '</a><span class="arow-meta">' + (d.legal ? tag('Legal', 'govuk-tag--red') + ' ' : '') + evBadge(a) + ' <span class="muted">' + a.id + '</span></span></div>' +
+    '<a class="govuk-link arow-go" href="#/actions/' + a.id + '">' + (isActive(a) ? 'Record activity' : 'View') + '<span class="govuk-visually-hidden"> for ' + esc(a.title) + '</span></a></li>';
+}
+function vWorkDetail(id) {
+  const w = S.works.find((x) => x.id === id); if (!w) return notFound();
+  const active = S.actions.filter((a) => a.workId === id && isActive(a)), p = workPct(id);
+  const legalOpen = active.filter((a) => actDef(a).legal && isOpen(a)).length, exc = active.filter((a) => a.status === 'Exception').length;
+  const trig = S.triggers.filter((t) => t.workId === id);
+  const cats = Object.keys(FIELDS).map((k) => '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">' + FIELDS[k].label + '</dt><dd class="govuk-summary-list__value">' + esc(fieldVal(w, k)) + '</dd><dd class="govuk-summary-list__actions"><button type="button" class="link-btn" data-act="cats-open" data-id="' + w.id + '" data-field="' + k + '">Change<span class="govuk-visually-hidden"> ' + FIELDS[k].label.toLowerCase() + '</span></button></dd></div>').join('');
+  const groups = reqGroups(id).map((g) => {
+    const r = ruleOf(g.ruleId), done = g.actions.filter((a) => a.status === 'Complete').length, open = g.actions.some(isOpen), pc = Math.round(done / g.actions.length * 100);
+    return '<details class="req2"' + (open ? ' open' : '') + '><summary class="req2-head"><span class="req2-t">' + esc(g.title) + '</span><span class="req2-c">' + (g.ruleId ? '<span class="rule-chip rule-chip--static">' + esc(g.ruleId) + '</span> ' : '') + done + ' of ' + g.actions.length + ' complete</span></summary>' +
+      bar(pc, pc + '% of this requirement complete') + (r ? '<p class="govuk-body-s muted req2-src">' + esc(r.source) + (r.mandatory ? ' · ' + esc(r.mandatory) : '') + ' · <button type="button" class="link-btn" data-act="rule-info" data-id="' + esc(r.id) + '">Rule details</button></p>' : '') +
+      '<ul class="alist">' + g.actions.map(actRow).join('') + '</ul></details>';
+  }).join('');
+  const retired = S.actions.filter((a) => a.workId === id && !isActive(a));
+  return banner() + '<a href="#/work" class="govuk-back-link">Back to work</a>' + errorSummary() +
+    '<span class="govuk-caption-m">' + w.id + '</span>' + pageHead(esc(w.title) + ' ' + tag(w.stage, 'govuk-tag--blue'), esc(w.description), '<button type="button" class="govuk-button" data-module="govuk-button" data-act="cats-open" data-id="' + w.id + '">Change categories</button>' + btn('#/work/' + w.id + '/edit', 'Edit details', true)) +
+    '<div class="stats"><div class="stat"><span class="stat-n">' + p + '%</span><span class="stat-l">Complete</span></div><div class="stat"><span class="stat-n">' + active.filter(isOpen).length + '</span><span class="stat-l">Open actions</span></div><div class="stat' + (legalOpen ? ' stat--warn' : '') + '"><span class="stat-n">' + legalOpen + '</span><span class="stat-l">Legal actions open</span></div><div class="stat"><span class="stat-n">' + exc + '</span><span class="stat-l">Exceptions</span></div></div>' +
+    '<div class="two-col"><section><h2 class="govuk-heading-m">Actions to complete</h2><p class="govuk-body-s muted">Open an action to record activity and evidence against it.</p>' + (groups || '<p class="govuk-body">No requirements apply to this work yet.</p>') +
+    (retired.length ? '<details class="govuk-details"><summary class="govuk-details__summary"><span class="govuk-details__summary-text">' + retired.length + ' no longer required</span></summary><div class="govuk-details__text"><ul class="alist">' + retired.map(actRow).join('') + '</ul></div></details>' : '') + '</section>' +
+    '<aside><div class="panel"><h2 class="govuk-heading-s">Categories</h2><dl class="govuk-summary-list govuk-summary-list--compact">' + cats + '</dl></div>' +
+    '<h2 class="govuk-heading-s govuk-!-margin-top-6">Recent triggers</h2>' + (trig.length ? triggerList(trig.slice(0, 3)) + (trig.length > 3 ? '<p class="govuk-body-s"><a class="govuk-link" href="#/triggers">All triggers</a></p>' : '') : '<p class="govuk-body-s muted">None yet.</p>') + '</aside></div>';
+}
+
+/* ---------- Action detail: evidence and activity ---------- */
+const ACT_TYPES = [['evidence', 'Evidence', 'A document, link or output that shows the action is done'], ['note', 'Note', 'A progress update'], ['decision', 'Decision', 'A decision made about this action'], ['exception', 'Exception', 'The action cannot be met as written']];
+function vActionDetail(id) {
+  const a = S.actions.find((x) => x.id === id); if (!a) return notFound();
+  const rule = ruleOf(a.ruleId), d = actDef(a), w = S.works.find((x) => x.id === a.workId);
+  const ev = a.updates.filter((u) => u.type === 'evidence').slice().reverse();
+  const rest = a.updates.slice().reverse();
+  const sibs = S.actions.filter((x) => x.workId === a.workId && x.ruleId === a.ruleId && x.id !== a.id && isActive(x));
+  const evItem = (u) => '<li class="evi"><p class="govuk-body-s muted govuk-!-margin-bottom-1">' + fmt(u.at) + '</p>' + (u.text ? '<p class="govuk-body govuk-!-margin-bottom-1">' + esc(u.text) + '</p>' : '') +
+    (u.link ? '<p class="govuk-body-s govuk-!-margin-bottom-0"><a class="govuk-link" href="' + esc(u.link) + '" target="_blank" rel="noopener noreferrer">' + esc(u.link) + ' (opens in new tab)</a></p>' : '') + '</li>';
+  const tl = (u) => '<li class="tl tl--' + u.type + '"><p class="govuk-body-s govuk-!-margin-bottom-1"><strong>' + esc(u.type === 'system' ? 'System' : u.type.charAt(0).toUpperCase() + u.type.slice(1)) + '</strong> <span class="muted">' + fmt(u.at) + '</span></p><p class="govuk-body-s govuk-!-margin-bottom-0">' + esc(u.text || '') + (u.link ? ' <a class="govuk-link" href="' + esc(u.link) + '" target="_blank" rel="noopener noreferrer">Link</a>' : '') + '</p></li>';
+  const act = isActive(a);
+  return banner() + '<a href="#/work/' + a.workId + '" class="govuk-back-link">Back to ' + esc(workName(a.workId)) + '</a>' +
+    '<span class="govuk-caption-m">' + a.id + ' · <a class="govuk-link" href="#/work/' + a.workId + '">' + esc(workName(a.workId)) + '</a>' + (w ? ' · ' + esc(w.stage) : '') + '</span>' +
+    pageHead(esc(a.title), statusTag(a.status) + ' ' + legalTag(d) + (a.ruleVersion ? ' <span class="muted">Rule ' + esc(a.ruleId) + ' v' + a.ruleVersion + '</span>' : ''),
+      act ? '<button type="button" class="govuk-button" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="evidence">Add evidence</button><button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="note">Add note or update status</button>' : '') +
+    '<div class="two-col"><section>' +
+    '<h2 class="govuk-heading-m">About this action</h2><dl class="govuk-summary-list"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">What this involves</dt><dd class="govuk-summary-list__value">' + (d.description ? esc(d.description) : '<span class="muted">Not yet described.</span>') + '</dd></div>' +
+    '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Expected evidence</dt><dd class="govuk-summary-list__value">' + (d.evidence ? esc(d.evidence) : '<span class="muted">Not yet defined.</span>') + '</dd></div>' +
+    '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Requirement</dt><dd class="govuk-summary-list__value">' + (rule ? esc(rule.requirementTitle) + '<br><span class="muted">' + esc(rule.source) + '</span>' : 'Not linked to a rule') + '</dd></div></dl>' +
+    '<h2 class="govuk-heading-m">Evidence <span class="muted">(' + ev.length + ')</span></h2>' +
+    (ev.length ? '<ul class="evlist">' + ev.map(evItem).join('') + '</ul>' : '<div class="govuk-inset-text">No evidence recorded yet.' + (d.evidence ? ' Expected: ' + esc(d.evidence) : '') + (d.legal ? ' This is a legal requirement, so evidence is needed before it can be completed.' : '') + '</div>') +
+    '<h2 class="govuk-heading-m">Activity</h2><ol class="tlist">' + rest.map(tl).join('') + '</ol></section>' +
+    '<aside><div class="panel"><h2 class="govuk-heading-s">Status</h2><ol class="steps">' + STATUSES.filter((s) => s !== 'No longer required' || a.status === s).map((s) => '<li class="' + (s === a.status ? 'on' : '') + '">' + esc(s) + '</li>').join('') + '</ol></div>' +
+    (sibs.length ? '<h2 class="govuk-heading-s govuk-!-margin-top-6">Other actions for this requirement</h2><ul class="govuk-list govuk-body-s">' + sibs.map((s) => '<li><a class="govuk-link" href="#/actions/' + s.id + '">' + esc(s.title) + '</a> ' + statusTag(s.status) + '</li>').join('') + '</ul>' : '') + '</aside></div>';
+}
+function openActivity(id, type) {
+  const a = S.actions.find((x) => x.id === id); if (!a) return;
+  openModal(modalHead(a.id + ' · ' + a.title, 'Record activity') +
+    '<form id="activity-form" data-id="' + id + '" novalidate><div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s">What are you recording?</legend><div class="govuk-radios govuk-radios--small" data-module="govuk-radios">' +
+    ACT_TYPES.map((t) => '<div class="govuk-radios__item"><input class="govuk-radios__input" id="at-' + t[0] + '" name="type" type="radio" value="' + t[0] + '"' + (t[0] === type ? ' checked' : '') + ' data-act="act-type"><label class="govuk-label govuk-radios__label" for="at-' + t[0] + '">' + t[1] + '</label><div class="govuk-hint govuk-radios__hint">' + t[2] + '</div></div>').join('') + '</div></fieldset></div>' +
+    '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="a-text">Details</label><textarea class="govuk-textarea" id="a-text" name="text" rows="3"></textarea></div>' +
+    '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="a-link">Link (optional)</label><div class="govuk-hint">For example a document, ticket or decision record.</div><input class="govuk-input" id="a-link" name="link" type="url" inputmode="url"></div>' +
+    '<div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Status after this update</legend><div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">' +
+    STATUSES.filter((s) => s !== 'No longer required').map((s, i) => '<div class="govuk-radios__item"><input class="govuk-radios__input" id="as-' + i + '" name="status" type="radio" value="' + s + '"' + (s === a.status ? ' checked' : '') + '><label class="govuk-label govuk-radios__label" for="as-' + i + '">' + s + '</label></div>').join('') + '</div></fieldset></div>' +
+    '<div id="act-err" role="alert"></div><div class="govuk-button-group"><button class="govuk-button" type="submit" data-module="govuk-button" data-prevent-double-click="true">Save</button><button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="dialog-close">Cancel</button></div></form>', 'wide');
+}
+function saveActivity(form) {
+  const a = S.actions.find((x) => x.id === form.dataset.id), d = formData(form), err = document.getElementById('act-err');
+  const type = d.type || 'note', body = (d.text || '').trim(), link = (d.link || '').trim(), status = d.status || a.status;
+  const bad = (m) => { err.innerHTML = '<p class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> ' + esc(m) + '</p>'; };
+  if (link && !/^https?:\/\/\S+$/i.test(link)) return bad('Enter a link that starts with http:// or https://');
+  if (type === 'evidence' && !body && !link) return bad('Describe the evidence or add a link to it');
+  if (type !== 'note' && !body && !link) return bad('Enter details of the ' + type);
+  if (!body && !link && status === a.status) return bad('Enter details or change the status');
+  if (status === 'Complete' && actDef(a).legal && !evCount(a) && !(type === 'evidence' && (body || link))) return bad('This is a legal requirement. Add evidence before marking it complete.');
+  if (body || link) a.updates.push({ at: now(), type, text: body, link });
+  if (status !== a.status) { a.updates.push({ at: now(), type: 'system', text: 'Status changed from ' + a.status + ' to ' + status + '.' }); a.status = status; }
+  save(); flash = { title: 'Success', html: '<p class="govuk-notification-banner__heading">' + (type === 'evidence' ? 'Evidence added.' : 'Activity recorded.') + '</p>' };
+  closeDialog(); rerender();
+}
+document.addEventListener('submit', (e) => {
+  const f = e.target;
+  if (f.id === 'cats-form') { e.preventDefault(); e.stopImmediatePropagation(); applyCats(f); }
+  else if (f.id === 'activity-form') { e.preventDefault(); e.stopImmediatePropagation(); saveActivity(f); }
+}, true);
+document.addEventListener('click', (e) => {
+  const t = e.target.closest('[data-act]'); if (!t) return;
+  if (t.dataset.act === 'cats-open') openCats(t.dataset.id, t.dataset.field || '');
+  else if (t.dataset.act === 'activity-open') openActivity(t.dataset.id, t.dataset.type);
+});
+document.addEventListener('change', (e) => {
+  const t = e.target;
+  if (t.dataset && t.dataset.act === 'act-type' && t.form) {
+    const a = S.actions.find((x) => x.id === t.form.dataset.id), r = t.form.querySelector('input[name=status][value="' + (t.value === 'exception' ? 'Exception' : a.status) + '"]');
+    if (r) r.checked = true;
   }
 });
 
