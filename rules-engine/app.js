@@ -282,7 +282,7 @@ const actionCard = (a) => '<article class="kcard" draggable="true" data-id="' + 
   '<div class="kcard-top">' + (a.ruleId ? ruleChip(a.ruleId) : '<span></span>') + '<span class="kcard-id">' + a.id + '</span></div>' +
   '<h3 class="kcard-title"><a class="govuk-link govuk-link--no-visited-state" href="#/actions/' + a.id + '">' + esc(a.title) + '</a></h3>' +
   '<p class="kcard-work">' + esc(reqTitle(a)) + '<br><a class="govuk-link govuk-link--no-visited-state" href="#/work/' + a.workId + '">' + esc(workName(a.workId)) + '</a></p>' +
-  '<div class="kcard-foot">' + evBadge(a) + statusSelect(a) + '</div></article>';
+  '<div class="kcard-foot">' + evBadge(a) + (actLegal(a) ? tag('Legal', 'govuk-tag--red') : '') + '<button type="button" class="link-btn" data-act="activity-open" data-id="' + a.id + '" data-type="evidence">Record activity<span class="govuk-visually-hidden"> for ' + esc(a.title) + '</span></button></div></article>';
 function banner() {
   if (!flash) return '';
   const html = '<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" data-module="govuk-notification-banner"><div class="govuk-notification-banner__header"><h2 class="govuk-notification-banner__title">' + esc(flash.title) + '</h2></div><div class="govuk-notification-banner__content">' + flash.html + '</div></div>';
@@ -331,19 +331,6 @@ const flowDiagram = (active) => {
 };
 
 /* ---------- Views ---------- */
-function vWork() {
-  const rows = S.works.map((w) => {
-    const acts = S.actions.filter((a) => a.workId === w.id && isActive(a));
-    const done = acts.filter((a) => a.status === 'Complete').length, p = workPct(w.id);
-    return ['<a class="govuk-link govuk-link--no-visited-state" href="#/work/' + w.id + '"><strong>' + esc(w.title) + '</strong></a><br><span class="muted">' + w.id + ' · ' + esc(w.description) + '</span>',
-      esc(w.type) + '<br><span class="muted">' + esc(w.stage) + '</span><br><a class="govuk-link govuk-body-s" href="#/work/' + w.id + '/categories">Change categories</a>', prioTag(w.priority) + (w.risk === 'High' ? ' ' + tag('High risk', 'govuk-tag--red') : ''),
-      reqGroups(w.id).length + '', done + ' of ' + acts.length + ' complete' + bar(p, p + '% of actions complete'),
-      acts.filter((a) => a.status === 'Exception').length ? tag(acts.filter((a) => a.status === 'Exception').length + ' exception', 'govuk-tag--orange') : ''];
-  });
-  return banner() + pageHead('Work', 'Everything in flight, categorised so the rules engine knows what applies.', btn('#/work/new', 'Add work')) +
-    (rows.length ? table(['Work', 'Type and stage', 'Priority', 'Requirements', 'Actions', ''], rows, 'compact') : '<p class="govuk-body">No work yet.</p>');
-}
-
 function actionRow(a, showWork) {
   return '<tr class="govuk-table__row"><td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#/actions/' + a.id + '">' + esc(a.title) + '</a> <span class="muted">' + a.id + '</span>' +
     (showWork ? '<br><a class="govuk-link govuk-link--no-visited-state muted" href="#/work/' + a.workId + '">' + esc(workName(a.workId)) + '</a>' : '') + '</td>' +
@@ -379,15 +366,13 @@ function vWorkForm(id) {
 
 function triggerList(list) {
   if (!list.length) return '<p class="govuk-body">No triggers recorded.</p>';
+  const more = (label, items, fn) => items.length ? '<details class="tl-more"><summary>' + label + ' (' + items.length + ')</summary><p>' + items.map(fn).join(' ') + '</p></details>' : '';
+  const alink = (i) => '<a class="govuk-link" href="#/actions/' + i + '">' + i + '</a>';
   return list.map((t) => {
     const ch = t.changes.length ? '<ul class="govuk-list govuk-list--bullet">' + t.changes.map((c) => '<li><strong>' + esc(FIELDS[c.field].label) + '</strong>: ' + esc(c.from) + ' → ' + esc(c.to) + '</li>').join('') + '</ul>' : '';
-    const links = (ids) => ids.map((i) => '<a class="govuk-link" href="#/actions/' + i + '">' + i + '</a>').join(', ');
     return '<div class="log-entry system"><p class="govuk-body-s govuk-!-margin-bottom-1">' + fmt(t.at) + ' · ' + t.id + ' · <a class="govuk-link" href="#/work/' + t.workId + '">' + esc(workName(t.workId)) + '</a></p>' +
       '<p class="govuk-body govuk-!-margin-bottom-1"><strong>' + esc(t.event) + '</strong>' + (t.defName ? ' ' + tag(t.defName, 'govuk-tag--grey') : '') + '</p>' + ch +
-      '<p class="govuk-body-s govuk-!-margin-bottom-0">' + (t.fired.length ? 'Rules matched: ' + t.fired.map(ruleChip).join(' ') : 'No rules matched') +
-      (t.added.length ? '<br>New requirements: ' + links(t.added) : '') +
-      (t.reinstated.length ? '<br>Reinstated: ' + links(t.reinstated) : '') +
-      (t.withdrawn.length ? '<br>No longer required: ' + links(t.withdrawn) : '') + '</p></div>';
+      (t.fired.length ? more('Rules matched', t.fired, ruleChip) : '<p class="govuk-body-s muted">No rules matched</p>') + more('New requirements', t.added, alink) + more('Reinstated', t.reinstated, alink) + more('No longer required', t.withdrawn, alink) + '</div>';
   }).join('');
 }
 
@@ -407,20 +392,21 @@ function vRules() {
   const opt = (v, l, cur) => '<option value="' + esc(v) + '"' + (v === cur ? ' selected' : '') + '>' + esc(l) + '</option>';
   const owners = Array.from(new Set(S.rules.map((r) => r.owner).filter(Boolean))).sort(), sources = Array.from(new Set(S.rules.map((r) => r.source))).sort();
   const sel = (name, label, opts) => '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="rf-' + name + '">' + label + '</label><select class="govuk-select" id="rf-' + name + '" name="' + name + '" data-act="rule-filter">' + opts + '</select></div>';
-  const filtered = q || fo || fs || fe;
-  const bar = '<form class="filter-bar" data-form="rule-filter" role="search" aria-label="Filter and sort rules"><div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="rf-q">Search</label><input class="govuk-input" id="rf-q" name="q" type="search" value="' + esc(p.get('q') || '') + '" placeholder="Name, ID, policy or owner"></div>' +
+  const filtered = q || fo || fs;
+  const pool = S.rules.filter((r) => (!q || [r.id, r.name, r.source, r.owner, r.requirementTitle].join(' ').toLowerCase().includes(q)) && (!fo || (fo === '__none' ? !r.owner : r.owner === fo)) && (!fs || r.source === fs));
+  const pg = paged(list, p);
+  const bar = '<form class="filter-bar" data-form="rule-filter" role="search" aria-label="Filter and sort rules">' + (fe ? '<input type="hidden" name="status" value="' + esc(fe) + '">' : '') + '<div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="rf-q">Search</label><input class="govuk-input" id="rf-q" name="q" type="search" value="' + esc(p.get('q') || '') + '" placeholder="Name, ID, policy or owner"></div>' +
     sel('owner', 'Owner', opt('', 'All owners', fo) + opt('__none', 'Unassigned', fo) + owners.map((o) => opt(o, o, fo)).join('')) +
     sel('source', 'Policy or standard', opt('', 'All', fs) + sources.map((o) => opt(o, o, fs)).join('')) +
-    sel('status', 'Status', opt('', 'All', fe) + ['Published', 'Draft', 'Retired'].map((o) => opt(o, o, fe)).join('')) +
     sel('sort', 'Sort by', RULE_SORTS.map((o) => opt(o[0], o[1], sort)).join('')) +
     '<div class="govuk-form-group filter-bar__actions"><button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit">Apply</button>' + (filtered || sort !== 'id' ? ' <a class="govuk-link" href="#/rules">Clear</a>' : '') + '</div></form>';
   return banner() + pageHead('Rules', 'Rulesets based on policies, standards and processes. They run on trigger events and return requirements.', btn('#/rules/new', 'Add rule')) + bar +
-    '<p class="govuk-body" role="status">Showing ' + list.length + ' of ' + S.rules.length + ' rules.</p>' +
-    table(['Rule', 'Owner', 'When', 'Requirement returned', 'Applies to', 'Status'], list.map((r) => {
+    tabsNav('rules', p, 'status', [['', 'All', pool.length], ['Published', 'Published', pool.filter((r) => r.status === 'Published').length], ['Draft', 'Draft', pool.filter((r) => r.status === 'Draft').length], ['Retired', 'Retired', pool.filter((r) => r.status === 'Retired').length]], '', 'Rule status') +
+    (pg.items.length ? '' : '<div class="panel"><p class="govuk-body">No rules match these filters.</p></div>') + (pg.items.length ? table(['Rule', 'Owner', 'When', 'Requirement returned', 'Applies to', 'Status'], pg.items.map((r) => {
       const n = count(r);
       return [ruleChip(r.id) + '<br><a class="govuk-link" href="#/rules/' + r.id + '">' + esc(r.name) + '</a><br><span class="govuk-body-s">' + esc(r.source) + '</span>', ownerCell(r),
         r.conditions.map((c) => esc(condText(c))).join('<br>and '), esc(r.requirementTitle), n + ' work item' + (n === 1 ? '' : 's'), statusRule(r) + '<br><span class="muted">Version ' + r.version + '</span>'];
-    }));
+    }), 'compact') + pager('rules', p, pg) : '');
 }
 
 function condRow(c, i) {
@@ -491,49 +477,149 @@ function toolbar(base, p, extra) {
   return '<div class="toolbar">' + (extra ? extra(q) : '') + wsel + '</div>';
 }
 
+/* ---------- Shared list helpers ---------- */
+const PAGE = 20;
+const qhref = (base, p, o) => { const n = new URLSearchParams(p); Object.keys(o).forEach((k) => (o[k] ? n.set(k, o[k]) : n.delete(k))); const s = n.toString(); return '#/' + base + (s ? '?' + s : ''); };
+function tabsNav(base, p, key, items, def, label) {
+  const cur = p.get(key) || def;
+  return '<nav class="seg tabs" aria-label="' + label + '">' + items.map((i) => '<a class="seg-i' + (i[0] === cur ? ' on' : '') + '" href="' + qhref(base, p, { [key]: i[0] === def ? '' : i[0], page: '' }) + '"' + (i[0] === cur ? ' aria-current="true"' : '') + '>' + i[1] + (i[2] != null ? ' <span class="count">' + i[2] + '</span>' : '') + '</a>').join('') + '</nav>';
+}
+function paged(list, p) {
+  const last = Math.max(1, Math.ceil(list.length / PAGE)), cur = Math.min(Math.max(1, Number(p.get('page')) || 1), last);
+  return { items: list.slice((cur - 1) * PAGE, cur * PAGE), cur, last, total: list.length, from: list.length ? (cur - 1) * PAGE + 1 : 0, to: Math.min(cur * PAGE, list.length) };
+}
+const pager = (base, p, pg) => pg.last < 2 ? '' : '<nav class="pager" aria-label="Pagination">' +
+  (pg.cur > 1 ? '<a class="govuk-link" href="' + qhref(base, p, { page: pg.cur > 2 ? pg.cur - 1 : '' }) + '">Previous page</a>' : '<span></span>') +
+  '<span class="muted">Showing ' + pg.from + ' to ' + pg.to + ' of ' + pg.total + '</span>' +
+  (pg.cur < pg.last ? '<a class="govuk-link" href="' + qhref(base, p, { page: pg.cur + 1 }) + '">Next page</a>' : '<span></span>') + '</nav>';
+function filterForm(base, p, controls, keep) {
+  const f = controls.map((c) => c.type === 'search'
+    ? '<div class="fb-search"><label class="govuk-visually-hidden" for="f-' + c.name + '">' + c.label + '</label><input class="govuk-input" id="f-' + c.name + '" name="' + c.name + '" type="search" data-act="rule-filter" value="' + esc(p.get(c.name) || '') + '" placeholder="' + esc(c.ph || c.label) + '"></div>'
+    : '<div><label class="govuk-visually-hidden" for="f-' + c.name + '">' + c.label + '</label><select class="govuk-select" id="f-' + c.name + '" name="' + c.name + '" data-act="rule-filter">' +
+      c.opts.map((o) => '<option value="' + esc(o[0]) + '"' + (o[0] === (p.get(c.name) || '') ? ' selected' : '') + '>' + esc(o[1]) + '</option>').join('') + '</select></div>').join('');
+  const used = controls.some((c) => p.get(c.name));
+  return '<form class="filter-bar compact" data-form="rule-filter" data-base="' + base + '" role="search">' + (keep || []).map((k) => p.get(k) ? '<input type="hidden" name="' + k + '" value="' + esc(p.get(k)) + '">' : '').join('') + f +
+    '<button class="govuk-visually-hidden" type="submit">Apply filters</button>' + (used ? '<a class="govuk-link" href="' + qhref(base, p, Object.assign({ page: '' }, ...controls.map((c) => ({ [c.name]: '' })))) + '">Clear</a>' : '') + '</form>';
+}
+const actLegal = (a) => !!actDef(a).legal;
+const actPrio = (a) => (a.status === 'Exception' ? 0 : actLegal(a) && isOpen(a) ? 1 : a.status === 'In progress' ? 2 : a.status === 'Not started' ? 3 : 4);
+const byPrio = (a, b) => actPrio(a) - actPrio(b) || a.id.localeCompare(b.id);
+const recordBtn = (a, label) => '<button type="button" class="govuk-button govuk-button--secondary btn-sm" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="evidence">' + (label || 'Record activity') + '<span class="govuk-visually-hidden"> for ' + esc(a.title) + '</span></button>';
+const workLink = (id) => '<a class="govuk-link govuk-link--no-visited-state" href="#/work/' + id + '">' + esc(workName(id)) + '</a>';
+const nextAction = (w) => S.actions.filter((a) => a.workId === w.id && isOpen(a)).sort(byPrio)[0];
+
+const DOT = { 'Not started': 'grey', 'In progress': 'blue', 'Exception': 'orange', 'Complete': 'green', 'No longer required': 'grey' };
+function qrow(a, showWork) {
+  const flag = a.status === 'Exception' ? '<span class="flag flag--orange">Exception</span>' : a.status === 'Complete' ? (evCount(a) ? '' : '<span class="flag flag--yellow">No evidence</span>') : actLegal(a) ? '<span class="flag flag--red">Legal</span>' : '';
+  return '<li class="qrow"><span class="dot dot--' + DOT[a.status] + '" aria-hidden="true"></span><div class="qrow-m"><a class="qrow-t govuk-link govuk-link--no-visited-state" href="#/actions/' + a.id + '">' + esc(a.title) + '</a><span class="qrow-s">' + (showWork === false ? '' : esc(workName(a.workId)) + ' · ') + esc(reqTitle(a)) + '</span></div><div class="qrow-r">' + flag + '<span class="qrow-st">' + a.status + '</span></div></li>';
+}
+function workRow(w) {
+  const acts = S.actions.filter((a) => a.workId === w.id && isActive(a)), open = acts.filter(isOpen), p = workPct(w.id);
+  const legal = open.filter(actLegal).length, exc = acts.filter((a) => a.status === 'Exception').length;
+  return '<li class="wrow"><div class="wrow-main"><h2 class="wrow-title"><a class="govuk-link govuk-link--no-visited-state" href="#/work/' + w.id + '">' + esc(w.title) + '</a></h2>' +
+    '<p class="wrow-desc">' + esc(w.stage) + ' · ' + esc(w.type) + (w.risk === 'High' ? ' · <strong class="red">High risk</strong>' : '') + '</p></div>' +
+    '<div class="wrow-prog">' + bar(p, p + '% of actions complete') + '<span class="muted">' + (acts.length - open.length) + ' of ' + acts.length + ' done</span></div>' +
+    '<div class="wrow-flags">' + (exc ? '<span class="flag flag--orange">' + exc + ' exception' + (exc === 1 ? '' : 's') + '</span>' : '') + (legal ? '<span class="flag flag--red">' + legal + ' legal</span>' : '') + (!exc && !legal ? '<span class="flag flag--green">On track</span>' : '') + '</div>' +
+    '<button type="button" class="link-btn wrow-chg" data-act="cats-open" data-id="' + w.id + '">Change categories<span class="govuk-visually-hidden"> for ' + esc(w.title) + '</span></button></li>';
+}
+
+function vWork() {
+  const p = qs(), q = (p.get('q') || '').trim().toLowerCase(), st = p.get('stage') || '', pr = p.get('priority') || '', tab = p.get('tab') || 'all';
+  const base = S.works.filter((w) => (!q || [w.id, w.title, w.description].join(' ').toLowerCase().includes(q)) && (!st || w.stage === st) && (!pr || w.priority === pr));
+  const blocked = (w) => S.actions.some((a) => a.workId === w.id && (a.status === 'Exception' || (isOpen(a) && actLegal(a))));
+  const list = base.filter((w) => tab === 'all' || (tab === 'attention' ? blocked(w) : workPct(w.id) < 100)).sort((a, b) => (blocked(b) - blocked(a)) || a.id.localeCompare(b.id));
+  const fb = filterForm('work', p, [{ type: 'search', name: 'q', label: 'Search', ph: 'Title, ID or description' },
+    { name: 'stage', label: 'Stage', opts: [['', 'All stages']].concat(OPT.stage.map((o) => [o, o])) }, { name: 'priority', label: 'Priority', opts: [['', 'Any priority']].concat(OPT.level.map((o) => [o, o])) }], ['tab']);
+  return banner() + pageHead('Work', 'Everything in flight. Change a work item\'s categories and the rules engine updates what applies.', btn('#/work/new', 'Add work')) +
+    tabsNav('work', p, 'tab', [['all', 'All work', base.length], ['attention', 'Needs attention', base.filter(blocked).length], ['active', 'In progress', base.filter((w) => workPct(w.id) < 100).length]], 'all', 'Work filter') + fb +
+    (list.length ? '<ul class="wlist">' + list.map(workRow).join('') + '</ul>' : '<div class="panel"><p class="govuk-body">No work matches these filters.</p></div>');
+}
+
+const ACT_TABS = [['open', 'Open'], ['Not started', 'To do'], ['In progress', 'In progress'], ['Exception', 'Exception'], ['Complete', 'Done'], ['all', 'All']];
+function actionListRow(a) {
+  return '<tr class="govuk-table__row"><td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#/actions/' + a.id + '"><strong>' + esc(a.title) + '</strong></a><br><span class="muted">' + a.id + ' · ' + (a.ruleId ? ruleChip(a.ruleId) + ' ' : '') + esc(reqTitle(a)) + '</span></td>' +
+    '<td class="govuk-table__cell">' + workLink(a.workId) + '</td><td class="govuk-table__cell">' + (actLegal(a) ? tag('Legal', 'govuk-tag--red') + '<br>' : '') + evBadge(a) + '</td>' +
+    '<td class="govuk-table__cell">' + statusTag(a.status) + '</td><td class="govuk-table__cell cell-right">' + (isActive(a) ? recordBtn(a) : '') + '</td></tr>';
+}
 function vActions() {
-  const p = qs(), view = p.get('view') === 'board' ? 'board' : 'list', wf = p.get('work') || '';
-  const all = S.actions.filter((a) => !wf || a.workId === wf);
-  const seg = (q) => '<div class="seg" role="group" aria-label="View"><a class="seg-i' + (view === 'list' ? ' on' : '') + '" href="' + q({ view: '' }) + '"' + (view === 'list' ? ' aria-current="true"' : '') + '>List</a><a class="seg-i' + (view === 'board' ? ' on' : '') + '" href="' + q({ view: 'board' }) + '"' + (view === 'board' ? ' aria-current="true"' : '') + '>Board</a></div>';
+  const p = qs(), view = p.get('view') === 'board' ? 'board' : 'list', tab = p.get('tab') || 'open', q = (p.get('q') || '').trim().toLowerCase();
+  const base = S.actions.filter((a) => isActive(a) && (!p.get('work') || a.workId === p.get('work')) && (!p.get('legal') || actLegal(a)) && (p.get('ev') !== 'none' || !evCount(a)) &&
+    (!q || [a.id, a.title, reqTitle(a), workName(a.workId)].join(' ').toLowerCase().includes(q)));
+  const inTab = (a, t) => t === 'all' || (t === 'open' ? isOpen(a) : a.status === t);
+  const seg = '<div class="seg" role="group" aria-label="View"><a class="seg-i' + (view === 'list' ? ' on' : '') + '" href="' + qhref('actions', p, { view: '', page: '' }) + '">List</a><a class="seg-i' + (view === 'board' ? ' on' : '') + '" href="' + qhref('actions', p, { view: 'board', page: '', tab: '' }) + '">Board</a></div>';
+  const fb = filterForm('actions', p, [{ type: 'search', name: 'q', label: 'Search', ph: 'Action, requirement or work' },
+    { name: 'work', label: 'Work', opts: [['', 'All work']].concat(S.works.map((w) => [w.id, w.title])) },
+    { name: 'legal', label: 'Legal', opts: [['', 'Any requirement'], ['1', 'Legal only']] }, { name: 'ev', label: 'Evidence', opts: [['', 'Any evidence'], ['none', 'No evidence yet']] }], ['view', 'tab']);
   let body;
   if (view === 'board') {
     body = '<div class="board">' + BOARD_COLS.map((c) => {
-      const items = all.filter((a) => a.status === c[0]);
+      const items = base.filter((a) => a.status === c[0]).sort(byPrio);
       return '<section class="col" data-status="' + c[0] + '" aria-label="' + c[1] + '"><h2 class="col-head"><span>' + c[1] + '</span><span class="count">' + items.length + '</span></h2><div class="col-body">' +
         (items.map(actionCard).join('') || '<p class="col-empty">Nothing here</p>') + '</div></section>';
-    }).join('') + '</div><p class="govuk-hint">Drag actions between columns, or use the status menu. Actions that no longer apply are in the list view.</p>';
+    }).join('') + '</div><p class="govuk-hint">Drag a card to another column to change its status. To add evidence or a note, use Record activity.</p>';
   } else {
-    const list = all.filter((a) => a.status !== 'No longer required' || p.get('all'));
-    body = table(['Action', 'Requirement', 'Work', 'Evidence', 'Status'], list.map((a) => ['<a class="govuk-link govuk-link--no-visited-state" href="#/actions/' + a.id + '">' + esc(a.title) + '</a> <span class="muted">' + a.id + '</span>',
-      (a.ruleId ? ruleChip(a.ruleId) + ' ' : '') + esc(reqTitle(a)), '<a class="govuk-link govuk-link--no-visited-state" href="#/work/' + a.workId + '">' + esc(workName(a.workId)) + '</a>', evBadge(a), isActive(a) ? statusSelect(a) : statusTag(a.status)]), 'compact') +
-      (p.get('all') ? '' : '<p class="govuk-body-s"><a class="govuk-link" href="#/actions?all=1' + (wf ? '&work=' + wf : '') + '">Include actions that no longer apply</a></p>');
+    const list = base.filter((a) => inTab(a, tab)).sort(byPrio), pg = paged(list, p);
+    body = tabsNav('actions', p, 'tab', ACT_TABS.map((t) => [t[0], t[1], base.filter((a) => inTab(a, t[0])).length]), 'open', 'Action status') +
+      (pg.items.length ? '<ul class="qlist">' + pg.items.map((a) => qrow(a)).join('') + '</ul>' + pager('actions', p, pg) : '<div class="panel"><p class="govuk-body">No actions match these filters.</p></div>');
   }
-  return banner() + pageHead('Actions', 'Each action is tracked on its own, with its own status, evidence and history.') + toolbar('actions', p, seg) + body;
+  return banner() + pageHead('Actions', 'Every requirement the rules engine has raised. Exceptions and legal requirements come first.', seg) + fb + body;
 }
 
 function vTasks() {
-  const p = qs(), wf = p.get('work') || '', show = p.get('show') || 'open';
-  const list = S.actions.filter((a) => isActive(a) && (!wf || a.workId === wf) && (show === 'all' || isOpen(a)));
-  const seg = (q) => '<div class="seg" role="group" aria-label="Show"><a class="seg-i' + (show === 'open' ? ' on' : '') + '" href="' + q({ show: '' }) + '">Open</a><a class="seg-i' + (show === 'all' ? ' on' : '') + '" href="' + q({ show: 'all' }) + '">All</a></div>';
-  const html = S.works.filter((w) => list.some((a) => a.workId === w.id)).map((w) => '<section class="panel"><h2 class="govuk-heading-s"><a class="govuk-link govuk-link--no-visited-state" href="#/work/' + w.id + '">' + esc(w.title) + '</a> <span class="count">' + list.filter((a) => a.workId === w.id).length + '</span></h2><ul class="tasklist">' +
-    list.filter((a) => a.workId === w.id).map((a) => '<li class="task' + (a.status === 'Complete' ? ' done' : '') + '"><div class="govuk-checkboxes govuk-checkboxes--small"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" type="checkbox" id="tt-' + a.id + '" data-act="task" data-id="' + a.id + '"' + (a.status === 'Complete' ? ' checked' : '') + '><label class="govuk-label govuk-checkboxes__label" for="tt-' + a.id + '">' + esc(a.title) + '</label></div></div>' +
-      '<span class="task-meta">' + (a.ruleId ? ruleChip(a.ruleId) : '') + '<span class="muted">' + esc(reqTitle(a)) + '</span>' + evBadge(a) + statusTag(a.status) + '<a class="govuk-link govuk-link--no-visited-state" href="#/actions/' + a.id + '">Open</a></span></li>').join('') + '</ul></section>').join('');
-  return banner() + pageHead('Tasks', 'Your actions, grouped by work. Tick one off when it is done, and record evidence on the action itself.') + toolbar('tasks', p, seg) +
-    (html || '<div class="panel"><p class="govuk-body">No ' + (show === 'open' ? 'open ' : '') + 'actions.</p></div>');
+  const p = qs(), show = p.get('show') || 'open', wf = p.get('work') || '';
+  const list = S.actions.filter((a) => isActive(a) && (!wf || a.workId === wf) && (show === 'all' || isOpen(a))).sort(byPrio);
+  const works = S.works.filter((w) => list.some((a) => a.workId === w.id));
+  const html = works.map((w) => {
+    const l = list.filter((a) => a.workId === w.id), pc = workPct(w.id);
+    return '<section class="panel"><div class="tgroup-head"><h2 class="govuk-heading-s govuk-!-margin-bottom-0"><a class="govuk-link govuk-link--no-visited-state" href="#/work/' + w.id + '">' + esc(w.title) + '</a></h2><span class="muted">' + pc + '% complete · ' + l.length + (show === 'all' ? ' actions' : ' to do') + '</span></div><ul class="qlist">' +
+      l.map((a) => qrow(a, false)).join('') + '</ul></section>';
+  }).join('');
+  return banner() + pageHead('Tasks', 'What to do next, grouped by work. Open an action to record activity and evidence.') +
+    '<div class="toolbar">' + tabsNav('tasks', p, 'show', [['open', 'To do', S.actions.filter((a) => isOpen(a) && (!wf || a.workId === wf)).length], ['all', 'Everything']], 'open', 'Tasks') +
+    '<label class="govuk-visually-hidden" for="wf">Filter by work</label><select class="govuk-select tb-select" id="wf" data-act="filter-work" data-base="tasks"><option value="">All work</option>' + S.works.map((w) => '<option value="' + w.id + '"' + (wf === w.id ? ' selected' : '') + '>' + esc(w.title) + '</option>').join('') + '</select></div>' +
+    (html || '<div class="panel"><p class="govuk-body">Nothing to do. Every action is complete.</p></div>');
 }
 
 function vDashboard() {
-  const act = S.actions.filter(isActive), open = act.filter(isOpen);
-  const noEv = act.filter((a) => a.status === 'Complete' && !evCount(a));
-  const attn = open.filter((a) => a.status === 'Exception').concat(noEv).concat(open.filter((a) => a.status === 'Not started')).slice(0, 6);
-  const stat = (n, l, href) => '<a class="stat" href="' + href + '"><span class="stat-n">' + n + '</span><span class="stat-l">' + l + '</span></a>';
-  return banner() + pageHead('Dashboard', 'How work is categorised, which rules fired, and what still needs doing.', btn('#/work/new', 'Add work')) +
-    '<div class="stats">' + stat(S.works.length, 'Work items', '#/work') + stat(open.length, 'Open actions', '#/actions') + stat(act.filter((a) => a.status === 'In progress').length, 'In progress', '#/actions?view=board') + stat(act.reduce((n, a) => n + evCount(a), 0), 'Pieces of evidence', '#/actions') + '</div>' +
-    flowDiagram(-1) +
-    '<div class="two-col"><section class="panel"><h2 class="govuk-heading-s">Needs attention</h2>' +
-    (attn.length ? '<ul class="tasklist">' + attn.map((a) => '<li class="task"><span><a class="govuk-link govuk-link--no-visited-state" href="#/actions/' + a.id + '">' + esc(a.title) + '</a><br><span class="muted">' + esc(workName(a.workId)) + ' · ' + esc(reqTitle(a)) + '</span></span><span class="task-meta">' + (a.ruleId ? ruleChip(a.ruleId) : '') + (a.status === 'Complete' ? tag('Complete, no evidence', 'govuk-tag--yellow') : statusTag(a.status)) + '</span></li>').join('') + '</ul>' : '<p class="govuk-body">Nothing needs attention.</p>') +
-    '<p class="govuk-body-s"><a class="govuk-link" href="#/actions">All actions</a></p></section>' +
-    '<aside class="panel"><h2 class="govuk-heading-s">Latest triggers</h2>' + triggerList(S.triggers.slice(0, 3)) + '<p class="govuk-body-s"><a class="govuk-link" href="#/triggers">All triggers</a></p></aside></div>';
+  const act = S.actions.filter(isActive), open = act.filter(isOpen), done = act.length - open.length, pct = act.length ? Math.round(done / act.length * 100) : 0;
+  const cnt = (st) => act.filter((a) => a.status === st).length;
+  const exc = cnt('Exception'), legal = open.filter(actLegal).length, noEv = act.filter((a) => a.status === 'Complete' && !evCount(a)).length;
+  const next = act.filter(isOpen).sort(byPrio).slice(0, 6);
+  const kpi = (n, l, href, cls) => '<a class="kpi ' + (cls || '') + '" href="' + href + '"><span class="kpi-n">' + n + '</span><span class="kpi-l">' + l + '</span></a>';
+  const seg = (n, cls, l) => n ? '<span class="sbar-s sbar-s--' + cls + '" style="flex:' + n + '" title="' + l + ': ' + n + '"></span>' : '';
+  const leg = (n, cls, l) => '<li><span class="dot dot--' + cls + '"></span>' + l + ' <strong>' + n + '</strong></li>';
+  const brief = (t) => '<li class="tbrief"><a class="govuk-link" href="#/work/' + t.workId + '">' + esc(workName(t.workId)) + '</a><br><span class="muted">' + esc(t.event) + ' · ' + t.added.length + ' new action' + (t.added.length === 1 ? '' : 's') + ' · ' + fmt(t.at) + '</span></li>';
+  return banner() + pageHead('Overview', 'Where your work stands, and what to do next.', btn('#/work/new', 'Add work')) +
+    '<div class="kpis"><div class="kpi kpi--ring"><div class="ring" style="--p:' + pct + '"><span>' + pct + '%</span></div><span class="kpi-l">' + done + ' of ' + act.length + ' actions done</span></div>' +
+    kpi(exc + legal, 'Need action now', '#/actions', exc + legal ? 'kpi--red' : '') + kpi(cnt('In progress'), 'In progress', '#/actions?tab=In%20progress', 'kpi--blue') + kpi(noEv, 'Done without evidence', '#/actions?tab=Complete&ev=none', noEv ? 'kpi--amber' : 'kpi--green') + '</div>' +
+    '<section class="panel"><div class="sbar">' + seg(cnt('Not started'), 'grey', 'To do') + seg(cnt('In progress'), 'blue', 'In progress') + seg(exc, 'orange', 'Exception') + seg(cnt('Complete'), 'green', 'Done') + '</div>' +
+    '<ul class="legend">' + leg(cnt('Not started'), 'grey', 'To do') + leg(cnt('In progress'), 'blue', 'In progress') + leg(exc, 'orange', 'Exception') + leg(cnt('Complete'), 'green', 'Done') + '</ul></section>' +
+    '<div class="two-col"><section><div class="sec-head"><h2 class="govuk-heading-m">Do next</h2><a class="govuk-link" href="#/actions">All actions</a></div>' +
+    (next.length ? '<ul class="qlist">' + next.map((a) => qrow(a)).join('') + '</ul>' : '<div class="panel"><p class="govuk-body">All caught up.</p></div>') + '</section>' +
+    '<section><div class="sec-head"><h2 class="govuk-heading-m">Your work</h2><a class="govuk-link" href="#/work">All work</a></div><ul class="wlist wlist--side">' + S.works.map(workRow).join('') + '</ul>' +
+    '<div class="sec-head"><h2 class="govuk-heading-s">Recent rules engine runs</h2><a class="govuk-link" href="#/triggers?tab=log">Log</a></div>' + (S.triggers.length ? '<ul class="tasklist">' + S.triggers.slice(0, 3).map(brief).join('') + '</ul>' : '<p class="govuk-body muted">None yet.</p>') + '</section></div>';
+}
+
+function vTriggers() {
+  const p = qs(), tab = p.get('tab') || 'defs';
+  const defRows = S.triggerDefs.map((d) => {
+    const n = S.triggers.filter((t) => (t.defId || '').split(', ').includes(d.id)).length;
+    return ['<a class="govuk-link" href="#/triggers/' + d.id + '"><strong>' + esc(d.name) + '</strong></a><br><span class="muted">' + d.id + '</span>', esc(EVENT_LABEL[d.event]),
+      d.event === 'changed' ? d.fields.map((f) => esc(FIELDS[f].label)).join(', ') : '<span class="muted">Not applicable</span>', n + ' time' + (n === 1 ? '' : 's'),
+      '<div class="govuk-checkboxes govuk-checkboxes--small"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" type="checkbox" id="td-' + d.id + '" data-act="trigdef-toggle" data-id="' + d.id + '"' + (d.enabled ? ' checked' : '') + '><label class="govuk-label govuk-checkboxes__label" for="td-' + d.id + '">Enabled<span class="govuk-visually-hidden"> ' + esc(d.name) + '</span></label></div></div>'];
+  });
+  let body;
+  if (tab === 'log') {
+    const pg = paged(S.triggers, p);
+    body = (pg.items.length ? triggerList(pg.items) + pager('triggers', p, pg) : '<div class="panel"><p class="govuk-body">No triggers raised yet.</p></div>');
+  } else {
+    body = table(['Trigger', 'Raised when', 'Watches', 'Raised', 'Status'], defRows) +
+      '<section class="panel"><h2 class="govuk-heading-s">Run the rules engine now</h2><p class="govuk-body-s muted">Re-check a work item against every published rule, for example after a rule has changed.</p><form data-form="raise" class="filter-bar"><div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="raise-work">Work item</label><select class="govuk-select" id="raise-work" name="work">' +
+      S.works.map((w) => '<option value="' + w.id + '">' + esc(w.title) + '</option>').join('') + '</select></div><div class="govuk-form-group filter-bar__actions"><button class="govuk-button" data-module="govuk-button" type="submit">Check this work</button> <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" data-act="rerun-all">Check all work</button></div></form></section>' +
+      '<details class="govuk-details"><summary class="govuk-details__summary"><span class="govuk-details__summary-text">How the rules engine works</span></summary><div class="govuk-details__text">' + flowDiagram(1) + '</div></details>';
+  }
+  return banner() + pageHead('Triggers', 'A trigger decides when the rules engine runs. Each enabled trigger that matches a change runs the engine.', btn('#/triggers/new', 'Add trigger')) +
+    tabsNav('triggers', p, 'tab', [['defs', 'Definitions', S.triggerDefs.length], ['log', 'Log', S.triggers.length]], 'defs', 'Triggers') + body;
 }
 
 function notFound() { return '<h1 class="govuk-heading-l">Page not found</h1><p class="govuk-body"><a class="govuk-link" href="#/work">Go to work</a></p>'; }
@@ -681,7 +767,7 @@ document.addEventListener('submit', (e) => {
 
 function applyRuleFilter(form) {
   const p = new URLSearchParams(); new FormData(form).forEach((v, k) => { if (v && !(k === 'sort' && v === 'id')) p.set(k, v); });
-  const q = p.toString(); go('#/rules' + (q ? '?' + q : ''));
+  const q = p.toString(); go('#/' + (form.dataset.base || 'rules') + (q ? '?' + q : ''));
 }
 document.addEventListener('submit', (e) => { if (e.target.dataset && e.target.dataset.form === 'rule-filter') { e.preventDefault(); applyRuleFilter(e.target); } });
 document.addEventListener('change', (e) => {
@@ -814,21 +900,6 @@ function vRuleHistory(id) {
 
 /* ---------- Triggers ---------- */
 const EVENT_LABEL = { created: 'Work created', changed: 'Categories changed', rule: 'Rule published or changed' };
-function vTriggers() {
-  const p = qs(), all = p.get('all') === '1';
-  const defRows = S.triggerDefs.map((d) => {
-    const n = S.triggers.filter((t) => (t.defId || '').split(', ').includes(d.id)).length;
-    return ['<a class="govuk-link" href="#/triggers/' + d.id + '"><strong>' + esc(d.name) + '</strong></a><br><span class="muted">' + d.id + '</span>', esc(EVENT_LABEL[d.event]),
-      d.event === 'changed' ? d.fields.map((f) => esc(FIELDS[f].label)).join(', ') : '<span class="muted">Not applicable</span>', n + ' time' + (n === 1 ? '' : 's'),
-      '<div class="govuk-checkboxes govuk-checkboxes--small"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" type="checkbox" id="td-' + d.id + '" data-act="trigdef-toggle" data-id="' + d.id + '"' + (d.enabled ? ' checked' : '') + '><label class="govuk-label govuk-checkboxes__label" for="td-' + d.id + '">Enabled<span class="govuk-visually-hidden"> ' + esc(d.name) + '</span></label></div></div>'];
-  });
-  const log = all ? S.triggers : S.triggers.slice(0, 12);
-  return banner() + pageHead('Triggers', 'A trigger decides when the rules engine runs. Work and rule changes raise triggers, and each enabled trigger that matches runs the engine.', btn('#/triggers/new', 'Add trigger')) + flowDiagram(1) +
-    '<h2 class="govuk-heading-m">Trigger definitions</h2>' + table(['Trigger', 'Raised when', 'Watches', 'Raised', 'Status'], defRows) +
-    '<h2 class="govuk-heading-m">Raise a trigger manually</h2><form data-form="raise" class="filter-bar"><div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="raise-work">Work item</label><select class="govuk-select" id="raise-work" name="work">' +
-    S.works.map((w) => '<option value="' + w.id + '">' + esc(w.title) + '</option>').join('') + '</select></div><div class="govuk-form-group filter-bar__actions"><button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit">Check rules for this work</button> <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" data-act="rerun-all">Check all work</button></div></form>' +
-    '<h2 class="govuk-heading-m">Trigger log</h2><p class="govuk-body-s muted">Showing ' + log.length + ' of ' + S.triggers.length + '.' + (S.triggers.length > 12 ? ' <a class="govuk-link" href="#/triggers?all=' + (all ? '0' : '1') + '">' + (all ? 'Show latest only' : 'Show all') + '</a>' : '') + '</p>' + triggerList(log);
-}
 let trigDraft = null;
 function vTriggerForm(id) {
   const isNew = id === 'new', base = isNew ? { name: '', event: 'changed', fields: [], enabled: true } : S.triggerDefs.find((x) => x.id === id);
