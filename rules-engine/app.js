@@ -45,8 +45,8 @@ let flash = null;          // one-off notification banner
 let ruleDraft = null;      // rule form state
 
 function load() {
-  try { const d = JSON.parse(localStorage.getItem(KEY)); if (d && d.works) return d; } catch (e) { /* fall through */ }
-  return seed();
+  try { const d = JSON.parse(localStorage.getItem(KEY)); if (d && d.works) return migrateDeps(d); } catch (e) { /* fall through */ }
+  return migrateDeps(seed());
 }
 function save() { localStorage.setItem(KEY, JSON.stringify(S)); }
 const uid = (p) => { S.seq[p] = (S.seq[p] || 0) + 1; return p + '-' + String(S.seq[p]).padStart(3, '0'); };
@@ -85,11 +85,12 @@ function normRule(r) {
   if (!r.status) r.status = r.enabled === false ? 'Retired' : 'Published';
   r.enabled = r.status === 'Published';
   if (!r.version) r.version = 1;
+  if (!r.dependsOn) r.dependsOn = [];
   if (!r.versions) r.versions = [{ v: 1, at: now(), by: 'System', note: 'Initial version.', snap: snapOf(r) }];
   return r;
 }
 // The editable content of a rule, stored against each version so versions can be compared and restored.
-const SNAP_KEYS = ['name', 'source', 'owner', 'status', 'conditions', 'requirementTitle', 'requirementDescription', 'tasks', 'actions', 'conditionsText', 'mandatory', 'why', 'kind', 'category', 'phases', 'standards', 'systems', 'guidance'];
+const SNAP_KEYS = ['name', 'source', 'owner', 'status', 'conditions', 'requirementTitle', 'requirementDescription', 'tasks', 'actions', 'conditionsText', 'dependsOn', 'mandatory', 'why', 'kind', 'category', 'phases', 'standards', 'systems', 'guidance'];
 function snapOf(r) { const o = {}; SNAP_KEYS.forEach((k) => { if (r[k] !== undefined) o[k] = JSON.parse(JSON.stringify(r[k])); }); return o; }
 const TRIGGER_SEED = [
   { name: 'Work created', event: 'created', fields: [] },
@@ -265,6 +266,30 @@ const evCount = (a) => a.updates.filter((u) => u.type === 'evidence').length;
 const isActive = (a) => a.status !== 'No longer required';
 const isOpen = (a) => a.status !== 'No longer required' && a.status !== 'Complete';
 const ruleOf = (id) => S.rules.find((r) => r.id === id);
+// Rule dependencies: a rule's actions wait until the actions of every rule it depends on are complete.
+const depsOf = (r) => (r && r.dependsOn) || [];
+const requiredBy = (id) => S.rules.filter((r) => depsOf(r).includes(id));
+function depDepth(id, seen) { seen = seen || []; if (seen.includes(id)) return 0; const ds = depsOf(ruleOf(id)); return ds.length ? 1 + Math.max.apply(null, ds.map((d) => depDepth(d, seen.concat(id)))) : 0; }
+function dependsTransitively(id, target, seen) { seen = seen || []; if (id === target) return true; if (seen.includes(id)) return false; return depsOf(ruleOf(id)).some((d) => dependsTransitively(d, target, seen.concat(id))); }
+function blockers(a) {
+  return depsOf(ruleOf(a.ruleId)).map((id) => ({ rule: ruleOf(id), actions: S.actions.filter((x) => x.workId === a.workId && x.ruleId === id && isOpen(x)) })).filter((b) => b.rule && b.actions.length);
+}
+const isBlocked = (a) => isOpen(a) && blockers(a).length > 0;
+const blockText = (a) => blockers(a).map((b) => b.rule.requirementTitle).join(', ');
+const blockTag = (a) => isBlocked(a) ? '<span class="flag flag--grey" title="Waiting for: ' + esc(blockText(a)) + '">Blocked</span>' : '';
+const gate = (a, status) => (isBlocked(a) && (status === 'In progress' || status === 'Complete')) ? 'This action is blocked until ' + blockText(a) + ' is complete.' : '';
+function blockNotice(a) {
+  const bl = isOpen(a) ? blockers(a) : []; if (!bl.length) return '';
+  return '<div class="govuk-notification-banner blocked-note" role="region" aria-labelledby="blk-t"><div class="govuk-notification-banner__header"><h2 class="govuk-notification-banner__title" id="blk-t">Blocked</h2></div><div class="govuk-notification-banner__content"><p class="govuk-notification-banner__heading">Waiting for ' + bl.map((b) => esc(b.rule.requirementTitle)).join(' and ') + '</p><p class="govuk-body">' + esc(ruleOf(a.ruleId).name) + ' depends on this being complete first. It will unlock when these actions are done:</p><ul class="govuk-list govuk-list--bullet">' +
+    bl.map((b) => b.actions.map((x) => '<li><a class="govuk-link" href="#/actions/' + x.id + '">' + esc(x.title) + '</a> ' + statusTag(x.status) + '</li>').join('')).join('') + '</ul></div></div>';
+}
+const depList = (r) => '<ul class="govuk-list govuk-body-s deplist">' + depsOf(r).map((id) => '<li><span class="muted">Needs first</span> ' + ruleChip(id) + ' ' + esc((ruleOf(id) || {}).name || '') + '</li>').join('') + requiredBy(r.id).map((x) => '<li><span class="muted">Required by</span> ' + ruleChip(x.id) + ' ' + esc(x.name) + '</li>').join('') + '</ul>';
+function migrateDeps(d) {
+  const SEED_DEPS = { 'Service assessment for high volume transactional services': ['DPIA high risk screener'], 'High risk assurance board': ['DPIA high risk screener'] };
+  if (d.depsMigrated) return d;
+  d.rules.forEach((r) => { if (!r.dependsOn || !r.dependsOn.length) r.dependsOn = (SEED_DEPS[r.name] || []).map((n) => (d.rules.find((x) => x.name === n) || {}).id).filter(Boolean); });
+  d.depsMigrated = true; return d;
+}
 const reqTitle = (a) => { const r = ruleOf(a.ruleId); return r ? r.requirementTitle : 'Other actions'; };
 const workPct = (id) => { const l = S.actions.filter((a) => a.workId === id && isActive(a)); return l.length ? Math.round(l.filter((a) => a.status === 'Complete').length / l.length * 100) : 0; };
 const bar = (p, label) => '<div class="bar" role="img" aria-label="' + esc(label || p + '% complete') + '"><span style="width:' + p + '%"></span></div>';
@@ -276,7 +301,7 @@ function reqGroups(workId, includeRetired) {
     if (!g) { g = { ruleId: a.ruleId, title: reqTitle(a), actions: [] }; groups.push(g); }
     g.actions.push(a);
   });
-  return groups;
+  return groups.sort((x, y) => depDepth(x.ruleId) - depDepth(y.ruleId));
 }
 // Rule ID chip: opens the rule information dialog
 const ruleChip = (id) => S.rules.some((r) => r.id === id)
@@ -289,7 +314,7 @@ const statusSelect = (a) => '<label class="govuk-visually-hidden" for="mv-' + a.
 const evBadge = (a) => evCount(a) ? '<span class="ev ev--yes">' + evCount(a) + ' evidence</span>' : '<span class="ev">No evidence</span>';
 const actionCard = (a) => '<article class="kcard" draggable="true" data-id="' + a.id + '">' +
   '<div class="kcard-top">' + (a.ruleId ? ruleChip(a.ruleId) : '<span></span>') + '<span class="kcard-id">' + a.id + '</span></div>' +
-  '<h3 class="kcard-title"><a class="govuk-link govuk-link--no-visited-state" href="#/actions/' + a.id + '">' + esc(a.title) + '</a></h3>' +
+  '<h3 class="kcard-title"><a class="govuk-link govuk-link--no-visited-state" href="#/actions/' + a.id + '">' + esc(a.title) + '</a></h3>' + (isBlocked(a) ? '<p class="kcard-work">' + blockTag(a) + ' Waiting for ' + esc(blockText(a)) + '</p>' : '') +
   '<p class="kcard-work">' + esc(reqTitle(a)) + '<br><a class="govuk-link govuk-link--no-visited-state" href="#/work/' + a.workId + '">' + esc(workName(a.workId)) + '</a></p>' +
   '<div class="kcard-foot">' + evBadge(a) + (actLegal(a) ? tag('Legal', 'govuk-tag--red') : '') + '<a class="link-btn" href="#/actions/' + a.id + '">Record activity<span class="govuk-visually-hidden"> for ' + esc(a.title) + '</span></a></div></article>';
 function banner() {
@@ -341,7 +366,7 @@ const flowDiagram = (active) => {
 
 /* ---------- Views ---------- */
 function actionRow(a, showWork) {
-  return '<tr class="govuk-table__row"><td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#/actions/' + a.id + '">' + esc(a.title) + '</a> <span class="muted">' + a.id + '</span>' +
+  return '<tr class="govuk-table__row"><td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#/actions/' + a.id + '">' + esc(a.title) + '</a> <span class="muted">' + a.id + '</span> ' + blockTag(a) +
     (showWork ? '<br><a class="govuk-link govuk-link--no-visited-state muted" href="#/work/' + a.workId + '">' + esc(workName(a.workId)) + '</a>' : '') + '</td>' +
     '<td class="govuk-table__cell">' + evBadge(a) + '</td><td class="govuk-table__cell">' + (isActive(a) ? statusSelect(a) : statusTag(a.status)) + '</td></tr>';
 }
@@ -430,7 +455,7 @@ function vRules() {
     const sameReturn = (r.requirementTitle || '').trim().toLowerCase() === (r.name || '').trim().toLowerCase();
     const note = clipText(r.conditionsText, 180);
     const phases = (r.phases || []).filter(Boolean);
-    const meta = [phases.length ? esc(phases.join(', ')) : '', r.mandatory ? esc(r.mandatory) : '', (r.actions || []).length + ' action' + ((r.actions || []).length === 1 ? '' : 's'), r.owner ? esc(r.owner) : 'Unassigned'].filter(Boolean);
+    const meta = [phases.length ? esc(phases.join(', ')) : '', r.mandatory ? esc(r.mandatory) : '', (r.actions || []).length + ' action' + ((r.actions || []).length === 1 ? '' : 's'), depsOf(r).length ? 'Needs ' + esc(depsOf(r).join(', ')) + ' first' : '', requiredBy(r.id).length ? 'Required by ' + esc(requiredBy(r.id).map((x) => x.id).join(', ')) : '', r.owner ? esc(r.owner) : 'Unassigned'].filter(Boolean);
     return '<li class="rrow"><div class="rrow-main"><p class="rrow-k">' + ruleChip(r.id) + ' <span>' + esc(sourceLabel(r)) + '</span> ' + statusRule(r) + ' <span class="muted">v' + r.version + '</span></p>' +
       '<h2 class="rrow-t"><a class="govuk-link govuk-link--no-visited-state" href="#/rules/' + r.id + '">' + esc(r.name) + '</a></h2>' +
       '<p class="rrow-w"><strong>When</strong> ' + (r.conditions.length ? r.conditions.map((c) => '<span class="cpill">' + esc(condText(c)) + '</span>').join('<span class="cand">and</span>') : '<span class="muted">No conditions</span>') + '</p>' +
@@ -470,6 +495,13 @@ function actionEditor(a, i) {
     f('title', 'Action') + involves + f('evidence', 'Expected evidence', true, 'What the team should attach or record to show it is done, for example a report, approval or link.') +
     '<div class="govuk-checkboxes govuk-checkboxes--small govuk-form-group" data-module="govuk-checkboxes"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" type="checkbox" id="alegal-' + i + '" name="alegal' + i + '" value="1"' + (a.legal ? ' checked' : '') + '><label class="govuk-label govuk-checkboxes__label" for="alegal-' + i + '">Legal requirement</label></div></div></section>';
 }
+function depEditor(r, id) {
+  const cur = r.dependsOn || [], self = id === 'new' ? null : id;
+  const opts = S.rules.filter((x) => x.id !== self && !cur.includes(x.id) && !(self && dependsTransitively(x.id, self))).sort((a, b) => a.id.localeCompare(b.id));
+  return '<h2 class="govuk-heading-m">Dependencies</h2><p class="govuk-body">Choose rules that must be completed first. Actions from this rule stay blocked on a piece of work until every action from those rules is complete.</p>' +
+    (cur.length ? '<ul class="deplist deplist--edit">' + cur.map((d, i) => '<li>' + ruleChip(d) + ' <span>' + esc((ruleOf(d) || {}).name || d) + '</span><button type="button" class="link-btn" data-act="dep-remove" data-i="' + i + '">Remove<span class="govuk-visually-hidden"> ' + esc(d) + '</span></button></li>').join('') + '</ul>' : '<p class="govuk-hint">This rule does not depend on any other rule.</p>') +
+    '<div class="dep-add"><div class="govuk-form-group"><label class="govuk-label" for="depadd">Add a dependency</label><select class="govuk-select" id="depadd" name="depadd"><option value="">Select a rule</option>' + opts.map((x) => '<option value="' + esc(x.id) + '">' + esc(x.id + ' · ' + x.name) + '</option>').join('') + '</select></div><button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="dep-add">Add dependency</button></div>';
+}
 function vRuleForm(id) {
   if (!ruleDraft || ruleDraft.key !== id) {
     const r = id === 'new' ? { name: '', source: '', owner: '', status: 'Published', changeNote: '', conditions: [{ field: 'type', op: 'is', value: OPT.type[0] }], requirementTitle: '', requirementDescription: '', mandatory: 'Must have', actions: [{ title: '', description: '', evidence: '', legal: false }] } : S.rules.find((x) => x.id === id);
@@ -490,6 +522,7 @@ function vRuleForm(id) {
     (ERR.cond ? '<div class="govuk-form-group govuk-form-group--error">' + errMsg('cond', 'cond') : '<div>') +
     r.conditions.map(condRow).join('') + '</div>' +
     '<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="cond-add">Add condition</button>' +
+    depEditor(r, id) +
     '<h2 class="govuk-heading-m">Requirement returned</h2>' +
     text('requirementTitle', 'rt', r.requirementTitle, 'Requirement title') +
     text('requirementDescription', 'rd', r.requirementDescription, 'Description', { area: true, rows: 3 }) +
@@ -543,14 +576,14 @@ function filterForm(base, p, controls, keep) {
 }
 const actLegal = (a) => !!actDef(a).legal;
 const actPrio = (a) => (a.status === 'Exception' ? 0 : actLegal(a) && isOpen(a) ? 1 : a.status === 'In progress' ? 2 : a.status === 'Not started' ? 3 : 4);
-const byPrio = (a, b) => actPrio(a) - actPrio(b) || a.id.localeCompare(b.id);
+const byPrio = (a, b) => (isBlocked(a) - isBlocked(b)) || actPrio(a) - actPrio(b) || a.id.localeCompare(b.id);
 const recordBtn = (a, label) => '<a class="govuk-button govuk-button--secondary btn-sm" role="button" draggable="false" data-module="govuk-button" href="#/actions/' + a.id + '">' + (label || 'Record activity') + '<span class="govuk-visually-hidden"> for ' + esc(a.title) + '</span></a>';
 const workLink = (id) => '<a class="govuk-link govuk-link--no-visited-state" href="#/work/' + id + '">' + esc(workName(id)) + '</a>';
 const nextAction = (w) => S.actions.filter((a) => a.workId === w.id && isOpen(a)).sort(byPrio)[0];
 
 const DOT = { 'Not started': 'grey', 'In progress': 'blue', 'Exception': 'orange', 'Complete': 'green', 'No longer required': 'grey' };
 function qrow(a, showWork, href, sel) {
-  const flag = a.status === 'Exception' ? '<span class="flag flag--orange">Exception</span>' : a.status === 'Complete' ? (evCount(a) ? '' : '<span class="flag flag--yellow">No evidence</span>') : actLegal(a) ? '<span class="flag flag--red">Legal</span>' : '';
+  const flag = isBlocked(a) ? '<span class="flag flag--grey" title="Waiting for: ' + esc(blockText(a)) + '">Blocked</span>' : a.status === 'Exception' ? '<span class="flag flag--orange">Exception</span>' : a.status === 'Complete' ? (evCount(a) ? '' : '<span class="flag flag--yellow">No evidence</span>') : actLegal(a) ? '<span class="flag flag--red">Legal</span>' : '';
   return '<li class="qrow' + (sel ? ' sel' : '') + '"><span class="dot dot--' + DOT[a.status] + '" aria-hidden="true"></span><div class="qrow-m"><a class="qrow-t govuk-link govuk-link--no-visited-state" href="' + (href || '#/actions/' + a.id) + '"' + (sel ? ' aria-current="true"' : '') + '>' + esc(a.title) + '</a><span class="qrow-s">' + (showWork === false ? '' : esc(workName(a.workId)) + ' · ') + esc(reqTitle(a)) + '</span></div><div class="qrow-r">' + flag + '<button type="button" class="info-btn" data-act="action-info" data-id="' + a.id + '" aria-label="Help for ' + esc(a.title) + '" aria-haspopup="dialog">?</button><span class="qrow-st">' + a.status + '</span></div></li>';
 }
 function workRow(w, href, sel) {
@@ -630,14 +663,24 @@ function actionPane(a) {
     '<h3 class="pane-h">Recent activity</h3>' + (recent.length ? '<ul class="pane-log">' + recent.map((u) => '<li><strong>' + esc(u.type) + '</strong> <span class="muted">' + fmt(u.at) + '</span><br>' + esc(u.text || u.link || '') + '</li>').join('') + '</ul>' : '<p class="pane-p muted">Nothing recorded yet.</p>') + '</aside>';
 }
 
+function trow(a) {
+  const blocked = isBlocked(a), d = actDef(a), ev = evCount(a);
+  return '<li class="trow' + (blocked ? ' trow--blocked' : '') + '"><span class="dot dot--' + DOT[a.status] + '" aria-hidden="true"></span>' +
+    '<div class="trow-m"><a class="trow-t govuk-link govuk-link--no-visited-state" href="#/actions/' + a.id + '">' + esc(a.title) + '</a><span class="trow-s">' + esc(reqTitle(a)) + (blocked ? ' · <strong>Waiting for ' + esc(blockText(a)) + '</strong>' : '') + '</span></div>' +
+    '<div class="trow-i">' + (a.ruleId ? ruleChip(a.ruleId) : '') + (actLegal(a) ? '<span class="flag flag--red">Legal</span>' : '') + blockTag(a) + '</div>' +
+    '<div class="trow-e">' + (ev ? '<span class="ev ev--yes">' + ev + ' evidence</span>' : '<span class="ev">No evidence</span>') + '</div>' +
+    '<div class="trow-st">' + statusTag(a.status) + '</div>' +
+    '<a class="trow-go govuk-link" href="#/actions/' + a.id + '">' + (a.status === 'Complete' ? 'View' : a.status === 'Not started' ? 'Start' : 'Continue') + '<span class="govuk-visually-hidden"> ' + esc(a.title) + '</span></a></li>';
+}
 function vTasks() {
   const p = qs(), show = p.get('show') || 'open', wf = p.get('work') || '';
   const list = S.actions.filter((a) => isActive(a) && (!wf || a.workId === wf) && (show === 'all' || isOpen(a))).sort(byPrio);
   const works = S.works.filter((w) => list.some((a) => a.workId === w.id));
   const html = works.map((w) => {
-    const l = list.filter((a) => a.workId === w.id), pc = workPct(w.id);
-    return '<section class="panel"><div class="tgroup-head"><h2 class="govuk-heading-s govuk-!-margin-bottom-0"><a class="govuk-link govuk-link--no-visited-state" href="#/work/' + w.id + '">' + esc(w.title) + '</a></h2><span class="muted">' + pc + '% complete · ' + l.length + (show === 'all' ? ' actions' : ' to do') + '</span></div><ul class="qlist">' +
-      l.map((a) => qrow(a, false)).join('') + '</ul></section>';
+    const l = list.filter((a) => a.workId === w.id), pc = workPct(w.id), nb = l.filter(isBlocked).length;
+    return '<section class="tgroup"><div class="tgroup-head"><div><h2 class="tgroup-t"><a class="govuk-link govuk-link--no-visited-state" href="#/work/' + w.id + '">' + esc(w.title) + '</a></h2><p class="tgroup-s">' + esc(w.stage) + ' · ' + esc(w.type) + (w.risk === 'High' ? ' · <strong class="red">High risk</strong>' : '') + '</p></div>' +
+      '<div class="tgroup-p">' + bar(pc, pc + '% complete') + '<span class="muted">' + pc + '% complete · ' + l.length + (show === 'all' ? ' actions' : ' to do') + (nb ? ' · ' + nb + ' blocked' : '') + '</span></div></div>' +
+      '<ul class="trows">' + l.map(trow).join('') + '</ul></section>';
   }).join('');
   return banner() + pageHead('Tasks', 'What to do next, grouped by work. Open an action to record activity and evidence.') +
     '<div class="toolbar">' + tabsNav('tasks', p, 'show', [['open', 'To do', S.actions.filter((a) => isOpen(a) && (!wf || a.workId === wf)).length], ['all', 'Everything']], 'open', 'Tasks') +
@@ -790,6 +833,7 @@ function saveRule(form) {
   if (!r.conditions.length) fail('cond', 'Add at least one condition', 'cond-add');
   else { const i = r.conditions.findIndex((c) => c.value === '' || c.value == null || (Array.isArray(c.value) && !c.value.length)); if (i >= 0) fail('cond', 'Enter a value for every condition', 'cval-' + i); }
   if (!r.actions.length || r.actions.some((a) => !a.title)) fail('actions', r.actions.length ? 'Enter a name for every action' : 'Add at least one action', r.actions.length ? 'atitle-' + r.actions.findIndex((a) => !a.title) : 'action-add');
+  if (id !== 'new' && (r.dependsOn || []).some((d) => dependsTransitively(d, id))) fail('deps', 'A rule cannot depend on itself, directly or through other rules');
   if (!r.requirementTitle.trim()) fail('requirementTitle', 'Enter a requirement title', 'rt');
   if (!r.changeNote.trim()) fail('changeNote', 'Enter a note describing what changed in this version', 'cn');
   if (hasErr()) { rerender(); return; }
@@ -868,6 +912,8 @@ document.addEventListener('click', (e) => {
   else if (act === 'action-info') actionInfo(t.dataset.id);
   else if (act === 'dialog-close') closeDialog();
   else if (act === 'focus-field') { e.preventDefault(); const el = document.getElementById(t.dataset.field); if (el) { el.scrollIntoView({ block: 'center' }); el.focus(); } }
+  else if (act === 'dep-add') { const fm = t.closest('form'); readRuleDraft(fm); const v = fm.elements.depadd.value, rd = ruleDraft.rule; if (v && !(rd.dependsOn || []).includes(v)) { rd.dependsOn = (rd.dependsOn || []).concat(v); } ERR = {}; rerender(); }
+  else if (act === 'dep-remove') { readRuleDraft(t.closest('form')); ruleDraft.rule.dependsOn.splice(Number(t.dataset.i), 1); ERR = {}; rerender(); }
   else if (act === 'cond-add') { readRuleDraft(t.closest('form')); ruleDraft.rule.conditions.push({ field: 'type', op: 'is', value: OPT.type[0] }); ERR = {}; rerender(); }
   else if (act === 'action-add') { readRuleDraft(t.closest('form')); ruleDraft.rule.actions.push({ title: '', description: '', evidence: '', legal: false }); ERR = {}; rerender(); }
   else if (act === 'action-remove') { readRuleDraft(t.closest('form')); ruleDraft.rule.actions.splice(Number(t.dataset.i), 1); ERR = {}; rerender(); }
@@ -897,6 +943,7 @@ function ruleInfo(id) {
   d.className = 'rule-dialog'; d.innerHTML = '<div class="dlg-head"><div><span class="rule-chip rule-chip--static">' + esc(r.id) + '</span> ' + statusRule(r) + ' ' + tag('Version ' + r.version, 'govuk-tag--blue') +
     '<h2 class="govuk-heading-l" id="rule-dialog-title">' + esc(r.name) + '</h2><p class="govuk-body-s">Source: ' + esc(r.source) + '<br>Owner: ' + (r.owner ? esc(r.owner) + ' (' + (OWNER_TYPE(r.owner) || 'owner').toLowerCase() + ')' : 'Unassigned') + '</p></div><button type="button" class="dlg-x" data-act="dialog-close" aria-label="Close">&times;</button></div>' +
     '<h3 class="govuk-heading-s">When</h3><ul class="govuk-list govuk-list--bullet">' + r.conditions.map((c) => '<li>' + esc(condText(c)) + '</li>').join('') + '</ul>' +
+    ((depsOf(r).length || requiredBy(r.id).length) ? '<h3 class="govuk-heading-s">Dependencies</h3>' + depList(r) : '') +
     '<h3 class="govuk-heading-s">Requirement returned</h3><p class="govuk-body"><strong>' + esc(r.requirementTitle) + '</strong><br>' + esc(r.requirementDescription || '') + '</p>' +
     (r.actions.length ? '<h3 class="govuk-heading-s">Actions raised</h3>' + actionDefList(r) : '') +
     '<h3 class="govuk-heading-s">Currently applies to</h3>' + (apps.length ? '<ul class="govuk-list">' + apps.map((w) => '<li><a class="govuk-link" href="#/work/' + w.id + '" data-act="dialog-close">' + esc(w.title) + '</a></li>').join('') + '</ul>' : '<p class="govuk-body">No work items.</p>') +
@@ -1273,14 +1320,14 @@ function vActionDetail(id) {
     '<span class="govuk-caption-m">' + a.id + ' · <a class="govuk-link" href="#/work/' + a.workId + '">' + esc(workName(a.workId)) + '</a>' + (w ? ' · ' + esc(w.stage) : '') + '</span>' +
     pageHead(esc(a.title), statusTag(a.status) + ' ' + legalTag(d) + (a.ruleVersion ? ' <span class="muted">Rule ' + esc(a.ruleId) + ' v' + a.ruleVersion + '</span>' : ''),
       act ? (flowKind(a) ? '' : '<button type="button" class="govuk-button" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="evidence">Add evidence</button>') + '<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="note">Add note or update status</button>' : '') +
-    '<div class="two-col' + (flowKind(a) ? ' flow-page' : '') + '"><section><div class="flow-main">' + flowPanel(a) + '</div><div class="flow-rest">' +
+    '<div class="two-col' + (flowKind(a) ? ' flow-page' : '') + '"><section><div class="flow-main">' + blockNotice(a) + (isBlocked(a) ? '' : flowPanel(a)) + '</div><div class="flow-rest">' +
     '<h2 class="govuk-heading-m">About this action</h2><dl class="govuk-summary-list"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">What this involves</dt><dd class="govuk-summary-list__value">' + stepList(d.description) + '</dd></div>' +
     '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Expected evidence</dt><dd class="govuk-summary-list__value">' + (d.evidence ? esc(d.evidence) : '<span class="muted">Not yet defined.</span>') + '</dd></div>' +
     '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Requirement</dt><dd class="govuk-summary-list__value">' + (rule ? esc(rule.requirementTitle) + '<br><span class="muted">' + esc(rule.source) + '</span>' : 'Not linked to a rule') + '</dd></div></dl>' +
     '<h2 class="govuk-heading-m">Evidence <span class="muted">(' + ev.length + ')</span></h2>' +
     (ev.length ? '<ul class="evlist">' + ev.map(evItem).join('') + '</ul>' : '<div class="govuk-inset-text">No evidence recorded yet.' + (d.evidence ? ' Expected: ' + esc(d.evidence) : '') + (d.legal ? ' This is a legal requirement, so evidence is needed before it can be completed.' : '') + '</div>') +
     '<h2 class="govuk-heading-m">Activity</h2><ol class="tlist">' + rest.map(tl).join('') + '</ol></div></section>' +
-    '<aside><div class="panel"><h2 class="govuk-heading-s">Status</h2><ol class="steps">' + STATUSES.filter((s) => s !== 'No longer required' || a.status === s).map((s) => '<li class="' + (s === a.status ? 'on' : '') + '">' + esc(s) + '</li>').join('') + '</ol></div>' +
+    '<aside>' + (rule && (depsOf(rule).length || requiredBy(rule.id).length) ? '<h2 class="govuk-heading-s">Dependencies</h2>' + depList(rule) : '') + '<div class="panel"><h2 class="govuk-heading-s">Status</h2><ol class="steps">' + STATUSES.filter((s) => s !== 'No longer required' || a.status === s).map((s) => '<li class="' + (s === a.status ? 'on' : '') + '">' + esc(s) + '</li>').join('') + '</ol></div>' +
     (sibs.length ? '<h2 class="govuk-heading-s govuk-!-margin-top-6">Other actions for this requirement</h2><ul class="govuk-list govuk-body-s">' + sibs.map((s) => '<li><a class="govuk-link" href="#/actions/' + s.id + '">' + esc(s.title) + '</a> ' + statusTag(s.status) + '</li>').join('') + '</ul>' : '') + '</aside></div>';
 }
 const SCR_GROUPS = [
@@ -1434,6 +1481,7 @@ function flowPanel(a) {
 function saveDraft(form) {
   const a = S.actions.find((x) => x.id === form.dataset.id); if (!a) return;
   const d = formData(form), answers = {}; Object.keys(d).forEach((k) => { answers[k] = typeof d[k] === 'string' ? d[k].trim() : d[k]; });
+  if (isBlocked(a)) return;
   const first = !a.flow;
   a.flow = { stage: 'draft', answers, savedAt: now() };
   if (first) a.updates.push({ at: now(), type: 'system', text: 'Started the High Risk Screening Document (draft saved).' });
@@ -1445,7 +1493,7 @@ function flowErr(form, key, msg) {
   g.classList.add('govuk-form-group--error'); const e = g.querySelector('.fq-err'); e.innerHTML = '<p class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> ' + esc(msg) + '</p>';
 }
 function submitFlow(form) {
-  const a = S.actions.find((x) => x.id === form.dataset.id); if (!a) return;
+  const a = S.actions.find((x) => x.id === form.dataset.id); if (!a || isBlocked(a)) return;
   const d = formData(form); let bad = 0;
   form.querySelectorAll('.govuk-form-group--error').forEach((g) => { g.classList.remove('govuk-form-group--error'); g.querySelector('.fq-err').innerHTML = ''; });
   if (form.id === 'flow-screener') {
@@ -1514,6 +1562,7 @@ function saveActivity(form) {
   const a = S.actions.find((x) => x.id === form.dataset.id), d = formData(form), err = document.getElementById('act-err');
   const type = d.type || 'note', body = (d.text || '').trim(), link = (d.link || '').trim(), status = d.status || a.status;
   const bad = (m) => { err.innerHTML = '<p class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> ' + esc(m) + '</p>'; };
+  if (gate(a, status)) return bad(gate(a, status));
   if (link && !/^https?:\/\/\S+$/i.test(link)) return bad('Enter a link that starts with http:// or https://');
   if (type === 'evidence' && !body && !link) return bad('Describe the evidence or add a link to it');
   if (type !== 'note' && !body && !link) return bad('Enter details of the ' + type);
@@ -1554,6 +1603,8 @@ document.addEventListener('dragover', (e) => { const c = e.target.closest && e.t
 document.addEventListener('drop', (e) => { const c = e.target.closest && e.target.closest('.col'); if (c && dragId) { e.preventDefault(); moveAction(dragId, c.dataset.status); dragId = null; } });
 function moveAction(id, status) {
   const a = S.actions.find((x) => x.id === id);
+  const gm = a ? gate(a, status) : '';
+  if (gm) { flash = { title: 'Important', html: '<p class="govuk-notification-banner__heading">' + esc(gm) + '</p>' }; rerender(); return; }
   if (a && STATUSES.indexOf(status) > -1 && a.status !== status) { a.updates.push({ at: now(), type: 'system', text: 'Moved on board from ' + a.status + ' to ' + status + '.' }); a.status = status; save(); }
   rerender();
 }
