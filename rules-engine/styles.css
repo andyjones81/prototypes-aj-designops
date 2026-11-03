@@ -583,3 +583,28 @@ html, html.govuk-template, .govuk-template__body, .app-body, .govuk-main-wrapper
 .flow>.flow-steps li{min-width:0;padding:10px 0}
 .scr-sum{margin-bottom:20px}.scr-sum .enrol-top{margin-bottom:12px}
 .flow>.flow-steps{width:100%!important;max-width:none!important}
+
+/* Flow pages: form left, context right */
+.flow-main,.flow-rest{display:contents}
+.two-col.flow-page{grid-template-columns:minmax(0,1fr) 340px!important;gap:24px}
+.two-col.flow-page>section{display:contents}
+.two-col.flow-page .flow-main{display:block;grid-column:1;grid-row:1/span 3}
+.two-col.flow-page .flow-rest{display:block;grid-column:2;grid-row:1;background:#fff;border:1px solid #e1e4e8;border-top:3px solid #1d70b8;padding:16px 20px}
+.two-col.flow-page>aside{display:block;grid-column:2;grid-row:2;background:#fff;border:1px solid #e1e4e8;padding:16px 20px}
+.two-col.flow-page .flow-rest .govuk-heading-m{font-size:1.1rem;margin:16px 0 8px}
+.two-col.flow-page .flow-rest .govuk-heading-m:first-child{margin-top:0}
+.two-col.flow-page .flow-rest .govuk-summary-list__row{display:block;border-bottom:1px solid #e1e4e8;padding:8px 0}
+.two-col.flow-page .flow-rest .govuk-summary-list__key,.two-col.flow-page .flow-rest .govuk-summary-list__value{display:block;width:100%;padding:0}
+.two-col.flow-page .flow-rest .govuk-summary-list__key{font-size:.8rem;text-transform:uppercase;color:#505a5f;letter-spacing:.03em}
+.two-col.flow-page .flow-rest .fgrid{display:block}
+@media(max-width:1100px){.two-col.flow-page{grid-template-columns:minmax(0,1fr)!important}.two-col.flow-page .flow-main,.two-col.flow-page .flow-rest,.two-col.flow-page>aside{grid-column:1;grid-row:auto}}
+.two-col.flow-page .flow-rest,.two-col.flow-page>aside{font-size:.95rem}
+.two-col.flow-page .flow-rest *,.two-col.flow-page>aside .steps li,.two-col.flow-page>aside .govuk-list{font-size:.95rem!important}
+.two-col.flow-page .flow-rest .govuk-summary-list__key{font-size:.75rem!important}
+.two-col.flow-page .flow-rest .govuk-heading-m,.two-col.flow-page>aside .govuk-heading-s{font-size:1.05rem!important}
+.two-col.flow-page .flow-rest .govuk-inset-text{padding:10px 12px;margin:0}
+.two-col.flow-page>aside .panel{padding:0!important;border:0!important;background:transparent!important}
+.two-col.flow-page>aside .govuk-heading-s{margin:0 0 8px!important}
+.two-col.flow-page>aside .govuk-heading-s.govuk-\!-margin-top-6{margin-top:20px!important}
+.flow-page .flow-bar{flex-wrap:wrap;gap:8px}.flow-page .flow-bar .govuk-button-group{flex-wrap:nowrap;margin:0;gap:8px}
+.flow-page .flow-bar .govuk-button{margin:0;white-space:nowrap}

@@ -1273,13 +1273,13 @@ function vActionDetail(id) {
     '<span class="govuk-caption-m">' + a.id + ' · <a class="govuk-link" href="#/work/' + a.workId + '">' + esc(workName(a.workId)) + '</a>' + (w ? ' · ' + esc(w.stage) : '') + '</span>' +
     pageHead(esc(a.title), statusTag(a.status) + ' ' + legalTag(d) + (a.ruleVersion ? ' <span class="muted">Rule ' + esc(a.ruleId) + ' v' + a.ruleVersion + '</span>' : ''),
       act ? (flowKind(a) ? '' : '<button type="button" class="govuk-button" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="evidence">Add evidence</button>') + '<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-act="activity-open" data-id="' + a.id + '" data-type="note">Add note or update status</button>' : '') +
-    '<div class="two-col' + (flowKind(a) ? ' flow-page' : '') + '"><section>' + flowPanel(a) +
+    '<div class="two-col' + (flowKind(a) ? ' flow-page' : '') + '"><section><div class="flow-main">' + flowPanel(a) + '</div><div class="flow-rest">' +
     '<h2 class="govuk-heading-m">About this action</h2><dl class="govuk-summary-list"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">What this involves</dt><dd class="govuk-summary-list__value">' + stepList(d.description) + '</dd></div>' +
     '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Expected evidence</dt><dd class="govuk-summary-list__value">' + (d.evidence ? esc(d.evidence) : '<span class="muted">Not yet defined.</span>') + '</dd></div>' +
     '<div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Requirement</dt><dd class="govuk-summary-list__value">' + (rule ? esc(rule.requirementTitle) + '<br><span class="muted">' + esc(rule.source) + '</span>' : 'Not linked to a rule') + '</dd></div></dl>' +
     '<h2 class="govuk-heading-m">Evidence <span class="muted">(' + ev.length + ')</span></h2>' +
     (ev.length ? '<ul class="evlist">' + ev.map(evItem).join('') + '</ul>' : '<div class="govuk-inset-text">No evidence recorded yet.' + (d.evidence ? ' Expected: ' + esc(d.evidence) : '') + (d.legal ? ' This is a legal requirement, so evidence is needed before it can be completed.' : '') + '</div>') +
-    '<h2 class="govuk-heading-m">Activity</h2><ol class="tlist">' + rest.map(tl).join('') + '</ol></section>' +
+    '<h2 class="govuk-heading-m">Activity</h2><ol class="tlist">' + rest.map(tl).join('') + '</ol></div></section>' +
     '<aside><div class="panel"><h2 class="govuk-heading-s">Status</h2><ol class="steps">' + STATUSES.filter((s) => s !== 'No longer required' || a.status === s).map((s) => '<li class="' + (s === a.status ? 'on' : '') + '">' + esc(s) + '</li>').join('') + '</ol></div>' +
     (sibs.length ? '<h2 class="govuk-heading-s govuk-!-margin-top-6">Other actions for this requirement</h2><ul class="govuk-list govuk-body-s">' + sibs.map((s) => '<li><a class="govuk-link" href="#/actions/' + s.id + '">' + esc(s.title) + '</a> ' + statusTag(s.status) + '</li>').join('') + '</ul>' : '') + '</aside></div>';
 }
