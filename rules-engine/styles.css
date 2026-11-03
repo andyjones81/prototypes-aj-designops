@@ -578,3 +578,8 @@ html, html.govuk-template, .govuk-template__body, .app-body, .govuk-main-wrapper
 .enrol-steps .done .enrol-ic{background:#00703c;border-color:#00703c;color:#fff}.enrol-steps .done .enrol-st{color:#00703c}
 .spin{width:16px;height:16px;border:3px solid #cfdbe6;border-top-color:#1d70b8;border-radius:50%!important;animation:sp .8s linear infinite}
 @keyframes sp{to{transform:rotate(360deg)}}
+
+.flow>.flow-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;background:transparent!important;border:0!important;padding:0!important}
+.flow>.flow-steps li{min-width:0;padding:10px 0}
+.scr-sum{margin-bottom:20px}.scr-sum .enrol-top{margin-bottom:12px}
+.flow>.flow-steps{width:100%!important;max-width:none!important}
