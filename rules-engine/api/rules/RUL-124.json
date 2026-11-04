@@ -13,11 +13,31 @@
  "status": "Published",
  "conditions": [
   {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
    "field": "stage",
    "op": "in",
    "value": [
     "Build"
    ]
+  },
+  {
+   "field": "publicFacing",
+   "op": "is",
+   "value": "Yes"
+  },
+  {
+   "field": "technology",
+   "op": "includes",
+   "value": "Web application"
   }
  ],
  "conditionsText": "",
@@ -42,13 +62,68 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from ORR activity log-Grid view.csv."
+   "note": "Imported from ORR activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-124",
+    "name": "If accessible outside of DfE, like on the internet, incorporate WAF solution into design (either Azure Front Door or Barracuda) (ORR 18)",
+    "source": "Operational Readiness Review",
+    "dataset": "Operational Readiness Review",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Not stated",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "Steve Goff",
+    "enabled": true,
+    "status": "Published",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "",
+    "phases": [
+     "Build"
+    ],
+    "phasesAssumed": true,
+    "requirementTitle": "If accessible outside of DfE, like on the internet, incorporate WAF solution into design (either Azure Front Door or Barracuda) (ORR 18)",
+    "requirementDescription": "",
+    "why": "",
+    "tasks": [
+     "If accessible outside of DfE, like on the internet, incorporate WAF solution into design (either Azure Front Door or Barracuda) (ORR 18)"
+    ],
+    "actions": [
+     {
+      "title": "If accessible outside of DfE, like on the internet, incorporate WAF solution into design (either Azure Front Door or Barracuda) (ORR 18)",
+      "description": "",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Public web applications require the public-web security controls. For security.txt, the explicit public-domain obligation takes precedence over the source's generic repository note. Source phase was blank; Build remains a prototype assumption."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Public web applications require the public-web security controls. For security.txt, the explicit public-domain obligation takes precedence over the source's generic repository note. Source phase was blank; Build remains a prototype assumption.",
+ "modelVersion": 2
 }

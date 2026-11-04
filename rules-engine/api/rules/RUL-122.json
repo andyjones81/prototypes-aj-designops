@@ -9,9 +9,19 @@
  "owner": "Dominic Harley,Jane Ludlow",
  "activityOwner": "Technical",
  "stakeholder": "Dominic Harley,Steve Goff",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -19,6 +29,11 @@
     "Idea",
     "Build"
    ]
+  },
+  {
+   "field": "authentication",
+   "op": "is",
+   "value": "Yes"
   }
  ],
  "conditionsText": "If a service requires users to securely access the service or information",
@@ -46,13 +61,72 @@
  ],
  "systems": "- GOV.UK One Login\n- DfE sign-in\n- Entra ID - Single Sign-on\n-",
  "guidance": "Identity and Access Management (IdAM) intranet page, word of mouth through Dominic Harley or Jane Ludlow.\nDfE Sign-in Homepagehttps://educationgovuk.sharepoint.com/sites/lvewp00518\nOne Login guidance page \nhttps://www.sign-in.service.gov.uk/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from ORR activity log-Grid view.csv."
+   "note": "Imported from ORR activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-122",
+    "name": "Consider identity and access management for your service (ORR 16)",
+    "source": "Identity Management B2B,Identity Management B2C,Identity Management B2E",
+    "dataset": "Operational Readiness Review",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "Dominic Harley,Jane Ludlow",
+    "activityOwner": "Technical",
+    "stakeholder": "Dominic Harley,Steve Goff",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Idea",
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "If a service requires users to securely access the service or information",
+    "phases": [
+     "Explore",
+     "Build"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Consider identity and access management for your service (ORR 16)",
+    "requirementDescription": "Enable users to securely access the digital services and information they need while protecting departmental data and systems.",
+    "why": "- provide a consistent and secure user experience in your service or product\n- reduce the number of identities and passwords users need to manage\n- improve security through modern authentication and authorisation controls\n- enable services to adopt common departmental identity standards and platforms\n- reduce duplication of effort and technology across services",
+    "tasks": [
+     "Consider identity and access management for your service (ORR 16)"
+    ],
+    "actions": [
+     {
+      "title": "Consider identity and access management for your service (ORR 16)",
+      "description": "When exploring (disco and alpha) user journeys, think about whether you will need users to log-in or create an account (authentication).\nIf so, consider in what capacity users will be interacting with your product or service (as a citizen, on behalf of an organisation, on behalf of the DfE, or a combination)\nWhen building (beta), engage with Dominic Harley if you are unsure which is the right option for your service and users. Or, if you know what solution fits your service best, engage directly with the onboarding team",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [
+     "Identity Management B2B,Identity Management B2C,Identity Management B2E"
+    ],
+    "systems": "- GOV.UK One Login\n- DfE sign-in\n- Entra ID - Single Sign-on\n-",
+    "guidance": "Identity and Access Management (IdAM) intranet page, word of mouth through Dominic Harley or Jane Ludlow.\nDfE Sign-in Homepagehttps://educationgovuk.sharepoint.com/sites/lvewp00518\nOne Login guidance page \nhttps://www.sign-in.service.gov.uk/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Identity, individual accounts and SSO requirements apply where people authenticate."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Identity, individual accounts and SSO requirements apply where people authenticate.",
+ "modelVersion": 2
 }

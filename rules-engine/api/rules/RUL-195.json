@@ -9,9 +9,20 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  }
+ ],
  "conditionsText": "Every service",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +43,58 @@
  "standards": [],
  "systems": "",
  "guidance": "Testing and Updating",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-195",
+    "name": "Incident response plans SHOULD be tested on an annual basis to ensure people are familiar with the process under pressure.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Should have",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "Every service",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Incident response plans SHOULD be tested on an annual basis to ensure people are familiar with the process under pressure.",
+    "requirementDescription": "Service teams should practise responding to security incidents at least once a year so that, if a real incident occurs, people know what to do and can respond quickly and effectively",
+    "why": "People discover during a real incident that contact lists are out of date, nobody knows who owns the service, escalation paths are unclear and people have never read the plan,. Testing helps identify those issues before a real emergency",
+    "tasks": [
+     "Incident response plans SHOULD be tested on an annual basis to ensure people are familiar with the process under pressure."
+    ],
+    "actions": [
+     {
+      "title": "Incident response plans SHOULD be tested on an annual basis to ensure people are familiar with the process under pressure.",
+      "description": "Don't wait for a real cyber incident to discover whether your response process works. Practise it at least annually so that the people involved know their roles and can respond confidently when under pressure.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "Testing and Updating",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate.",
+ "modelVersion": 2
 }

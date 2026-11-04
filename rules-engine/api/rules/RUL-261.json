@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -20,6 +30,11 @@
     "Build",
     "Run / Serve"
    ]
+  },
+  {
+   "field": "customDevelopment",
+   "op": "is",
+   "value": "Yes"
   }
  ],
  "conditionsText": "Code reviews should form part of the development/change process and should be performed by someone suitably experienced who did not submit the relevant change.\nThe extent of review can be proportionate to the nature and risk of the change. Platform rules and review checklists can also be used to make the process consistent",
@@ -47,13 +62,73 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-261",
+    "name": "Are you conducting regular code reviews as part of the development process?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build",
+       "Run / Serve"
+      ]
+     }
+    ],
+    "conditionsText": "Code reviews should form part of the development/change process and should be performed by someone suitably experienced who did not submit the relevant change.\nThe extent of review can be proportionate to the nature and risk of the change. Platform rules and review checklists can also be used to make the process consistent",
+    "phases": [
+     "Alpha",
+     "Private beta",
+     "Public beta",
+     "Live"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Are you conducting regular code reviews as part of the development process?",
+    "requirementDescription": "Does another suitably experienced person review code changes before they are accepted or deployed?",
+    "why": "Developers can unintentionally introduce:\n- security weaknesses\n- coding errors\n- insecure configurations\n- unintended behaviour\n- problems created by changes elsewhere in the system.",
+    "tasks": [
+     "Are you conducting regular code reviews as part of the development process?"
+    ],
+    "actions": [
+     {
+      "title": "Are you conducting regular code reviews as part of the development process?",
+      "description": "• Define when code review is required.\n• Require an appropriate independent reviewer.\n• Prevent relevant changes from being merged/deployed until required reviews are complete.\n• Include security considerations in review criteria where appropriate.\n• Maintain evidence that reviews occurred.\n• Address issues identified before release.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Secure development, code review and code testing apply where software is developed or changed."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Secure development, code review and code testing apply where software is developed or changed.",
+ "modelVersion": 2
 }

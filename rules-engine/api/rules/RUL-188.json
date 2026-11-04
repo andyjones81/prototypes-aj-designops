@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "privilegedAccess",
+   "op": "is",
+   "value": "Yes"
+  }
+ ],
  "conditionsText": "Any activity performed using a privileged account",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-188",
+    "name": "Administrative work is ONLY permitted on Managed, Encrypted, EDR-protected devices to ensure the highest level of security for high-privilege operations.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "Any activity performed using a privileged account",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Administrative work is ONLY permitted on Managed, Encrypted, EDR-protected devices to ensure the highest level of security for high-privilege operations.",
+    "requirementDescription": "If you're performing administrative tasks, you must do so from a company-approved device that is managed, encrypted, and actively monitored by security tooling. You must not administer systems from personal, unmanaged, or insecure devices.",
+    "why": "We do not want high-privilege accounts being used from personal or unmanaged devices because compromising the device could lead directly to a major security breach.",
+    "tasks": [
+     "Administrative work is ONLY permitted on Managed, Encrypted, EDR-protected devices to ensure the highest level of security for high-privileg"
+    ],
+    "actions": [
+     {
+      "title": "Administrative work is ONLY permitted on Managed, Encrypted, EDR-protected devices to ensure the highest level of security for high-privileg",
+      "description": "If you're carrying out administrative or privileged activities, you must use a secure corporate-managed device that is encrypted and monitored by EDR.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Administrative MFA, least privilege, break-glass control and protected administrative devices apply wherever privileged access exists."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Administrative MFA, least privilege, break-glass control and protected administrative devices apply wherever privileged access exists.",
+ "modelVersion": 2
 }

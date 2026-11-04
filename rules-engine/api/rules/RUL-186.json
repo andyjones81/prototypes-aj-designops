@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "technology",
+   "op": "includes",
+   "value": "Cloud storage"
+  }
+ ],
  "conditionsText": "Services that use cloud storage solutions, there may be some other conditions",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "",
  "guidance": "https://educationgovuk.sharepoint.com/sites/lvewp00047/SitePages/Testing.aspx",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-186",
+    "name": "Log Retention MUST be 90 Days Hot / 1 Year Cold (managed centrally) to ensure sufficient evidence is available for all security incident investigations.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "Services that use cloud storage solutions, there may be some other conditions",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Log Retention MUST be 90 Days Hot / 1 Year Cold (managed centrally) to ensure sufficient evidence is available for all security incident investigations.",
+    "requirementDescription": "Security and audit logs must be kept in a searchable format for at least 90 days and archived for at least 1 year, so investigators have enough evidence if a security incident is discovered.",
+    "why": "For incident investigations security teams need to know when the attack started, which accounts were affected, what data was accessed etc. Many organisations need to be able to demonstrate security monitoring and the logs support this",
+    "tasks": [
+     "Log Retention MUST be 90 Days Hot / 1 Year Cold (managed centrally) to ensure sufficient evidence is available for all security incident inv"
+    ],
+    "actions": [
+     {
+      "title": "Log Retention MUST be 90 Days Hot / 1 Year Cold (managed centrally) to ensure sufficient evidence is available for all security incident inv",
+      "description": "Keep logs readily searchable for at least 90 days and retain them in archive form for at least 1 year.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://educationgovuk.sharepoint.com/sites/lvewp00047/SitePages/Testing.aspx",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Default cloud-storage encryption and the source's central log-retention requirement apply to services using cloud storage."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Default cloud-storage encryption and the source's central log-retention requirement apply to services using cloud storage.",
+ "modelVersion": 2
 }

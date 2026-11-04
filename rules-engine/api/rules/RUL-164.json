@@ -9,9 +9,20 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  }
+ ],
  "conditionsText": "",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +43,58 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-164",
+    "name": "Services MUST undergo mandatory assurance thru DSAM to ensure critical risks are detected and managed effectively.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Services MUST undergo mandatory assurance thru DSAM to ensure critical risks are detected and managed effectively.",
+    "requirementDescription": "Before a service can proceed through key stages of its lifecycle it must go through the DSAM assurance process so that significant risks are identified, assessed, and addressed.",
+    "why": "Without assurance, teams may unintentionally introduce:\n- Security vulnerabilities\n- Unsupported technologies\n- Compliance issues\n- Single points of failure\n- Poor operational processes\nA formal assurance process provides an independent review and challenge before those issues affect production services.",
+    "tasks": [
+     "Services MUST undergo mandatory assurance thru DSAM to ensure critical risks are detected and managed effectively."
+    ],
+    "actions": [
+     {
+      "title": "Services MUST undergo mandatory assurance thru DSAM to ensure critical risks are detected and managed effectively.",
+      "description": "Before a service can proceed through key stages of its lifecycle it must go through the DSAM assurance process so that significant risks are identified, assessed, and addressed.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate.",
+ "modelVersion": 2
 }

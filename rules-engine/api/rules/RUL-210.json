@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -49,13 +59,75 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/tracking-secure-by-design-progress/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-210",
+    "name": "Have you included continuous assurance processes in the service's project delivery workflow?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Understanding",
+       "Design and test",
+       "Build",
+       "Run / Serve"
+      ]
+     }
+    ],
+    "conditionsText": "This applies whenever:\n- A service is being designed, built or maintained.\n- Agile delivery methods are used.\n- Technology or business requirements are changing.\n- Security controls need ongoing validation.",
+    "phases": [
+     "Discovery",
+     "Alpha",
+     "Private beta",
+     "Public beta",
+     "Live"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you included continuous assurance processes in the service's project delivery workflow?",
+    "requirementDescription": "Have you built regular security checks and reviews into the way the project is delivered, rather than only checking security at the end?",
+    "why": "Traditional projects often perform a single security review shortly before go-live. Secure by Design requires security to be continually assessed throughout the service lifecycle because threats, risks and designs change over time. Continuous assurance helps identify issues early and provides confidence that security remains effective.",
+    "tasks": [
+     "Have you included continuous assurance processes in the service's project delivery workflow?"
+    ],
+    "actions": [
+     {
+      "title": "Have you included continuous assurance processes in the service's project delivery workflow?",
+      "description": "Evidence might include:\n• Security reviews built into sprint cycles.\n• Security checkpoints within delivery governance.\n• Threat assessments being regularly reviewed.\n• Security testing occurring throughout development.\n• Regular risk reviews.\n• Assurance activities included in project plans.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/tracking-secure-by-design-progress/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate.",
+ "modelVersion": 2
 }

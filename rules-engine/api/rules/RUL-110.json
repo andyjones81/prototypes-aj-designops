@@ -9,15 +9,30 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "Steve Goff",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
    "value": [
     "Build"
    ]
+  },
+  {
+   "field": "hasUsers",
+   "op": "is",
+   "value": "Yes"
   }
  ],
  "conditionsText": "Depends on the nature of what you are building",
@@ -42,13 +57,68 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from ORR activity log-Grid view.csv."
+   "note": "Imported from ORR activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-110",
+    "name": "Conduct testing and action any changes needed on the user journey (ORR 9)",
+    "source": "Operational Readiness Review",
+    "dataset": "Operational Readiness Review",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Not stated",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "Steve Goff",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "Depends on the nature of what you are building",
+    "phases": [
+     "Build"
+    ],
+    "phasesAssumed": true,
+    "requirementTitle": "Conduct testing and action any changes needed on the user journey (ORR 9)",
+    "requirementDescription": "Good practice",
+    "why": "Good practice",
+    "tasks": [
+     "Conduct testing and action any changes needed on the user journey (ORR 9)"
+    ],
+    "actions": [
+     {
+      "title": "Conduct testing and action any changes needed on the user journey (ORR 9)",
+      "description": "",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Prototype interpretation: user-journey testing, privacy notices and user support apply to human-facing services. The privacy notice also requires information collection. Source phase was blank; Build remains a prototype assumption."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Prototype interpretation: user-journey testing, privacy notices and user support apply to human-facing services. The privacy notice also requires information collection. Source phase was blank; Build remains a prototype assumption.",
+ "modelVersion": 2
 }

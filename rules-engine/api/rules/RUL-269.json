@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -20,6 +30,11 @@
     "Build",
     "Run / Serve"
    ]
+  },
+  {
+   "field": "activities",
+   "op": "includes",
+   "value": "Service change"
   }
  ],
  "conditionsText": "Consider whether the change affects:\n- threats or vulnerabilities\n- likelihood of an incident\n- potential business impact\n- attack surface\n- existing risk ratings\n- effectiveness of existing controls\n- need for additional controls.\nThe depth of reassessment should be proportionate to the security significance of the change",
@@ -47,13 +62,73 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/evaluating-the-security-impact-of-changes/\n\nHow do I? - Change Enablement Policy Process and Procedure v1.05 - MyDfE",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-269",
+    "name": "Are you considering requested changes as part of risk assessment and treatment activities?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build",
+       "Run / Serve"
+      ]
+     }
+    ],
+    "conditionsText": "Consider whether the change affects:\n- threats or vulnerabilities\n- likelihood of an incident\n- potential business impact\n- attack surface\n- existing risk ratings\n- effectiveness of existing controls\n- need for additional controls.\nThe depth of reassessment should be proportionate to the security significance of the change",
+    "phases": [
+     "Alpha",
+     "Private beta",
+     "Public beta",
+     "Live"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Are you considering requested changes as part of risk assessment and treatment activities?",
+    "requirementDescription": "When something changes in the service, do you check whether it creates new security risks or changes existing ones, and do you decide what action is required?",
+    "why": "A change could:\n- create a completely new risk\n- increase an existing risk\n- reduce an existing risk\n- make a security control less effective\n- require an additional security control.\nRisk assessment therefore needs to remain aligned with the current service.",
+    "tasks": [
+     "Are you considering requested changes as part of risk assessment and treatment activities?"
+    ],
+    "actions": [
+     {
+      "title": "Are you considering requested changes as part of risk assessment and treatment activities?",
+      "description": "For relevant changes:\n1. assess the security impact\n2. review affected risks\n3. identify new risks where needed\n4. reassess likelihood and impact where appropriate\n5. update the risk register\n6. review whether existing mitigations remain effective\n7. identify additional controls or mitigations if required\n8. test security recommendations before release.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/evaluating-the-security-impact-of-changes/\n\nHow do I? - Change Enablement Policy Process and Procedure v1.05 - MyDfE",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Release and security-change management apply when a service change is planned or being delivered."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Release and security-change management apply when a service change is planned or being delivered.",
+ "modelVersion": 2
 }

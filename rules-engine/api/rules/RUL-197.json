@@ -9,9 +9,28 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "deliveryModel",
+   "op": "in",
+   "value": [
+    "In-house",
+    "Hybrid"
+   ]
+  }
+ ],
  "conditionsText": "Servers, virtual machines, operating systems, container hosts, application runtimes and cloud compute instances. Usually less applicable to fully managed SaaS products where the supplier patches the underlying operating systems and runtime",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +51,76 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-197",
+    "name": "Operating Systems and runtimes MUST be patched regularly, with Critical patches = 14 Days and High = 30 Days SLA, to ensure known flaws are fixed before hackers can exploit them.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "Servers, virtual machines, operating systems, container hosts, application runtimes and cloud compute instances. Usually less applicable to fully managed SaaS products where the supplier patches the underlying operating systems and runtime",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Operating Systems and runtimes MUST be patched regularly, with Critical patches = 14 Days and High = 30 Days SLA, to ensure known flaws are fixed before hackers can exploit them.",
+    "requirementDescription": "Servers, operating systems, and software runtimes must be kept up to date, and serious security vulnerabilities must be fixed within defined timeframes before attackers can exploit them.",
+    "why": "To ensure known flaws are fixed before hackers can exploit them",
+    "tasks": [
+     "Operating Systems and runtimes MUST be patched regularly, with Critical patches = 14 Days and High = 30 Days SLA, to ensure known flaws are "
+    ],
+    "actions": [
+     {
+      "title": "Operating Systems and runtimes MUST be patched regularly, with Critical patches = 14 Days and High = 30 Days SLA, to ensure known flaws are ",
+      "description": "Keep operating systems and software platforms up to date. Critical security vulnerabilities must be fixed within 14 days and High vulnerabilities within 30 days so attackers can't exploit known weaknesses that already have a fix available.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Configuration and patching duties apply to infrastructure / runtimes the team manages. Supplier patching is handled through separate supplier assurance."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "technology",
+    "op": "includes",
+    "value": "Cloud hosting"
+   },
+   {
+    "field": "technology",
+    "op": "includes",
+    "value": "Compute / runtimes"
+   },
+   {
+    "field": "technology",
+    "op": "includes",
+    "value": "Containers"
+   }
+  ]
+ ],
+ "applicabilityNote": "Configuration and patching duties apply to infrastructure / runtimes the team manages. Supplier patching is handled through separate supplier assurance.",
+ "modelVersion": 2
 }

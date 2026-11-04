@@ -9,15 +9,35 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
    "value": [
     "Build"
    ]
+  },
+  {
+   "field": "publicFacing",
+   "op": "is",
+   "value": "Yes"
+  },
+  {
+   "field": "technology",
+   "op": "includes",
+   "value": "Web application"
   }
  ],
  "conditionsText": "When using a repository",
@@ -42,13 +62,68 @@
  "standards": [],
  "systems": "GitHub",
  "guidance": "None found",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-147",
+    "name": "The DfE security.txt file needs to be accessible from active DfE websites to ensure vulnerabilities can be quickly reported via the HMG-mandated VdP. The file MUST be accessible without authentication and implemented on all domains resolvable from the public Internet",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "When using a repository",
+    "phases": [
+     "Public beta"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "The DfE security.txt file needs to be accessible from active DfE websites to ensure vulnerabilities can be quickly reported via the HMG-mandated VdP. The file MUST be accessible without authentication and implemented on all domains resolvable from the public Internet",
+    "requirementDescription": "Every public-facing DfE website must publish a security.txt file so that security researchers can easily find out how to report vulnerabilities to the Department for Education through the government's Vulnerability Disclosure Programme (VdP)",
+    "why": "Without a clear reporting mechanism, a reported may:\n- Not know who to contact.\n- Send reports to a generic inbox that nobody monitors.\n- Give up reporting the issue.\n- Publicly disclose the vulnerability instead of reporting it responsibly.",
+    "tasks": [
+     "The DfE security.txt file needs to be accessible from active DfE websites to ensure vulnerabilities can be quickly reported via the HMG-mand"
+    ],
+    "actions": [
+     {
+      "title": "The DfE security.txt file needs to be accessible from active DfE websites to ensure vulnerabilities can be quickly reported via the HMG-mand",
+      "description": "The file must be accessible without authentication and implemented on all domains that can be reached by the public internet",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "GitHub",
+    "guidance": "None found",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Public web applications require the public-web security controls. For security.txt, the explicit public-domain obligation takes precedence over the source's generic repository note."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Public web applications require the public-web security controls. For security.txt, the explicit public-domain obligation takes precedence over the source's generic repository note.",
+ "modelVersion": 2
 }

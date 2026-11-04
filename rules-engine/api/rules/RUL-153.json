@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "technology",
+   "op": "includes",
+   "value": "Cloud hosting"
+  }
+ ],
  "conditionsText": "Cloud Environments",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "Cloud Platforms",
  "guidance": "None found",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-153",
+    "name": "All infrastructure and digital services MUST be registered and identifiable, and all cloud resources MUST have Owner, CostCenter, and Env tags because this prevents the existence of unsecured, orphaned infrastructure.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "Cloud Environments",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "All infrastructure and digital services MUST be registered and identifiable, and all cloud resources MUST have Owner, CostCenter, and Env tags because this prevents the existence of unsecured, orphaned infrastructure.",
+    "requirementDescription": "Every system, service, server, database, application, storage account, and cloud resource must be known, recorded, and clearly owned by someone. Cloud resources must also be tagged so they can be identified, managed, secured, and costed correctly.",
+    "why": "Because this prevents the existence of unsecured infrastructure where it is unclear as to who owns it (orphaned resource). We cannot secure what we do not know exists. Orphaned infrastructure is a primary attack vector.",
+    "tasks": [
+     "All infrastructure and digital services MUST be registered and identifiable, and all cloud resources MUST have Owner, CostCenter, and Env ta"
+    ],
+    "actions": [
+     {
+      "title": "All infrastructure and digital services MUST be registered and identifiable, and all cloud resources MUST have Owner, CostCenter, and Env ta",
+      "description": "Resources shouldn't exist in the cloud that nobody owns, nobody pays for, and nobody is responsible for securing",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "Cloud Platforms",
+    "guidance": "None found",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Cloud asset registration and cloud-risk assessment apply to cloud-hosted infrastructure or services, including supplier-provided cloud platforms."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Cloud asset registration and cloud-risk assessment apply to cloud-hosted infrastructure or services, including supplier-provided cloud platforms.",
+ "modelVersion": 2
 }

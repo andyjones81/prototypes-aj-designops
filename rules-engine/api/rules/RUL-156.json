@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "technology",
+   "op": "includes",
+   "value": "Foundation systems"
+  }
+ ],
  "conditionsText": "",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "",
  "guidance": "None found",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-156",
+    "name": "All foundation systems MUST meet phase 1 mandated security controls by March 31st 2026 to ensure critical protection against common attacks.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "All foundation systems MUST meet phase 1 mandated security controls by March 31st 2026 to ensure critical protection against common attacks.",
+    "requirementDescription": "The organisation has identified a minimum set of essential security controls. Any critical foundational platform must have those controls in place by 31 March 2026, because those controls provide protection against the most common cyber attacks.",
+    "why": "The purpose is to implement the most important security controls first, reducing risks from common threats such as:\n- Phishing\n- Credential theft\n- Unpatched vulnerabilities\n- Misconfigured cloud resources\n- Excessive privileges\n- Ransomware",
+    "tasks": [
+     "All foundation systems MUST meet phase 1 mandated security controls by March 31st 2026 to ensure critical protection against common attacks."
+    ],
+    "actions": [
+     {
+      "title": "All foundation systems MUST meet phase 1 mandated security controls by March 31st 2026 to ensure critical protection against common attacks.",
+      "description": "The organisation has identified a minimum set of essential security controls. Any critical foundational platform must have those controls in place by 31 March 2026, because those controls provide protection against the most common cyber attacks.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "None found",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "The source's mandated foundation-system controls apply to foundation systems; its original deadline is retained in the source title."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "The source's mandated foundation-system controls apply to foundation systems; its original deadline is retained in the source title.",
+ "modelVersion": 2
 }

@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "authentication",
+   "op": "is",
+   "value": "Yes"
+  }
+ ],
  "conditionsText": "Wherever authentication exists",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-183",
+    "name": "Single Sign-On (SSO) MUST be used where possible to reduce password fatigue and simplify the adoption of MFA.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Should have",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "Wherever authentication exists",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Single Sign-On (SSO) MUST be used where possible to reduce password fatigue and simplify the adoption of MFA.",
+    "requirementDescription": "Users should sign in once with their organisational account (for example, their DfE Entra ID/Microsoft 365 account) and then be able to access approved systems without managing separate usernames and passwords for each application.",
+    "why": "Better security. instead of 20 apps and 20 passwords we have 1 identity and 1 MFA process. Better governance means one someone leaves the ID is disabled and access is removed everywhere",
+    "tasks": [
+     "Single Sign-On (SSO) MUST be used where possible to reduce password fatigue and simplify the adoption of MFA."
+    ],
+    "actions": [
+     {
+      "title": "Single Sign-On (SSO) MUST be used where possible to reduce password fatigue and simplify the adoption of MFA.",
+      "description": "Wherever possible, applications should use the organisation's central identity provider (such as Microsoft Entra ID) rather than separate usernames and passwords",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Identity, individual accounts and SSO requirements apply where people authenticate."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Identity, individual accounts and SSO requirements apply where people authenticate.",
+ "modelVersion": 2
 }

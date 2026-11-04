@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -21,6 +31,11 @@
     "Build",
     "Run / Serve"
    ]
+  },
+  {
+   "field": "activities",
+   "op": "includes",
+   "value": "Economic appraisal"
   }
  ],
  "conditionsText": "This is relevant when:\n- Comparing multiple delivery options.\n- Assessing value for money.\n- Producing economic appraisals under Green Book principles.",
@@ -49,13 +64,75 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-201",
+    "name": "Does the economic case include an analysis with the security threats, security risk tolerance, security objectives and cyber resilience as part of critical success factors?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Understanding",
+       "Design and test",
+       "Build",
+       "Run / Serve"
+      ]
+     }
+    ],
+    "conditionsText": "This is relevant when:\n- Comparing multiple delivery options.\n- Assessing value for money.\n- Producing economic appraisals under Green Book principles.",
+    "phases": [
+     "Discovery",
+     "Alpha",
+     "Private beta",
+     "Public beta",
+     "Live"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Does the economic case include an analysis with the security threats, security risk tolerance, security objectives and cyber resilience as part of critical success factors?",
+    "requirementDescription": "When comparing options, have you assessed:\n- What security threats exist?\n- How much risk the organisation is willing to accept?\n- What security outcomes need to be achieved?\n- How resilient the service needs to be?\n- Whether these factors influence which option is the best choice?",
+    "why": "A cheaper option is not necessarily the best option if it exposes the organisation to significant cyber risk. The economic case should consider security impacts when deciding which option delivers the greatest overall value. The guidance states that the economic case should include information about security threats and assess resilience against security attacks as part of the success criteria.",
+    "tasks": [
+     "Does the economic case include an analysis with the security threats, security risk tolerance, security objectives and cyber resilience as p"
+    ],
+    "actions": [
+     {
+      "title": "Does the economic case include an analysis with the security threats, security risk tolerance, security objectives and cyber resilience as p",
+      "description": "The economic case should show:\n• Key cyber threats.\n• Defined risk appetite or risk tolerance.\n• Security objectives.\n• Resilience requirements.\n• How security contributes to critical success factors.\n• How these considerations were used to evaluate options.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Security value-for-money analysis applies when comparing delivery options or performing an economic appraisal."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Security value-for-money analysis applies when comparing delivery options or performing an economic appraisal.",
+ "modelVersion": 2
 }

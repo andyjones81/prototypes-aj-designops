@@ -13,11 +13,26 @@
  "status": "Published",
  "conditions": [
   {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
    "field": "stage",
    "op": "in",
    "value": [
     "Understanding"
    ]
+  },
+  {
+   "field": "offshoreData",
+   "op": "is",
+   "value": "Yes"
   }
  ],
  "conditionsText": "",
@@ -42,13 +57,68 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-228",
+    "name": "If data will be processed, stored or transmitted outside the UK or the European Economic Area (EEA), have you considered the relevant security obligations?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": true,
+    "status": "Published",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Understanding"
+      ]
+     }
+    ],
+    "conditionsText": "",
+    "phases": [
+     "Discovery"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "If data will be processed, stored or transmitted outside the UK or the European Economic Area (EEA), have you considered the relevant security obligations?",
+    "requirementDescription": "If information leaves the UK or EEA, have you checked what legal and security requirements apply?",
+    "why": "Cross-border data movement may create additional legal and privacy obligations.\nSecure by Design requires teams to understand applicable obligations based on the nature of the service and its data.",
+    "tasks": [
+     "If data will be processed, stored or transmitted outside the UK or the European Economic Area (EEA), have you considered the relevant securi"
+    ],
+    "actions": [
+     {
+      "title": "If data will be processed, stored or transmitted outside the UK or the European Economic Area (EEA), have you considered the relevant securi",
+      "description": "You should assess:\n• Where data is stored\n• International transfer mechanisms\n• Legal restrictions\n• Supplier arrangements",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Offshore approval and cross-border transfer review apply when data is processed or stored outside the UK / EEA, including by suppliers."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Offshore approval and cross-border transfer review apply when data is processed or stored outside the UK / EEA, including by suppliers.",
+ "modelVersion": 2
 }

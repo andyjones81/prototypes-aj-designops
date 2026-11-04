@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "technology",
+   "op": "includes",
+   "value": "Source repository"
+  }
+ ],
  "conditionsText": "When using a repository/development platform",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "All repos and platform development",
  "guidance": "https://technical-guidance.education.gov.uk/principles/general/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-149",
+    "name": "Must use GitHub for any new projects. Existing projects should have migration plans developed asap.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "When using a repository/development platform",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Must use GitHub for any new projects. Existing projects should have migration plans developed asap.",
+    "requirementDescription": "Any projects using something other than GitHub \nshould have migration plans in place and new projects can only use GitHub for source code repository and development platform",
+    "why": "Enables security measures to be designed once and re-used many times, otherwise all teams and projects are required to duplicate effort, and any errors introduce security risk.",
+    "tasks": [
+     "Must use GitHub for any new projects. Existing projects should have migration plans developed asap."
+    ],
+    "actions": [
+     {
+      "title": "Must use GitHub for any new projects. Existing projects should have migration plans developed asap.",
+      "description": "All new project build using GitHub, all existing project have migration plans to move to GitHub asap",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "All repos and platform development",
+    "guidance": "https://technical-guidance.education.gov.uk/principles/general/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Repository governance and secret protection apply when the service uses a source repository."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Repository governance and secret protection apply when the service uses a source repository.",
+ "modelVersion": 2
 }

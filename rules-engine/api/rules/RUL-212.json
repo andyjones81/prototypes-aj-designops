@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -44,13 +54,70 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-212",
+    "name": "Have you established a clear governance structure around risk management decision making?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Understanding",
+       "Design and test"
+      ]
+     }
+    ],
+    "conditionsText": "Applies whenever Security risks are are being assessed, being escalated, and accepted. Also when Security decisions affect project delivery",
+    "phases": [
+     "Discovery",
+     "Alpha"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you established a clear governance structure around risk management decision making?",
+    "requirementDescription": "Is it clear who makes risk decisions, who approves risk acceptance, who escalates risks and who monitors them?",
+    "why": "Good risk management requires accountability.\nWithout governance:\n- Risks may be ignored.\n- Risks may be accepted by someone without authority.\n- Important decisions may be delayed.\n- Different teams may use different standards.\nThe guidance emphasises that the risk appetite must be communicated and used by delivery teams to support risk management decision-making and governance",
+    "tasks": [
+     "Have you established a clear governance structure around risk management decision making?"
+    ],
+    "actions": [
+     {
+      "title": "Have you established a clear governance structure around risk management decision making?",
+      "description": "The governance model should explain, who owns risks, who approves risk acceptance, and how escalation works",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate.",
+ "modelVersion": 2
 }

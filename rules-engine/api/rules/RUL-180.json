@@ -9,9 +9,20 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  }
+ ],
  "conditionsText": "When one application talks to another, applications accessing Azure, service accesses a database, APIs authenticate to other APIs and when CI/CD pipelines deploy infrastructure",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +43,71 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-180",
+    "name": "Service-to-service communication MUST use managed identities or short-lived tokens (Machine Identity); hardcoded keys MUST NOT be used to prevent permanent key theft.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "When one application talks to another, applications accessing Azure, service accesses a database, APIs authenticate to other APIs and when CI/CD pipelines deploy infrastructure",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Service-to-service communication MUST use managed identities or short-lived tokens (Machine Identity); hardcoded keys MUST NOT be used to prevent permanent key theft.",
+    "requirementDescription": "When one system talks to another system, it should authenticate using managed identities or temporary credentials. It should not use long-lived passwords, secrets, or API keys stored in code or configuration files.",
+    "why": "To prevent permanent key theft which means an attacker could have access for months when there arent stored credentials its much harder for an attacker",
+    "tasks": [
+     "Service-to-service communication MUST use managed identities or short-lived tokens (Machine Identity); hardcoded keys MUST NOT be used to pr"
+    ],
+    "actions": [
+     {
+      "title": "Service-to-service communication MUST use managed identities or short-lived tokens (Machine Identity); hardcoded keys MUST NOT be used to pr",
+      "description": "Whenever systems authenticate to other systems, use managed identities or temporary tokens instead of passwords, API keys, or connection strings embedded in code",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Managed machine identities apply to service integrations and deployment pipelines."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "technology",
+    "op": "includes",
+    "value": "System integration"
+   },
+   {
+    "field": "technology",
+    "op": "includes",
+    "value": "CI/CD"
+   }
+  ]
+ ],
+ "applicabilityNote": "Managed machine identities apply to service integrations and deployment pipelines.",
+ "modelVersion": 2
 }

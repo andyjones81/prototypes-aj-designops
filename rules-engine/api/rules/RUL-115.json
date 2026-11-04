@@ -9,15 +9,30 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "Gary Perkins",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
    "value": [
     "Understanding"
    ]
+  },
+  {
+   "field": "deliveryPhase",
+   "op": "is",
+   "value": "Discovery"
   }
  ],
  "conditionsText": "All DfE discoveries must have a peer review.",
@@ -44,13 +59,70 @@
  ],
  "systems": "",
  "guidance": "- Discovery peer review guidance\n\n- Book a discovery peer review\n- Service Standard\n- Apply the Service Standard in DfE",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from ORR activity log-Grid view.csv."
+   "note": "Imported from ORR activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-115",
+    "name": "Book a discovery peer review (ORR 14)",
+    "source": "Service Standard",
+    "dataset": "Operational Readiness Review",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "Gary Perkins",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Understanding"
+      ]
+     }
+    ],
+    "conditionsText": "All DfE discoveries must have a peer review.",
+    "phases": [
+     "Discovery"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Book a discovery peer review (ORR 14)",
+    "requirementDescription": "To provide assurance that moving to alpha is the right next step.",
+    "why": "To provide assurance that moving to alpha is the right next step.",
+    "tasks": [
+     "Book a discovery peer review (ORR 14)"
+    ],
+    "actions": [
+     {
+      "title": "Book a discovery peer review (ORR 14)",
+      "description": "Book a discovery peer review",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [
+     "Service Standard"
+    ],
+    "systems": "",
+    "guidance": "- Discovery peer review guidance\n\n- Book a discovery peer review\n- Service Standard\n- Apply the Service Standard in DfE",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "A discovery peer review is specific to Discovery; the blank ORR delivery phase previously defaulted incorrectly to Build."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "A discovery peer review is specific to Discovery; the blank ORR delivery phase previously defaulted incorrectly to Build.",
+ "modelVersion": 2
 }

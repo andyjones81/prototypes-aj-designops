@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "staffInScope",
+   "op": "is",
+   "value": "Yes"
+  }
+ ],
  "conditionsText": "All staff are required to complete the training",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-190",
+    "name": "All staff MUST complete Security Awareness training annually because staff are the best defence against human error.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "All staff are required to complete the training",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "All staff MUST complete Security Awareness training annually because staff are the best defence against human error.",
+    "requirementDescription": "Every employee must complete security awareness training at least once a year so they understand common cyber risks and know how to avoid causing or contributing to security incidents.",
+    "why": "Many security incidents involve human actions rather than technical failures.",
+    "tasks": [
+     "All staff MUST complete Security Awareness training annually because staff are the best defence against human error."
+    ],
+    "actions": [
+     {
+      "title": "All staff MUST complete Security Awareness training annually because staff are the best defence against human error.",
+      "description": "Everyone must complete cyber security awareness training every year so they can recognise threats, handle information safely, and help prevent incidents caused by mistakes or social engineering attacks.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Annual awareness training applies to staff supporting or operating the service."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Annual awareness training applies to staff supporting or operating the service.",
+ "modelVersion": 2
 }

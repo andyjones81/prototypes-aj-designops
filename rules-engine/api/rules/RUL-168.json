@@ -9,9 +9,38 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "deliveryModel",
+   "op": "in",
+   "value": [
+    "In-house",
+    "Hybrid"
+   ]
+  },
+  {
+   "field": "environments",
+   "op": "includes",
+   "value": "Production"
+  },
+  {
+   "field": "environments",
+   "op": "includes",
+   "value": "Non-production"
+  }
+ ],
  "conditionsText": "Any applicable in house built service",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +61,58 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-168",
+    "name": "Production environments MUST NOT communicate with Non-Production environments (Segmentation) to prevent a test environment compromise from spreading to live systems.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "Any applicable in house built service",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Production environments MUST NOT communicate with Non-Production environments (Segmentation) to prevent a test environment compromise from spreading to live systems.",
+    "requirementDescription": "Production systems should be isolated from development, test, and UAT environments. A compromise in a non-production environment should not provide a path into live production systems.",
+    "why": "Non-production environments are often less secure than production because they may have:\n- Weaker access controls\n- Shared accounts\n- Less monitoring\n- Experimental code\n- Temporary configurations\nAttackers know this.",
+    "tasks": [
+     "Production environments MUST NOT communicate with Non-Production environments (Segmentation) to prevent a test environment compromise from s"
+    ],
+    "actions": [
+     {
+      "title": "Production environments MUST NOT communicate with Non-Production environments (Segmentation) to prevent a test environment compromise from s",
+      "description": "Keep Production and Non-Production environments separate. If a development or test system is compromised, the attacker should not be able to use it as a stepping stone into live production services or data.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Segmentation applies where the team has both production and non-production environments."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Segmentation applies where the team has both production and non-production environments.",
+ "modelVersion": 2
 }

@@ -1,0 +1,1488 @@
+{
+    "version": 2,
+    "groups": [
+        "Service",
+        "Users and data",
+        "Technology",
+        "Security and assurance"
+    ],
+    "fields": {
+        "demand": {
+            "label": "Work source",
+            "kind": "single",
+            "group": "Service",
+            "options": [
+                "New demand",
+                "Planned change",
+                "BAU / Incident driven",
+                "Feature or Improvement",
+                "Risk remediation",
+                "Retirement or Replacement",
+                "Purchase or Procurement"
+            ],
+            "description": "Origin of the work; retained for compatibility with the work-category model."
+        },
+        "type": {
+            "label": "Type of work",
+            "kind": "single",
+            "group": "Service",
+            "options": [
+                "Change",
+                "New",
+                "Procurement",
+                "Improvement",
+                "BAU"
+            ],
+            "description": "Work classification; procurement triggers the commercial approval rule."
+        },
+        "stage": {
+            "label": "Stage",
+            "kind": "single",
+            "group": "Service",
+            "options": [
+                "Idea",
+                "Understanding",
+                "Design and test",
+                "Build",
+                "Run / Serve",
+                "Decommissioning"
+            ],
+            "description": "Broad delivery stage. Discovery maps to Understanding, Alpha to Design and test, both beta phases to Build, and Live to Run / Serve."
+        },
+        "characteristics": {
+            "label": "Characteristics",
+            "kind": "multi",
+            "group": "Technology",
+            "options": [
+                "Transactional",
+                "Information",
+                "Data",
+                "Campaign",
+                "API"
+            ],
+            "description": "Legacy work characteristics used by the original demo rules. Technology provides the more detailed imported-rule characteristics."
+        },
+        "channel": {
+            "label": "Channel",
+            "kind": "multi",
+            "group": "Users and data",
+            "options": [
+                "Online",
+                "Native app",
+                "Face to face",
+                "Print",
+                "Email"
+            ],
+            "description": "Channels people use to access the service."
+        },
+        "users": {
+            "label": "Users",
+            "kind": "multi",
+            "group": "Users and data",
+            "options": [
+                "SBP",
+                "Public",
+                "Parents and Carers",
+                "Teachers",
+                "Local Authorities",
+                "HCPs"
+            ],
+            "description": "User groups; parents and carers trigger the original safeguarding review."
+        },
+        "transactional": {
+            "label": "Transactional",
+            "kind": "yesno",
+            "group": "Technology",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "The service supports transactions or changes to records, rather than only publishing information."
+        },
+        "estTransactions": {
+            "label": "Estimated transactions per year",
+            "kind": "number",
+            "group": "Technology",
+            "description": "Non-negative whole number. The original high-volume assessment rule uses a threshold of 100000."
+        },
+        "personalData": {
+            "label": "Captures or processes personal data",
+            "kind": "yesno",
+            "group": "Users and data",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "Personal information is processed, stored or transmitted, including by suppliers."
+        },
+        "priority": {
+            "label": "Priority",
+            "kind": "single",
+            "group": "Security and assurance",
+            "options": [
+                "High",
+                "Medium",
+                "Low"
+            ],
+            "description": "Delivery priority, retained for compatibility. No current catalogue rule is gated by this field."
+        },
+        "risk": {
+            "label": "Risk and impact",
+            "kind": "single",
+            "group": "Security and assurance",
+            "options": [
+                "High",
+                "Medium",
+                "Low"
+            ],
+            "description": "Overall risk level. The source health-check classification uses this as a prototype risk proxy."
+        },
+        "serviceType": {
+            "label": "Service type",
+            "kind": "single",
+            "group": "Service",
+            "options": [
+                "Digital service",
+                "Data service",
+                "Technology platform",
+                "Corporate system"
+            ],
+            "description": "The service or system being assessed. All imported requirements are scoped to these service types."
+        },
+        "deliveryModel": {
+            "label": "Delivery model",
+            "kind": "single",
+            "group": "Service",
+            "options": [
+                "In-house",
+                "Supplier managed",
+                "Hybrid"
+            ],
+            "description": "Who builds and operates the service. Supplier-managed hosting does not remove legal or assurance obligations."
+        },
+        "changeType": {
+            "label": "Change scope",
+            "kind": "single",
+            "group": "Service",
+            "options": [
+                "New service",
+                "Major change",
+                "Minor change",
+                "Retirement",
+                "No change"
+            ],
+            "description": "The scope of the proposed work, distinct from its current delivery stage."
+        },
+        "deliveryPhase": {
+            "label": "Assessment phase",
+            "kind": "single",
+            "group": "Service",
+            "options": [
+                "Discovery",
+                "Alpha",
+                "Private beta",
+                "Public beta",
+                "Live"
+            ],
+            "description": "The exact assessment being booked; private and public beta share the broader Build stage."
+        },
+        "hasUsers": {
+            "label": "Has human users",
+            "kind": "yesno",
+            "group": "Users and data",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "Whether people use an interface or user journey, rather than only machine-to-machine automation."
+        },
+        "dataTypes": {
+            "label": "Information types",
+            "kind": "multi",
+            "group": "Users and data",
+            "options": [
+                "Financial",
+                "Sensitive",
+                "Intellectual property",
+                "Business critical",
+                "Stateful"
+            ],
+            "description": "Types of information processed, stored or transmitted. Personal data is supplied separately as personalData."
+        },
+        "processesInformation": {
+            "label": "Processes information",
+            "kind": "yesno",
+            "group": "Users and data",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "Processes, stores or transmits information, including non-personal information."
+        },
+        "externalDataSharing": {
+            "label": "Shares data with other organisations",
+            "kind": "yesno",
+            "group": "Users and data",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "Information crosses an organisational boundary."
+        },
+        "offshoreData": {
+            "label": "Data outside UK / EEA",
+            "kind": "yesno",
+            "group": "Users and data",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "Data is stored or processed outside the UK / EEA, including by suppliers. EEA near-shore hosting is not treated as offshore here."
+        },
+        "publicFacing": {
+            "label": "Internet accessible",
+            "kind": "yesno",
+            "group": "Technology",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "The service can be reached from the public internet."
+        },
+        "technology": {
+            "label": "Technology in use",
+            "kind": "multi",
+            "group": "Technology",
+            "options": [
+                "Web application",
+                "API",
+                "Cloud hosting",
+                "Cloud storage",
+                "Containers",
+                "Compute / runtimes",
+                "Source repository",
+                "CI/CD",
+                "Data repositories",
+                "Collaboration tools",
+                "Corporate devices",
+                "Management interfaces",
+                "Legacy authentication",
+                "Third-party products",
+                "System integration",
+                "Foundation systems"
+            ],
+            "description": "Technology actually used by the service; select all that apply."
+        },
+        "customDevelopment": {
+            "label": "Custom software development",
+            "kind": "yesno",
+            "group": "Technology",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "The team or its supplier builds or changes custom code, rather than only consuming a packaged SaaS product."
+        },
+        "softwareLicensing": {
+            "label": "Additional licences / certificates",
+            "kind": "yesno",
+            "group": "Technology",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "Additional software licences or SSL certificates are required."
+        },
+        "authentication": {
+            "label": "Authenticated access",
+            "kind": "yesno",
+            "group": "Security and assurance",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "People sign in to access the service or information."
+        },
+        "privilegedAccess": {
+            "label": "Privileged / administrative access",
+            "kind": "yesno",
+            "group": "Security and assurance",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "Elevated permissions exist for administrators, operators or deployment accounts."
+        },
+        "supplierAccess": {
+            "label": "Supplier involvement",
+            "kind": "yesno",
+            "group": "Security and assurance",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "A supplier develops, hosts, supports or accesses the service or departmental systems."
+        },
+        "criticalService": {
+            "label": "Business important / critical",
+            "kind": "yesno",
+            "group": "Security and assurance",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "The service supports critical operations or could cause significant disruption if unavailable."
+        },
+        "govAssureInScope": {
+            "label": "GovAssure in scope",
+            "kind": "yesno",
+            "group": "Security and assurance",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "The service has been identified as in scope for GovAssure."
+        },
+        "staffInScope": {
+            "label": "Staff in scope",
+            "kind": "yesno",
+            "group": "Security and assurance",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "Staff work on or operate the service and need security-awareness training."
+        },
+        "activities": {
+            "label": "Activities underway",
+            "kind": "multi",
+            "group": "Security and assurance",
+            "options": [
+                "Business case",
+                "Economic appraisal",
+                "Security assessment",
+                "Threat modelling",
+                "Control selection",
+                "Control implementation",
+                "Service change",
+                "Asset retirement",
+                "Security tooling procurement",
+                "Risk acceptance",
+                "Security incident",
+                "Early life support"
+            ],
+            "description": "Current delivery and assurance activities; these are applicability facts, not claims that a requirement has been completed."
+        },
+        "riskFactors": {
+            "label": "Known risk factors",
+            "kind": "multi",
+            "group": "Security and assurance",
+            "options": [
+                "Above risk appetite",
+                "Residual risk",
+                "End-of-life software"
+            ],
+            "description": "Known risk findings that trigger escalation, treatment or remediation obligations."
+        },
+        "controlsImplemented": {
+            "label": "Security controls implemented",
+            "kind": "yesno",
+            "group": "Security and assurance",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "Controls have been built or configured and can now be tested or reassessed."
+        },
+        "threatsIdentified": {
+            "label": "Threats identified",
+            "kind": "yesno",
+            "group": "Security and assurance",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "Credible threats have been identified and controls need to be mapped against them."
+        },
+        "backups": {
+            "label": "Data backed up",
+            "kind": "yesno",
+            "group": "Security and assurance",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "description": "A backup exists whose restoration capability must be tested."
+        }
+    },
+    "scopes": [
+        {
+            "ids": "101,106,112,113,120,121,125,126,127,130,131,135,136,139,141,144,145,146,164,165,191,195,199,200,203,204,205,206,207,208,209,210,211,212,214,215,220,221,225,230,231,232,233,234,235,236,237,238,239,240,243,245,246,247,248,249,250,251,258,259,264,265,266",
+            "note": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate."
+        },
+        {
+            "ids": "102,103",
+            "any": [
+                [
+                    "hasUsers",
+                    "is",
+                    "Yes"
+                ],
+                [
+                    "channel",
+                    "includes",
+                    "Online"
+                ]
+            ],
+            "note": "Prototype interpretation: accessibility and statement enrolment apply to user-facing services, not headless components. Confirm the scope with the accessibility owner."
+        },
+        {
+            "ids": "104",
+            "all": [
+                [
+                    "deliveryModel",
+                    "in",
+                    [
+                        "In-house",
+                        "Hybrid"
+                    ]
+                ]
+            ],
+            "any": [
+                [
+                    "changeType",
+                    "in",
+                    [
+                        "Major change",
+                        "Minor change"
+                    ]
+                ],
+                [
+                    "technology",
+                    "includes",
+                    "System integration"
+                ]
+            ],
+            "note": "Engage affected service owners for changes or integrations. An isolated new service or fully supplier-managed service is excluded by the source conditions."
+        },
+        {
+            "ids": "105",
+            "all": [
+                [
+                    "softwareLicensing",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Prototype interpretation: the source's negatively worded exclusion means additional licences or certificates trigger this check."
+        },
+        {
+            "ids": "107",
+            "all": [
+                [
+                    "deliveryModel",
+                    "in",
+                    [
+                        "In-house",
+                        "Hybrid"
+                    ]
+                ]
+            ],
+            "note": "Departmental technical design applies where the team controls implementation. Fully third-party-hosted services retain their separate legal and supplier obligations."
+        },
+        {
+            "ids": "108,109",
+            "all": [
+                [
+                    "customDevelopment",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Prototype interpretation of 'depends on nature': technical peer review and a testing mechanism apply to custom-built or changed software. Confirm with the technical assurance owner."
+        },
+        {
+            "ids": "110,134,138",
+            "all": [
+                [
+                    "hasUsers",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Prototype interpretation: user-journey testing, privacy notices and user support apply to human-facing services. The privacy notice also requires information collection."
+        },
+        {
+            "ids": "111",
+            "all": [
+                [
+                    "technology",
+                    "includes",
+                    "API"
+                ]
+            ],
+            "note": "Prototype interpretation: API catalogue engagement applies to developed APIs. Internal departmental and cross-government APIs are included, not only public endpoints."
+        },
+        {
+            "ids": "114",
+            "all": [
+                [
+                    "processesInformation",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Information asset registration applies when information is processed, including non-personal information."
+        },
+        {
+            "ids": "115",
+            "stages": [
+                "Understanding"
+            ],
+            "all": [
+                [
+                    "deliveryPhase",
+                    "is",
+                    "Discovery"
+                ]
+            ],
+            "note": "A discovery peer review is specific to Discovery; the blank ORR delivery phase previously defaulted incorrectly to Build."
+        },
+        {
+            "ids": "116",
+            "stages": [
+                "Design and test"
+            ],
+            "all": [
+                [
+                    "deliveryPhase",
+                    "is",
+                    "Alpha"
+                ]
+            ],
+            "note": "The alpha assessment applies during Alpha / Design and test, not the generic ORR Build fallback."
+        },
+        {
+            "ids": "117",
+            "stages": [
+                "Build"
+            ],
+            "all": [
+                [
+                    "deliveryPhase",
+                    "is",
+                    "Private beta"
+                ]
+            ],
+            "note": "The private-beta assessment is specific to Private beta."
+        },
+        {
+            "ids": "118",
+            "stages": [
+                "Build"
+            ],
+            "all": [
+                [
+                    "deliveryPhase",
+                    "is",
+                    "Public beta"
+                ]
+            ],
+            "note": "The public-beta assessment is specific to Public beta."
+        },
+        {
+            "ids": "119",
+            "stages": [
+                "Run / Serve"
+            ],
+            "all": [
+                [
+                    "deliveryPhase",
+                    "is",
+                    "Live"
+                ]
+            ],
+            "note": "The live assessment is specific to Live / Run / Serve."
+        },
+        {
+            "ids": "122,182,183",
+            "all": [
+                [
+                    "authentication",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Identity, individual accounts and SSO requirements apply where people authenticate."
+        },
+        {
+            "ids": "123,162,217,219",
+            "any": [
+                [
+                    "supplierAccess",
+                    "is",
+                    "Yes"
+                ],
+                [
+                    "technology",
+                    "includes",
+                    "Third-party products"
+                ]
+            ],
+            "note": "Supplier and vendor security obligations apply to supplied development, hosting, support, products or integrations."
+        },
+        {
+            "ids": "124,147,167",
+            "all": [
+                [
+                    "publicFacing",
+                    "is",
+                    "Yes"
+                ],
+                [
+                    "technology",
+                    "includes",
+                    "Web application"
+                ]
+            ],
+            "note": "Public web applications require the public-web security controls. For security.txt, the explicit public-domain obligation takes precedence over the source's generic repository note."
+        },
+        {
+            "ids": "128",
+            "any": [
+                [
+                    "publicFacing",
+                    "is",
+                    "Yes"
+                ],
+                [
+                    "risk",
+                    "in",
+                    [
+                        "Medium",
+                        "High"
+                    ]
+                ]
+            ],
+            "note": "An IT health check applies to public services or internally accessible services with medium-or-higher security risk. Prototype uses risk as the classification proxy; confirm with security assurance."
+        },
+        {
+            "ids": "129",
+            "all": [
+                [
+                    "activities",
+                    "includes",
+                    "Security assessment"
+                ]
+            ],
+            "note": "Manage DSAM / health-check actions when a security assessment is underway."
+        },
+        {
+            "ids": "132,173,222,229",
+            "all": [
+                [
+                    "personalData",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Personal-information obligations apply when personal data is processed; test-data protection additionally requires a non-production environment."
+        },
+        {
+            "ids": "133,228",
+            "all": [
+                [
+                    "offshoreData",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Offshore approval and cross-border transfer review apply when data is processed or stored outside the UK / EEA, including by suppliers."
+        },
+        {
+            "ids": "137",
+            "all": [
+                [
+                    "activities",
+                    "includes",
+                    "Early life support"
+                ]
+            ],
+            "note": "Prototype interpretation: a distinct early-life-support plan is required where early-life arrangements differ from steady-state support."
+        },
+        {
+            "ids": "140,267,268,269",
+            "all": [
+                [
+                    "activities",
+                    "includes",
+                    "Service change"
+                ]
+            ],
+            "note": "Release and security-change management apply when a service change is planned or being delivered."
+        },
+        {
+            "ids": "142,157",
+            "all": [
+                [
+                    "changeType",
+                    "in",
+                    [
+                        "New service",
+                        "Major change",
+                        "Retirement"
+                    ]
+                ]
+            ],
+            "note": "Readiness and secure-design review apply to new services, major change and retirement. Retirement retains security obligations until closure."
+        },
+        {
+            "ids": "143",
+            "all": [
+                [
+                    "transactional",
+                    "is",
+                    "Yes"
+                ],
+                [
+                    "hasUsers",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "The service health check is scoped by the source to genuine transactional services with users and an interface."
+        },
+        {
+            "ids": "148,149,150,152",
+            "all": [
+                [
+                    "technology",
+                    "includes",
+                    "Source repository"
+                ]
+            ],
+            "note": "Repository governance and secret protection apply when the service uses a source repository."
+        },
+        {
+            "ids": "151",
+            "all": [
+                [
+                    "technology",
+                    "includes",
+                    "Source repository"
+                ],
+                [
+                    "technology",
+                    "includes",
+                    "CI/CD"
+                ]
+            ],
+            "note": "Dependency scanning and build-breaking controls apply to repositories with a build pipeline."
+        },
+        {
+            "ids": "153,216",
+            "all": [
+                [
+                    "technology",
+                    "includes",
+                    "Cloud hosting"
+                ]
+            ],
+            "note": "Cloud asset registration and cloud-risk assessment apply to cloud-hosted infrastructure or services, including supplier-provided cloud platforms."
+        },
+        {
+            "ids": "154,197",
+            "all": [
+                [
+                    "deliveryModel",
+                    "in",
+                    [
+                        "In-house",
+                        "Hybrid"
+                    ]
+                ]
+            ],
+            "any": [
+                [
+                    "technology",
+                    "includes",
+                    "Cloud hosting"
+                ],
+                [
+                    "technology",
+                    "includes",
+                    "Compute / runtimes"
+                ],
+                [
+                    "technology",
+                    "includes",
+                    "Containers"
+                ]
+            ],
+            "note": "Configuration and patching duties apply to infrastructure / runtimes the team manages. Supplier patching is handled through separate supplier assurance."
+        },
+        {
+            "ids": "155",
+            "all": [
+                [
+                    "technology",
+                    "includes",
+                    "Third-party products"
+                ]
+            ],
+            "note": "Purchased or consumed SaaS / software must be registered as a digital asset."
+        },
+        {
+            "ids": "156",
+            "all": [
+                [
+                    "technology",
+                    "includes",
+                    "Foundation systems"
+                ]
+            ],
+            "note": "The source's mandated foundation-system controls apply to foundation systems; its original deadline is retained in the source title."
+        },
+        {
+            "ids": "158",
+            "all": [
+                [
+                    "activities",
+                    "includes",
+                    "Security tooling procurement"
+                ]
+            ],
+            "note": "Security-tool purchases need CISD agreement before procurement."
+        },
+        {
+            "ids": "159",
+            "all": [
+                [
+                    "publicFacing",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "any": [
+                [
+                    "personalData",
+                    "is",
+                    "Yes"
+                ],
+                [
+                    "dataTypes",
+                    "intersects",
+                    [
+                        "Sensitive",
+                        "Financial",
+                        "Business critical"
+                    ]
+                ],
+                [
+                    "authentication",
+                    "is",
+                    "Yes"
+                ],
+                [
+                    "technology",
+                    "intersects",
+                    [
+                        "API",
+                        "Web application",
+                        "System integration"
+                    ]
+                ],
+                [
+                    "criticalService",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Annual penetration testing applies to externally accessible services with sensitive / critical data, authentication, custom interfaces, integrations or material impact."
+        },
+        {
+            "ids": "160",
+            "all": [
+                [
+                    "changeType",
+                    "in",
+                    [
+                        "New service",
+                        "Major change"
+                    ]
+                ]
+            ],
+            "note": "A security design review applies to new service design and major redesign at the source's design stages."
+        },
+        {
+            "ids": "161",
+            "all": [
+                [
+                    "govAssureInScope",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "GovAssure is mandatory only where the service has been identified as in scope."
+        },
+        {
+            "ids": "163",
+            "all": [
+                [
+                    "riskFactors",
+                    "includes",
+                    "Above risk appetite"
+                ],
+                [
+                    "activities",
+                    "includes",
+                    "Risk acceptance"
+                ]
+            ],
+            "note": "CISO consultation is triggered when accepting a security risk above tolerance, not by every low-risk acceptance."
+        },
+        {
+            "ids": "166",
+            "all": [
+                [
+                    "technology",
+                    "includes",
+                    "Management interfaces"
+                ]
+            ],
+            "note": "RDP, SSH, SMB, SQL and equivalent management interfaces must not be directly internet-exposed."
+        },
+        {
+            "ids": "168",
+            "all": [
+                [
+                    "deliveryModel",
+                    "in",
+                    [
+                        "In-house",
+                        "Hybrid"
+                    ]
+                ],
+                [
+                    "environments",
+                    "includes",
+                    "Production"
+                ],
+                [
+                    "environments",
+                    "includes",
+                    "Non-production"
+                ]
+            ],
+            "note": "Segmentation applies where the team has both production and non-production environments."
+        },
+        {
+            "ids": "169,186",
+            "all": [
+                [
+                    "technology",
+                    "includes",
+                    "Cloud storage"
+                ]
+            ],
+            "note": "Default cloud-storage encryption and the source's central log-retention requirement apply to services using cloud storage."
+        },
+        {
+            "ids": "170",
+            "all": [
+                [
+                    "technology",
+                    "includes",
+                    "Data repositories"
+                ]
+            ],
+            "note": "Data classification applies to databases, storage accounts, collaboration data stores and other repositories."
+        },
+        {
+            "ids": "171",
+            "any": [
+                [
+                    "technology",
+                    "includes",
+                    "Collaboration tools"
+                ],
+                [
+                    "technology",
+                    "includes",
+                    "Corporate devices"
+                ]
+            ],
+            "note": "DLP applies to email / collaboration tools and corporate endpoints."
+        },
+        {
+            "ids": "172",
+            "any": [
+                [
+                    "personalData",
+                    "is",
+                    "Yes"
+                ],
+                [
+                    "dataTypes",
+                    "intersects",
+                    [
+                        "Sensitive",
+                        "Financial",
+                        "Business critical"
+                    ]
+                ]
+            ],
+            "note": "Encryption at rest and in transit applies to sensitive information, including personal, financial and business-critical data."
+        },
+        {
+            "ids": "174",
+            "any": [
+                [
+                    "technology",
+                    "includes",
+                    "Corporate devices"
+                ],
+                [
+                    "technology",
+                    "includes",
+                    "Compute / runtimes"
+                ]
+            ],
+            "note": "Approved endpoint detection applies to corporate devices and cloud-hosted compute / servers, not an opaque SaaS-only consumer."
+        },
+        {
+            "ids": "175",
+            "any": [
+                [
+                    "transactional",
+                    "is",
+                    "Yes"
+                ],
+                [
+                    "authentication",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Accountability and individual credentials apply to transactional or authenticated services."
+        },
+        {
+            "ids": "176,177,178,187,188",
+            "all": [
+                [
+                    "privilegedAccess",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Administrative MFA, least privilege, break-glass control and protected administrative devices apply wherever privileged access exists."
+        },
+        {
+            "ids": "179",
+            "all": [
+                [
+                    "technology",
+                    "includes",
+                    "Legacy authentication"
+                ]
+            ],
+            "note": "Disable legacy protocols when such authentication methods exist; the rule does not require legacy protocols to be introduced."
+        },
+        {
+            "ids": "180",
+            "any": [
+                [
+                    "technology",
+                    "includes",
+                    "System integration"
+                ],
+                [
+                    "technology",
+                    "includes",
+                    "CI/CD"
+                ]
+            ],
+            "note": "Managed machine identities apply to service integrations and deployment pipelines."
+        },
+        {
+            "ids": "181",
+            "all": [
+                [
+                    "publicFacing",
+                    "is",
+                    "Yes"
+                ],
+                [
+                    "authentication",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "External-user MFA requires both external reachability and authenticated users; anonymous public content does not imply a user-login requirement."
+        },
+        {
+            "ids": "184",
+            "any": [
+                [
+                    "authentication",
+                    "is",
+                    "Yes"
+                ],
+                [
+                    "technology",
+                    "intersects",
+                    [
+                        "Cloud hosting",
+                        "Cloud storage",
+                        "Web application",
+                        "API"
+                    ]
+                ]
+            ],
+            "note": "Central security logging applies to authentication, cloud audit and application error events."
+        },
+        {
+            "ids": "185,193",
+            "all": [
+                [
+                    "criticalService",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Critical-service escalation and availability-zone resilience apply to business-important or critical services. Zone resilience additionally requires cloud hosting."
+        },
+        {
+            "ids": "189",
+            "all": [
+                [
+                    "activities",
+                    "includes",
+                    "Security incident"
+                ]
+            ],
+            "note": "Immediate CISD reporting is triggered by a suspected breach, lost device or accidental exposure; no confirmed breach is needed."
+        },
+        {
+            "ids": "190",
+            "all": [
+                [
+                    "staffInScope",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Annual awareness training applies to staff supporting or operating the service."
+        },
+        {
+            "ids": "192",
+            "any": [
+                [
+                    "dataTypes",
+                    "includes",
+                    "Stateful"
+                ],
+                [
+                    "technology",
+                    "includes",
+                    "Cloud storage"
+                ]
+            ],
+            "note": "Separated backups apply to stateful data, including cloud storage. This prototype does not exempt on-premises stateful data."
+        },
+        {
+            "ids": "194",
+            "all": [
+                [
+                    "backups",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Restoration drills apply to services with backups; the separate backup obligation still applies when backups are absent."
+        },
+        {
+            "ids": "196",
+            "all": [
+                [
+                    "technology",
+                    "includes",
+                    "Containers"
+                ]
+            ],
+            "note": "Trusted and patched base images apply to containerised workloads, not SaaS-only or non-container virtual machines."
+        },
+        {
+            "ids": "198",
+            "all": [
+                [
+                    "riskFactors",
+                    "includes",
+                    "End-of-life software"
+                ]
+            ],
+            "note": "Unsupported software triggers remediation; supported software does not trigger an end-of-life finding."
+        },
+        {
+            "ids": "201,202",
+            "all": [
+                [
+                    "activities",
+                    "includes",
+                    "Economic appraisal"
+                ]
+            ],
+            "note": "Security value-for-money analysis applies when comparing delivery options or performing an economic appraisal."
+        },
+        {
+            "ids": "213",
+            "any": [
+                [
+                    "externalDataSharing",
+                    "is",
+                    "Yes"
+                ],
+                [
+                    "technology",
+                    "includes",
+                    "System integration"
+                ],
+                [
+                    "supplierAccess",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Partner risk appetite applies when sharing data, integrating systems or depending on other organisations."
+        },
+        {
+            "ids": "218",
+            "any": [
+                [
+                    "technology",
+                    "includes",
+                    "Source repository"
+                ],
+                [
+                    "technology",
+                    "includes",
+                    "CI/CD"
+                ],
+                [
+                    "customDevelopment",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Third-party development-tool risks apply to code development, source-control and CI/CD ecosystems."
+        },
+        {
+            "ids": "223",
+            "all": [
+                [
+                    "dataTypes",
+                    "includes",
+                    "Financial"
+                ]
+            ],
+            "note": "Financial-information obligations apply when financial data is processed, stored or transmitted."
+        },
+        {
+            "ids": "224",
+            "all": [
+                [
+                    "dataTypes",
+                    "includes",
+                    "Intellectual property"
+                ]
+            ],
+            "note": "Intellectual-property obligations apply to services processing intellectual-property information."
+        },
+        {
+            "ids": "226,227",
+            "all": [
+                [
+                    "externalDataSharing",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Data-sharing due diligence and agreements apply when information is exchanged with another organisation."
+        },
+        {
+            "ids": "241,242",
+            "all": [
+                [
+                    "threatsIdentified",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Control mapping applies once credible threats have been identified, rather than suppressing the earlier threat-identification requirement."
+        },
+        {
+            "ids": "244",
+            "all": [
+                [
+                    "activities",
+                    "includes",
+                    "Security assessment"
+                ]
+            ],
+            "note": "Risk-scoring alignment applies when the service is undertaking a security risk assessment."
+        },
+        {
+            "ids": "252",
+            "all": [
+                [
+                    "riskFactors",
+                    "includes",
+                    "Above risk appetite"
+                ]
+            ],
+            "note": "Risk treatment is triggered by security risks rated above the agreed risk appetite."
+        },
+        {
+            "ids": "253,254,255",
+            "any": [
+                [
+                    "activities",
+                    "includes",
+                    "Security assessment"
+                ],
+                [
+                    "activities",
+                    "includes",
+                    "Control selection"
+                ],
+                [
+                    "threatsIdentified",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Risk treatment and control documentation apply when risks / threats are identified or controls are selected."
+        },
+        {
+            "ids": "256",
+            "all": [
+                [
+                    "controlsImplemented",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Control-effectiveness testing applies when controls have been built, configured or deployed."
+        },
+        {
+            "ids": "257",
+            "all": [
+                [
+                    "controlsImplemented",
+                    "is",
+                    "Yes"
+                ],
+                [
+                    "riskFactors",
+                    "includes",
+                    "Residual risk"
+                ]
+            ],
+            "note": "Residual-risk sign-off applies after control implementation where residual risk remains."
+        },
+        {
+            "ids": "260,261,262",
+            "all": [
+                [
+                    "customDevelopment",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Secure development, code review and code testing apply where software is developed or changed."
+        },
+        {
+            "ids": "263",
+            "any": [
+                [
+                    "customDevelopment",
+                    "is",
+                    "Yes"
+                ],
+                [
+                    "publicFacing",
+                    "is",
+                    "Yes"
+                ]
+            ],
+            "note": "Prototype interpretation: penetration-test planning applies to developed software or externally exposed services at the source's assurance stages."
+        },
+        {
+            "ids": "270",
+            "all": [
+                [
+                    "activities",
+                    "includes",
+                    "Service change"
+                ],
+                [
+                    "riskFactors",
+                    "includes",
+                    "Above risk appetite"
+                ]
+            ],
+            "note": "Change escalation requires a proposed service change that introduces or increases risk beyond appetite."
+        },
+        {
+            "ids": "271,272,273",
+            "any": [
+                [
+                    "changeType",
+                    "is",
+                    "Retirement"
+                ],
+                [
+                    "activities",
+                    "includes",
+                    "Asset retirement"
+                ]
+            ],
+            "note": "Asset inventory, retirement risk and closeout obligations apply to component retirement as well as closure of the whole service."
+        }
+    ],
+    "additionalFields": {
+        "environments": {
+            "label": "Environments",
+            "kind": "multi",
+            "group": "Technology",
+            "options": [
+                "Production",
+                "Non-production"
+            ],
+            "description": "Environments in scope; non-production includes development, testing and pre-production."
+        }
+    },
+    "extraConditions": {
+        "134": [
+            [
+                "processesInformation",
+                "is",
+                "Yes"
+            ]
+        ],
+        "173": [
+            [
+                "environments",
+                "includes",
+                "Non-production"
+            ]
+        ],
+        "193": [
+            [
+                "technology",
+                "includes",
+                "Cloud hosting"
+            ]
+        ]
+    }
+}

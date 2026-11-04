@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "backups",
+   "op": "is",
+   "value": "Yes"
+  }
+ ],
  "conditionsText": "Any service that backs up their data",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-194",
+    "name": "Restoration capability MUST be tested/proved annually (Drills) because a backup that is never tested is not a backup.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "Any service that backs up their data",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Restoration capability MUST be tested/proved annually (Drills) because a backup that is never tested is not a backup.",
+    "requirementDescription": "It's not enough to create backups. The organisation must regularly prove that those backups can actually be restored successfully.",
+    "why": "Because many organisations discover problems only when they need the backup.",
+    "tasks": [
+     "Restoration capability MUST be tested/proved annually (Drills) because a backup that is never tested is not a backup."
+    ],
+    "actions": [
+     {
+      "title": "Restoration capability MUST be tested/proved annually (Drills) because a backup that is never tested is not a backup.",
+      "description": "Don't just create backups and assume they're fine. At least once a year, prove that you can successfully restore systems and data so that, during a real incident, recovery is reliable and predictable.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Restoration drills apply to services with backups; the separate backup obligation still applies when backups are absent."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Restoration drills apply to services with backups; the separate backup obligation still applies when backups are absent.",
+ "modelVersion": 2
 }

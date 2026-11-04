@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -44,13 +54,88 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-213",
+    "name": "Have you considered the risk appetite of any organisations the service shares or exchanges data with?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Understanding",
+       "Design and test"
+      ]
+     }
+    ],
+    "conditionsText": "Applies when:\n- Data is shared externally.\n- Systems are integrated.\n- Services rely on third parties.\n- Multiple organisations are involved.",
+    "phases": [
+     "Discovery",
+     "Alpha"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you considered the risk appetite of any organisations the service shares or exchanges data with?",
+    "requirementDescription": "If your service shares data with another organisation, have you considered whether they have stricter security requirements or lower tolerance for risk than you do?",
+    "why": "A service may interact with:\n- Other government departments\n- Local authorities\n- Arm's length bodies\n- Suppliers\n- Partner organisations\nA risk that seems acceptable internally may be unacceptable to a partner organisation.\nThe guidance highlights the need to understand dependencies and how other projects or organisations influence risk management decisions.",
+    "tasks": [
+     "Have you considered the risk appetite of any organisations the service shares or exchanges data with?"
+    ],
+    "actions": [
+     {
+      "title": "Have you considered the risk appetite of any organisations the service shares or exchanges data with?",
+      "description": "Consider data sharing arrangements, partner organisations expectations, and differences in risk appetite",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/working-out-the-projects-security-risk-appetite/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Partner risk appetite applies when sharing data, integrating systems or depending on other organisations."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "externalDataSharing",
+    "op": "is",
+    "value": "Yes"
+   },
+   {
+    "field": "technology",
+    "op": "includes",
+    "value": "System integration"
+   },
+   {
+    "field": "supplierAccess",
+    "op": "is",
+    "value": "Yes"
+   }
+  ]
+ ],
+ "applicabilityNote": "Partner risk appetite applies when sharing data, integrating systems or depending on other organisations.",
+ "modelVersion": 2
 }

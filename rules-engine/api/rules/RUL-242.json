@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -19,6 +29,11 @@
     "Design and test",
     "Build"
    ]
+  },
+  {
+   "field": "threatsIdentified",
+   "op": "is",
+   "value": "Yes"
   }
  ],
  "conditionsText": "This is particularly relevant once:\n1. threats have been identified; and\n2. possible security controls have been identified.\nThe team can then map controls against threats.",
@@ -44,13 +59,70 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-threat-modelling/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-242",
+    "name": "Have you identified and documented any security controls that could mitigate multiple threat events?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "This is particularly relevant once:\n1. threats have been identified; and\n2. possible security controls have been identified.\nThe team can then map controls against threats.",
+    "phases": [
+     "Alpha",
+     "Private beta"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you identified and documented any security controls that could mitigate multiple threat events?",
+    "requirementDescription": "Have you looked for security protections that solve more than one of the security problems you identified?",
+    "why": "This encourages the team to think about security holistically rather than threat-by-threat in isolation.\nIt can:\n- provide stronger defence across the service\n- reduce duplicated security solutions\n- help prioritise high-value controls\n- simplify security architecture\n- make security controls easier to maintain\n- identify critical controls on which several security protections depend.\nImportantly, it can also expose concentration risk.\nIf ten important threats are all mitigated by one security control, failure",
+    "tasks": [
+     "Have you identified and documented any security controls that could mitigate multiple threat events?"
+    ],
+    "actions": [
+     {
+      "title": "Have you identified and documented any security controls that could mitigate multiple threat events?",
+      "description": "An acceptable piece of evidence is a threat-to-control matrix.\nThis makes it much easier to see:\n• which controls protect against multiple threats\n• threats with inadequate protection\n• duplicated controls\n• especially important controls\n• possible single points of security failure.\nThe outcome should not simply be \"we have MFA\", for example. The documentation should demonstrate which identified threats the control is intended to mitigate.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-threat-modelling/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-threat-modelling.docx?d=w75b277fde24e41f99c64b7c1160fc776&csf=1&web=1&e=LT27hP",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Control mapping applies once credible threats have been identified, rather than suppressing the earlier threat-identification requirement."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Control mapping applies once credible threats have been identified, rather than suppressing the earlier threat-identification requirement.",
+ "modelVersion": 2
 }

@@ -9,9 +9,30 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "personalData",
+   "op": "is",
+   "value": "Yes"
+  },
+  {
+   "field": "environments",
+   "op": "includes",
+   "value": "Non-production"
+  }
+ ],
  "conditionsText": "All test and pre-production environments",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +53,58 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-173",
+    "name": "Real PII MUST NEVER be used in Non-Prod/Test environments; synthetic or anonymised data MUST be used instead because anonymisation scripts are unreliable and real data causes major data breaches.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "All test and pre-production environments",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Real PII MUST NEVER be used in Non-Prod/Test environments; synthetic or anonymised data MUST be used instead because anonymisation scripts are unreliable and real data causes major data breaches.",
+    "requirementDescription": "You must not copy real personal data into development, test, UAT, or training environments. Instead, use fake (synthetic) data or properly anonymised data",
+    "why": "Production environments have strict access controls, monitoring, security reviews and limited admin access, but test environments have wider access, temporary configurations so having PII in these environments creates unneccessary risk",
+    "tasks": [
+     "Real PII MUST NEVER be used in Non-Prod/Test environments; synthetic or anonymised data MUST be used instead because anonymisation scripts a"
+    ],
+    "actions": [
+     {
+      "title": "Real PII MUST NEVER be used in Non-Prod/Test environments; synthetic or anonymised data MUST be used instead because anonymisation scripts a",
+      "description": "Test with fake data instead. If a test environment is compromised, no real individual should be affected.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Personal-information obligations apply when personal data is processed; test-data protection additionally requires a non-production environment."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Personal-information obligations apply when personal data is processed; test-data protection additionally requires a non-production environment.",
+ "modelVersion": 2
 }

@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "technology",
+   "op": "includes",
+   "value": "Third-party products"
+  }
+ ],
  "conditionsText": "When a product or team purchase a SaaS product",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "SaaS products",
  "guidance": "https://dfe.service-now.com/mydfe?id=kbarticle&sys_id=f8d6cb8fdbb854100929b29f29961994\n\nhttps://dfe.service-now.com/mydfe?id=sc_cat_item&sys_id=b97008b81b7680d02fe864606e4bcb9d&referrer=recent_items",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-155",
+    "name": "All SaaS/Software MUST be registered in the CMDB to ensure a complete and auditable inventory of digital assets.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "When a product or team purchase a SaaS product",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "All SaaS/Software MUST be registered in the CMDB to ensure a complete and auditable inventory of digital assets.",
+    "requirementDescription": "Every software application or SaaS service used by the organisation must be formally recorded in the CMDB (Configuration Management Database) so there is a complete record of what software exists",
+    "why": "We cannot secure what we do not know exists. SaaS is easy to lose track of because it can be bought and used without infrastructure being deployed internally",
+    "tasks": [
+     "All SaaS/Software MUST be registered in the CMDB to ensure a complete and auditable inventory of digital assets."
+    ],
+    "actions": [
+     {
+      "title": "All SaaS/Software MUST be registered in the CMDB to ensure a complete and auditable inventory of digital assets.",
+      "description": "If a team procures a SaaS product they should use the create a service offering form in Service Now to register the product in the CMDB",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "SaaS products",
+    "guidance": "https://dfe.service-now.com/mydfe?id=kbarticle&sys_id=f8d6cb8fdbb854100929b29f29961994\n\nhttps://dfe.service-now.com/mydfe?id=sc_cat_item&sys_id=b97008b81b7680d02fe864606e4bcb9d&referrer=recent_items",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Purchased or consumed SaaS / software must be registered as a digital asset."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Purchased or consumed SaaS / software must be registered as a digital asset.",
+ "modelVersion": 2
 }

@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -47,13 +57,86 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/retiring-service-components-securely/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-273",
+    "name": "Have you included security considerations within a formal closeout report to be shared with relevant stakeholders?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build",
+       "Run / Serve"
+      ]
+     }
+    ],
+    "conditionsText": "The report should reflect the actual outcome of the retirement activity. This becomes particularly important if the project or delivery team itself is being closed, because any remaining responsibilities and risks need to be transferred rather than becoming ownerless. The guidance notes that senior responsible owners, service owners and product managers should be kept informed, and that the CISO or CDIO may need involvement where responsible project roles are being wound down",
+    "phases": [
+     "Alpha",
+     "Private beta",
+     "Public beta",
+     "Live"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you included security considerations within a formal closeout report to be shared with relevant stakeholders?",
+    "requirementDescription": "Once the component or service has been retired, have you formally documented what was done, confirmed that the security actions were completed, recorded anything still outstanding, and shared that information with the appropriate people?",
+    "why": "A retirement project should not simply finish when a system is switched off.\nThere needs to be confidence that:\n- components were actually decommissioned\n- access was removed\n- information was appropriately migrated or destroyed\n- infrastructure was removed\n- relevant records were updated\n- outstanding security risks were identified\n- someone remains responsible for those risks.\nThe closeout report creates an audit trail and provides senior stakeholders with assurance that decommissioning was completed safely",
+    "tasks": [
+     "Have you included security considerations within a formal closeout report to be shared with relevant stakeholders?"
+    ],
+    "actions": [
+     {
+      "title": "Have you included security considerations within a formal closeout report to be shared with relevant stakeholders?",
+      "description": "Create a formal closeout report confirming:\n• what was retired\n• what security actions were completed\n• how relevant data was handled\n• whether access and infrastructure were removed\n• whether asset records have been updated\n• any outstanding actions\n• any residual risks\n• recommendations or follow-up activity\n• who owns any remaining risks or responsibilities.\nShare the report with the relevant stakeholders and decision-makers.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/retiring-service-components-securely/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Asset inventory, retirement risk and closeout obligations apply to component retirement as well as closure of the whole service."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "changeType",
+    "op": "is",
+    "value": "Retirement"
+   },
+   {
+    "field": "activities",
+    "op": "includes",
+    "value": "Asset retirement"
+   }
+  ]
+ ],
+ "applicabilityNote": "Asset inventory, retirement risk and closeout obligations apply to component retirement as well as closure of the whole service.",
+ "modelVersion": 2
 }

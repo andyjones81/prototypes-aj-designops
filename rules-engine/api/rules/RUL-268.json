@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -20,6 +30,11 @@
     "Build",
     "Run / Serve"
    ]
+  },
+  {
+   "field": "activities",
+   "op": "includes",
+   "value": "Service change"
   }
  ],
  "conditionsText": "Changes should be assessed to determine whether they affect:\n- service architecture\n- attack surface\n- data flows\n- trust boundaries\n- users or access\n- external integrations\n- vulnerabilities\n- existing attack paths\n- existing security controls.\nWhere the change does not materially affect threats, record that conclusion. Where it does, update the relevant threat documentation.",
@@ -47,13 +62,73 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/evaluating-the-security-impact-of-changes/\n\nHow do I? - Change Enablement Policy Process and Procedure v1.05 - MyDfE",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-268",
+    "name": "Are you reflecting requested changes in the service’s threat model?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build",
+       "Run / Serve"
+      ]
+     }
+    ],
+    "conditionsText": "Changes should be assessed to determine whether they affect:\n- service architecture\n- attack surface\n- data flows\n- trust boundaries\n- users or access\n- external integrations\n- vulnerabilities\n- existing attack paths\n- existing security controls.\nWhere the change does not materially affect threats, record that conclusion. Where it does, update the relevant threat documentation.",
+    "phases": [
+     "Alpha",
+     "Private beta",
+     "Public beta",
+     "Live"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Are you reflecting requested changes in the service’s threat model?",
+    "requirementDescription": "When the service changes, do you check whether that change introduces new threats or attack routes and update the threat model where necessary?",
+    "why": "A threat model represents the security threats relevant to a particular design.\nIf the design changes but the threat model does not, the model may no longer accurately describe the risks facing the service.\nKeeping it updated also ensures security controls remain appropriate to the current service rather than an earlier version of it.",
+    "tasks": [
+     "Are you reflecting requested changes in the service’s threat model?"
+    ],
+    "actions": [
+     {
+      "title": "Are you reflecting requested changes in the service’s threat model?",
+      "description": "• Review proposed changes for security implications.\n• Determine whether threats or attack paths have changed.\n• Add new threats where appropriate.\n• Update existing threats where their likelihood or impact has changed.\n• Identify any additional security controls required.\n• Keep the threat model aligned with the latest service design.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/evaluating-the-security-impact-of-changes/\n\nHow do I? - Change Enablement Policy Process and Procedure v1.05 - MyDfE",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Release and security-change management apply when a service change is planned or being delivered."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Release and security-change management apply when a service change is planned or being delivered.",
+ "modelVersion": 2
 }

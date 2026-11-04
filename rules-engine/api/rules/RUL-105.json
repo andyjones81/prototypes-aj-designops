@@ -9,15 +9,30 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "Steve Goff",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
    "value": [
     "Build"
    ]
+  },
+  {
+   "field": "softwareLicensing",
+   "op": "is",
+   "value": "Yes"
   }
  ],
  "conditionsText": "If not using any additional software licence and SSL certificates",
@@ -42,13 +57,68 @@
  "standards": [],
  "systems": "",
  "guidance": "- SSL certificates",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from ORR activity log-Grid view.csv."
+   "note": "Imported from ORR activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-105",
+    "name": "Check and document if you need additional software licenses or SSL certificates (ORR 3)",
+    "source": "Operational Readiness Review",
+    "dataset": "Operational Readiness Review",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Not stated",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "Steve Goff",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "If not using any additional software licence and SSL certificates",
+    "phases": [
+     "Build"
+    ],
+    "phasesAssumed": true,
+    "requirementTitle": "Check and document if you need additional software licenses or SSL certificates (ORR 3)",
+    "requirementDescription": "- operational\n- if you are procuring something for the service to run, you need to document it. For example, if alicence expries",
+    "why": "- operational\n- if you are procuring something for the service to run, you need to document it. For example, if alicence expries",
+    "tasks": [
+     "Check and document if you need additional software licenses or SSL certificates (ORR 3)"
+    ],
+    "actions": [
+     {
+      "title": "Check and document if you need additional software licenses or SSL certificates (ORR 3)",
+      "description": "Check if you need money for it",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "- SSL certificates",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Prototype interpretation: the source's negatively worded exclusion means additional licences or certificates trigger this check. Source phase was blank; Build remains a prototype assumption."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Prototype interpretation: the source's negatively worded exclusion means additional licences or certificates trigger this check. Source phase was blank; Build remains a prototype assumption.",
+ "modelVersion": 2
 }

@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "Steve Goff",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -42,13 +52,81 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from ORR activity log-Grid view.csv."
+   "note": "Imported from ORR activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-123",
+    "name": "Follow the supplier assurance process (ORR 17)",
+    "source": "Operational Readiness Review",
+    "dataset": "Operational Readiness Review",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "Steve Goff",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "- relevant if you have suppliers\n- follow supplier assurance process\n- depends on suppliers - needs to be people building thing on behalf of Dfe, have access to DfE systems and/or hosting",
+    "phases": [
+     "Build"
+    ],
+    "phasesAssumed": true,
+    "requirementTitle": "Follow the supplier assurance process (ORR 17)",
+    "requirementDescription": "To ensure suppliers that have access to DfE systems and data have appropriate security controls in place.",
+    "why": "To ensure suppliers that have access to DfE systems and data have appropriate security controls in place.",
+    "tasks": [
+     "Follow the supplier assurance process (ORR 17)"
+    ],
+    "actions": [
+     {
+      "title": "Follow the supplier assurance process (ORR 17)",
+      "description": "Supplier assurance team will ask supplier questions",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Supplier and vendor security obligations apply to supplied development, hosting, support, products or integrations. Source phase was blank; Build remains a prototype assumption."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "supplierAccess",
+    "op": "is",
+    "value": "Yes"
+   },
+   {
+    "field": "technology",
+    "op": "includes",
+    "value": "Third-party products"
+   }
+  ]
+ ],
+ "applicabilityNote": "Supplier and vendor security obligations apply to supplied development, hosting, support, products or integrations. Source phase was blank; Build remains a prototype assumption.",
+ "modelVersion": 2
 }

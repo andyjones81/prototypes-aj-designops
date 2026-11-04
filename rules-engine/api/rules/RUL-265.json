@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -44,13 +54,70 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-observability/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-audit-log-management.docx?d=wf21b346e355840cfbbb61487fb8f39de&csf=1&web=1&e=ekpmJ4",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-265",
+    "name": "Have you determined the tools required to log and analyse the event logs and trigger alerts?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "The tools should reflect:\n- the type and volume of information produced\n- identified security threats\n- service architecture\n- monitoring requirements\n- organisational security capabilities\n- incident-response arrangements\n- third-party services.\nWhere third-party suppliers provide service components, their monitoring, logging and alerting capabilities should also be considered.",
+    "phases": [
+     "Alpha",
+     "Private beta"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you determined the tools required to log and analyse the event logs and trigger alerts?",
+    "requirementDescription": "Have you worked out what technology is needed to collect security information, analyse it and notify the right people when something suspicious happens?",
+    "why": "A service could generate millions of log entries. It may be unrealistic for people to manually read those records looking for suspicious activity.\nAppropriate tools help teams:\n- bring relevant security information together\n- search and analyse events\n- identify patterns or anomalies\n- generate alerts when defined conditions occur\n- provide information to security or incident-response teams.\nThe guidance recommends investigating whether appropriate capabilities exist to collect and monitor observables and identifying additional capabilities needed to provide sufficient visibility.",
+    "tasks": [
+     "Have you determined the tools required to log and analyse the event logs and trigger alerts?"
+    ],
+    "actions": [
+     {
+      "title": "Have you determined the tools required to log and analyse the event logs and trigger alerts?",
+      "description": "• Identify what logs and security information need collecting.\n• Determine which existing organisational tools can be used.\n• Identify any additional monitoring capability required.\n• Configure tools to collect and securely store the required information.\n• Configure appropriate alerts.\n• Ensure information can be searched and analysed.\n• Integrate with the DfE's Security Operations Centre (SOC) or incident-response capabilities where appropriate.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-observability/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-audit-log-management.docx?d=wf21b346e355840cfbbb61487fb8f39de&csf=1&web=1&e=ekpmJ4",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate.",
+ "modelVersion": 2
 }

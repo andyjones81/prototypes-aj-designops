@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "govAssureInScope",
+   "op": "is",
+   "value": "Yes"
+  }
+ ],
  "conditionsText": "",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "",
  "guidance": "None found",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-161",
+    "name": "GovAssure is mandatory if identified as in-scope to ensure compliance with a statutory obligation.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "GovAssure is mandatory if identified as in-scope to ensure compliance with a statutory obligation.",
+    "requirementDescription": "If your system or service has been identified as being within the scope of GovAssure, then participating in the GovAssure process is not optional. It is a mandatory requirement because it supports a legal or government policy obligation.",
+    "why": "GovAssure is the UK Government's cyber security assurance scheme. It assesses critical government systems against the NCSC Cyber Assessment Framework (CAF) to measure cyber security and resilience.",
+    "tasks": [
+     "GovAssure is mandatory if identified as in-scope to ensure compliance with a statutory obligation."
+    ],
+    "actions": [
+     {
+      "title": "GovAssure is mandatory if identified as in-scope to ensure compliance with a statutory obligation.",
+      "description": "If your system or service has been identified as being within the scope of GovAssure, then participating in the GovAssure process is not optional. It is a mandatory requirement because it supports a legal or government policy obligation.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "None found",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "GovAssure is mandatory only where the service has been identified as in scope."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "GovAssure is mandatory only where the service has been identified as in scope.",
+ "modelVersion": 2
 }

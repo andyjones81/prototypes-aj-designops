@@ -9,9 +9,30 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "criticalService",
+   "op": "is",
+   "value": "Yes"
+  },
+  {
+   "field": "technology",
+   "op": "includes",
+   "value": "Cloud hosting"
+  }
+ ],
  "conditionsText": "",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +53,58 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-193",
+    "name": "Business important and critical services MUST span Availbility Zones (AZs) to ensure resilience against major cloud failures",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Not stated",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Business important and critical services MUST span Availbility Zones (AZs) to ensure resilience against major cloud failures",
+    "requirementDescription": "",
+    "why": "",
+    "tasks": [
+     "Business important and critical services MUST span Availbility Zones (AZs) to ensure resilience against major cloud failures"
+    ],
+    "actions": [
+     {
+      "title": "Business important and critical services MUST span Availbility Zones (AZs) to ensure resilience against major cloud failures",
+      "description": "",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Critical-service escalation and availability-zone resilience apply to business-important or critical services. Zone resilience additionally requires cloud hosting."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Critical-service escalation and availability-zone resilience apply to business-important or critical services. Zone resilience additionally requires cloud hosting.",
+ "modelVersion": 2
 }

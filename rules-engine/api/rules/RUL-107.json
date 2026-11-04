@@ -9,14 +9,32 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "Steve Goff",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
    "value": [
     "Build"
+   ]
+  },
+  {
+   "field": "deliveryModel",
+   "op": "in",
+   "value": [
+    "In-house",
+    "Hybrid"
    ]
   }
  ],
@@ -42,13 +60,68 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from ORR activity log-Grid view.csv."
+   "note": "Imported from ORR activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-107",
+    "name": "Document High Level Design (HLD) and Low Level Design (LLD). Factor DfE standards into technical design (ORR 5 and ORR 6)",
+    "source": "Operational Readiness Review",
+    "dataset": "Operational Readiness Review",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Not stated",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "Steve Goff",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "If it is something completely third-party hosted because they can't follow technical standards. Still would expect them to meet legal standards.",
+    "phases": [
+     "Build"
+    ],
+    "phasesAssumed": true,
+    "requirementTitle": "Document High Level Design (HLD) and Low Level Design (LLD). Factor DfE standards into technical design (ORR 5 and ORR 6)",
+    "requirementDescription": "- operational\n- security\n- good practice\n- people need to understand how the thing is built - to support it and build it",
+    "why": "- operational\n- security\n- good practice\n- people need to understand how the thing is built - to support it and build it",
+    "tasks": [
+     "Document High Level Design (HLD) and Low Level Design (LLD). Factor DfE standards into technical design (ORR 5 and ORR 6)"
+    ],
+    "actions": [
+     {
+      "title": "Document High Level Design (HLD) and Low Level Design (LLD). Factor DfE standards into technical design (ORR 5 and ORR 6)",
+      "description": "Depends on nature of service for the type and level of detail included.\n• managed supplier - tend to give HLD\n• build in DfE - expect more LLD\n• follow the technical DfE standards",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Departmental technical design applies where the team controls implementation. Fully third-party-hosted services retain their separate legal and supplier obligations. Source phase was blank; Build remains a prototype assumption."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Departmental technical design applies where the team controls implementation. Fully third-party-hosted services retain their separate legal and supplier obligations. Source phase was blank; Build remains a prototype assumption.",
+ "modelVersion": 2
 }

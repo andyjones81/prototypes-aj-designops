@@ -13,11 +13,26 @@
  "status": "Published",
  "conditions": [
   {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
    "field": "stage",
    "op": "in",
    "value": [
     "Understanding"
    ]
+  },
+  {
+   "field": "externalDataSharing",
+   "op": "is",
+   "value": "Yes"
   }
  ],
  "conditionsText": "",
@@ -42,13 +57,68 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-227",
+    "name": "Have you defined data sharing agreements with any organisations you are sharing data with?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": true,
+    "status": "Published",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Understanding"
+      ]
+     }
+    ],
+    "conditionsText": "",
+    "phases": [
+     "Discovery"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you defined data sharing agreements with any organisations you are sharing data with?",
+    "requirementDescription": "Have you formally agreed how shared data will be protected, used and managed?",
+    "why": "Data sharing creates accountability and legal obligations that need to be documented.",
+    "tasks": [
+     "Have you defined data sharing agreements with any organisations you are sharing data with?"
+    ],
+    "actions": [
+     {
+      "title": "Have you defined data sharing agreements with any organisations you are sharing data with?",
+      "description": "A data sharing agreement should normally define:\n• Purpose of sharing\n• Types of data\n• Security controls\n• Retention arrangements\n• Incident reporting\n• Responsibilities",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Data-sharing due diligence and agreements apply when information is exchanged with another organisation."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Data-sharing due diligence and agreements apply when information is exchanged with another organisation.",
+ "modelVersion": 2
 }

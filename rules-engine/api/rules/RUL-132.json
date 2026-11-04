@@ -13,16 +13,21 @@
  "status": "Published",
  "conditions": [
   {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
    "field": "stage",
    "op": "in",
    "value": [
     "Build"
    ]
-  },
-  {
-   "field": "transactional",
-   "op": "is",
-   "value": "Yes"
   },
   {
    "field": "personalData",
@@ -52,13 +57,78 @@
  "standards": [],
  "systems": "",
  "guidance": "https://educationgovuk.sharepoint.com/sites/lvewp00158/SitePages/DPIA.aspx",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from ORR activity log-Grid view.csv."
+   "note": "Imported from ORR activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-132",
+    "name": "Complete a Data Privacy Impact Assessment (DPIA) screener (ORR 24)",
+    "source": "Operational Readiness Review",
+    "dataset": "Operational Readiness Review",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - legal",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "Steve Goff",
+    "enabled": true,
+    "status": "Published",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Build"
+      ]
+     },
+     {
+      "field": "transactional",
+      "op": "is",
+      "value": "Yes"
+     },
+     {
+      "field": "personalData",
+      "op": "is",
+      "value": "Yes"
+     }
+    ],
+    "conditionsText": "Only need to do it if storing personal data (e.g. transactional service)",
+    "phases": [
+     "Build"
+    ],
+    "phasesAssumed": true,
+    "requirementTitle": "Complete a Data Privacy Impact Assessment (DPIA) screener (ORR 24)",
+    "requirementDescription": "To follow GDPR",
+    "why": "To follow GDPR",
+    "tasks": [
+     "Complete a Data Privacy Impact Assessment (DPIA) screener (ORR 24)"
+    ],
+    "actions": [
+     {
+      "title": "Complete a Data Privacy Impact Assessment (DPIA) screener (ORR 24)",
+      "description": "DPIA team will give you a list of actions",
+      "evidence": "",
+      "legal": true
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://educationgovuk.sharepoint.com/sites/lvewp00158/SitePages/DPIA.aspx",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Personal-information obligations apply when personal data is processed; test-data protection additionally requires a non-production environment. Source phase was blank; Build remains a prototype assumption."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Personal-information obligations apply when personal data is processed; test-data protection additionally requires a non-production environment. Source phase was blank; Build remains a prototype assumption.",
+ "modelVersion": 2
 }

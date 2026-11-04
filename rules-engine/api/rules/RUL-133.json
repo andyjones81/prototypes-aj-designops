@@ -9,15 +9,30 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "Steve Goff",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
    "value": [
     "Build"
    ]
+  },
+  {
+   "field": "offshoreData",
+   "op": "is",
+   "value": "Yes"
   }
  ],
  "conditionsText": "If off-shoring data:\n- depends where data is held and processed\n- Exception most services are in Azure Tenancies for EU West Europe (near shore) but if service (inc managed suppliers) off shoring data",
@@ -42,13 +57,68 @@
  "standards": [],
  "systems": "",
  "guidance": "Off-shoring advice",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from ORR activity log-Grid view.csv."
+   "note": "Imported from ORR activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-133",
+    "name": "If off-shoring data, get approval for off-shoring data (ORR 25)",
+    "source": "Operational Readiness Review",
+    "dataset": "Operational Readiness Review",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - legal",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "Steve Goff",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "If off-shoring data:\n- depends where data is held and processed\n- Exception most services are in Azure Tenancies for EU West Europe (near shore) but if service (inc managed suppliers) off shoring data",
+    "phases": [
+     "Build"
+    ],
+    "phasesAssumed": true,
+    "requirementTitle": "If off-shoring data, get approval for off-shoring data (ORR 25)",
+    "requirementDescription": "Apply appropriate security controls and part of data protection guidance",
+    "why": "Apply appropriate security controls and part of data protection guidance",
+    "tasks": [
+     "If off-shoring data, get approval for off-shoring data (ORR 25)"
+    ],
+    "actions": [
+     {
+      "title": "If off-shoring data, get approval for off-shoring data (ORR 25)",
+      "description": "",
+      "evidence": "",
+      "legal": true
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "Off-shoring advice",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Offshore approval and cross-border transfer review apply when data is processed or stored outside the UK / EEA, including by suppliers. Source phase was blank; Build remains a prototype assumption."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Offshore approval and cross-border transfer review apply when data is processed or stored outside the UK / EEA, including by suppliers. Source phase was blank; Build remains a prototype assumption.",
+ "modelVersion": 2
 }

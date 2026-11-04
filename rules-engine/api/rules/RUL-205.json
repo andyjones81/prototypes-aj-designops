@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -46,13 +56,72 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/identifying-security-resources/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-205",
+    "name": "Have you identified and captured the skills required to carry out security activities and engaged with your organisation's security team to support the delivery?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Understanding",
+       "Design and test",
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "Applies when:\n- Security-related activities are planned.\n- Specialist security knowledge is required.\n- Internal capability gaps may exist.",
+    "phases": [
+     "Discovery",
+     "Alpha",
+     "Private beta"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you identified and captured the skills required to carry out security activities and engaged with your organisation's security team to support the delivery?",
+    "requirementDescription": "Do you know what security expertise is needed, and have you involved the people in your organisation who can provide it?",
+    "why": "Many project teams do not contain all the specialist skills required for Secure by Design. The guidance specifically recommends consulting security professionals, security architects, CTOs, CISOs and other specialists to identify required skills and provide support",
+    "tasks": [
+     "Have you identified and captured the skills required to carry out security activities and engaged with your organisation's security team to "
+    ],
+    "actions": [
+     {
+      "title": "Have you identified and captured the skills required to carry out security activities and engaged with your organisation's security team to ",
+      "description": "You should be able to show:\n• A list of required security skills.\n• Which activities need those skills.\n• Evidence of engagement with security teams.\n• Plans for training if skills are missing.\n• Assigned individuals or teams for key security activities",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/identifying-security-resources/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate.",
+ "modelVersion": 2
 }

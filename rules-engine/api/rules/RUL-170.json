@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "technology",
+   "op": "includes",
+   "value": "Data repositories"
+  }
+ ],
  "conditionsText": "Every database, storage account, SharePoint site, or data store",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-170",
+    "name": "All data repositories (S3, Blob, SQL, SharePoint) MUST be classified to ensure effective data defence.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "Every database, storage account, SharePoint site, or data store",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "All data repositories (S3, Blob, SQL, SharePoint) MUST be classified to ensure effective data defence.",
+    "requirementDescription": "Every place where data is stored must have its data classified (labelled according to its sensitivity and importance) so that the correct security controls can be applied.",
+    "why": "Because you can't apply the right security controls if you don't know what data you're protecting.",
+    "tasks": [
+     "All data repositories (S3, Blob, SQL, SharePoint) MUST be classified to ensure effective data defence."
+    ],
+    "actions": [
+     {
+      "title": "All data repositories (S3, Blob, SQL, SharePoint) MUST be classified to ensure effective data defence.",
+      "description": "Every database, storage account, SharePoint site, or data store must be labelled according to the sensitivity of the data it contains. This allows the organisation to apply the correct level of protection and ensures sensitive data receives stronger security controls than low-risk information.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Data classification applies to databases, storage accounts, collaboration data stores and other repositories."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Data classification applies to databases, storage accounts, collaboration data stores and other repositories.",
+ "modelVersion": 2
 }

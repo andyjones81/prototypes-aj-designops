@@ -13,6 +13,16 @@
  "status": "Published",
  "conditions": [
   {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
    "field": "stage",
    "op": "in",
    "value": [
@@ -47,13 +57,73 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/\n\nhttps://educationgovuk.sharepoint.com/sites/lvewp00158/SitePages/DPIA.aspx",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-229",
+    "name": "Have you completed a Data Protection and Impact Assessment (DPIA)?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": true,
+    "status": "Published",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Understanding"
+      ]
+     },
+     {
+      "field": "personalData",
+      "op": "is",
+      "value": "Yes"
+     }
+    ],
+    "conditionsText": "Usually required when:\n- Processing personal data\n- Introducing new technology\n- Conducting large-scale processing\n- Monitoring individuals",
+    "phases": [
+     "Discovery"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you completed a Data Protection and Impact Assessment (DPIA)?",
+    "requirementDescription": "Have you formally assessed how the service affects people's privacy and identified actions needed to protect personal data?",
+    "why": "A DPIA helps identify privacy risks before a service is implemented and ensures appropriate safeguards are designed into the service from the outset.",
+    "tasks": [
+     "Have you completed a Data Protection and Impact Assessment (DPIA)?"
+    ],
+    "actions": [
+     {
+      "title": "Have you completed a Data Protection and Impact Assessment (DPIA)?",
+      "description": "A DPIA should:\n• Describe the processing\n• Identify privacy risks\n• Assess impacts on individuals\n• Define mitigations\n• Be reviewed by appropriate specialists",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/\n\nhttps://educationgovuk.sharepoint.com/sites/lvewp00158/SitePages/DPIA.aspx",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Personal-information obligations apply when personal data is processed; test-data protection additionally requires a non-production environment."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Personal-information obligations apply when personal data is processed; test-data protection additionally requires a non-production environment.",
+ "modelVersion": 2
 }

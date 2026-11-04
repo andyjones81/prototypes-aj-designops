@@ -9,9 +9,20 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  }
+ ],
  "conditionsText": "",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +43,58 @@
  "standards": [],
  "systems": "",
  "guidance": "policy-cyber-incident-response-management.docx\n\npolicy-information-security-exception.doc",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-191",
+    "name": "All services MUST have local incident response plans aligned to the CISD standard to ensure consistency in handling and escalating incidents.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "All services MUST have local incident response plans aligned to the CISD standard to ensure consistency in handling and escalating incidents.",
+    "requirementDescription": "Every service must have its own documented plan for responding to security incidents, and that plan must follow the standards and processes defined by CISD so that incidents are handled consistently across the organisation.",
+    "why": "During an incident people are under pressure and may not know who to call, what actions to take, who can approve decisions or when to involve CISD, A documented plan avoids confusion",
+    "tasks": [
+     "All services MUST have local incident response plans aligned to the CISD standard to ensure consistency in handling and escalating incidents"
+    ],
+    "actions": [
+     {
+      "title": "All services MUST have local incident response plans aligned to the CISD standard to ensure consistency in handling and escalating incidents",
+      "description": "Every service needs a documented playbook for responding to incidents, and it must follow the organisation's CISD incident management approach so that security incidents are handled quickly, consistently, and with the right escalation route",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "policy-cyber-incident-response-management.docx\n\npolicy-information-security-exception.doc",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate.",
+ "modelVersion": 2
 }

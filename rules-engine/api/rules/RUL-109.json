@@ -9,15 +9,30 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "Steve Goff",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
    "value": [
     "Build"
    ]
+  },
+  {
+   "field": "customDevelopment",
+   "op": "is",
+   "value": "Yes"
   }
  ],
  "conditionsText": "- depends on the nature of what you are building\n- you must inform DfE Networks and obtain consent before any performance or load testing takes place.",
@@ -42,13 +57,68 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from ORR activity log-Grid view.csv."
+   "note": "Imported from ORR activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-109",
+    "name": "Create and document a testing mechanism. For example, load testing, user testing (ORR 8)",
+    "source": "Operational Readiness Review",
+    "dataset": "Operational Readiness Review",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Not stated",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "Steve Goff",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "- depends on the nature of what you are building\n- you must inform DfE Networks and obtain consent before any performance or load testing takes place.",
+    "phases": [
+     "Build"
+    ],
+    "phasesAssumed": true,
+    "requirementTitle": "Create and document a testing mechanism. For example, load testing, user testing (ORR 8)",
+    "requirementDescription": "- operational\n- secuirty\n- good practice",
+    "why": "- operational\n- secuirty\n- good practice",
+    "tasks": [
+     "Create and document a testing mechanism. For example, load testing, user testing (ORR 8)"
+    ],
+    "actions": [
+     {
+      "title": "Create and document a testing mechanism. For example, load testing, user testing (ORR 8)",
+      "description": "",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Prototype interpretation of 'depends on nature': technical peer review and a testing mechanism apply to custom-built or changed software. Confirm with the technical assurance owner. Source phase was blank; Build remains a prototype assumption."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Prototype interpretation of 'depends on nature': technical peer review and a testing mechanism apply to custom-built or changed software. Confirm with the technical assurance owner. Source phase was blank; Build remains a prototype assumption.",
+ "modelVersion": 2
 }

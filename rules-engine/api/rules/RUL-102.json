@@ -13,6 +13,16 @@
  "status": "Published",
  "conditions": [
   {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
    "field": "stage",
    "op": "in",
    "value": [
@@ -42,13 +52,81 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from ORR activity log-Grid view.csv."
+   "note": "Imported from ORR activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-102",
+    "name": "Meet accessibility standards (ORR item 27, 28, 29)",
+    "source": "Operational Readiness Review",
+    "dataset": "Operational Readiness Review",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Not stated",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "Steve Goff",
+    "enabled": true,
+    "status": "Published",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "",
+    "phases": [
+     "Build"
+    ],
+    "phasesAssumed": true,
+    "requirementTitle": "Meet accessibility standards (ORR item 27, 28, 29)",
+    "requirementDescription": "So services are accessible",
+    "why": "So services are accessible",
+    "tasks": [
+     "Meet accessibility standards (ORR item 27, 28, 29)"
+    ],
+    "actions": [
+     {
+      "title": "Meet accessibility standards (ORR item 27, 28, 29)",
+      "description": "• book an accessibility audit\n• get a report\n• meet WCAG 2.2 AA guidelines",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Prototype interpretation: accessibility and statement enrolment apply to user-facing services, not headless components. Confirm the scope with the accessibility owner. Source phase was blank; Build remains a prototype assumption."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "hasUsers",
+    "op": "is",
+    "value": "Yes"
+   },
+   {
+    "field": "channel",
+    "op": "includes",
+    "value": "Online"
+   }
+  ]
+ ],
+ "applicabilityNote": "Prototype interpretation: accessibility and statement enrolment apply to user-facing services, not headless components. Confirm the scope with the accessibility owner. Source phase was blank; Build remains a prototype assumption.",
+ "modelVersion": 2
 }

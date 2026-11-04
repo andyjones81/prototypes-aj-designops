@@ -9,9 +9,20 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  }
+ ],
  "conditionsText": "",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +43,71 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-162",
+    "name": "Third-party tools and integrations (including SaaS) MUST undergo a Vendor Security Assessment before they can be used to prevent breaches via vulnerable suppliers.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Third-party tools and integrations (including SaaS) MUST undergo a Vendor Security Assessment before they can be used to prevent breaches via vulnerable suppliers.",
+    "requirementDescription": "Before a team can use a new supplier, SaaS product, API, integration, or security tool, the supplier's security controls must be assessed and approved.",
+    "why": "The purpose is to avoid introducing security risks through external vendors.",
+    "tasks": [
+     "Third-party tools and integrations (including SaaS) MUST undergo a Vendor Security Assessment before they can be used to prevent breaches vi"
+    ],
+    "actions": [
+     {
+      "title": "Third-party tools and integrations (including SaaS) MUST undergo a Vendor Security Assessment before they can be used to prevent breaches vi",
+      "description": "Before a team can use a new supplier, SaaS product, API, integration, or security tool, the supplier's security controls must be assessed and approved.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Supplier and vendor security obligations apply to supplied development, hosting, support, products or integrations."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "supplierAccess",
+    "op": "is",
+    "value": "Yes"
+   },
+   {
+    "field": "technology",
+    "op": "includes",
+    "value": "Third-party products"
+   }
+  ]
+ ],
+ "applicabilityNote": "Supplier and vendor security obligations apply to supplied development, hosting, support, products or integrations.",
+ "modelVersion": 2
 }

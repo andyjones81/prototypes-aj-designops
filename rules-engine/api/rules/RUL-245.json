@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -44,13 +54,70 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-245",
+    "name": "Have you documented the risk assessment method used to perform a risk assessment?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "The documented method should cover the scope and approach to the assessment, including how threats, vulnerabilities, business impacts, likelihood and risk severity are identified and evaluated.\nIt should also define important terminology, assumptions and constraints. The guidance recommends documenting the assessment boundary and identifying what is in and out of scope.",
+    "phases": [
+     "Alpha",
+     "Private beta"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you documented the risk assessment method used to perform a risk assessment?",
+    "requirementDescription": "Have you written down how you assess security risks so that someone can understand the process you followed and repeat it?",
+    "why": "Risk assessments involve judgement. Without a defined method, two people could assess exactly the same risk and reach very different conclusions.\nDocumenting the method makes the assessment:\n- consistent\n- repeatable\n- understandable\n- auditable\n- easier to review and update.",
+    "tasks": [
+     "Have you documented the risk assessment method used to perform a risk assessment?"
+    ],
+    "actions": [
+     {
+      "title": "Have you documented the risk assessment method used to perform a risk assessment?",
+      "description": "Document the risk assessment methodology, including:\n• scope and boundaries\n• terminology and definitions\n• assumptions and constraints\n• information/sources used\n• how threats, vulnerabilities and impacts are assessed\n• how likelihood and impact are scored\n• how the overall risk rating is calculated\n• how and when risks will be reviewed.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate.",
+ "modelVersion": 2
 }

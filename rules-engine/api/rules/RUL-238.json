@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -44,13 +54,70 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/sourcing-a-threat-assessment/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-238",
+    "name": "Have you considered threat intelligence and the history of previous attacks on the organisation (or similar organisations) as part of the threat assessment?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Understanding",
+       "Design and test"
+      ]
+     }
+    ],
+    "conditionsText": "Applies when:\n- Producing or updating threat assessments.\n- Identifying likely attackers.\n- Assessing threat levels.",
+    "phases": [
+     "Discovery",
+     "Alpha"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you considered threat intelligence and the history of previous attacks on the organisation (or similar organisations) as part of the threat assessment?",
+    "requirementDescription": "Have you looked at real-world evidence about attacks that have already happened, either to your organisation or to similar organisations?",
+    "why": "Threat assessments should be evidence-based rather than based on assumptions.\nThe guidance states that threat assessments should use:\n- Cyber Threat Intelligence (CTI)\n- Reputable intelligence sources\n- Research into previous attacks on the organisation\n- Research into attacks against similar organisations",
+    "tasks": [
+     "Have you considered threat intelligence and the history of previous attacks on the organisation (or similar organisations) as part of the th"
+    ],
+    "actions": [
+     {
+      "title": "Have you considered threat intelligence and the history of previous attacks on the organisation (or similar organisations) as part of the th",
+      "description": "You should demonstrate consideration of:\n• Internal security incident history.\n• Cyber Threat Intelligence reports.\n• NCSC threat reporting.\n• Industry intelligence feeds.\n• Lessons learned from similar organisations.\n• Known attacker tactics and techniques.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/sourcing-a-threat-assessment/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate.",
+ "modelVersion": 2
 }

@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -46,13 +56,85 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-third-party-product-security-risks/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-219",
+    "name": "Have you created a report that highlights any security risks associated with using third-party products, including recommendations on how to manage those risks?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Understanding",
+       "Design and test",
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "Applies whenever:\n- Third-party products are used.\n- Security risks are identified.\n- Procurement decisions are being made.",
+    "phases": [
+     "Discovery",
+     "Alpha",
+     "Private beta"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you created a report that highlights any security risks associated with using third-party products, including recommendations on how to manage those risks?",
+    "requirementDescription": "Have you formally documented the risks introduced by third-party products and explained how those risks will be managed?",
+    "why": "Decision makers need visibility of supplier risks before approving technology choices.\nThe report provides evidence that due diligence has been completed and allows risk owners to make informed decisions",
+    "tasks": [
+     "Have you created a report that highlights any security risks associated with using third-party products, including recommendations on how to"
+    ],
+    "actions": [
+     {
+      "title": "Have you created a report that highlights any security risks associated with using third-party products, including recommendations on how to",
+      "description": "The report should contain:\n• Product description\n• Identified risks\n• Impact assessment\n• Risk ratings\n• Proposed mitigations\n• Residual risks\n• Recommendations",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-third-party-product-security-risks/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Supplier and vendor security obligations apply to supplied development, hosting, support, products or integrations."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "supplierAccess",
+    "op": "is",
+    "value": "Yes"
+   },
+   {
+    "field": "technology",
+    "op": "includes",
+    "value": "Third-party products"
+   }
+  ]
+ ],
+ "applicabilityNote": "Supplier and vendor security obligations apply to supplied development, hosting, support, products or integrations.",
+ "modelVersion": 2
 }

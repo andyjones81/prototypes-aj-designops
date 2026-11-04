@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -44,13 +54,70 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/implementing-a-vulnerability-management-process/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-vulnerability-management.docx?d=w6fef653e7774430a85e62302f2e28132&csf=1&web=1&e=kAWAnp",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-258",
+    "name": "Do you have a documented approach on how to classify, prioritise and redress vulnerabilities?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "Different vulnerabilities may require different responses. The guidance gives examples including patches or updates, compensating controls, code fixes and workarounds, with more serious issues potentially requiring senior-management escalation",
+    "phases": [
+     "Alpha",
+     "Private beta"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Do you have a documented approach on how to classify, prioritise and redress vulnerabilities?",
+    "requirementDescription": "Have you agreed and written down how you will judge how serious a vulnerability is, decide which ones need fixing first, and determine how and when they will be fixed?",
+    "why": "Not every vulnerability presents the same level of risk. A minor weakness in a low-risk component should not necessarily receive the same priority as a critical vulnerability affecting an important internet-facing system.\nHaving an agreed process ensures vulnerabilities are handled consistently and that teams focus first on weaknesses presenting the greatest risk.",
+    "tasks": [
+     "Do you have a documented approach on how to classify, prioritise and redress vulnerabilities?"
+    ],
+    "actions": [
+     {
+      "title": "Do you have a documented approach on how to classify, prioritise and redress vulnerabilities?",
+      "description": "Create and maintain a documented vulnerability management process that defines:\n• how vulnerabilities are classified and scored\n• how priority is determined\n• expected remediation timescales\n• available remediation approaches\n• who is responsible for resolving them\n• when vulnerabilities need escalating\n• how remediation is tested and confirmed\n• how vulnerabilities are recorded and tracked.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/implementing-a-vulnerability-management-process/\n\nhttps://educationgovuk.sharepoint.com/:w:/r/sites/security/Shared%20Documents/policy-vulnerability-management.docx?d=w6fef653e7774430a85e62302f2e28132&csf=1&web=1&e=kAWAnp",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate.",
+ "modelVersion": 2
 }

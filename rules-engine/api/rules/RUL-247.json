@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -44,13 +54,70 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-247",
+    "name": "Have you documented the service's risks (for example in a risk register)?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "Relevant identified security risks should be captured, including risks that have been accepted and those that are above the project's acceptable risk level and therefore require treatment.\nThe guidance recommends describing security risks in terms of the threat actor, threat event, vulnerability and resulting consequences.",
+    "phases": [
+     "Alpha",
+     "Private beta"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you documented the service's risks (for example in a risk register)?",
+    "requirementDescription": "Have all the security risks you've identified been formally written down somewhere where they can be tracked, owned and managed?",
+    "why": "Identifying a risk in a workshop or conversation isn't enough.\nRisks need to be recorded so the organisation can understand:\n- what could happen\n- what could cause it\n- what would be affected\n- how serious it is\n- who owns it\n- what is being done about it\n- whether the remaining risk is acceptable.\nThis also provides an audit trail for security and risk decisions.",
+    "tasks": [
+     "Have you documented the service's risks (for example in a risk register)?"
+    ],
+    "actions": [
+     {
+      "title": "Have you documented the service's risks (for example in a risk register)?",
+      "description": "Create and maintain a risk register, it should be kept up to date, shared with the people responsible for decision-making and mitigation, and updated when controls are introduced or circumstances change. The guidance specifically describes the register as a \"living document\" and says scores should be updated following implementation of security controls to reflect the latest information.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/performing-a-security-risk-assessment/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate.",
+ "modelVersion": 2
 }

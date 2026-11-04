@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "privilegedAccess",
+   "op": "is",
+   "value": "Yes"
+  }
+ ],
  "conditionsText": "Wherever privileged access exists",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-178",
+    "name": "Standing admin rights MUST NOT exist; Just-in-Time (JIT) or Least Privilege scoping MUST be used to limit the potential damage an attacker can inflict.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "Wherever privileged access exists",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Standing admin rights MUST NOT exist; Just-in-Time (JIT) or Least Privilege scoping MUST be used to limit the potential damage an attacker can inflict.",
+    "requirementDescription": "People should not permanently have administrator access. Instead, admin permissions should only be granted when needed (Just-in-Time) or restricted to the minimum permissions required (Least Privilege)",
+    "why": "To limit the potential damage an attacker can inflict",
+    "tasks": [
+     "Standing admin rights MUST NOT exist; Just-in-Time (JIT) or Least Privilege scoping MUST be used to limit the potential damage an attacker c"
+    ],
+    "actions": [
+     {
+      "title": "Standing admin rights MUST NOT exist; Just-in-Time (JIT) or Least Privilege scoping MUST be used to limit the potential damage an attacker c",
+      "description": "People should not walk around with permanent administrator privileges. Give the minimum permissions needed, and where elevated access is required, grant it temporarily and remove it automatically when the task is complete.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Administrative MFA, least privilege, break-glass control and protected administrative devices apply wherever privileged access exists."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Administrative MFA, least privilege, break-glass control and protected administrative devices apply wherever privileged access exists.",
+ "modelVersion": 2
 }

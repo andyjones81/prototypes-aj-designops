@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -46,13 +56,85 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-third-party-product-security-risks/\n\nhttps://educationgovuk.sharepoint.com/sites/security/SitePages/procurement-suppliers.aspx\n\nBusiness Continuity Home",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-217",
+    "name": "Have you identified the security risks related to third-party Managed Service Providers (MSPs) prior to using them?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Understanding",
+       "Design and test",
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "Applies when:\n- Outsourcing support services\n- Using managed hosting\n- Using managed security services\n- Using outsourced operational teams",
+    "phases": [
+     "Discovery",
+     "Alpha",
+     "Private beta"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you identified the security risks related to third-party Managed Service Providers (MSPs) prior to using them?",
+    "requirementDescription": "Before appointing an external provider to deliver or operate services on your behalf, have you assessed the risks they introduce?",
+    "why": "MSPs often receive significant access to:\n- Systems\n- Infrastructure\n- Data\n- Administrative accounts\nA security weakness within the MSP can become a security weakness in your service.\nSecure by Design requires security due diligence on third-party providers",
+    "tasks": [
+     "Have you identified the security risks related to third-party Managed Service Providers (MSPs) prior to using them?"
+    ],
+    "actions": [
+     {
+      "title": "Have you identified the security risks related to third-party Managed Service Providers (MSPs) prior to using them?",
+      "description": "You should assess:\n• Supplier security maturity\n• Access management controls\n• Incident response capabilities\n• Personnel vetting\n• Monitoring arrangements\n• Business continuity arrangements",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/managing-third-party-product-security-risks/\n\nhttps://educationgovuk.sharepoint.com/sites/security/SitePages/procurement-suppliers.aspx\n\nBusiness Continuity Home",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Supplier and vendor security obligations apply to supplied development, hosting, support, products or integrations."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "supplierAccess",
+    "op": "is",
+    "value": "Yes"
+   },
+   {
+    "field": "technology",
+    "op": "includes",
+    "value": "Third-party products"
+   }
+  ]
+ ],
+ "applicabilityNote": "Supplier and vendor security obligations apply to supplied development, hosting, support, products or integrations.",
+ "modelVersion": 2
 }

@@ -9,9 +9,29 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "changeType",
+   "op": "in",
+   "value": [
+    "New service",
+    "Major change",
+    "Retirement"
+   ]
+  }
+ ],
  "conditionsText": "When building services and making major changes",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +52,58 @@
  "standards": [],
  "systems": "All products and services built in house",
  "guidance": "https://technical-guidance.education.gov.uk/principles/secure-by-design-principles/\n\nSecure by Design - UK Government Security - Beta\n\nSecure by Design Principles - UK Government Security - Beta",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-157",
+    "name": "All new services MUST comply with the 10 principles of Secure by Design to ensure security is built-in from the outset.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "When building services and making major changes",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "All new services MUST comply with the 10 principles of Secure by Design to ensure security is built-in from the outset.",
+    "requirementDescription": "When creating a new service, security must be considered from the beginning of the design process, rather than being added later as an afterthought.",
+    "why": "Don't build a service first and worry about security later. Design and build security into the service from day one, following the Secure by Design principles.",
+    "tasks": [
+     "All new services MUST comply with the 10 principles of Secure by Design to ensure security is built-in from the outset."
+    ],
+    "actions": [
+     {
+      "title": "All new services MUST comply with the 10 principles of Secure by Design to ensure security is built-in from the outset.",
+      "description": "Follow Secure by design principles and use the self assessment tracker to monitor progress",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "All products and services built in house",
+    "guidance": "https://technical-guidance.education.gov.uk/principles/secure-by-design-principles/\n\nSecure by Design - UK Government Security - Beta\n\nSecure by Design Principles - UK Government Security - Beta",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Readiness and secure-design review apply to new services, major change and retirement. Retirement retains security obligations until closure."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Readiness and secure-design review apply to new services, major change and retirement. Retirement retains security obligations until closure.",
+ "modelVersion": 2
 }

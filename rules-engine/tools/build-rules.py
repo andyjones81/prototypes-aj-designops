@@ -15,6 +15,44 @@ STAGE_OF = {'explore': 'Idea', 'discovery': 'Understanding', 'alpha': 'Design an
 STAGE_ORDER = ['Idea', 'Understanding', 'Design and test', 'Build', 'Run / Serve', 'Decommissioning']
 PHASE_NAME = {'decomissioning': 'Decommissioning'}
 CREATED = '2026-01-12T09:00:00.000Z'
+REFINED = '2026-11-04T09:00:00.000Z'
+with open(os.path.join(HERE, 'rule-model.json'), encoding='utf-8') as model_file:
+    MODEL = json.load(model_file)
+MODEL['fields'].update(MODEL.pop('additionalFields'))
+SCOPES = {}
+for scope in MODEL['scopes']:
+    for rule_number in scope['ids'].split(','):
+        if rule_number in SCOPES:
+            raise ValueError('Duplicate applicability scope: ' + rule_number)
+        SCOPES[rule_number] = scope
+if set(SCOPES) != {str(number) for number in range(101, 274)}:
+    raise ValueError('Every imported rule must have a reviewed applicability scope')
+
+
+def refine_rule(rule, number):
+    scope = SCOPES[str(number)]
+    rule['versions'][0]['snap'] = {key: value for key, value in rule.items() if key != 'versions'}
+    stages = scope.get('stages', next((condition['value'] for condition in rule['conditions'] if condition['field'] == 'stage'), []))
+    conditions = [{'field': 'serviceType', 'op': 'in', 'value': MODEL['fields']['serviceType']['options']}]
+    if stages:
+        conditions.append({'field': 'stage', 'op': 'in', 'value': stages})
+    def condition_of(entry):
+        return {'field': entry[0], 'op': entry[1], 'value': entry[2]}
+    conditions.extend(condition_of(entry) for entry in scope.get('all', []))
+    conditions.extend(condition_of(entry) for entry in MODEL.get('extraConditions', {}).get(str(number), []))
+    rule.update({
+        'conditions': conditions,
+        'conditionGroups': [[condition_of(entry) for entry in scope['any']]] if scope.get('any') else [],
+        'applicabilityNote': scope['note'] + (' Source phase was blank; Build remains a prototype assumption.' if rule['phasesAssumed'] and 'stages' not in scope else ''),
+        'modelVersion': MODEL['version'],
+        'status': 'Published', 'enabled': True, 'version': 2,
+    })
+    if 'stages' in scope:
+        rule['phasesAssumed'] = False
+    rule['versions'].append({'v': 2, 'at': REFINED, 'by': 'Prototype rule review', 'note': rule['applicabilityNote']})
+    rule['name'] = rule['name'].replace('Enagage', 'Engage').replace('ReceIve', 'Receive')
+    rule['requirementTitle'] = rule['name']
+    return rule
 
 
 def clean(s):
@@ -98,7 +136,7 @@ def build():
                 'version': 1,
                 'versions': [{'v': 1, 'at': CREATED, 'by': 'CSV import', 'note': 'Imported from ' + os.path.basename(path) + '.'}],
             }
-            rules.append(rule)
+            rules.append(refine_rule(rule, n))
     return rules
 
 
@@ -107,10 +145,12 @@ def main():
     os.makedirs(os.path.join(OUT, 'rules'), exist_ok=True)
     meta = {'generated': datetime.date.today().isoformat(), 'count': len(rules),
             'published': sum(r['status'] == 'Published' for r in rules), 'draft': sum(r['status'] == 'Draft' for r in rules)}
-    json.dump({'meta': meta, 'rules': rules}, open(os.path.join(OUT, 'rules.json'), 'w'), indent=1, ensure_ascii=False)
+    meta['modelVersion'] = MODEL['version']
+    parameters = {'version': MODEL['version'], 'groups': MODEL['groups'], 'fields': MODEL['fields']}
+    json.dump({'meta': meta, 'parameters': parameters, 'rules': rules}, open(os.path.join(OUT, 'rules.json'), 'w'), indent=1, ensure_ascii=False)
     for r in rules:
         json.dump(r, open(os.path.join(OUT, 'rules', r['id'] + '.json'), 'w'), indent=1, ensure_ascii=False)
-    open(os.path.join(OUT, 'rules-seed.js'), 'w').write('window.RULES_SEED = ' + json.dumps(rules, ensure_ascii=False) + ';\n')
+    open(os.path.join(OUT, 'rules-seed.js'), 'w').write('window.RULES_MODEL = ' + json.dumps(parameters, ensure_ascii=False) + ';\nwindow.RULES_SEED = ' + json.dumps(rules, ensure_ascii=False) + ';\n')
     print(meta)
 
 

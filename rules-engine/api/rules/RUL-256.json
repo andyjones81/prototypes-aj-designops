@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -20,6 +30,11 @@
     "Build",
     "Run / Serve"
    ]
+  },
+  {
+   "field": "controlsImplemented",
+   "op": "is",
+   "value": "Yes"
   }
  ],
  "conditionsText": "When controls have been designed, built, configured and deployed.",
@@ -47,13 +62,73 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-256",
+    "name": "Have you tested the controls and confirmed they're working as intended?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build",
+       "Run / Serve"
+      ]
+     }
+    ],
+    "conditionsText": "When controls have been designed, built, configured and deployed.",
+    "phases": [
+     "Alpha",
+     "Private beta",
+     "Public beta",
+     "Live"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you tested the controls and confirmed they're working as intended?",
+    "requirementDescription": "Have you checked that the security controls actually work in practice?",
+    "why": "A control that exists on paper may not work correctly. Secure by Design places emphasis on assessing the effectiveness of security controls and continuing assurance throughout delivery. A control only reduces risk if it operates as intended.",
+    "tasks": [
+     "Have you tested the controls and confirmed they're working as intended?"
+    ],
+    "actions": [
+     {
+      "title": "Have you tested the controls and confirmed they're working as intended?",
+      "description": "Testing may include:\n• Penetration testing.\n• Vulnerability scanning.\n• Security design reviews.\n• Configuration reviews.\n• User access testing.\n• Red team exercises.\n• Evidence-based assurance reviews.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Control-effectiveness testing applies when controls have been built, configured or deployed."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Control-effectiveness testing applies when controls have been built, configured or deployed.",
+ "modelVersion": 2
 }

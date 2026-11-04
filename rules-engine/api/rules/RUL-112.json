@@ -13,6 +13,16 @@
  "status": "Published",
  "conditions": [
   {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
    "field": "stage",
    "op": "in",
    "value": [
@@ -44,13 +54,70 @@
  ],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from ORR activity log-Grid view.csv."
+   "note": "Imported from ORR activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-112",
+    "name": "Document or update documentation for the overview of your service (like a runbook, Service Operating Manual, or equivalent) (ORR 11) (could link to ORR 31, 34 and 35)",
+    "source": "Service Standard 14",
+    "dataset": "Operational Readiness Review",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Not stated",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "Steve Goff",
+    "enabled": true,
+    "status": "Published",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "",
+    "phases": [
+     "Build"
+    ],
+    "phasesAssumed": true,
+    "requirementTitle": "Document or update documentation for the overview of your service (like a runbook, Service Operating Manual, or equivalent) (ORR 11) (could link to ORR 31, 34 and 35)",
+    "requirementDescription": "- security\n- operational\n- good practice",
+    "why": "- security\n- operational\n- good practice",
+    "tasks": [
+     "Document or update documentation for the overview of your service (like a runbook, Service Operating Manual, or equivalent) (ORR 11) (could "
+    ],
+    "actions": [
+     {
+      "title": "Document or update documentation for the overview of your service (like a runbook, Service Operating Manual, or equivalent) (ORR 11) (could ",
+      "description": "• SOM will include what needs to happen\n• although, team can do it in a different format",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [
+     "Service Standard 14"
+    ],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate. Source phase was blank; Build remains a prototype assumption."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate. Source phase was blank; Build remains a prototype assumption.",
+ "modelVersion": 2
 }

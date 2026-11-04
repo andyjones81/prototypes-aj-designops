@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "technology",
+   "op": "includes",
+   "value": "Source repository"
+  }
+ ],
  "conditionsText": "When using a repository",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "GitHub",
  "guidance": "https://technical-guidance.education.gov.uk/infrastructure/security/managing-secrets/\n\nGithub actions - DfE Technical Guidance\n\nAzure CIP - DfE Technical Guidance\n\nDisaster recovery - DfE Technical Guidance",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-150",
+    "name": "Secrets (API keys, passwords, connection strings, certificates) MUST NOT be committed to Git repositories or baked into container images because this prevents immediate compromise of systems and data.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "When using a repository",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Secrets (API keys, passwords, connection strings, certificates) MUST NOT be committed to Git repositories or baked into container images because this prevents immediate compromise of systems and data.",
+    "requirementDescription": "Never store sensitive credentials in source code repositories or inside container images. Store them in a secure secrets-management solution instead.",
+    "why": "Leaked secrets are exploited in real-time and can enable direct attacker access to our systems and data.",
+    "tasks": [
+     "Secrets (API keys, passwords, connection strings, certificates) MUST NOT be committed to Git repositories or baked into container images bec"
+    ],
+    "actions": [
+     {
+      "title": "Secrets (API keys, passwords, connection strings, certificates) MUST NOT be committed to Git repositories or baked into container images bec",
+      "description": "Application secrets should not be stored in Git repositories or container images",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "GitHub",
+    "guidance": "https://technical-guidance.education.gov.uk/infrastructure/security/managing-secrets/\n\nGithub actions - DfE Technical Guidance\n\nAzure CIP - DfE Technical Guidance\n\nDisaster recovery - DfE Technical Guidance",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Repository governance and secret protection apply when the service uses a source repository."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Repository governance and secret protection apply when the service uses a source repository.",
+ "modelVersion": 2
 }

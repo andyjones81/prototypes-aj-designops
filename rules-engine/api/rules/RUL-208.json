@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -46,13 +56,72 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-roles-and-responsibilities/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-208",
+    "name": "Have you assigned the Secure by Design responsibilities (for example, in a RACI matrix) and communicated them to the relevant parties?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Understanding",
+       "Design and test",
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "This applies:\n- At the start of a project.\n- When delivery teams are formed.\n- When responsibilities change.\n- When new security activities are introduced.\n- During periodic project reviews.",
+    "phases": [
+     "Discovery",
+     "Alpha",
+     "Private beta"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you assigned the Secure by Design responsibilities (for example, in a RACI matrix) and communicated them to the relevant parties?",
+    "requirementDescription": "Have you clearly defined who is responsible for each security activity, and made sure everyone understands their role?\nIn other words:\n- Who does the work?\n- Who approves the work?\n- Who needs to be consulted?\n- Who needs to be kept informed?\nThe guidance recommends using a RACI matrix to make this clear. A RACI identifies who is Responsible, Accountable, Consulted, and Informed for each activity",
+    "why": "Security activities often fail because everyone assumes someone else is dealing with them.\nThe guidance states that agreeing responsibilities helps organisations:\n- assign ownership of security activities\n- identify skills and resource gaps\n- make individuals personally responsible for managing cyber risk",
+    "tasks": [
+     "Have you assigned the Secure by Design responsibilities (for example, in a RACI matrix) and communicated them to the relevant parties?"
+    ],
+    "actions": [
+     {
+      "title": "Have you assigned the Secure by Design responsibilities (for example, in a RACI matrix) and communicated them to the relevant parties?",
+      "description": "Responsibilities have been identified,",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/agreeing-roles-and-responsibilities/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate.",
+ "modelVersion": 2
 }

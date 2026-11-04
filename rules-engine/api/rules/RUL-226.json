@@ -9,15 +9,30 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
    "value": [
     "Understanding"
    ]
+  },
+  {
+   "field": "externalDataSharing",
+   "op": "is",
+   "value": "Yes"
   }
  ],
  "conditionsText": "Any service that shares data with another organisation",
@@ -42,13 +57,68 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-226",
+    "name": "Have you ensured that other organisations you plan to share data with as part of the service delivery are compliant with the relevant cyber security obligations?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Understanding"
+      ]
+     }
+    ],
+    "conditionsText": "Any service that shares data with another organisation",
+    "phases": [
+     "Discovery"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you ensured that other organisations you plan to share data with as part of the service delivery are compliant with the relevant cyber security obligations?",
+    "requirementDescription": "Before sharing information with another organisation, have you checked they meet the required security standards?",
+    "why": "Your security obligations do not disappear when data leaves your organisation.\nThe receiving organisation must also be capable of protecting the information appropriately.",
+    "tasks": [
+     "Have you ensured that other organisations you plan to share data with as part of the service delivery are compliant with the relevant cyber "
+    ],
+    "actions": [
+     {
+      "title": "Have you ensured that other organisations you plan to share data with as part of the service delivery are compliant with the relevant cyber ",
+      "description": "You should assess:\n• Security controls\n• Compliance status\n• Relevant certifications\n• Data handling arrangements",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Data-sharing due diligence and agreements apply when information is exchanged with another organisation."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Data-sharing due diligence and agreements apply when information is exchanged with another organisation.",
+ "modelVersion": 2
 }

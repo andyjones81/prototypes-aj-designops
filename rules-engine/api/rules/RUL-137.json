@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -19,6 +29,11 @@
     "Build",
     "Run / Serve"
    ]
+  },
+  {
+   "field": "activities",
+   "op": "includes",
+   "value": "Early life support"
   }
  ],
  "conditionsText": "So that things like staffing can be in place for the early weeks of the service being run, if this is different to longer-term running plans",
@@ -44,13 +59,70 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from ORR activity log-Grid view.csv."
+   "note": "Imported from ORR activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-137",
+    "name": "Agree an Early Life Support (ELS) plan (ORR 33)",
+    "source": "Operational Readiness Review",
+    "dataset": "Operational Readiness Review",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Not stated",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Build",
+       "Run / Serve"
+      ]
+     }
+    ],
+    "conditionsText": "So that things like staffing can be in place for the early weeks of the service being run, if this is different to longer-term running plans",
+    "phases": [
+     "Public beta",
+     "Live"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Agree an Early Life Support (ELS) plan (ORR 33)",
+    "requirementDescription": "",
+    "why": "",
+    "tasks": [
+     "Agree an Early Life Support (ELS) plan (ORR 33)"
+    ],
+    "actions": [
+     {
+      "title": "Agree an Early Life Support (ELS) plan (ORR 33)",
+      "description": "",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Prototype interpretation: a distinct early-life-support plan is required where early-life arrangements differ from steady-state support."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Prototype interpretation: a distinct early-life-support plan is required where early-life arrangements differ from steady-state support.",
+ "modelVersion": 2
 }

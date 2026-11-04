@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -47,13 +57,86 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/\n\nProcuring external IT security assurance expertise, including SIRAs and ITHCs",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-263",
+    "name": "Do you have a plan for carrying out penetration tests with appropriate scopes?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build",
+       "Run / Serve"
+      ]
+     }
+    ],
+    "conditionsText": "Planning should consider:\n- what systems/applications are being tested\n- the objective of the test\n- relevant threat scenarios\n- what is in and out of scope\n- the appropriate timing\n- who will undertake the test\n- how results will be reported and managed.\nThe frequency should reflect the threats and risk involved, and vulnerability testing may also need to be triggered by significant service changes or new third-party components",
+    "phases": [
+     "Alpha",
+     "Private beta",
+     "Public beta",
+     "Live"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Do you have a plan for carrying out penetration tests with appropriate scopes?",
+    "requirementDescription": "Have you planned when penetration testing will happen and clearly defined what the testers are supposed to test and what the test is intended to prove?",
+    "why": "A penetration test is much more useful when it is targeted at the relevant risks and parts of the service.\nA poorly scoped test could miss important systems or attack paths, while testing against a realistic threat scenario can provide assurance about whether the service's protections work as expected. The guidance emphasises that penetration testing is primarily a means of gaining assurance in security and vulnerability-management processes, rather than being the organisation's sole method for identifying vulnerabilities.",
+    "tasks": [
+     "Do you have a plan for carrying out penetration tests with appropriate scopes?"
+    ],
+    "actions": [
+     {
+      "title": "Do you have a plan for carrying out penetration tests with appropriate scopes?",
+      "description": "Create a documented penetration-testing plan that establishes:\n• purpose: what assurance the test should provide\n• scope: applications, infrastructure, APIs or other components included\n• boundaries: what's specifically excluded\n• threat scenarios: what realistic risks the test should examine\n• timing/frequency: when testing will happen\n• responsibility: who will commission and perform it\n• reporting: how findings will be recorded and communicated\n• remediation: how identified vulnerabilities will be prioritised, assigned and fixed.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/\n\nProcuring external IT security assurance expertise, including SIRAs and ITHCs",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Prototype interpretation: penetration-test planning applies to developed software or externally exposed services at the source's assurance stages."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "customDevelopment",
+    "op": "is",
+    "value": "Yes"
+   },
+   {
+    "field": "publicFacing",
+    "op": "is",
+    "value": "Yes"
+   }
+  ]
+ ],
+ "applicabilityNote": "Prototype interpretation: penetration-test planning applies to developed software or externally exposed services at the source's assurance stages.",
+ "modelVersion": 2
 }

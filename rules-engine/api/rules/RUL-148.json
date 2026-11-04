@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "technology",
+   "op": "includes",
+   "value": "Source repository"
+  }
+ ],
  "conditionsText": "When using a repository",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "GitHub",
  "guidance": "Naming things - DfE Technical Guidance\n\nStoring source code - DfE Technical Guidance",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-148",
+    "name": "GitHub Repositories must be tagged to clearly identify service, division and directorate.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "When using a repository",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "GitHub Repositories must be tagged to clearly identify service, division and directorate.",
+    "requirementDescription": "Naming and labelling on GitHub repositories is important so that in the even of a Cyber incident the right person or team can be found quickly",
+    "why": "Ensures vulnerabilities and other security incidents can be quickly routed to the correct owner when speed and accuracy is of the essence to prevent a serious cyber incident occurring.",
+    "tasks": [
+     "GitHub Repositories must be tagged to clearly identify service, division and directorate."
+    ],
+    "actions": [
+     {
+      "title": "GitHub Repositories must be tagged to clearly identify service, division and directorate.",
+      "description": "Repositories must be labelled with the service, division and directorate",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "GitHub",
+    "guidance": "Naming things - DfE Technical Guidance\n\nStoring source code - DfE Technical Guidance",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Repository governance and secret protection apply when the service uses a source repository."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Repository governance and secret protection apply when the service uses a source repository.",
+ "modelVersion": 2
 }

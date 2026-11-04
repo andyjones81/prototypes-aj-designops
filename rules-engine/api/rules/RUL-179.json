@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "technology",
+   "op": "includes",
+   "value": "Legacy authentication"
+  }
+ ],
  "conditionsText": "Any service that uses older authentication methods and do not support MFA",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-179",
+    "name": "Legacy, non-MFA compatible authentication protocols (e.g., POP3, IMAP, SMTP) MUST be explicitly disabled because they eliminate easy ways for hackers to bypass strong MFA.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "Any service that uses older authentication methods and do not support MFA",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Legacy, non-MFA compatible authentication protocols (e.g., POP3, IMAP, SMTP) MUST be explicitly disabled because they eliminate easy ways for hackers to bypass strong MFA.",
+    "requirementDescription": "Older authentication methods that do not support Multi-Factor Authentication (MFA) must be turned off so attackers cannot use them to avoid MFA protections.",
+    "why": "- Passwords are frequently stolen through phishing attacks.\n- MFA is one of the most effective defences against account compromise.\n- Legacy protocols can undermine MFA.\n- Attackers specifically target old authentication methods because they are easier to exploit.",
+    "tasks": [
+     "Legacy, non-MFA compatible authentication protocols (e.g., POP3, IMAP, SMTP) MUST be explicitly disabled because they eliminate easy ways fo"
+    ],
+    "actions": [
+     {
+      "title": "Legacy, non-MFA compatible authentication protocols (e.g., POP3, IMAP, SMTP) MUST be explicitly disabled because they eliminate easy ways fo",
+      "description": "Turn off old sign-in methods that only use usernames and passwords, because they can allow attackers to access accounts without going through MFA. The organisation should actively block these protocols rather than simply hoping nobody uses them.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Disable legacy protocols when such authentication methods exist; the rule does not require legacy protocols to be introduced."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Disable legacy protocols when such authentication methods exist; the rule does not require legacy protocols to be introduced.",
+ "modelVersion": 2
 }

@@ -9,9 +9,30 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "publicFacing",
+   "op": "is",
+   "value": "Yes"
+  },
+  {
+   "field": "technology",
+   "op": "includes",
+   "value": "Web application"
+  }
+ ],
  "conditionsText": "All public web applications",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +53,58 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-167",
+    "name": "Public Web Applications MUST sit behind a Web Application Firewall (WAF) in Blocking Mode to stop common automated attacks.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "All public web applications",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Public Web Applications MUST sit behind a Web Application Firewall (WAF) in Blocking Mode to stop common automated attacks.",
+    "requirementDescription": "Any website or web application accessible from the internet must be protected by a Web Application Firewall (WAF), and the WAF must be actively blocking malicious traffic rather than just monitoring it.",
+    "why": "Many attacks are:\n- Automated\n- Opportunistic\n- Well known\nAttackers don't necessarily target DfE specifically.\nInstead, they scan the internet looking for vulnerable applications. A WAF provides an additional layer of defence",
+    "tasks": [
+     "Public Web Applications MUST sit behind a Web Application Firewall (WAF) in Blocking Mode to stop common automated attacks."
+    ],
+    "actions": [
+     {
+      "title": "Public Web Applications MUST sit behind a Web Application Firewall (WAF) in Blocking Mode to stop common automated attacks.",
+      "description": "A Web Applicational Firewall must be implemented",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Public web applications require the public-web security controls. For security.txt, the explicit public-domain obligation takes precedence over the source's generic repository note."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Public web applications require the public-web security controls. For security.txt, the explicit public-domain obligation takes precedence over the source's generic repository note.",
+ "modelVersion": 2
 }

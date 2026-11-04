@@ -13,6 +13,16 @@
  "status": "Published",
  "conditions": [
   {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
    "field": "stage",
    "op": "in",
    "value": [
@@ -20,6 +30,15 @@
     "Build",
     "Run / Serve",
     "Decommissioning"
+   ]
+  },
+  {
+   "field": "changeType",
+   "op": "in",
+   "value": [
+    "New service",
+    "Major change",
+    "Retirement"
    ]
   }
  ],
@@ -52,13 +71,78 @@
  ],
  "systems": "- ORR spreadsheet \n- Email inbox and Teams messages\n- ORR tracker",
  "guidance": "No written guidance, Steve Goff provides guidance",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-142",
+    "name": "Complete 'Operational Readiness Review' (ORR)",
+    "source": "Related to standards but not under a standard",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Could have",
+    "owner": "Steve Goff",
+    "activityOwner": "Delivery Manager",
+    "stakeholder": "Steve Goff",
+    "enabled": true,
+    "status": "Published",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build",
+       "Run / Serve",
+       "Decommissioning"
+      ]
+     }
+    ],
+    "conditionsText": "Universal - any digital, data, technology service:\n- new service\n- major change\n- decommissioning service",
+    "phases": [
+     "Build",
+     "Alpha",
+     "Private beta",
+     "Public beta",
+     "Live",
+     "Decommissioning"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Complete 'Operational Readiness Review' (ORR)",
+    "requirementDescription": "Complete a checklist of activities to consider when building a service",
+    "why": "It's an ITIL* process which other organisations use. It started in 2016 and has accumulated over time. \n\nIt is seen as something that will help people deliver good services. Parts of the ORR are also 'must haves', like ORR item 29 on meeting WCAG 2.2 AA guidelines. \n\n*ITIL is a widely used framework of best practices for IT Service Management.",
+    "tasks": [
+     "Complete 'Operational Readiness Review' (ORR)"
+    ],
+    "actions": [
+     {
+      "title": "Complete 'Operational Readiness Review' (ORR)",
+      "description": "• Team finds out about Steve/ORR and engages with Steve (this varies but typically in alpha)\n• Steve guides people through the ORR, he goes through it line by line to talk about what people need to do\n• Team fills out ORR and sends it to Steve",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [
+     "Related to standards but not under a standard"
+    ],
+    "systems": "- ORR spreadsheet \n- Email inbox and Teams messages\n- ORR tracker",
+    "guidance": "No written guidance, Steve Goff provides guidance",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Readiness and secure-design review apply to new services, major change and retirement. Retirement retains security obligations until closure."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Readiness and secure-design review apply to new services, major change and retirement. Retirement retains security obligations until closure.",
+ "modelVersion": 2
 }

@@ -9,9 +9,30 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "publicFacing",
+   "op": "is",
+   "value": "Yes"
+  },
+  {
+   "field": "authentication",
+   "op": "is",
+   "value": "Yes"
+  }
+ ],
  "conditionsText": "Applies to users accessing services from outside the organisation's internal network",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +53,58 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-181",
+    "name": "Multi-Factor Authentication (MFA) MUST be mandatory for ALL externally accessible users without exception because it is the single best way to stop account takeover.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "Applies to users accessing services from outside the organisation's internal network",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Multi-Factor Authentication (MFA) MUST be mandatory for ALL externally accessible users without exception because it is the single best way to stop account takeover.",
+    "requirementDescription": "Anyone who can access a service from outside the organisation's network must use Multi-Factor Authentication (MFA). A password alone is not sufficient.",
+    "why": "Most account compromises start with:\n- Phishing\n- Password reuse\n- Credential stuffing\n- Stolen passwords\n- Malware",
+    "tasks": [
+     "Multi-Factor Authentication (MFA) MUST be mandatory for ALL externally accessible users without exception because it is the single best way "
+    ],
+    "actions": [
+     {
+      "title": "Multi-Factor Authentication (MFA) MUST be mandatory for ALL externally accessible users without exception because it is the single best way ",
+      "description": "If a user can sign in to a system from outside the organisation, MFA must be enabled for that account.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "External-user MFA requires both external reachability and authenticated users; anonymous public content does not imply a user-login requirement."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "External-user MFA requires both external reachability and authenticated users; anonymous public content does not imply a user-login requirement.",
+ "modelVersion": 2
 }

@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -20,6 +30,11 @@
     "Build",
     "Run / Serve"
    ]
+  },
+  {
+   "field": "customDevelopment",
+   "op": "is",
+   "value": "Yes"
   }
  ],
  "conditionsText": "The appropriate process will depend on the service, but should incorporate relevant security activities throughout development, such as:\n- threat modelling\n- secure design\n- code review\n- automated security testing\n- dependency checking\n- vulnerability scanning\n- remediation\n- appropriate security testing before deployment.",
@@ -47,13 +62,73 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-260",
+    "name": "Are you following a secure systems software development life cycle policy or process?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build",
+       "Run / Serve"
+      ]
+     }
+    ],
+    "conditionsText": "The appropriate process will depend on the service, but should incorporate relevant security activities throughout development, such as:\n- threat modelling\n- secure design\n- code review\n- automated security testing\n- dependency checking\n- vulnerability scanning\n- remediation\n- appropriate security testing before deployment.",
+    "phases": [
+     "Alpha",
+     "Private beta",
+     "Public beta",
+     "Live"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Are you following a secure systems software development life cycle policy or process?",
+    "requirementDescription": "Is security built into the way the service is designed, developed, tested, deployed and maintained, rather than being checked only at the end?",
+    "why": "Security problems are generally easier to address when they are identified as part of normal development rather than after the service is complete or live.\nA secure development lifecycle encourages teams to consider security while, Designing \nBuilding\nReviewing\nTesting \nDeploying \nOperating\nrather than relying solely on a final security assessment.",
+    "tasks": [
+     "Are you following a secure systems software development life cycle policy or process?"
+    ],
+    "actions": [
+     {
+      "title": "Are you following a secure systems software development life cycle policy or process?",
+      "description": "• Have an agreed secure development lifecycle or development process.\n• Define the security activities required at appropriate development stages.\n• Build appropriate security checks into development and deployment workflows.\n• Define who is responsible for completing those checks.\n• Record and address vulnerabilities discovered.\n• Continue security testing after the service goes live.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/discovering-vulnerabilities/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Secure development, code review and code testing apply where software is developed or changed."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Secure development, code review and code testing apply where software is developed or changed.",
+ "modelVersion": 2
 }

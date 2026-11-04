@@ -9,15 +9,33 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
    "value": [
     "Design and test",
     "Build"
+   ]
+  },
+  {
+   "field": "changeType",
+   "op": "in",
+   "value": [
+    "New service",
+    "Major change"
    ]
   }
  ],
@@ -44,13 +62,70 @@
  "standards": [],
  "systems": "",
  "guidance": "None found",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-160",
+    "name": "All new services REQUIRE a Security Design Review to ensure security flaws are identified and fixed in the cheapest and easiest stage of the lifecycle.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "During the design phase of the project a security design review is required",
+    "phases": [
+     "Alpha",
+     "Private beta"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "All new services REQUIRE a Security Design Review to ensure security flaws are identified and fixed in the cheapest and easiest stage of the lifecycle.",
+    "requirementDescription": "Before a new service is built or launched, it must undergo a Security Design Review to identify and address security weaknesses early, when they are easier and less expensive to fix.",
+    "why": "It is much cheaper and safer to identify issues early rather than discovering the problem after the application has gone live and exposed sensitive data.",
+    "tasks": [
+     "All new services REQUIRE a Security Design Review to ensure security flaws are identified and fixed in the cheapest and easiest stage of the"
+    ],
+    "actions": [
+     {
+      "title": "All new services REQUIRE a Security Design Review to ensure security flaws are identified and fixed in the cheapest and easiest stage of the",
+      "description": "Security Design review",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "None found",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "A security design review applies to new service design and major redesign at the source's design stages."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "A security design review applies to new service design and major redesign at the source's design stages.",
+ "modelVersion": 2
 }

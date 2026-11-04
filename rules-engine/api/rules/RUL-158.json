@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "activities",
+   "op": "includes",
+   "value": "Security tooling procurement"
+  }
+ ],
  "conditionsText": "If a team believe they need security tooling they should consult with CISD before procuring any tools/software",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "Security Tooling procurement",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-158",
+    "name": "All security tooling procurement MUST be agreed with CISD to ensure consistency, prevent duplication, and avoid unnecessary spend.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "If a team believe they need security tooling they should consult with CISD before procuring any tools/software",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "All security tooling procurement MUST be agreed with CISD to ensure consistency, prevent duplication, and avoid unnecessary spend.",
+    "requirementDescription": "Teams cannot independently buy, subscribe to, or implement security tools without first getting agreement from CISD.",
+    "why": "The organisation wants a single view and governance process for security tooling.",
+    "tasks": [
+     "All security tooling procurement MUST be agreed with CISD to ensure consistency, prevent duplication, and avoid unnecessary spend."
+    ],
+    "actions": [
+     {
+      "title": "All security tooling procurement MUST be agreed with CISD to ensure consistency, prevent duplication, and avoid unnecessary spend.",
+      "description": "Teams cannot independently buy, subscribe to, or implement security tools without first getting agreement from CISD.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "Security Tooling procurement",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Security-tool purchases need CISD agreement before procurement."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Security-tool purchases need CISD agreement before procurement.",
+ "modelVersion": 2
 }

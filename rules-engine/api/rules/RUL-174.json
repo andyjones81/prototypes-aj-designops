@@ -9,9 +9,20 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  }
+ ],
  "conditionsText": "Applies to all company devices and any cloud servers",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +43,71 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-174",
+    "name": "All cloud-hosted compute instances and corporate devices MUST run an approved EDR tool with 24/7 monitoring and alerting to the central SoC to ensure detection and stop hackers who bypass initial defences.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "Applies to all company devices and any cloud servers",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "All cloud-hosted compute instances and corporate devices MUST run an approved EDR tool with 24/7 monitoring and alerting to the central SoC to ensure detection and stop hackers who bypass initial defences.",
+    "requirementDescription": "Every cloud server and company-managed device must have an approved Endpoint Detection and Response (EDR) security tool installed, and that tool must be continuously monitored by the Security Operations Centre (SOC) so that attacks can be detected and stopped quickly.",
+    "why": "Organisations assume that, despite firewalls, secure passwords, email filtering, and other protections, an attacker may still manage to get onto a device or server. EDR is there to detect and respond when that happens.",
+    "tasks": [
+     "All cloud-hosted compute instances and corporate devices MUST run an approved EDR tool with 24/7 monitoring and alerting to the central SoC "
+    ],
+    "actions": [
+     {
+      "title": "All cloud-hosted compute instances and corporate devices MUST run an approved EDR tool with 24/7 monitoring and alerting to the central SoC ",
+      "description": "All company devices and cloud servers must have approved security monitoring software installed and connected to the security operations team so cyber attacks can be detected and stopped as quickly as possible.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Approved endpoint detection applies to corporate devices and cloud-hosted compute / servers, not an opaque SaaS-only consumer."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "technology",
+    "op": "includes",
+    "value": "Corporate devices"
+   },
+   {
+    "field": "technology",
+    "op": "includes",
+    "value": "Compute / runtimes"
+   }
+  ]
+ ],
+ "applicabilityNote": "Approved endpoint detection applies to corporate devices and cloud-hosted compute / servers, not an opaque SaaS-only consumer.",
+ "modelVersion": 2
 }

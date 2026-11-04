@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -21,6 +31,11 @@
     "Build",
     "Run / Serve"
    ]
+  },
+  {
+   "field": "activities",
+   "op": "includes",
+   "value": "Economic appraisal"
   }
  ],
  "conditionsText": "When:\n- Assessing options.\n- Developing cost-benefit analyses.\n- Determining preferred solutions.",
@@ -49,13 +64,75 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-202",
+    "name": "Does the economic case consider varying levels of security when calculating value for money?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Understanding",
+       "Design and test",
+       "Build",
+       "Run / Serve"
+      ]
+     }
+    ],
+    "conditionsText": "When:\n- Assessing options.\n- Developing cost-benefit analyses.\n- Determining preferred solutions.",
+    "phases": [
+     "Discovery",
+     "Alpha",
+     "Private beta",
+     "Public beta",
+     "Live"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Does the economic case consider varying levels of security when calculating value for money?",
+    "requirementDescription": "Have you considered how different levels of security investment affect costs, risks and benefits?",
+    "why": "Security is not all-or-nothing. Different options may provide:\n- Basic security.\n- Enhanced security.\n- High-assurance security.\nEach level has different costs and benefits. The guidance states that making security integral to scope, delivery and implementation should be assessed as part of achieving value for money.",
+    "tasks": [
+     "Does the economic case consider varying levels of security when calculating value for money?"
+    ],
+    "actions": [
+     {
+      "title": "Does the economic case consider varying levels of security when calculating value for money?",
+      "description": "You should demonstrate:\n• Security was included in option appraisals.\n• Different security levels were assessed where appropriate.\n• Costs of security controls were considered.\n• Costs of security incidents or failures were considered.\n• The selected option provides an appropriate balance between cost and security",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/considering-security-within-the-business-case/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Security value-for-money analysis applies when comparing delivery options or performing an economic appraisal."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Security value-for-money analysis applies when comparing delivery options or performing an economic appraisal.",
+ "modelVersion": 2
 }

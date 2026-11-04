@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -47,13 +57,86 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/retiring-service-components-securely/\n\n\n\nDfE Data Decommissioning Handbook.pdf",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-271",
+    "name": "Have you identified components to be retired in the asset inventory?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build",
+       "Run / Serve"
+      ]
+     }
+    ],
+    "conditionsText": "This rule applies whenever an asset or component is:\n- no longer required\n- being replaced\n- reaching end of life\n- being removed following a service change\n- affected by the end of a supplier contract\n- left over from a pilot or trial\n- being retired as part of shutting down the entire service.\nConnected assets and dependencies also need to be considered, not just the main component being retired",
+    "phases": [
+     "Alpha",
+     "Private beta",
+     "Public beta",
+     "Live"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you identified components to be retired in the asset inventory?",
+    "requirementDescription": "Have you clearly identified and recorded which parts of the service are going to be switched off, removed, replaced or decommissioned?",
+    "why": "You cannot safely retire something unless you understand what it is, what information it contains and what relies upon it.\nFor example, simply switching off an application could leave behind:\n- cloud infrastructure that is still publicly accessible\n- unused accounts or credentials\n- databases containing sensitive information\n- domains that are no longer managed\n- integrations pointing at systems that no longer exist\n- forgotten test or pre-production environments.",
+    "tasks": [
+     "Have you identified components to be retired in the asset inventory?"
+    ],
+    "actions": [
+     {
+      "title": "Have you identified components to be retired in the asset inventory?",
+      "description": "• Maintain an up-to-date inventory of service assets.\n• Clearly identify the components scheduled for retirement.\n• Identify the asset owner.\n• Record what data the component holds or processes.\n• Identify dependent or connected systems.\n• Involve the relevant asset owners in retirement planning.\n• After retirement, update the asset inventory to show that the component is no longer active.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/retiring-service-components-securely/\n\n\n\nDfE Data Decommissioning Handbook.pdf",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Asset inventory, retirement risk and closeout obligations apply to component retirement as well as closure of the whole service."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "changeType",
+    "op": "is",
+    "value": "Retirement"
+   },
+   {
+    "field": "activities",
+    "op": "includes",
+    "value": "Asset retirement"
+   }
+  ]
+ ],
+ "applicabilityNote": "Asset inventory, retirement risk and closeout obligations apply to component retirement as well as closure of the whole service.",
+ "modelVersion": 2
 }

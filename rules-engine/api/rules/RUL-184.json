@@ -9,9 +9,20 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  }
+ ],
  "conditionsText": "All services that use authentication, cloud storage and applications",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +43,76 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-184",
+    "name": "All Identity logs (Sign-ins, Failures), Cloud Audit Trails (config changes), and Application Error logs MUST go to the Central SIEM to ensure comprehensive breach detection and investigation.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "All services that use authentication, cloud storage and applications",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "All Identity logs (Sign-ins, Failures), Cloud Audit Trails (config changes), and Application Error logs MUST go to the Central SIEM to ensure comprehensive breach detection and investigation.",
+    "requirementDescription": "Important security, audit, and application logs must be collected in SIEM the central monitoring platform so the security team can detect attacks, investigate incidents, and understand what happened.",
+    "why": "- Security incidents can be detected quickly.\n- Investigators have evidence when something goes wrong.\n- Suspicious activity can be correlated across multiple systems.\n- Regulatory and audit requirements can be met.\n- Attackers cannot hide their actions by exploiting gaps between different logging systems",
+    "tasks": [
+     "All Identity logs (Sign-ins, Failures), Cloud Audit Trails (config changes), and Application Error logs MUST go to the Central SIEM to ensur"
+    ],
+    "actions": [
+     {
+      "title": "All Identity logs (Sign-ins, Failures), Cloud Audit Trails (config changes), and Application Error logs MUST go to the Central SIEM to ensur",
+      "description": "All sign-in logs, cloud configuration change logs, and application logs must be sent to SIEM",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Central security logging applies to authentication, cloud audit and application error events."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "authentication",
+    "op": "is",
+    "value": "Yes"
+   },
+   {
+    "field": "technology",
+    "op": "intersects",
+    "value": [
+     "Cloud hosting",
+     "Cloud storage",
+     "Web application",
+     "API"
+    ]
+   }
+  ]
+ ],
+ "applicabilityNote": "Central security logging applies to authentication, cloud audit and application error events.",
+ "modelVersion": 2
 }

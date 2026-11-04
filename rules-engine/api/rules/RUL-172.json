@@ -9,9 +9,20 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  }
+ ],
  "conditionsText": "Any system that stores, processes or transmits sensitive data",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +43,75 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-172",
+    "name": "Sensitive data MUST be encrypted At Rest (using managed keys) and In Transit (using TLS 1.2+) to ensure data is protected even if communications are intercepted or storage is compromised.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "Any system that stores, processes or transmits sensitive data",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Sensitive data MUST be encrypted At Rest (using managed keys) and In Transit (using TLS 1.2+) to ensure data is protected even if communications are intercepted or storage is compromised.",
+    "requirementDescription": "Any sensitive data must be encrypted both when it is stored and when it is being transmitted between systems, so that even if someone gains access to the storage or intercepts the communication, they cannot easily read the data.",
+    "why": "To ensure data is protected even if communications are intercepted or storage is compromised",
+    "tasks": [
+     "Sensitive data MUST be encrypted At Rest (using managed keys) and In Transit (using TLS 1.2+) to ensure data is protected even if communicat"
+    ],
+    "actions": [
+     {
+      "title": "Sensitive data MUST be encrypted At Rest (using managed keys) and In Transit (using TLS 1.2+) to ensure data is protected even if communicat",
+      "description": "Sensitive data must be encrypted whenever it is stored and whenever it is transmitted. Use the platform's managed encryption capabilities and modern TLS (1.2 or higher) so that data remains protected if storage systems are compromised or network traffic is intercepted.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Encryption at rest and in transit applies to sensitive information, including personal, financial and business-critical data."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "personalData",
+    "op": "is",
+    "value": "Yes"
+   },
+   {
+    "field": "dataTypes",
+    "op": "intersects",
+    "value": [
+     "Sensitive",
+     "Financial",
+     "Business critical"
+    ]
+   }
+  ]
+ ],
+ "applicabilityNote": "Encryption at rest and in transit applies to sensitive information, including personal, financial and business-critical data.",
+ "modelVersion": 2
 }

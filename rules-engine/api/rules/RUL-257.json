@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -20,6 +30,16 @@
     "Build",
     "Run / Serve"
    ]
+  },
+  {
+   "field": "controlsImplemented",
+   "op": "is",
+   "value": "Yes"
+  },
+  {
+   "field": "riskFactors",
+   "op": "includes",
+   "value": "Residual risk"
   }
  ],
  "conditionsText": "Applies when:\n- Security controls have been implemented.\n- Risks have been reassessed.\n- Some level of risk remains.",
@@ -47,13 +67,73 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-257",
+    "name": "Have you identified any residual risks and raised them with risk owners for sign-off?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build",
+       "Run / Serve"
+      ]
+     }
+    ],
+    "conditionsText": "Applies when:\n- Security controls have been implemented.\n- Risks have been reassessed.\n- Some level of risk remains.",
+    "phases": [
+     "Alpha",
+     "Private beta",
+     "Public beta",
+     "Live"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you identified any residual risks and raised them with risk owners for sign-off?",
+    "requirementDescription": "After all controls have been implemented, are there any risks that still remain, and have the people responsible formally agreed to accept them?",
+    "why": "No service is completely risk-free. Even after mitigation, some residual risk usually remains. Secure by Design requires accountability for those remaining risks, meaning appropriate risk owners must understand and formally accept them.",
+    "tasks": [
+     "Have you identified any residual risks and raised them with risk owners for sign-off?"
+    ],
+    "actions": [
+     {
+      "title": "Have you identified any residual risks and raised them with risk owners for sign-off?",
+      "description": "You should:\n1. Recalculate the risk after mitigation.\n2. Identify remaining residual risks.\n3. Record them in the risk register.\n4. Present them to the appropriate risk owner.\n5. Obtain formal acceptance or direction for further action.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Residual-risk sign-off applies after control implementation where residual risk remains."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Residual-risk sign-off applies after control implementation where residual risk remains.",
+ "modelVersion": 2
 }

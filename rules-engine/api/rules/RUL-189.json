@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "activities",
+   "op": "includes",
+   "value": "Security incident"
+  }
+ ],
  "conditionsText": "Any service that has a data breach",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "",
  "guidance": "Report a security incident",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-189",
+    "name": "Any suspected breach, lost device, or accidental data exposure MUST be reported to CISD immediately to ensure a small incident does not become a major breach",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "Any service that has a data breach",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Any suspected breach, lost device, or accidental data exposure MUST be reported to CISD immediately to ensure a small incident does not become a major breach",
+    "requirementDescription": "If you think a security incident might have happened, don't try to decide how serious it is yourself. Report it to CISD immediately so it can be investigated and managed before it gets worse.",
+    "why": "Early reporting gives the organisation the best chance of containing the issue before it turns into a major security incident or data breach.",
+    "tasks": [
+     "Any suspected breach, lost device, or accidental data exposure MUST be reported to CISD immediately to ensure a small incident does not beco"
+    ],
+    "actions": [
+     {
+      "title": "Any suspected breach, lost device, or accidental data exposure MUST be reported to CISD immediately to ensure a small incident does not beco",
+      "description": "If something security-related happens, or you think it might have happened, tell CISD immediately.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "Report a security incident",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Immediate CISD reporting is triggered by a suspected breach, lost device or accidental exposure; no confirmed breach is needed."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Immediate CISD reporting is triggered by a suspected breach, lost device or accidental exposure; no confirmed breach is needed.",
+ "modelVersion": 2
 }

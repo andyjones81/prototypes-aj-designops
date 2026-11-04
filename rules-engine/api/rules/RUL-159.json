@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "publicFacing",
+   "op": "is",
+   "value": "Yes"
+  }
+ ],
  "conditionsText": "A service or webpage externally accessible and handles sensitive or business critical data (pupil data, financial information, staff data etc), provides authentication or user accounts (login portals, admin portals, identity services etc). If the service connects to internal networks and could cause material impact if compromised",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,94 @@
  "standards": [],
  "systems": "Service Health Check app and any services who meets the condition criteria",
  "guidance": "https://educationgovuk.sharepoint.com/sites/security/SitePages/it-health-check-services.aspx",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-159",
+    "name": "Any externally accessible system that: - Handle sensitive or business‑critical data - Provide authentication or user accounts - Connect into internal networks - Offer custom functionality (web apps, APIs, integrations) - Could cause material impact if compromised MUST undergo annual penetration testing against the live production version. Above a threshold this must be an external IT Healthcheck.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "A service or webpage externally accessible and handles sensitive or business critical data (pupil data, financial information, staff data etc), provides authentication or user accounts (login portals, admin portals, identity services etc). If the service connects to internal networks and could cause material impact if compromised",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Any externally accessible system that: - Handle sensitive or business‑critical data - Provide authentication or user accounts - Connect into internal networks - Offer custom functionality (web apps, APIs, integrations) - Could cause material impact if compromised MUST undergo annual penetration testing against the live production version. Above a threshold this must be an external IT Healthcheck.",
+    "requirementDescription": "If a system is exposed to the internet and is important enough to pose a security or business risk, it must be tested by security specialists at least once a year to identify vulnerabilities that automated scanning might miss.",
+    "why": "Penetration testing provides assurance that real attackers cannot easily exploit the service.",
+    "tasks": [
+     "Any externally accessible system that: - Handle sensitive or business‑critical data - Provide authentication or user accounts - Connect into"
+    ],
+    "actions": [
+     {
+      "title": "Any externally accessible system that: - Handle sensitive or business‑critical data - Provide authentication or user accounts - Connect into",
+      "description": "Penetration testing and IT Health Check",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "Service Health Check app and any services who meets the condition criteria",
+    "guidance": "https://educationgovuk.sharepoint.com/sites/security/SitePages/it-health-check-services.aspx",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Annual penetration testing applies to externally accessible services with sensitive / critical data, authentication, custom interfaces, integrations or material impact."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "personalData",
+    "op": "is",
+    "value": "Yes"
+   },
+   {
+    "field": "dataTypes",
+    "op": "intersects",
+    "value": [
+     "Sensitive",
+     "Financial",
+     "Business critical"
+    ]
+   },
+   {
+    "field": "authentication",
+    "op": "is",
+    "value": "Yes"
+   },
+   {
+    "field": "technology",
+    "op": "intersects",
+    "value": [
+     "API",
+     "Web application",
+     "System integration"
+    ]
+   },
+   {
+    "field": "criticalService",
+    "op": "is",
+    "value": "Yes"
+   }
+  ]
+ ],
+ "applicabilityNote": "Annual penetration testing applies to externally accessible services with sensitive / critical data, authentication, custom interfaces, integrations or material impact.",
+ "modelVersion": 2
 }

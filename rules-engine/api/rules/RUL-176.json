@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "privilegedAccess",
+   "op": "is",
+   "value": "Yes"
+  }
+ ],
  "conditionsText": "This applies specifically to administrative and privileged accounts. It is triggered when a user has elevated permissions",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-176",
+    "name": "All administrative and privileged access (Cloud Consoles, Prod DBs, CI/CD Admin) MUST be protected by MFA to prevent account takeover and mass compromise.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "This applies specifically to administrative and privileged accounts. It is triggered when a user has elevated permissions",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "All administrative and privileged access (Cloud Consoles, Prod DBs, CI/CD Admin) MUST be protected by MFA to prevent account takeover and mass compromise.",
+    "requirementDescription": "Anyone with powerful access to systems, infrastructure, databases, cloud platforms, or deployment pipelines must use Multi-Factor Authentication (MFA), not just a username and password.",
+    "why": "Because compromising one privileged account can affect entire services.",
+    "tasks": [
+     "All administrative and privileged access (Cloud Consoles, Prod DBs, CI/CD Admin) MUST be protected by MFA to prevent account takeover and ma"
+    ],
+    "actions": [
+     {
+      "title": "All administrative and privileged access (Cloud Consoles, Prod DBs, CI/CD Admin) MUST be protected by MFA to prevent account takeover and ma",
+      "description": "If an account can administer systems, access sensitive production resources, or make significant changes, MFA must be enforced.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Administrative MFA, least privilege, break-glass control and protected administrative devices apply wherever privileged access exists."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Administrative MFA, least privilege, break-glass control and protected administrative devices apply wherever privileged access exists.",
+ "modelVersion": 2
 }

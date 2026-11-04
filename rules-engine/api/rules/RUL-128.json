@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "Steve Goff",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -42,13 +52,84 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from ORR activity log-Grid view.csv."
+   "note": "Imported from ORR activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-128",
+    "name": "Complete an IT health check (ORR 21)",
+    "source": "Operational Readiness Review",
+    "dataset": "Operational Readiness Review",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "Steve Goff",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "If your service or product is publically accessible or internally accessible but is medium or above security classification",
+    "phases": [
+     "Build"
+    ],
+    "phasesAssumed": true,
+    "requirementTitle": "Complete an IT health check (ORR 21)",
+    "requirementDescription": "To ensure that their systems are safe and security",
+    "why": "To ensure that their systems are safe and security",
+    "tasks": [
+     "Complete an IT health check (ORR 21)"
+    ],
+    "actions": [
+     {
+      "title": "Complete an IT health check (ORR 21)",
+      "description": "",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "An IT health check applies to public services or internally accessible services with medium-or-higher security risk. Prototype uses risk as the classification proxy; confirm with security assurance. Source phase was blank; Build remains a prototype assumption."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "publicFacing",
+    "op": "is",
+    "value": "Yes"
+   },
+   {
+    "field": "risk",
+    "op": "in",
+    "value": [
+     "Medium",
+     "High"
+    ]
+   }
+  ]
+ ],
+ "applicabilityNote": "An IT health check applies to public services or internally accessible services with medium-or-higher security risk. Prototype uses risk as the classification proxy; confirm with security assurance. Source phase was blank; Build remains a prototype assumption.",
+ "modelVersion": 2
 }

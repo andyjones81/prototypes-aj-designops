@@ -13,6 +13,16 @@
  "status": "Published",
  "conditions": [
   {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
    "field": "stage",
    "op": "in",
    "value": [
@@ -21,6 +31,11 @@
   },
   {
    "field": "transactional",
+   "op": "is",
+   "value": "Yes"
+  },
+  {
+   "field": "hasUsers",
    "op": "is",
    "value": "Yes"
   }
@@ -50,13 +65,76 @@
  ],
  "systems": "- Power BI",
  "guidance": "Intranet page for Service Health Check Hub",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-143",
+    "name": "Complete or update 'Service Health Check App' (SHCA)",
+    "source": "Related to standards but not under a standard",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "Steve Goff",
+    "activityOwner": "Delivery Manager",
+    "stakeholder": "Steve Goff",
+    "enabled": true,
+    "status": "Published",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Run / Serve"
+      ]
+     },
+     {
+      "field": "transactional",
+      "op": "is",
+      "value": "Yes"
+     }
+    ],
+    "conditionsText": "For 'genuine' services (ones that DfE create to deliver things): \n- transactional \n- has users \n- an interface",
+    "phases": [
+     "Run",
+     "Live"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Complete or update 'Service Health Check App' (SHCA)",
+    "requirementDescription": "A tool to declare compliance to DfE standards and policies on a yearly basis.",
+    "why": "This came out of audit in April 2023 which found DfE doesn't have a mechanism to view the compliance landscape of their services and for teams to declare compliance. SHCA aims to do this. The standards in it are based on things established in the Standards Forum.",
+    "tasks": [
+     "Complete or update 'Service Health Check App' (SHCA)"
+    ],
+    "actions": [
+     {
+      "title": "Complete or update 'Service Health Check App' (SHCA)",
+      "description": "• Once a service gets a service offering, it will get pulled into SHCA\n• Steve looks at what has been registered on CMDB in the last 7 days\n• Steve chases people to complete it (if they haven't already)\n• Delivery team goes on SHCA intranet page to find link and guidance\n• Delivery team reports on whether they are meeting the conditions against their service(s) and, if not, what activity is required to achieve each standard\n• Steve is able to check compliance against each standard for a service\n• Delivery team is notified yearly to update their entry",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [
+     "Related to standards but not under a standard"
+    ],
+    "systems": "- Power BI",
+    "guidance": "Intranet page for Service Health Check Hub",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "The service health check is scoped by the source to genuine transactional services with users and an interface."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "The service health check is scoped by the source to genuine transactional services with users and an interface.",
+ "modelVersion": 2
 }

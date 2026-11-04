@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -47,13 +57,91 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/responding-to-and-mitigating-security-risks/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-253",
+    "name": "Have you documented the risk mitigations (for example in a risk treatment plan)?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build",
+       "Run / Serve"
+      ]
+     }
+    ],
+    "conditionsText": "Applies when:\n- Risks have been identified.\n- Controls are needed.\n- Risk responses have been agreed.",
+    "phases": [
+     "Alpha",
+     "Private beta",
+     "Public beta",
+     "Live"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you documented the risk mitigations (for example in a risk treatment plan)?",
+    "requirementDescription": "Have you written down exactly what actions will be taken to reduce security risks?",
+    "why": "Mitigations that exist only in conversations are easily forgotten. A documented treatment plan provides accountability, allows progress to be tracked and demonstrates that risks are being managed systematically. Secure by Design recommends documenting and approving mitigation activities as part of risk management.",
+    "tasks": [
+     "Have you documented the risk mitigations (for example in a risk treatment plan)?"
+    ],
+    "actions": [
+     {
+      "title": "Have you documented the risk mitigations (for example in a risk treatment plan)?",
+      "description": "The documentation should show:\n• The risk.\n• Proposed mitigation.\n• Owner.\n• Due date.\n• Current status.\n• Expected reduction in risk.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/responding-to-and-mitigating-security-risks/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Risk treatment and control documentation apply when risks / threats are identified or controls are selected."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "activities",
+    "op": "includes",
+    "value": "Security assessment"
+   },
+   {
+    "field": "activities",
+    "op": "includes",
+    "value": "Control selection"
+   },
+   {
+    "field": "threatsIdentified",
+    "op": "is",
+    "value": "Yes"
+   }
+  ]
+ ],
+ "applicabilityNote": "Risk treatment and control documentation apply when risks / threats are identified or controls are selected.",
+ "modelVersion": 2
 }

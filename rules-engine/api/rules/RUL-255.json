@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -47,13 +57,91 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-255",
+    "name": "Have you documented the selected controls?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build",
+       "Run / Serve"
+      ]
+     }
+    ],
+    "conditionsText": "Applies when:\n- Security controls have been identified.\n- Solution design is underway.\n- Assurance activities need traceability.",
+    "phases": [
+     "Alpha",
+     "Private beta",
+     "Public beta",
+     "Live"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you documented the selected controls?",
+    "requirementDescription": "Have you recorded which security controls will be implemented and why?",
+    "why": "Without documentation there is no reliable evidence of what protections are expected, what has been implemented, or what auditors and assurance teams should verify. Secure by Design encourages use of security control frameworks and taxonomies to record selected controls",
+    "tasks": [
+     "Have you documented the selected controls?"
+    ],
+    "actions": [
+     {
+      "title": "Have you documented the selected controls?",
+      "description": "The documentation should include:\n• Control name.\n• Purpose.\n• Associated risk.\n• Owner.\n• Implementation status.\n• Relevant standards/framework references.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Risk treatment and control documentation apply when risks / threats are identified or controls are selected."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "activities",
+    "op": "includes",
+    "value": "Security assessment"
+   },
+   {
+    "field": "activities",
+    "op": "includes",
+    "value": "Control selection"
+   },
+   {
+    "field": "threatsIdentified",
+    "op": "is",
+    "value": "Yes"
+   }
+  ]
+ ],
+ "applicabilityNote": "Risk treatment and control documentation apply when risks / threats are identified or controls are selected.",
+ "modelVersion": 2
 }

@@ -9,9 +9,19 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
@@ -47,13 +57,91 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-254",
+    "name": "Did you select the security controls based on risk, threats and exposure?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Design and test",
+       "Build",
+       "Run / Serve"
+      ]
+     }
+    ],
+    "conditionsText": "When:\n- Threat assessments have been completed.\n- Risks have been identified.\n- Security architecture is being defined.\nWhen:\n- Threat assessments have been completed.\n- Risks have been identified.\n- Security architecture is being defined.",
+    "phases": [
+     "Alpha",
+     "Private beta",
+     "Public beta",
+     "Live"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Did you select the security controls based on risk, threats and exposure?",
+    "requirementDescription": "Did you choose security controls because they address real threats and risks, rather than simply applying controls because they are standard or familiar?",
+    "why": "Secure by Design promotes a risk-driven approach. Controls should directly relate to the threats facing the service. Over-securing wastes money, while under-securing leaves vulnerabilities exposed",
+    "tasks": [
+     "Did you select the security controls based on risk, threats and exposure?"
+    ],
+    "actions": [
+     {
+      "title": "Did you select the security controls based on risk, threats and exposure?",
+      "description": "You should be able to demonstrate:\n• Threats were identified.\n• Risks were assessed.\n• Controls were selected to reduce those specific risks.\n• Control decisions can be traced back to identified risks.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/assessing-the-effectiveness-of-security-controls/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Risk treatment and control documentation apply when risks / threats are identified or controls are selected."
   }
- ]
+ ],
+ "conditionGroups": [
+  [
+   {
+    "field": "activities",
+    "op": "includes",
+    "value": "Security assessment"
+   },
+   {
+    "field": "activities",
+    "op": "includes",
+    "value": "Control selection"
+   },
+   {
+    "field": "threatsIdentified",
+    "op": "is",
+    "value": "Yes"
+   }
+  ]
+ ],
+ "applicabilityNote": "Risk treatment and control documentation apply when risks / threats are identified or controls are selected.",
+ "modelVersion": 2
 }

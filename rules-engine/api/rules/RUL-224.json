@@ -13,11 +13,26 @@
  "status": "Published",
  "conditions": [
   {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
    "field": "stage",
    "op": "in",
    "value": [
     "Understanding"
    ]
+  },
+  {
+   "field": "dataTypes",
+   "op": "includes",
+   "value": "Intellectual property"
   }
  ],
  "conditionsText": "",
@@ -42,13 +57,68 @@
  "standards": [],
  "systems": "",
  "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-224",
+    "name": "Have you met obligations in relation to intellectual property (IP) data being processed, stored or transmitted by the service?",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": true,
+    "status": "Published",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Understanding"
+      ]
+     }
+    ],
+    "conditionsText": "",
+    "phases": [
+     "Discovery"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Have you met obligations in relation to intellectual property (IP) data being processed, stored or transmitted by the service?",
+    "requirementDescription": "If the system handles intellectual property, have you implemented the protections required to safeguard it?",
+    "why": "Loss of intellectual property can:\n- Harm the organisation\n- Create legal liabilities\n- Damage commercial value",
+    "tasks": [
+     "Have you met obligations in relation to intellectual property (IP) data being processed, stored or transmitted by the service?"
+    ],
+    "actions": [
+     {
+      "title": "Have you met obligations in relation to intellectual property (IP) data being processed, stored or transmitted by the service?",
+      "description": "You should understand:\n• Ownership arrangements\n• Licensing restrictions\n• Contractual obligations\n• Security classification requirements",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/activities/understanding-cyber-security-obligations/",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Intellectual-property obligations apply to services processing intellectual-property information."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Intellectual-property obligations apply to services processing intellectual-property information.",
+ "modelVersion": 2
 }

@@ -9,15 +9,30 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
+ "enabled": true,
+ "status": "Published",
  "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
   {
    "field": "stage",
    "op": "in",
    "value": [
     "Build"
    ]
+  },
+  {
+   "field": "hasUsers",
+   "op": "is",
+   "value": "Yes"
   }
  ],
  "conditionsText": "CHK: what if service has no users and is a piece of tech or automation?",
@@ -42,13 +57,68 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from ORR activity log-Grid view.csv."
+   "note": "Imported from ORR activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-138",
+    "name": "Document a support model for users (ORR 34 - could it be merged with 31?)",
+    "source": "Operational Readiness Review",
+    "dataset": "Operational Readiness Review",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Should have",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Build"
+      ]
+     }
+    ],
+    "conditionsText": "CHK: what if service has no users and is a piece of tech or automation?",
+    "phases": [
+     "Build"
+    ],
+    "phasesAssumed": true,
+    "requirementTitle": "Document a support model for users (ORR 34 - could it be merged with 31?)",
+    "requirementDescription": "- operational\n- good practice\n- process for user who is asking for support from system. For example, user raises incident, passes to 3rd line",
+    "why": "- operational\n- good practice\n- process for user who is asking for support from system. For example, user raises incident, passes to 3rd line",
+    "tasks": [
+     "Document a support model for users (ORR 34 - could it be merged with 31?)"
+    ],
+    "actions": [
+     {
+      "title": "Document a support model for users (ORR 34 - could it be merged with 31?)",
+      "description": "",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Prototype interpretation: user-journey testing, privacy notices and user support apply to human-facing services. The privacy notice also requires information collection. Source phase was blank; Build remains a prototype assumption."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Prototype interpretation: user-journey testing, privacy notices and user support apply to human-facing services. The privacy notice also requires information collection. Source phase was blank; Build remains a prototype assumption.",
+ "modelVersion": 2
 }

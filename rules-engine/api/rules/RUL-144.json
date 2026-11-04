@@ -13,6 +13,16 @@
  "status": "Published",
  "conditions": [
   {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
    "field": "stage",
    "op": "in",
    "value": [
@@ -42,13 +52,68 @@
  "standards": [],
  "systems": "MS Form, SharePoint List, Power BI",
  "guidance": "Get help with DDT tasks and projects",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-144",
+    "name": "Get help with DDT tasks and projects ('Demand' process)",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Should have",
+    "owner": "Jo Wright",
+    "activityOwner": "DDT Demand team",
+    "stakeholder": "",
+    "enabled": true,
+    "status": "Published",
+    "conditions": [
+     {
+      "field": "stage",
+      "op": "in",
+      "value": [
+       "Idea"
+      ]
+     }
+    ],
+    "conditionsText": "",
+    "phases": [
+     "Explore"
+    ],
+    "phasesAssumed": false,
+    "requirementTitle": "Get help with DDT tasks and projects ('Demand' process)",
+    "requirementDescription": "Review of requests from across DfE for DDT time, knowledge and expertise, usually with a view to developing a solution to a problem, or augmenting an existing service.",
+    "why": "Centralised way into DDT for people who don't have ways into DDT. Demand can signpost people to the right place.",
+    "tasks": [
+     "Get help with DDT tasks and projects ('Demand' process)"
+    ],
+    "actions": [
+     {
+      "title": "Get help with DDT tasks and projects ('Demand' process)",
+      "description": "Teams complete the DDT request form.\nThey will need to provide:\n• a clear description of the problem and its impact\n• what kind of help they are seeking. For example, options appraisal or planning advice\n• timescales and confirmed funding\n• work already done. For example, research, options considered, guidance reviewed\nThe team will review the demand request and take it through the triage process if there is merit to it.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "MS Form, SharePoint List, Power BI",
+    "guidance": "Get help with DDT tasks and projects",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Applies to an in-scope service at the recorded delivery stages. Source guidance about how to perform the activity is not an additional applicability gate.",
+ "modelVersion": 2
 }

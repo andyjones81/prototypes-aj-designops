@@ -9,9 +9,25 @@
  "owner": "",
  "activityOwner": "",
  "stakeholder": "",
- "enabled": false,
- "status": "Draft",
- "conditions": [],
+ "enabled": true,
+ "status": "Published",
+ "conditions": [
+  {
+   "field": "serviceType",
+   "op": "in",
+   "value": [
+    "Digital service",
+    "Data service",
+    "Technology platform",
+    "Corporate system"
+   ]
+  },
+  {
+   "field": "criticalService",
+   "op": "is",
+   "value": "Yes"
+  }
+ ],
  "conditionsText": "",
  "phases": [],
  "phasesAssumed": false,
@@ -32,13 +48,58 @@
  "standards": [],
  "systems": "",
  "guidance": "",
- "version": 1,
+ "version": 2,
  "versions": [
   {
    "v": 1,
    "at": "2026-01-12T09:00:00.000Z",
    "by": "CSV import",
-   "note": "Imported from Other activity log-Grid view.csv."
+   "note": "Imported from Other activity log-Grid view.csv.",
+   "snap": {
+    "id": "RUL-185",
+    "name": "Services MUST have an out-of-hours on-call contact for critical service incident escalation to ensure immediate action can be taken during high-risk periods.",
+    "source": "DDT activity log",
+    "dataset": "DDT activity log",
+    "kind": "Activity",
+    "category": "",
+    "mandatory": "Must have - governance framework",
+    "owner": "",
+    "activityOwner": "",
+    "stakeholder": "",
+    "enabled": false,
+    "status": "Draft",
+    "conditions": [],
+    "conditionsText": "",
+    "phases": [],
+    "phasesAssumed": false,
+    "requirementTitle": "Services MUST have an out-of-hours on-call contact for critical service incident escalation to ensure immediate action can be taken during high-risk periods.",
+    "requirementDescription": "Every service must have someone available to be contacted outside normal working hours in case a serious incident occurs and urgent action is needed.",
+    "why": "- Critical incidents can happen at any time.\n- Fast response often reduces damage and recovery time.\n- Security teams need someone who understands the service.\n- Business-critical services may require 24/7 support arrangements.",
+    "tasks": [
+     "Services MUST have an out-of-hours on-call contact for critical service incident escalation to ensure immediate action can be taken during h"
+    ],
+    "actions": [
+     {
+      "title": "Services MUST have an out-of-hours on-call contact for critical service incident escalation to ensure immediate action can be taken during h",
+      "description": "Every service must have a person or team that can be contacted outside normal working hours so that serious incidents can be responded to immediately rather than waiting until the next working day.",
+      "evidence": "",
+      "legal": false
+     }
+    ],
+    "standards": [],
+    "systems": "",
+    "guidance": "",
+    "version": 1
+   }
+  },
+  {
+   "v": 2,
+   "at": "2026-11-04T09:00:00.000Z",
+   "by": "Prototype rule review",
+   "note": "Critical-service escalation and availability-zone resilience apply to business-important or critical services. Zone resilience additionally requires cloud hosting."
   }
- ]
+ ],
+ "conditionGroups": [],
+ "applicabilityNote": "Critical-service escalation and availability-zone resilience apply to business-important or critical services. Zone resilience additionally requires cloud hosting.",
+ "modelVersion": 2
 }
