@@ -21,6 +21,7 @@
     cls: document.getElementById("class-filter"),
     gaps: document.getElementById("gaps-only"),
     count: document.getElementById("count"),
+    toggleAll: document.getElementById("toggle-all"),
     list: document.getElementById("type-list"),
     main: document.getElementById("main"),
     modeButtons: document.querySelectorAll("[data-mode]")
@@ -28,6 +29,7 @@
 
   let listMode = "types";
   let currentTab = "schema";
+  const collapsedGroups = new Set();
 
   function esc(value) {
     return String(value).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -121,7 +123,11 @@
 
   function renderSidebar() {
     const q = el.search.value.trim().toLowerCase();
-    el.modeButtons.forEach((b) => b.classList.toggle("active", b.dataset.mode === listMode));
+    el.modeButtons.forEach((b) => {
+      const on = b.dataset.mode === listMode;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-selected", String(on));
+    });
     const route = parseRoute();
 
     if (listMode === "props") {
@@ -135,8 +141,8 @@
       const item = (n) =>
         `<a class="type-link${route.kind === "prop" && route.value === n ? " active" : ""}" href="#prop/${encodeURIComponent(n)}"><span>${esc(n)}</span></a>`;
       let html = "";
-      if (schemaNames.length) html += `<div class="group-head">schema.org properties</div>` + schemaNames.map(item).join("");
-      if (fsNames.length) html += `<div class="group-head">Firestarter properties</div>` + fsNames.map(item).join("");
+      if (schemaNames.length) html += `<div class="group-label">schema.org properties</div>` + schemaNames.map(item).join("");
+      if (fsNames.length) html += `<div class="group-label">Firestarter properties</div>` + fsNames.map(item).join("");
       el.list.innerHTML = html || `<p class="empty">No properties match.</p>`;
       return;
     }
@@ -153,17 +159,52 @@
     );
     el.count.textContent = `${list.length} of ${TYPES.length} types`;
 
+    // While searching, every matching group is shown so results are never hidden.
+    const forceOpen = Boolean(q);
     let html = "";
     for (const grp of SCHEMA_GROUPS) {
       const items = list.filter((t) => t.group === grp.n);
       if (!items.length) continue;
-      html += `<div class="group-head">${grp.n}. ${esc(grp.name)}</div>`;
-      for (const t of items) {
-        const active = route.kind === "type" && route.value === t.id ? " active" : "";
-        html += `<a class="type-link${active}" href="#type/${encodeURIComponent(t.id)}"><span class="type-name">${esc(t.id)}</span><span class="badges">${badges(t)}</span></a>`;
-      }
+      const open = forceOpen || !collapsedGroups.has(grp.n);
+      const links = items
+        .map((t) => {
+          const active = route.kind === "type" && route.value === t.id;
+          return `<a class="type-link${active ? " active" : ""}" href="#type/${encodeURIComponent(t.id)}"${active ? ' aria-current="page"' : ""}>` +
+            `<span class="type-name">${esc(t.id)}</span><span class="badges">${badges(t)}</span></a>`;
+        })
+        .join("");
+      html += `<h2 class="group-heading"><button type="button" class="group-head" data-group="${grp.n}" aria-expanded="${open}" aria-controls="grp-${grp.n}">` +
+        `<span class="toggle-icon" aria-hidden="true">${open ? "−" : "+"}</span>` +
+        `<span class="group-name">${grp.n}. ${esc(grp.name)}</span>` +
+        `<span class="count-badge" aria-label="${items.length} types">${items.length}</span></button></h2>` +
+        `<div id="grp-${grp.n}" role="group" aria-label="${esc(grp.name)}"${open ? "" : " hidden"}>${links}</div>`;
     }
     el.list.innerHTML = html || `<p class="empty">No types match these filters.</p>`;
+    updateToggleAll();
+  }
+
+  function updateToggleAll() {
+    const allCollapsed = SCHEMA_GROUPS.every((g) => collapsedGroups.has(g.n));
+    el.toggleAll.innerHTML = allCollapsed
+      ? `<span class="toggle-icon" aria-hidden="true">+</span><span>Expand all</span>`
+      : `<span class="toggle-icon" aria-hidden="true">−</span><span>Collapse all</span>`;
+    el.toggleAll.hidden = listMode !== "types";
+  }
+
+  function onGroupClick(e) {
+    const head = e.target.closest("[data-group]");
+    if (!head) return;
+    const n = Number(head.dataset.group);
+    if (collapsedGroups.has(n)) collapsedGroups.delete(n);
+    else collapsedGroups.add(n);
+    renderSidebar();
+  }
+
+  function onToggleAll() {
+    const allCollapsed = SCHEMA_GROUPS.every((g) => collapsedGroups.has(g.n));
+    collapsedGroups.clear();
+    if (!allCollapsed) SCHEMA_GROUPS.forEach((g) => collapsedGroups.add(g.n));
+    renderSidebar();
   }
 
   function renderTypeHeader(t) {
@@ -279,9 +320,9 @@
 
   function renderType(t) {
     const tabs = `
-      <nav class="tabs">
-        <button type="button" data-tab="schema" class="${currentTab === "schema" ? "active" : ""}">Schema</button>
-        <button type="button" data-tab="jsonld" class="${currentTab === "jsonld" ? "active" : ""}">JSON-LD</button>
+      <nav class="tabs" role="tablist" aria-label="View">
+        <button type="button" role="tab" data-tab="schema" aria-selected="${currentTab === "schema"}" class="${currentTab === "schema" ? "active" : ""}">Schema</button>
+        <button type="button" role="tab" data-tab="jsonld" aria-selected="${currentTab === "jsonld"}" class="${currentTab === "jsonld" ? "active" : ""}">JSON-LD</button>
       </nav>`;
     const body = currentTab === "jsonld" ? renderJsonLdTab(t) : renderSchemaTab(t);
     return renderTypeHeader(t) + tabs + body;
@@ -345,6 +386,8 @@
   function init() {
     populateFilters();
     [el.search, el.group, el.cls, el.gaps].forEach((input) => input.addEventListener("input", renderSidebar));
+    el.list.addEventListener("click", onGroupClick);
+    el.toggleAll.addEventListener("click", onToggleAll);
     el.modeButtons.forEach((b) =>
       b.addEventListener("click", () => {
         listMode = b.dataset.mode;

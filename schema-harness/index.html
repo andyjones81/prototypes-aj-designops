@@ -12,8 +12,8 @@
       <div class="sidebar-top">
         <h1 class="brand">Schema harness</h1>
         <div class="modes" role="tablist">
-          <button type="button" data-mode="types" class="active">Entities</button>
-          <button type="button" data-mode="props">Properties</button>
+          <button type="button" role="tab" id="mode-types" data-mode="types" aria-selected="true" class="active">Entities</button>
+          <button type="button" role="tab" id="mode-props" data-mode="props" aria-selected="false">Properties</button>
         </div>
         <input id="search" type="search" placeholder="Search entities, properties, comments" autocomplete="off" />
         <div class="filters">
@@ -25,9 +25,12 @@
           </select>
           <label class="check"><input id="gaps-only" type="checkbox" /> Priority gaps only</label>
         </div>
-        <p id="count" class="count"></p>
+        <div class="count-row">
+          <p id="count" class="count" aria-live="polite"></p>
+          <button id="toggle-all" type="button" class="toggle-all" aria-controls="type-list"></button>
+        </div>
       </div>
-      <nav id="type-list" class="type-list"></nav>
+      <nav id="type-list" class="type-list" aria-label="Entities and properties"></nav>
     </aside>
     <main id="main" class="main"></main>
   </div>
