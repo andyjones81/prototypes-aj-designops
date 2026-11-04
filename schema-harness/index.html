@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firestarter Schema Harness</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <h1 class="brand">Schema harness</h1>
+        <div class="modes" role="tablist">
+          <button type="button" data-mode="types" class="active">Entities</button>
+          <button type="button" data-mode="props">Properties</button>
+        </div>
+        <input id="search" type="search" placeholder="Search entities, properties, comments" autocomplete="off" />
+        <div class="filters">
+          <select id="group-filter" aria-label="Filter by group">
+            <option value="">All groups</option>
+          </select>
+          <select id="class-filter" aria-label="Filter by classification">
+            <option value="">All classifications</option>
+          </select>
+          <label class="check"><input id="gaps-only" type="checkbox" /> Priority gaps only</label>
+        </div>
+        <p id="count" class="count"></p>
+      </div>
+      <nav id="type-list" class="type-list"></nav>
+    </aside>
+    <main id="main" class="main"></main>
+  </div>
+
+  <script src="schema-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
